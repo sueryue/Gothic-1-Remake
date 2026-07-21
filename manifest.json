@@ -1,0 +1,25 @@
+{
+  "name": "Gothic 1 Remake Wiki - Ultimate Strategy Guide",
+  "short_name": "Gothic 1 Remake Wiki",
+  "description": "Free tools and guides for Gothic 1 Remake: lockpicking solver, faction guide, combat tips. Expert strategies updated daily.",
+  "start_url": "/en/",
+  "display": "standalone",
+  "background_color": "#1a252f",
+  "theme_color": "#2c3e50",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/en/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/en/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["games", "utilities"],
+  "lang": "en",
+  "dir": "ltr"
+}

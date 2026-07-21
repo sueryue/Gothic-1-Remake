@@ -1,0 +1,23 @@
+# robots.txt for Gothic 1 Remake Wiki
+# 控制搜索引擎爬虫的访问行为
+
+User-agent: *
+Allow: /
+Allow: /en/
+Allow: /de/
+Allow: /fr/
+Allow: /it/
+Allow: /es/
+Allow: /ko/
+Allow: /ja/
+
+# 禁止访问敏感目录
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+
+# Sitemap位置
+Sitemap: https://sueryue.github.io/Gothic-1-Remake/sitemap.xml
+
+# 爬虫延迟(避免过度抓取)
+Crawl-delay: 1
