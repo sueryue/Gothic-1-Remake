@@ -185,7 +185,7 @@
             
             navLinks.forEach(link => {
                 const href = link.getAttribute('href');
-                // ? 如果已经是完整URL(http开头),不要修改!只处理相对路径
+                // 如果已经是完整URL(http开头),不要修改!只处理相对路径
                 if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('/')) {
                     const fileName = href.split('/').pop();
                     if (fileName) {
@@ -193,26 +193,6 @@
                     }
                 }
             });
-        } else {
-                // 其他页面使用完整URL
-                if (langPath === '/en/') {
-                    window.location.href = baseUrl + '/' + fileName;
-                } else {
-                    const langCode = langPath.replace(/\//g, '');
-                    window.location.href = baseUrl + '/' + langCode + '/' + fileName;
-                }
-            }
-        } else {
-                    window.location.href = langPath + 'index.html';
-                }
-            } else {
-                // 其他页面同理
-                if (langPath === '/en/') {
-                    window.location.href = '/' + fileName;
-                } else {
-                    window.location.href = langPath + fileName;
-                }
-            }
         }
         
         function googleTranslateElementInit() {
