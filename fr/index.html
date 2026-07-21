@@ -71,9 +71,29 @@
         }
         
         function changeLanguage(langPath) {
+            const baseUrl = 'https://sueryue.github.io/Gothic-1-Remake';
             const currentPath = window.location.pathname;
-            const newPath = langPath + currentPath.split('/').slice(2).join('/');
-            window.location.href = newPath;
+            const fileName = currentPath.split('/').filter(s => s && s.endsWith('.html')).pop();
+            
+            // 如果是首页(index.html),切换到对应语言后跳转到对应语言的index.html
+            if (!fileName || fileName === 'index.html') {
+                // 英文返回首页
+                if (langPath === '/en/') {
+                    window.location.href = baseUrl + '/index.html';
+                } else {
+                    // 其他语言使用完整URL
+                    const langCode = langPath.replace(/\//g, '');
+                    window.location.href = baseUrl + '/' + langCode + '/index.html';
+                }
+            } else {
+                // 其他页面使用完整URL
+                if (langPath === '/en/') {
+                    window.location.href = baseUrl + '/' + fileName;
+                } else {
+                    const langCode = langPath.replace(/\//g, '');
+                    window.location.href = baseUrl + '/' + langCode + '/' + fileName;
+                }
+            }
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
