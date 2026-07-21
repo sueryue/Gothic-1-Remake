@@ -273,6 +273,97 @@ a:hover {
     box-shadow: 0 8px 16px rgba(233, 69, 96, 0.3);
 }
 
+/* === Tool Grid (Homepage) === */
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tool-card {
+    background: linear-gradient(135deg, var(--color-bg-medium), var(--color-bg-light));
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.tool-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-accent);
+    box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
+}
+
+.tool-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.tool-title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--color-gold);
+    font-weight: 600;
+}
+
+.tool-desc {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+.tool-badge {
+    background: var(--color-accent);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+/* === Why Choose Us Section === */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: var(--color-bg-medium);
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-item h3 {
+    font-family: var(--font-heading);
+    color: var(--color-gold);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.feature-item p {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+}
+
 .card-badge {
     position: absolute;
     top: 1rem;
@@ -1258,6 +1349,39 @@ a:hover {
     }
 }
 
+/* === SEO Content Section === */
+.seo-section {
+    padding: 4rem 2rem;
+    background: var(--color-bg-medium);
+}
+
+.seo-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.seo-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.seo-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* === Compact Updates List === */
+.updates-list.compact {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.updates-list.compact .update-item {
+    padding: 1rem 1.5rem;
+}
+
 @media (max-width: 480px) {
     .hero-title {
         font-size: 1.8rem;
@@ -1274,4 +1398,18 @@ a:hover {
     .container {
         padding: 2rem 1rem;
     }
+}
+
+/* === Table Responsive (Mobile Optimization) === */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 2rem 0;
+    border-radius: 8px;
+    border: 2px solid var(--color-border);
+}
+
+.table-responsive table {
+    margin-bottom: 0;
+    min-width: 600px;
 }

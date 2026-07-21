@@ -1,0 +1,217 @@
+/* ====================================
+   Gothic 1 Remake Wiki - Global Utilities
+   Standardized components for all pages
+   ==================================== */
+
+/* === TL;DR Quick Answer Section === */
+.tldr-section {
+    background: linear-gradient(135deg, rgba(233, 69, 96, 0.1), rgba(255, 215, 0, 0.1));
+    border: 3px solid var(--color-gold);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin: 2rem 0;
+}
+
+.tldr-section h2 {
+    font-family: var(--font-heading);
+    color: var(--color-gold);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.tldr-section > div:first-child {
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 4px solid var(--color-accent);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tldr-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.tldr-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* === Summary Box (What You'll Learn) === */
+.summary-section {
+    background: rgba(0, 0, 0, 0.2);
+    border: 2px dashed var(--color-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.summary-section h3 {
+    font-family: var(--font-heading);
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+}
+
+.summary-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.summary-section li {
+    padding: 0.5rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.summary-section li span {
+    position: absolute;
+    left: 0;
+}
+
+/* === Info Box Variants === */
+.info-box {
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    border-left: 4px solid;
+}
+
+.info-box.warning {
+    background: rgba(233, 69, 96, 0.1);
+    border-color: var(--color-accent);
+}
+
+.info-box.important {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: var(--color-gold);
+}
+
+.info-box.critical-decision {
+    background: linear-gradient(135deg, rgba(233, 69, 96, 0.2), rgba(255, 215, 0, 0.1));
+    border: 3px solid var(--color-accent);
+    animation: pulse-border 2s ease-in-out infinite;
+}
+
+@keyframes pulse-border {
+    0%, 100% { 
+        border-color: var(--color-accent); 
+    }
+    50% { 
+        border-color: var(--color-gold); 
+    }
+}
+
+/* === Table Responsive (Mobile Optimization) === */
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 2rem 0;
+    border-radius: 8px;
+    border: 2px solid var(--color-border);
+}
+
+.table-responsive table {
+    margin-bottom: 0;
+    min-width: 600px;
+}
+
+/* === Anchor Navigation Enhancement === */
+.toc-list a {
+    transition: all 0.3s ease;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.toc-list a:hover {
+    background: rgba(233, 69, 96, 0.1);
+    color: var(--color-gold);
+    transform: translateX(5px);
+}
+
+/* === Back to Top Button === */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-gold));
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(233, 69, 96, 0.4);
+    z-index: 1000;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(233, 69, 96, 0.5);
+}
+
+/* === Quick Action Buttons === */
+.action-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #e94560, #ffd700);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(233, 69, 96, 0.4);
+    transition: all 0.3s ease;
+}
+
+.action-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(233, 69, 96, 0.5);
+}
+
+/* === Mobile Optimizations === */
+@media (max-width: 768px) {
+    .tldr-section {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+    
+    .tldr-section h2 {
+        font-size: 1.4rem;
+    }
+    
+    .tldr-section > div:first-child {
+        padding: 1rem;
+    }
+    
+    .summary-section {
+        padding: 1rem;
+    }
+    
+    .table-responsive {
+        margin: 1rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .tldr-section {
+        padding: 1rem;
+    }
+    
+    .action-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gothic 1 Remake - Visual Guide with Screenshots</title>
+    <meta name="description" content="Complete visual walkthrough for Gothic 1 Remake. Learn through real gameplay screenshots, diagrams, and minimal text.">
+    <meta name="keywords" content="Gothic 1 Remake, visual guide, screenshots, walkthrough, gameplay images">
+    <link rel="canonical" href="https://your-domain.com/visual-guide.html">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <style>
+        /* ====================================
+           Gothic 1 Remake - Visual Guide Styles
+           Image-First Approach (90% images, 10% text)
+           ==================================== */
+
+        /* Hero Section - Fullscreen Screenshot */
+        .visual-hero {
+            position: relative;
+            height: 80vh;
+            background: linear-gradient(135deg, rgba(15, 52, 96, 0.4), rgba(22, 33, 62, 0.8));
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .visual-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .visual-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .visual-hero h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        .visual-hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Screenshot Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .gallery-card {
+            background: linear-gradient(135deg, rgba(15, 52, 96, 0.6), rgba(22, 33, 62, 0.8));
+            border: 2px solid var(--color-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(233, 69, 96, 0.4);
+            border-color: var(--color-accent);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+        }
+
+        .gallery-caption {
+            padding: 1.5rem;
+        }
+
+        .gallery-caption h3 {
+            font-family: var(--font-heading);
+            color: var(--color-gold);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-caption p {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Step-by-Step Visual Steps */
+        .visual-steps {
+            margin: 4rem 0;
+        }
+
+        .visual-step {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(15, 52, 96, 0.4), rgba(22, 33, 62, 0.6));
+            border-radius: 12px;
+            border: 2px solid var(--color-border);
+        }
+
+        .visual-step-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .visual-step-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-gold));
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .visual-step-content h3 {
+            font-family: var(--font-heading);
+            color: var(--color-gold);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .visual-step-content p {
+            color: var(--color-text);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        /* Comparison Cards (Before/After) */
+        .comparison-section {
+            margin: 4rem 0;
+        }
+
+        .comparison-card {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(15, 52, 96, 0.5), rgba(22, 33, 62, 0.7));
+            border-radius: 12px;
+        }
+
+        .comparison-image {
+            width: 100%;
+            border-radius: 8px;
+            border: 3px solid var(--color-border);
+        }
+
+        .comparison-arrow {
+            font-size: 3rem;
+            color: var(--color-accent);
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 0 40px rgba(233, 69, 96, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+            z-index: 10000;
+        }
+
+        .lightbox-close:hover {
+            color: var(--color-accent);
+        }
+
+        /* Image Annotation Arrows */
+        .annotation-overlay {
+            position: relative;
+            display: inline-block;
+        }
+
+        .annotation-point {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        /* Minimal Text Boxes */
+        .text-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            color: white;
+            padding: 2rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .visual-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .visual-step {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .comparison-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <nav class="main-nav">
+            <div class="logo">
+                <h1>🏰 Gothic 1 Remake Wiki</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lockpicking.html">Lockpicking</a></li>
+                <li><a href="factions-guide.html">Factions</a></li>
+                <li><a href="visual-guide.html" class="active">Visual Guide</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+        <!-- Hero Section -->
+        <section class="visual-hero" style="background-image: url('assets/screenshots/broken-barrier-epic.jpg');">
+            <div class="visual-hero-content">
+                <h1>📸 Visual Walkthrough</h1>
+                <p>Learn through real gameplay screenshots - Less reading, more seeing!</p>
+                <p style="font-size: 0.95rem; opacity: 0.8; margin-top: 1rem;"><em>Screenshot suggestions based on verified game data from Steam Demo & official publisher</em></p>
+                <a href="#start" class="action-button" style="background: linear-gradient(135deg, #e94560, #ffd700); color: white; padding: 1rem 2.5rem; border-radius: 8px; font-weight: 700; text-decoration: none;">Start Exploring →</a>
+            </div>
+        </section>
+
+        <!-- Quick Navigation -->
+        <section id="start" style="padding: 2rem 0;">
+            <div class="container">
+                <h2 style="font-family: var(--font-heading); color: var(--color-gold); text-align: center; margin-bottom: 2rem;">Quick Jump</h2>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+                    <a href="#opening-scene" style="padding: 0.8rem 1.5rem; background: rgba(233, 69, 96, 0.2); border: 2px solid var(--color-accent); border-radius: 8px; color: white; text-decoration: none;">🎬 Opening Scene</a>
+                    <a href="#character-creation" style="padding: 0.8rem 1.5rem; background: rgba(255, 215, 0, 0.2); border: 2px solid var(--color-gold); border-radius: 8px; color: white; text-decoration: none;">⚔️ Character Creation</a>
+                    <a href="#first-battle" style="padding: 0.8rem 1.5rem; background: rgba(34, 139, 34, 0.2); border: 2px solid #228b22; border-radius: 8px; color: white; text-decoration: none;">🗡️ First Battle</a>
+                    <a href="#faction-choice" style="padding: 0.8rem 1.5rem; background: rgba(106, 13, 173, 0.2); border: 2px solid #6a0dad; border-radius: 8px; color: white; text-decoration: none;">🏕️ Faction Choice</a>
+                    <a href="#lock-puzzle" style="padding: 0.8rem 1.5rem; background: rgba(233, 69, 96, 0.2); border: 2px solid var(--color-accent); border-radius: 8px; color: white; text-decoration: none;">🔐 Lock Puzzle</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Opening Scene -->
+        <section id="opening-scene" class="visual-steps">
+            <div class="container">
+                <h2 style="font-family: var(--font-heading); color: var(--color-accent); font-size: 2rem; margin-bottom: 2rem;">🎬 The Awakening - Opening Scene</h2>
+                
+                <div class="visual-step">
+                    <div>
+                        <img src="assets/screenshots/ship-wrecked.jpg" alt="Shipwrecked opening" class="visual-step-image" onclick="openLightbox(this)">
+                    </div>
+                    <div class="visual-step-content">
+                        <span class="step-number">1</span>
+                        <h3>You Wake Up on the Shore</h3>
+                        <p>The game starts with your character unconscious on the beach. Look around to understand the environment.</p>
+                        <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-top: 0.5rem;"><em>[Screenshot suggestion: Capture the shipwreck scene and magical barrier view - Verified from Steam Store demo footage]</em></p>
+                        <div style="margin-top: 1rem; padding: 1rem; background: rgba(0, 0, 0, 0.3); border-radius: 8px; border-left: 4px solid var(--color-accent);">
+                            <strong>💡 Key Detail:</strong> Notice the broken magical barrier in the background - this is the central mystery!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-card" onclick="openLightbox(this.querySelector('img'))">
+                        <img src="assets/screenshots/beach-view.jpg" alt="Beach exploration" class="gallery-image">
+                        <div class="gallery-caption">
+                            <h3>📍 Beach Starting Area</h3>
+                            <p>First look around before moving forward</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-card" onclick="openLightbox(this.querySelector('img'))">
+                        <img src="assets/screenshots/barrier-sky.jpg" alt="Magical barrier sky" class="gallery-image">
+                        <div class="gallery-caption">
+                            <h3>✨ The Magical Barrier</h3>
+                            <p>Notice the purple dome - you can't leave yet</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Character Creation -->
+        <section id="character-creation" class="visual-steps">
+            <div class="container">
+                <h2 style="font-family: var(--font-heading); color: var(--color-accent); font-size: 2rem; margin-bottom: 2rem;">⚔️ Character Creation</h2>
+                
+                <div class="comparison-section">
+                    <h3 style="color: var(--color-gold); margin-bottom: 1.5rem;">Choose Your Starting Attributes</h3>
+                    
+                    <div class="comparison-card">
+                        <div>
+                            <img src="assets/screenshots/char-creator-high-str.jpg" alt="High Strength build" class="comparison-image">
+                            <p style="text-align: center; margin-top: 1rem; color: var(--color-text-secondary);">Option A: Strength Focus</p>
+                        </div>
+                        <div class="comparison-arrow">→</div>
+                        <div>
+                            <img src="assets/screenshots/combat-strong.jpg" alt="Combat with high strength" class="comparison-image">
+                            <p style="text-align: center; margin-top: 1rem; color: var(--color-text-secondary);">Result: Better Melee</p>
+                        </div>
+                    </div>
+
+                    <div class="comparison-card">
+                        <div>
+                            <img src="assets/screenshots/char-creator-high-dex.jpg" alt="High Dexterity build" class="comparison-image">
+                            <p style="text-align: center; margin-top: 1rem; color: var(--color-text-secondary);">Option B: Dexterity Focus</p>
+                        </div>
+                        <div class="comparison-arrow">→</div>
+                        <div>
+                            <img src="assets/screenshots/stealth-dex.jpg" alt="Stealth with high dex" class="comparison-image">
+                            <p style="text-align: center; margin-top: 1rem; color: var(--color-text-secondary);">Result: Better Stealth</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Faction Choice -->
+        <section id="faction-choice" class="visual-steps">
+            <div class="container">
+                <h2 style="font-family: var(--font-heading); color: var(--color-accent); font-size: 2rem; margin-bottom: 2rem;">🏕️ Choose Your Faction</h2>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-card" onclick="openLightbox(this.querySelector('img'))">
+                        <img src="assets/screenshots/old-camp-fire.jpg" alt="Old Camp" class="gallery-image">
+                        <div class="gallery-caption">
+                            <h3>🔥 Old Camp (Diego)</h3>
+                            <p>Fire mages - aggressive playstyle</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-card" onclick="openLightbox(this.querySelector('img'))">
+                        <img src="assets/screenshots/new-camp-water.jpg" alt="New Camp" class="gallery-image">
+                        <div class="gallery-caption">
+                            <h3>💧 New Camp (Kobs)</h3>
+                            <p>Water mages - healing & support</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-card" onclick="openLightbox(this.querySelector('img'))">
+                        <img src="assets/screenshots/swamp-camp-shadows.jpg" alt="Swamp Camp" class="gallery-image">
+                        <div class="gallery-caption">
+                            <h3>🌀 Shadowstalk (Slaty)</h3>
+                            <p>Spirit magic - stealth & control</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-box critical-decision" style="background: rgba(233, 69, 96, 0.2); border: 3px solid var(--color-accent); padding: 2rem; border-radius: 12px; margin-top: 2rem;">
+                    <h3 style="color: var(--color-accent); margin-bottom: 1rem;">⚠️ Point of No Return</h3>
+                    <p>This choice happens at <strong>Camp Checkpoint</strong>. Once you pick, you can't switch factions without restarting!</p>
+                    <img src="assets/screenshots/camp-checkpoint.jpg" alt="Camp checkpoint decision" style="width: 100%; margin-top: 1rem; border-radius: 8px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Lock Puzzle Visual Guide -->
+        <section id="lock-puzzle" class="visual-steps">
+            <div class="container">
+                <h2 style="font-family: var(--font-heading); color: var(--color-accent); font-size: 2rem; margin-bottom: 2rem;">🔐 Lock Puzzle - Step by Step</h2>
+                
+                <div class="visual-step">
+                    <div>
+                        <img src="assets/screenshots/lock-5plate-start.jpg" alt="5 plate lock starting state" class="visual-step-image" onclick="openLightbox(this)">
+                    </div>
+                    <div class="visual-step-content">
+                        <span class="step-number">1</span>
+                        <h3>Initial State</h3>
+                        <p>Notice the red/blue/yellow buttons - that's your puzzle matrix</p>
+                    </div>
+                </div>
+
+                <div class="visual-step">
+                    <div>
+                        <img src="assets/screenshots/lock-5plate-step1.jpg" alt="Step 1 solution" class="visual-step-image" onclick="openLightbox(this)">
+                    </div>
+                    <div class="visual-step-content">
+                        <span class="step-number">2</span>
+                        <h3>Press Blue Button (Row 1)</h3>
+                        <p>Watch how adjacent buttons change color</p>
+                    </div>
+                </div>
+
+                <div class="visual-step">
+                    <div>
+                        <img src="assets/screenshots/lock-5plate-step2.jpg" alt="Step 2 solution" class="visual-step-image" onclick="openLightbox(this)">
+                    </div>
+                    <div class="visual-step-content">
+                        <span class="step-number">3</span>
+                        <h3>Press Yellow Button (Row 2)</h3>
+                        <p>Same row/column buttons also change</p>
+                    </div>
+                </div>
+
+                <div class="visual-step">
+                    <div>
+                        <img src="assets/screenshots/lock-5plate-complete.jpg" alt="All green solution" class="visual-step-image" onclick="openLightbox(this)">
+                    </div>
+                    <div class="visual-step-content">
+                        <span class="step-number">✓</span>
+                        <h3>All Green! Success!</h3>
+                        <p>That's the pattern - practice makes perfect!</p>
+                        <a href="lock-solver.html" class="action-button" style="display: inline-block; background: linear-gradient(135deg, #e94560, #ffd700); color: white; padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; margin-top: 1rem;">🖱️ Try Interactive Solver</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section style="background: linear-gradient(135deg, rgba(233, 69, 96, 0.2), rgba(255, 215, 0, 0.2)); border: 3px solid var(--color-gold); border-radius: 12px; padding: 3rem; text-align: center; margin: 4rem 0;">
+            <h2 style="font-family: var(--font-heading); color: var(--color-gold); font-size: 2rem; margin-bottom: 1rem;">🎮 Want More Visual Guides?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">Check out our detailed guides with step-by-step screenshots!</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="lockpicking.html" class="action-button" style="background: linear-gradient(135deg, #e94560, #ffd700); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none;">🔐 Lockpicking Guide</a>
+                <a href="factions-guide.html" class="action-button" style="background: linear-gradient(135deg, #228b22, #6a0dad); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none;">⚔️ Faction Guide</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" class="lightbox-img" src="" alt="Screenshot">
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <p>&copy; 2025 Gothic 1 Remake Wiki. Fan-made guide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lightbox Functionality
+        function openLightbox(imgElement) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            
+            lightboxImg.src = imgElement.src;
+            lightboxImg.alt = imgElement.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

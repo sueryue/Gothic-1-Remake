@@ -1,0 +1,191 @@
+/* Combat & Survival enhanced styles */
+.combat-hero {
+    background: linear-gradient(135deg, rgba(196, 30, 58, 0.3), rgba(22, 33, 62, 0.9));
+    border: 3px solid var(--color-accent);
+    border-radius: 12px;
+    padding: 3rem;
+    margin: 2rem 0;
+}
+
+.combat-mechanics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.mechanic-card {
+    background: var(--color-bg-medium);
+    border: 2px solid var(--color-border);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: var(--transition);
+}
+
+.mechanic-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
+}
+
+.mechanic-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.mechanic-card h3 {
+    font-family: var(--font-heading);
+    color: var(--color-gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.step-list-combat {
+    counter-reset: combat-step;
+    list-style: none;
+    padding: 0;
+}
+
+.step-list-combat li {
+    counter-increment: combat-step;
+    padding: 1rem 1rem 1rem 4rem;
+    margin-bottom: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 8px 8px 0;
+    position: relative;
+}
+
+.step-list-combat li::before {
+    content: counter(combat-step);
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    background: var(--color-accent);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.weapon-comparison {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.weapon-comparison th {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-gold));
+    color: white;
+    padding: 1rem;
+    font-family: var(--font-heading);
+    text-align: center;
+}
+
+.weapon-comparison td {
+    padding: 0.8rem;
+    border-bottom: 1px solid var(--color-border);
+    background: rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.weapon-comparison tr:hover td {
+    background: rgba(233, 69, 96, 0.1);
+}
+
+.survival-bar {
+    background: rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+.bar-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.bar-fill {
+    height: 24px;
+    background: linear-gradient(to right, var(--color-accent), var(--color-gold));
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.bar-fill-inner {
+    height: 100%;
+    background: linear-gradient(90deg, #e94560, #ffd700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.crafting-recipes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.recipe-card {
+    background: linear-gradient(135deg, rgba(22, 33, 62, 0.9), rgba(15, 52, 96, 0.7));
+    border: 2px solid var(--color-gold);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: var(--transition);
+}
+
+.recipe-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
+}
+
+.recipe-card h4 {
+    font-family: var(--font-heading);
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+}
+
+.recipe-ingredients {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.recipe-ingredients li {
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.recipe-ingredients li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.warning-box-combat {
+    background: linear-gradient(135deg, rgba(233, 69, 96, 0.2), rgba(255, 215, 0, 0.1));
+    border: 3px solid var(--color-accent);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.warning-box-combat strong {
+    color: var(--color-accent);
+    font-size: 1.2rem;
+}
