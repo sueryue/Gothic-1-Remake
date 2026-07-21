@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -9,10 +9,10 @@
     <meta name="author" content="Gothic 1 Remake Community">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     
-    <!-- Canonical URL (æ›´æ–°ä¸ºæ‚¨çš„å®é™…åŸŸå) -->
+    <!-- Canonical URL (¸üĞÂÎªÄúµÄÊµ¼ÊÓòÃû) -->
     <link rel="canonical" href="https://sueryue.github.io/Gothic-1-Remake/it/">
     
-    <!-- Hreflang Tags (å¤šè¯­è¨€SEOä¼˜åŒ–) -->
+    <!-- Hreflang Tags (¶àÓïÑÔSEOÓÅ»¯) -->
     <link rel="alternate" hreflang="en" href="https://sueryue.github.io/Gothic-1-Remake/de/">
     <link rel="alternate" hreflang="de" href="https://sueryue.github.io/Gothic-1-Remake/de/">
     <link rel="alternate" hreflang="fr" href="https://sueryue.github.io/Gothic-1-Remake/fr/">
@@ -36,29 +36,29 @@
     <header class="site-header">
         <nav class="main-nav">
             <div class="logo">
-                <h1>ğŸ° Gothic 1 Remake</h1>
+                <h1>?? Gothic 1 Remake</h1>
             </div>
             <ul class="nav-menu">
-                <li><a href="/" class="active">Home</a></li>
+                <li><a href="https://sueryue.github.io/Gothic-1-Remake/index.html" class="active">Home</a></li>
                 <li><a href="https://sueryue.github.io/Gothic-1-Remake/daily-tips.html">Daily Tips</a></li>
                 <li><a href="https://sueryue.github.io/Gothic-1-Remake/lockpicking.html">Lockpicking</a></li>
                 <li><a href="https://sueryue.github.io/Gothic-1-Remake/factions-guide.html">Factions</a></li>
                 <li><a href="https://sueryue.github.io/Gothic-1-Remake/visual-guide.html">Visual Guide</a></li>
                 <li><a href="https://sueryue.github.io/Gothic-1-Remake/lock-solver.html">Solver</a></li>
                 <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
-                        <option value="/en/">ğŸ‡ºğŸ‡¸ English</option>
-                        <option value="/de/">ğŸ‡©ğŸ‡ª Deutsch</option>
-                        <option value="/fr/">ğŸ‡«ğŸ‡· FranÃ§ais</option>
-                        <option value="/it/">ğŸ‡®ğŸ‡¹ Italiano</option>
-                        <option value="/es/">ğŸ‡ªğŸ‡¸ EspaÃ±ol</option>
-                        <option value="/ko/">ğŸ‡°ğŸ‡· í•œêµ­ì–´</option>
-                        <option value="/ja/">ğŸ‡¯ğŸ‡µ æ—¥æœ¬èª</option>
+                        <option value="/en/">???? English</option>
+                        <option value="/de/">???? Deutsch</option>
+                        <option value="/fr/">???? Fran?ais</option>
+                        <option value="/it/">???? Italiano</option>
+                        <option value="/es/">???? Espa?ol</option>
+                        <option value="/ko/">???? ???</option>
+                        <option value="/ja/">???? ÈÕ±¾ÕZ</option>
                     </select>
             </ul>
         </nav>
     </header>
     
-    <!-- Google Translate Element (éšè—) -->
+    <!-- Google Translate Element (Òş²Ø) -->
     <div id="google_translate_element" style="display:none;"></div>
     <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -75,18 +75,18 @@
             const currentPath = window.location.pathname;
             const fileName = currentPath.split('/').filter(s => s && s.endsWith('.html')).pop();
             
-            // å¦‚æœæ˜¯é¦–é¡µ(index.html),åˆ‡æ¢åˆ°å¯¹åº”è¯­è¨€åè·³è½¬åˆ°å¯¹åº”è¯­è¨€çš„index.html
+            // Èç¹ûÊÇÊ×Ò³(index.html),ÇĞ»»µ½¶ÔÓ¦ÓïÑÔºóÌø×ªµ½¶ÔÓ¦ÓïÑÔµÄindex.html
             if (!fileName || fileName === 'index.html') {
-                // è‹±æ–‡è¿”å›é¦–é¡µ
+                // Ó¢ÎÄ·µ»ØÊ×Ò³
                 if (langPath === '/en/') {
                     window.location.href = baseUrl + '/index.html';
                 } else {
-                    // å…¶ä»–è¯­è¨€ä½¿ç”¨å®Œæ•´URL
+                    // ÆäËûÓïÑÔÊ¹ÓÃÍêÕûURL
                     const langCode = langPath.replace(/\//g, '');
                     window.location.href = baseUrl + '/' + langCode + '/index.html';
                 }
             } else {
-                // å…¶ä»–é¡µé¢ä½¿ç”¨å®Œæ•´URL
+                // ÆäËûÒ³ÃæÊ¹ÓÃÍêÕûURL
                 if (langPath === '/en/') {
                     window.location.href = baseUrl + '/' + fileName;
                 } else {
@@ -109,45 +109,45 @@
                 <!-- Core Tool Cards -->
                 <div class="tool-grid">
                     <a href="daily-tips.html" class="tool-card">
-                        <div class="tool-icon">ğŸ“…</div>
+                        <div class="tool-icon">??</div>
                         <div class="tool-title">Daily Tips & Events</div>
                         <div class="tool-desc">Fresh content updated every day with challenges</div>
-                        <div class="tool-badge">ğŸ†• New!</div>
+                        <div class="tool-badge">?? New!</div>
                     </a>
                     
                     <a href="lock-solver.html" class="tool-card">
-                        <div class="tool-icon">ğŸ”</div>
+                        <div class="tool-icon">??</div>
                         <div class="tool-title">Lockpicking Solver</div>
                         <div class="tool-desc">Auto-calculate solutions for any lock</div>
-                        <div class="tool-badge">â­ Essential</div>
+                        <div class="tool-badge">? Essential</div>
                     </a>
                     
                     <a href="factions-ultimate-guide.html" class="tool-card">
-                        <div class="tool-icon">âš”ï¸</div>
+                        <div class="tool-icon">??</div>
                         <div class="tool-title">Faction Choice Quiz</div>
                         <div class="tool-desc">3-question test finds your perfect faction</div>
-                        <div class="tool-badge">ğŸ¯ Interactive</div>
+                        <div class="tool-badge">?? Interactive</div>
                     </a>
                     
                     <a href="visual-guide.html" class="tool-card">
-                        <div class="tool-icon">ğŸ“¸</div>
+                        <div class="tool-icon">??</div>
                         <div class="tool-title">Visual Walkthrough</div>
                         <div class="tool-desc">Learn through screenshots - Less reading!</div>
-                        <div class="tool-badge">ğŸ–¼ï¸ Visual</div>
+                        <div class="tool-badge">??? Visual</div>
                     </a>
                     
                     <a href="lockpicking.html" class="tool-card">
-                        <div class="tool-icon">ğŸ“–</div>
+                        <div class="tool-icon">??</div>
                         <div class="tool-title">Lockpicking Guide</div>
                         <div class="tool-desc">Step-by-step walkthrough with diagrams</div>
-                        <div class="tool-badge">ğŸ“š Complete</div>
+                        <div class="tool-badge">?? Complete</div>
                     </a>
                     
                     <a href="factions-guide.html" class="tool-card">
-                        <div class="tool-icon">ğŸ•ï¸</div>
+                        <div class="tool-icon">???</div>
                         <div class="tool-title">Faction Comparison</div>
                         <div class="tool-desc">Old Camp vs New Camp vs Sect</div>
-                        <div class="tool-badge">ğŸ“Š Detailed</div>
+                        <div class="tool-badge">?? Detailed</div>
                     </a>
                 </div>
             </div>
@@ -160,25 +160,25 @@
                 
                 <div class="features-grid">
                     <div class="feature-item">
-                        <div class="feature-icon">âš¡</div>
+                        <div class="feature-icon">?</div>
                         <h3>Instant Solutions</h3>
                         <p>Our solver calculates locks in milliseconds</p>
                     </div>
                     
                     <div class="feature-item">
-                        <div class="feature-icon">ğŸ®</div>
+                        <div class="feature-icon">??</div>
                         <h3>Player-Tested</h3>
                         <p>All guides verified by experienced Gothic players</p>
                     </div>
                     
                     <div class="feature-item">
-                        <div class="feature-icon">ğŸ“±</div>
+                        <div class="feature-icon">??</div>
                         <h3>Mobile Friendly</h3>
                         <p>Access on any device, anytime during gameplay</p>
                     </div>
                     
                     <div class="feature-item">
-                        <div class="feature-icon">ğŸ†“</div>
+                        <div class="feature-icon">??</div>
                         <h3>100% Free</h3>
                         <p>No paywalls, no signup required</p>
                     </div>
@@ -193,11 +193,11 @@
                 <div class="updates-list compact">
                     <div class="update-item">
                         <span class="update-date">2025-07-08</span>
-                        <a href="lock-solver.html">ğŸ†• Launched interactive lockpicking solver with real-time calculation</a>
+                        <a href="lock-solver.html">?? Launched interactive lockpicking solver with real-time calculation</a>
                     </div>
                     <div class="update-item">
                         <span class="update-date">2025-07-07</span>
-                        <a href="factions-ultimate-guide.html">ğŸ†• Added 3-question faction choice quiz</a>
+                        <a href="factions-ultimate-guide.html">?? Added 3-question faction choice quiz</a>
                     </div>
                     <div class="update-item">
                         <span class="update-date">2025-07-06</span>
