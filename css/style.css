@@ -85,17 +85,33 @@ a:hover {
 
 .nav-menu {
     display: flex;
+    align-items: center;
     list-style: none;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    gap: 0.3rem;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-menu a {
     color: var(--color-text-primary);
     font-weight: 500;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.8rem;
     border-radius: 4px;
     transition: var(--transition);
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    background: var(--color-accent);
+    color: white;
+}
+
+/* Language selector in nav menu */
+.nav-menu li:last-child {
+    margin-left: 0.5rem;
 }
 
 .nav-menu a:hover,
