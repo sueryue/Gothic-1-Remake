@@ -1,0 +1,122 @@
+/* === 下拉菜单导航样式 === */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 0.2rem;
+    flex-wrap: nowrap;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-menu a {
+    color: var(--color-text-primary);
+    font-weight: 500;
+    padding: 0.6rem 0.9rem;
+    border-radius: 4px;
+    transition: var(--transition);
+    text-decoration: none;
+    display: block;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    background: var(--color-accent);
+    color: white;
+}
+
+/* 下拉菜单按钮样式 */
+.dropdown-toggle::after {
+    content: ' ▼';
+    font-size: 0.7em;
+    margin-left: 0.3em;
+    opacity: 0.7;
+}
+
+/* 下拉菜单容器 */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0.5rem 0 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+/* 显示下拉菜单（鼠标悬停和焦点） */
+.nav-item:hover .dropdown-menu,
+.nav-item:focus-within .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    padding: 0;
+}
+
+.dropdown-menu a {
+    padding: 0.6rem 1.2rem;
+    border-radius: 0;
+    color: var(--color-text-secondary);
+    font-weight: 400;
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background: var(--color-bg-secondary);
+    color: var(--color-accent);
+    padding-left: 1.5rem;
+}
+
+/* 高亮当前页面 */
+.dropdown-menu a.active {
+    background: var(--color-accent-light, rgba(52, 152, 219, 0.1));
+    color: var(--color-accent);
+    font-weight: 500;
+}
+
+/* 分割线 */
+.dropdown-divider {
+    height: 1px;
+    background: var(--color-border);
+    margin: 0.5rem 0;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background: var(--color-bg-secondary);
+        margin: 0.3rem 0;
+        border-radius: 4px;
+    }
+    
+    .nav-item:hover .dropdown-menu,
+    .nav-item:focus-within .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}

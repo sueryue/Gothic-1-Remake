@@ -17,14 +17,44 @@
                 <h1>🏰 Gothic 1 Remake</h1>
             </div>
             <ul class="nav-menu">
-                <li><a href="https://sueryue.github.io/Gothic-1-Remake/index.html">Home</a></li>
-                <li><a href="https://sueryue.github.io/Gothic-1-Remake/index.html">Guides</a></li>
-                <li><a href="https://sueryue.github.io/Gothic-1-Remake/factions-guide.html">Factions</a></li>
-                <li><a href="https://sueryue.github.io/Gothic-1-Remake/index.html">Combat</a></li>
-                <li><a href="https://sueryue.github.io/Gothic-1-Remake/index.html">Maps</a></li>
-                <li><a href="https://sueryue.github.io/Gothic-1-Remake/index.html">Wiki</a></li>
-                <li><a href="https://sueryue.github.io/Gothic-1-Remake/lockpicking.html" class="active">Lockpicking</a></li>
-                <li><a href="https://sueryue.github.io/Gothic-1-Remake/factions-guide.html">Factions Guide</a></li>
+                <li class="nav-item"><a href="https://sueryue.github.io/Gothic-1-Remake/index.html">Home</a></li>
+                
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropdown-toggle">Guides</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/daily-tips.html">Daily Tips</a></li>
+                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/factions-guide.html">Factions Guide</a></li>
+                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/visual-guide.html">Visual Guide</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropdown-toggle">Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/lockpicking.html" class="active">Lockpicking Guide</a></li>
+                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/lock-solver.html">Lock Solver</a></li>
+                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/lockpicking-calculator.html">Calculator</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropdown-toggle">Factions</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/factions-guide.html">Factions Overview</a></li>
+                        <li><div class="dropdown-divider"></div></li>
+                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/factions-ultimate-guide.html">Ultimate Guide</a></li>
+                    </ul>
+                </li>
+                
+                <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                    <option value="/en/">English</option>
+                    <option value="/de/">Deutsch</option>
+                    <option value="/fr/">Francais</option>
+                    <option value="/it/">Italiano</option>
+                    <option value="/es/">Espanol</option>
+                    <option value="/ko/">한국어</option>
+                    <option value="/ja/">日本語</option>
+                </select>
             </ul>
         </nav>
     </header>
