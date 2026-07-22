@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gothic 1 Remake Equipment Guide - Weapons, Armor & Best Gear</title>
+    <meta name="description" content="Complete Gothic 1 Remake equipment guide covering all weapons, armor sets, faction-specific gear, and best equipment locations.">
+    <meta name="keywords" content="Gothic 1 Remake weapons, best armor, equipment guide, faction gear, Shadow Armor, legendary weapons">
+    <link rel="canonical" href="https://sueryue.github.io/Gothic-1-Remake/equipment.html">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .equip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0}
+        .equip-card{background:var(--color-bg-light);border:2px solid var(--color-border);border-radius:12px;padding:1.5rem;transition:var(--transition);position:relative}
+        .equip-card:hover{border-color:var(--color-gold);transform:translateY(-3px)}
+        .equip-card.legendary{border-color:var(--color-gold);background:linear-gradient(135deg,rgba(255,215,0,.05),rgba(233,69,96,.05))}
+        .equip-rarity{position:absolute;top:1rem;right:1rem;padding:.3rem .8rem;border-radius:20px;font-size:.75rem;font-weight:700}
+        .rarity-common{background:#666;color:white}.rarity-rare{background:#007bff;color:white}.rarity-epic{background:#6a0dad;color:white}.rarity-legendary{background:linear-gradient(135deg,var(--color-gold),var(--color-accent));color:white}
+        .equip-name{font-family:var(--font-heading);font-size:1.3rem;color:var(--color-gold);margin-bottom:.5rem;padding-right:80px}
+        .equip-stats{margin:1rem 0}
+        .stat-line{display:flex;justify-content:space-between;padding:.3rem 0;font-size:.9rem;border-bottom:1px solid rgba(255,255,255,.05)}
+        .stat-line .val{color:var(--color-accent);font-weight:600}
+        .faction-badge{display:inline-block;padding:.2rem .6rem;border-radius:4px;font-size:.75rem;font-weight:700;margin-right:.4rem}
+        .badge-old{background:rgba(196,30,58,.3);color:#c41e3a}.badge-new{background:rgba(34,139,34,.3);color:#228b22}.badge-swamp{background:rgba(106,13,173,.3);color:#6a0dad}
+        @media(max-width:768px){.equip-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <nav class="main-nav">
+        <div class="logo"><h1>🏰 Gothic 1 Remake</h1></div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Walkthrough</a>
+                <ul class="dropdown-menu"><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="visual-guide.html">Visual Guide</a></li><li><a href="map-guide.html">Map Guide</a></li><li><a href="quests.html">Quest List</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Tools</a>
+                <ul class="dropdown-menu"><li><a href="lock-solver.html">Lock Solver</a></li><li><a href="lockpicking-calculator.html">Calculator</a></li><li><a href="lockpicking.html">Lockpicking Guide</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Factions</a>
+                <ul class="dropdown-menu"><li><a href="factions-guide.html">Factions Overview</a></li><li><div class="dropdown-divider"></div></li><li><a href="factions-ultimate-guide.html">Ultimate Guide</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle" style="color:var(--color-gold)">Resources</a>
+                <ul class="dropdown-menu"><li><a href="bestiary.html">Bestiary</a></li><li><a href="equipment.html" class="active">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html">NPC Characters</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="system-requirements.html">System Requirements</a></li><li><a href="save-management.html">Save Management</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul>
+            </li>
+            <li class="nav-item">
+                <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                    <option value="en">🇬🇧 English</option><option value="de">🇩🇪 Deutsch</option><option value="fr">🇫🇷 Français</option><option value="it">🇮🇹 Italiano</option><option value="es">🇪🇸 Español</option><option value="ko">🇰🇷 한국어</option><option value="ja">🇯🇵 日本語</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="content-wrapper">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Equipment Guide</span></nav>
+    <section class="page-header">
+        <h1>⚔️ Equipment Guide</h1>
+        <p class="page-subtitle">Every weapon, armor set, and piece of gear — organized by faction and rarity</p>
+    </section>
+
+    <!-- Faction Gear Overview -->
+    <section class="guide-section">
+        <h2>Faction-Specific Equipment</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin:2rem 0">
+            <div style="background:var(--color-bg-light);border:2px solid #c41e3a;border-radius:12px;padding:2rem">
+                <h3 style="color:#c41e3a;font-family:var(--font-heading);margin-bottom:1rem">🔥 Old Camp Gear</h3>
+                <p style="color:var(--color-text-secondary);margin-bottom:1rem">Premium armor available early game. Fire magic focus. Best heavy armor progression in the game.</p>
+                <ul style="list-style:none;margin-left:0">
+                    <li style="padding:.3rem 0"><span class="faction-badge badge-old">Rare</span> Shadow Armor (Initiation Reward)</li>
+                    <li style="padding:.3rem 0"><span class="faction-badge badge-old">Epic</span> Guard Captain's Sword</li>
+                    <li style="padding:.3rem 0"><span class="faction-badge badge-old">Rare</span> Fire Rune - Basic (from Torres)</li>
+                    <li style="padding:.3rem 0"><span class="faction-badge badge-old">Epic</span> Inner Circle Armor</li>
+                </ul>
+            </div>
+            <div style="background:var(--color-bg-light);border:2px solid #228b22;border-radius:12px;padding:2rem">
+                <h3 style="color:#228b22;font-family:var(--font-heading);margin-bottom:1rem">💧 New Camp Gear</h3>
+                <p style="color:var(--color-text-secondary);margin-bottom:1rem">Unique weapons not found elsewhere. Best two-handed and ranged options. High-risk, high-reward loadout.</p>
+                <ul style="list-style:none;margin-left:0">
+                    <li style="padding:.3rem 0"><span class="faction-badge badge-new">Rare</span> Mercenary Leather Armor</li>
+                    <li style="padding:.3rem 0"><span class="faction-badge badge-new">Epic</span> Heavy Two-Handed Axe</li>
+                    <li style="padding:.3rem 0"><span class="faction-badge badge-new">Rare</span> Water Ring (Freeze enchant)</li>
+                    <li style="padding:.3rem 0"><span class="faction-badge badge-new">Legendary</span> Rice Lord's Unique Dagger</li>
+                </ul>
+            </div>
+            <div style="background:var(--color-bg-light);border:2px solid #6a0dad;border-radius:12px;padding:2rem">
+                <h3 style="color:#6a0dad;font-family:var(--font-heading);margin-bottom:1rem">🌀 Swamp Camp Gear</h3>
+                <p style="color:var(--color-text-secondary);margin-bottom:1rem">Light armor with magic bonuses. Unique spells and magical items. Tactical, not tanky.</p>
+                <ul style="list-style:none;margin-left:0">
+                    <li style="padding:.3rem 0"><span class="faction-badge badge-swamp">Rare</span> Novice Robes</li>
+                    <li style="padding:.3rem 0"><span class="faction-badge badge-swamp">Epic</span> Templar Armor</li>
+                    <li style="padding:.3rem 0"><span class="faction-badge badge-swamp">Rare</span> Sleep Spell Scroll</li>
+                    <li style="padding:.3rem 0"><span class="faction-badge badge-swamp">Legendary</span> Spirit Staff</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weapons Grid -->
+    <section class="guide-section">
+        <h2>🗡️ Weapon Arsenal</h2>
+        <div class="equip-grid">
+            <div class="equip-card">
+                <span class="equip-rarity rarity-common">Common</span>
+                <div class="equip-name">Rusty Sword</div>
+                <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem">Your first weapon. Found on the beach or from early enemies.</p>
+                <div class="equip-stats">
+                    <div class="stat-line"><span>Damage</span><span class="val">5-8</span></div>
+                    <div class="stat-line"><span>Reach</span><span class="val">Short</span></div>
+                    <div class="stat-line"><span>Requirements</span><span class="val">None</span></div>
+                    <div class="stat-line"><span>Best For</span><span class="val">Level 1-3</span></div>
+                </div>
+            </div>
+            <div class="equip-card">
+                <span class="equip-rarity rarity-rare">Rare</span>
+                <div class="equip-name">Sword of Sentry</div>
+                <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem">Quest reward from Wesley (Old Camp guard captain). Your first real upgrade.</p>
+                <div class="equip-stats">
+                    <div class="stat-line"><span>Damage</span><span class="val">12-18</span></div>
+                    <div class="stat-line"><span>Reach</span><span class="val">Medium</span></div>
+                    <div class="stat-line"><span>Requirements</span><span class="val">Strength 12</span></div>
+                    <div class="stat-line"><span>Best For</span><span class="val">Level 5-8</span></div>
+                </div>
+            </div>
+            <div class="equip-card">
+                <span class="equip-rarity rarity-epic">Epic</span>
+                <div class="equip-name">Heavy Two-Handed Axe</div>
+                <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem"><span class="faction-badge badge-new">New Camp</span> Premium weapon for two-handed builds. Devastating damage, slow swings.</p>
+                <div class="equip-stats">
+                    <div class="stat-line"><span>Damage</span><span class="val">25-40</span></div>
+                    <div class="stat-line"><span>Reach</span><span class="val">Long</span></div>
+                    <div class="stat-line"><span>Requirements</span><span class="val">Strength 18</span></div>
+                    <div class="stat-line"><span>Best For</span><span class="val">Level 10+</span></div>
+                </div>
+            </div>
+            <div class="equip-card legendary">
+                <span class="equip-rarity rarity-legendary">Legendary</span>
+                <div class="equip-name">Spirit Staff</div>
+                <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem"><span class="faction-badge badge-swamp">Swamp Camp</span> Top-tier magical weapon. Channels spirit magic with amplified power.</p>
+                <div class="equip-stats">
+                    <div class="stat-line"><span>Damage</span><span class="val">15-22 + Magic</span></div>
+                    <div class="stat-line"><span>Reach</span><span class="val">Long</span></div>
+                    <div class="stat-line"><span>Requirements</span><span class="val">Mana 20</span></div>
+                    <div class="stat-line"><span>Best For</span><span class="val">Endgame caster</span></div>
+                </div>
+            </div>
+            <div class="equip-card">
+                <span class="equip-rarity rarity-rare">Rare</span>
+                <div class="equip-name">Infantry Bow</div>
+                <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem">Reliable ranged option available from New Camp merchants. Good for pulling and kiting enemies.</p>
+                <div class="equip-stats">
+                    <div class="stat-line"><span>Damage</span><span class="val">10-15</span></div>
+                    <div class="stat-line"><span>Range</span><span class="val">Long</span></div>
+                    <div class="stat-line"><span>Requirements</span><span class="val">Dexterity 10</span></div>
+                    <div class="stat-line"><span>Best For</span><span class="val">Any level</span></div>
+                </div>
+            </div>
+            <div class="equip-card legendary">
+                <span class="equip-rarity rarity-legendary">Legendary</span>
+                <div class="equip-name">Rice Lord's Unique Dagger</div>
+                <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem"><span class="faction-badge badge-new">New Camp</span> Fast, deadly, with poison coating. Quest reward from Rice Lord's questline.</p>
+                <div class="equip-stats">
+                    <div class="stat-line"><span>Damage</span><span class="val">18-25 + Poison</span></div>
+                    <div class="stat-line"><span>Speed</span><span class="val">Very Fast</span></div>
+                    <div class="stat-line"><span>Requirements</span><span class="val">Dexterity 16</span></div>
+                    <div class="stat-line"><span>Best For</span><span class="val">Stealth builds</span></div>
+                </div>
+            </div>
+            <div class="equip-card">
+                <span class="equip-rarity rarity-epic">Epic</span>
+                <div class="equip-name">Fire Rune - Advanced</div>
+                <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem"><span class="faction-badge badge-old">Old Camp</span> Upgraded fire magic. Purchased from Torres after proving yourself.</p>
+                <div class="equip-stats">
+                    <div class="stat-line"><span>Spell Type</span><span class="val">Fire (AoE)</span></div>
+                    <div class="stat-line"><span>Mana Cost</span><span class="val">25</span></div>
+                    <div class="stat-line"><span>Requirements</span><span class="val">Mana 12</span></div>
+                    <div class="stat-line"><span>Best For</span><span class="val">Magic builds</span></div>
+                </div>
+            </div>
+            <div class="equip-card">
+                <span class="equip-rarity rarity-epic">Epic</span>
+                <div class="equip-name">Water Ring</div>
+                <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem"><span class="faction-badge badge-new">New Camp</span> Freezes enemies on activation. Crowd control essential for New Camp builds.</p>
+                <div class="equip-stats">
+                    <div class="stat-line"><span>Effect</span><span class="val">Freeze (3s)</span></div>
+                    <div class="stat-line"><span>Cooldown</span><span class="val">30 seconds</span></div>
+                    <div class="stat-line"><span>Requirements</span><span class="val">Mana 10</span></div>
+                    <div class="stat-line"><span>Best For</span><span class="val">Crowd control</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Armor Tiers -->
+    <section class="guide-section">
+        <h2>🛡️ Armor Progression By Faction</h2>
+        <table class="lock-table" style="margin:2rem 0">
+            <thead><tr><th>Tier</th><th>Old Camp 🔥</th><th>New Camp 💧</th><th>Swamp Camp 🌀</th><th>Defense</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Starter</strong></td><td>Prisoner Rags</td><td>Prisoner Rags</td><td>Prisoner Rags</td><td>Minimal</td></tr>
+                <tr><td><strong>Basic</strong></td><td>Leather Vest</td><td>Scavenged Armor</td><td>Acolyte Robes</td><td>Low</td></tr>
+                <tr><td><strong>Intermediate</strong></td><td>Guard Armor</td><td>Mercenary Leather</td><td>Novice Robes</td><td>Moderate</td></tr>
+                <tr><td><strong>Advanced</strong></td><td>Shadow Armor</td><td>Bandit Commander Gear</td><td>Templar Armor</td><td>High</td></tr>
+                <tr><td><strong>Endgame</strong></td><td>Inner Circle Armor</td><td>Rice Lord's Vestments</td><td>High Templar Robes</td><td>Maximum</td></tr>
+            </tbody>
+        </table>
+        <div class="info-box note"><strong>📌 Note:</strong> Armor sets are faction-locked. Once you commit to a faction, the other factions' armor becomes unavailable. Choose carefully!</div>
+    </section>
+
+    <!-- Gear Acquisition -->
+    <section class="guide-section">
+        <h2>💰 How to Get Better Gear</h2>
+        <div class="tips-grid">
+            <div class="tip-card"><h3>🎁 Quest Rewards</h3><p>Faction initiation quests give the best gear. Old Camp: Shadow Armor from Diego's trial. New Camp: unique weapons from Rice Lord. Swamp Camp: Templar equipment from spiritual guides.</p></div>
+            <div class="tip-card"><h3>🛒 Merchants</h3><p>Torres (Old Camp) sells magical items and runes. New Camp merchants stock unique weapons. Graham sells maps — essential for finding hidden gear caches.</p></div>
+            <div class="tip-card"><h3>🔐 Locked Chests</h3><p>The best equipment is behind puzzle locks. Collapsed Tower (7 plates) guards legendary items. Use the <a href="lock-solver.html">Lock Solver</a> to crack them without damage.</p></div>
+            <div class="tip-card"><h3>⚔️ Enemy Drops</h3><p>Orc warriors drop high-tier weapons. Shadowbeasts drop rare hides (crafting). Minecrawlers drop chitin (armor crafting). Boss enemies drop legendary-tier loot.</p></div>
+            <div class="tip-card"><h3>🔨 Crafting</h3><p>Combine monster drops at crafting stations. Shadow Hide + Ore = reinforced armor. Venom Glands + weapon = poison coating. Spider Silk + leather = light armor upgrade.</p></div>
+            <div class="tip-card"><h3>🔄 Trading Economy</h3><p>Sell excess herbs, meat, and monster parts for ore coins. Buy better gear from faction merchants. Prices vary by camp — shop around before committing.</p></div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="skills-guide.html">Skills Guide</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="walkthrough.html">Walkthrough</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Gothic 1 Remake. Fan-made guide.</p></div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

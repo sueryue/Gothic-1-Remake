@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gothic 1 Remake Quest List - All Quests by Faction</title>
+    <meta name="description" content="Complete Gothic 1 Remake quest database. All quests organized by faction: Old Camp, New Camp, Swamp Camp. Quest locations, rewards, and requirements.">
+    <meta name="keywords" content="Gothic 1 Remake quests, quest list, Old Camp quests, New Camp quests, Swamp Camp quests">
+    <link rel="canonical" href="https://sueryue.github.io/Gothic-1-Remake/quests.html">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .quest-section{margin:3rem 0}
+        .quest-section h2{font-family:var(--font-heading);font-size:1.6rem;margin-bottom:1.5rem;padding-bottom:.5rem}
+        .quest-section h2.old{color:#c41e3a;border-bottom:2px solid #c41e3a}
+        .quest-section h2.new{color:#228b22;border-bottom:2px solid #228b22}
+        .quest-section h2.swamp{color:#6a0dad;border-bottom:2px solid #6a0dad}
+        .quest-section h2.shared{color:var(--color-gold);border-bottom:2px solid var(--color-gold)}
+        .quest-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.9rem}
+        .quest-table th{background:var(--color-bg-medium);color:var(--color-gold);padding:.8rem;text-align:left;font-family:var(--font-heading);font-size:.85rem}
+        .quest-table td{padding:.8rem;border-bottom:1px solid var(--color-border);color:var(--color-text-secondary)}
+        .quest-table tr:hover{background:rgba(255,215,0,.03)}
+        .quest-table tr:hover td{color:var(--color-text-primary)}
+        .quest-phase{display:inline-block;padding:.2rem .6rem;border-radius:4px;font-size:.75rem;font-weight:700}
+        .phase-early{background:rgba(40,167,69,.2);color:#28a745}
+        .phase-mid{background:rgba(255,165,0,.2);color:orange}
+        .phase-late{background:rgba(233,69,96,.2);color:var(--color-accent)}
+        .quest-reward{color:var(--color-gold);font-size:.8rem}
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <nav class="main-nav">
+        <div class="logo"><h1>&#127984; Gothic 1 Remake</h1></div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle" style="color:var(--color-gold)">Walkthrough</a>
+                <ul class="dropdown-menu"><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="visual-guide.html">Visual Guide</a></li><li><a href="map-guide.html">Map Guide</a></li><li><a href="quests.html" class="active">Quest List</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Tools</a>
+                <ul class="dropdown-menu"><li><a href="lock-solver.html">Lock Solver</a></li><li><a href="lockpicking-calculator.html">Calculator</a></li><li><a href="lockpicking.html">Lockpicking Guide</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Factions</a>
+                <ul class="dropdown-menu"><li><a href="factions-guide.html">Factions Overview</a></li><li><div class="dropdown-divider"></div></li><li><a href="factions-ultimate-guide.html">Ultimate Guide</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Resources</a>
+                <ul class="dropdown-menu"><li><a href="bestiary.html">Bestiary</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html">NPC Characters</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="system-requirements.html">System Requirements</a></li><li><a href="save-management.html">Save Management</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul>
+            </li>
+            <li class="nav-item">
+                <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                    <option value="en">&#127468;&#127463; English</option><option value="de">&#127465;&#127466; Deutsch</option><option value="fr">&#127467;&#127482; Fran&ccedil;ais</option><option value="it">&#127470;&#127481; Italiano</option><option value="es">&#127466;&#127480; Espa&ntilde;ol</option><option value="ko">&#127472;&#127479; &#54620;&#44397;&#50612;</option><option value="ja">&#127471;&#127477; &#26085;&#26412;&#35486;</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="content-wrapper">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Quest List</span></nav>
+
+    <section class="page-header">
+        <h1>&#128221; Quest Database</h1>
+        <p class="page-subtitle">All quests organized by faction and game phase</p>
+    </section>
+
+    <div class="info-box important"><strong>&#9888;&#65039; Note:</strong> Some quests become unavailable after joining a faction or advancing the main story. Complete side quests before progressing!</div>
+
+    <!-- Shared / Opening Quests -->
+    <div class="quest-section" id="shared">
+        <h2 class="shared">&#127760; Opening Quests (All Factions)</h2>
+        <table class="quest-table">
+            <thead><tr><th>Quest</th><th>Giver</th><th>Location</th><th>Phase</th><th>Reward</th></tr></thead>
+            <tbody>
+                <tr><td>Washed Ashore</td><td>Automatic</td><td>Beach</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">None (tutorial)</span></td></tr>
+                <tr><td>Follow Diego to Old Camp</td><td>Diego</td><td>Beach Path</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">Safe passage, lore intro</span></td></tr>
+                <tr><td>Explore the Camp</td><td>Diego</td><td>Old Camp</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">XP, orientation</span></td></tr>
+                <tr><td>Learn Basic Combat</td><td>Arena Master</td><td>Old Camp Arena</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">XP, combat tutorial</span></td></tr>
+                <tr><td>Scout All Three Camps</td><td>Self-directed</td><td>Colony-wide</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">XP, faction knowledge</span></td></tr>
+                <tr><td>Buy a Map</td><td>Graham</td><td>Old Camp</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">Marked map with routes</span></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Old Camp Quests -->
+    <div class="quest-section" id="old-camp">
+        <h2 class="old">&#128293; Old Camp Quests</h2>
+        <table class="quest-table">
+            <thead><tr><th>Quest</th><th>Giver</th><th>Type</th><th>Phase</th><th>Key Reward</th></tr></thead>
+            <tbody>
+                <tr><td>Cooking Ingredients</td><td>Chef Snuf</td><td>Collection</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">XP, food, ore coins</span></td></tr>
+                <tr><td>Missing Guard (Nick)</td><td>Wesley</td><td>Investigation</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">XP, patrol route info</span></td></tr>
+                <tr><td>Herb Gathering</td><td>Camp Healer</td><td>Collection</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">XP, healing supplies</span></td></tr>
+                <tr><td>Arena Training</td><td>Arena Master</td><td>Combat</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">XP, combat skill</span></td></tr>
+                <tr><td>Find Pinks</td><td>Diego</td><td>Search</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">Unlock stealth training</span></td></tr>
+                <tr><td>Challenge Cole &amp; Kyle</td><td>Self</td><td>Combat</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">XP, combat practice</span></td></tr>
+                <tr><td>Sword of Sentry</td><td>Wesley</td><td>Main Quest</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">Sword of Sentry weapon</span></td></tr>
+                <tr><td>Supply List from Old Mine</td><td>Diego</td><td>Initiation</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">Initiation progress</span></td></tr>
+                <tr><td>Gather Shadow Support</td><td>Diego</td><td>Diplomacy</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">Faction reputation</span></td></tr>
+                <tr><td>Meet Gomez</td><td>Diego</td><td>Initiation</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">Shadow Armor, faction join</span></td></tr>
+                <tr><td>Old Mine Exploration</td><td>Camp Leader</td><td>Dungeon</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">Ore, XP, gear</span></td></tr>
+                <tr><td>Fire Rune Training</td><td>Torres</td><td>Magic</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">Fire Rune - Basic</span></td></tr>
+                <tr><td>Inner Circle Access</td><td>Gomez</td><td>Main Quest</td><td><span class="quest-phase phase-late">Late</span></td><td><span class="quest-reward">Inner Circle Armor, treasures</span></td></tr>
+                <tr><td>Advanced Fire Magic</td><td>Torres</td><td>Magic</td><td><span class="quest-phase phase-late">Late</span></td><td><span class="quest-reward">Fire Rune - Advanced</span></td></tr>
+                <tr><td>Confront the Dragons</td><td>Gomez</td><td>Main Quest</td><td><span class="quest-phase phase-late">Late</span></td><td><span class="quest-reward">Endgame progression</span></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- New Camp Quests -->
+    <div class="quest-section" id="new-camp">
+        <h2 class="new">&#128167; New Camp Quests</h2>
+        <table class="quest-table">
+            <thead><tr><th>Quest</th><th>Giver</th><th>Type</th><th>Phase</th><th>Key Reward</th></tr></thead>
+            <tbody>
+                <tr><td>Modify the Supply List</td><td>Lares</td><td>Stealth/Sabotage</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">XP, New Camp trust</span></td></tr>
+                <tr><td>Deliver List to Lares</td><td>Lares</td><td>Delivery</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">Initiation progress</span></td></tr>
+                <tr><td>Acquire Mordrag's Ring</td><td>Lares</td><td>Acquisition</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">Faction reputation</span></td></tr>
+                <tr><td>Gather Minerals</td><td>Camp Quartermaster</td><td>Collection</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">XP, ore coins</span></td></tr>
+                <tr><td>Rice Lord Collaboration</td><td>Rice Lord</td><td>Diplomacy</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">Unique weapon access</span></td></tr>
+                <tr><td>Supply Convoy Ambush</td><td>Lares</td><td>Combat (NEW)</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">XP, loot, faction join</span></td></tr>
+                <tr><td>Sabotage Old Camp Supply Line</td><td>Camp Leader</td><td>Sabotage</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">Mercenary Leather Armor</span></td></tr>
+                <tr><td>Water Ring Acquisition</td><td>Water Mage</td><td>Magic</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">Water Ring (Freeze)</span></td></tr>
+                <tr><td>Rice Lord's Errand</td><td>Rice Lord</td><td>Quest Chain</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">Rice Lord's Unique Dagger</span></td></tr>
+                <tr><td>Thieves' Tools</td><td>Camp Thief</td><td>Skill</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">Lockpick discount, stealth gear</span></td></tr>
+                <tr><td>Barrier Breach Device</td><td>Lares</td><td>Main Quest</td><td><span class="quest-phase phase-late">Late</span></td><td><span class="quest-reward">Endgame progression</span></td></tr>
+                <tr><td>Infiltrate Old Camp</td><td>Camp Leader</td><td>Main Quest</td><td><span class="quest-phase phase-late">Late</span></td><td><span class="quest-reward">Endgame access</span></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Swamp Camp Quests -->
+    <div class="quest-section" id="swamp-camp">
+        <h2 class="swamp">&#127744; Swamp Camp Quests</h2>
+        <table class="quest-table">
+            <thead><tr><th>Quest</th><th>Giver</th><th>Type</th><th>Phase</th><th>Key Reward</th></tr></thead>
+            <tbody>
+                <tr><td>Impress the First Guide</td><td>Spiritual Guide 1</td><td>Proof of Ingenuity</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">Guide's favor, XP</span></td></tr>
+                <tr><td>Impress the Second Guide</td><td>Spiritual Guide 2</td><td>Collection Task</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">Guide's favor, XP</span></td></tr>
+                <tr><td>Impress the Third Guide</td><td>Spiritual Guide 3</td><td>Magical Test</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">Guide's favor, XP</span></td></tr>
+                <tr><td>Impress the Fourth Guide</td><td>Spiritual Guide 4</td><td>Spiritual Trial</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">Guide's favor, XP</span></td></tr>
+                <tr><td>Become a Novice</td><td>Y'Berion</td><td>Initiation</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">Novice Robes, faction join</span></td></tr>
+                <tr><td>Learn Spirit Magic - Sleep</td><td>Temple Master</td><td>Magic</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">Sleep Spell</span></td></tr>
+                <tr><td>Learn Spirit Magic - Telekinesis</td><td>Temple Master</td><td>Magic</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">Telekinesis Spell</span></td></tr>
+                <tr><td>Gather Swamp Herbs</td><td>Herbalist</td><td>Collection</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">XP, potion recipes</span></td></tr>
+                <tr><td>Templar Trial</td><td>Y'Berion</td><td>Rank Advancement</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">Templar Armor</span></td></tr>
+                <tr><td>Spirit Staff Recovery</td><td>Temple Master</td><td>Dungeon</td><td><span class="quest-phase phase-late">Late</span></td><td><span class="quest-reward">Spirit Staff (legendary)</span></td></tr>
+                <tr><td>Wind Hammer Mastery</td><td>Temple Master</td><td>Magic</td><td><span class="quest-phase phase-late">Late</span></td><td><span class="quest-reward">Wind Hammer Spell</span></td></tr>
+                <tr><td>Commune with the Sleeper</td><td>Y'Berion</td><td>Main Quest</td><td><span class="quest-phase phase-late">Late</span></td><td><span class="quest-reward">Endgame progression</span></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Side Quests -->
+    <div class="quest-section" id="side">
+        <h2 class="shared">&#128218; Side Quests &amp; Activities</h2>
+        <table class="quest-table">
+            <thead><tr><th>Quest</th><th>Location</th><th>Type</th><th>Phase</th><th>Key Reward</th></tr></thead>
+            <tbody>
+                <tr><td>Lockpicking Training</td><td>Training Center</td><td>Skill</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">Lockpick skill unlock</span></td></tr>
+                <tr><td>5-Plate Locks</td><td>Orc Camp, Mountain Pass</td><td>Puzzle</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">Hidden treasure</span></td></tr>
+                <tr><td>Collapsed Tower Lock</td><td>Collapsed Tower</td><td>Puzzle</td><td><span class="quest-phase phase-late">Late</span></td><td><span class="quest-reward">Legendary items (57-step puzzle)</span></td></tr>
+                <tr><td>Wolf Pack Clearing</td><td>Forest Areas</td><td>Combat</td><td><span class="quest-phase phase-early">Early</span></td><td><span class="quest-reward">XP, wolf hides</span></td></tr>
+                <tr><td>Bandit Camp Raid</td><td>Roads between camps</td><td>Combat</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">XP, stolen weapons</span></td></tr>
+                <tr><td>Orc Scout Elimination</td><td>Border Areas</td><td>Combat</td><td><span class="quest-phase phase-mid">Mid</span></td><td><span class="quest-reward">XP, orc weapons</span></td></tr>
+                <tr><td>Minecrawler Nest Clearing</td><td>Old Mine, Deep Mines</td><td>Dungeon</td><td><span class="quest-phase phase-late">Late</span></td><td><span class="quest-reward">Chitin armor materials</span></td></tr>
+                <tr><td>Shadowbeast Hunt</td><td>Deep Forest</td><td>Combat</td><td><span class="quest-phase phase-late">Late</span></td><td><span class="quest-reward">Shadow Hide (crafting)</span></td></tr>
+                <tr><td>Ancient Ruins Exploration</td><td>Ancient Ruins</td><td>Exploration</td><td><span class="quest-phase phase-late">Late</span></td><td><span class="quest-reward">Golem boss, ancient cores</span></td></tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="factions-guide.html">Faction Guide</a></li><li><a href="lock-solver.html">Lock Solver</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Gothic 1 Remake. Fan-made guide.</p></div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

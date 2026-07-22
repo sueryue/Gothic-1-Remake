@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gothic 1 Remake Save Management - Save Strategies & Backup Guide</title>
+    <meta name="description" content="Gothic 1 Remake save management guide. Save strategies, file locations, backup tips, and how to prevent losing progress.">
+    <meta name="keywords" content="Gothic 1 Remake save, save file location, backup saves, save management, save strategy">
+    <link rel="canonical" href="https://sueryue.github.io/Gothic-1-Remake/save-management.html">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .save-tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0}
+        .tip-card-large{background:var(--color-bg-light);border:2px solid var(--color-border);border-radius:12px;padding:1.5rem;transition:var(--transition)}
+        .tip-card-large:hover{border-color:var(--color-gold)}
+        .tip-card-large .tip-icon{font-size:2rem;margin-bottom:1rem}
+        .tip-card-large h3{font-family:var(--font-heading);color:var(--color-gold);margin-bottom:.8rem;font-size:1.2rem}
+        .tip-card-large p{color:var(--color-text-secondary);line-height:1.7;font-size:.9rem}
+        .critical-moment{background:rgba(233,69,96,.05);border-left:4px solid var(--color-accent);padding:1rem 1.5rem;margin:1rem 0;border-radius:0 8px 8px 0}
+        .critical-moment h4{color:var(--color-accent);font-family:var(--font-heading);margin-bottom:.5rem}
+        .critical-moment p{color:var(--color-text-secondary);font-size:.9rem}
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <nav class="main-nav">
+        <div class="logo"><h1>&#127984; Gothic 1 Remake</h1></div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Walkthrough</a>
+                <ul class="dropdown-menu"><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="visual-guide.html">Visual Guide</a></li><li><a href="map-guide.html">Map Guide</a></li><li><a href="quests.html">Quest List</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Tools</a>
+                <ul class="dropdown-menu"><li><a href="lock-solver.html">Lock Solver</a></li><li><a href="lockpicking-calculator.html">Calculator</a></li><li><a href="lockpicking.html">Lockpicking Guide</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Factions</a>
+                <ul class="dropdown-menu"><li><a href="factions-guide.html">Factions Overview</a></li><li><div class="dropdown-divider"></div></li><li><a href="factions-ultimate-guide.html">Ultimate Guide</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle" style="color:var(--color-gold)">Resources</a>
+                <ul class="dropdown-menu"><li><a href="bestiary.html">Bestiary</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html">NPC Characters</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="system-requirements.html">System Requirements</a></li><li><a href="save-management.html" class="active">Save Management</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul>
+            </li>
+            <li class="nav-item">
+                <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                    <option value="en">&#127468;&#127463; English</option><option value="de">&#127465;&#127466; Deutsch</option><option value="fr">&#127467;&#127482; Fran&ccedil;ais</option><option value="it">&#127470;&#127481; Italiano</option><option value="es">&#127466;&#127480; Espa&ntilde;ol</option><option value="ko">&#127472;&#127479; &#54620;&#44397;&#50612;</option><option value="ja">&#127471;&#127477; &#26085;&#26412;&#35486;</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="content-wrapper">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Save Management</span></nav>
+
+    <section class="page-header">
+        <h1>&#128190; Save Management</h1>
+        <p class="page-subtitle">How to save smart, avoid losing progress, and manage your save files</p>
+    </section>
+
+    <div class="info-box warning"><strong>&#9888;&#65039; The number one complaint from Gothic players:</strong> Lost progress because they relied on a single save slot. Don't be that person. Read this page before you start playing.</div>
+
+    <!-- Save System Overview -->
+    <section class="guide-section">
+        <h2>&#128214; How Saving Works</h2>
+        <div class="save-tips">
+            <div class="tip-card-large">
+                <div class="tip-icon">&#128190;</div>
+                <h3>Manual Saves</h3>
+                <p>You can save at any time from the pause menu. Manual saves are permanent — they stay until you delete them. You can have as many manual save slots as your storage allows. This is your primary save method.</p>
+            </div>
+            <div class="tip-card-large">
+                <div class="tip-icon">&#9889;</div>
+                <h3>Quicksave (Q Key)</h3>
+                <p>Press Q for a fast save without opening the menu. But here's the catch: quicksave overwrites itself each time. The game only keeps ONE quicksave. If you quicksave in a bad situation, your previous quicksave is gone.</p>
+            </div>
+            <div class="tip-card-large">
+                <div class="tip-icon">&#9729;&#65039;</div>
+                <h3>Steam Cloud</h3>
+                <p>Gothic 1 Remake supports Steam Cloud sync. Your saves are automatically uploaded to Steam's servers and synced across devices. This also serves as an automatic backup — but don't rely on it alone.</p>
+            </div>
+            <div class="tip-card-large">
+                <div class="tip-icon">&#128196;</div>
+                <h3>Auto-Saves</h3>
+                <p>The game auto-saves at certain story checkpoints, but these are infrequent. Do NOT rely on auto-saves. The game is designed around manual saving, and auto-save points can be hours apart.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Critical Save Points -->
+    <section class="guide-section">
+        <h2>&#128680; Critical Moments — Save Here!</h2>
+        <p style="color:var(--color-text-secondary);margin-bottom:1.5rem">These are the moments when you absolutely should create a fresh manual save. Each one represents a potential point of no return or a high-risk situation.</p>
+
+        <div class="critical-moment"><h4>&#128274; Before Every Puzzle Lock</h4><p>Lockpicks are limited and some locks have maximum attempt limits. If you break all your lockpicks or permanently jam a lock, you'll want a save to reload from. <a href="lock-solver.html">Use the solver</a> first, then save before attempting.</p></div>
+        <div class="critical-moment"><h4>&#9876;&#65039; Before Faction Initiation</h4><p>Choosing a faction is PERMANENT. Save before completing any faction's final initiation quest. This lets you try different factions without replaying the entire opening.</p></div>
+        <div class="critical-moment"><h4>&#128121; Before Boss Fights</h4><p>Dragons, golems, and faction leaders can kill you quickly if you're unprepared. Save just outside the boss arena so you don't have to re-clear the area leading up to it.</p></div>
+        <div class="critical-moment"><h4>&#127939; Before Traveling Between Camps</h4><p>The roads between camps are dangerous, especially at low levels. Bandits, wolves, and beasts patrol 24/7. Save at camp gates before heading out.</p></div>
+        <div class="critical-moment"><h4>&#128220; Before Major Story Choices</h4><p>Several quests have branching outcomes based on your dialogue choices. Saving before conversations lets you explore different outcomes without committing.</p></div>
+        <div class="critical-moment"><h4>&#127919; Before the Endgame</h4><p>The final confrontation locks you into the ending for your faction. Save before entering the endgame area. Create a named save like "Pre-Ending - Old Camp" so you can find it later.</p></div>
+    </section>
+
+    <!-- Save Strategy -->
+    <section class="guide-section">
+        <h2>&#128260; The 3-Slot Rotation Strategy</h2>
+        <p style="color:var(--color-text-secondary);margin-bottom:1.5rem">The most reliable way to avoid losing progress. Keep three manual save slots and rotate between them.</p>
+        <div class="save-tips">
+            <div class="tip-card-large">
+                <div class="tip-icon">1&#65039;&#8419;</div>
+                <h3>Slot 1: Safe Zone</h3>
+                <p>Save here when you're in a camp or safe area. This is your fallback — a known-safe save you can always return to. Update this whenever you return to a camp after questing.</p>
+            </div>
+            <div class="tip-card-large">
+                <div class="tip-icon">2&#65039;&#8419;</div>
+                <h3>Slot 2: Recent Progress</h3>
+                <p>Save here after completing quests or reaching important milestones. Update every 30 minutes or so. If Slot 3 goes bad, you only lose half an hour max.</p>
+            </div>
+            <div class="tip-card-large">
+                <div class="tip-icon">3&#65039;&#8419;</div>
+                <h3>Slot 3: Active Adventure</h3>
+                <p>Save here frequently during exploration — before entering caves, before combat, after finding loot. This is your high-frequency save that you update every few minutes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Save File Location -->
+    <section class="guide-section">
+        <h2>&#128193; Save File Locations</h2>
+        <table class="lock-table" style="margin:2rem 0">
+            <thead><tr><th>Platform</th><th>Save File Path</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Steam (Windows)</strong></td><td><code>%USERPROFILE%\Saved Games\Gothic 1 Remake\</code> or Steam Cloud location</td></tr>
+                <tr><td><strong>Steam Cloud Backup</strong></td><td>Automatically synced — accessible via Steam Cloud online</td></tr>
+            </tbody>
+        </table>
+        <div class="info-box note"><strong>&#128193; Manual Backups:</strong> Periodically copy your save folder to another location — an external drive, cloud storage, or a different folder on your PC. Hard drive failures and game updates can corrupt saves. A manual backup is your insurance policy.</div>
+    </section>
+
+    <!-- Common Save Issues -->
+    <section class="guide-section">
+        <h2>&#9888;&#65039; Common Save Problems &amp; Solutions</h2>
+        <div class="save-tips">
+            <div class="tip-card-large">
+                <div class="tip-icon">&#10060;</div>
+                <h3>Corrupted Save File</h3>
+                <p>If a save won't load, try loading an earlier save and then reloading the corrupted one. If that fails, the save is likely lost. This is why you keep multiple slots — you only lose one save, not your whole run.</p>
+            </div>
+            <div class="tip-card-large">
+                <div class="tip-icon">&#128259;</div>
+                <h3>Steam Cloud Conflict</h3>
+                <p>If you play on multiple computers, Steam may ask which save version to keep when conflicts occur. Always choose the newer file. Manually back up saves before switching devices to be safe.</p>
+            </div>
+            <div class="tip-card-large">
+                <div class="tip-icon">&#128450;&#65039;</div>
+                <h3>Running Out of Space</h3>
+                <p>Each save file can be several MB. If you have dozens of saves, they can use significant disk space. Periodically clean out old saves you no longer need. Keep the ones at major story milestones.</p>
+            </div>
+            <div class="tip-card-large">
+                <div class="tip-icon">&#128260;</div>
+                <h3>Quicksave Regret</h3>
+                <p>If you quicksaved right before dying or in an unwinnable situation, immediately pause and load the quicksave, then load Slot 2 (your recent progress save). Never rely on quicksave alone for important moments.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="faq.html">FAQ</a></li><li><a href="system-requirements.html">System Requirements</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Gothic 1 Remake. Fan-made guide.</p></div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

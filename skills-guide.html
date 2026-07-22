@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gothic 1 Remake Skills & Builds Guide - Character Progression</title>
+    <meta name="description" content="Complete Gothic 1 Remake skills and character builds guide. Leveling strategies, stat allocation, best builds for each faction, and training mentors.">
+    <meta name="keywords" content="Gothic 1 Remake skills, builds, character builds, leveling guide, stat allocation, training mentors, best build">
+    <link rel="canonical" href="https://sueryue.github.io/Gothic-1-Remake/skills-guide.html">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .build-showcase{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;margin:2rem 0}
+        .build-card{background:var(--color-bg-light);border:2px solid var(--color-border);border-radius:12px;padding:2rem;transition:var(--transition)}
+        .build-card:hover{transform:translateY(-5px)}
+        .build-card.old{border-color:#c41e3a}.build-card.new{border-color:#228b22}.build-card.swamp{border-color:#6a0dad}
+        .build-header{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem}
+        .build-icon{font-size:2.5rem}
+        .build-name{font-family:var(--font-heading);font-size:1.4rem}
+        .stat-bar{margin:.8rem 0}
+        .stat-bar-label{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.3rem}
+        .stat-bar-fill{height:6px;border-radius:3px;background:var(--color-border);overflow:hidden}
+        .stat-bar-inner{height:100%;border-radius:3px;transition:width 1s}
+        .bar-str{background:var(--color-accent)}.bar-agi{background:#28a745}.bar-mana{background:#6a0dad}.bar-stm{background:orange}
+        .mentor-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin:2rem 0}
+        .mentor-card{background:var(--color-bg-medium);border:2px solid var(--color-border);border-radius:8px;padding:1.5rem;text-align:center}
+        .mentor-card h4{color:var(--color-gold);font-family:var(--font-heading);margin-bottom:.5rem}
+        .skill-tag{background:rgba(233,69,96,.15);color:var(--color-accent);padding:.2rem .7rem;border-radius:12px;font-size:.8rem;display:inline-block;margin:.2rem}
+        @media(max-width:768px){.build-showcase{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <nav class="main-nav">
+        <div class="logo"><h1>🏰 Gothic 1 Remake</h1></div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Walkthrough</a>
+                <ul class="dropdown-menu"><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="visual-guide.html">Visual Guide</a></li><li><a href="map-guide.html">Map Guide</a></li><li><a href="quests.html">Quest List</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Tools</a>
+                <ul class="dropdown-menu"><li><a href="lock-solver.html">Lock Solver</a></li><li><a href="lockpicking-calculator.html">Calculator</a></li><li><a href="lockpicking.html">Lockpicking Guide</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Factions</a>
+                <ul class="dropdown-menu"><li><a href="factions-guide.html">Factions Overview</a></li><li><div class="dropdown-divider"></div></li><li><a href="factions-ultimate-guide.html">Ultimate Guide</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle" style="color:var(--color-gold)">Resources</a>
+                <ul class="dropdown-menu"><li><a href="bestiary.html">Bestiary</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html" class="active">Skills &amp; Builds</a></li><li><a href="npc.html">NPC Characters</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="system-requirements.html">System Requirements</a></li><li><a href="save-management.html">Save Management</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul>
+            </li>
+            <li class="nav-item">
+                <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                    <option value="en">🇬🇧 English</option><option value="de">🇩🇪 Deutsch</option><option value="fr">🇫🇷 Français</option><option value="it">🇮🇹 Italiano</option><option value="es">🇪🇸 Español</option><option value="ko">🇰🇷 한국어</option><option value="ja">🇯🇵 日本語</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="content-wrapper">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Skills & Builds</span></nav>
+    <section class="page-header">
+        <h1>📈 Skills & Character Builds</h1>
+        <p class="page-subtitle">Stat allocation, training mentors, and build recommendations for each faction</p>
+    </section>
+
+    <!-- Core Stats -->
+    <section class="guide-section">
+        <h2>Core Stats Overview</h2>
+        <table class="lock-table">
+            <thead><tr><th>Stat</th><th>Effect</th><th>Priority By Faction</th><th>Hard Cap</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Strength</strong></td><td>Melee damage, weapon requirements, carry weight</td><td>Old Camp: ★★★★★<br>New Camp: ★★★★☆<br>Swamp Camp: ★★☆☆☆</td><td>100</td></tr>
+                <tr><td><strong>Dexterity</strong></td><td>Ranged damage, stealth, lockpicking, dodge speed</td><td>Old Camp: ★★☆☆☆<br>New Camp: ★★★★★<br>Swamp Camp: ★★★☆☆</td><td>100</td></tr>
+                <tr><td><strong>Mana</strong></td><td>Spell power, spell availability, magic resistance</td><td>Old Camp: ★★★☆☆<br>New Camp: ★★☆☆☆<br>Swamp Camp: ★★★★★</td><td>100</td></tr>
+                <tr><td><strong>Stamina</strong></td><td>Attack chains, sprint duration, block stamina</td><td>Old Camp: ★★★☆☆<br>New Camp: ★★★☆☆<br>Swamp Camp: ★★★☆☆</td><td>N/A</td></tr>
+                <tr><td><strong>Combat Skill</strong></td><td>Accuracy, critical hit chance, weapon proficiency</td><td>Old Camp: ★★★★★<br>New Camp: ★★★★★<br>Swamp Camp: ★★★☆☆</td><td>N/A</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Training Mentors -->
+    <section class="guide-section">
+        <h2>🎓 Training Mentors</h2>
+        <p>Each faction has specialized trainers. Visit them regularly to spend Learning Points (LP) earned from leveling up.</p>
+        <div class="mentor-list">
+            <div class="mentor-card">
+                <div style="font-size:2.5rem;margin-bottom:.5rem">🗡️</div>
+                <h4>Diego</h4><p style="color:var(--color-text-secondary);font-size:.9rem">Old Camp</p>
+                <div style="margin-top:.5rem"><span class="skill-tag">Strength</span><span class="skill-tag">Agility</span><span class="skill-tag">Stats</span></div>
+                <p style="color:var(--color-text-secondary);font-size:.8rem;margin-top:.5rem">Your first mentor. Teaches core stats. Find him at Old Camp entrance.</p>
+            </div>
+            <div class="mentor-card">
+                <div style="font-size:2.5rem;margin-bottom:.5rem">⚔️</div>
+                <h4>Skirti</h4><p style="color:var(--color-text-secondary);font-size:.9rem">Old Camp</p>
+                <div style="margin-top:.5rem"><span class="skill-tag">One-Handed</span><span class="skill-tag">Sword</span><span class="skill-tag">Combat</span></div>
+                <p style="color:var(--color-text-secondary);font-size:.8rem;margin-top:.5rem">One-handed weapon specialist. Arena trainer for combat practice.</p>
+            </div>
+            <div class="mentor-card">
+                <div style="font-size:2.5rem;margin-bottom:.5rem">🔮</div>
+                <h4>Torres</h4><p style="color:var(--color-text-secondary);font-size:.9rem">Old Camp</p>
+                <div style="margin-top:.5rem"><span class="skill-tag">Rune Magic</span><span class="skill-tag">Mana</span><span class="skill-tag">Magical Items</span></div>
+                <p style="color:var(--color-text-secondary);font-size:.8rem;margin-top:.5rem">Fire mage trainer. Sells magical items and teaches mana upgrades.</p>
+            </div>
+            <div class="mentor-card">
+                <div style="font-size:2.5rem;margin-bottom:.5rem">🏋️</div>
+                <h4>New Camp Trainers</h4><p style="color:var(--color-text-secondary);font-size:.9rem">New Camp</p>
+                <div style="margin-top:.5rem"><span class="skill-tag">Two-Handed</span><span class="skill-tag">Archery</span><span class="skill-tag">Stealth</span></div>
+                <p style="color:var(--color-text-secondary);font-size:.8rem;margin-top:.5rem">Multiple trainers for diverse combat styles. Two-handed weapon focus.</p>
+            </div>
+            <div class="mentor-card">
+                <div style="font-size:2.5rem;margin-bottom:.5rem">🌀</div>
+                <h4>4 Spiritual Guides</h4><p style="color:var(--color-text-secondary);font-size:.9rem">Swamp Camp</p>
+                <div style="margin-top:.5rem"><span class="skill-tag">Spirit Magic</span><span class="skill-tag">Sleep</span><span class="skill-tag">Telekinesis</span><span class="skill-tag">Templar</span></div>
+                <p style="color:var(--color-text-secondary);font-size:.8rem;margin-top:.5rem">Each guide teaches different aspects. Must impress all 4 to advance.</p>
+            </div>
+        </div>
+        <div class="info-box important"><strong>⚠️ Important:</strong> Don't randomly allocate stat points. Plan your build before spending LP. Respeccing is NOT available — every point is permanent.</div>
+    </section>
+
+    <!-- Build Archetypes -->
+    <section class="guide-section">
+        <h2>🎯 Recommended Builds</h2>
+        <div class="build-showcase">
+            <div class="build-card old">
+                <div class="build-header"><div class="build-icon">🔥</div><div class="build-name" style="color:#c41e3a">Knight Commander</div></div>
+                <p style="color:var(--color-text-secondary);margin-bottom:1rem">Heavy armor, sword-and-shield combat. Classic Old Camp warrior that overwhelms enemies with power and durability.</p>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Strength</span><span>85</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:85%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Stamina</span><span>60</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-stm" style="width:60%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Combat Skill</span><span>90</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:90%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Mana</span><span>25</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-mana" style="width:25%"></div></div></div>
+                <p style="margin-top:1rem;font-size:.85rem;color:var(--color-accent)"><strong>Key Skills:</strong> One-Handed Mastery, Heavy Armor Training, Shield Bash, Fire Resistance</p>
+                <p style="font-size:.85rem;color:var(--color-text-secondary)"><strong>Best Weapon:</strong> Guard Captain's Sword</p>
+            </div>
+
+            <div class="build-card new">
+                <div class="build-header"><div class="build-icon">💧</div><div class="build-name" style="color:#228b22">Shadow Assassin</div></div>
+                <p style="color:var(--color-text-secondary);margin-bottom:1rem">Fast, mobile, dual-wielding or dagger build. Hit-and-run tactics with poison and Water Ring crowd control.</p>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Dexterity</span><span>90</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-agi" style="width:90%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Strength</span><span>40</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:40%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Stamina</span><span>70</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-stm" style="width:70%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Mana</span><span>30</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-mana" style="width:30%"></div></div></div>
+                <p style="margin-top:1rem;font-size:.85rem;color:var(--color-accent)"><strong>Key Skills:</strong> Stealth, Dual Wield, Poison Blades, Dodge Mastery, Water Ring</p>
+                <p style="font-size:.85rem;color:var(--color-text-secondary)"><strong>Best Weapon:</strong> Rice Lord's Unique Dagger</p>
+            </div>
+
+            <div class="build-card new">
+                <div class="build-header"><div class="build-icon">🏹</div><div class="build-name" style="color:#228b22">Mercenary Vanguard</div></div>
+                <p style="color:var(--color-text-secondary);margin-bottom:1rem">Two-handed weapon specialist with heavy armor. Devastating single-hit damage and crowd-clearing AoE attacks.</p>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Strength</span><span>95</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:95%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Stamina</span><span>80</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-stm" style="width:80%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Combat Skill</span><span>75</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:75%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Dexterity</span><span>20</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-agi" style="width:20%"></div></div></div>
+                <p style="margin-top:1rem;font-size:.85rem;color:var(--color-accent)"><strong>Key Skills:</strong> Two-Handed Mastery, Heavy Armor Training, War Cry, Charge Attack</p>
+                <p style="font-size:.85rem;color:var(--color-text-secondary)"><strong>Best Weapon:</strong> Heavy Two-Handed Axe</p>
+            </div>
+
+            <div class="build-card swamp">
+                <div class="build-header"><div class="build-icon">🌀</div><div class="build-name" style="color:#6a0dad">Spirit Mage</div></div>
+                <p style="color:var(--color-text-secondary);margin-bottom:1rem">Full caster build focused on crowd control and spirit magic. Sleep entire groups, then eliminate one by one.</p>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Mana</span><span>95</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-mana" style="width:95%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Dexterity</span><span>40</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-agi" style="width:40%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Stamina</span><span>30</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-stm" style="width:30%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Strength</span><span>15</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:15%"></div></div></div>
+                <p style="margin-top:1rem;font-size:.85rem;color:var(--color-accent)"><strong>Key Skills:</strong> Sleep Spell, Telekinesis, Wind Hammer, Spirit Staff Mastery, Mana Regeneration</p>
+                <p style="font-size:.85rem;color:var(--color-text-secondary)"><strong>Best Weapon:</strong> Spirit Staff</p>
+            </div>
+
+            <div class="build-card swamp">
+                <div class="build-header"><div class="build-icon">⚡</div><div class="build-name" style="color:#6a0dad">Templar Battle-Mage</div></div>
+                <p style="color:var(--color-text-secondary);margin-bottom:1rem">Hybrid magic/melee build. Combines Templar armor with spirit magic for versatile combat in any situation.</p>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Strength</span><span>55</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:55%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Mana</span><span>70</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-mana" style="width:70%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Stamina</span><span>55</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-stm" style="width:55%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Dexterity</span><span>25</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-agi" style="width:25%"></div></div></div>
+                <p style="margin-top:1rem;font-size:.85rem;color:var(--color-accent)"><strong>Key Skills:</strong> Templar Combat, Wind Hammer, Heavy Armor Training, Mana Shield</p>
+                <p style="font-size:.85rem;color:var(--color-text-secondary)"><strong>Best Weapon:</strong> Blessed Templar Blade</p>
+            </div>
+
+            <div class="build-card old">
+                <div class="build-header"><div class="build-icon">🔮⚔️</div><div class="build-name" style="color:#c41e3a">Fire Battle-Mage</div></div>
+                <p style="color:var(--color-text-secondary);margin-bottom:1rem">Old Camp hybrid build. Use fire magic for AoE and debuffs, then finish with melee. More balanced than pure caster.</p>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Strength</span><span>60</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:60%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Mana</span><span>60</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-mana" style="width:60%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Stamina</span><span>50</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-stm" style="width:50%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Combat Skill</span><span>70</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:70%"></div></div></div>
+                <p style="margin-top:1rem;font-size:.85rem;color:var(--color-accent)"><strong>Key Skills:</strong> Fire Rune (Advanced), Sword Training, Fire Enchant, Heavy Armor Training</p>
+                <p style="font-size:.85rem;color:var(--color-text-secondary)"><strong>Best Weapon:</strong> Enchanted Flame Sword</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leveling Strategy -->
+    <section class="guide-section">
+        <h2>📊 Leveling Strategy</h2>
+        <div class="info-box warning"><strong>⚠️ Critical Advice:</strong> In Gothic, you CANNOT max everything. Each build requires focus. Spreading stats evenly creates a weak character that struggles in the endgame.</div>
+        <div class="tips-grid">
+            <div class="tip-card"><h3>1. Plan Early</h3><p>Decide your build by level 5. Know your primary and secondary stats before you start spending LP. Use the <a href="factions-ultimate-guide.html">Faction Quiz</a> if unsure.</p></div>
+            <div class="tip-card"><h3>2. Prioritize One Weapon</h3><p>Master ONE weapon type — one-handed, two-handed, or magic. Splitting between them wastes LP. Weapon proficiency determines 80% of your damage output.</p></div>
+            <div class="tip-card"><h3>3. LP Scaling</h3><p>Each stat point costs more LP as it increases. The first 30 points in a stat are cheap. Points 60-80 are expensive. Plan accordingly.</p></div>
+            <div class="tip-card"><h3>4. Train Before Fights</h3><p>Visit trainers after every 2-3 levels. Spending LP immediately makes the next fights easier. Hoarding LP gives no benefit.</p></div>
+            <div class="tip-card"><h3>5. Secondary Skills</h3><p>After your primary combat stat hits 60, invest 10-15 points in a secondary. Pure builds do one thing well; hybrids are more versatile.</p></div>
+            <div class="tip-card"><h3>6. Mana for Non-Casters</h3><p>Even melee builds benefit from 10-15 Mana for basic utility. Some weapon enchants and rings require minimum mana thresholds.</p></div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="equipment.html">Equipment Guide</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="walkthrough.html">Walkthrough</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Gothic 1 Remake. Fan-made guide.</p></div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

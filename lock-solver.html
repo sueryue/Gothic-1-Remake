@@ -1,570 +1,238 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gothic 1 Remake Lockpicking Solver - Auto Calculator with Diagrams</title>
-    <meta name="description" content="Free Gothic 1 Remake lockpicking solver! Enter your lock configuration and get instant step-by-step solutions with visual diagrams. Solves all locks including the infamous Collapsed Tower.">
-    <meta name="keywords" content="Gothic 1 Remake lockpicker, lock solving tool, auto unlock, lock diagram, Collapsed Tower solution, chest solver">
-    <link rel="canonical" href="https://your-domain.com/lock-solver.html">
+    <title>Gothic 1 Remake Lockpicking Solver - Auto Calculator with BFS Algorithm</title>
+    <meta name="description" content="Free Gothic 1 Remake lockpicking solver! Enter your lock configuration and get instant step-by-step solutions. Uses BFS algorithm to solve all locks including the Collapsed Tower.">
+    <meta name="keywords" content="Gothic 1 Remake lockpicker, lock solving tool, Collapsed Tower solution, BFS solver">
+    <link rel="canonical" href="https://sueryue.github.io/Gothic-1-Remake/lock-solver.html">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Solver-specific enhanced styles */
-        .solver-intro {
-            background: linear-gradient(135deg, rgba(233, 69, 96, 0.15), rgba(255, 215, 0, 0.1));
-            border: 3px solid var(--color-gold);
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        .solver-intro h2 {
-            font-family: var(--font-heading);
-            color: var(--color-gold);
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .tool-highlight-box {
-            background: rgba(40, 167, 69, 0.1);
-            border-left: 5px solid #28a745;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 8px;
-            text-align: left;
-        }
-
-        .input-section {
-            background: var(--color-bg-light);
-            border: 2px solid var(--color-border);
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin: 2rem 0;
-        }
-
-        .lock-position-input {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .position-control {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 1.2rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .position-label {
-            font-weight: 700;
-            color: var(--color-gold);
-            display: block;
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
-        }
-
-        .position-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--color-accent);
-            margin: 0.5rem 0;
-        }
-
-        .btn-controls {
-            display: flex;
-            gap: 0.5rem;
-            justify-content: center;
-            margin-top: 0.8rem;
-        }
-
-        .btn-small {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 2px solid var(--color-border);
-            background: var(--color-bg-medium);
-            color: white;
-            font-size: 1.2rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .btn-small:hover {
-            background: var(--color-accent);
-            border-color: var(--color-accent);
-            transform: scale(1.1);
-        }
-
-        .plate-linking-section {
-            background: var(--color-bg-medium);
-            border: 2px solid var(--color-border);
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .linking-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .link-control {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 1.2rem;
-            border-radius: 8px;
-        }
-
-        .link-label {
-            font-weight: 700;
-            color: var(--color-text-primary);
-            display: block;
-            margin-bottom: 0.8rem;
-        }
-
-        .link-options {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .link-btn {
-            padding: 0.6rem 1rem;
-            border-radius: 6px;
-            border: 2px solid var(--color-border);
-            background: var(--color-bg-dark);
-            color: var(--color-text-primary);
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 0.9rem;
-        }
-
-        .link-btn:hover {
-            border-color: var(--color-accent);
-        }
-
-        .link-btn.selected-same {
-            background: #28a745;
-            border-color: #28a745;
-            color: white;
-        }
-
-        .link-btn.selected-opposite {
-            background: orange;
-            border-color: orange;
-            color: black;
-        }
-
-        .link-btn.selected-none {
-            background: var(--color-accent);
-            border-color: var(--color-accent);
-            color: white;
-        }
-
-        .solve-button-container {
-            text-align: center;
-            margin: 3rem 0;
-        }
-
-        .btn-solve-massive {
-            background: linear-gradient(135deg, #28a745, #20c997);
-            color: white;
-            border: none;
-            padding: 1.8rem 4rem;
-            font-size: 1.5rem;
-            font-weight: 700;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 8px 16px rgba(40, 167, 69, 0.3);
-        }
-
-        .btn-solve-massive:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 12px 24px rgba(40, 167, 69, 0.5);
-        }
-
-        .solution-diagram {
-            background: rgba(0, 0, 0, 0.6);
-            border: 3px solid #28a745;
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin: 2rem 0;
-            display: none;
-        }
-
-        .step-diagram {
-            background: var(--color-bg-light);
-            border-left: 5px solid var(--color-accent);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .visual-lock-state {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
-        }
-
-        .lock-post {
-            width: 60px;
-            height: 80px;
-            background: var(--color-bg-dark);
-            border: 3px solid var(--color-border);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-accent);
-            position: relative;
-        }
-
-        .lock-post.unlocked {
-            border-color: #28a745;
-            background: rgba(40, 167, 69, 0.2);
-            color: #28a745;
-        }
-
-        .post-label {
-            position: absolute;
-            bottom: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.85rem;
-            color: var(--color-text-secondary);
-            white-space: nowrap;
-        }
-
-        .explanation-box {
-            background: rgba(0, 123, 255, 0.1);
-            border-left: 4px solid #007bff;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 8px;
-        }
-
-        .how-it-works-diagram {
-            background: var(--color-bg-light);
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            .lock-position-input {
-                grid-template-columns: 1fr;
-            }
-            
-            .btn-solve-massive {
-                padding: 1.2rem 2.5rem;
-                font-size: 1.2rem;
-            }
-        }
+        .solver-intro{background:linear-gradient(135deg,rgba(233,69,96,.15),rgba(255,215,0,.1));border:3px solid var(--color-gold);border-radius:12px;padding:2.5rem;margin:2rem 0;text-align:center}
+        .solver-intro h2{font-family:var(--font-heading);color:var(--color-gold);font-size:2rem;margin-bottom:1rem}
+        .input-section{background:var(--color-bg-light);border:2px solid var(--color-border);border-radius:12px;padding:2.5rem;margin:2rem 0}
+        .lock-position-input{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.5rem;margin:2rem 0}
+        .position-control{background:rgba(0,0,0,.3);padding:1.2rem;border-radius:8px;text-align:center}
+        .position-label{font-weight:700;color:var(--color-gold);display:block;margin-bottom:.8rem;font-size:1.1rem}
+        .position-value{font-size:2rem;font-weight:700;color:var(--color-accent);margin:.5rem 0}
+        .btn-small{width:40px;height:40px;border-radius:50%;border:2px solid var(--color-border);background:var(--color-bg-medium);color:white;font-size:1.2rem;font-weight:700;cursor:pointer;transition:var(--transition)}
+        .btn-small:hover{background:var(--color-accent);border-color:var(--color-accent);transform:scale(1.1)}
+        .plate-linking-section{background:var(--color-bg-medium);border:2px solid var(--color-border);border-radius:12px;padding:2rem;margin:2rem 0}
+        .linking-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin:2rem 0}
+        .link-control{background:rgba(0,0,0,.4);padding:1.2rem;border-radius:8px}
+        .link-label{font-weight:700;color:var(--color-text-primary);display:block;margin-bottom:.8rem}
+        .link-btn{padding:.6rem 1rem;border-radius:6px;border:2px solid var(--color-border);background:var(--color-bg-dark);color:var(--color-text-primary);cursor:pointer;transition:var(--transition);font-size:.9rem}
+        .link-btn:hover{border-color:var(--color-accent)}
+        .link-btn.selected-same{background:#28a745;border-color:#28a745;color:white}
+        .link-btn.selected-opposite{background:orange;border-color:orange;color:black}
+        .link-btn.selected-none{background:var(--color-accent);border-color:var(--color-accent);color:white}
+        .solve-button-container{text-align:center;margin:3rem 0}
+        .btn-solve-massive{background:linear-gradient(135deg,#28a745,#20c997);color:white;border:none;padding:1.8rem 4rem;font-size:1.5rem;font-weight:700;border-radius:12px;cursor:pointer;transition:var(--transition);box-shadow:0 8px 16px rgba(40,167,69,.3)}
+        .btn-solve-massive:hover{transform:translateY(-5px) scale(1.05);box-shadow:0 12px 24px rgba(40,167,69,.5)}
+        .solution-diagram{background:rgba(0,0,0,.6);border:3px solid #28a745;border-radius:12px;padding:2.5rem;margin:2rem 0;display:none}
+        .step-diagram{background:var(--color-bg-light);border-left:5px solid var(--color-accent);padding:1.5rem;margin:1.5rem 0;border-radius:0 8px 8px 0}
+        .visual-lock-state{display:flex;justify-content:center;gap:1rem;margin:1.5rem 0;flex-wrap:wrap}
+        .lock-post{width:60px;height:80px;background:var(--color-bg-dark);border:3px solid var(--color-border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;color:var(--color-accent);position:relative}
+        .lock-post.unlocked{border-color:#28a745;background:rgba(40,167,69,.2);color:#28a745}
+        .post-label{position:absolute;bottom:-25px;left:50%;transform:translateX(-50%);font-size:.85rem;color:var(--color-text-secondary);white-space:nowrap}
+        .btn-reset{background:var(--color-bg-medium);color:var(--color-text-primary);border:2px solid var(--color-border);padding:1.2rem 2.5rem;font-size:1.1rem;border-radius:8px;cursor:pointer;transition:var(--transition);margin:.5rem}
+        .btn-reset:hover{border-color:var(--color-accent)}
+        @media(max-width:768px){.lock-position-input{grid-template-columns:1fr}.btn-solve-massive{padding:1.2rem 2.5rem;font-size:1.2rem}}
     </style>
 </head>
 <body>
     <header class="site-header">
         <nav class="main-nav">
-            <div class="logo">
-                <h1>🏰 Gothic 1 Remake</h1>
-            </div>
+            <div class="logo"><h1>🏰 Gothic 1 Remake</h1></div>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="https://sueryue.github.io/Gothic-1-Remake/index.html">Home</a></li>
-                
+                <li class="nav-item"><a href="index.html">Home</a></li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Guides</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/daily-tips.html">Daily Tips</a></li>
-                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/factions-guide.html">Factions Guide</a></li>
-                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/visual-guide.html">Visual Guide</a></li>
-                    </ul>
+                    <a href="#" class="dropdown-toggle">Walkthrough</a>
+                    <ul class="dropdown-menu"><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="visual-guide.html">Visual Guide</a></li><li><a href="map-guide.html">Map Guide</a></li><li><a href="quests.html">Quest List</a></li></ul>
                 </li>
-                
                 <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Tools</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/lockpicking.html">Lockpicking Guide</a></li>
-                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/lock-solver.html" class="active">Lock Solver</a></li>
-                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/lockpicking-calculator.html">Calculator</a></li>
-                    </ul>
+                    <a href="#" class="dropdown-toggle" style="color:var(--color-gold)">Tools</a>
+                    <ul class="dropdown-menu"><li><a href="lock-solver.html" class="active">Lock Solver</a></li><li><a href="lockpicking-calculator.html">Calculator</a></li><li><a href="lockpicking.html">Lockpicking Guide</a></li></ul>
                 </li>
-                
                 <li class="nav-item dropdown">
                     <a href="#" class="dropdown-toggle">Factions</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/factions-guide.html">Factions Overview</a></li>
-                        <li><div class="dropdown-divider"></div></li>
-                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/factions-ultimate-guide.html">Ultimate Guide</a></li>
-                    </ul>
+                    <ul class="dropdown-menu"><li><a href="factions-guide.html">Factions Overview</a></li><li><div class="dropdown-divider"></div></li><li><a href="factions-ultimate-guide.html">Ultimate Guide</a></li></ul>
                 </li>
-                
-                <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
-                    <option value="/en/">English</option>
-                    <option value="/de/">Deutsch</option>
-                    <option value="/fr/">Francais</option>
-                    <option value="/it/">Italiano</option>
-                    <option value="/es/">Espanol</option>
-                    <option value="/ko/">한국어</option>
-                    <option value="/ja/">日本語</option>
-                </select>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropdown-toggle">Resources</a>
+                    <ul class="dropdown-menu"><li><a href="bestiary.html">Bestiary</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html">NPC Characters</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="system-requirements.html">System Requirements</a></li><li><a href="save-management.html">Save Management</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul>
+                </li>
+                <li class="nav-item">
+                    <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                        <option value="en">🇬🇧 English</option><option value="de">🇩🇪 Deutsch</option><option value="fr">🇫🇷 Français</option><option value="it">🇮🇹 Italiano</option><option value="es">🇪🇸 Español</option><option value="ko">🇰🇷 한국어</option><option value="ja">🇯🇵 日本語</option>
+                    </select>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main class="content-wrapper">
-        <nav class="breadcrumb">
-            <a href="index.html">Home</a> / 
-            <a href="https://sueryue.github.io/Gothic-1-Remake/lockpicking-calculator.html">Calculator</a> / 
-            <span class="current">Advanced Solver with Diagrams</span>
-        </nav>
+        <nav class="breadcrumb"><a href="index.html">Home</a> / <a href="lockpicking-calculator.html">Calculator</a> / <span class="current">Advanced Solver</span></nav>
 
-        <!-- Intro Section -->
         <section class="solver-intro">
-            <h2>🔐 Advanced Lockpicking Solver - Real Algorithm!</h2>
-            <p style="font-size: 1.2rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
-                Based on community-discovered algorithms. This isn't just a simulator—it <strong>CALCULATES</strong> the actual solution!
-            </p>
-            
-            <div class="tool-highlight-box">
-                <h4 style="color: #28a745; margin-bottom: 1rem;">✅ How This Tool Works:</h4>
-                <ol style="margin-left: 1.5rem; line-height: 2;">
-                    <li><strong>Enter Lock Positions</strong> - Read the notch positions from your lock screen</li>
-                    <li><strong>Map Plate Linkages</strong> - Discover how plates connect by testing movements</li>
-                    <li><strong>Click "SOLVE"</strong> - Our algorithm computes the optimal sequence</li>
-                    <li><strong>Follow Visual Steps</strong> - Each step shows exact plate to move</li>
+            <h2>🔐 Advanced Lockpicking Solver — BFS Algorithm!</h2>
+            <p style="font-size:1.2rem;color:var(--color-text-secondary);margin-bottom:1.5rem">Based on breadth-first search. This CALCULATES the actual solution!</p>
+            <div style="background:rgba(40,167,69,.1);border-left:5px solid #28a745;padding:1.5rem;margin:2rem 0;text-align:left">
+                <h4 style="color:#28a745;margin-bottom:1rem">✅ How This Tool Works:</h4>
+                <ol style="margin-left:1.5rem;line-height:2">
+                    <li><strong>Enter Lock Positions</strong> — Read the notch positions from your lock screen</li>
+                    <li><strong>Map Plate Linkages</strong> — Discover how plates connect by testing movements</li>
+                    <li><strong>Click "SOLVE"</strong> — Our BFS algorithm computes the optimal sequence</li>
+                    <li><strong>Follow Visual Steps</strong> — Each step shows exact plate to move</li>
                 </ol>
             </div>
         </section>
 
         <!-- Step 1: Lock Positions -->
         <section class="input-section">
-            <h3 style="font-family: var(--font-heading); color: var(--color-gold); font-size: 1.8rem; margin-bottom: 1rem;">
-                Step 1: Enter Lock Notch Positions
-            </h3>
-            
-            <div class="explanation-box">
-                <strong>📖 What are notch positions?</strong> When you open a lock, you see notches (gaps) above each pin. These are your "lock positions". 
-                Count from left (-3 to +3). Enter what you see for each plate (P1-P5).
+            <h3 style="font-family:var(--font-heading);color:var(--color-gold);font-size:1.8rem;margin-bottom:1rem">Step 1: Enter Lock Notch Positions</h3>
+            <div style="background:rgba(0,123,255,.1);border-left:4px solid #007bff;padding:1.5rem;margin:1.5rem 0;border-radius:8px">
+                <strong>📖 What are notch positions?</strong> When you open a lock, you see notches (gaps) above each pin. Count from left (-3 to +3). Enter what you see for each plate (P1-P5).
             </div>
-
             <div class="lock-position-input">
-                <div class="position-control">
-                    <span class="position-label">Plate 1 (Closest)</span>
-                    <button class="btn-small" onclick="adjustPosition(1, -1)">−</button>
-                    <div class="position-value" id="pos1">0</div>
-                    <button class="btn-small" onclick="adjustPosition(1, 1)">+</button>
-                </div>
-
-                <div class="position-control">
-                    <span class="position-label">Plate 2</span>
-                    <button class="btn-small" onclick="adjustPosition(2, -1)">−</button>
-                    <div class="position-value" id="pos2">0</div>
-                    <button class="btn-small" onclick="adjustPosition(2, 1)">+</button>
-                </div>
-
-                <div class="position-control">
-                    <span class="position-label">Plate 3</span>
-                    <button class="btn-small" onclick="adjustPosition(3, -1)">−</button>
-                    <div class="position-value" id="pos3">0</div>
-                    <button class="btn-small" onclick="adjustPosition(3, 1)">+</button>
-                </div>
-
-                <div class="position-control">
-                    <span class="position-label">Plate 4</span>
-                    <button class="btn-small" onclick="adjustPosition(4, -1)">−</button>
-                    <div class="position-value" id="pos4">0</div>
-                    <button class="btn-small" onclick="adjustPosition(4, 1)">+</button>
-                </div>
-
-                <div class="position-control">
-                    <span class="position-label">Plate 5 (Farthest)</span>
-                    <button class="btn-small" onclick="adjustPosition(5, -1)">−</button>
-                    <div class="position-value" id="pos5">0</div>
-                    <button class="btn-small" onclick="adjustPosition(5, 1)">+</button>
-                </div>
+                <div class="position-control"><span class="position-label">Plate 1 (Closest)</span><button class="btn-small" onclick="adjustPosition(1,-1)">−</button><div class="position-value" id="pos1">0</div><button class="btn-small" onclick="adjustPosition(1,1)">+</button></div>
+                <div class="position-control"><span class="position-label">Plate 2</span><button class="btn-small" onclick="adjustPosition(2,-1)">−</button><div class="position-value" id="pos2">0</div><button class="btn-small" onclick="adjustPosition(2,1)">+</button></div>
+                <div class="position-control"><span class="position-label">Plate 3</span><button class="btn-small" onclick="adjustPosition(3,-1)">−</button><div class="position-value" id="pos3">0</div><button class="btn-small" onclick="adjustPosition(3,1)">+</button></div>
+                <div class="position-control"><span class="position-label">Plate 4</span><button class="btn-small" onclick="adjustPosition(4,-1)">−</button><div class="position-value" id="pos4">0</div><button class="btn-small" onclick="adjustPosition(4,1)">+</button></div>
+                <div class="position-control"><span class="position-label">Plate 5 (Farthest)</span><button class="btn-small" onclick="adjustPosition(5,-1)">−</button><div class="position-value" id="pos5">0</div><button class="btn-small" onclick="adjustPosition(5,1)">+</button></div>
             </div>
-
-            <p style="color: var(--color-text-secondary); font-size: 0.95rem; text-align: center; margin-top: 1rem;">
-                💡 Tip: Start from the default (all 0) and adjust each plate using +/- buttons
-            </p>
         </section>
 
         <!-- Step 2: Map Linkages -->
         <section class="plate-linking-section">
-            <h3 style="font-family: var(--font-heading); color: var(--color-gold); font-size: 1.8rem; margin-bottom: 1rem;">
-                Step 2: Map Plate Linkages
-            </h3>
-
-            <div class="explanation-box">
-                <strong>🔗 Why map linkages?</strong> Moving one plate can affect others! You need to discover these connections:
-                <ol style="margin-top: 0.5rem; margin-left: 1.5rem;">
-                    <li>Set all plates to position 0</li>
-                    <li>Move Plate 1 left/right—watch which OTHER plates move too</li>
-                    <li>Repeat for Plates 2-5</li>
-                    <li>Record what you discover below</li>
-                </ol>
+            <h3 style="font-family:var(--font-heading);color:var(--color-gold);font-size:1.8rem;margin-bottom:1rem">Step 2: Map Plate Linkages</h3>
+            <div style="background:rgba(0,123,255,.1);border-left:4px solid #007bff;padding:1.5rem;margin:1.5rem 0;border-radius:8px">
+                <strong>🔗 Why map linkages?</strong> Moving one plate can affect others! Set all plates to position 0, move Plate 1 and watch which others move. Repeat for Plates 2-5. Record what you discover.
             </div>
-
             <div class="linking-grid">
-                <div class="link-control">
-                    <span class="link-label">Plate 1 affects:</span>
-                    <div class="link-options">
-                        <button class="link-btn" onclick="setLink(1, 2, 'same')" id="link-1-2">Same Dir</button>
-                        <button class="link-btn" onclick="setLink(1, 2, 'opp')" id="link-1-2-opp">Opp Dir</button>
-                        <button class="link-btn" onclick="setLink(1, 2, 'none')" id="link-1-2-none">No Link</button>
-                    </div>
-                </div>
-
-                <div class="link-control">
-                    <span class="link-label">Plate 2 affects:</span>
-                    <div class="link-options">
-                        <button class="link-btn" onclick="setLink(2, 3, 'same')" id="link-2-3">Same Dir</button>
-                        <button class="link-btn" onclick="setLink(2, 3, 'opp')" id="link-2-3-opp">Opp Dir</button>
-                        <button class="link-btn" onclick="setLink(2, 3, 'none')" id="link-2-3-none">No Link</button>
-                    </div>
-                </div>
-
-                <div class="link-control">
-                    <span class="link-label">Plate 3 affects:</span>
-                    <div class="link-options">
-                        <button class="link-btn" onclick="setLink(3, 4, 'same')" id="link-3-4">Same Dir</button>
-                        <button class="link-btn" onclick="setLink(3, 4, 'opp')" id="link-3-4-opp">Opp Dir</button>
-                        <button class="link-btn" onclick="setLink(3, 4, 'none')" id="link-3-4-none">No Link</button>
-                    </div>
-                </div>
-
-                <div class="link-control">
-                    <span class="link-label">Plate 4 affects:</span>
-                    <div class="link-options">
-                        <button class="link-btn" onclick="setLink(4, 5, 'same')" id="link-4-5">Same Dir</button>
-                        <button class="link-btn" onclick="setLink(4, 5, 'opp')" id="link-4-5-opp">Opp Dir</button>
-                        <button class="link-btn" onclick="setLink(4, 5, 'none')" id="link-4-5-none">No Link</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-box warning">
-                <strong>⚠️ Important Discovery Process:</strong> If moving Plate 2 right also moves Plate 3 right → click "Same Dir". 
-                If Plate 3 moves left → "Opp Dir". If no change → "No Link". Test each pair systematically!
+                <div class="link-control"><span class="link-label">Plate 1 affects:</span><div class="link-options"><button class="link-btn" onclick="setLink(1,2,'same')" id="link-1-2">Same Dir</button><button class="link-btn" onclick="setLink(1,2,'opp')" id="link-1-2-opp">Opp Dir</button><button class="link-btn" onclick="setLink(1,2,'none')" id="link-1-2-none">No Link</button></div></div>
+                <div class="link-control"><span class="link-label">Plate 2 affects:</span><div class="link-options"><button class="link-btn" onclick="setLink(2,3,'same')" id="link-2-3">Same Dir</button><button class="link-btn" onclick="setLink(2,3,'opp')" id="link-2-3-opp">Opp Dir</button><button class="link-btn" onclick="setLink(2,3,'none')" id="link-2-3-none">No Link</button></div></div>
+                <div class="link-control"><span class="link-label">Plate 3 affects:</span><div class="link-options"><button class="link-btn" onclick="setLink(3,4,'same')" id="link-3-4">Same Dir</button><button class="link-btn" onclick="setLink(3,4,'opp')" id="link-3-4-opp">Opp Dir</button><button class="link-btn" onclick="setLink(3,4,'none')" id="link-3-4-none">No Link</button></div></div>
+                <div class="link-control"><span class="link-label">Plate 4 affects:</span><div class="link-options"><button class="link-btn" onclick="setLink(4,5,'same')" id="link-4-5">Same Dir</button><button class="link-btn" onclick="setLink(4,5,'opp')" id="link-4-5-opp">Opp Dir</button><button class="link-btn" onclick="setLink(4,5,'none')" id="link-4-5-none">No Link</button></div></div>
             </div>
         </section>
 
         <!-- Solve Button -->
         <div class="solve-button-container">
-            <button onclick="calculateSolution()" class="btn-solve-massive">
-                🔓 CALCULATE SOLUTION NOW!
-            </button>
+            <button onclick="calculateSolution()" class="btn-solve-massive">🔓 CALCULATE SOLUTION NOW!</button>
         </div>
 
         <!-- Solution Display -->
         <div id="solutionDisplay" class="solution-diagram">
-            <h3 style="font-family: var(--font-heading); color: #28a745; text-align: center; font-size: 2rem; margin-bottom: 2rem;">
-                ✅ Your Complete Solution Sequence
-            </h3>
-
+            <h3 style="font-family:var(--font-heading);color:#28a745;text-align:center;font-size:2rem;margin-bottom:2rem">✅ Your Complete Solution Sequence</h3>
             <div id="solutionSteps"></div>
-
-            <div class="action-buttons" style="text-align: center; margin-top: 2rem;">
-                <button onclick="printSolution()" class="btn-reset">🖨️ Print Solution</button>
+            <div style="text-align:center;margin-top:2rem">
                 <button onclick="copyToClipboard()" class="btn-reset">📋 Copy to Clipboard</button>
                 <button onclick="resetSolver()" class="btn-reset">🔄 New Lock</button>
             </div>
         </div>
-
-        <!-- How It Works Diagram -->
-        <section class="how-it-works-diagram">
-            <h3 style="font-family: var(--font-heading); color: var(--color-gold); margin-bottom: 1.5rem;">
-                📖 Understanding the Algorithm
-            </h3>
-            
-            <div style="text-align: left; max-width: 900px; margin: 0 auto;">
-                <p style="margin-bottom: 1.5rem;">
-                    The Gothic 1 Remake lockpicking puzzle is a <strong>constraint satisfaction problem</strong>. Here's how it works:
-                </p>
-
-                <div class="quest-preview-card">
-                    <h4>🎯 Goal State</h4>
-                    <p>All plates must reach position <strong>0</strong> (center) simultaneously. The challenge: plates are mechanically linked!</p>
-                </div>
-
-                <div class="quest-preview-card">
-                    <h4>🔧 Constraints</h4>
-                    <p>Each plate pair may be connected via gears: <strong>Same Direction</strong> (both move together) or <strong>Opposite</strong> (reverse). 
-                    These connections create cascading effects.</p>
-                </div>
-
-                <div class="quest-preview-card">
-                    <h4>💡 Solution Strategy</h4>
-                    <p>Our solver uses a <strong>breadth-first search (BFS)</strong> algorithm to find the minimum number of moves from current state to goal state,
-                    respecting all linkage constraints.</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="https://sueryue.github.io/Gothic-1-Remake/lockpicking-calculator.html">Simple Calculator</a></li>
-                    <li><a href="https://sueryue.github.io/Gothic-1-Remake/factions-ultimate-guide.html">Faction Guide</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Gothic 1 Remake. Community-powered solving tools.</p>
-        </div>
+        <div class="footer-content"><div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="lockpicking-calculator.html">Simple Calculator</a></li><li><a href="factions-ultimate-guide.html">Faction Guide</a></li></ul></div></div>
+        <div class="footer-bottom"><p>&copy; 2026 Gothic 1 Remake. Community-powered solving tools.</p></div>
     </footer>
 
     <script>
-        // === REAL LOCK PICKING SOLVER ALGORITHM ===
-        
-        let lockPositions = [0, 0, 0, 0, 0]; // P1-P5
-        let linkages = {
-            '1-2': 'none',
-            '2-3': 'none',
-            '3-4': 'none',
-            '4-5': 'none'
-        };
+        // === FIXED BFS LOCKPICKING SOLVER ===
+        var lockPositions = [0,0,0,0,0];
+        var linkages = {'1-2':'none','2-3':'none','3-4':'none','4-5':'none'};
 
         function adjustPosition(plate, delta) {
-            const index = plate - 1;
-            lockPositions[index] += delta;
-            
-            // Clamp between -3 and +3 (game limits)
-            if (lockPositions[index] > 3) lockPositions[index] = 3;
-            if (lockPositions[index] < -3) lockPositions[index] = -3;
-            
-            document.getElementById(`pos${plate}`).textContent = lockPositions[index];
+            var idx = plate - 1;
+            lockPositions[idx] += delta;
+            if (lockPositions[idx] > 3) lockPositions[idx] = 3;
+            if (lockPositions[idx] < -3) lockPositions[idx] = -3;
+            document.getElementById('pos'+plate).textContent = lockPositions[idx];
         }
 
-        function setLink(plate1, plate2, type) {
-            const key = `${plate1}-${plate2}`;
+        function setLink(p1, p2, type) {
+            var key = p1+'-'+p2;
             linkages[key] = type;
-            
-            // Update button visuals
-            document.getElementById(`link-${key}`).className = 'link-btn' + (type === 'same' ? ' selected-same' : '');
-            document.getElementById(`link-${key}-opp`).className = 'link-btn' + (type === 'opp' ? ' selected-opposite' : '');
-            document.getElementById(`link-${key}-none`).className = 'link-btn' + (type === 'none' ? ' selected-none' : '');
+            document.getElementById('link-'+key).className = 'link-btn' + (type==='same'?' selected-same':'');
+            document.getElementById('link-'+key+'-opp').className = 'link-btn' + (type==='opp'?' selected-opposite':'');
+            document.getElementById('link-'+key+'-none').className = 'link-btn' + (type==='none'?' selected-none':'');
+        }
+
+        function applyMove(state, plateIdx, direction) {
+            // Move the chosen plate
+            state[plateIdx] += direction;
+            // Apply cascading linkage effects
+            var linkKeys = ['1-2','2-3','3-4','4-5'];
+            for (var k = 0; k < linkKeys.length; k++) {
+                var key = linkKeys[k];
+                var parts = key.split('-');
+                var a = parseInt(parts[0]) - 1;
+                var b = parseInt(parts[1]) - 1;
+                var linkType = linkages[key] || 'none';
+                if (linkType === 'none') continue;
+                if (plateIdx === a) {
+                    var mult = linkType === 'same' ? 1 : -1;
+                    state[b] += direction * mult;
+                } else if (plateIdx === b) {
+                    var mult = linkType === 'same' ? 1 : -1;
+                    state[a] += direction * mult;
+                }
+            }
+        }
+
+        function solveLockpick(startPositions) {
+            var goal = [0,0,0,0,0];
+            var queue = [[startPositions.slice(), []]];
+            var visited = {};
+            visited[startPositions.join(',')] = true;
+            var iterations = 0;
+            var maxIterations = 500000;
+
+            while (queue.length > 0 && iterations < maxIterations) {
+                iterations++;
+                var item = queue.shift();
+                var currentState = item[0];
+                var path = item[1];
+
+                // Check if solved
+                var solved = true;
+                for (var i = 0; i < currentState.length; i++) {
+                    if (currentState[i] !== 0) { solved = false; break; }
+                }
+                if (solved) return path;
+
+                // Try all possible moves
+                for (var plate = 1; plate <= 5; plate++) {
+                    for (var d = 0; d < 2; d++) {
+                        var direction = d === 0 ? -1 : 1;
+                        var newState = currentState.slice();
+                        applyMove(newState, plate-1, direction);
+
+                        // Check valid bounds
+                        var valid = true;
+                        for (var j = 0; j < newState.length; j++) {
+                            if (newState[j] < -3 || newState[j] > 3) { valid = false; break; }
+                        }
+                        if (!valid) continue;
+
+                        var stateKey = newState.join(',');
+                        if (!visited[stateKey]) {
+                            visited[stateKey] = true;
+                            queue.push([newState, path.concat([{plate:plate, direction:direction, state:newState.slice()}])]);
+                        }
+                    }
+                }
+            }
+            return null;
         }
 
         function calculateSolution() {
-            // BFS-based solver
-            const solution = solveLockpick(lockPositions, linkages);
-            
+            var solution = solveLockpick(lockPositions);
             if (solution) {
                 displaySolution(solution);
             } else {
@@ -572,167 +240,42 @@
             }
         }
 
-        function solveLockpick(startPositions, links) {
-            // Goal: all positions = 0
-            const goal = [0, 0, 0, 0, 0];
-            
-            // BFS queue: [currentState, pathSoFar]
-            let queue = [[startPositions.slice(), []]];
-            let visited = new Set();
-            visited.add(startPositions.join(','));
-            
-            let iterations = 0;
-            const maxIterations = 100000; // Safety limit
-            
-            while (queue.length > 0 && iterations < maxIterations) {
-                iterations++;
-                const [currentState, path] = queue.shift();
-                
-                // Check if solved
-                if (currentState.every(pos => pos === 0)) {
-                    return path;
-                }
-                
-                // Try all possible moves
-                for (let plate = 1; plate <= 5; plate++) {
-                    for (let direction of [-1, 1]) {
-                        const newState = currentState.slice();
-                        
-                        // Apply movement with linkages
-                        applyMovement(newState, plate, direction, links);
-                        
-                        // Check if valid (within bounds)
-                        if (newState.every(pos => pos >= -3 && pos <= 3)) {
-                            const stateKey = newState.join(',');
-                            if (!visited.has(stateKey)) {
-                                visited.add(stateKey);
-                                queue.push([
-                                    newState,
-                                    [...path, { plate, direction, state: newState.slice() }]
-                                ]);
-                            }
-                        }
-                    }
-                }
-            }
-            
-            return null; // No solution found
-        }
-
-        function applyMovement(positions, movedPlate, direction, links) {
-            // Move the chosen plate
-            positions[movedPlate - 1] += direction;
-            
-            // Apply linked plate movements
-            for (let i = 1; i < 5; i++) {
-                const key = `${i}-${i+1}`;
-                if (links[key] !== 'none') {
-                    if (i === movedPlate) {
-                        // Current plate affects next (i+1)
-                        const multiplier = links[key] === 'same' ? 1 : -1;
-                        positions[i] += direction * multiplier;
-                    } else if (i === movedPlate - 1) {
-                        // Previous plate affects current
-                        const multiplier = links[key] === 'same' ? 1 : -1;
-                        if (direction === -1) {
-                            positions[i] -= multiplier;
-                        }
-                    }
-                }
-            }
-        }
-
         function displaySolution(steps) {
-            const container = document.getElementById('solutionSteps');
-            const displayDiv = document.getElementById('solutionDisplay');
-            
-            let html = `<div style="text-align: center; margin-bottom: 2rem;">
-                <span style="font-size: 1.5rem; color: #28a745; font-weight: 700;">
-                    Total Steps: ${steps.length}
-                </span>
-            </div>`;
-            
-            steps.forEach((step, index) => {
-                const arrow = step.direction === 1 ? '→' : '←';
-                const dirText = step.direction === 1 ? 'Right' : 'Left';
-                
-                html += `
-                    <div class="step-diagram">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                            <h4 style="color: var(--color-gold); font-family: var(--font-heading);">
-                                Step ${index + 1}: Move Plate ${step.plate} ${arrow} (${dirText})
-                            </h4>
-                            <span style="background: ${index === steps.length - 1 ? '#28a745' : 'var(--color-accent)'}; 
-                                         color: ${index === steps.length - 1 ? 'white' : 'black'};
-                                         padding: 0.3rem 0.8rem;
-                                         border-radius: 20px;
-                                         font-size: 0.85rem;
-                                         font-weight: 700;">
-                                ${index === steps.length - 1 ? '✅ FINAL STEP' : 'Continue...'}
-                            </span>
-                        </div>
-                        
-                        <div class="visual-lock-state">
-                            ${step.state.map((pos, i) => `
-                                <div class="lock-post ${pos === 0 ? 'unlocked' : ''}">
-                                    ${pos > 0 ? '+' + pos : pos}
-                                    <span class="post-label">P${i + 1}</span>
-                                </div>
-                            `).join('')}
-                        </div>
-                        
-                        <p style="color: var(--color-text-secondary); text-align: center; margin-top: 1rem;">
-                            After this move: Plate 1=<strong>${step.state[0]}</strong>, 
-                            Plate 2=<strong>${step.state[1]}</strong>, 
-                            Plate 3=<strong>${step.state[2]}</strong>, 
-                            Plate 4=<strong>${step.state[3]}</strong>, 
-                            Plate 5=<strong>${step.state[4]}</strong>
-                        </p>
-                    </div>
-                `;
-            });
-            
+            var container = document.getElementById('solutionSteps');
+            var displayDiv = document.getElementById('solutionDisplay');
+            var html = '<div style="text-align:center;margin-bottom:2rem"><span style="font-size:1.5rem;color:#28a745;font-weight:700">Total Steps: '+steps.length+'</span></div>';
+
+            for (var i = 0; i < steps.length; i++) {
+                var step = steps[i];
+                var arrow = step.direction === 1 ? '→' : '←';
+                var dirText = step.direction === 1 ? 'Right' : 'Left';
+                var isLast = i === steps.length - 1;
+                html += '<div class="step-diagram"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem"><h4 style="color:var(--color-gold);font-family:var(--font-heading)">Step '+(i+1)+': Move Plate '+step.plate+' '+arrow+' ('+dirText+')</h4><span style="background:'+(isLast?'#28a745':'var(--color-accent)')+';color:'+(isLast?'white':'black')+';padding:.3rem .8rem;border-radius:20px;font-size:.85rem;font-weight:700">'+(isLast?'✅ FINAL STEP':'Continue...')+'</span></div><div class="visual-lock-state">';
+                for (var j = 0; j < step.state.length; j++) {
+                    html += '<div class="lock-post'+(step.state[j]===0?' unlocked':'')+'">'+(step.state[j]>0?'+':'')+step.state[j]+'<span class="post-label">P'+(j+1)+'</span></div>';
+                }
+                html += '</div></div>';
+            }
             container.innerHTML = html;
             displayDiv.style.display = 'block';
-            
-            // Smooth scroll to solution
-            displayDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            displayDiv.scrollIntoView({behavior:'smooth',block:'start'});
         }
 
         function resetSolver() {
-            lockPositions = [0, 0, 0, 0, 0];
-            linkages = {
-                '1-2': 'none',
-                '2-3': 'none',
-                '3-4': 'none',
-                '4-5': 'none'
-            };
-            
-            // Reset UI
-            for (let i = 1; i <= 5; i++) {
-                document.getElementById(`pos${i}`).textContent = '0';
-            }
-            
-            document.querySelectorAll('.link-btn').forEach(btn => {
-                btn.className = 'link-btn';
-            });
-            
+            lockPositions = [0,0,0,0,0];
+            linkages = {'1-2':'none','2-3':'none','3-4':'none','4-5':'none'};
+            for (var i = 1; i <= 5; i++) { document.getElementById('pos'+i).textContent = '0'; }
+            var allBtns = document.querySelectorAll('.link-btn');
+            for (var j = 0; j < allBtns.length; j++) { allBtns[j].className = 'link-btn'; }
             document.getElementById('solutionDisplay').style.display = 'none';
-            
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({top:0,behavior:'smooth'});
         }
 
         function copyToClipboard() {
-            const solutionText = document.getElementById('solutionSteps').innerText;
-            navigator.clipboard.writeText(solutionText).then(() => {
-                alert('✅ Solution copied! Paste it anywhere.');
-            });
-        }
-
-        function printSolution() {
-            window.print();
+            var text = document.getElementById('solutionSteps').innerText;
+            navigator.clipboard.writeText(text).then(function(){alert('✅ Solution copied! Paste it anywhere.');});
         }
     </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

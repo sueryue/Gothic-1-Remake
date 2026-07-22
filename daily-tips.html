@@ -3,15 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0;url=/daily-tips.html">
-    <link rel="canonical" href="/daily-tips.html">
-    <script>
-        // Client-side redirect to root (English version)
-        window.location.replace('/daily-tips.html');
-    </script>
+    <title>Gothic 1 Remake - Daily Tips & Events | Updated Every Day</title>
+    <meta name="description" content="Daily tips, challenges, and events for Gothic 1 Remake players. Fresh content updated every day.">
+    <meta name="keywords" content="Gothic 1 Remake daily tips, Gothic strategies, tips today">
+    <link rel="canonical" href="https://sueryue.github.io/Gothic-1-Remake/daily-tips.html">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <p>If you are not redirected automatically, follow this <a href="/daily-tips.html">link to the English page</a>.</p>
+    <header class="site-header">
+        <nav class="main-nav">
+            <div class="logo"><h1>🏰 Gothic 1 Remake</h1></div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropdown-toggle" style="color:var(--color-gold)">Walkthrough</a>
+                    <ul class="dropdown-menu"><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="daily-tips.html" class="active">Daily Tips</a></li><li><a href="visual-guide.html">Visual Guide</a></li><li><a href="map-guide.html">Map Guide</a></li><li><a href="quests.html">Quest List</a></li></ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropdown-toggle">Tools</a>
+                    <ul class="dropdown-menu"><li><a href="lock-solver.html">Lock Solver</a></li><li><a href="lockpicking-calculator.html">Calculator</a></li><li><a href="lockpicking.html">Lockpicking Guide</a></li></ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropdown-toggle">Factions</a>
+                    <ul class="dropdown-menu"><li><a href="factions-guide.html">Factions Overview</a></li><li><div class="dropdown-divider"></div></li><li><a href="factions-ultimate-guide.html">Ultimate Guide</a></li></ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropdown-toggle">Resources</a>
+                    <ul class="dropdown-menu"><li><a href="bestiary.html">Bestiary</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html">NPC Characters</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="system-requirements.html">System Requirements</a></li><li><a href="save-management.html">Save Management</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul>
+                </li>
+                <li class="nav-item">
+                    <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                        <option value="en">🇬🇧 English</option>
+                        <option value="de">🇩🇪 Deutsch</option>
+                        <option value="fr">🇫🇷 Français</option>
+                        <option value="it">🇮🇹 Italiano</option>
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="ko">🇰🇷 한국어</option>
+                        <option value="ja">🇯🇵 日本語</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+        <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Daily Tips</span></nav>
+
+        <section class="page-header">
+            <h1>📅 Daily Tips & Events</h1>
+            <p class="page-subtitle">New tips, challenges, and events added daily</p>
+        </section>
+
+        <!-- Tip of the Day -->
+        <section class="container">
+            <h2 class="section-title">Tip of the Day — July 22</h2>
+            <div class="info-box important" style="padding:2rem">
+                <h3 style="color:var(--color-gold);font-family:var(--font-heading);font-size:1.5rem;margin-bottom:1rem">💡 Save Before Every Lock</h3>
+                <p style="font-size:1.1rem;line-height:1.8">Always quicksave before attempting any puzzle lock. Each wrong attempt damages the lock, and a broken lock may block progression. Use our <a href="lock-solver.html" style="color:var(--color-accent);font-weight:700">Lock Solver</a> to find the correct sequence first.</p>
+            </div>
+        </section>
+
+        <!-- Weekly Challenge -->
+        <section class="container">
+            <h2 class="section-title">This Week's Challenge</h2>
+            <div style="background:linear-gradient(135deg,rgba(233,69,96,.1),rgba(255,215,0,.1));border:3px solid var(--color-gold);border-radius:12px;padding:2rem;text-align:center">
+                <h3 style="color:var(--color-gold);font-family:var(--font-heading);font-size:1.5rem">🎯 Collapsed Tower Speed Run</h3>
+                <p style="font-size:1.1rem;margin:1rem 0">Can you solve the Collapsed Tower lock in under 60 seconds? Practice with our <a href="lock-solver.html" style="color:var(--color-accent)">Interactive Solver</a> and share your best time!</p>
+            </div>
+        </section>
+
+        <!-- Tips Archive -->
+        <section class="container">
+            <h2 class="section-title">Tips Archive</h2>
+            <div class="tips-grid">
+                <div class="tip-card"><h3>💾 Save Frequently</h3><p>Gothic 1 Remake autosaves are sparse. Make manual saves before entering new areas or talking to key NPCs.</p></div>
+                <div class="tip-card"><h3>🎯 Train Before Fighting</h3><p>Visit training NPCs in each camp before venturing into dangerous territory. A few extra stat points make all the difference.</p></div>
+                <div class="tip-card"><h3>🔧 Lockpicking Priority</h3><p>Learn lockpicking early — many valuable items and shortcuts are locked behind puzzle doors.</p></div>
+                <div class="tip-card"><h3>⚔️ Faction Timing</h3><p>Complete quests for all three camps before committing to one. Your faction choice is permanent!</p></div>
+                <div class="tip-card"><h3>🍖 Stock Food</h3><p>Food items are your primary healing source early game. Buy from cooks in each camp.</p></div>
+                <div class="tip-card"><h3>📝 Read Everything</h3><p>Books and notes often contain lock combinations, hidden quest clues, and lore that unlocks dialogue options.</p></div>
+            </div>
+        </section>
+
+        <!-- Community Links -->
+        <section class="container">
+            <h2 class="section-title">Community</h2>
+            <div style="text-align:center;max-width:600px;margin:0 auto">
+                <p style="font-size:1.1rem;margin-bottom:1.5rem">Join the Gothic community for more daily tips and discussion:</p>
+                <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+                    <a href="https://www.reddit.com/r/Gothic/" target="_blank" rel="noopener" class="btn-primary" style="text-decoration:none">Reddit r/Gothic</a>
+                    <a href="factions-guide.html" class="btn-primary" style="text-decoration:none;background:var(--color-gold);color:black">Faction Guide</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section"><h4>About</h4><p>Community-driven daily tips for Gothic 1 Remake players. Updated every day.</p></div>
+            <div class="footer-section"><h4>Tools</h4><ul><li><a href="lock-solver.html">Lock Solver</a></li><li><a href="lockpicking-calculator.html">Calculator</a></li></ul></div>
+            <div class="footer-section"><h4>Guides</h4><ul><li><a href="factions-guide.html">Factions Guide</a></li><li><a href="visual-guide.html">Visual Guide</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Gothic 1 Remake. Fan-made guide.</p></div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

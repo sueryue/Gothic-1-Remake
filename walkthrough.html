@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gothic 1 Remake Walkthrough - Complete Step-by-Step Guide</title>
+    <meta name="description" content="Complete Gothic 1 Remake walkthrough with step-by-step instructions. Covers all factions, quests, and locations from the beach to endgame.">
+    <meta name="keywords" content="Gothic 1 Remake walkthrough, Gothic guide, quest guide, faction walkthrough, beginner guide">
+    <link rel="canonical" href="https://sueryue.github.io/Gothic-1-Remake/walkthrough.html">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .walkthrough-timeline{position:relative;padding-left:3rem;margin:2rem 0}
+        .walkthrough-timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--color-accent);border-radius:2px}
+        .timeline-step{position:relative;margin-bottom:2.5rem}
+        .timeline-step::before{content:attr(data-step);position:absolute;left:-3.5rem;top:0;width:32px;height:32px;background:linear-gradient(135deg,var(--color-accent),var(--color-gold));border-radius:50%;text-align:center;line-height:32px;font-weight:700;font-size:.9rem;color:white}
+        .step-card{background:var(--color-bg-light);border:2px solid var(--color-border);border-radius:8px;padding:1.5rem;transition:var(--transition)}
+        .step-card:hover{border-color:var(--color-gold)}
+        .step-card h3{color:var(--color-gold);font-family:var(--font-heading);margin-bottom:.8rem}
+        .step-card h4{color:var(--color-accent);margin:1rem 0 .5rem}
+        .quest-list{list-style:none;margin-left:0}
+        .quest-list li{padding:.6rem 1rem;margin:.4rem 0;background:rgba(0,0,0,.2);border-left:3px solid var(--color-accent);border-radius:0 4px 4px 0}
+        .quest-list li.completed{border-left-color:#28a745;opacity:.7}
+        .phase-header{font-family:var(--font-heading);font-size:2rem;color:var(--color-gold);margin:3rem 0 1.5rem;padding-bottom:.5rem;border-bottom:2px solid var(--color-accent)}
+        .progress-tracker{background:rgba(0,0,0,.3);padding:1.5rem;border-radius:8px;margin:2rem 0}
+        .progress-bar-bg{height:8px;background:var(--color-border);border-radius:4px;margin:1rem 0}
+        .progress-bar-fill{height:100%;background:linear-gradient(90deg,var(--color-accent),#28a745);border-radius:4px;transition:width .5s}
+        .warning-box{border-left:4px solid orange;background:rgba(255,165,0,.08);padding:1rem 1.5rem;margin:1rem 0;border-radius:4px}
+        .pro-tip{border-left:4px solid var(--color-gold);background:rgba(255,215,0,.05);padding:1rem 1.5rem;margin:1rem 0;border-radius:4px}
+        @media(max-width:768px){.walkthrough-timeline{padding-left:2.5rem}.timeline-step::before{left:-2.8rem;width:26px;height:26px;line-height:26px;font-size:.75rem}}
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <nav class="main-nav">
+        <div class="logo"><h1>🏰 Gothic 1 Remake</h1></div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle" style="color:var(--color-gold)">Walkthrough</a>
+                <ul class="dropdown-menu"><li><a href="walkthrough.html" class="active">Walkthrough</a></li><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="visual-guide.html">Visual Guide</a></li><li><a href="map-guide.html">Map Guide</a></li><li><a href="quests.html">Quest List</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Tools</a>
+                <ul class="dropdown-menu"><li><a href="lock-solver.html">Lock Solver</a></li><li><a href="lockpicking-calculator.html">Calculator</a></li><li><a href="lockpicking.html">Lockpicking Guide</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Factions</a>
+                <ul class="dropdown-menu"><li><a href="factions-guide.html">Factions Overview</a></li><li><div class="dropdown-divider"></div></li><li><a href="factions-ultimate-guide.html">Ultimate Guide</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Resources</a>
+                <ul class="dropdown-menu"><li><a href="bestiary.html">Bestiary</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html">NPC Characters</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="system-requirements.html">System Requirements</a></li><li><a href="save-management.html">Save Management</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul>
+            </li>
+            <li class="nav-item">
+                <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                    <option value="en">🇬🇧 English</option><option value="de">🇩🇪 Deutsch</option><option value="fr">🇫🇷 Français</option><option value="it">🇮🇹 Italiano</option><option value="es">🇪🇸 Español</option><option value="ko">🇰🇷 한국어</option><option value="ja">🇯🇵 日本語</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="content-wrapper">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Walkthrough</span></nav>
+
+    <section class="page-header">
+        <h1>🗺️ Complete Walkthrough</h1>
+        <p class="page-subtitle">Step-by-step guide from the beach to endgame — all factions covered</p>
+    </section>
+
+    <!-- Quick Navigation -->
+    <section class="toc-section">
+        <h2>Table of Contents</h2>
+        <ol class="toc-list">
+            <li><a href="#phase1">Phase 1: The Awakening (Hours 0-2)</a></li>
+            <li><a href="#phase2">Phase 2: First Steps in the Colony (Hours 2-5)</a></li>
+            <li><a href="#phase3">Phase 3: Choosing Your Path (Hours 5-10)</a></li>
+            <li><a href="#phase4">Phase 4: Faction Initiation (Hours 10-20)</a></li>
+            <li><a href="#phase5">Phase 5: Rising in Power (Hours 20-35)</a></li>
+            <li><a href="#phase6">Phase 6: Endgame (Hours 35-50+)</a></li>
+        </ol>
+    </section>
+
+    <!-- Progress Tracker -->
+    <section class="guide-section">
+        <div class="progress-tracker">
+            <h3 style="color:var(--color-gold);font-family:var(--font-heading)">📊 Your Progress</h3>
+            <p style="color:var(--color-text-secondary)">Use this interactive tracker to mark your journey:</p>
+            <div class="progress-bar-bg"><div id="progressBar" class="progress-bar-fill" style="width:0%"></div></div>
+            <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem">
+                <button onclick="updateProgress(17)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">0% Reset</button>
+                <button onclick="updateProgress(33)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">Phase 2</button>
+                <button onclick="updateProgress(50)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">Phase 3</button>
+                <button onclick="updateProgress(67)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">Phase 4</button>
+                <button onclick="updateProgress(83)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">Phase 5</button>
+                <button onclick="updateProgress(100)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">Done!</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 1: The Awakening -->
+    <section id="phase1" class="guide-section">
+        <h2 class="phase-header">Phase 1: The Awakening <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">Hours 0-2</span></h2>
+        <div class="info-box warning"><strong>⚠️ Survival Mode:</strong> You have no weapons, no armor, and no allies. Everything can kill you. Stay alert!</div>
+
+        <div class="walkthrough-timeline">
+            <div class="timeline-step" data-step="1">
+                <div class="step-card">
+                    <h3>Waking Up on the Shore</h3>
+                    <p>The game opens with you washed ashore after a shipwreck. The magical barrier looms in the distance — that's where you're heading. Look around for basic supplies.</p>
+                    <h4>Objectives:</h4>
+                    <ul class="quest-list">
+                        <li>Explore the beach area for loose items</li>
+                        <li>Collect any berries and herbs you find (they restore health)</li>
+                        <li>Follow the path inland — avoid any creatures you see</li>
+                        <li class="completed">Talk to the first person you encounter</li>
+                    </ul>
+                    <div class="pro-tip"><strong>💡 Pro Tip:</strong> At level 1, you can't fight anything. Running away is not cowardice — it's survival. Pick up everything: herbs, mushrooms, raw meat. They're your only source of healing and early income.</div>
+                </div>
+            </div>
+
+            <div class="timeline-step" data-step="2">
+                <div class="step-card">
+                    <h3>Meeting Diego</h3>
+                    <p>You'll encounter Diego, a seasoned veteran who becomes your guide. He offers to escort you to the Old Camp. <strong>Always accept his help.</strong></p>
+                    <h4>Why Diego Matters:</h4>
+                    <ul class="quest-list">
+                        <li>He protects you from mobs during the journey</li>
+                        <li>He explains the world's lore, factions, and politics</li>
+                        <li>He teaches Strength & Agility stats later on</li>
+                        <li>He's your main quest-giver for the Old Camp path</li>
+                    </ul>
+                    <div class="pro-tip"><strong>💡 Pro Tip:</strong> Listen to what Diego says. His dialogue explains the factions, the politics, and who's who. NPC conversations are how the game teaches you — there are no pop-up tutorials.</div>
+                </div>
+            </div>
+
+            <div class="timeline-step" data-step="3">
+                <div class="step-card">
+                    <h3>Arriving at Old Camp</h3>
+                    <p>Diego brings you to the Old Camp — the largest settlement in the colony. This is your first safe zone. Use this time to learn the layout and meet key NPCs.</p>
+                    <h4>Key NPCs to Meet:</h4>
+                    <ul class="quest-list">
+                        <li><strong>Diego</strong> — Stats trainer (Strength, Agility)</li>
+                        <li><strong>Skirti</strong> — One-handed weapon training</li>
+                        <li><strong>Torres</strong> — Rune magic, mana upgrades, magical items</li>
+                        <li><strong>Graham</strong> — Sells maps with routes marked</li>
+                        <li><strong>Wesley</strong> — Guard captain, gives "Sword of Sentry" quest</li>
+                        <li><strong>Chef Snuf</strong> — Cooking and food supplies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 2: First Steps -->
+    <section id="phase2" class="guide-section">
+        <h2 class="phase-header">Phase 2: First Steps in the Colony <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">Hours 2-5</span></h2>
+        <div class="info-box note"><strong>📌 Goal:</strong> Reach level 5 and gather resources before making any permanent decisions.</div>
+
+        <div class="walkthrough-timeline">
+            <div class="timeline-step" data-step="4">
+                <div class="step-card">
+                    <h3>Early Questing & Leveling</h3>
+                    <p>Take on basic quests to earn XP, ore coins, and reputation. These early missions teach core mechanics without being too punishing.</p>
+                    <h4>Priority Quest Order:</h4>
+                    <ul class="quest-list">
+                        <li><strong>Cooking Ingredients:</strong> Collect 3 meat worms + 5 mushrooms for Chef Snuf</li>
+                        <li><strong>Missing Guard:</strong> Find guard Nick (learns about patrol routes)</li>
+                        <li><strong>Herb Gathering:</strong> Collect healing plants around the camp perimeter</li>
+                        <li><strong>Arena Training:</strong> Challenge Cole and Kyle in the arena (safe combat practice)</li>
+                        <li><strong>Find Pinks:</strong> Locate the stealth skill teacher</li>
+                    </ul>
+                    <div class="pro-tip"><strong>💡 Pro Tip:</strong> The arena is the safest place to practice combat. You can't die there, and you'll learn timing and enemy patterns. Spend at least 30 minutes here before venturing out.</div>
+                </div>
+            </div>
+
+            <div class="timeline-step" data-step="5">
+                <div class="step-card">
+                    <h3>Exploring the Colony</h3>
+                    <p>Now that you're level 3-4, it's safe to explore between camps. Visit all three faction headquarters before committing to one.</p>
+                    <h4>Travel Routes (Verified):</h4>
+                    <ul class="quest-list">
+                        <li><strong>Old Camp to New Camp:</strong> Exit south gate, follow western road toward lake. Pass Cavalorn's cabin then Aidan's cabin. Continue west to the lake — New Camp sits on the hill.</li>
+                        <li><strong>Old Camp to Swamp Camp:</strong> More dangerous route through marshland. Level 5+ recommended.</li>
+                    </ul>
+                    <div class="warning-box"><strong>⚠️ Warning:</strong> Travel between camps at levels 1-3 is dangerous. Wolves, bandits, and beasts patrol the roads. Minimum level 4-5 recommended. Save before every journey.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 3: Choosing Your Path -->
+    <section id="phase3" class="guide-section">
+        <h2 class="phase-header">Phase 3: Choosing Your Path <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">Hours 5-10</span></h2>
+        <div class="info-box important"><strong>⚠️ Point of No Return:</strong> Your faction choice is PERMANENT. Complete quests for ALL THREE camps before committing!</div>
+
+        <div class="walkthrough-timeline">
+            <div class="timeline-step" data-step="6">
+                <div class="step-card">
+                    <h3>Evaluating All Three Factions</h3>
+                    <p>Before choosing, you should complete the intro quests for each camp. This gives you XP, loot, and a feel for each faction's culture.</p>
+
+                    <h4>🔥 Old Camp (Best for Beginners)</h4>
+                    <ul class="quest-list">
+                        <li>Easiest intro quests with structured progression</li>
+                        <li>Access to fire magic through Torres</li>
+                        <li>Premium armor available early game</li>
+                        <li>Well-organized hierarchy with clear direction</li>
+                    </ul>
+
+                    <h4>💧 New Camp (Combat-Focused)</h4>
+                    <ul class="quest-list">
+                        <li>Two-handed weapon training available early</li>
+                        <li>Unique powerful weapons not available elsewhere</li>
+                        <li>Independent, less hierarchical society</li>
+                        <li>Higher difficulty early, better late-game rewards</li>
+                    </ul>
+
+                    <h4>🌀 Swamp Camp (Magic-Focused)</h4>
+                    <ul class="quest-list">
+                        <li>Unique Spirit Magic: Sleep, Telekinesis, Wind Hammer</li>
+                        <li>Perfect for tactical spell-casters</li>
+                        <li>Steepest learning curve but most unique gameplay</li>
+                        <li>Only available at game start — cannot join later</li>
+                    </ul>
+
+                    <div style="text-align:center;margin:1.5rem 0">
+                        <a href="factions-ultimate-guide.html" style="display:inline-block;background:linear-gradient(135deg,#e94560,#ffd700);color:white;padding:.8rem 2rem;border-radius:8px;text-decoration:none;font-weight:700">🎯 Take the Faction Quiz to Help Decide</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 4: Faction Initiation -->
+    <section id="phase4" class="guide-section">
+        <h2 class="phase-header">Phase 4: Faction Initiation <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">Hours 10-20</span></h2>
+
+        <div class="walkthrough-timeline">
+            <div class="timeline-step" data-step="7">
+                <div class="step-card">
+                    <h3>Old Camp Initiation Path</h3>
+                    <h4>Requirements:</h4>
+                    <ul class="quest-list">
+                        <li>Reach level 5+</li>
+                        <li>Complete 6 main quests (Missing Guard, Chef's Worms, Arena Challenges, Find Pinks)</li>
+                        <li>Get support from at least 4 Shadows members</li>
+                        <li>Pass Diego's test — retrieve supply list from Old Mine</li>
+                        <li>Meet Gomez in castle, name 4 valid contacts</li>
+                    </ul>
+                    <h4>Rewards:</h4>
+                    <ul class="quest-list">
+                        <li class="completed">Shadow Armor (unique faction armor)</li>
+                        <li class="completed">Large XP boost</li>
+                        <li class="completed">Ore coins as currency</li>
+                        <li class="completed">Access to Inner Circle treasures</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-step" data-step="8">
+                <div class="step-card">
+                    <h3>New Camp Initiation Path</h3>
+                    <h4>Requirements:</h4>
+                    <ul class="quest-list">
+                        <li>Reach level 5+</li>
+                        <li>Modify and deliver supply list to Lares</li>
+                        <li>Acquire Mordrag's ring</li>
+                        <li>Gather mineral/resources for various tasks</li>
+                        <li>Earn trust of key characters</li>
+                        <li>Collaborate with Rice Lord</li>
+                        <li>Participate in supply convoy ambush (NEW in Remake)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-step" data-step="9">
+                <div class="step-card">
+                    <h3>Swamp Camp Initiation Path</h3>
+                    <h4>Requirements:</h4>
+                    <ul class="quest-list">
+                        <li>Reach level 5+</li>
+                        <li>Impress 4 spiritual guides (NOT military leaders)</li>
+                        <li>Each guide demands different proof: ingenuity, collection tasks, magical capability</li>
+                        <li>Once all 4 favor you, accepted as novice</li>
+                        <li>Begin path toward Templar ranks</li>
+                    </ul>
+                    <div class="pro-tip"><strong>💡 Pro Tip:</strong> Swamp Camp has NO second chance. If you choose another faction first, you cannot switch. Decide before completing any other faction's final initiation quest.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 5: Rising in Power -->
+    <section id="phase5" class="guide-section">
+        <h2 class="phase-header">Phase 5: Rising in Power <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">Hours 20-35</span></h2>
+
+        <div class="walkthrough-timeline">
+            <div class="timeline-step" data-step="10">
+                <div class="step-card">
+                    <h3>Mid-Game Priorities</h3>
+                    <p>You're in a faction now. Access to better trainers, gear, and quests opens up. Time to get stronger and push into tougher areas.</p>
+                    <h4>Key Activities:</h4>
+                    <ul class="quest-list">
+                        <li><strong>Weapon Mastery:</strong> Train with your faction's weapon specialist. Old Camp: one-handed. New Camp: two-handed. Swamp Camp: magic-enhanced combat.</li>
+                        <li><strong>Armor Upgrades:</strong> Complete faction quests to earn better armor tiers.</li>
+                        <li><strong>Spell Acquisition:</strong> Old Camp — fire runes. New Camp — water ring (freeze). Swamp Camp — Sleep, Telekinesis.</li>
+                        <li><strong>Lockpicking:</strong> Learn lockpicking to access hidden treasures. <a href="lock-solver.html">Use the solver</a> for tough locks.</li>
+                        <li><strong>Map Purchase:</strong> Buy from Graham (Old Camp) after talking to Wesley for marked routes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-step" data-step="11">
+                <div class="step-card">
+                    <h3>Intermediate & Advanced Locks</h3>
+                    <p>As you explore deeper areas, you'll encounter 5-7 plate puzzle locks. These guard the best loot in the game.</p>
+                    <h4>Lock Difficulty Reference:</h4>
+                    <ul class="quest-list">
+                        <li>5-Plate locks: Near orc camp, mountain passage east of White Camp</li>
+                        <li>6-7 Plate locks: Advanced areas, pre-Collapsed Tower zones</li>
+                        <li>Collapsed Tower Lock: Most complex — 57 steps, 7 plates with mechanical linkages</li>
+                    </ul>
+                    <div style="text-align:center;margin:1rem 0">
+                        <a href="lockpicking.html" style="color:var(--color-accent);font-weight:700">📖 Read the Complete Lockpicking Guide →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phase 6: Endgame -->
+    <section id="phase6" class="guide-section">
+        <h2 class="phase-header">Phase 6: Endgame <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">Hours 35-50+</span></h2>
+
+        <div class="walkthrough-timeline">
+            <div class="timeline-step" data-step="12">
+                <div class="step-card">
+                    <h3>Endgame Preparation</h3>
+                    <p>You're nearing the end. Make sure your gear is maxed out and you're happy with your build — there's no turning back.</p>
+                    <h4>Pre-Endgame Checklist:</h4>
+                    <ul class="quest-list">
+                        <li>All faction quests completed</li>
+                        <li>Best available armor equipped</li>
+                        <li>Primary weapon skill maxed</li>
+                        <li>Key spells learned (based on faction)</li>
+                        <li>Repair kits and healing items stocked</li>
+                        <li>Collapsed Tower lock solved (if applicable)</li>
+                        <li>Map fully explored</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-step" data-step="13">
+                <div class="step-card">
+                    <h3>The Final Confrontation</h3>
+                    <p>The endgame is about the magical barrier — what it is, who built it, and how to get out. Each faction's ending is different: different allies, different fights, different outcomes.</p>
+                    <div class="info-box important"><strong>⚔️ Final Battle Tips:</strong> Make multiple save files before the last fight. Each faction gets its own ending — worth replaying to see them all.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Reference -->
+    <section class="guide-section">
+        <h2>Quick Reference Cards</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:2rem 0">
+            <div class="tip-card"><h3>💾 Save Management</h3><p>Manual saves are permanent. Quicksave (Q key) is overwritten. Keep at least 3 rotating save slots. Save before every lock attempt, faction decision, and boss encounter.</p></div>
+            <div class="tip-card"><h3>📈 Leveling Strategy</h3><p>Focus on one weapon type. Don't spread stats evenly. Old/New Camp: prioritize Strength. Swamp Camp: prioritize Mana. Always keep enough LP for emergency skills.</p></div>
+            <div class="tip-card"><h3>🛡️ Survival Rules</h3><p>Level 1-3: flee everything. Level 4-6: fight only weaker enemies (scavengers, young wolves). Level 7+: engage most enemies. Level 10+: you can hold your own.</p></div>
+            <div class="tip-card"><h3>🔐 Lock Priority</h3><p>Training Center (1-4 plate) → World locks (5 plate) → Collapsed Tower (7 plate). <a href="lock-solver.html">Use the solver</a> to avoid lock damage.</p></div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="factions-guide.html">Faction Guide</a></li><li><a href="lock-solver.html">Lock Solver</a></li><li><a href="walkthrough.html">Walkthrough</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Gothic 1 Remake. Fan-made guide.</p></div>
+</footer>
+
+<script>
+    function updateProgress(pct) {
+        document.getElementById('progressBar').style.width = pct + '%';
+        localStorage.setItem('walkthroughProgress', pct);
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        var saved = localStorage.getItem('walkthroughProgress');
+        if (saved) document.getElementById('progressBar').style.width = saved + '%';
+    });
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

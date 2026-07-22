@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gothic 1 Remake NPC Characters - All Key Characters Guide</title>
+    <meta name="description" content="Complete Gothic 1 Remake NPC character database. Diego, Gomez, Lares, Y'Berion, Torres, Cor Angar and more. Locations, roles, services, and quests.">
+    <meta name="keywords" content="Gothic 1 Remake NPC, characters, Diego, Gomez, Lares, Y'Berion, trainers, quest givers">
+    <link rel="canonical" href="https://sueryue.github.io/Gothic-1-Remake/npc.html">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .npc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.5rem;margin:2rem 0}
+        .npc-card{background:var(--color-bg-light);border:2px solid var(--color-border);border-radius:12px;padding:1.5rem;transition:var(--transition);position:relative}
+        .npc-card:hover{border-color:var(--color-gold);transform:translateY(-3px)}
+        .npc-faction{position:absolute;top:1rem;right:1rem;padding:.3rem .8rem;border-radius:20px;font-size:.75rem;font-weight:700}
+        .faction-old{background:rgba(196,30,58,.2);color:#c41e3a}
+        .faction-new{background:rgba(34,139,34,.2);color:#228b22}
+        .faction-swamp{background:rgba(106,13,173,.2);color:#6a0dad}
+        .faction-neutral{background:rgba(255,215,0,.15);color:var(--color-gold)}
+        .npc-name{font-family:var(--font-heading);font-size:1.3rem;color:var(--color-gold);margin-bottom:.5rem;padding-right:100px}
+        .npc-role{color:var(--color-accent);font-size:.9rem;font-weight:600;margin-bottom:.8rem}
+        .npc-detail{margin:.8rem 0}
+        .npc-detail dt{color:var(--color-text-secondary);font-size:.8rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.2rem}
+        .npc-detail dd{color:var(--color-text);font-size:.9rem;margin:0 0 .8rem 0;line-height:1.6}
+        .npc-services{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}
+        .service-tag{padding:.3rem .7rem;border-radius:12px;font-size:.75rem;font-weight:600}
+        .s-trainer{background:rgba(0,123,255,.15);color:#5b9bd5}
+        .s-quest{background:rgba(255,215,0,.15);color:var(--color-gold)}
+        .s-merchant{background:rgba(40,167,69,.15);color:#28a745}
+        .s-magic{background:rgba(106,13,173,.15);color:#6a0dad}
+        .s-combat{background:rgba(233,69,96,.15);color:var(--color-accent)}
+        @media(max-width:768px){.npc-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <nav class="main-nav">
+        <div class="logo"><h1>&#127984; Gothic 1 Remake</h1></div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Walkthrough</a>
+                <ul class="dropdown-menu"><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="visual-guide.html">Visual Guide</a></li><li><a href="map-guide.html">Map Guide</a></li><li><a href="quests.html">Quest List</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Tools</a>
+                <ul class="dropdown-menu"><li><a href="lock-solver.html">Lock Solver</a></li><li><a href="lockpicking-calculator.html">Calculator</a></li><li><a href="lockpicking.html">Lockpicking Guide</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Factions</a>
+                <ul class="dropdown-menu"><li><a href="factions-guide.html">Factions Overview</a></li><li><div class="dropdown-divider"></div></li><li><a href="factions-ultimate-guide.html">Ultimate Guide</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle" style="color:var(--color-gold)">Resources</a>
+                <ul class="dropdown-menu"><li><a href="bestiary.html">Bestiary</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html" class="active">NPC Characters</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="system-requirements.html">System Requirements</a></li><li><a href="save-management.html">Save Management</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul>
+            </li>
+            <li class="nav-item">
+                <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                    <option value="en">&#127468;&#127463; English</option><option value="de">&#127465;&#127466; Deutsch</option><option value="fr">&#127467;&#127482; Fran&ccedil;ais</option><option value="it">&#127470;&#127481; Italiano</option><option value="es">&#127466;&#127480; Espa&ntilde;ol</option><option value="ko">&#127472;&#127479; &#54620;&#44397;&#50612;</option><option value="ja">&#127471;&#127477; &#26085;&#26412;&#35486;</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="content-wrapper">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">NPC Characters</span></nav>
+
+    <section class="page-header">
+        <h1>&#128101; NPC Character Database</h1>
+        <p class="page-subtitle">Key characters, their locations, roles, and what they offer</p>
+    </section>
+
+    <!-- Old Camp NPCs -->
+    <section class="guide-section">
+        <h2 style="font-family:var(--font-heading);color:#c41e3a;border-bottom:2px solid #c41e3a;padding-bottom:.5rem;margin-bottom:1.5rem">&#128293; Old Camp Characters</h2>
+        <div class="npc-grid">
+            <div class="npc-card">
+                <span class="npc-faction faction-old">Old Camp</span>
+                <div class="npc-name">Diego</div>
+                <div class="npc-role">Mentor / Main Quest Giver</div>
+                <dl class="npc-detail">
+                    <dt>Location</dt><dd>Beach path (first meeting), then Old Camp</dd>
+                    <dt>Role</dt><dd>Your guide through the early game. First friendly face in the colony. Teaches Strength &amp; Agility, explains factions and politics, gives main quest progression.</dd>
+                    <dt>When You Meet</dt><dd>Within the first 10 minutes, on the path from the beach</dd>
+                </dl>
+                <div class="npc-services"><span class="service-tag s-trainer">Trainer (STR, AGI)</span><span class="service-tag s-quest">Quest Giver</span></div>
+            </div>
+            <div class="npc-card">
+                <span class="npc-faction faction-old">Old Camp</span>
+                <div class="npc-name">Gomez</div>
+                <div class="npc-role">Old Camp Leader</div>
+                <dl class="npc-detail">
+                    <dt>Location</dt><dd>Castle (Old Camp inner area)</dd>
+                    <dt>Role</dt><dd>Rules the Old Camp with an iron fist. Controls ore mining operations and trade. Final decision-maker for faction initiation. Represents the old Baron class hierarchy.</dd>
+                    <dt>When You Meet</dt><dd>Mid-game, during Old Camp initiation quests</dd>
+                </dl>
+                <div class="npc-services"><span class="service-tag s-quest">Quest Giver</span></div>
+            </div>
+            <div class="npc-card">
+                <span class="npc-faction faction-old">Old Camp</span>
+                <div class="npc-name">Torres</div>
+                <div class="npc-role">Fire Mage / Magic Trainer</div>
+                <dl class="npc-detail">
+                    <dt>Location</dt><dd>Old Camp (Fire Mage quarter)</dd>
+                    <dt>Role</dt><dd>Sells magical items, runes, and mana upgrades. Teaches fire magic — basic and advanced runes. Your go-to for anything magic-related in Old Camp.</dd>
+                    <dt>When You Meet</dt><dd>Early game, as soon as you arrive at Old Camp</dd>
+                </dl>
+                <div class="npc-services"><span class="service-tag s-magic">Magic Trainer</span><span class="service-tag s-merchant">Merchant</span></div>
+            </div>
+            <div class="npc-card">
+                <span class="npc-faction faction-old">Old Camp</span>
+                <div class="npc-name">Wesley</div>
+                <div class="npc-role">Guard Captain</div>
+                <dl class="npc-detail">
+                    <dt>Location</dt><dd>Old Camp (guard quarters)</dd>
+                    <dt>Role</dt><dd>Guard captain who gives the "Sword of Sentry" quest — your first real weapon upgrade. Provides patrol route information and combat-related quests.</dd>
+                    <dt>When You Meet</dt><dd>Early game, after arriving at Old Camp</dd>
+                </dl>
+                <div class="npc-services"><span class="service-tag s-quest">Quest Giver</span><span class="service-tag s-combat">Combat</span></div>
+            </div>
+            <div class="npc-card">
+                <span class="npc-faction faction-old">Old Camp</span>
+                <div class="npc-name">Skirti</div>
+                <div class="npc-role">Weapon Trainer</div>
+                <dl class="npc-detail">
+                    <dt>Location</dt><dd>Old Camp (training area)</dd>
+                    <dt>Role</dt><dd>One-handed weapon specialist. Teaches sword combat techniques and increases one-handed weapon proficiency.</dd>
+                    <dt>When You Meet</dt><dd>Early game, Old Camp training grounds</dd>
+                </dl>
+                <div class="npc-services"><span class="service-tag s-trainer">Trainer (1H Weapons)</span></div>
+            </div>
+            <div class="npc-card">
+                <span class="npc-faction faction-old">Old Camp</span>
+                <div class="npc-name">Graham</div>
+                <div class="npc-role">Cartographer / Merchant</div>
+                <dl class="npc-detail">
+                    <dt>Location</dt><dd>Old Camp (near market area)</dd>
+                    <dt>Role</dt><dd>Sells maps with routes marked. Essential purchase early game — his maps show you safe paths, danger zones, and point-of-interest locations throughout the colony.</dd>
+                    <dt>When You Meet</dt><dd>After talking to Wesley, who sends you to Graham</dd>
+                </dl>
+                <div class="npc-services"><span class="service-tag s-merchant">Merchant (Maps)</span></div>
+            </div>
+            <div class="npc-card">
+                <span class="npc-faction faction-old">Old Camp</span>
+                <div class="npc-name">Chef Snuf</div>
+                <div class="npc-role">Cook / Early Quest Giver</div>
+                <dl class="npc-detail">
+                    <dt>Location</dt><dd>Old Camp (kitchen area)</dd>
+                    <dt>Role</dt><dd>Gives the "Cooking Ingredients" quest — one of your first fetch quests. Sells food supplies and buys herbs/meat. Good source of early XP and ore coins.</dd>
+                    <dt>When You Meet</dt><dd>Very early, as soon as you explore Old Camp</dd>
+                </dl>
+                <div class="npc-services"><span class="service-tag s-quest">Quest Giver</span><span class="service-tag s-merchant">Merchant (Food)</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Camp NPCs -->
+    <section class="guide-section">
+        <h2 style="font-family:var(--font-heading);color:#228b22;border-bottom:2px solid #228b22;padding-bottom:.5rem;margin-bottom:1.5rem">&#128167; New Camp Characters</h2>
+        <div class="npc-grid">
+            <div class="npc-card">
+                <span class="npc-faction faction-new">New Camp</span>
+                <div class="npc-name">Lares</div>
+                <div class="npc-role">New Camp Leader / Quest Giver</div>
+                <dl class="npc-detail">
+                    <dt>Location</dt><dd>New Camp (central area)</dd>
+                    <dt>Role</dt><dd>Leads the New Camp rebellion. Gives the modified supply list quest and initiation tasks. Coordinates the plan to breach the magical barrier. Your main New Camp contact.</dd>
+                    <dt>When You Meet</dt><dd>When first visiting New Camp (Phase 2-3)</dd>
+                </dl>
+                <div class="npc-services"><span class="service-tag s-quest">Quest Giver</span><span class="service-tag s-trainer">Trainer</span></div>
+            </div>
+            <div class="npc-card">
+                <span class="npc-faction faction-new">New Camp</span>
+                <div class="npc-name">Rice Lord</div>
+                <div class="npc-role">Wealthy Trader / Quest Chain</div>
+                <dl class="npc-detail">
+                    <dt>Location</dt><dd>New Camp (merchant district)</dd>
+                    <dt>Role</dt><dd>Controls New Camp's supply lines. His quest chain rewards the legendary Rice Lord's Unique Dagger. A key figure for New Camp's economic and diplomatic quests.</dd>
+                    <dt>When You Meet</dt><dd>Mid-game, New Camp quest progression</dd>
+                </dl>
+                <div class="npc-services"><span class="service-tag s-quest">Quest Chain</span><span class="service-tag s-merchant">Merchant</span></div>
+            </div>
+            <div class="npc-card">
+                <span class="npc-faction faction-new">New Camp</span>
+                <div class="npc-name">Mordrag</div>
+                <div class="npc-role">Key NPC / Ring Quest</div>
+                <dl class="npc-detail">
+                    <dt>Location</dt><dd>New Camp / traveling</dd>
+                    <dt>Role</dt><dd>His ring is a required item for New Camp initiation. Can be acquired through trade, theft, or force — your choice affects reputation. Also provides travel escort services.</dd>
+                    <dt>When You Meet</dt><dd>During New Camp initiation quests</dd>
+                </dl>
+                <div class="npc-services"><span class="service-tag s-quest">Quest Item</span></div>
+            </div>
+            <div class="npc-card">
+                <span class="npc-faction faction-new">New Camp</span>
+                <div class="npc-name">Cavalorn</div>
+                <div class="npc-role">Hunter / Guide</div>
+                <dl class="npc-detail">
+                    <dt>Location</dt><dd>Cabin along the western road to New Camp</dd>
+                    <dt>Role</dt><dd>Lives in a cabin between Old Camp and New Camp. Offers hunting tips and warns travelers about dangers on the road. A friendly face on the journey between camps.</dd>
+                    <dt>When You Meet</dt><dd>When traveling from Old Camp to New Camp</dd>
+                </dl>
+                <div class="npc-services"><span class="service-tag s-trainer">Trainer (Hunting)</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Swamp Camp NPCs -->
+    <section class="guide-section">
+        <h2 style="font-family:var(--font-heading);color:#6a0dad;border-bottom:2px solid #6a0dad;padding-bottom:.5rem;margin-bottom:1.5rem">&#127744; Swamp Camp Characters</h2>
+        <div class="npc-grid">
+            <div class="npc-card">
+                <span class="npc-faction faction-swamp">Swamp Camp</span>
+                <div class="npc-name">Y'Berion</div>
+                <div class="npc-role">Swamp Camp Leader / High Priest</div>
+                <dl class="npc-detail">
+                    <dt>Location</dt><dd>Swamp Camp (temple area)</dd>
+                    <dt>Role</dt><dd>Spiritual leader of the Swamp Camp. Oversees all initiations and major rituals. Main quest giver for the Swamp Camp path. Communes with the Sleeper.</dd>
+                    <dt>When You Meet</dt><dd>When visiting Swamp Camp (Phase 2-3)</dd>
+                </dl>
+                <div class="npc-services"><span class="service-tag s-quest">Quest Giver</span><span class="service-tag s-magic">Spiritual Leader</span></div>
+            </div>
+            <div class="npc-card">
+                <span class="npc-faction faction-swamp">Swamp Camp</span>
+                <div class="npc-name">Cor Angar</div>
+                <div class="npc-role">Templar Leader / Combat Trainer</div>
+                <dl class="npc-detail">
+                    <dt>Location</dt><dd>Swamp Camp (templar quarters)</dd>
+                    <dt>Role</dt><dd>Leads the Templar order within Swamp Camp. Trains advanced combat techniques for Swamp Camp initiates. Oversees the Templar Trial advancement quest.</dd>
+                    <dt>When You Meet</dt><dd>Mid-game, after becoming a Novice</dd>
+                </dl>
+                <div class="npc-services"><span class="service-tag s-combat">Combat Trainer</span><span class="service-tag s-quest">Quest Giver</span></div>
+            </div>
+            <div class="npc-card">
+                <span class="npc-faction faction-swamp">Swamp Camp</span>
+                <div class="npc-name">Four Spiritual Guides</div>
+                <div class="npc-role">Initiation Gatekeepers</div>
+                <dl class="npc-detail">
+                    <dt>Location</dt><dd>Swamp Camp (various temple locations)</dd>
+                    <dt>Role</dt><dd>Four guides, each demanding different proof to earn their favor: ingenuity, collection, magical capability, and spiritual trial. All four must be impressed to become a Novice. Each one tests a different aspect of your character.</dd>
+                    <dt>When You Meet</dt><dd>During Swamp Camp initiation</dd>
+                </dl>
+                <div class="npc-services"><span class="service-tag s-quest">Initiation Quest</span><span class="service-tag s-magic">Spiritual Test</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Notable NPCs -->
+    <section class="guide-section">
+        <h2 style="font-family:var(--font-heading);color:var(--color-gold);border-bottom:2px solid var(--color-gold);padding-bottom:.5rem;margin-bottom:1.5rem">&#127760; Other Notable Characters</h2>
+        <div class="npc-grid">
+            <div class="npc-card">
+                <span class="npc-faction faction-neutral">Neutral</span>
+                <div class="npc-name">Pinks</div>
+                <div class="npc-role">Stealth Trainer</div>
+                <dl class="npc-detail">
+                    <dt>Location</dt><dd>Hidden (must be found via quest)</dd>
+                    <dt>Role</dt><dd>Unlocks stealth skills — sneaking, pickpocketing, and silent movement. Must complete "Find Pinks" quest to access his training. Available to all factions but must be found first.</dd>
+                </dl>
+                <div class="npc-services"><span class="service-tag s-trainer">Trainer (Stealth)</span></div>
+            </div>
+            <div class="npc-card">
+                <span class="npc-faction faction-neutral">Neutral</span>
+                <div class="npc-name">Cole &amp; Kyle</div>
+                <div class="npc-role">Arena Fighters</div>
+                <dl class="npc-detail">
+                    <dt>Location</dt><dd>Old Camp Arena</dd>
+                    <dt>Role</dt><dd>Two fighters in the Old Camp arena. Challenging them gives safe combat practice (you can't die in arena matches). Good for learning combat timing and earning early XP. Kyle is the tougher of the two.</dd>
+                </dl>
+                <div class="npc-services"><span class="service-tag s-combat">Combat Practice</span></div>
+            </div>
+            <div class="npc-card">
+                <span class="npc-faction faction-neutral">Neutral</span>
+                <div class="npc-name">Aidan</div>
+                <div class="npc-role">Hunter / Trader</div>
+                <dl class="npc-detail">
+                    <dt>Location</dt><dd>Cabin along New Camp route</dd>
+                    <dt>Role</dt><dd>Lives in a cabin near New Camp. Buys and sells hunting supplies. Good source for arrows and hunting gear if you're going a ranged build.</dd>
+                </dl>
+                <div class="npc-services"><span class="service-tag s-merchant">Merchant (Hunting)</span></div>
+            </div>
+            <div class="npc-card">
+                <span class="npc-faction faction-neutral">Neutral</span>
+                <div class="npc-name">Nick</div>
+                <div class="npc-role">Missing Guard</div>
+                <dl class="npc-detail">
+                    <dt>Location</dt><dd>Must be found (search quest)</dd>
+                    <dt>Role</dt><dd>The subject of Wesley's "Missing Guard" quest. Finding him reveals patrol route information and teaches you about the dangers outside camp walls. An early investigation quest.</dd>
+                </dl>
+                <div class="npc-services"><span class="service-tag s-quest">Search Quest</span></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="factions-guide.html">Faction Guide</a></li><li><a href="quests.html">Quest List</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Gothic 1 Remake. Fan-made guide.</p></div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

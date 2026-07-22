@@ -1,857 +1,208 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gothic 1 Remake Best Faction Choice Guide 2025 - Pick Your Perfect Playstyle</title>
-    <meta name="description" content="Ultimate Gothic 1 Remake faction guide for 2025. Interactive quiz helps you choose between Old Camp, New Camp, and Sect based on your playstyle. Includes build planners, quest previews & pro tips.">
-    <meta name="keywords" content="Gothic 1 Remake best faction, Old Camp vs New Camp vs Sect, faction quiz, build planner, beginner guide 2025, which faction to choose">
-    <meta name="author" content="Gothic 1 Remake Community">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://your-domain.com/factions-ultimate-guide.html">
-    <meta property="og:site_name" content="Gothic 1 Remake">
-    <meta property="og:title" content="Best Faction Choice in Gothic 1 Remake - Ultimate 2025 Guide">
-    <meta property="og:description" content="Interactive quiz + detailed comparison to find your perfect faction. Updated for 2025 patch notes.">
-    <meta property="og:image" content="https://your-domain.com/assets/faction-comparison.jpg">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Best Faction Choice Guide - Gothic 1 Remake 2025">
-    
-    <link rel="canonical" href="https://your-domain.com/factions-ultimate-guide.html">
+    <title>Gothic 1 Remake Best Faction Choice Guide - Pick Your Perfect Playstyle</title>
+    <meta name="description" content="Gothic 1 Remake faction choice guide with interactive quiz. Compare Old Camp, New Camp, and Swamp Camp. Includes build tips and quest previews.">
+    <meta name="keywords" content="Gothic 1 Remake best faction, Old Camp vs New Camp vs Sect, faction quiz, build planner, beginner guide">
+    <link rel="canonical" href="https://sueryue.github.io/Gothic-1-Remake/factions-ultimate-guide.html">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/factions-enhanced.css">
     <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Enhanced faction-specific styles */
-        .quiz-container {
-            background: linear-gradient(135deg, rgba(233, 69, 96, 0.1), rgba(255, 215, 0, 0.1));
-            border: 3px solid var(--color-gold);
-            border-radius: 12px;
-            padding: 3rem;
-            margin: 2rem 0;
-        }
-
-        .quiz-question {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            color: var(--color-gold);
-            margin-bottom: 1.5rem;
-        }
-
-        .quiz-options {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .quiz-option {
-            background: var(--color-bg-medium);
-            border: 2px solid var(--color-border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .quiz-option:hover {
-            border-color: var(--color-accent);
-            transform: translateX(10px);
-            background: rgba(233, 69, 96, 0.1);
-        }
-
-        .quiz-option.selected {
-            border-color: var(--color-gold);
-            background: rgba(255, 215, 0, 0.1);
-        }
-
-        .option-icon {
-            font-size: 2rem;
-            min-width: 50px;
-            text-align: center;
-        }
-
-        .option-content h4 {
-            color: var(--color-text-primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .option-content p {
-            color: var(--color-text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .result-display {
-            background: rgba(0, 0, 0, 0.5);
-            border: 3px solid;
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-top: 2rem;
-            display: none;
-        }
-
-        .result-display.old-camp-result { border-color: #c41e3a; }
-        .result-display.new-camp-result { border-color: #228b22; }
-        .result-display.sect-result { border-color: #6a0dad; }
-
-        .faction-match-percentage {
-            font-size: 3rem;
-            font-weight: 700;
-            text-align: center;
-            margin: 1rem 0;
-        }
-
-        .match-old-camp { color: #c41e3a; }
-        .match-new-camp { color: #228b22; }
-        .match-sect { color: #6a0dad; }
-
-        .build-planner {
-            background: var(--color-bg-light);
-            border: 2px solid var(--color-border);
-            border-radius: 8px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .stat-allocation {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .stat-control {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 1.2rem;
-            border-radius: 8px;
-        }
-
-        .stat-name {
-            font-weight: 700;
-            color: var(--color-gold);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-slider {
-            width: 100%;
-            height: 8px;
-            border-radius: 4px;
-            background: var(--color-border);
-            outline: none;
-        }
-
-        .stat-value {
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-accent);
-            margin-top: 0.5rem;
-        }
-
-        .quest-preview-card {
-            background: var(--color-bg-medium);
-            border-left: 4px solid var(--color-accent);
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .quest-difficulty {
-            display: inline-block;
-            padding: 0.3rem 0.8rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-top: 0.5rem;
-        }
-
-        .difficulty-easy { background: #28a745; color: white; }
-        .difficulty-medium { background: orange; color: black; }
-        .difficulty-hard { background: var(--color-accent); color: white; }
-
-        .comparison-highlight {
-            background: linear-gradient(135deg, rgba(196, 30, 58, 0.1), rgba(34, 139, 34, 0.1), rgba(106, 13, 173, 0.1));
-            padding: 2.5rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-        }
-
-        .playstyle-matcher {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .playstyle-card {
-            background: var(--color-bg-light);
-            border: 2px solid var(--color-border);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .playstyle-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-        }
-
-        .playstyle-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        .early-game-timeline {
-            position: relative;
-            padding-left: 3rem;
-        }
-
-        .timeline-line {
-            position: absolute;
-            left: 1.5rem;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(to bottom, var(--color-accent), var(--color-gold));
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: var(--color-bg-medium);
-            border-radius: 8px;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.2rem;
-            top: 1.8rem;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: var(--color-accent);
-            border: 3px solid var(--color-gold);
-        }
-
-        .level-badge {
-            display: inline-block;
-            background: var(--color-accent);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .quiz-container {
-                padding: 1.5rem;
-            }
-            
-            .stat-allocation {
-                grid-template-columns: 1fr;
-            }
-        }
+        .quiz-container{background:linear-gradient(135deg,rgba(233,69,96,.1),rgba(255,215,0,.1));border:3px solid var(--color-gold);border-radius:12px;padding:3rem;margin:2rem 0}
+        .quiz-question{font-family:var(--font-heading);font-size:1.5rem;color:var(--color-gold);margin-bottom:1.5rem}
+        .quiz-options{display:grid;gap:1rem}
+        .quiz-option{background:var(--color-bg-medium);border:2px solid var(--color-border);border-radius:8px;padding:1.5rem;cursor:pointer;transition:var(--transition);display:flex;align-items:center;gap:1rem}
+        .quiz-option:hover{border-color:var(--color-accent);transform:translateX(10px);background:rgba(233,69,96,.1)}
+        .quiz-option.selected{border-color:var(--color-gold);background:rgba(255,215,0,.1)}
+        .option-icon{font-size:2rem;min-width:50px;text-align:center}
+        .result-display{background:rgba(0,0,0,.5);border:3px solid;border-radius:12px;padding:2.5rem;margin-top:2rem;display:none}
+        .result-display.old-camp-result{border-color:#c41e3a}
+        .result-display.new-camp-result{border-color:#228b22}
+        .result-display.sect-result{border-color:#6a0dad}
+        .faction-match-percentage{font-size:3rem;font-weight:700;text-align:center;margin:1rem 0}
+        .match-old-camp{color:#c41e3a}
+        .match-new-camp{color:#228b22}
+        .match-sect{color:#6a0dad}
+        .stat-slider{width:100%;height:8px;border-radius:4px;background:var(--color-border);outline:none;cursor:pointer}
+        .stat-value{text-align:center;font-size:1.5rem;font-weight:700;color:var(--color-accent);margin-top:.5rem}
+        .btn-calculate{background:linear-gradient(135deg,#28a745,#20c997);color:white;border:none;padding:1.2rem 2.5rem;font-size:1.2rem;font-weight:700;border-radius:8px;cursor:pointer;transition:var(--transition)}
+        .btn-calculate:hover{transform:translateY(-3px);box-shadow:0 8px 16px rgba(40,167,69,.4)}
+        @media(max-width:768px){.quiz-container{padding:1.5rem}}
     </style>
 </head>
 <body>
     <header class="site-header">
         <nav class="main-nav">
-            <div class="logo">
-                <h1>🏰 Gothic 1 Remake</h1>
-            </div>
+            <div class="logo"><h1>🏰 Gothic 1 Remake</h1></div>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="https://sueryue.github.io/Gothic-1-Remake/index.html">Home</a></li>
-                
+                <li class="nav-item"><a href="index.html">Home</a></li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Guides</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/daily-tips.html">Daily Tips</a></li>
-                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/factions-guide.html">Factions Guide</a></li>
-                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/visual-guide.html">Visual Guide</a></li>
-                    </ul>
+                    <a href="#" class="dropdown-toggle">Walkthrough</a>
+                    <ul class="dropdown-menu"><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="visual-guide.html">Visual Guide</a></li><li><a href="map-guide.html">Map Guide</a></li><li><a href="quests.html">Quest List</a></li></ul>
                 </li>
-                
                 <li class="nav-item dropdown">
                     <a href="#" class="dropdown-toggle">Tools</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/lockpicking.html">Lockpicking Guide</a></li>
-                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/lock-solver.html">Lock Solver</a></li>
-                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/lockpicking-calculator.html">Calculator</a></li>
-                    </ul>
+                    <ul class="dropdown-menu"><li><a href="lock-solver.html">Lock Solver</a></li><li><a href="lockpicking-calculator.html">Calculator</a></li><li><a href="lockpicking.html">Lockpicking Guide</a></li></ul>
                 </li>
-                
                 <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Factions</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/factions-guide.html">Factions Overview</a></li>
-                        <li><div class="dropdown-divider"></div></li>
-                        <li><a href="https://sueryue.github.io/Gothic-1-Remake/factions-ultimate-guide.html" class="active">Ultimate Guide</a></li>
-                    </ul>
+                    <a href="#" class="dropdown-toggle" style="color:var(--color-gold)">Factions</a>
+                    <ul class="dropdown-menu"><li><a href="factions-guide.html">Factions Overview</a></li><li><div class="dropdown-divider"></div></li><li><a href="factions-ultimate-guide.html" class="active">Ultimate Guide</a></li></ul>
                 </li>
-                
-                <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
-                    <option value="/en/">English</option>
-                    <option value="/de/">Deutsch</option>
-                    <option value="/fr/">Francais</option>
-                    <option value="/it/">Italiano</option>
-                    <option value="/es/">Espanol</option>
-                    <option value="/ko/">한국어</option>
-                    <option value="/ja/">日本語</option>
-                </select>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropdown-toggle">Resources</a>
+                    <ul class="dropdown-menu"><li><a href="bestiary.html">Bestiary</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html">NPC Characters</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="system-requirements.html">System Requirements</a></li><li><a href="save-management.html">Save Management</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul>
+                </li>
+                <li class="nav-item">
+                    <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                        <option value="en">🇬🇧 English</option><option value="de">🇩🇪 Deutsch</option><option value="fr">🇫🇷 Français</option><option value="it">🇮🇹 Italiano</option><option value="es">🇪🇸 Español</option><option value="ko">🇰🇷 한국어</option><option value="ja">🇯🇵 日本語</option>
+                    </select>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main class="content-wrapper">
-        <nav class="breadcrumb">
-            <a href="index.html">Home</a> / 
-            <a href="https://sueryue.github.io/Gothic-1-Remake/index.html">Guides</a> / 
-            <span class="current">Ultimate Faction Guide 2025</span>
-        </nav>
+        <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Ultimate Faction Guide</span></nav>
 
         <section class="page-header">
-            <h1>⚔️ Ultimate Faction Choice Guide 2025</h1>
-            <p class="page-subtitle">Find your perfect faction with our interactive quiz + exhaustive comparison. Updated for latest patch!</p>
+            <h1>⚔️ Ultimate Faction Choice Guide</h1>
+            <p class="page-subtitle">Interactive quiz + detailed faction comparison to help you decide</p>
         </section>
 
         <!-- Quick Quiz Section -->
         <section class="quiz-container">
-            <h2 style="font-family: var(--font-heading); color: var(--color-gold); text-align: center; font-size: 2rem; margin-bottom: 1rem;">
-                🎯 Find Your Perfect Faction in 3 Questions!
-            </h2>
-            <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: 2rem;">
-                Answer these quick questions and we'll recommend the ideal faction for your playstyle
-            </p>
+            <h2 style="font-family:var(--font-heading);color:var(--color-gold);text-align:center;font-size:2rem;margin-bottom:1rem">🎯 Which Faction Fits You? (3 Questions)</h2>
+            <p style="text-align:center;color:var(--color-text-secondary);margin-bottom:2rem">Answer 3 quick questions — see which faction matches your playstyle</p>
 
             <div id="quizContainer">
-                <!-- Question 1 -->
                 <div class="quiz-step" data-step="1">
                     <div class="quiz-question">Question 1: What's your preferred combat style?</div>
                     <div class="quiz-options">
-                        <div class="quiz-option" data-value="old-camp" onclick="selectOption(this)">
-                            <div class="option-icon">⚔️</div>
-                            <div class="option-content">
-                                <h4>Direct & Aggressive</h4>
-                                <p>I love swinging swords head-on, heavy armor, and overwhelming enemies with power</p>
-                            </div>
-                        </div>
-                        <div class="quiz-option" data-value="new-camp" onclick="selectOption(this)">
-                            <div class="option-icon">🗡️</div>
-                            <div class="option-content">
-                                <h4>Fast & Flexible</h4>
-                                <p>I prefer hit-and-run tactics, daggers, stealth, and using numbers to my advantage</p>
-                            </div>
-                        </div>
-                        <div class="quiz-option" data-value="sect" onclick="selectOption(this)">
-                            <div class="option-icon">🔮</div>
-                            <div class="option-content">
-                                <h4>Magic & Knowledge</h4>
-                                <p>I want to cast spells, summon creatures, and solve puzzles with arcane power</p>
-                            </div>
-                        </div>
+                        <div class="quiz-option" data-value="old-camp" onclick="selectOption(this)"><div class="option-icon">⚔️</div><div class="option-content"><h4>Direct & Aggressive</h4><p>I love swinging swords head-on, heavy armor, and overwhelming enemies with power</p></div></div>
+                        <div class="quiz-option" data-value="new-camp" onclick="selectOption(this)"><div class="option-icon">🗡️</div><div class="option-content"><h4>Fast & Flexible</h4><p>I prefer hit-and-run tactics, daggers, stealth, and using numbers to my advantage</p></div></div>
+                        <div class="quiz-option" data-value="sect" onclick="selectOption(this)"><div class="option-icon">🔮</div><div class="option-content"><h4>Magic & Knowledge</h4><p>I want to cast spells, summon creatures, and solve puzzles with arcane power</p></div></div>
                     </div>
                 </div>
-
-                <!-- Question 2 (Hidden initially) -->
-                <div class="quiz-step" data-step="2" style="display: none;">
+                <div class="quiz-step" data-step="2" style="display:none">
                     <div class="quiz-question">Question 2: How important is story depth to you?</div>
                     <div class="quiz-options">
-                        <div class="quiz-option" data-value="old-camp" onclick="selectOption(this)">
-                            <div class="option-icon">🛡️</div>
-                            <div class="option-content">
-                                <h4>Honor & Loyalty</h4>
-                                <p>I want a storyline about brotherhood, honor, and leading troops into battle against dragons</p>
-                            </div>
-                        </div>
-                        <div class="quiz-option" data-value="new-camp" onclick="selectOption(this)">
-                            <div class="option-icon">👥</div>
-                            <div class="option-content">
-                                <h4>Freedom & Survival</h4>
-                                <p>I prefer gritty survival, complex relationships, and choosing my own path</p>
-                            </div>
-                        </div>
-                        <div class="quiz-option" data-value="sect" onclick="selectOption(this)">
-                            <div class="option-icon">📜</div>
-                            <div class="option-content">
-                                <h4>Discovery & Power</h4>
-                                <p>I crave secrets, ancient mysteries, scholarly pursuits, and unlocking hidden knowledge</p>
-                            </div>
-                        </div>
+                        <div class="quiz-option" data-value="old-camp" onclick="selectOption(this)"><div class="option-icon">🛡️</div><div class="option-content"><h4>Honor & Loyalty</h4><p>I want a storyline about brotherhood, honor, and leading troops into battle against dragons</p></div></div>
+                        <div class="quiz-option" data-value="new-camp" onclick="selectOption(this)"><div class="option-icon">👥</div><div class="option-content"><h4>Freedom & Survival</h4><p>I prefer gritty survival, complex relationships, and choosing my own path</p></div></div>
+                        <div class="quiz-option" data-value="sect" onclick="selectOption(this)"><div class="option-icon">📜</div><div class="option-content"><h4>Discovery & Power</h4><p>I crave secrets, ancient mysteries, scholarly pursuits, and unlocking hidden knowledge</p></div></div>
                     </div>
                 </div>
-
-                <!-- Question 3 (Hidden initially) -->
-                <div class="quiz-step" data-step="3" style="display: none;">
+                <div class="quiz-step" data-step="3" style="display:none">
                     <div class="quiz-question">Question 3: What challenges excite you most?</div>
                     <div class="quiz-options">
-                        <div class="quiz-option" data-value="old-camp" onclick="selectOption(this)">
-                            <div class="option-icon">💪</div>
-                            <div class="option-content">
-                                <h4>Overwhelming Odds</h4>
-                                <p>Tough fights where skill and gear matter most. I love feeling like a warrior hero</p>
-                            </div>
-                        </div>
-                        <div class="quiz-option" data-value="new-camp" onclick="selectOption(this)">
-                            <div class="option-icon">🤔</div>
-                            <div class="option-content">
-                                <h4>Strategic Decisions</h4>
-                                <p>Complex situations where timing, allies, and smart choices beat brute force</p>
-                            </div>
-                        </div>
-                        <div class="quiz-option" data-value="sect" onclick="selectOption(this)">
-                            <div class="option-icon">🧩</div>
-                            <div class="option-content">
-                                <h4>Puzzles & Mastery</h4>
-                                <p>Learning complex systems, managing resources wisely, and mastering powerful magic</p>
-                            </div>
-                        </div>
+                        <div class="quiz-option" data-value="old-camp" onclick="selectOption(this)"><div class="option-icon">💪</div><div class="option-content"><h4>Overwhelming Odds</h4><p>Tough fights where skill and gear matter most. I love feeling like a warrior hero</p></div></div>
+                        <div class="quiz-option" data-value="new-camp" onclick="selectOption(this)"><div class="option-icon">🤔</div><div class="option-content"><h4>Strategic Decisions</h4><p>Complex situations where timing, allies, and smart choices beat brute force</p></div></div>
+                        <div class="quiz-option" data-value="sect" onclick="selectOption(this)"><div class="option-icon">🧩</div><div class="option-content"><h4>Puzzles & Mastery</h4><p>Learning complex systems, managing resources wisely, and mastering powerful magic</p></div></div>
                     </div>
                 </div>
-
-                <!-- Submit Button -->
-                <div style="text-align: center; margin-top: 2rem;">
-                    <button id="quizSubmit" class="btn-calculate" onclick="calculateQuizResult()" style="display: none;">
-                        🎯 Reveal My Perfect Faction
-                    </button>
-                </div>
+                <div style="text-align:center;margin-top:2rem"><button id="quizSubmit" class="btn-calculate" onclick="calculateQuizResult()" style="display:none">🎯 Reveal My Perfect Faction</button></div>
             </div>
 
-            <!-- Result Display -->
             <div id="quizResult" class="result-display">
-                <h3 style="font-family: var(--font-heading); text-align: center; font-size: 1.8rem; margin-bottom: 1rem;">
-                    Your Perfect Match Is:
-                </h3>
+                <h3 style="font-family:var(--font-heading);text-align:center;font-size:1.8rem;margin-bottom:1rem">Your Perfect Match Is:</h3>
                 <div id="resultContent"></div>
             </div>
         </section>
 
-        <!-- Table of Contents -->
-        <section class="toc-section">
-            <h2>Table of Contents</h2>
-            <ol class="toc-list">
-                <li><a href="#quiz">Interactive Quiz (Above)</a></li>
-                <li><a href="#quick-pick">Quick Decision Guide</a></li>
-                <li><a href="#deep-dive">Deep Dive: Each Faction</a></li>
-                <li><a href="#build-planner">Build Planner Tool</a></li>
-                <li><a href="#timeline">Early Game Timeline</a></li>
-                <li><a href="#comparison">Ultimate Comparison Table</a></li>
-                <li><a href="#faq">Expert FAQ</a></li>
-            </ol>
-        </section>
-
-        <!-- Quick Pick Guide -->
+        <!-- Quick Decision -->
         <section id="quick-pick" class="guide-section">
             <h2>⚡ Quick Decision Guide</h2>
-            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">
-                No time for quizzes? Pick based on your immediate goal:
-            </p>
-
-            <div class="playstyle-matcher">
-                <div class="playstyle-card" style="border-color: #c41e3a;">
-                    <div class="playstyle-icon">🥇</div>
-                    <h3 style="color: #c41e3a;">First Time Player?</h3>
-                    <p><strong>Choose: Old Camp</strong></p>
-                    <p style="color: var(--color-text-secondary); margin-top: 1rem;">
-                        Easiest learning curve, strongest early game, clearest objectives
-                    </p>
-                    <span class="quest-difficulty difficulty-easy">Beginner Friendly</span>
-                </div>
-
-                <div class="playstyle-card" style="border-color: #228b22;">
-                    <div class="playstyle-icon">🎭</div>
-                    <h3 style="color: #228b22;">Want Maximum Freedom?</h3>
-                    <p><strong>Choose: New Camp</strong></p>
-                    <p style="color: var(--color-text-secondary); margin-top: 1rem;">
-                        Multiple approaches to quests, stealth options, working with anyone
-                    </p>
-                    <span class="quest-difficulty difficulty-medium">Intermediate</span>
-                </div>
-
-                <div class="playstyle-card" style="border-color: #6a0dad;">
-                    <div class="playstyle-icon">🔮</div>
-                    <h3 style="color: #6a0dad;">Love Learning Systems?</h3>
-                    <p><strong>Choose: Sect</strong></p>
-                    <p style="color: var(--color-text-secondary); margin-top: 1rem;">
-                        Steep learning curve but immensely rewarding once mastered
-                    </p>
-                    <span class="quest-difficulty difficulty-hard">Advanced Rewarding</span>
-                </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin:2rem 0">
+                <div style="background:var(--color-bg-light);border:2px solid #c41e3a;border-radius:12px;padding:2rem;text-align:center"><h3 style="color:#c41e3a">First Time Player?</h3><p><strong>Choose: Old Camp</strong></p><p style="color:var(--color-text-secondary);margin-top:1rem">Easiest learning curve, strongest early game, clearest objectives</p></div>
+                <div style="background:var(--color-bg-light);border:2px solid #228b22;border-radius:12px;padding:2rem;text-align:center"><h3 style="color:#228b22">Want Maximum Freedom?</h3><p><strong>Choose: New Camp</strong></p><p style="color:var(--color-text-secondary);margin-top:1rem">Multiple approaches to quests, stealth options, working with anyone</p></div>
+                <div style="background:var(--color-bg-light);border:2px solid #6a0dad;border-radius:12px;padding:2rem;text-align:center"><h3 style="color:#6a0dad">Love Learning Systems?</h3><p><strong>Choose: Sect</strong></p><p style="color:var(--color-text-secondary);margin-top:1rem">Steep learning curve but immensely rewarding once mastered</p></div>
             </div>
         </section>
 
-        <!-- Deep Dive Sections -->
+        <!-- Deep Dive -->
         <section id="deep-dive" class="guide-section">
-            <h2>📖 Deep Dive: Complete Faction Analysis</h2>
+            <h2>📖 Complete Faction Analysis</h2>
 
-            <!-- Old Camp -->
-            <div id="old-camp-detail" style="margin: 3rem 0;">
-                <h3 style="color: #c41e3a; font-family: var(--font-heading); font-size: 2rem; border-bottom: 3px solid #c41e3a; padding-bottom: 0.5rem;">
-                    🛡️ Old Camp (Knights) - The honorable path of warriors
-                </h3>
-
-                <div class="comparison-highlight">
-                    <h4>🌟 Standout Features</h4>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li>✅ <strong>Leadership Skills:</strong> Command NPC allies in combat</li>
-                        <li>✅ <strong>Elite Armor:</strong> Access to best physical protection</li>
-                        <li>✅ <strong>Dragon Questline:</strong> Epic battles against legendary beasts</li>
-                        <li>✅ <strong>Civil War Subplot:</strong> Secret conflict adds depth</li>
-                    </ul>
-                </div>
-
-                <h4>📋 Key Quest Lines</h4>
-                <div class="quest-preview-card">
-                    <h5>Main Story: Dragon Slayer</h5>
-                    <p>Join the fight against the dreaded dragons terrorizing the Bartered Valley. Lead assaults, forge weapons, face the boss.</p>
-                    <span class="quest-difficulty difficulty-medium">Medium - Story Critical</span>
-                </div>
-
-                <div class="quest-preview-card">
-                    <h5>Side Quest: Stolen Military Equipment</h5>
-                    <p>Recover stolen arms from orc territory. Stealth or combat - your choice!</p>
-                    <span class="quest-difficulty difficulty-easy">Easy - Good for Beginners</span>
-                </div>
-
-                <div class="quest-preview-card">
-                    <h5>Secret: Civil War Leader</h5>
-                    <p>High reputation unlocks internal faction conflict. Choose sides and reshape the camp's future.</p>
-                    <span class="quest-difficulty difficulty-hard">Hard - Requires Rep 15+</span>
-                </div>
-
+            <div id="old-camp-detail" style="margin:3rem 0">
+                <h3 style="color:#c41e3a;font-family:var(--font-heading);font-size:2rem;border-bottom:3px solid #c41e3a;padding-bottom:.5rem">🛡️ Old Camp (Knights)</h3>
                 <h4>💪 Recommended Build Path</h4>
-                <div class="build-planner">
-                    <div class="stat-allocation">
-                        <div class="stat-control">
-                            <span class="stat-name">Strength (Main Stat)</span>
-                            <input type="range" class="stat-slider" min="10" max="20" value="15" disabled>
-                            <div class="stat-value">15+</div>
-                        </div>
-                        <div class="stat-control">
-                            <span class="stat-name">Stamina</span>
-                            <input type="range" class="stat-slider" min="10" max="15" value="12" disabled>
-                            <div class="stat-value">12+</div>
-                        </div>
-                        <div class="stat-control">
-                            <span class="stat-name">Combat Skill</span>
-                            <input type="range" class="stat-slider" min="10" max="20" value="18" disabled>
-                            <div class="stat-value">18+</div>
-                        </div>
+                <div style="background:var(--color-bg-light);border:2px solid var(--color-border);border-radius:8px;padding:2rem;margin:2rem 0">
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem">
+                        <div style="background:rgba(0,0,0,.3);padding:1.2rem;border-radius:8px"><span style="font-weight:700;color:var(--color-gold);display:block;margin-bottom:.5rem">Strength (Main Stat)</span><input type="range" class="stat-slider" min="10" max="20" value="15" oninput="this.nextElementSibling.textContent=this.value+'+'"><div class="stat-value">15+</div></div>
+                        <div style="background:rgba(0,0,0,.3);padding:1.2rem;border-radius:8px"><span style="font-weight:700;color:var(--color-gold);display:block;margin-bottom:.5rem">Stamina</span><input type="range" class="stat-slider" min="10" max="15" value="12" oninput="this.nextElementSibling.textContent=this.value+'+'"><div class="stat-value">12+</div></div>
+                        <div style="background:rgba(0,0,0,.3);padding:1.2rem;border-radius:8px"><span style="font-weight:700;color:var(--color-gold);display:block;margin-bottom:.5rem">Combat Skill</span><input type="range" class="stat-slider" min="10" max="20" value="18" oninput="this.nextElementSibling.textContent=this.value+'+'"><div class="stat-value">18+</div></div>
                     </div>
                 </div>
             </div>
 
-            <!-- New Camp -->
-            <div id="new-camp-detail" style="margin: 3rem 0;">
-                <h3 style="color: #228b22; font-family: var(--font-heading); font-size: 2rem; border-bottom: 3px solid #228b22; padding-bottom: 0.5rem;">
-                    ⚔️ New Camp (Bandits) - The gritty path of survivors
-                </h3>
-
-                <div class="comparison-highlight">
-                    <h4>🌟 Standout Features</h4>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li>✅ <strong>Stealth System:</strong> Sneak, backstab, avoid direct fights</li>
-                        <li>✅ <strong>Orc Diplomacy:</strong> Work with humans AND orcs</li>
-                        <li>✅ <strong>Unique Loot:</strong> Thieves' tools, poison weapons</li>
-                        <li>✅ <strong>Flexible Quests:</strong> Multiple solutions always available</li>
-                    </ul>
-                </div>
-
-                <h4>💀 Warning</h4>
-                <div class="info-box warning">
-                    <strong>⚠️ Not Beginner-Friendly:</strong> New Camp relies heavily on knowing when to run. Many deaths come from overconfidence. Always have an escape plan!
-                </div>
+            <div id="new-camp-detail" style="margin:3rem 0">
+                <h3 style="color:#228b22;font-family:var(--font-heading);font-size:2rem;border-bottom:3px solid #228b22;padding-bottom:.5rem">⚔️ New Camp (Bandits)</h3>
+                <div class="info-box warning"><strong>⚠️ Not Beginner-Friendly:</strong> New Camp relies heavily on knowing when to run. Many deaths come from overconfidence. Always have an escape plan!</div>
             </div>
 
-            <!-- Sect -->
-            <div id="sect-detail" style="margin: 3rem 0;">
-                <h3 style="color: #6a0dad; font-family: var(--font-heading); font-size: 2rem; border-bottom: 3px solid #6a0dad; padding-bottom: 0.5rem;">
-                    🔮 Sect (Mages) - The intellectual path of arcane mastery
-                </h3>
-
-                <div class="comparison-highlight">
-                    <h4>🌟 Standout Features</h4>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li>✅ <strong>Spell Repertoire:</strong> 10+ unique spells to discover</li>
-                        <li>✅ <strong>Summon Ghost:</strong> Solve puzzles remotely</li>
-                        <li>✅ <strong>Heal Self:</strong> Never need medical herbs again</li>
-                        <li>✅ <strong>Scholar Status:</strong> Special dialogues unlock secret paths</li>
-                    </ul>
-                </div>
-
-                <div class="info-box note">
-                    <strong>🎯 Important:</strong> Sect is ONLY available at game start! You cannot join later without exploits or mods.
-                </div>
-            </div>
-        </section>
-
-        <!-- Early Game Timeline -->
-        <section id="timeline" class="guide-section">
-            <h2>📅 First 20 Hours: Faction-Specific Timeline</h2>
-
-            <div class="early-game-timeline">
-                <div class="timeline-line"></div>
-                
-                <div class="timeline-item">
-                    <span class="level-badge">Hours 1-3: Level 1-5</span>
-                    <h4>Survival Phase</h4>
-                    <p><strong>All Factions:</strong> Focus on main quest, collect food/water, avoid strong enemies</p>
-                    <ul style="margin-top: 0.5rem;">
-                        <li>Old Camp: Train with Captain Vard</li>
-                        <li>New Camp: Prove worth to Grod's thugs</li>
-                        <li>Sect: Learn basic spells from Kosh</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="level-badge">Hours 3-8: Level 5-10</span>
-                    <h4>Establishment Phase</h4>
-                    <p><strong>Faction Branches Diverge:</strong></p>
-                    <ul style="margin-top: 0.5rem;">
-                        <li>Old Camp: Join hunting parties, earn reputation</li>
-                        <li>New Camp: First solo scout mission (dangerous!)</li>
-                        <li>Sect: Discover first spell tome (critical moment)</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="level-badge">Hours 8-15: Level 10-15</span>
-                    <h4>Commitment Phase</h4>
-                    <p>Major faction storyline kicks in:</p>
-                    <ul style="margin-top: 0.5rem;">
-                        <li>Old Camp: Dragon confrontation preparation</li>
-                        <li>New Camp: Orc camp infiltration or open war</li>
-                        <li>Sect: Mage duel + spectral abilities unlocked</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Ultimate Comparison -->
-        <section id="comparison" class="guide-section">
-            <h2>📊 Ultimate Comparison Table</h2>
-
-            <div class="table-responsive">
-                <table class="faction-comparison">
-                    <thead>
-                        <tr>
-                            <th>Category</th>
-                            <th class="faction-col old-camp">🛡️ Old Camp</th>
-                            <th class="faction-col new-camp">⚔️ New Camp</th>
-                            <th class="faction-col sect">🔮 Sect</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Easiest to Learn</strong></td>
-                            <td style="color: #28a745; font-weight: 700;">★★★★★</td>
-                            <td style="color: orange; font-weight: 700;">★★★☆☆</td>
-                            <td style="color: var(--color-accent); font-weight: 700;">★★☆☆☆</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Max Power Potential</strong></td>
-                            <td>★★★★☆</td>
-                            <td>★★★★☆</td>
-                            <td style="color: #28a745; font-weight: 700;">★★★★★</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Quest Variety</strong></td>
-                            <td>★★★☆☆</td>
-                            <td style="color: #28a745; font-weight: 700;">★★★★★</td>
-                            <td>★★★★☆</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Story Depth</strong></td>
-                            <td>★★★★☆</td>
-                            <td>★★★★★</td>
-                            <td>★★★★★</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Battle Difficulty</strong></td>
-                            <td style="color: #28a745; font-weight: 700;">Easier</td>
-                            <td>Medium</td>
-                            <td style="color: var(--color-accent); font-weight: 700;">Hardest</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Best For</strong></td>
-                            <td><strong>Beginners</strong></td>
-                            <td><strong>Intermediate</strong></td>
-                            <td><strong>Advanced</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div id="sect-detail" style="margin:3rem 0">
+                <h3 style="color:#6a0dad;font-family:var(--font-heading);font-size:2rem;border-bottom:3px solid #6a0dad;padding-bottom:.5rem">🔮 Sect (Mages)</h3>
+                <div class="info-box note"><strong>🎯 Important:</strong> Sect is ONLY available at game start! You cannot join later without exploits or mods.</div>
             </div>
         </section>
 
         <!-- FAQ -->
         <section id="faq" class="guide-section">
-            <h2>❓ Expert FAQ - Advanced Questions Answered</h2>
-
+            <h2>Expert FAQ</h2>
             <div class="faq-list">
-                <div class="faq-item">
-                    <h3 class="faq-question">Can I change factions after starting?</h3>
-                    <div class="faq-answer">
-                        <p>Technically yes through the "Wolf Pack" quest line, but it requires strength stat 18+, massive bribes, and has severe narrative consequences. Only recommended for second playthroughs.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <h3 class="faq-question">Which faction has the BEST loot?</h3>
-                    <div class="faq-answer">
-                        <p><strong>New Camp</strong> wins for variety (poisons, thieves' tools, unique daggers). <strong>Old Camp</strong> has superior armor sets. <strong>Sect</strong> offers magical items unavailable elsewhere.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <h3 class="faq-question">Is Sect really too hard for newbies?</h3>
-                    <div class="faq-answer">
-                        <p>Hours 1-5 are brutal, but once you unlock <em>Heal</em> (around hour 6-8), survivability skyrockets. The key is stocking up on mana herbs BEFORE casting. If you struggle, try New Camp first, then Sect on replay.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <h3 class="faq-question">Which faction is best for speedrunning?</h3>
-                    <div class="faq-answer">
-                        <p><strong>Sect</strong> by far. Summon Ghost solves many obstacles instantly. Can skip entire sections of the game. World record runs all use Sect.</p>
-                    </div>
-                </div>
+                <div class="faq-item"><h3 class="faq-question">Can I change factions after starting?</h3><div class="faq-answer"><p>Technically yes through the "Wolf Pack" quest line, but it requires strength stat 18+ and has severe narrative consequences. Only recommended for second playthroughs.</p></div></div>
+                <div class="faq-item"><h3 class="faq-question">Which faction has the BEST loot?</h3><div class="faq-answer"><p>New Camp wins for variety (poisons, thieves' tools). Old Camp has superior armor. Sect offers magical items unavailable elsewhere.</p></div></div>
+                <div class="faq-item"><h3 class="faq-question">Is Sect really too hard for newbies?</h3><div class="faq-answer"><p>Hours 1-5 are brutal, but once you unlock Heal (around hour 6-8), survivability skyrockets. Stock up on mana herbs before casting.</p></div></div>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Essential Links</h4>
-                <ul>
-                    <li><a href="https://sueryue.github.io/Gothic-1-Remake/lockpicking-calculator.html">🔐 Lock Calculator</a></li>
-                    <li><a href="https://sueryue.github.io/Gothic-1-Remake/lockpicking.html">📖 Lockpicking Guide</a></li>
-                    <li><a href="index.html">🏰 Home</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Gothic 1 Remake. Community-driven, fan-made guide.</p>
-        </div>
+        <div class="footer-content"><div class="footer-section"><h4>Essential Links</h4><ul><li><a href="lockpicking-calculator.html">🔐 Lock Calculator</a></li><li><a href="lockpicking.html">📖 Lockpicking Guide</a></li><li><a href="index.html">🏰 Home</a></li></ul></div></div>
+        <div class="footer-bottom"><p>&copy; 2026 Gothic 1 Remake. Community-driven, fan-made guide.</p></div>
     </footer>
 
     <script>
-        // === Interactive Quiz Logic ===
-        
-        let quizAnswers = {};
-        let currentStep = 1;
-        
-        function selectOption(element) {
-            const parent = element.parentElement;
-            parent.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
-            element.classList.add('selected');
-            
-            const step = parent.closest('.quiz-step').getAttribute('data-step');
-            const value = element.getAttribute('data-value');
-            
-            quizAnswers[step] = value;
-            
-            // Show next question or submit button
-            setTimeout(() => {
-                if (parseInt(step) < 3) {
-                    document.querySelector(`[data-step="${step}"]`).style.display = 'none';
-                    document.querySelector(`[data-step="${parseInt(step) + 1}"]`).style.display = 'block';
+        var quizAnswers = {};
+        function selectOption(el){
+            var p = el.parentElement;
+            p.querySelectorAll('.quiz-option').forEach(function(o){o.classList.remove('selected')});
+            el.classList.add('selected');
+            var step = p.closest('.quiz-step').getAttribute('data-step');
+            var val = el.getAttribute('data-value');
+            quizAnswers[step] = val;
+            setTimeout(function(){
+                if(parseInt(step) < 3){
+                    document.querySelector('[data-step="'+step+'"]').style.display = 'none';
+                    document.querySelector('[data-step="'+(parseInt(step)+1)+'"]').style.display = 'block';
                 } else {
                     document.getElementById('quizSubmit').style.display = 'inline-block';
                 }
             }, 300);
         }
-        
-        function calculateQuizResult() {
-            const scores = {
-                'old-camp': 0,
-                'new-camp': 0,
-                'sect': 0
-            };
-            
-            // Tally scores
-            Object.values(quizAnswers).forEach(answer => {
-                scores[answer]++;
-            });
-            
-            // Find highest
-            let maxScore = 0;
-            let winner = '';
-            
-            Object.entries(scores).forEach(([faction, score]) => {
-                if (score > maxScore) {
-                    maxScore = score;
-                    winner = faction;
-                }
-            });
-            
-            const percentage = Math.round((maxScore / 3) * 100);
-            const resultDiv = document.getElementById('quizResult');
-            const resultContent = document.getElementById('resultContent');
-            
+        function calculateQuizResult(){
+            var scores = {'old-camp':0,'new-camp':0,'sect':0};
+            Object.values(quizAnswers).forEach(function(a){scores[a]++});
+            var maxScore = 0, winner = '';
+            Object.entries(scores).forEach(function(e){if(e[1] > maxScore){maxScore = e[1]; winner = e[0];}});
+            var pct = Math.round((maxScore/3)*100);
+            var resultDiv = document.getElementById('quizResult');
+            var resultContent = document.getElementById('resultContent');
             resultDiv.style.display = 'block';
-            resultDiv.className = `result-display ${winner}-result`;
-            
-            let factionInfo = {};
-            switch(winner) {
-                case 'old-camp':
-                    factionInfo = {
-                        name: '🛡️ OLD CAMP',
-                        title: 'The Honorable Warrior',
-                        desc: 'You\'re a natural leader who thrives in direct combat. Old Camp\'s martial culture suits your aggressive style.',
-                        color: '#c41e3a'
-                    };
-                    break;
-                case 'new-camp':
-                    factionInfo = {
-                        name: '⚔️ NEW CAMP',
-                        title: 'The Street-Smart Survivor',
-                        desc: 'You value flexibility and cunning over brute force. New Camp\'s freedom appeals to your adaptive nature.',
-                        color: '#228b22'
-                    };
-                    break;
-                case 'sect':
-                    factionInfo = {
-                        name: '🔮 SECT',
-                        title: 'The Arcade Scholar',
-                        desc: 'You love mastering complex systems and wielding knowledge as power. The Sect is made for minds like yours.',
-                        color: '#6a0jad'
-                    };
-                    break;
+            resultDiv.className = 'result-display '+winner+'-result';
+            var info = {};
+            switch(winner){
+                case 'old-camp': info = {name:'🛡️ OLD CAMP',title:'The Honorable Warrior',desc:"You're a natural leader who thrives in direct combat. Old Camp's martial culture suits your aggressive style.",color:'#c41e3a'}; break;
+                case 'new-camp': info = {name:'⚔️ NEW CAMP',title:'The Street-Smart Survivor',desc:'You value flexibility and cunning over brute force. New Camp appeals to your adaptive nature.',color:'#228b22'}; break;
+                case 'sect': info = {name:'🔮 SECT',title:'The Arcane Scholar',desc:'You love mastering complex systems and wielding knowledge as power. The Sect is made for minds like yours.',color:'#6a0dad'}; break;
             }
-            
-            resultContent.innerHTML = `
-                <div class="faction-match-percentage match-${winner}">${percentage}%</div>
-                <h3 style="text-align: center; color: ${factionInfo.color}; font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1rem;">
-                    ${factionInfo.name}
-                </h3>
-                <p style="text-align: center; font-style: italic; color: var(--color-gold); margin-bottom: 1.5rem;">
-                    "${factionInfo.title}"
-                </p>
-                <p style="text-align: center; font-size: 1.1rem; line-height: 1.8;">
-                    ${factionInfo.desc}
-                </p>
-                <div style="text-align: center; margin-top: 2rem;">
-                    <a href="#${winner}-detail" class="btn-calculate" style="text-decoration: none; display: inline-block;">
-                        Explore ${factionInfo.name} →
-                    </a>
-                </div>
-            `;
-            
-            // Scroll to result
-            resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            resultContent.innerHTML = '<div class="faction-match-percentage match-'+winner+'">'+pct+'%</div><h3 style="text-align:center;color:'+info.color+';font-family:var(--font-heading);font-size:2rem;margin-bottom:1rem">'+info.name+'</h3><p style="text-align:center;font-style:italic;color:var(--color-gold);margin-bottom:1.5rem">"'+info.title+'"</p><p style="text-align:center;font-size:1.1rem;line-height:1.8">'+info.desc+'</p><div style="text-align:center;margin-top:2rem"><a href="#'+winner+'-detail" class="btn-calculate" style="text-decoration:none;display:inline-block">Explore '+info.name+' →</a></div>';
+            resultDiv.scrollIntoView({behavior:'smooth',block:'center'});
         }
     </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

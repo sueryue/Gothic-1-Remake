@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gothic 1 Remake Bestiary - Complete Monster & Enemy Guide</title>
+    <meta name="description" content="Complete Gothic 1 Remake bestiary. All monsters, enemies, and wildlife with difficulty ratings, locations, loot drops, and combat strategies.">
+    <meta name="keywords" content="Gothic 1 Remake bestiary, monsters, enemies guide, combat strategies, wolf, scavenger, orc, dragon">
+    <link rel="canonical" href="https://sueryue.github.io/Gothic-1-Remake/bestiary.html">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .bestiary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;margin:2rem 0}
+        .enemy-card{background:var(--color-bg-light);border:2px solid var(--color-border);border-radius:12px;overflow:hidden;transition:var(--transition)}
+        .enemy-card:hover{transform:translateY(-5px);border-color:var(--color-accent);box-shadow:0 8px 20px rgba(233,69,96,.2)}
+        .enemy-header{padding:1.5rem;display:flex;align-items:center;gap:1rem}
+        .enemy-icon{font-size:2.5rem;min-width:60px;text-align:center}
+        .enemy-name{font-family:var(--font-heading);font-size:1.3rem;color:var(--color-gold)}
+        .enemy-body{padding:0 1.5rem 1.5rem}
+        .stat-row{display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
+        .stat-label{color:var(--color-text-secondary);font-size:.9rem}
+        .stat-value{font-weight:600}
+        .difficulty-indicator{padding:.3rem .8rem;border-radius:20px;font-size:.8rem;font-weight:700;display:inline-block}
+        .diff-easy{background:#28a745;color:white}.diff-medium{background:orange;color:black}.diff-hard{background:var(--color-accent);color:white}.diff-extreme{background:#6a0dad;color:white}
+        .enemy-footer{padding:1rem 1.5rem;background:rgba(0,0,0,.2);display:flex;gap:.5rem;flex-wrap:wrap}
+        .loot-tag{background:rgba(255,215,0,.15);color:var(--color-gold);padding:.2rem .7rem;border-radius:12px;font-size:.8rem}
+        .zone-tag{background:rgba(0,123,255,.15);color:#5b9bd5;padding:.2rem .7rem;border-radius:12px;font-size:.8rem}
+        .filter-bar{display:flex;flex-wrap:wrap;gap:.5rem;margin:2rem 0;justify-content:center}
+        .filter-btn{background:var(--color-bg-medium);color:var(--color-text-primary);border:2px solid var(--color-border);padding:.6rem 1.2rem;border-radius:8px;cursor:pointer;transition:var(--transition);font-weight:500}
+        .filter-btn:hover{border-color:var(--color-accent)}
+        .filter-btn.active{background:var(--color-accent);border-color:var(--color-accent);color:white}
+        @media(max-width:768px){.bestiary-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <nav class="main-nav">
+        <div class="logo"><h1>🏰 Gothic 1 Remake</h1></div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Walkthrough</a>
+                <ul class="dropdown-menu"><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="visual-guide.html">Visual Guide</a></li><li><a href="map-guide.html">Map Guide</a></li><li><a href="quests.html">Quest List</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Tools</a>
+                <ul class="dropdown-menu"><li><a href="lock-solver.html">Lock Solver</a></li><li><a href="lockpicking-calculator.html">Calculator</a></li><li><a href="lockpicking.html">Lockpicking Guide</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Factions</a>
+                <ul class="dropdown-menu"><li><a href="factions-guide.html">Factions Overview</a></li><li><div class="dropdown-divider"></div></li><li><a href="factions-ultimate-guide.html">Ultimate Guide</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle" style="color:var(--color-gold)">Resources</a>
+                <ul class="dropdown-menu"><li><a href="bestiary.html" class="active">Bestiary</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html">NPC Characters</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="system-requirements.html">System Requirements</a></li><li><a href="save-management.html">Save Management</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul>
+            </li>
+            <li class="nav-item">
+                <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                    <option value="en">🇬🇧 English</option><option value="de">🇩🇪 Deutsch</option><option value="fr">🇫🇷 Français</option><option value="it">🇮🇹 Italiano</option><option value="es">🇪🇸 Español</option><option value="ko">🇰🇷 한국어</option><option value="ja">🇯🇵 日本語</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="content-wrapper">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Bestiary</span></nav>
+
+    <section class="page-header">
+        <h1>📖 Bestiary</h1>
+        <p class="page-subtitle">Every creature, monster, and enemy in the Valley of the Mines — know your foe before you fight</p>
+    </section>
+
+    <!-- Combat Survival Guide -->
+    <section class="guide-section">
+        <h2>⚔️ Combat Survival Guide</h2>
+        <div class="info-box warning"><strong>⚠️ The Golden Rule:</strong> In Gothic 1 Remake, not every enemy is meant to be fought when you first meet them. Knowing when to run is the most important survival skill.</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin:2rem 0">
+            <div class="tip-card"><h3>Lv 1-3</h3><p>Flee everything. Even wolves are deadly. Collect herbs and avoid combat entirely.</p></div>
+            <div class="tip-card"><h3>Lv 4-6</h3><p>Fight scavengers, young wolves, and lone molerats. Still run from packs and larger creatures.</p></div>
+            <div class="tip-card"><h3>Lv 7-10</h3><p>Engage most wildlife. Shadowbeasts and orcs are still dangerous. Use terrain to your advantage.</p></div>
+            <div class="tip-card"><h3>Lv 10+</h3><p>You can handle most enemies. Large groups still require caution. Boss-tier enemies need preparation.</p></div>
+        </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <section class="guide-section">
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterEnemies('all',this)">All</button>
+            <button class="filter-btn" onclick="filterEnemies('wildlife',this)">🦴 Wildlife</button>
+            <button class="filter-btn" onclick="filterEnemies('monster',this)">👹 Monsters</button>
+            <button class="filter-btn" onclick="filterEnemies('humanoid',this)">🗡️ Humanoids</button>
+            <button class="filter-btn" onclick="filterEnemies('boss',this)">💀 Bosses</button>
+        </div>
+    </section>
+
+    <!-- Bestiary Grid -->
+    <section class="guide-section">
+        <div class="bestiary-grid" id="bestiaryGrid">
+            <!-- Wildlife -->
+            <div class="enemy-card" data-category="wildlife">
+                <div class="enemy-header"><div class="enemy-icon">🐺</div><div><div class="enemy-name">Wolf</div><span class="difficulty-indicator diff-easy">Easy</span></div></div>
+                <div class="enemy-body">
+                    <div class="stat-row"><span class="stat-label">HP</span><span class="stat-value">Low</span></div>
+                    <div class="stat-row"><span class="stat-label">Damage</span><span class="stat-value">Moderate (bite)</span></div>
+                    <div class="stat-row"><span class="stat-label">Speed</span><span class="stat-value">Fast</span></div>
+                    <div class="stat-row"><span class="stat-label">Threat Level</span><span class="stat-value">Deadly in packs</span></div>
+                    <p style="margin-top:1rem;color:var(--color-text-secondary)">Common throughout the colony. One wolf is manageable at level 3+. A pack of 3+ wolves is deadly until level 6+. They circle and attack from behind.</p>
+                </div>
+                <div class="enemy-footer"><span class="zone-tag">Forest</span><span class="zone-tag">Roads</span><span class="loot-tag">Wolf Hide</span><span class="loot-tag">Raw Meat</span></div>
+            </div>
+
+            <div class="enemy-card" data-category="wildlife">
+                <div class="enemy-header"><div class="enemy-icon">🦅</div><div><div class="enemy-name">Scavenger</div><span class="difficulty-indicator diff-easy">Easy</span></div></div>
+                <div class="enemy-body">
+                    <div class="stat-row"><span class="stat-label">HP</span><span class="stat-value">Very Low</span></div>
+                    <div class="stat-row"><span class="stat-label">Damage</span><span class="stat-value">Low (peck)</span></div>
+                    <div class="stat-row"><span class="stat-label">Speed</span><span class="stat-value">Moderate</span></div>
+                    <div class="stat-row"><span class="stat-label">Threat Level</span><span class="stat-value">Beginner enemy</span></div>
+                    <p style="margin-top:1rem;color:var(--color-text-secondary)">Large bird-like scavengers. The first enemy most players learn to fight. Teaches basic combat timing. Found near camp perimeters and open fields. Easy XP at low levels.</p>
+                </div>
+                <div class="enemy-footer"><span class="zone-tag">Fields</span><span class="zone-tag">Camp Edges</span><span class="loot-tag">Feathers</span><span class="loot-tag">Raw Meat</span></div>
+            </div>
+
+            <div class="enemy-card" data-category="wildlife">
+                <div class="enemy-header"><div class="enemy-icon">🐗</div><div><div class="enemy-name">Molerat</div><span class="difficulty-indicator diff-easy">Easy</span></div></div>
+                <div class="enemy-body">
+                    <div class="stat-row"><span class="stat-label">HP</span><span class="stat-value">Low</span></div>
+                    <div class="stat-row"><span class="stat-label">Damage</span><span class="stat-value">Low-Moderate</span></div>
+                    <div class="stat-row"><span class="stat-label">Speed</span><span class="stat-value">Slow</span></div>
+                    <div class="stat-row"><span class="stat-label">Threat Level</span><span class="stat-value">Training enemy</span></div>
+                    <p style="margin-top:1rem;color:var(--color-text-secondary)">Burrowing creatures. Slow and predictable — perfect for practicing combat combos. Their telegraphed charge attack teaches dodge timing. Found near cave entrances.</p>
+                </div>
+                <div class="enemy-footer"><span class="zone-tag">Caves</span><span class="zone-tag">Hills</span><span class="loot-tag">Molerat Teeth</span><span class="loot-tag">Hide</span></div>
+            </div>
+
+            <!-- Monsters -->
+            <div class="enemy-card" data-category="monster">
+                <div class="enemy-header"><div class="enemy-icon">🐺⬛</div><div><div class="enemy-name">Shadowbeast</div><span class="difficulty-indicator diff-hard">Hard</span></div></div>
+                <div class="enemy-body">
+                    <div class="stat-row"><span class="stat-label">HP</span><span class="stat-value">High</span></div>
+                    <div class="stat-row"><span class="stat-label">Damage</span><span class="stat-value">Heavy (claw/swipe)</span></div>
+                    <div class="stat-row"><span class="stat-label">Speed</span><span class="stat-value">Very Fast</span></div>
+                    <div class="stat-row"><span class="stat-label">Threat Level</span><span class="stat-value">Extreme at low levels</span></div>
+                    <p style="margin-top:1rem;color:var(--color-text-secondary)">A massive dark beast that prowls forested areas. One of the most feared creatures in the colony. Fast, aggressive, and hits hard. Do not engage below level 8. Use ranged attacks or magic to soften it up before melee.</p>
+                </div>
+                <div class="enemy-footer"><span class="zone-tag">Deep Forest</span><span class="zone-tag">Night</span><span class="loot-tag">Shadow Hide</span><span class="loot-tag">Claws</span></div>
+            </div>
+
+            <div class="enemy-card" data-category="monster">
+                <div class="enemy-header"><div class="enemy-icon">🕷️</div><div><div class="enemy-name">Giant Spider</div><span class="difficulty-indicator diff-medium">Medium</span></div></div>
+                <div class="enemy-body">
+                    <div class="stat-row"><span class="stat-label">HP</span><span class="stat-value">Moderate</span></div>
+                    <div class="stat-row"><span class="stat-label">Damage</span><span class="stat-value">Moderate + Poison</span></div>
+                    <div class="stat-row"><span class="stat-label">Speed</span><span class="stat-value">Fast (burst)</span></div>
+                    <div class="stat-row"><span class="stat-label">Threat Level</span><span class="stat-value">Dangerous in groups</span></div>
+                    <p style="margin-top:1rem;color:var(--color-text-secondary)">Found in caves and dark areas. Their poison damage over time is their deadliest feature. Carry antidotes before entering spider territory. Use fire magic for bonus damage.</p>
+                </div>
+                <div class="enemy-footer"><span class="zone-tag">Caves</span><span class="zone-tag">Mines</span><span class="loot-tag">Spider Silk</span><span class="loot-tag">Venom Gland</span></div>
+            </div>
+
+            <div class="enemy-card" data-category="monster">
+                <div class="enemy-header"><div class="enemy-icon">🧟</div><div><div class="enemy-name">Minecrawler</div><span class="difficulty-indicator diff-medium">Medium</span></div></div>
+                <div class="enemy-body">
+                    <div class="stat-row"><span class="stat-label">HP</span><span class="stat-value">Moderate-High</span></div>
+                    <div class="stat-row"><span class="stat-label">Damage</span><span class="stat-value">Moderate</span></div>
+                    <div class="stat-row"><span class="stat-label">Speed</span><span class="stat-value">Slow but armored</span></div>
+                    <div class="stat-row"><span class="stat-label">Threat Level</span><span class="stat-value">Tanky</span></div>
+                    <p style="margin-top:1rem;color:var(--color-text-secondary)">Insectoid creatures infesting the abandoned mines. Heavy natural armor makes them resistant to physical damage. Magic or armor-piercing weapons recommended. Their slow speed is their weakness.</p>
+                </div>
+                <div class="enemy-footer"><span class="zone-tag">Old Mine</span><span class="zone-tag">Deep Mines</span><span class="loot-tag">Chitin Plate</span><span class="loot-tag">Minecrawler Mandible</span></div>
+            </div>
+
+            <!-- Humanoids -->
+            <div class="enemy-card" data-category="humanoid">
+                <div class="enemy-header"><div class="enemy-icon">👹</div><div><div class="enemy-name">Orc Warrior</div><span class="difficulty-indicator diff-hard">Hard</span></div></div>
+                <div class="enemy-body">
+                    <div class="stat-row"><span class="stat-label">HP</span><span class="stat-value">High</span></div>
+                    <div class="stat-row"><span class="stat-label">Damage</span><span class="stat-value">Heavy (axe/sword)</span></div>
+                    <div class="stat-row"><span class="stat-label">Speed</span><span class="stat-value">Moderate</span></div>
+                    <div class="stat-row"><span class="stat-label">Threat Level</span><span class="stat-value">Major enemy</span></div>
+                    <p style="margin-top:1rem;color:var(--color-text-secondary)">The Kingdom's invading force. Heavily armored and wielding large weapons. Do not engage until level 8+ with good equipment. Their attacks have long wind-up but massive damage. Dodge, don't block.</p>
+                </div>
+                <div class="enemy-footer"><span class="zone-tag">Orc Camp</span><span class="zone-tag">Border Areas</span><span class="loot-tag">Orc Weapon</span><span class="loot-tag">War Trophy</span></div>
+            </div>
+
+            <div class="enemy-card" data-category="humanoid">
+                <div class="enemy-header"><div class="enemy-icon">🗡️</div><div><div class="enemy-name">Bandit</div><span class="difficulty-indicator diff-medium">Medium</span></div></div>
+                <div class="enemy-body">
+                    <div class="stat-row"><span class="stat-label">HP</span><span class="stat-value">Moderate (varies)</span></div>
+                    <div class="stat-row"><span class="stat-label">Damage</span><span class="stat-value">Moderate</span></div>
+                    <div class="stat-row"><span class="stat-label">Speed</span><span class="stat-value">Moderate</span></div>
+                    <div class="stat-row"><span class="stat-label">Threat Level</span><span class="stat-value">Variable</span></div>
+                    <p style="margin-top:1rem;color:var(--color-text-secondary)">Human outlaws roaming the roads between camps. Their equipment varies — some have basic weapons, others have stolen gear. Ambush tactics: they often hide behind rocks or in bushes. Check your surroundings when traveling.</p>
+                </div>
+                <div class="enemy-footer"><span class="zone-tag">Roads</span><span class="zone-tag">Between Camps</span><span class="loot-tag">Ore Coins</span><span class="loot-tag">Stolen Weapons</span></div>
+            </div>
+
+            <div class="enemy-card" data-category="humanoid">
+                <div class="enemy-header"><div class="enemy-icon">🏹</div><div><div class="enemy-name">Orc Scout</div><span class="difficulty-indicator diff-medium">Medium</span></div></div>
+                <div class="enemy-body">
+                    <div class="stat-row"><span class="stat-label">HP</span><span class="stat-value">Moderate</span></div>
+                    <div class="stat-row"><span class="stat-label">Damage</span><span class="stat-value">Moderate (ranged)</span></div>
+                    <div class="stat-row"><span class="stat-label">Speed</span><span class="stat-value">Fast</span></div>
+                    <div class="stat-row"><span class="stat-label">Threat Level</span><span class="stat-value">Ranged danger</span></div>
+                    <p style="margin-top:1rem;color:var(--color-text-secondary)">Lighter orc units that patrol borders and use ranged attacks. Less armored than warriors but more mobile. Close the distance quickly — they're weaker in melee. Found at the edges of orc territory.</p>
+                </div>
+                <div class="enemy-footer"><span class="zone-tag">Border Areas</span><span class="zone-tag">Lookout Posts</span><span class="loot-tag">Scout Bow</span><span class="loot-tag">Arrows</span></div>
+            </div>
+
+            <!-- Bosses -->
+            <div class="enemy-card" data-category="boss">
+                <div class="enemy-header"><div class="enemy-icon">🐉</div><div><div class="enemy-name">Dragon</div><span class="difficulty-indicator diff-extreme">Extreme</span></div></div>
+                <div class="enemy-body">
+                    <div class="stat-row"><span class="stat-label">HP</span><span class="stat-value">Massive</span></div>
+                    <div class="stat-row"><span class="stat-label">Damage</span><span class="stat-value">Devastating (fire breath, claw, tail)</span></div>
+                    <div class="stat-row"><span class="stat-label">Speed</span><span class="stat-value">Varies (surprisingly fast)</span></div>
+                    <div class="stat-row"><span class="stat-label">Threat Level</span><span class="stat-value">Endgame boss</span></div>
+                    <p style="margin-top:1rem;color:var(--color-text-secondary)">The hardest fight in the game. Bring your best gear, stack up on consumables, and learn its patterns. Fire breath covers wide areas — stay mobile. Tail swipes punish rear attacks. Target the head for bonus damage. Bring frost resistance and fire protection.</p>
+                </div>
+                <div class="enemy-footer"><span class="zone-tag">Endgame Area</span><span class="zone-tag">Mountain Peak</span><span class="loot-tag">Dragon Scale</span><span class="loot-tag">Legendary Loot</span></div>
+            </div>
+
+            <div class="enemy-card" data-category="boss">
+                <div class="enemy-header"><div class="enemy-icon">👤</div><div><div class="enemy-name">Golem</div><span class="difficulty-indicator diff-hard">Hard</span></div></div>
+                <div class="enemy-body">
+                    <div class="stat-row"><span class="stat-label">HP</span><span class="stat-value">Very High</span></div>
+                    <div class="stat-row"><span class="stat-label">Damage</span><span class="stat-value">Massive (slam)</span></div>
+                    <div class="stat-row"><span class="stat-label">Speed</span><span class="stat-value">Very Slow</span></div>
+                    <div class="stat-row"><span class="stat-label">Threat Level</span><span class="stat-value">Mini-boss</span></div>
+                    <p style="margin-top:1rem;color:var(--color-text-secondary)">Animated stone guardians found in ancient ruins. Immune to physical damage from the front. Must attack from behind or use magic. Their slam attack has a long telegraph — dodge when you see the arm raise.</p>
+                </div>
+                <div class="enemy-footer"><span class="zone-tag">Ancient Ruins</span><span class="zone-tag">Temple</span><span class="loot-tag">Stone Heart</span><span class="loot-tag">Ancient Core</span></div>
+            </div>
+
+            <div class="enemy-card" data-category="monster">
+                <div class="enemy-header"><div class="enemy-icon">🐺🔥</div><div><div class="enemy-name">Warg</div><span class="difficulty-indicator diff-medium">Medium</span></div></div>
+                <div class="enemy-body">
+                    <div class="stat-row"><span class="stat-label">HP</span><span class="stat-value">Moderate-High</span></div>
+                    <div class="stat-row"><span class="stat-label">Damage</span><span class="stat-value">Moderate-High</span></div>
+                    <div class="stat-row"><span class="stat-label">Speed</span><span class="stat-value">Fast</span></div>
+                    <div class="stat-row"><span class="stat-label">Threat Level</span><span class="stat-value">Pack leader</span></div>
+                    <p style="margin-top:1rem;color:var(--color-text-secondary)">Larger, more aggressive wolf variant. Often found leading wolf packs. Killing the warg first can cause remaining wolves to flee. Tougher hide makes them more resistant to slashing damage.</p>
+                </div>
+                <div class="enemy-footer"><span class="zone-tag">Deep Forest</span><span class="zone-tag">Mountains</span><span class="loot-tag">Warg Hide</span><span class="loot-tag">Large Fangs</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combat Tips -->
+    <section class="guide-section">
+        <h2>🎯 Combat Strategy Tips</h2>
+        <div class="tips-grid">
+            <div class="tip-card"><h3>🔍 Scout First</h3><p>Always scan the area before engaging. Look for additional enemies hiding nearby. A "lone wolf" is rarely alone.</p></div>
+            <div class="tip-card"><h3>🏃 Know When to Run</h3><p>If an enemy's health bar barely moves after 3 hits, you're not ready. Run, level up, come back. No shame in tactical retreat.</p></div>
+            <div class="tip-card"><h3>🎯 Focus Fire</h3><p>Against groups, pick one target and eliminate it. Weakening multiple enemies but killing none leaves you fighting a full-strength pack.</p></div>
+            <div class="tip-card"><h3>🛡️ Block vs Dodge</h3><p>Block small, fast attacks. Dodge heavy, telegraphed attacks. Learning enemy attack patterns is more important than raw stats.</p></div>
+            <div class="tip-card"><h3>🧪 Use Consumables</h3><p>Health potions and buffs aren't collectibles — use them. The game gives you resources expecting you to spend them.</p></div>
+            <div class="tip-card"><h3>🌙 Day vs Night</h3><p>Some enemies are more active at night. Shadowbeasts and undead grow stronger in darkness. Travel during daylight when possible.</p></div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="equipment.html">Equipment Guide</a></li><li><a href="skills-guide.html">Skills Guide</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Gothic 1 Remake. Fan-made guide.</p></div>
+</footer>
+
+<script>
+    function filterEnemies(cat, btn) {
+        document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});
+        btn.classList.add('active');
+        document.querySelectorAll('.enemy-card').forEach(function(card){
+            card.style.display = (cat === 'all' || card.getAttribute('data-category') === cat) ? 'block' : 'none';
+        });
+    }
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

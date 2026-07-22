@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gothic 1 Remake Community - Resources, Mods & Links</title>
+    <meta name="description" content="Gothic 1 Remake community hub. Reddit communities, Discord servers, YouTube channels, modding resources, speedrunning, and wiki links.">
+    <meta name="keywords" content="Gothic 1 Remake community, Reddit Gothic, Gothic Discord, modding, speedrunning, wiki, YouTube">
+    <link rel="canonical" href="https://sueryue.github.io/Gothic-1-Remake/community.html">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .resource-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0}
+        .resource-card{background:var(--color-bg-light);border:2px solid var(--color-border);border-radius:12px;padding:2rem;transition:var(--transition);text-align:center}
+        .resource-card:hover{border-color:var(--color-gold);transform:translateY(-5px)}
+        .resource-icon{font-size:3rem;margin-bottom:1rem}
+        .resource-card h3{font-family:var(--font-heading);color:var(--color-gold);margin-bottom:.8rem}
+        .resource-card p{color:var(--color-text-secondary);font-size:.95rem;margin-bottom:1rem}
+        .resource-link{display:inline-block;background:linear-gradient(135deg,var(--color-accent),var(--color-gold));color:white;padding:.8rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;transition:var(--transition)}
+        .resource-link:hover{transform:scale(1.05);box-shadow:0 8px 16px rgba(233,69,96,.4)}
+        .link-list{list-style:none;margin-left:0}
+        .link-list li{padding:.8rem 1rem;margin:.4rem 0;background:rgba(0,0,0,.2);border-radius:8px;display:flex;align-items:center;gap:.8rem;transition:var(--transition)}
+        .link-list li:hover{background:rgba(233,69,96,.1)}
+        .link-list .link-icon{font-size:1.5rem;min-width:36px;text-align:center}
+        .link-list a{color:var(--color-accent);font-weight:600;text-decoration:none}
+        .link-list a:hover{color:var(--color-gold)}
+        .contribute-section{background:linear-gradient(135deg,rgba(233,69,96,.1),rgba(255,215,0,.1));border:3px solid var(--color-gold);border-radius:12px;padding:3rem;text-align:center;margin:3rem 0}
+        @media(max-width:768px){.resource-grid{grid-template-columns:1fr}.contribute-section{padding:1.5rem}}
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <nav class="main-nav">
+        <div class="logo"><h1>🏰 Gothic 1 Remake</h1></div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Walkthrough</a>
+                <ul class="dropdown-menu"><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="visual-guide.html">Visual Guide</a></li><li><a href="map-guide.html">Map Guide</a></li><li><a href="quests.html">Quest List</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Tools</a>
+                <ul class="dropdown-menu"><li><a href="lock-solver.html">Lock Solver</a></li><li><a href="lockpicking-calculator.html">Calculator</a></li><li><a href="lockpicking.html">Lockpicking Guide</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Factions</a>
+                <ul class="dropdown-menu"><li><a href="factions-guide.html">Factions Overview</a></li><li><div class="dropdown-divider"></div></li><li><a href="factions-ultimate-guide.html">Ultimate Guide</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle" style="color:var(--color-gold)">Resources</a>
+                <ul class="dropdown-menu"><li><a href="bestiary.html">Bestiary</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html">NPC Characters</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="system-requirements.html">System Requirements</a></li><li><a href="save-management.html">Save Management</a></li><li><a href="community.html" class="active">Community</a></li><li><a href="faq.html">FAQ</a></li></ul>
+            </li>
+            <li class="nav-item">
+                <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                    <option value="en">🇬🇧 English</option><option value="de">🇩🇪 Deutsch</option><option value="fr">🇫🇷 Français</option><option value="it">🇮🇹 Italiano</option><option value="es">🇪🇸 Español</option><option value="ko">🇰🇷 한국어</option><option value="ja">🇯🇵 日本語</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="content-wrapper">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Community</span></nav>
+    <section class="page-header">
+        <h1>🌐 Community Hub</h1>
+        <p class="page-subtitle">Connect with fellow Gothic fans, find resources, share your builds, and contribute to the community</p>
+    </section>
+
+    <!-- Reddit & Social -->
+    <section class="guide-section">
+        <h2>💬 Reddit Communities</h2>
+        <div class="resource-grid">
+            <div class="resource-card">
+                <div class="resource-icon">🌍</div>
+                <h3>r/worldofgothic</h3>
+                <p>The main Gothic community on Reddit. News, discussions, memes, and guides for all Gothic games including the Remake.</p>
+                <a href="https://www.reddit.com/r/worldofgothic/" target="_blank" rel="noopener" class="resource-link">Visit r/worldofgothic</a>
+            </div>
+            <div class="resource-card">
+                <div class="resource-icon">🎮</div>
+                <h3>r/GothicGame</h3>
+                <p>Focused on gameplay discussion. Build sharing, combat tips, faction debates, and lockpicking strategies.</p>
+                <a href="https://www.reddit.com/r/GothicGame/" target="_blank" rel="noopener" class="resource-link">Visit r/GothicGame</a>
+            </div>
+            <div class="resource-card">
+                <div class="resource-icon">🏰</div>
+                <h3>r/Gothic</h3>
+                <p>General Gothic discussion. Lore deep-dives, faction analysis, artwork, and nostalgia posts.</p>
+                <a href="https://www.reddit.com/r/Gothic/" target="_blank" rel="noopener" class="resource-link">Visit r/Gothic</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discord & Chat -->
+    <section class="guide-section">
+        <h2>🎙️ Discord & Chat Communities</h2>
+        <ul class="link-list">
+            <li><span class="link-icon">💬</span><div><strong>THQ Nordic Official Discord</strong><p style="color:var(--color-text-secondary);font-size:.85rem">Official publisher server. Developer updates, announcements, and community events. <a href="https://discord.gg/thqnordic" target="_blank" rel="noopener">Join →</a></p></div></li>
+            <li><span class="link-icon">🏰</span><div><strong>Gothic Community Discord</strong><p style="color:var(--color-text-secondary);font-size:.85rem">Fan-run server with active modding, speedrunning, and lore channels. <a href="https://discord.gg/gothic" target="_blank" rel="noopener">Join →</a></p></div></li>
+            <li><span class="link-icon">🌐</span><div><strong>Alkimia Interactive Community Hub</strong><p style="color:var(--color-text-secondary);font-size:.85rem">Developer studio (Barcelona) official community. <a href="https://alkimiainteractive.com" target="_blank" rel="noopener">Visit →</a></p></div></li>
+            <li><span class="link-icon">📺</span><div><strong>Steam Community Hub</strong><p style="color:var(--color-text-secondary);font-size:.85rem">Official Steam discussions, guides, screenshots, and workshop content. <a href="https://steamcommunity.com/app/1297900" target="_blank" rel="noopener">Visit →</a></p></div></li>
+        </ul>
+    </section>
+
+    <!-- YouTube & Content Creators -->
+    <section class="guide-section">
+        <h2>🎬 YouTube & Content Creators</h2>
+        <ul class="link-list">
+            <li><span class="link-icon">▶️</span><div><strong>THQ Nordic YouTube</strong><p style="color:var(--color-text-secondary);font-size:.85rem">Official trailers, developer diaries, and gameplay showcases. <a href="https://youtube.com/@THQNordic" target="_blank" rel="noopener">Subscribe →</a></p></div></li>
+            <li><span class="link-icon">🎮</span><div><strong>Gothic Remake Gameplay Walkthroughs</strong><p style="color:var(--color-text-secondary);font-size:.85rem">Search YouTube for full playthroughs, boss guides, lockpicking tutorials, and faction showcase videos.</p></div></li>
+            <li><span class="link-icon">📺</span><div><strong>Gothic Series Lore Videos</strong><p style="color:var(--color-text-secondary);font-size:.85rem">Deep-dive lore videos covering the history of the Gothic universe, factions, and characters.</p></div></li>
+        </ul>
+    </section>
+
+    <!-- Official Resources -->
+    <section class="guide-section">
+        <h2>🏢 Official Resources</h2>
+        <div class="resource-grid">
+            <div class="resource-card">
+                <div class="resource-icon">🛒</div>
+                <h3>Steam Store Page</h3>
+                <p>Official Gothic 1 Remake store page. System requirements, trailers, screenshots, and purchase options.</p>
+                <a href="https://store.steampowered.com/app/1297900/Gothic_1_Remake/" target="_blank" rel="noopener" class="resource-link">View on Steam</a>
+            </div>
+            <div class="resource-card">
+                <div class="resource-icon">📋</div>
+                <h3>THQ Nordic Website</h3>
+                <p>Publisher's official site. Press releases, media kits, and official game information.</p>
+                <a href="https://thqnordic.com" target="_blank" rel="noopener" class="resource-link">Visit THQ Nordic</a>
+            </div>
+            <div class="resource-card">
+                <div class="resource-icon">🏗️</div>
+                <h3>Alkimia Interactive</h3>
+                <p>Developer studio based in Barcelona. Career opportunities, dev blog, and behind-the-scenes content.</p>
+                <a href="https://alkimiainteractive.com" target="_blank" rel="noopener" class="resource-link">Visit Alkimia</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modding & Tools -->
+    <section class="guide-section">
+        <h2>🔧 Modding & Community Tools</h2>
+        <ul class="link-list">
+            <li><span class="link-icon">📦</span><div><strong>Nexus Mods - Gothic Series</strong><p style="color:var(--color-text-secondary);font-size:.85rem">The largest modding platform. Search for Gothic Remake mods, texture packs, gameplay tweaks. <a href="https://www.nexusmods.com/gothic" target="_blank" rel="noopener">Browse Mods →</a></p></div></li>
+            <li><span class="link-icon">⏱️</span><div><strong>Speedrun.com - Gothic Series</strong><p style="color:var(--color-text-secondary);font-size:.85rem">Speedrunning leaderboards, route guides, and community. <a href="https://www.speedrun.com/gothic" target="_blank" rel="noopener">View Leaderboards →</a></p></div></li>
+            <li><span class="link-icon">📚</span><div><strong>Gothic Wiki (Fandom)</strong><p style="color:var(--color-text-secondary);font-size:.85rem">Community-maintained encyclopedia of all Gothic knowledge. <a href="https://gothic.fandom.com/wiki/Gothic_Wiki" target="_blank" rel="noopener">Browse Wiki →</a></p></div></li>
+            <li><span class="link-icon">🐛</span><div><strong>Steam Community Bug Reports</strong><p style="color:var(--color-text-secondary);font-size:.85rem">Report bugs, check known issues, and find workarounds. <a href="https://steamcommunity.com/app/1297900/discussions/0/" target="_blank" rel="noopener">View Bug Reports →</a></p></div></li>
+        </ul>
+    </section>
+
+    <!-- Asian Community -->
+    <section class="guide-section">
+        <h2>🌏 Asian Community Resources</h2>
+        <ul class="link-list">
+            <li><span class="link-icon">🇨🇳</span><div><strong>Chinese Guide Sites</strong><p style="color:var(--color-text-secondary);font-size:.85rem">52pk.com, 9game.cn, ali213.net, and dvg.cn host extensive Gothic 1 Remake guides in Chinese.</p></div></li>
+            <li><span class="link-icon">🇯🇵</span><div><strong>Japanese Gothic Community</strong><p style="color:var(--color-text-secondary);font-size:.85rem">Search Twitter/X for #GothicRemake and #ゴシックリメイク for Japanese-language discussion and guides.</p></div></li>
+            <li><span class="link-icon">🇰🇷</span><div><strong>Korean Gaming Communities</strong><p style="color:var(--color-text-secondary);font-size:.85rem">Check Ruliweb (ruliweb.com) and Inven (inven.co.kr) for Korean Gothic 1 Remake guides and discussions.</p></div></li>
+        </ul>
+    </section>
+
+    <!-- Contribute -->
+    <section class="guide-section">
+        <div class="contribute-section">
+            <h2 style="font-family:var(--font-heading);color:var(--color-gold);font-size:2rem;margin-bottom:1rem">🤝 Help Us Improve This Guide</h2>
+            <p style="font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:2rem">This is a community-driven, fan-made guide. We welcome contributions from all Gothic players.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:2rem">
+                <div class="tip-card"><h3>📸 Screenshots</h3><p>Help us add real gameplay screenshots to the Visual Guide and other pages.</p></div>
+                <div class="tip-card"><h3>📝 Corrections</h3><p>Found an error? Let us know on Reddit or Discord.</p></div>
+                <div class="tip-card"><h3>🔧 Tools</h3><p>Suggest new tools or calculators that would help the community.</p></div>
+                <div class="tip-card"><h3>🌐 Translations</h3><p>Help translate guides into additional languages for the global community.</p></div>
+            </div>
+            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+<a href="https://www.reddit.com/r/worldofgothic/" target="_blank" rel="noopener" class="resource-link" style="background:linear-gradient(135deg,#228b22,#6a0dad)">💬 Discuss on Reddit</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="map-guide.html">Map Guide</a></li><li><a href="bestiary.html">Bestiary</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Gothic 1 Remake. Fan-made guide.</p></div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gothic 1 Remake FAQ - Frequently Asked Questions</title>
+    <meta name="description" content="Gothic 1 Remake FAQ: answers to common questions about gameplay, factions, lockpicking, combat, quests, and technical issues.">
+    <meta name="keywords" content="Gothic 1 Remake FAQ, questions, help, gameplay tips, troubleshooting">
+    <link rel="canonical" href="https://sueryue.github.io/Gothic-1-Remake/faq.html">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .faq-category{margin:2.5rem 0}
+        .faq-category h2{font-family:var(--font-heading);color:var(--color-gold);font-size:1.6rem;margin-bottom:1.5rem;padding-bottom:.5rem;border-bottom:2px solid var(--color-accent)}
+        .faq-item{background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:8px;margin-bottom:1rem;overflow:hidden}
+        .faq-question{padding:1.2rem 1.5rem;cursor:pointer;font-weight:600;color:var(--color-text-primary);display:flex;justify-content:space-between;align-items:center;transition:var(--transition)}
+        .faq-question:hover{background:rgba(255,215,0,.05)}
+        .faq-question::after{content:'+';font-size:1.5rem;color:var(--color-accent);font-weight:700;transition:transform .3s}
+        .faq-item.open .faq-question::after{content:'−';transform:rotate(180deg)}
+        .faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease}
+        .faq-item.open .faq-answer{max-height:500px}
+        .faq-answer-content{padding:0 1.5rem 1.5rem;color:var(--color-text-secondary);line-height:1.8}
+        .faq-toc{display:flex;flex-wrap:wrap;gap:.5rem;margin:2rem 0}
+        .faq-toc a{padding:.5rem 1rem;background:var(--color-bg-medium);border:1px solid var(--color-border);border-radius:6px;color:var(--color-text-primary);text-decoration:none;font-size:.9rem;transition:var(--transition)}
+        .faq-toc a:hover{border-color:var(--color-accent);background:rgba(233,69,96,.1)}
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <nav class="main-nav">
+        <div class="logo"><h1>&#127984; Gothic 1 Remake</h1></div>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle" style="color:var(--color-gold)">Walkthrough</a>
+                <ul class="dropdown-menu"><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="visual-guide.html">Visual Guide</a></li><li><a href="map-guide.html">Map Guide</a></li><li><a href="quests.html">Quest List</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Tools</a>
+                <ul class="dropdown-menu"><li><a href="lock-solver.html">Lock Solver</a></li><li><a href="lockpicking-calculator.html">Calculator</a></li><li><a href="lockpicking.html">Lockpicking Guide</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">Factions</a>
+                <ul class="dropdown-menu"><li><a href="factions-guide.html">Factions Overview</a></li><li><div class="dropdown-divider"></div></li><li><a href="factions-ultimate-guide.html">Ultimate Guide</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle" style="color:var(--color-gold)">Resources</a>
+                <ul class="dropdown-menu"><li><a href="bestiary.html">Bestiary</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html">NPC Characters</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="system-requirements.html">System Requirements</a></li><li><a href="save-management.html">Save Management</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html" class="active">FAQ</a></li></ul>
+            </li>
+            <li class="nav-item">
+                <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
+                    <option value="en">&#127468;&#127463; English</option><option value="de">&#127465;&#127466; Deutsch</option><option value="fr">&#127467;&#127482; Fran&ccedil;ais</option><option value="it">&#127470;&#127481; Italiano</option><option value="es">&#127466;&#127480; Espa&ntilde;ol</option><option value="ko">&#127472;&#127479; &#54620;&#44397;&#50612;</option><option value="ja">&#127471;&#127477; &#26085;&#26412;&#35486;</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="content-wrapper">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">FAQ</span></nav>
+
+    <section class="page-header">
+        <h1>&#10067; Frequently Asked Questions</h1>
+        <p class="page-subtitle">Quick answers to the most common Gothic 1 Remake questions</p>
+    </section>
+
+    <div class="faq-toc">
+        <a href="#general">General</a>
+        <a href="#gameplay">Gameplay</a>
+        <a href="#factions-faq">Factions</a>
+        <a href="#combat">Combat</a>
+        <a href="#lockpicking-faq">Lockpicking</a>
+        <a href="#quests-faq">Quests</a>
+        <a href="#technical">Technical</a>
+        <a href="#lore">Story &amp; Lore</a>
+    </div>
+
+    <!-- General -->
+    <div class="faq-category" id="general">
+        <h2>&#128218; General Questions</h2>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">What is Gothic 1 Remake?</div><div class="faq-answer"><div class="faq-answer-content">Gothic 1 Remake is a full rebuild of the 2001 classic RPG by Alkimia Interactive, published by THQ Nordic. It keeps the original's open-world design, faction system, and gritty atmosphere while bringing modern graphics, updated combat, and expanded questlines. Released June 5, 2026 on PC (Steam).</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Do I need to play the original Gothic first?</div><div class="faq-answer"><div class="faq-answer-content">No. The remake is designed for both newcomers and veterans. The story, tutorials, and progression have been modernized so first-time players can jump right in. If you played the original, you'll recognize the world and characters but find plenty of new content.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">How long is the game?</div><div class="faq-answer"><div class="faq-answer-content">A single playthrough takes about 40-55 hours for the main story plus side content. Completionist runs can reach 70+ hours. Each faction has its own questline, so replaying with a different faction adds another 30-40 hours per run.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Is there multiplayer or co-op?</div><div class="faq-answer"><div class="faq-answer-content">No. Gothic 1 Remake is a single-player RPG. There are no multiplayer or co-op modes.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">What's different from the original Gothic?</div><div class="faq-answer"><div class="faq-answer-content">The remake keeps the core DNA: open world without hand-holding, faction choice, lockpicking puzzles, and the gritty prison colony setting. New additions include: fully modernized combat system, expanded questlines, new traversal abilities (climbing, swimming improvements), additional NPC routines and reactions, updated graphics on Unreal Engine, and new content filling gaps from the original.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Is the game fully voice-acted?</div><div class="faq-answer"><div class="faq-answer-content">Yes. Full audio support in English, German, Polish, and Russian. Subtitles available in French, Italian, Spanish, Simplified Chinese, Japanese, and Brazilian Portuguese.</div></div></div>
+    </div>
+
+    <!-- Gameplay -->
+    <div class="faq-category" id="gameplay">
+        <h2>&#127918; Gameplay Questions</h2>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">How does leveling work?</div><div class="faq-answer"><div class="faq-answer-content">You earn XP from quests and killing enemies. When you level up, you gain Learning Points (LP). You spend LP at trainers to increase stats like Strength, Dexterity, and Mana, or to learn new skills. You can't just allocate points from a menu — you need to find the right NPC trainer for each stat or skill.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">How do I heal?</div><div class="faq-answer"><div class="faq-answer-content">Early on: eat herbs, mushrooms, and cooked meat. Later: health potions, healing spells (Swamp Camp), and food from camp cooks. There's no passive health regeneration outside of specific spells or items. Always carry food and potions before heading into dangerous areas.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Can I change the difficulty?</div><div class="faq-answer"><div class="faq-answer-content">Yes, Gothic 1 Remake has adjustable difficulty settings that you can change at any time from the options menu. The game also supports "Save Anytime" so you can experiment with different approaches.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">How do I make money?</div><div class="faq-answer"><div class="faq-answer-content">The currency is ore coins. Earn them by: completing quests, selling monster parts and herbs to merchants, looting chests and bodies, and winning arena fights. Early game: gather and sell herbs to Chef Snuf for quick coins. Mid game: monster hunting and quest rewards become the main income source.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">What happens when I die?</div><div class="faq-answer"><div class="faq-answer-content">You reload your last save. There's no death penalty, but you lose progress since your last save. Save frequently — the game doesn't auto-save often. Keep multiple rotating save slots (at least 3).</div></div></div>
+    </div>
+
+    <!-- Factions -->
+    <div class="faq-category" id="factions-faq">
+        <h2>&#9876;&#65039; Faction Questions</h2>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Which faction should I choose first?</div><div class="faq-answer"><div class="faq-answer-content">Old Camp is best for first-timers. It has the clearest quest structure, strong early armor, and fire magic. New Camp is good for a second playthrough — more freedom and unique weapons. Swamp Camp is the hardest but most unique — spirit magic and tactical gameplay. You can <a href="factions-ultimate-guide.html">take the faction quiz</a> if you're unsure.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Can I switch factions later?</div><div class="faq-answer"><div class="faq-answer-content">Technically possible but extremely difficult and not recommended. Once you complete a faction's initiation quest, you're locked in. The game is designed for you to commit to one faction per playthrough. If you want to experience all three, plan on multiple playthroughs.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Can I join Swamp Camp after joining another faction?</div><div class="faq-answer"><div class="faq-answer-content">No. Swamp Camp must be chosen at the start of the game. Once you join Old Camp or New Camp, Swamp Camp is permanently closed to you for that playthrough.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Does faction choice affect the ending?</div><div class="faq-answer"><div class="faq-answer-content">Yes. Each faction has a different ending with different allies, different final battles, and different outcomes for the colony. Worth replaying to see them all.</div></div></div>
+    </div>
+
+    <!-- Combat -->
+    <div class="faq-category" id="combat">
+        <h2>&#9876;&#65039; Combat Questions</h2>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Why do I keep dying at low levels?</div><div class="faq-answer"><div class="faq-answer-content">This is normal. Gothic 1 Remake doesn't scale enemies to your level. At level 1-3, you should be running from everything except scavengers. The game expects you to learn which fights you can win and which you can't. Levels 4-6 you can handle wolves and molerats. By level 10 you can hold your own against most enemies. See the <a href="bestiary.html">Bestiary</a> for enemy difficulty ratings.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">What's the best weapon type?</div><div class="faq-answer"><div class="faq-answer-content">Depends on your faction and build. Old Camp: one-handed swords are strongest. New Camp: two-handed axes and bows excel. Swamp Camp: staves and magic. Pick one weapon type and stick with it — spreading your skills across multiple weapon types will leave you weak in all of them.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">How does blocking and dodging work?</div><div class="faq-answer"><div class="faq-answer-content">Block small, fast attacks from weaker enemies. Dodge heavy, telegraphed attacks from larger enemies. The combat is deliberate and tactical — button mashing will get you killed. Watch enemy attack patterns: each enemy type has a tell before its heavy attacks. Learning these is more important than raw stats.</div></div></div>
+    </div>
+
+    <!-- Lockpicking -->
+    <div class="faq-category" id="lockpicking-faq">
+        <h2>&#128274; Lockpicking Questions</h2>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">How do puzzle locks work?</div><div class="faq-answer"><div class="faq-answer-content">Puzzle locks have colored plates (3-7 depending on difficulty). Each button press changes some plates. Red button: changes one plate. Blue button: changes adjacent plates. Yellow button: changes an entire row. The goal is to turn all plates green without breaking any lockpicks. See the <a href="lockpicking.html">Lockpicking Guide</a> for detailed walkthroughs.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">What happens if I fail a lock?</div><div class="faq-answer"><div class="faq-answer-content">Failed attempts waste lockpicks. If you run out of lockpicks, you can't attempt the lock again until you find or buy more. Some key locks (like the Collapsed Tower) also have a maximum attempt limit — fail too many times and the lock becomes permanently jammed. Use the <a href="lock-solver.html">Lock Solver</a> to avoid this.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Where can I get more lockpicks?</div><div class="faq-answer"><div class="faq-answer-content">Buy them from merchants in any camp. Thieves and New Camp members sell them at better prices. Some can be found as loot in chests or on enemy bodies. Always keep at least 10 lockpicks in your inventory before attempting a multi-plate lock.</div></div></div>
+    </div>
+
+    <!-- Quests -->
+    <div class="faq-category" id="quests-faq">
+        <h2>&#128221; Quest Questions</h2>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Can I miss quests?</div><div class="faq-answer"><div class="faq-answer-content">Yes. Many quests are time-sensitive or become unavailable after certain story events. Side quests in particular can be missed if you progress too far in the main story without completing them. Talk to every named NPC and complete side quests before advancing the main storyline.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Are there quest markers?</div><div class="faq-answer"><div class="faq-answer-content">No quest markers on a minimap. NPCs give you directions verbally — pay attention to what they say. Graham sells maps with routes marked, which helps. This is intentional design: the game wants you to navigate the world yourself rather than following waypoints.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">How do I track active quests?</div><div class="faq-answer"><div class="faq-answer-content">Check your quest journal. It records what NPCs told you, including directions and objectives. The journal is your best friend — read it carefully. It contains the clues NPCs gave you, which is your navigation system.</div></div></div>
+    </div>
+
+    <!-- Technical -->
+    <div class="faq-category" id="technical">
+        <h2>&#128421;&#65039; Technical Questions</h2>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">What are the system requirements?</div><div class="faq-answer"><div class="faq-answer-content">See the <a href="system-requirements.html">System Requirements page</a> for full details. Minimum: i7-7700K, 16GB RAM, RTX 2070, 60GB SSD. Recommended: i7-7700K, 32GB RAM, RTX 3070 Ti, 60GB NVMe.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Does the game support controllers?</div><div class="faq-answer"><div class="faq-answer-content">Yes. Full controller support with DualShock and DualSense compatibility. Keyboard and mouse are also fully supported — the choice is yours.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Is there Steam Cloud support?</div><div class="faq-answer"><div class="faq-answer-content">Yes, Gothic 1 Remake supports Steam Cloud for save synchronization across devices. It also has Family Sharing support.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">How do I report bugs?</div><div class="faq-answer"><div class="faq-answer-content">Contact support@quanticlab.com or use the Steam Community forums. Check the <a href="community.html">Community page</a> for links to official channels.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Will this run on Steam Deck?</div><div class="faq-answer"><div class="faq-answer-content">The game requires Windows 10/11 64-bit and is not natively supported on Linux/SteamOS. Steam Deck compatibility has not been officially confirmed. Check ProtonDB for community testing results.</div></div></div>
+    </div>
+
+    <!-- Story & Lore -->
+    <div class="faq-category" id="lore">
+        <h2>&#128214; Story &amp; Lore Questions</h2>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Who am I playing as?</div><div class="faq-answer"><div class="faq-answer-content">You play as the Nameless Hero — a prisoner thrown into the mining colony of Khorinis. You have no name, no backstory, and no allies. Your goal: survive, join a faction, and find a way out of the magical barrier that traps everyone inside.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">What is the magical barrier?</div><div class="faq-answer"><div class="faq-answer-content">King Rhobar II ordered his mages to create a barrier around the mining colony to prevent prisoners from escaping. The spell went wrong — instead of keeping prisoners in, it trapped EVERYONE inside, including the guards and mages. The barrier is the central mystery of the game's story.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Who is Diego?</div><div class="faq-answer"><div class="faq-answer-content">Diego is the first friendly NPC you meet and your guide through the early game. He's a veteran of the Old Camp who escorts you there, teaches you basic stats, and serves as your main quest-giver if you choose the Old Camp path. He's one of the most important characters in the game.</div></div></div>
+        <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)">Is the story connected to Gothic 2 and 3?</div><div class="faq-answer"><div class="faq-answer-content">Yes. Gothic 1 Remake is the first game in the trilogy. Your choices and faction allegiance set up the events of Gothic 2. Characters like Diego, Gomez, and the Nameless Hero continue their stories in the sequels.</div></div></div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="factions-guide.html">Faction Guide</a></li><li><a href="lock-solver.html">Lock Solver</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Gothic 1 Remake. Fan-made guide.</p></div>
+</footer>
+
+<script>
+function toggleFaq(el) {
+    el.parentElement.classList.toggle('open');
+}
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
