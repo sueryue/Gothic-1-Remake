@@ -117,73 +117,10 @@ a{color:var(--color-accent);text-decoration:none}
 
     <main class="content-wrapper">
         <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Faction Quiz</span></nav>
-        <section class="page-header"><h1>🎯 Faction Choice Quiz</h1><p class="page-subtitle">Answer 3 questions, find your best faction</p></section>
-
-        <div class="guide-section" style="max-width:800px;margin:0 auto">
-            <div class="info-box important" style="margin-bottom:2rem">
-                <p style="line-height:1.9"><strong>How this works:</strong> Answer three questions about your preferred playstyle. The quiz recommends the faction that best matches your choices. All three factions are viable — this just helps you decide which one to invest 60+ hours into.</p>
-            </div>
-
-            <h3>Question 1: Combat Style</h3>
-            <p style="color:var(--color-text-secondary);margin-bottom:1rem">What's your preferred way to fight?</p>
-            <div class="tips-grid">
-                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q1').value='melee'"><h4>⚔️ Heavy Melee</h4><p>Get in close with heavy armor and a big sword. Tank hits and deal massive damage up close.</p></div>
-                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q1').value='ranged'"><h4>🏹 Ranged / Archer</h4><p>Keep your distance. Use bows, crossbows, and hit-and-run tactics.</p></div>
-                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q1').value='hybrid'"><h4>🔮 Hybrid (Melee + Magic)</h4><p>Mix it up. Use weapons for most fights, magic for crowd control and tough enemies.</p></div>
-            </div>
-            <input type="hidden" id="q1" value="">
-
-            <h3>Question 2: Magic Preference</h3>
-            <p style="color:var(--color-text-secondary);margin-bottom:1rem">What kind of magic appeals to you most?</p>
-            <div class="tips-grid">
-                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q2').value='fire'"><h4>🔥 Fire Magic</h4><p>Pure destructive power. Burn everything. The strongest damage-dealing spells in the game.</p></div>
-                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q2').value='ice'"><h4>💧 Ice / Water Magic</h4><p>Crowd control. Freeze enemies in place, control the battlefield, highest magic stat ceiling.</p></div>
-                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q2').value='psionic'"><h4>🌀 Psionic (Mind) Magic</h4><p>Sleep, fear, charm, control. Bypasses armor. Earliest magic access but hard-capped at Circle 4.</p></div>
-            </div>
-            <input type="hidden" id="q2" value="">
-
-            <h3>Question 3: Playthrough Style</h3>
-            <p style="color:var(--color-text-secondary);margin-bottom:1rem">How do you approach games?</p>
-            <div class="tips-grid">
-                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q3').value='first'"><h4>🎮 First Playthrough</h4><p>I want clear objectives, a guided path, and the smoothest experience possible.</p></div>
-                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q3').value='rebel'"><h4>⚡ Rebel / Freedom</h4><p>I want freedom from hierarchy, the best economy, and an uninterrupted mid-game.</p></div>
-                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q3').value='unique'"><h4>🌀 Unique Atmosphere</h4><p>I want the strangest, most atmospheric experience — even if it's harder.</p></div>
-            </div>
-            <input type="hidden" id="q3" value="">
-
-            <div style="text-align:center;margin:2rem 0">
-                <button onclick="showResult()" class="btn-primary" style="padding:1.2rem 3rem;font-size:1.2rem">🎯 Show My Faction</button>
-            </div>
-
-            <div id="result" style="display:none;text-align:center;margin:2rem 0;padding:2rem;border:2px solid var(--color-gold);border-radius:12px">
-                <h3 id="resultTitle" style="font-family:var(--font-heading);color:var(--color-gold);font-size:1.8rem"></h3>
-                <p id="resultDesc" style="color:var(--color-text-secondary);margin:1rem 0"></p>
-                <a id="resultLink" href="factions-guide.html" class="btn-primary" style="display:inline-block;text-decoration:none">Read the Full Faction Guide →</a>
-            </div>
-
-            <script>
-            function showResult() {
-                var q1 = document.getElementById('q1').value;
-                var q2 = document.getElementById('q2').value;
-                var q3 = document.getElementById('q3').value;
-                if (!q1 || !q2 || !q3) { alert('Please answer all three questions first!'); return; }
-                var result = document.getElementById('result');
-                result.style.display = 'block';
-                if (q3 === 'first' || (q1 === 'melee' && q2 === 'fire')) {
-                    document.getElementById('resultTitle').innerHTML = '🔥 Old Camp (Fire Mage / Guard)';
-                    document.getElementById('resultDesc').innerHTML = 'Best for your first playthrough. Diego guides you, quests are clear, armor is heavy, Fire Mages reach Circle 6 magic. Warning: Gomez banishes you in Chapter 4.';
-                    document.getElementById('resultLink').href = 'factions-guide.html#old-camp';
-                } else if (q3 === 'rebel' || (q1 === 'ranged' && q2 === 'ice')) {
-                    document.getElementById('resultTitle').innerHTML = '💧 New Camp (Mercenary / Water Mage)';
-                    document.getElementById('resultDesc').innerHTML = 'Rebel route. Best economy, highest ore rewards, Water Mages get +30 stat advantage. No Chapter 4 banishment. Best for dexterity/archer builds.';
-                    document.getElementById('resultLink').href = 'factions-guide.html#new-camp';
-                } else {
-                    document.getElementById('resultTitle').innerHTML = '🌀 Swamp Camp (Templar / Psionic)';
-                    document.getElementById('resultDesc').innerHTML = 'Cult atmosphere. Templar spellsword hybrid. Psionic magic bypasses armor and available earliest — but hard-capped at Circle 4. Most unique playthrough.';
-                    document.getElementById('resultLink').href = 'factions-guide.html#swamp';
-                }
-            }
-            </script>
+        <section class="page-header"><h1>🎯 Faction Quiz</h1><p class="page-subtitle">The faction quiz has moved to the <a href="factions-guide.html#quiz">Faction Guide</a>.</p></section>
+        <div class="guide-section" style="max-width:700px;margin:0 auto;text-align:center">
+            <p style="font-size:1.2rem;line-height:1.9;color:var(--color-text-secondary);margin:2rem 0">The interactive faction quiz is now part of the complete faction guide — alongside the full comparison table, detailed camp breakdowns, and FAQ.</p>
+            <a href="factions-guide.html#quiz" class="btn-primary" style="display:inline-block;text-decoration:none;font-size:1.2rem;padding:1rem 3rem">Take the Quiz →</a>
         </div>
     </main>
 
