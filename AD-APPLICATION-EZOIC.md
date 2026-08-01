@@ -4,7 +4,7 @@
 
 **Site Name:** Gothic 1 Remake Wiki
 
-**URL:** [To be filled in with your domain]
+**URL:** https://gothic-1-remake.com
 
 **Category:** Gaming / RPG / Walkthrough & Strategy Guides
 

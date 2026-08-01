@@ -4,7 +4,7 @@
 
 **Site:** Gothic 1 Remake Wiki
 
-**URL:** [To be filled in with your domain]
+**URL:** https://gothic-1-remake.com
 
 **Tagline:** A fan-made strategy guide and tools website for the 2026 remake of the classic RPG.
 
