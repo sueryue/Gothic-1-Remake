@@ -1,11 +1,59 @@
 // Gothic 1 Remake Wiki - Main JavaScript
-// Handles interactive features, language switching, and UX
+// Handles interactive features, language switching, hamburger menu, and UX
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    // === Hamburger Menu Toggle ===
+    var hamburger = document.querySelector('.hamburger-toggle');
+    var navMenu = document.querySelector('.nav-menu');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var isOpen = navMenu.classList.toggle('open');
+            hamburger.classList.toggle('active', isOpen);
+            hamburger.innerHTML = isOpen ? '✕' : '☰';
+            hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        // 点击页面空白处关闭菜单
+        document.addEventListener('click', function(e) {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('open');
+                hamburger.classList.remove('active');
+                hamburger.innerHTML = '☰';
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
+    // === 触屏下拉菜单切换 ===
+    var dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+    dropdownToggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function(e) {
+            // 只在手机/平板上用点击来切换
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                var parent = toggle.parentElement;
+                var dropdown = parent.querySelector('.dropdown-menu');
+
+                if (dropdown) {
+                    // 关闭其他下拉菜单
+                    document.querySelectorAll('.dropdown-menu.open').forEach(function(d) {
+                        if (d !== dropdown) d.classList.remove('open');
+                    });
+
+                    dropdown.classList.toggle('open');
+                }
+            }
+        });
+    });
+
     // === Language Switcher ===
     window.changeLanguage = function(lang) {
-        // Get current page name
         var path = window.location.pathname;
         var page = path.split('/').pop() || 'index.html';
 
