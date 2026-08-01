@@ -1,4 +1,4 @@
-/* === 下拉菜单导航样式 === */
+/* === Dropdown navigation styles === */
 
 .nav-menu {
     display: flex;
@@ -30,7 +30,7 @@
     transform: translateY(-1px);
 }
 
-/* 下拉菜单按钮样式 */
+/* Dropdown button styles */
 .dropdown-toggle::after {
     content: ' ▼';
     font-size: 0.7em;
@@ -38,7 +38,7 @@
     opacity: 0.7;
 }
 
-/* 下拉菜单容器 */
+/* Dropdown menu container */
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -59,7 +59,7 @@
     backdrop-filter: blur(8px);
 }
 
-/* 下拉菜单三角形箭头 */
+
 .dropdown-menu::before {
     content: '';
     position: absolute;
@@ -86,7 +86,7 @@
     border-bottom: 5px solid var(--color-bg-primary);
 }
 
-/* 显示下拉菜单（鼠标悬停和焦点） */
+/* Show dropdown (hover and focus) */
 .nav-item:hover .dropdown-menu,
 .nav-item:focus-within .dropdown-menu {
     opacity: 1;
@@ -114,21 +114,21 @@
     border-left-color: var(--color-accent);
 }
 
-/* 高亮当前页面 */
+/* Highlight current page */
 .dropdown-menu a.active {
     background: var(--color-accent-light, rgba(52, 152, 219, 0.1));
     color: var(--color-accent);
     font-weight: 500;
 }
 
-/* 分割线 */
+/* Divider */
 .dropdown-divider {
     height: 1px;
     background: var(--color-border);
     margin: 0.5rem 0;
 }
 
-/* 移动端适配 */
+/* Mobile adaptation */
 @media (max-width: 768px) {
     .nav-menu {
         flex-wrap: wrap;

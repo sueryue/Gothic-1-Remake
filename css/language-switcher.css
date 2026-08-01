@@ -1,4 +1,4 @@
-/* 语言选择器样式 (参考 Romestead) */
+/* Language selector styles (Reference: Romestead) */
 
 .language-selector {
     background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
@@ -31,7 +31,7 @@
     padding: 8px;
 }
 
-/* Google Translate 自定义样式 */
+/* Google Translate Customstyles */
 .skiptranslate iframe,
 .goog-te-banner-frame.skiptranslate {
     display: none !important;
@@ -41,7 +41,7 @@ body {
     top: 0 !important;
 }
 
-/* 自定义 Google Translate Dropdown */
+/* Custom Google Translate Dropdown */
 #google_translate_element .goog-te-gadget-simple {
     background: transparent !important;
     border: none !important;

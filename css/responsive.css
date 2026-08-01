@@ -1,9 +1,9 @@
 /* ====================================
-   Gothic 1 Remake Wiki - 三档响应式设计
-   手机 (<768px) / 平板 (768px-1024px) / 电脑 (>1024px)
+   Gothic 1 Remake Wiki - 
+    (<768px) /  (768px-1024px) /  (>1024px)
    ==================================== */
 
-/* === 平板断点 (1024px 以下) === */
+/* ===  (1024px ) === */
 @media (max-width: 1024px) {
     .main-nav {
         padding: 0.8rem 1.5rem;
@@ -52,13 +52,13 @@
     }
 }
 
-/* === 手机断点 (< 768px) === */
+/* ===  (< 768px) === */
 @media (max-width: 768px) {
     body {
         font-size: 15px;
     }
 
-    /* ---- 汉堡菜单 ---- */
+    /* ----  ---- */
     .site-header {
         position: sticky;
         top: 0;
@@ -77,7 +77,7 @@
         font-size: 1.15rem;
     }
 
-    /* 汉堡按钮 */
+    
     .hamburger-toggle {
         display: flex;
         align-items: center;
@@ -108,7 +108,7 @@
         border-color: var(--color-accent);
     }
 
-    /* 默认隐藏导航菜单 */
+    
     .nav-menu {
         display: none;
         flex-direction: column;
@@ -146,7 +146,7 @@
         color: white;
     }
 
-    /* 下拉菜单在手机上的表现 */
+    
     .dropdown-menu {
         display: none;
         position: static;
@@ -187,7 +187,7 @@
         margin: 0;
     }
 
-    /* 语言选择器 */
+    
     .language-selector {
         width: 100%;
         margin-top: 0.5rem;
@@ -195,7 +195,7 @@
         font-size: 1rem;
     }
 
-    /* ---- Hero 区域 ---- */
+    /* ---- Hero  ---- */
     .hero-section {
         padding: 2.5rem 1rem;
         min-height: auto;
@@ -212,7 +212,7 @@
         margin-bottom: 1.5rem;
     }
 
-    /* ---- 工具卡片 ---- */
+    /* ----  ---- */
     .tool-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -230,7 +230,7 @@
         font-size: 1.1rem;
     }
 
-    /* ---- 章节标题 ---- */
+    /* ----  ---- */
     .section-title {
         font-size: 1.6rem;
         margin-bottom: 1.5rem;
@@ -256,7 +256,7 @@
         font-size: 1.15rem;
     }
 
-    /* ---- 容器 ---- */
+    /* ----  ---- */
     .container {
         padding: 1.5rem 1rem;
     }
@@ -271,7 +271,7 @@
         font-size: 0.85rem;
     }
 
-    /* ---- 网格单列 ---- */
+    /* ----  ---- */
     .features-grid,
     .faction-intros,
     .tips-grid,
@@ -281,7 +281,7 @@
         gap: 1rem;
     }
 
-    /* ---- 表格横向滚动 ---- */
+    /* ----  ---- */
     .table-responsive {
         margin: 1rem 0;
         -webkit-overflow-scrolling: touch;
@@ -306,7 +306,7 @@
         font-size: 1rem;
     }
 
-    /* ---- 信息框 ---- */
+    /* ----  ---- */
     .info-box {
         padding: 1rem;
         margin: 1rem 0;
@@ -320,7 +320,7 @@
         font-size: 1.3rem;
     }
 
-    /* ---- 按钮全宽 ---- */
+    /* ----  ---- */
     .btn-primary,
     .action-button {
         display: block;
@@ -344,25 +344,25 @@
         padding: 1.5rem 1rem;
     }
 
-    /* ---- 更新列表 ---- */
+    /* ----  ---- */
     .update-item {
         flex-direction: column;
         gap: 0.4rem;
         padding: 1rem;
     }
 
-    /* ---- SEO 区域 ---- */
+    /* ---- SEO  ---- */
     .seo-section {
         padding: 2.5rem 1rem;
     }
 
-    /* ---- 锁解决方案 ---- */
+    /* ----  ---- */
     .lock-solution {
         padding: 1.2rem;
     }
 }
 
-/* === 超小屏幕 (< 400px) === */
+/* ===  (< 400px) === */
 @media (max-width: 400px) {
     .hero-title {
         font-size: 1.5rem;
@@ -385,7 +385,7 @@
     }
 }
 
-/* === 触控设备优化 === */
+/* ===  === */
 @media (hover: none) and (pointer: coarse) {
     .nav-menu > .nav-item > a,
     .nav-menu > .nav-item > .dropdown-toggle,
@@ -404,7 +404,7 @@
     }
 }
 
-/* === 减少动画模式 === */
+/* ===  === */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,

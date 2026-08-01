@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
 
-        // 点击页面空白处关闭菜单
+        // Click outside to close menu
         document.addEventListener('click', function(e) {
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
                 navMenu.classList.remove('open');
@@ -27,12 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // === 触屏下拉菜单切换 ===
+    // ===  ===
     var dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
     dropdownToggles.forEach(function(toggle) {
         toggle.addEventListener('click', function(e) {
-            // 只在手机/平板上用点击来切换
+            // Toggle with click on mobile/tablet only
             if (window.innerWidth <= 768) {
                 e.preventDefault();
                 e.stopPropagation();
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 var dropdown = parent.querySelector('.dropdown-menu');
 
                 if (dropdown) {
-                    // 关闭其他下拉菜单
+                    // Close other dropdowns
                     document.querySelectorAll('.dropdown-menu.open').forEach(function(d) {
                         if (d !== dropdown) d.classList.remove('open');
                     });
