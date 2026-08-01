@@ -104,59 +104,35 @@
     </header>
 
     <main class="content-wrapper">
-        <nav class="breadcrumb"><a href="index.html">Home</a> / <a href="lockpicking-calculator.html">Calculator</a> / <span class="current">Advanced Solver</span></nav>
+        <nav class="breadcrumb"><a href="index.html">首页</a> / <span class="current">开锁工具</span></nav>
 
-        <section class="solver-intro">
-            <h2>🔐 实验性锁具解算器 (基于发售前假设构建)</h2>
-            <p style="font-size:1.2rem;color:var(--color-text-secondary);margin-bottom:1.5rem">⚠️ 重要提示：此工具基于游戏发售前的猜测构建，与正式版机制完全不同。</p>
-            <div style="background:rgba(233,69,96,.15);border-left:5px solid #e94560;padding:1.5rem;margin:2rem 0;text-align:left">
-                <h4 style="color:#e94560;margin-bottom:1rem">🎮 正式版《哥特王朝1 重制版》真实锁具系统：</h4>
-                <p style="line-height:2;margin-bottom:1rem">游戏已于<strong>2026年6月5日</strong>正式发售，实际撬锁机制为<strong>滑动板块系统</strong>，而非此工具假设的"按钮按压"模式：</p>
-                <ul style="margin-left:1.5rem;line-height:2">
-                    <li><strong>📐 滑动板块 + 7档定位销</strong> — 每个板块可在-3到+3共7个档位间滑动，目标是让所有销钉对准0位</li>
-                    <li><strong>🔗 板块互联机制</strong> — 板块之间通过销钉相互连接，移动一个板块会带动相邻板块同向或反向移动</li>
-                    <li><strong>🎯 全部归零即解锁</strong> — 当所有5个板块的销钉都处于0位时，锁具打开</li>
-                </ul>
-                <p style="line-height:2;margin-top:1rem;color:var(--color-gold)">📖 强烈建议查看 <a href="lockpicking.html" style="color:var(--color-gold);text-decoration:underline;font-weight:700">👉 撬锁完全指南</a> 了解正式版的真实机制、操作技巧与各区域锁具通关攻略。</p>
-            </div>
-            <p style="color:var(--color-text-secondary);margin-top:1rem">下方工具基于<strong>BFS广度优先搜索算法</strong>，作为趣味互动演示保留，供感兴趣的玩家自由体验。</p>
+        <section class="page-header">
+            <h1>🔐 开锁辅助工具</h1>
+            <p class="page-subtitle">正式版开锁系统是<b>滑动板块谜题</b>，不是按钮</p>
         </section>
 
-        <!-- Step 1: Lock Positions -->
-        <section class="input-section">
-            <h3 style="font-family:var(--font-heading);color:var(--color-gold);font-size:1.8rem;margin-bottom:1rem">Step 1: Enter Lock Notch Positions</h3>
-            <div style="background:rgba(233,69,96,.1);border-left:4px solid #e94560;padding:1.5rem;margin:1.5rem 0;border-radius:8px">
-                <strong>⚠️ 免责声明：</strong> 此处"缺口位置"概念来源于发售前的假设模型。正式版锁具系统使用滑动板块+7档销钉机制，操作逻辑不同。以下交互控件仅供实验性体验，<strong>不代表正式版游戏机制</strong>。
-            </div>
-            <div class="lock-position-input">
-                <div class="position-control"><span class="position-label">Plate 1 (Closest)</span><button class="btn-small" onclick="adjustPosition(1,-1)">−</button><div class="position-value" id="pos1">0</div><button class="btn-small" onclick="adjustPosition(1,1)">+</button></div>
-                <div class="position-control"><span class="position-label">Plate 2</span><button class="btn-small" onclick="adjustPosition(2,-1)">−</button><div class="position-value" id="pos2">0</div><button class="btn-small" onclick="adjustPosition(2,1)">+</button></div>
-                <div class="position-control"><span class="position-label">Plate 3</span><button class="btn-small" onclick="adjustPosition(3,-1)">−</button><div class="position-value" id="pos3">0</div><button class="btn-small" onclick="adjustPosition(3,1)">+</button></div>
-                <div class="position-control"><span class="position-label">Plate 4</span><button class="btn-small" onclick="adjustPosition(4,-1)">−</button><div class="position-value" id="pos4">0</div><button class="btn-small" onclick="adjustPosition(4,1)">+</button></div>
-                <div class="position-control"><span class="position-label">Plate 5 (Farthest)</span><button class="btn-small" onclick="adjustPosition(5,-1)">−</button><div class="position-value" id="pos5">0</div><button class="btn-small" onclick="adjustPosition(5,1)">+</button></div>
+        <section class="container" style="max-width:900px;margin:2rem auto">
+            <div class="guide-section" style="max-width:100%">
+                <div class="info-box warning" style="margin-bottom:2rem">
+                    <h3 style="color:var(--color-gold);margin-bottom:1rem">⚠️ 关于这个工具</h3>
+                    <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem">《哥特王朝1重制版》2026年6月5日发售后，开锁系统的真实机制是<b>滑动板块（Sliding Plates）——每块板有7个孔位和一根定位销，移动一块板会影响其他板，目标是所有销钉推到中央第4孔</b>。不是预售时大家猜的"按颜色按钮"。</p>
+                    <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem">下面的工具保留了交互控件，你可以调节位置、设置联动关系、点击求解来观察解法过程。但对于<b>正式版游戏中的实际锁具</b>，建议先看<a href="lockpicking.html" style="color:var(--color-accent);font-weight:700">开锁完全指南</a>中的手动解法策略。</p>
+                    <p style="line-height:1.9;color:var(--color-text-secondary)"><strong style="color:var(--color-text-primary)">正式版锁具核心事实：</strong>未训练2次容错 → 专业级（芬格斯，10 LP+100矿）4次容错 → 大师级（芬格斯，20 LP+200矿）6次容错。推到边缘（第1或第7孔）断锁器。1.0.2补丁后成功开锁奖励XP。开锁时不暂停，NPC会抓现行。</p>
+                </div>
+
+                <h3 style="font-family:var(--font-heading);color:var(--color-gold);margin-bottom:1rem">🔧 交互式演示工具</h3>
+                <p style="line-height:1.8;color:var(--color-text-secondary);margin-bottom:1.5rem">调节下方控件，观察锁具的联动关系和求解过程——当作一个演示开锁逻辑的沙盒。</p>
             </div>
         </section>
 
-        <!-- Step 2: Map Linkages -->
-        <section class="plate-linking-section">
-            <h3 style="font-family:var(--font-heading);color:var(--color-gold);font-size:1.8rem;margin-bottom:1rem">Step 2: Map Plate Linkages</h3>
-            <div style="background:rgba(233,69,96,.1);border-left:4px solid #e94560;padding:1.5rem;margin:1.5rem 0;border-radius:8px">
-                <strong>⚠️ 免责声明：</strong> 板块联动映射基于发售前假设构建。正式版中板块间的联动关系可能更为复杂，具体以游戏内实际表现为准。此功能仅供实验参考，<strong>建议前往 <a href="lockpicking.html" style="color:var(--color-gold);text-decoration:underline">撬锁完全指南</a> 了解真实机制</strong>。
-            </div>
-            <div class="linking-grid">
-                <div class="link-control"><span class="link-label">Plate 1 affects:</span><div class="link-options"><button class="link-btn" onclick="setLink(1,2,'same')" id="link-1-2">Same Dir</button><button class="link-btn" onclick="setLink(1,2,'opp')" id="link-1-2-opp">Opp Dir</button><button class="link-btn" onclick="setLink(1,2,'none')" id="link-1-2-none">No Link</button></div></div>
-                <div class="link-control"><span class="link-label">Plate 2 affects:</span><div class="link-options"><button class="link-btn" onclick="setLink(2,3,'same')" id="link-2-3">Same Dir</button><button class="link-btn" onclick="setLink(2,3,'opp')" id="link-2-3-opp">Opp Dir</button><button class="link-btn" onclick="setLink(2,3,'none')" id="link-2-3-none">No Link</button></div></div>
-                <div class="link-control"><span class="link-label">Plate 3 affects:</span><div class="link-options"><button class="link-btn" onclick="setLink(3,4,'same')" id="link-3-4">Same Dir</button><button class="link-btn" onclick="setLink(3,4,'opp')" id="link-3-4-opp">Opp Dir</button><button class="link-btn" onclick="setLink(3,4,'none')" id="link-3-4-none">No Link</button></div></div>
-                <div class="link-control"><span class="link-label">Plate 4 affects:</span><div class="link-options"><button class="link-btn" onclick="setLink(4,5,'same')" id="link-4-5">Same Dir</button><button class="link-btn" onclick="setLink(4,5,'opp')" id="link-4-5-opp">Opp Dir</button><button class="link-btn" onclick="setLink(4,5,'none')" id="link-4-5-none">No Link</button></div></div>
-            </div>
-        </section>
 
-        <!-- Solve Button -->
         <div class="solve-button-container">
             <button onclick="calculateSolution()" class="btn-solve-massive">🔓 CALCULATE SOLUTION NOW!</button>
         </div>
 
         <!-- Solution Display -->
+        
+
         <div id="solutionDisplay" class="solution-diagram">
             <h3 style="font-family:var(--font-heading);color:#28a745;text-align:center;font-size:2rem;margin-bottom:2rem">✅ Your Complete Solution Sequence</h3>
             <div id="solutionSteps"></div>
@@ -165,6 +141,7 @@
                 <button onclick="resetSolver()" class="btn-reset">🔄 New Lock</button>
             </div>
         </div>
+    
     </main>
 
     <footer class="site-footer">
