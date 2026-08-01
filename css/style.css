@@ -1,3 +1,15 @@
+
+/* Font loading optimization */
+@font-face {
+  font-family: 'Cinzel-fallback';
+  src: local('Georgia'), local('Times New Roman');
+  size-adjust: 105%;
+}
+@font-face {
+  font-family: 'Inter-fallback';
+  src: local('Arial'), local('Helvetica'), local('sans-serif');
+  size-adjust: 100%;
+}
 /* ====================================
    Gothic 1 Remake Wiki - Main Stylesheet
    Theme: Dark Medieval Fantasy

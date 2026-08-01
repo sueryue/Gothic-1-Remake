@@ -27,15 +27,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
     <title>Gothic 1 Remake — 每日技巧 | 每天更新</title>
     <meta name="description" content="哥特王朝1重制版每日技巧——真实玩家经验，每天更新。涵盖开局指引、阵营选择、战斗、开锁等核心内容。">
     <meta name="keywords" content="哥特王朝1重制版每日技巧, Gothic 1 Remake tips, 哥特攻略">
     <link rel="canonical" href="https://gothic-1-remake.com/daily-tips.html">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="css/style.css" as="style">
+    <style>
+/* Critical above-fold CSS - inlined for speed */
+:root{--color-bg-dark:#1a1a2e;--color-bg-medium:#16213e;--color-bg-light:#0f3460;--color-accent:#e94560;--color-text-primary:#eee;--color-text-secondary:#ccc;--color-border:#444;--color-gold:#ffd700;--font-heading:'Cinzel',Georgia,'Times New Roman',serif;--font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;--max-width:1200px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);background:linear-gradient(135deg,var(--color-bg-dark) 0%,var(--color-bg-medium) 100%);color:var(--color-text-primary);line-height:1.7;min-height:100vh}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--color-accent);text-decoration:none}
+.site-header{background:linear-gradient(to right,var(--color-bg-dark),var(--color-bg-light));border-bottom:3px solid var(--color-accent);position:sticky;top:0;z-index:1000;box-shadow:0 4px 6px rgba(0,0,0,0.3)}
+.main-nav{max-width:var(--max-width);margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.logo h1{font-family:var(--font-heading);font-size:1.5rem;color:var(--color-gold);white-space:nowrap}
+.nav-menu{display:flex;align-items:center;list-style:none;gap:.3rem;flex-wrap:nowrap}
+.nav-menu a{color:var(--color-text-primary);font-weight:500;padding:.5rem .8rem;border-radius:4px;white-space:nowrap}
+.nav-menu a:hover,.nav-menu a.active{background:var(--color-accent);color:white}
+.content-wrapper{max-width:var(--max-width);margin:0 auto}
+.container{max-width:var(--max-width);margin:0 auto;padding:3rem 2rem}
+.section-title{font-family:var(--font-heading);font-size:2.5rem;color:var(--color-gold);text-align:center;margin-bottom:3rem}
+.hamburger-toggle{display:none}
+@media(max-width:768px){.main-nav{flex-wrap:wrap;padding:.8rem 1rem}.hamburger-toggle{display:flex}.nav-menu{display:none;flex-direction:column;width:100%}.nav-menu.open{display:flex}}
+
+    </style>
+    <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/language-switcher.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script type="application/ld+json">
 {
     "@context": "https://schema.org",
@@ -49,6 +74,7 @@
     "publisher": {"@type": "Organization", "name": "Gothic 1 Remake Wiki"}
 }
     </script>
+<noscript><link rel="stylesheet" href="css/style.css"></noscript>
 </head><body>
 <header class="site-header">
         <nav class="main-nav">
@@ -126,19 +152,13 @@
         </section>
 
         <section class="container" style="max-width:900px;margin:0 auto;padding:0 2rem 3rem">
-            <h2 class="section-title">开锁——我被坑得最惨的地方</h2>
+            <h2 class="section-title">开锁系统详解</h2>
             <div class="guide-section" style="max-width:100%">
                 <p style="font-size:1.05rem;line-height:1.9;color:var(--color-text-secondary);margin-bottom:1.2rem">
-                    原版的开锁是听声音左右拨。重制版完全改了——你现在面对的是<b>滑动板块谜题</b>。每把锁4到7块板，每块板7个孔位一根金铜色定位销。把销钉推到中央第4孔就是对的，它会弹起来。关键在于：<strong>移动一块板，其他板可能跟着动。</strong>联动有三种：同向、反向、完全独立。
+                    重制版的开锁改用<b>滑动板块谜题</b>——每把锁4-7块滑板，每板7孔1销钉。移动一块板会影响其他板（同向、反向、或独立）。未训练2次容错，找芬格斯学到专业级4次、大师级6次。
                 </p>
                 <p style="font-size:1.05rem;line-height:1.9;color:var(--color-text-secondary);margin-bottom:1.2rem">
-                    难度随宝箱等级走：简单的3-4块板，难的5-7块板联动错综复杂。<strong style="color:var(--color-text-primary)">永远随身带至少10把开锁器再下矿洞</strong>——我试过在旧矿坑深处断光开锁器走回去买，那段路走了快半小时。
-                </p>
-                <p style="font-size:1.05rem;line-height:1.9;color:var(--color-text-secondary);margin-bottom:1.2rem">
-                    解题方法：<a href="lockpicking.html" style="color:var(--color-accent);font-weight:600">开锁完全指南</a> 有手把手教程。如果你用的是简单的锁，<a href="lock-solver.html" style="color:var(--color-accent);font-weight:600">开锁计算器</a>也可以帮忙。
-                </p>
-            </div>
-        </section>
+                    完整教程看<a href="lockpicking.html" style="color:var(--color-accent);font-weight:600">开锁完全指南</a>——那里有详细的解题策略、训练师位置、容错机制和常见问题。
     </main>
 </main>
 
@@ -153,7 +173,7 @@
             <p>&copy; 2026 Gothic 1 Remake Wiki. Fan-made guide. <a href="all-pages.html">All Pages</a> &middot; <a href="about.html">About</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="advertisers.html">Advertise</a></p>
         </div>
     </footer>
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 
 </body>
 </html>

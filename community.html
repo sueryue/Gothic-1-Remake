@@ -3,15 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
     <title>Gothic 1 Remake Community - Resources, Mods & Links</title>
     <meta name="description" content="Gothic 1 Remake community hub. Reddit communities, Discord servers, YouTube channels, modding resources, speedrunning, and wiki links.">
     <meta name="keywords" content="Gothic 1 Remake community, Reddit Gothic, Gothic Discord, modding, speedrunning, wiki, YouTube">
     <link rel="canonical" href="https://gothic-1-remake.com/community.html">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="css/style.css" as="style">
+    <style>
+/* Critical above-fold CSS - inlined for speed */
+:root{--color-bg-dark:#1a1a2e;--color-bg-medium:#16213e;--color-bg-light:#0f3460;--color-accent:#e94560;--color-text-primary:#eee;--color-text-secondary:#ccc;--color-border:#444;--color-gold:#ffd700;--font-heading:'Cinzel',Georgia,'Times New Roman',serif;--font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;--max-width:1200px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);background:linear-gradient(135deg,var(--color-bg-dark) 0%,var(--color-bg-medium) 100%);color:var(--color-text-primary);line-height:1.7;min-height:100vh}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--color-accent);text-decoration:none}
+.site-header{background:linear-gradient(to right,var(--color-bg-dark),var(--color-bg-light));border-bottom:3px solid var(--color-accent);position:sticky;top:0;z-index:1000;box-shadow:0 4px 6px rgba(0,0,0,0.3)}
+.main-nav{max-width:var(--max-width);margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.logo h1{font-family:var(--font-heading);font-size:1.5rem;color:var(--color-gold);white-space:nowrap}
+.nav-menu{display:flex;align-items:center;list-style:none;gap:.3rem;flex-wrap:nowrap}
+.nav-menu a{color:var(--color-text-primary);font-weight:500;padding:.5rem .8rem;border-radius:4px;white-space:nowrap}
+.nav-menu a:hover,.nav-menu a.active{background:var(--color-accent);color:white}
+.content-wrapper{max-width:var(--max-width);margin:0 auto}
+.container{max-width:var(--max-width);margin:0 auto;padding:3rem 2rem}
+.section-title{font-family:var(--font-heading);font-size:2.5rem;color:var(--color-gold);text-align:center;margin-bottom:3rem}
+.hamburger-toggle{display:none}
+@media(max-width:768px){.main-nav{flex-wrap:wrap;padding:.8rem 1rem}.hamburger-toggle{display:flex}.nav-menu{display:none;flex-direction:column;width:100%}.nav-menu.open{display:flex}}
+
+    </style>
+    <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/language-switcher.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         .resource-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0}
         .resource-card{background:var(--color-bg-light);border:2px solid var(--color-border);border-radius:12px;padding:2rem;transition:var(--transition);text-align:center}
@@ -56,6 +81,7 @@
     }
 }
     </script>
+<noscript><link rel="stylesheet" href="css/style.css"></noscript>
 </head>
 <body>
 <header class="site-header">
@@ -144,6 +170,6 @@
         <p>&copy; 2026 Gothic 1 Remake. Fan-made guide. <a href="all-pages.html">All Pages</a> &middot; <a href="about.html">About</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="advertisers.html">Advertise</a></p>
     </div>
 </footer>
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>
