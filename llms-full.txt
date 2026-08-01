@@ -1,0 +1,124 @@
+# Gothic 1 Remake Wiki — Full Content for AI
+
+This document provides comprehensive information about the Gothic 1 Remake Wiki, its tools, guides, and structure. Designed for AI crawlers (ChatGPT, Gemini, Claude, Perplexity) to understand the full scope of the site.
+
+---
+
+## Site Identity
+
+- **Name**: Gothic 1 Remake Wiki
+- **URL**: https://gothic-1-remake.com/
+- **Language**: English (primary), with German, French, Italian, Spanish, Korean, and Japanese translations
+- **Type**: Fan-made strategy guide and tool collection
+- **Topic**: Gothic 1 Remake (RPG by Alkimia Interactive / THQ Nordic)
+- **Updated**: Daily (tips section), weekly (guides)
+- **License**: Fan content, not affiliated with THQ Nordic or Alkimia Interactive
+- **Template**: gothic-1-remake.com/
+
+## Site Architecture
+
+### Home Page
+- URL: https://gothic-1-remake.com/
+- Purpose: Main landing page with tool directory
+- Content: Hero section introducing the site, 6 interactive tool cards, feature highlights, latest updates feed, SEO content block
+- Structured Data: WebSite, Organization (schema.org)
+
+### Daily Tips & Events
+- URL: https://gothic-1-remake.com/daily-tips.html
+- Purpose: Time-sensitive gaming tips updated daily
+- Content: Tip of the Day, Weekly Challenge, Tips Archive with 6 tip cards, Community links section
+
+### Lockpicking Solver
+- URL: https://gothic-1-remake.com/lock-solver.html
+- Purpose: Interactive tool that solves in-game lock puzzles
+- Technology: BFS algorithm, JavaScript-based
+- Content: Lock pattern input, instant solution output, usage instructions
+
+### Lockpicking Calculator
+- URL: https://gothic-1-remake.com/lockpicking-calculator.html
+- Purpose: Calculate lock combinations
+- Technology: JavaScript-based calculator
+
+### Lockpicking Guide
+- URL: https://gothic-1-remake.com/lockpicking.html
+- Purpose: Step-by-step walkthrough of lockpicking mechanics
+- Content: Diagrams, strategies, detailed explanations for all lock types
+
+### Faction Choice Quiz
+- URL: https://gothic-1-remake.com/factions-ultimate-guide.html
+- Purpose: Interactive quiz to help players choose their faction
+- Content: 3 questions, dynamic results, faction descriptions
+
+### Faction Comparison
+- URL: https://gothic-1-remake.com/factions-guide.html
+- Purpose: Detailed comparison of all three factions
+- Content: Comparison table, pros/cons for Old Camp, New Camp, and Swamp Camp
+
+### Walkthrough
+- URL: https://gothic-1-remake.com/walkthrough.html
+- Purpose: Complete game walkthrough
+- Content: Step-by-step progression guide, organized by game chapters
+
+### Visual Guide
+- URL: https://gothic-1-remake.com/visual-guide.html
+- Purpose: Screenshot-based walkthrough
+- Content: Image-heavy guide with annotated screenshots
+
+### Map Guide
+- URL: https://gothic-1-remake.com/map-guide.html
+- Purpose: Map locations and navigation
+- Content: Map overviews, key locations, hidden areas
+
+### Quest List
+- URL: https://gothic-1-remake.com/quests.html
+- Purpose: Organized quest directory
+- Content: All quests listed by chapter/faction
+
+### Bestiary
+- URL: https://gothic-1-remake.com/bestiary.html
+- Purpose: Enemy database
+- Content: Enemy stats, weaknesses, combat strategies
+
+### Equipment
+- URL: https://gothic-1-remake.com/equipment.html
+- Purpose: Item database
+- Content: Weapons, armor, consumables, and their stats
+
+### Skills & Builds
+- URL: https://gothic-1-remake.com/skills-guide.html
+- Purpose: Character build optimization
+- Content: Optimal build guides for each faction and playstyle
+
+### NPC Characters
+- URL: https://gothic-1-remake.com/npc.html
+- Purpose: NPC reference
+- Content: Key NPCs, their roles, locations, and related quests
+
+### Achievements
+- URL: https://gothic-1-remake.com/achievements.html
+- Purpose: Achievement tracking
+- Content: Complete achievement list with unlock conditions
+
+### Other Pages
+- FAQ (https://gothic-1-remake.com/faq.html): Frequently asked questions
+- Community (https://gothic-1-remake.com/community.html): Community links
+- System Requirements (https://gothic-1-remake.com/system-requirements.html): PC specifications
+- Save Management (https://gothic-1-remake.com/save-management.html): Save file guidance
+- Feedback (https://gothic-1-remake.com/feedback.html): User feedback form
+- All Pages (https://gothic-1-remake.com/all-pages.html): Complete site index
+- Privacy (https://gothic-1-remake.com/privacy.html): Privacy policy
+- Terms (https://gothic-1-remake.com/terms.html): Terms of use
+
+## Technical Details
+
+- **Hosting**: GitHub Pages with custom domain (gothic-1-remake.com)
+- **Design System**: Dark medieval fantasy theme, Cinzel/Inter fonts, CSS custom properties
+- **Responsive**: Full mobile/tablet/desktop responsive with hamburger navigation
+- **JavaScript**: Vanilla JS, no framework dependency
+- **Structured Data**: JSON-LD (schema.org) on all pages
+- **SEO**: Canonical URLs, Open Graph, Twitter Cards, hreflang tags
+- **AI-Friendly**: robots.txt with AI crawler rules, llms.txt, llms-full.txt
+
+## Key SEO Keywords
+
+Gothic 1 Remake, Gothic 1 remake guide, Gothic Remake walkthrough, Gothic 1 lockpicking solver, Gothic factions guide, Old Camp New Camp Swamp Camp, Gothic Remake build guide, Gothic 1 tips, Gothic bestiary, Gothic Remake boss strategies

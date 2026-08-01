@@ -1,0 +1,44 @@
+# Gothic 1 Remake Wiki
+> Fan-made Gothic 1 Remake strategy guide, tools, and community resource. Covering lockpicking, faction guides, combat tips, walkthroughs, bestiary, and more. Updated daily.
+
+## Key Pages
+
+- [Home](https://gothic-1-remake.com/): Main tool directory and site overview
+- [Daily Tips & Events](https://gothic-1-remake.com/daily-tips.html): New tips, challenges, and events added daily
+- [Lockpicking Solver](https://gothic-1-remake.com/lock-solver.html): Interactive BFS-based lock solution finder
+- [Faction Choice Quiz](https://gothic-1-remake.com/factions-ultimate-guide.html): 3-question quiz to find your faction
+- [Faction Comparison](https://gothic-1-remake.com/factions-guide.html): Old Camp vs New Camp vs Swamp Camp detailed comparison
+- [Lockpicking Guide](https://gothic-1-remake.com/lockpicking.html): Step-by-step walkthrough with diagrams
+- [Full Walkthrough](https://gothic-1-remake.com/walkthrough.html): Complete game walkthrough
+- [Visual Guide](https://gothic-1-remake.com/visual-guide.html): Screenshot-based walkthrough
+- [Map Guide](https://gothic-1-remake.com/map-guide.html): Maps and navigation tips
+
+## Tools
+
+- [Lockpicking Solver](https://gothic-1-remake.com/lock-solver.html): Enter lock pattern, get the correct sequence
+- [Lockpicking Calculator](https://gothic-1-remake.com/lockpicking-calculator.html): Calculate lock combinations
+- [Faction Quiz](https://gothic-1-remake.com/factions-ultimate-guide.html): Interactive faction choice helper
+
+## Guides
+
+- [Walkthrough](https://gothic-1-remake.com/walkthrough.html): Full step-by-step guide
+- [Visual Guide](https://gothic-1-remake.com/visual-guide.html): Image-heavy walkthrough
+- [Map Guide](https://gothic-1-remake.com/map-guide.html): Map locations and secrets
+- [Quest List](https://gothic-1-remake.com/quests.html): All quests organized by chapter
+- [Bestiary](https://gothic-1-remake.com/bestiary.html): All enemies, stats, and strategies
+- [Equipment](https://gothic-1-remake.com/equipment.html): Weapons, armor, and items
+- [Skills & Builds](https://gothic-1-remake.com/skills-guide.html): Optimal build guides
+- [NPC Characters](https://gothic-1-remake.com/npc.html): Key NPCs and their roles
+- [Achievements](https://gothic-1-remake.com/achievements.html): Complete achievement list
+
+## Info
+
+- [FAQ](https://gothic-1-remake.com/faq.html): Frequently asked questions
+- [Community](https://gothic-1-remake.com/community.html): Community links and resources
+- [System Requirements](https://gothic-1-remake.com/system-requirements.html): PC specs
+- [Save Management](https://gothic-1-remake.com/save-management.html): Save file tips
+- [All Pages](https://gothic-1-remake.com/all-pages.html): Complete site index
+
+## About
+
+Gothic 1 Remake is a modern rebuild of the 2001 cult classic RPG by Piranha Bytes, developed by Alkimia Interactive and published by THQ Nordic. This fan-made wiki provides free tools, guides, and resources for players. Not affiliated with THQ Nordic or Alkimia Interactive.
