@@ -1,8 +1,7 @@
 # ads.txt for gothic-1-remake.com
 # Last updated: 2026-08-01
 
-# Google AdSense (pending — apply after domain age reaches 6 months)
-# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-1113040288823837, DIRECT, f08c47fec0942fa0
 
 # Carbon Ads
 carbonads.com, 12345, DIRECT
