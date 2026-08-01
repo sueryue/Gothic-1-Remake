@@ -84,108 +84,42 @@
 </header>
 
 <main class="content-wrapper">
-    <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Map & Exploration</span></nav>
-    <section class="page-header">
-        <h1>🗺️ Map & Exploration Guide</h1>
-        <p class="page-subtitle">Navigate the Valley of the Mines safely — travel routes, landmarks, and exploration tips</p>
-    </section>
+        <nav class="breadcrumb"><a href="index.html">首页</a> / <span class="current">地图与探索</span></nav>
+        <section class="page-header"><h1>🗺️ 地图与探索指南</h1><p class="page-subtitle">矿区山谷的路线、地标和生存导航</p></section>
 
-    <!-- Map Overview -->
-    <section class="guide-section">
-        <div class="map-overview">
-            <span class="map-placeholder">🗺️</span>
-            <h2 style="color:var(--color-gold);font-family:var(--font-heading);margin-bottom:1rem">The Valley of the Mines</h2>
-            <p style="color:var(--color-text-secondary);max-width:700px;margin:0 auto">Three camps separated by dangerous wilderness. The magical barrier surrounds the entire colony. Understanding the layout is key to survival.</p>
-            <div style="margin-top:1.5rem"><a href="community.html" style="color:var(--color-accent);font-weight:700">📸 Want to contribute a map screenshot? Visit our Community page →</a></div>
+        <div class="guide-section" style="max-width:900px;margin:0 auto">
+            <h2>矿区概览</h2>
+            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1.5rem">《哥特王朝1重制版》的地图是一张无缝开放世界——三个营地分布在山谷中，被魔法屏障包围，没有小地图。你需要靠记忆、地标和从NPC处购买的手绘地图来导航。</p>
+            
+            <h3 style="font-family:var(--font-heading);color:var(--color-gold);margin-top:2rem">🗺️ 怎么买地图</h3>
+            <ul style="color:var(--color-text-secondary);line-height:2;margin-left:2rem">
+                <li><strong>格雷厄姆</strong>（旧营地北门附近）——卖旧营地详细地图，还卖一张更全的殖民地地图</li>
+                <li><strong>德克斯特</strong>（旧营地市场）——殖民地地图，比格雷厄姆的便宜</li>
+                <li>地图不是GPS——是手绘风格的草图，只标了主要的定居点和道路</li>
+            </ul>
+
+            <h3 style="font-family:var(--font-heading);color:var(--color-gold);margin-top:2rem">🛤️ 营地之间的安全路线</h3>
+            
+            <div class="info-box important" style="margin:1rem 0">
+                <h4 style="color:var(--color-gold)">旧营地 → 新营地</h4>
+                <p style="color:var(--color-text-secondary)">走主路向西。让<strong>莫德雷格</strong>（旧营地门口）护送你——他帮你杀路上的敌人，经验全归你。单趟能白拿2000+经验。</p>
+            </div>
+            
+            <div class="info-box important" style="margin:1rem 0">
+                <h4 style="color:var(--color-gold)">旧营地 → 沼泽营地</h4>
+                <p style="color:var(--color-text-secondary)">向东穿过沼泽。最安全的方式是让<strong>巴尔·帕维兹</strong>（旧营地的导师级NPC）护送你，他能安全带你穿过危险区域。</p>
+            </div>
+
+            <h3 style="font-family:var(--font-heading);color:var(--color-gold);margin-top:2rem">⚠️ 探索黄金法则</h3>
+            <ul style="color:var(--color-text-secondary);line-height:2;margin-left:2rem">
+                <li><strong>前期走大路</strong>——野兽通常避开道路</li>
+                <li><strong>看到狼就假设附近有三只</strong>——引一只退到远处单挑</li>
+                <li><strong>影兽和利爪兽在低级时无视</strong>——跑，别回头</li>
+                <li><strong>保存频繁</strong>——看到新区域前先F5</li>
+                <li><strong>开启辅助功能的物体轮廓高亮</strong>——黑暗环境中找东西的利器</li>
+            </ul>
         </div>
-    </section>
-
-    <!-- Verified Travel Routes -->
-    <section class="guide-section">
-        <h2>🛤️ Verified Travel Routes</h2>
-        <div class="info-box warning"><strong>⚠️ Travel Safety:</strong> All routes below have been verified from multiple guide sources. Always save before traveling.</div>
-
-        <div class="route-card safe">
-            <h3 style="color:#28a745;font-family:var(--font-heading)">Old Camp → New Camp (Main Route)</h3>
-            <p style="color:var(--color-text-secondary)"><strong>Difficulty:</strong> Easy | <strong>Min Level:</strong> 4 | <strong>Duration:</strong> ~5 minutes</p>
-            <p style="color:var(--color-text-secondary);margin-top:.8rem">From the Old Camp south gate, follow the western road toward the lake. Pass Cavalorn's cabin, then Aidan's cabin. Continue west to the lake where New Camp sits on the hill.</p>
-            <p style="font-weight:600;color:var(--color-text-secondary);margin-top:.5rem">⚠️ Dangers: Wolves (level 3+), occasional bandits (level 4+)</p>
-        </div>
-
-        <div class="route-card danger">
-            <h3 style="color:var(--color-accent);font-family:var(--font-heading)">Old Camp → Swamp Camp</h3>
-            <p style="color:var(--color-text-secondary)"><strong>Difficulty:</strong> Hard | <strong>Min Level:</strong> 5 | <strong>Duration:</strong> ~10 minutes</p>
-            <p style="color:var(--color-text-secondary);margin-top:.8rem">More dangerous route through marshland. Exit Old Camp and head through dense forest, avoiding orc patrol paths. The swamp terrain slows movement — stay on elevated ground.</p>
-            <p style="font-weight:600;color:var(--color-accent);margin-top:.5rem">⚠️ Dangers: Giant Spiders, Shadowbeasts (night), poisonous marsh gas</p>
-        </div>
-
-        <div class="route-card safe">
-            <h3 style="color:#28a745;font-family:var(--font-heading)">New Camp → Old Mine</h3>
-            <p style="color:var(--color-text-secondary)"><strong>Difficulty:</strong> Medium | <strong>Min Level:</strong> 5 | <strong>Duration:</strong> ~8 minutes</p>
-            <p style="color:var(--color-text-secondary);margin-top:.8rem">From New Camp, head northeast along the ridge past the old watchtower. The mine entrance is visible from a distance. Required for Diego's trial.</p>
-            <p style="font-weight:600;color:var(--color-text-secondary);margin-top:.5rem">⚠️ Dangers: Minecrawlers near entrance, patrols near the mining area</p>
-        </div>
-
-        <div class="route-card danger">
-            <h3 style="color:var(--color-accent);font-family:var(--font-heading)">New Camp → Collapsed Tower</h3>
-            <p style="color:var(--color-text-secondary)"><strong>Difficulty:</strong> Extreme | <strong>Min Level:</strong> 10 | <strong>Duration:</strong> ~15 minutes</p>
-            <p style="color:var(--color-text-secondary);margin-top:.8rem">The most dangerous journey. The Collapsed Tower is near the entrance to Bartered Valley. Follow the mountain pass east of New Camp, past orc border outposts. Contains the game's most complex lock (7 plates).</p>
-            <p style="font-weight:600;color:var(--color-accent);margin-top:.5rem">⚠️ Dangers: Orc Warriors, Orc Scouts, Shadowbeasts. Bring repair kits.</p>
-        </div>
-    </section>
-
-    <!-- Key Landmarks -->
-    <section class="guide-section">
-        <h2>📍 Key Landmarks</h2>
-        <div class="landmark-grid">
-            <div class="landmark-card">
-                <h3>🏰 Old Camp Castle</h3><p style="color:var(--color-text-secondary);font-size:.9rem">Central hub. Contains Gomez's castle, arena, merchant stalls, and training area. The largest and safest settlement.</p>
-                <div style="margin-top:.8rem"><span class="coord-badge">Central Colony</span><span class="coord-badge">Safe Zone</span><span class="coord-badge">All Merchants</span></div>
-            </div>
-            <div class="landmark-card">
-                <h3>🏚️ Cavalorn's Cabin</h3><p style="color:var(--color-text-secondary);font-size:.9rem">First stop on Old Camp→New Camp route. Friendly NPC offers shelter and basic supplies. Good save point between camps.</p>
-                <div style="margin-top:.8rem"><span class="coord-badge">Western Road</span><span class="coord-badge">Rest Stop</span></div>
-            </div>
-            <div class="landmark-card">
-                <h3>🏕️ New Camp Hill</h3><p style="color:var(--color-text-secondary);font-size:.9rem">Western settlement on the lake hill. Rice Lord's territory. Complex layout with multiple hideouts and merchant zones.</p>
-                <div style="margin-top:.8rem"><span class="coord-badge">Lake Area</span><span class="coord-badge">Western Colony</span></div>
-            </div>
-            <div class="landmark-card">
-                <h3>🌿 Swamp Camp Temple</h3><p style="color:var(--color-text-secondary);font-size:.9rem">Hidden marshland settlement. Spiritual center with temple structure. Smallest camp, hardest to find without guidance.</p>
-                <div style="margin-top:.8rem"><span class="coord-badge">Marshland</span><span class="coord-badge">Hidden</span><span class="coord-badge">Spirit Magic</span></div>
-            </div>
-            <div class="landmark-card">
-                <h3>⛏️ Old Mine</h3><p style="color:var(--color-text-secondary);font-size:.9rem">Abandoned mining complex. Location of Diego's trial. Infested with minecrawlers. Contains locked chests with early-game gear.</p>
-                <div style="margin-top:.8rem"><span class="coord-badge">Northeast</span><span class="coord-badge">Minecrawlers</span><span class="coord-badge">Quest Zone</span></div>
-            </div>
-            <div class="landmark-card">
-                <h3>🗼 Collapsed Tower</h3><p style="color:var(--color-text-secondary);font-size:.9rem">Endgame exploration site near Bartered Valley. Houses the 7-plate puzzle lock. Guards legendary loot.</p>
-                <div style="margin-top:.8rem"><span class="coord-badge">East Mountains</span><span class="coord-badge">Endgame</span><span class="coord-badge">Legendary Lock</span></div>
-            </div>
-            <div class="landmark-card">
-                <h3>🪨 Orc Border Outposts</h3><p style="color:var(--color-text-secondary);font-size:.9rem">Orc-controlled territory marking the edge of human-controlled areas. Heavily patrolled. Avoid completely until level 8+.</p>
-                <div style="margin-top:.8rem"><span class="coord-badge">Eastern Border</span><span class="coord-badge">Danger Zone</span><span class="coord-badge">Orc Territory</span></div>
-            </div>
-            <div class="landmark-card">
-                <h3>🏖️ Shipwreck Beach</h3><p style="color:var(--color-text-secondary);font-size:.9rem">Starting area. The beach where you wash ashore. Contains basic supplies for the first hour of gameplay. The magical barrier is visible from here.</p>
-                <div style="margin-top:.8rem"><span class="coord-badge">Starting Zone</span><span class="coord-badge">Tutorial</span><span class="coord-badge">Safe</span></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Exploration Tips -->
-    <section class="guide-section">
-        <h2>🧭 Exploration Tips</h2>
-        <div class="tips-grid">
-            <div class="tip-card"><h3>🗺️ Buy Maps</h3><p>Purchase maps from Graham (Old Camp) after talking to Wesley. Maps mark routes, resource nodes, and danger zones. Worth every ore coin.</p></div>
-            <div class="tip-card"><h3>🏔️ Use High Ground</h3><p>Climb hills and ridges to scout ahead. You can see enemy patrols, camp locations, and landmarks from elevated positions.</p></div>
-            <div class="tip-card"><h3>🌅 Travel By Day</h3><p>Most enemies are more aggressive at night. Shadowbeasts and undead grow stronger in darkness. Plan journeys for daylight hours.</p></div>
-            <div class="tip-card"><h3>🏃 Know Escape Routes</h3><p>Before entering any new area, identify at least one escape path. Running into a dead end while being chased is the #1 cause of early deaths.</p></div>
-            <div class="tip-card"><h3>🏚️ Use Cabins as Checkpoints</h3><p>Cavalorn's and Aidan's cabins between camps are safe zones. Use them to save, rest, and restock before continuing your journey.</p></div>
-            <div class="tip-card"><h3>💎 Resource Nodes</h3><p>Basic materials (herbs, mushrooms, berries) respawn daily at set locations. Mark these on your mental map for consistent income.</p></div>
-        </div>
-    </section>
-</main>
+    </main>
 
     <footer class="site-footer">
         <div class="footer-content">

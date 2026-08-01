@@ -57,51 +57,25 @@
     </nav>
 </header>
 <main class="content-wrapper">
-    <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Feedback</span></nav>
-    <section class="page-header"><h1>&#128172; Feedback & Contact</h1><p class="page-subtitle">Report errors, suggest improvements, or share tips</p></section>
+        <nav class="breadcrumb"><a href="index.html">首页</a> / <span class="current">反馈</span></nav>
+        <section class="page-header"><h1>💬 反馈与联系</h1><p class="page-subtitle">发现错误、有建议、想投稿——都可以</p></section>
 
-    <div class="feedback-intro">
-        <p>Found a mistake in a guide? Have a strategy that deserves its own page? Spotted a lock that our solver gets wrong?</p>
-        <p>Your feedback makes this wiki better for every player in the Colony. Here are all the ways to reach us.</p>
-    </div>
+        <div class="guide-section" style="max-width:700px;margin:0 auto">
+            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:2rem">本站攻略全是我自己玩出来的——难免有错漏。如果你发现数据不对、某个锁的解法有问题、或者你有更好的打法想分享，通过下面任何一种方式联系我：</p>
 
-    <div class="guide-section" style="max-width:700px;margin:0 auto">
-        <h3 style="font-family:var(--font-heading);color:var(--color-gold);margin-bottom:1rem">Report an Error via GitHub</h3>
-        <p style="line-height:1.8;color:var(--color-text-secondary);margin-bottom:1.5rem">The fastest way to get a guide fix is to open a GitHub Issue. Your report becomes a public ticket so other players can see what's been reported and what's been fixed. You'll need a free GitHub account to submit.</p>
-        <form class="feedback-form" action="https://github.com/sueryue/Gothic-1-Remake/issues/new" method="GET" target="_blank">
-            <input type="hidden" name="labels" value="feedback">
-            <input type="hidden" name="template" value="feedback.md">
-            <div class="form-group">
-                <label class="form-label" for="title">Subject</label>
-                <input class="form-input" type="text" id="title" name="title" placeholder="e.g. Typo on walkthrough Phase 3" required>
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="body">Details</label>
-                <textarea class="form-textarea" id="body" name="body" placeholder="Which page? What's wrong? What should it say instead? Include any screenshots or references that help." required></textarea>
-            </div>
-            <button type="submit" class="form-submit">&#128640; Open GitHub Issue</button>
-        </form>
-        <p style="text-align:center;color:var(--color-text-secondary);font-size:.85rem;margin-top:1rem">This opens a pre-filled issue on GitHub. You can preview and edit before submitting.</p>
-    </div>
+            <h3>🐙 提 GitHub Issue（最快）</h3>
+            <p style="color:var(--color-text-secondary);margin-bottom:1rem">把错误直接发到本站的开源仓库，所有人都能看到追踪。需要免费的GitHub账号。</p>
+            <a href="https://github.com/sueryue/Gothic-1-Remake/issues/new" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;text-decoration:none;margin-bottom:2rem">🚀 创建 GitHub Issue</a>
 
-    <div class="contact-methods">
-        <div class="contact-card">
-            <h4>&#128172; Discord</h4>
-            <p>Join the Gothic community Discord for real-time chat, tips, and lore discussion. Best for quick questions.</p>
-            <a href="community.html" class="btn-primary" style="display:inline-block;margin-top:1rem;padding:.6rem 1.5rem;font-size:.9rem;text-decoration:none">Community Page</a>
+            <h3>💬 Discord</h3>
+            <p style="color:var(--color-text-secondary);margin-bottom:1rem">加入哥特社区Discord，在对应频道里直接问我。适合快速提问。</p>
+            <a href="community.html" class="btn-primary" style="display:inline-block;text-decoration:none;margin-bottom:2rem;background:var(--color-gold);color:black">社区页面 →</a>
+
+            <h3>📂 GitHub仓库</h3>
+            <p style="color:var(--color-text-secondary)">本站完全开源。如果你想直接提交修改（Pull Request），去GitHub仓库看看。</p>
+            <a href="https://github.com/sueryue/Gothic-1-Remake" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;text-decoration:none;background:var(--color-bg-light)">查看仓库 →</a>
         </div>
-        <div class="contact-card">
-            <h4>&#128038; Reddit</h4>
-            <p>r/Gothic is the main subreddit. Post questions, share discoveries, and follow game news.</p>
-            <a href="https://www.reddit.com/r/Gothic/" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;margin-top:1rem;padding:.6rem 1.5rem;font-size:.9rem;text-decoration:none">Visit r/Gothic</a>
-        </div>
-        <div class="contact-card">
-            <h4>&#128214; GitHub</h4>
-            <p>This wiki is open source. Contribute directly by submitting pull requests to improve guides.</p>
-            <a href="https://github.com/sueryue/Gothic-1-Remake" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;margin-top:1rem;padding:.6rem 1.5rem;font-size:.9rem;text-decoration:none">View Repository</a>
-        </div>
-    </div>
-</main>
+    </main>
 <footer class="site-footer">
     <div class="footer-content">
         <div class="footer-section"><h4>About This Guide</h4><p>Fan-made Gothic 1 Remake guides and tools. Not affiliated with THQ Nordic or Alkimia Interactive.</p></div>

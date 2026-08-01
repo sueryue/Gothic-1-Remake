@@ -92,104 +92,24 @@
     </header>
 
     <main class="content-wrapper">
-        <section class="visual-hero">
-            <div class="visual-hero-content">
-                <h1>📸 Visual Walkthrough</h1>
-                <p>Learn through gameplay screenshots — Less reading, more seeing!</p>
-            </div>
-        </section>
+        <nav class="breadcrumb"><a href="index.html">首页</a> / <span class="current">图解攻略</span></nav>
+        <section class="page-header"><h1>📸 图解攻略</h1><p class="page-subtitle">看图学打法——不想读大段攻略的时候看这里</p></section>
 
-        <!-- Quick Navigation -->
-        <section style="padding:2rem 0">
-            <div class="container">
-                <h2 style="font-family:var(--font-heading);color:var(--color-gold);text-align:center;margin-bottom:2rem">Quick Jump</h2>
-                <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center">
-                    <a href="#opening" style="padding:.8rem 1.5rem;background:rgba(233,69,96,.2);border:2px solid var(--color-accent);border-radius:8px;color:white;text-decoration:none">🎬 Opening Scene</a>
-                    <a href="#factions" style="padding:.8rem 1.5rem;background:rgba(255,215,0,.2);border:2px solid var(--color-gold);border-radius:8px;color:white;text-decoration:none">🏕️ Faction Choice</a>
-                    <a href="#locks" style="padding:.8rem 1.5rem;background:rgba(233,69,96,.2);border:2px solid var(--color-accent);border-radius:8px;color:white;text-decoration:none">🔐 Lock Puzzle</a>
-                </div>
-            </div>
-        </section>
+        <div class="guide-section" style="max-width:900px;margin:0 auto">
+            <div class="info-box warning" style="margin-bottom:2rem"><p>⚠️ 本页面还在搭建中——截图需要从实际游戏中截取和整理。目前可以先看以下文字版路线概览，或者去<a href="walkthrough.html" style="color:var(--color-accent);font-weight:600">完整攻略</a>和<a href="daily-tips.html" style="color:var(--color-accent);font-weight:600">每日技巧</a>获取详细步骤。</p></div>
 
-        <!-- Opening Scene -->
-        <section id="opening" class="visual-steps">
-            <div class="container">
-                <h2 style="font-family:var(--font-heading);color:var(--color-accent);font-size:2rem;margin-bottom:2rem">🎬 The Awakening</h2>
-                <div class="visual-step">
-                    <div style="min-height:200px;border-radius:8px;overflow:hidden">
-                        <a href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1297900/09d4206dedf6fa71a14a375325482c43ef03f201/ss_09d4206dedf6fa71a14a375325482c43ef03f201.1920x1080.jpg?t=1782739446" target="_blank"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1297900/09d4206dedf6fa71a14a375325482c43ef03f201/ss_09d4206dedf6fa71a14a375325482c43ef03f201.600x338.jpg?t=1782739446" alt="Gothic 1 Remake - Waking up on the beach" style="width:100%;height:auto;display:block;border-radius:8px" loading="lazy"></a>
-                        <p style="font-size:.85rem;margin-top:.5rem;opacity:.7;text-align:center">[Screenshot: beach starting area with magical barrier visible]</p>
-                    </div>
-                    <div class="visual-step-content">
-                        <span class="step-number">1</span>
-                        <h3>You Wake Up on the Shore</h3>
-                        <p>The game starts with your character unconscious on the beach. Look around to understand the environment. Notice the broken magical barrier in the background — this is the central mystery of the game.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <h2>🎬 开局：从海滩到旧营地</h2>
+            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1.5rem">开场后跟着迪亚哥走，沿途捡所有东西（没有负重限制）。重要物品位置：旧剑（绞架下大树旁）、木棒（食腐鸟幼崽旁的尸体）、猎刀（同一条路再往前、还给德拉克斯换免费短弓）。河边水下洞穴里有骑手弓——潜下去拿。</p>
 
-        <!-- Faction Choice -->
-        <section id="factions" class="visual-steps">
-            <div class="container">
-                <h2 style="font-family:var(--font-heading);color:var(--color-accent);font-size:2rem;margin-bottom:2rem">🏕️ Choose Your Faction</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-card">
-                        <a href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1297900/ss_92fc7406839d5c3d534ab28350f8019d7a724089.1920x1080.jpg?t=1782739446" target="_blank"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1297900/ss_92fc7406839d5c3d534ab28350f8019d7a724089.600x338.jpg?t=1782739446" alt="Old Camp - Gothic 1 Remake" style="width:100%;height:200px;object-fit:cover;display:block" loading="lazy"></a>
-                        <div class="gallery-caption"><h3>Old Camp (Diego)</h3><p>Fire mages — aggressive combat, heavy armor, clear objectives</p></div>
-                    </div>
-                    <div class="gallery-card">
-                        <a href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1297900/ss_fe1a5eb19fbba9095756ce40d3007251880b4f9b.1920x1080.jpg?t=1782739446" target="_blank"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1297900/ss_fe1a5eb19fbba9095756ce40d3007251880b4f9b.600x338.jpg?t=1782739446" alt="New Camp - Gothic 1 Remake" style="width:100%;height:200px;object-fit:cover;display:block" loading="lazy"></a>
-                        <div class="gallery-caption"><h3>New Camp (Lares)</h3><p>Water mages — stealth, flexibility, multiple approaches</p></div>
-                    </div>
-                    <div class="gallery-card">
-                        <a href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1297900/ss_384b0956bec4a37b38ac77b31e6e75a017930d69.1920x1080.jpg?t=1782739446" target="_blank"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1297900/ss_384b0956bec4a37b38ac77b31e6e75a017930d69.600x338.jpg?t=1782739446" alt="Swamp Camp - Gothic 1 Remake" style="width:100%;height:200px;object-fit:cover;display:block" loading="lazy"></a>
-                        <div class="gallery-caption"><h3>Swamp Camp (Y'Berion)</h3><p>Spirit magic — unique spells, puzzles, strategic gameplay</p></div>
-                    </div>
-                </div>
-                <div class="info-box important" style="margin-top:2rem"><h3 style="color:var(--color-accent);margin-bottom:1rem">⚠️ Point of No Return</h3><p>Your faction choice is permanent. Complete quests for all three camps before committing!</p></div>
-            </div>
-        </section>
+            <h2>🏕️ 选择阵营</h2>
+            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem"><strong>旧营地（🔥）</strong>——中央位置，迪亚哥带你去的第一个营地。商人和训练师最密集。火焰法师路线，第1-6环魔法。</p>
+            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem"><strong>新营地（💧）</strong>——西侧。找莫德雷格护送你过去。佣兵/水法师路线，前期收益最高。</p>
+            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1.5rem"><strong>沼泽营地（🌀）</strong>——东侧沼泽。圣殿骑士/灵能魔法混合职业。找巴尔·帕维兹护送你过去。</p>
+            <p style="color:var(--color-text-secondary)">记住：三个营地的任务可以全部先做完再决定加入谁。手动存档后再宣誓。</p>
 
-        <!-- Lock Puzzle -->
-        <section id="locks" class="visual-steps">
-            <div class="container">
-                <h2 style="font-family:var(--font-heading);color:var(--color-accent);font-size:2rem;margin-bottom:2rem">🔐 Lock Puzzle Walkthrough</h2>
-                <div class="visual-step">
-                    <div style="min-height:200px;border-radius:8px;overflow:hidden">
-                        <a href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1297900/a2ca0d486ef05bf20a357e2ed46ad0f012bea669/ss_a2ca0d486ef05bf20a357e2ed46ad0f012bea669.1920x1080.jpg?t=1782739446" target="_blank"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1297900/a2ca0d486ef05bf20a357e2ed46ad0f012bea669/ss_a2ca0d486ef05bf20a357e2ed46ad0f012bea669.600x338.jpg?t=1782739446" alt="Gothic 1 Remake - Puzzle lock interface" style="width:100%;height:auto;display:block;border-radius:8px" loading="lazy"></a>
-                        <p style="font-size:.85rem;margin-top:.5rem;opacity:.7;text-align:center">[Screenshot: 5-plate lock in starting state]</p>
-                    </div>
-                    <div class="visual-step-content">
-                        <span class="step-number">1</span>
-                        <h3>Initial State</h3>
-                        <p>Notice the red/blue/yellow buttons — that's your puzzle matrix. Red changes one button, blue changes adjacent, yellow changes entire row.</p>
-                    </div>
-                </div>
-                <div class="visual-step">
-                    <div style="min-height:200px;border-radius:8px;overflow:hidden">
-                        <a href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1297900/83114e73896a7960778e5d3736ede4b2db34ba14/ss_83114e73896a7960778e5d3736ede4b2db34ba14.1920x1080.jpg?t=1782739446" target="_blank"><img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1297900/83114e73896a7960778e5d3736ede4b2db34ba14/ss_83114e73896a7960778e5d3736ede4b2db34ba14.600x338.jpg?t=1782739446" alt="Gothic 1 Remake - Lock solved" style="width:100%;height:auto;display:block;border-radius:8px" loading="lazy"></a>
-                        <p style="font-size:.85rem;margin-top:.5rem;opacity:.7;text-align:center">All buttons turned green — lock solved!</p>
-                    </div>
-                    <div class="visual-step-content">
-                        <span class="step-number">✓</span>
-                        <h3>All Green! Success!</h3>
-                        <p>That's the pattern — practice makes perfect!</p>
-                        <a href="lock-solver.html" style="display:inline-block;background:linear-gradient(135deg,#e94560,#ffd700);color:white;padding:.8rem 1.5rem;border-radius:8px;text-decoration:none;margin-top:1rem">🖱️ Try Interactive Solver</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section style="background:linear-gradient(135deg,rgba(233,69,96,.2),rgba(255,215,0,.2));border:3px solid var(--color-gold);border-radius:12px;padding:3rem;text-align:center;margin:4rem 0">
-            <h2 style="font-family:var(--font-heading);color:var(--color-gold);font-size:2rem;margin-bottom:1rem">📸 Want to Contribute Screenshots?</h2>
-            <p style="font-size:1.1rem;margin-bottom:2rem">Help us fill this visual guide with real gameplay screenshots!</p>
-            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-                <a href="lockpicking.html" style="background:linear-gradient(135deg,#e94560,#ffd700);color:white;padding:1rem 2rem;border-radius:8px;text-decoration:none">🔐 Lockpicking Guide</a>
-                <a href="factions-guide.html" style="background:linear-gradient(135deg,#228b22,#6a0dad);color:white;padding:1rem 2rem;border-radius:8px;text-decoration:none">⚔️ Faction Guide</a>
-            </div>
-        </section>
+            <h2>🔐 开锁谜题</h2>
+            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem">游戏的开锁是<b>滑动板块</b>系统，不是按钮按顺序。详细信息见<a href="lockpicking.html" style="color:var(--color-accent);font-weight:600">开锁完全指南</a>。</p>
+        </div>
     </main>
 
     <footer class="site-footer">

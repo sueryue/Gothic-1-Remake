@@ -83,118 +83,36 @@
 </header>
 
 <main class="content-wrapper">
-    <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Save Management</span></nav>
+        <nav class="breadcrumb"><a href="index.html">首页</a> / <span class="current">存档管理</span></nav>
+        <section class="page-header"><h1>💾 存档管理</h1><p class="page-subtitle">怎么存档不丢进度、怎么管存档文件</p></section>
 
-    <section class="page-header">
-        <h1>&#128190; Save Management</h1>
-        <p class="page-subtitle">How to save smart, avoid losing progress, and manage your save files</p>
-    </section>
+        <div class="guide-section" style="max-width:900px;margin:0 auto">
+            <div class="info-box important" style="margin-bottom:2rem">
+                <p style="font-size:1.1rem;line-height:1.8"><strong>⚠️ 哥特重制版玩家最常见的抱怨：</strong>只用一个存档槽、一直覆盖、然后一个错误决定毁了几十小时的档。不要做那个人。</p>
+            </div>
 
-    <div class="info-box warning"><strong>&#9888;&#65039; The number one complaint from Gothic players:</strong> Lost progress because they relied on a single save slot. Don't be that person. Read this page before you start playing.</div>
+            <h3>📖 存档机制</h3>
+            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem"><strong>手动存档</strong>——在暂停菜单中随时存档，槽位不限数量。手动存档是永久的，只在你手动删除时才会消失。</p>
+            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem"><strong>自动存档</strong>——游戏会在特定节点（进入新区域、完成重要任务等）自动保存，但非常稀疏。不要依赖自动存档。</p>
+            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1.5rem"><strong>快速存档（F5）/ 快速读取（F9）</strong>——只有一个槽位，每次按F5都会覆盖上一个快速存档。F5和手动存档建议交替使用。</p>
 
-    <!-- Save System Overview -->
-    <section class="guide-section">
-        <h2>&#128214; How Saving Works</h2>
-        <div class="save-tips">
-            <div class="tip-card-large">
-                <div class="tip-icon">&#128190;</div>
-                <h3>Manual Saves</h3>
-                <p>You can save at any time from the pause menu. Manual saves are permanent — they stay until you delete them. You can have as many manual save slots as your storage allows. This is your primary save method.</p>
-            </div>
-            <div class="tip-card-large">
-                <div class="tip-icon">&#9889;</div>
-                <h3>Quicksave (Q Key)</h3>
-                <p>Press Q for a fast save without opening the menu. But here's the catch: quicksave overwrites itself each time. The game only keeps ONE quicksave. If you quicksave in a bad situation, your previous quicksave is gone.</p>
-            </div>
-            <div class="tip-card-large">
-                <div class="tip-icon">&#9729;&#65039;</div>
-                <h3>Steam Cloud</h3>
-                <p>Gothic 1 Remake supports Steam Cloud sync. Your saves are automatically uploaded to Steam's servers and synced across devices. This also serves as an automatic backup — but don't rely on it alone.</p>
-            </div>
-            <div class="tip-card-large">
-                <div class="tip-icon">&#128196;</div>
-                <h3>Auto-Saves</h3>
-                <p>The game auto-saves at certain story checkpoints, but these are infrequent. Do NOT rely on auto-saves. The game is designed around manual saving, and auto-save points can be hours apart.</p>
-            </div>
+            <h3>💡 什么时候必须存档</h3>
+            <ul style="color:var(--color-text-secondary);line-height:2.2;margin-left:2rem">
+                <li>🔐 <strong>开锁之前</strong>——锁坏了可以读档重来</li>
+                <li>⚔️ <strong>进入新区域/地牢之前</strong>——你不知道里面有什么</li>
+                <li>🗣️ <strong>和关键NPC对话之前</strong>——选项选错可能锁任务</li>
+                <li>🏕️ <strong>阵营宣誓之前</strong>——最关键的永久存档点</li>
+                <li>📈 <strong>大额LP消费之后</strong>——以防加错点</li>
+            </ul>
+
+            <h3>📁 Steam存档位置</h3>
+            <p style="color:var(--color-text-secondary);line-height:1.9">默认路径：<code style="background:var(--color-bg-medium);padding:0.2rem 0.6rem;border-radius:4px">C:\Users\[用户名]\Saved Games\Gothic Remake\</code></p>
+            <p style="color:var(--color-text-secondary);margin-top:1rem">建议定期把这个文件夹备份到U盘或云盘——特别是几十小时的长档。</p>
+
+            <h3>🔄 多周目推荐存档策略</h3>
+            <p style="color:var(--color-text-secondary);line-height:1.9">在第一章结束、阵营宣誓之前，存一个永久手动档，命名为"阵营抉择点"。之后每次想体验新阵营时回来读这个档——不用从头再跑一遍前期。</p>
         </div>
-    </section>
-
-    <!-- Critical Save Points -->
-    <section class="guide-section">
-        <h2>&#128680; Critical Moments — Save Here!</h2>
-        <p style="color:var(--color-text-secondary);margin-bottom:1.5rem">These are the moments when you absolutely should create a fresh manual save. Each one represents a potential point of no return or a high-risk situation.</p>
-
-        <div class="critical-moment"><h4>&#128274; Before Every Puzzle Lock</h4><p>Lockpicks are limited and some locks have maximum attempt limits. If you break all your lockpicks or permanently jam a lock, you'll want a save to reload from. <a href="lock-solver.html">Use the solver</a> first, then save before attempting.</p></div>
-        <div class="critical-moment"><h4>&#9876;&#65039; Before Faction Initiation</h4><p>Choosing a faction is PERMANENT. Save before completing any faction's final initiation quest. This lets you try different factions without replaying the entire opening.</p></div>
-        <div class="critical-moment"><h4>&#128121; Before Boss Fights</h4><p>Dragons, golems, and faction leaders can kill you quickly if you're unprepared. Save just outside the boss arena so you don't have to re-clear the area leading up to it.</p></div>
-        <div class="critical-moment"><h4>&#127939; Before Traveling Between Camps</h4><p>The roads between camps are dangerous, especially at low levels. Bandits, wolves, and beasts patrol 24/7. Save at camp gates before heading out.</p></div>
-        <div class="critical-moment"><h4>&#128220; Before Major Story Choices</h4><p>Several quests have branching outcomes based on your dialogue choices. Saving before conversations lets you explore different outcomes without committing.</p></div>
-        <div class="critical-moment"><h4>&#127919; Before the Endgame</h4><p>The final confrontation locks you into the ending for your faction. Save before entering the endgame area. Create a named save like "Pre-Ending - Old Camp" so you can find it later.</p></div>
-    </section>
-
-    <!-- Save Strategy -->
-    <section class="guide-section">
-        <h2>&#128260; The 3-Slot Rotation Strategy</h2>
-        <p style="color:var(--color-text-secondary);margin-bottom:1.5rem">The most reliable way to avoid losing progress. Keep three manual save slots and rotate between them.</p>
-        <div class="save-tips">
-            <div class="tip-card-large">
-                <div class="tip-icon">1&#65039;&#8419;</div>
-                <h3>Slot 1: Safe Zone</h3>
-                <p>Save here when you're in a camp or safe area. This is your fallback — a known-safe save you can always return to. Update this whenever you return to a camp after questing.</p>
-            </div>
-            <div class="tip-card-large">
-                <div class="tip-icon">2&#65039;&#8419;</div>
-                <h3>Slot 2: Recent Progress</h3>
-                <p>Save here after completing quests or reaching important milestones. Update every 30 minutes or so. If Slot 3 goes bad, you only lose half an hour max.</p>
-            </div>
-            <div class="tip-card-large">
-                <div class="tip-icon">3&#65039;&#8419;</div>
-                <h3>Slot 3: Active Adventure</h3>
-                <p>Save here frequently during exploration — before entering caves, before combat, after finding loot. This is your high-frequency save that you update every few minutes.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Save File Location -->
-    <section class="guide-section">
-        <h2>&#128193; Save File Locations</h2>
-        <table class="lock-table" style="margin:2rem 0">
-            <thead><tr><th>Platform</th><th>Save File Path</th></tr></thead>
-            <tbody>
-                <tr><td><strong>Steam (Windows)</strong></td><td><code>%USERPROFILE%\Saved Games\Gothic 1 Remake\</code> or Steam Cloud location</td></tr>
-                <tr><td><strong>Steam Cloud Backup</strong></td><td>Automatically synced — accessible via Steam Cloud online</td></tr>
-            </tbody>
-        </table>
-        <div class="info-box note"><strong>&#128193; Manual Backups:</strong> Periodically copy your save folder to another location — an external drive, cloud storage, or a different folder on your PC. Hard drive failures and game updates can corrupt saves. A manual backup is your insurance policy.</div>
-    </section>
-
-    <!-- Common Save Issues -->
-    <section class="guide-section">
-        <h2>&#9888;&#65039; Common Save Problems &amp; Solutions</h2>
-        <div class="save-tips">
-            <div class="tip-card-large">
-                <div class="tip-icon">&#10060;</div>
-                <h3>Corrupted Save File</h3>
-                <p>If a save won't load, try loading an earlier save and then reloading the corrupted one. If that fails, the save is likely lost. This is why you keep multiple slots — you only lose one save, not your whole run.</p>
-            </div>
-            <div class="tip-card-large">
-                <div class="tip-icon">&#128259;</div>
-                <h3>Steam Cloud Conflict</h3>
-                <p>If you play on multiple computers, Steam may ask which save version to keep when conflicts occur. Always choose the newer file. Manually back up saves before switching devices to be safe.</p>
-            </div>
-            <div class="tip-card-large">
-                <div class="tip-icon">&#128450;&#65039;</div>
-                <h3>Running Out of Space</h3>
-                <p>Each save file can be several MB. If you have dozens of saves, they can use significant disk space. Periodically clean out old saves you no longer need. Keep the ones at major story milestones.</p>
-            </div>
-            <div class="tip-card-large">
-                <div class="tip-icon">&#128260;</div>
-                <h3>Quicksave Regret</h3>
-                <p>If you quicksaved right before dying or in an unwinnable situation, immediately pause and load the quicksave, then load Slot 2 (your recent progress save). Never rely on quicksave alone for important moments.</p>
-            </div>
-        </div>
-    </section>
-</main>
+    </main>
 
 <footer class="site-footer">
     <div class="footer-content">
