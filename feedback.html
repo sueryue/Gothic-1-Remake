@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback - Gothic 1 Remake Guide</title>
-    <meta name="description" content="Send feedback about Gothic 1 Remake guides and tools. Report errors, suggest improvements, or share tips.">
+    <meta name="description" content="Send feedback about Gothic 1 Remake guides and tools. Report errors, suggest improvements, or share tips with the community.">
     <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://gothic-1-remake.com/feedback.html">
     <link rel="stylesheet" href="css/style.css">
@@ -16,99 +16,103 @@
         .feedback-form{max-width:650px;margin:2rem auto}
         .form-group{margin-bottom:1.5rem}
         .form-label{display:block;color:var(--color-gold);font-weight:600;margin-bottom:.5rem}
-        .form-input,.form-textarea,.form-select{width:100%;padding:.8rem 1rem;background:var(--color-bg-medium);border:1px solid var(--color-border);border-radius:6px;color:var(--color-text-primary);font-size:1rem;font-family:inherit;transition:var(--transition)}
+        .form-input,.form-textarea,.form-select{width:100%;padding:.8rem 1rem;background:var(--color-bg-medium);border:1px solid var(--color-border);border-radius:6px;color:var(--color-text-primary);font-size:1rem;font-family:inherit;transition:all .3s ease}
         .form-input:focus,.form-textarea:focus,.form-select:focus{outline:none;border-color:var(--color-accent);box-shadow:0 0 0 3px rgba(233,69,96,.15)}
         .form-textarea{min-height:150px;resize:vertical}
-        .form-submit{display:block;width:100%;padding:1rem;background:linear-gradient(135deg,var(--color-accent),var(--color-gold));color:white;border:none;border-radius:8px;font-size:1.1rem;font-weight:700;cursor:pointer;transition:var(--transition)}
+        .form-submit{display:block;width:100%;padding:1rem;background:linear-gradient(135deg,var(--color-accent),var(--color-gold));color:white;border:none;border-radius:8px;font-size:1.1rem;font-weight:700;cursor:pointer;transition:all .3s ease}
         .form-submit:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(233,69,96,.3)}
         .feedback-intro{text-align:center;color:var(--color-text-secondary);margin-bottom:2rem;line-height:1.8}
+        .contact-methods{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;max-width:700px;margin:3rem auto 0}
+        .contact-card{background:var(--color-bg-light);border:2px solid var(--color-border);border-radius:8px;padding:1.5rem;text-align:center}
+        .contact-card h4{font-family:var(--font-heading);color:var(--color-gold);margin-bottom:.8rem}
+        .contact-card p{color:var(--color-text-secondary);font-size:.9rem}
     </style>
-
     <script type="application/ld+json">
 {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Feedback",
+    "@type": "ContactPage",
+    "name": "Feedback - Gothic 1 Remake Wiki",
     "description": "Send feedback about Gothic 1 Remake guides and tools. Report errors, suggest improvements, or share tips.",
     "url": "https://gothic-1-remake.com/feedback.html",
     "inLanguage": "en",
     "isAccessibleForFree": true,
-    "datePublished": "2026-07-22",
     "dateModified": "2026-08-01",
-    "author": {
-        "@type": "Person",
-        "name": "Gothic 1 Remake Community"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Gothic 1 Remake Wiki"
-    },
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://gothic-1-remake.com/feedback.html"
-    }
+    "publisher": {"@type": "Organization", "name": "Gothic 1 Remake Wiki"}
 }
     </script>
 </head>
 <body>
 <header class="site-header">
     <nav class="main-nav">
-        <div class="logo"><h1><div class="logo"><h1>&#127984; Gothic 1 Remake</h1></div>#127984; Gothic 1 Remake</h1></div>
-            <button class="hamburger-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+        <div class="logo"><h1>&#127984; Gothic 1 Remake</h1></div>
+        <button class="hamburger-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
         <ul class="nav-menu">
             <li class="nav-item"><a href="index.html">Home</a></li>
             <li class="nav-item dropdown"><a href="#" class="dropdown-toggle">Walkthrough</a><ul class="dropdown-menu"><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="visual-guide.html">Visual Guide</a></li><li><a href="map-guide.html">Map Guide</a></li><li><a href="quests.html">Quest List</a></li></ul></li>
             <li class="nav-item dropdown"><a href="#" class="dropdown-toggle">Tools</a><ul class="dropdown-menu"><li><a href="lock-solver.html">Lock Solver</a></li><li><a href="lockpicking-calculator.html">Calculator</a></li><li><a href="lockpicking.html">Lockpicking Guide</a></li></ul></li>
             <li class="nav-item dropdown"><a href="#" class="dropdown-toggle">Factions</a><ul class="dropdown-menu"><li><a href="factions-guide.html">Factions Overview</a></li><li><div class="dropdown-divider"></div></li><li><a href="factions-ultimate-guide.html">Ultimate Guide</a></li></ul></li>
             <li class="nav-item dropdown"><a href="#" class="dropdown-toggle">Resources</a><ul class="dropdown-menu"><li><a href="bestiary.html">Bestiary</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html">NPC Characters</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="system-requirements.html">System Requirements</a></li><li><a href="save-management.html">Save Management</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul></li>
-            <li class="nav-item"><select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)"><option value="en">&#127468;&#127463; English</option><option value="de">&#127465;&#127466; Deutsch</option><option value="fr">&#127467;&#127482; Fran&ccedil;ais</option><option value="it">&#127470;&#127481; Italiano</option><option value="es">&#127466;&#127480; Espa&ntilde;ol</option><option value="ko">&#127472;&#127479; &#54620;&#44397;&#50612;</option><option value="ja">&#127471;&#127477; &#26085;&#26412;&#35486;</option></select></li>
+            <li class="nav-item"><select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)"><option value="en">&#127468;&#127463; English</option><option value="de">&#127465;&#127466; Deutsch</option><option value="fr">&#127467;&#127482; Français</option><option value="it">&#127470;&#127481; Italiano</option><option value="es">&#127466;&#127480; Español</option><option value="ko">&#127472;&#127479; 한국어</option><option value="ja">&#127471;&#127477; 日本語</option></select></li>
         </ul>
     </nav>
 </header>
-
 <main class="content-wrapper">
     <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Feedback</span></nav>
-
-    <section class="page-header">
-        <h1>&#128172; Feedback</h1>
-        <p class="page-subtitle">Report errors, suggest improvements, or share tips</p>
-    </section>
+    <section class="page-header"><h1>&#128172; Feedback & Contact</h1><p class="page-subtitle">Report errors, suggest improvements, or share tips</p></section>
 
     <div class="feedback-intro">
-        <p>Found a mistake in a guide? Have a tip that should be included? Let us know.</p>
-        <p>This form uses <strong>GitHub Issues</strong> as the backend &mdash; your feedback gets posted as a public issue for discussion.</p>
+        <p>Found a mistake in a guide? Have a strategy that deserves its own page? Spotted a lock that our solver gets wrong?</p>
+        <p>Your feedback makes this wiki better for every player in the Colony. Here are all the ways to reach us.</p>
     </div>
 
-    <form class="feedback-form" action="https://github.com/sueryue/Gothic-1-Remake/issues/new" method="GET" target="_blank">
-        <input type="hidden" name="labels" value="feedback">
-        <input type="hidden" name="template" value="feedback.md">
+    <div class="guide-section" style="max-width:700px;margin:0 auto">
+        <h3 style="font-family:var(--font-heading);color:var(--color-gold);margin-bottom:1rem">Report an Error via GitHub</h3>
+        <p style="line-height:1.8;color:var(--color-text-secondary);margin-bottom:1.5rem">The fastest way to get a guide fix is to open a GitHub Issue. Your report becomes a public ticket so other players can see what's been reported and what's been fixed. You'll need a free GitHub account to submit.</p>
+        <form class="feedback-form" action="https://github.com/sueryue/Gothic-1-Remake/issues/new" method="GET" target="_blank">
+            <input type="hidden" name="labels" value="feedback">
+            <input type="hidden" name="template" value="feedback.md">
+            <div class="form-group">
+                <label class="form-label" for="title">Subject</label>
+                <input class="form-input" type="text" id="title" name="title" placeholder="e.g. Typo on walkthrough Phase 3" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="body">Details</label>
+                <textarea class="form-textarea" id="body" name="body" placeholder="Which page? What's wrong? What should it say instead? Include any screenshots or references that help." required></textarea>
+            </div>
+            <button type="submit" class="form-submit">&#128640; Open GitHub Issue</button>
+        </form>
+        <p style="text-align:center;color:var(--color-text-secondary);font-size:.85rem;margin-top:1rem">This opens a pre-filled issue on GitHub. You can preview and edit before submitting.</p>
+    </div>
 
-        <div class="form-group">
-            <label class="form-label" for="title">Subject</label>
-            <input class="form-input" type="text" id="title" name="title" placeholder="e.g. Typo on walkthrough Phase 3" required>
+    <div class="contact-methods">
+        <div class="contact-card">
+            <h4>&#128172; Discord</h4>
+            <p>Join the Gothic community Discord for real-time chat, tips, and lore discussion. Best for quick questions.</p>
+            <a href="community.html" class="btn-primary" style="display:inline-block;margin-top:1rem;padding:.6rem 1.5rem;font-size:.9rem;text-decoration:none">Community Page</a>
         </div>
-
-        <div class="form-group">
-            <label class="form-label" for="body">Details</label>
-            <textarea class="form-textarea" id="body" name="body" placeholder="What page? What's wrong? What should it say instead?" required></textarea>
+        <div class="contact-card">
+            <h4>&#128038; Reddit</h4>
+            <p>r/Gothic is the main subreddit. Post questions, share discoveries, and follow game news.</p>
+            <a href="https://www.reddit.com/r/Gothic/" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;margin-top:1rem;padding:.6rem 1.5rem;font-size:.9rem;text-decoration:none">Visit r/Gothic</a>
         </div>
-
-        <button type="submit" class="form-submit">&#128640; Open GitHub Issue</button>
-    </form>
-
-    <div style="text-align:center;margin:2rem 0;color:var(--color-text-secondary);font-size:.85rem">
-        <p>This will open a new issue on GitHub. You need a GitHub account to submit.</p>
-        <p>You can also <a href="community.html" style="color:var(--color-accent)">join the Discord</a> for real-time chat.</p>
+        <div class="contact-card">
+            <h4>&#128214; GitHub</h4>
+            <p>This wiki is open source. Contribute directly by submitting pull requests to improve guides.</p>
+            <a href="https://github.com/sueryue/Gothic-1-Remake" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;margin-top:1rem;padding:.6rem 1.5rem;font-size:.9rem;text-decoration:none">View Repository</a>
+        </div>
     </div>
 </main>
-
 <footer class="site-footer">
     <div class="footer-content">
-        <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="faq.html">FAQ</a></li><li><a href="community.html">Community</a></li></ul></div>
+        <div class="footer-section"><h4>About This Guide</h4><p>Fan-made Gothic 1 Remake guides and tools. Not affiliated with THQ Nordic or Alkimia Interactive.</p></div>
+        <div class="footer-section"><h4>Tools</h4><ul><li><a href="lock-solver.html">Lockpicking Solver</a></li><li><a href="factions-ultimate-guide.html">Faction Quiz</a></li></ul></div>
+        <div class="footer-section"><h4>Guides</h4><ul><li><a href="lockpicking.html">Lockpicking Walkthrough</a></li><li><a href="factions-guide.html">Faction Comparison</a></li></ul></div>
+        <div class="footer-section"><h4>Contact</h4><p>Have a guide tip or feedback?</p><a href="feedback.html">Send Feedback</a></div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2026 Gothic 1 Remake. Fan-made guide.</p></div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Gothic 1 Remake. Fan-made guide. <a href="all-pages.html">All Pages</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
+    </div>
 </footer>
-
 <script src="js/main.js"></script>
 </body>
 </html>
