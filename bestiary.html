@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#1a1a2e">
-    <title>"description" content="">
-    <meta name="keywords" content="">
+    <title>哥特王朝1重制版 生物图鉴 - 完整怪物与敌人指南</title>
+    <meta name="description" content="哥特王朝1重制版完整生物图鉴。所有怪物、敌人和野生动物，含难度评级、分布位置、掉落物品和战斗策略。">
+    <meta name="keywords" content="哥特王朝1重制版, 生物图鉴, 怪物, 敌人指南, 战斗策略, 狼, 食腐鸟, 兽人, 龙">
     <link rel="canonical" href="https://gothic-1-remake.com/bestiary.html">
     <link rel="preload" href="css/style.css" as="style">
     <style>
@@ -63,8 +64,8 @@ a{color:var(--color-accent);text-decoration:none}
 {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "",
-    "description": "",
+    "headline": "哥特王朝1重制版 生物图鉴",
+    "description": "哥特王朝1重制版完整生物图鉴。所有怪物、敌人和野生动物，含难度评级、分布位置、掉落物品和战斗策略。",
     "url": "https://gothic-1-remake.com/bestiary.html",
     "inLanguage": "zh-CN",
     "isAccessibleForFree": true,
@@ -72,11 +73,11 @@ a{color:var(--color-accent);text-decoration:none}
     "dateModified": "2026-08-01",
     "author": {
         "@type": "Person",
-        "name": ""
+        "name": "哥特王朝1重制版社区"
     },
     "publisher": {
         "@type": "Organization",
-        "name": ""
+        "name": "哥特王朝1重制版 Wiki"
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -89,69 +90,107 @@ a{color:var(--color-accent);text-decoration:none}
 <body>
 <header class="site-header">
     <nav class="main-nav">
-        <div class="logo"><h1>🏰 "hamburger-toggle" aria-label="" aria-expanded="false">☰</button>
+        <div class="logo"><h1>🏰 哥特王朝1 重制版</h1></div>
+            <button class="hamburger-toggle" aria-label="切换菜单" aria-expanded="false">☰</button>
         <ul class="nav-menu">
-            <li class="nav-item"><a href="index.html">"nav-item dropdown">
-                <a href="#" class="dropdown-toggle">"dropdown-menu"><li><a href="walkthrough.html">"daily-tips.html">"visual-guide.html">"map-guide.html">"quests.html">"nav-item dropdown">
-                <a href="#" class="dropdown-toggle">"dropdown-menu"><li><a href="lock-solver.html">"lockpicking-calculator.html">"lockpicking.html">"nav-item dropdown">
-                <a href="#" class="dropdown-toggle">"dropdown-menu"><li><a href="factions-guide.html">"dropdown-divider"></div></li><li><a href="factions-ultimate-guide.html">"nav-item dropdown">
-                <a href="#" class="dropdown-toggle" style="color:var(--color-gold)">"dropdown-menu"><li><a href="bestiary.html" class="active">"equipment.html">"skills-guide.html">"npc.html">NPC"achievements.html">"system-requirements.html">"save-management.html">"community.html">"faq.html">"content-wrapper">
+            <li class="nav-item"><a href="index.html">首页</a></li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">攻略</a>
+                <ul class="dropdown-menu"><li><a href="walkthrough.html">完整攻略</a></li><li><a href="daily-tips.html">每日技巧</a></li><li><a href="visual-guide.html">图解指南</a></li><li><a href="map-guide.html">地图指南</a></li><li><a href="quests.html">任务列表</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">工具</a>
+                <ul class="dropdown-menu"><li><a href="lock-solver.html">开锁求解器</a></li><li><a href="lockpicking-calculator.html">计算器</a></li><li><a href="lockpicking.html">开锁指南</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle">阵营</a>
+                <ul class="dropdown-menu"><li><a href="factions-guide.html">阵营概览</a></li><li><div class="dropdown-divider"></div></li><li><a href="factions-ultimate-guide.html">终极指南</a></li></ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="#" class="dropdown-toggle" style="color:var(--color-gold)">资源</a>
+                <ul class="dropdown-menu"><li><a href="bestiary.html" class="active">生物图鉴</a></li><li><a href="equipment.html">装备</a></li><li><a href="skills-guide.html">技能与流派</a></li><li><a href="npc.html">NPC角色</a></li><li><a href="achievements.html">成就</a></li><li><a href="system-requirements.html">系统需求</a></li><li><a href="save-management.html">存档管理</a></li><li><a href="community.html">社区</a></li><li><a href="faq.html">常见问题</a></li></ul>
+            </li>
+            
+        </ul>
+    </nav>
+</header>
+
+<main class="content-wrapper">
         <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Bestiary</span></nav>
-        <section class="page-header"><h1>📖 Bestiary</h1><p class="page-subtitle">Every creature in the Valley of Mines — know your enemy</p></section>
+        <section class="page-header"><h1>📖 Bestiary</h1><p class="page-subtitle">Every creature — weaknesses, tactics, drops</p></section>
 
         <div class="guide-section" style="max-width:900px;margin:0 auto">
-            <div class="info-box important"><strong>⚠️ Golden Rule:</strong> In Gothic 1 Remake, not everything is meant to be fought when you first see it. Knowing when to run is the most important survival skill.</div>
+            <div class="info-box important"><strong>⚠️ Golden Rule:</strong> Not everything should be fought when you first see it. Knowing when to run is the most important survival skill in Gothic 1 Remake.</div>
 
-            <h2>Combat Survival Guide</h2>
+            <h2>Combat Readiness by Level</h2>
             <div class="tips-grid">
-                <div class="tip-card"><h3>Levels 1-3</h3><p>Avoid all combat. Even a wolf can kill you. Pick herbs, avoid fights entirely.</p></div>
-                <div class="tip-card"><h3>Levels 4-6</h3><p>Scavengers, juvenile wolves, and lone molerats are manageable. Still avoid wolf packs and large creatures.</p></div>
-                <div class="tip-card"><h3>Levels 7-10</h3><p>Most wildlife is fair game. Shadowbeasts and orcs remain dangerous. Use terrain to your advantage.</p></div>
-                <div class="tip-card"><h3>Levels 10+</h3><p>You can handle most enemies. Large groups and bosses still require preparation.</p></div>
+                <div class="tip-card"><h3>Levels 1-3</h3><p>Avoid all combat. Pick herbs, run from everything.</p></div>
+                <div class="tip-card"><h3>Levels 4-6</h3><p>Scavengers, juvenile wolves, lone molerats. Still avoid packs.</p></div>
+                <div class="tip-card"><h3>Levels 7-10</h3><p>Most wildlife manageable. Shadowbeasts and orcs remain lethal.</p></div>
+                <div class="tip-card"><h3>Levels 10+</h3><p>Most enemies fair game. Bosses need preparation.</p></div>
             </div>
 
-            <h2>Damage Type Quick Reference</h2>
+            <h2>Damage Type Reference</h2>
             <div class="table-responsive">
                 <table class="faction-comparison">
-                    <thead><tr><th>Damage Type</th><th>Effective Against</th><th>Ineffective Against</th></tr></thead>
+                    <thead><tr><th>Type</th><th>Strong Against</th><th>Weak Against</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>🔥 Fire</strong></td><td>Undead, Shadowbeasts, Trolls, Minecrawlers</td><td>Fire Lizards, Fire Demons</td></tr>
-                        <tr><td><strong>🗡️ Piercing</strong></td><td>Wolves, Scavengers, Bloodflies</td><td>Skeletons, Minecrawlers</td></tr>
-                        <tr><td><strong>🔨 Blunt</strong></td><td>Skeletons, Minecrawlers, Molerats</td><td>—</td></tr>
-                        <tr><td><strong>✨ Silver/Blessed</strong></td><td>Undead, Shadowbeasts, Orc Elite</td><td>—</td></tr>
+                        <tr><td><strong>Fire</strong></td><td>Undead, Shadowbeasts, Trolls, Minecrawlers, Bloodflies</td><td>Fire Lizards, Fire Demons</td></tr>
+                        <tr><td><strong>Piercing</strong></td><td>Wolves, Scavengers, Bloodflies, Field Raiders</td><td>Skeletons, Minecrawlers</td></tr>
+                        <tr><td><strong>Blunt</strong></td><td>Skeletons, Minecrawlers, Molerats</td><td>—</td></tr>
+                        <tr><td><strong>Slashing</strong></td><td>Goblins, Snappers, Wargs</td><td>Minecrawlers, Skeletons</td></tr>
+                        <tr><td><strong>Silver/Blessed</strong></td><td>Undead, Shadowbeasts, Orc Elite</td><td>—</td></tr>
                     </tbody>
                 </table>
             </div>
 
-            <h2>Creatures</h2>
-            
+            <h2>Creature Database</h2>
             <div class="tips-grid">
-                <div class="tip-card"><h3>🐺 Wolf</h3><div class="difficulty-easy">Easy</div><p>Weakness: Fire, Piercing. Packs of 3-5 are deadly below level 5. Lure one at a time, dodge sideways. Drops: wolf skin, raw meat. Level: 3+</p></div>
-                <div class="tip-card"><h3>🦅 Scavenger</h3><div class="difficulty-easy">Easy</div><p>Weakness: Piercing, Blunt. Tutorial enemy. Wait for peck animation, dodge back, counter-attack. Drops: feathers, raw meat. Level: 1+</p></div>
-                <div class="tip-card"><h3>🐗 Molerat</h3><div class="difficulty-easy">Easy</div><p>Weakness: Blunt, Fire. Slow and predictable — perfect for practicing combos. Charge attack is well telegraphed. Drops: molerat teeth, raw meat. Level: 1+</p></div>
-                <div class="tip-card"><h3>🦟 Bloodfly</h3><div class="difficulty-easy">Easy</div><p>Weakness: Fire, Piercing. Hard to hit with melee — use bow or wait for dive. Drops: bloodfly wings. Level: 5+</p></div>
-                <div class="tip-card"><h3>👹 Goblin</h3><div class="difficulty-easy">Easy</div><p>Weakness: Any element, Piercing. Come in groups of 3-5. Individually weak but dangerous in numbers. Drops: goblin trinkets, small ore. Level: 4+</p></div>
-                <div class="tip-card"><h3>🦎 Field Raider (Lurker)</h3><div class="difficulty-medium">Medium</div><p>Weakness: Piercing, Fire. Ambush predator in tall grass. Quick and aggressive. Watch for movement in vegetation. Drops: lurker claws, leather. Level: 6+</p></div>
-                <div class="tip-card"><h3>🦖 Snapper</h3><div class="difficulty-medium">Medium</div><p>Weakness: Blunt, Piercing. Fast and aggressive. Dodge to the side, not backward. Bite combo hits 3 times. Drops: snapper teeth, claws, leather. Level: 7+</p></div>
-                <div class="tip-card"><h3>🕷️ Minecrawler</h3><div class="difficulty-medium">Medium</div><p>Weakness: Blunt, Fire. Heavy armor, resistant to slashing. Use maces/hammers or fire magic. Found in Old Mine. Drops: minecrawler mandibles (valuable), ore chunks. Level: 8+</p></div>
-                <div class="tip-card"><h3>💀 Skeleton</h3><div class="difficulty-medium">Medium</div><p>Weakness: Blunt, Blessed. Resistant to piercing. Use maces or blessed weapons. Come in groups guarding ancient tombs. Drops: bone fragments, ancient trinkets. Level: 10+</p></div>
-                <div class="tip-card"><h3>🐺 Warg</h3><div class="difficulty-medium">Medium</div><p>Weakness: Fire. Stronger wolf variant in later areas. Same pack tactics but higher stats. Drops: warg skin, large meat. Level: 10+</p></div>
-                <div class="tip-card"><h3>👻 Undead</h3><div class="difficulty-hard">Hard</div><p>Weakness: Silver, Fire, Blessed. First encountered in Chapter 3 depths. Immune to fear/mental magic. Fire magic is the best counter. Drops: ancient coins, unique rings. Level: 12+</p></div>
-                <div class="tip-card"><h3>🐺 Shadowbeast</h3><div class="difficulty-hard">Hard</div><p>Weakness: Fire, Silver. Extremely dangerous. Do NOT fight below level 10. Use fire magic scrolls if melee. Massive damage lunge attack. Drops: shadowbeast horn (quest item), beast skin. Level: 12+</p></div>
-                <div class="tip-card"><h3>👹 Orc Warrior</h3><div class="difficulty-hard">Hard</div><p>Weakness: Fire, Blessed/Silver. Heavy armor, high HP, massive damage. Use parry and punish their slow recovery. Drops: orc weapon, orc armor shards. Level: 15+</p></div>
-                <div class="tip-card"><h3>🪨 Troll</h3><div class="difficulty-hard">Hard</div><p>Weakness: Fire. Massive HP pool, slow but devastating attacks. Use ranged to weaken, then melee finish. Ground slam has large AoE. Drops: troll hide (best leather), troll heart. Level: 18+</p></div>
-                <div class="tip-card"><h3>👹 Orc Elite</h3><div class="difficulty-hard">Hard</div><p>Weakness: Fire, Silver. Endgame enemy in Orc Temple. Even stronger than regular orcs. Bring 20+ healing items. Use hit-and-run. Drops: elite orc weapon, valuable ore. Level: 20+</p></div>
+                <div class="tip-card"><h3>🦅 Scavenger</h3><div class="difficulty-easy">Level 1+</div><p><strong>Weakness:</strong> Piercing, Blunt. Wait for peck animation, dodge back, counter 2-3 hits. Tutorial enemy. Drops: feathers, raw meat.</p></div>
+                <div class="tip-card"><h3>🐗 Molerat</h3><div class="difficulty-easy">Level 1+</div><p><strong>Weakness:</strong> Blunt, Fire. Slowest enemy — charge attack has a full second wind-up. Perfect for practicing dodge timing. Drops: molerat teeth, raw meat.</p></div>
+                <div class="tip-card"><h3>🐺 Wolf</h3><div class="difficulty-easy">Level 3+ (packs deadly below 5)</div><p><strong>Weakness:</strong> Fire, Piercing. <strong>Never fight a pack.</strong> Pull one at a time — creep forward, retreat when one aggros. Dodge sideways. Packs of 3-5 are fatal below level 5. Drops: wolf skin, raw meat, wolf claws (Torrez quest).</p></div>
+                <div class="tip-card"><h3>👹 Goblin</h3><div class="difficulty-easy">Level 4+</div><p><strong>Weakness:</strong> Fire, Piercing, Slashing. Weak alone but always in groups of 3-5. Kill one, switch targets immediately. Two swings then long pause — counter during the pause. Drops: goblin trinkets, small ore.</p></div>
+                <div class="tip-card"><h3>🦟 Bloodfly</h3><div class="difficulty-easy">Level 5+</div><p><strong>Weakness:</strong> Fire, Piercing. Hard to hit with swords — use bow or wait for dive. Fire magic one-shots them. Found near swamps. Can poison. Drops: bloodfly wings.</p></div>
+                <div class="tip-card"><h3>🦎 Field Raider</h3><div class="difficulty-medium">Level 6+</div><p><strong>Weakness:</strong> Piercing, Fire. Ambush predator in tall grass — watch for movement. Aggressive, doesn't retreat. Claw combo hits 2 times. Dodge sideways. Drops: lurker claws, leather.</p></div>
+                <div class="tip-card"><h3>🦖 Snapper</h3><div class="difficulty-medium">Level 7+</div><p><strong>Weakness:</strong> Blunt, Piercing. <strong>Dodge sideways, never backward.</strong> Bite combo hits 3 times — wait for third bite, then counter with 2 hits. Very aggressive. Drops: snapper teeth, claws, leather.</p></div>
+                <div class="tip-card"><h3>🕷️ Minecrawler</h3><div class="difficulty-medium">Level 8+</div><p><strong>Weakness:</strong> Blunt, Fire. <strong>Do not use swords.</strong> Chitin armor resists slashing/piercing. Switch to mace/hammer or fire magic. Found in Old Mine. Mandibles sell for 50+ ore each. Drops: minecrawler mandibles, ore chunks.</p></div>
+                <div class="tip-card"><h3>💀 Skeleton</h3><div class="difficulty-medium">Level 10+</div><p><strong>Weakness:</strong> Blunt, Blessed. <strong>Bows and swords are nearly useless.</strong> Use maces or blessed weapons. Groups of 2-4. Slow — can be kited. Chapter 3 onward. Drops: bone fragments, ancient trinkets.</p></div>
+                <div class="tip-card"><h3>🐺 Warg</h3><div class="difficulty-medium">Level 10+</div><p><strong>Weakness:</strong> Fire. Stronger wolf variant with double HP. Same pack tactics. Bite can one-shot low-HP builds. Drops: warg skin, large meat.</p></div>
+                <div class="tip-card"><h3>👻 Undead</h3><div class="difficulty-hard">Level 12+</div><p><strong>Weakness:</strong> Silver, Fire, Blessed. <strong>Immune to psionic magic.</strong> Fire magic is best counter. Drain attack steals HP. Come in groups led by Undead Priests. Chapter 3 depths. Drops: ancient coins, unique rings.</p></div>
+                <div class="tip-card"><h3>🐺 Shadowbeast</h3><div class="difficulty-hard">Level 12+</div><p><strong>Weakness:</strong> Fire, Silver. <strong>Do NOT fight below level 10.</strong> Lunge covers huge distance — dodge sideways, not backward. Fire scrolls even for melee builds. Horn is a quest item. Drops: shadowbeast horn, beast skin, shadow essence.</p></div>
+                <div class="tip-card"><h3>👹 Orc Warrior</h3><div class="difficulty-hard">Level 15+</div><p><strong>Weakness:</strong> Fire, Blessed/Silver. Heavy armor, high HP, slow axe swings. <strong>Parry is essential.</strong> Wait for overhead swing (slowest), parry, counter 2-3 hits. Don't trade hits. Orc Temple. Drops: orc weapon, armor shards, ore.</p></div>
+                <div class="tip-card"><h3>🪨 Troll</h3><div class="difficulty-hard">Level 18+</div><p><strong>Weakness:</strong> Fire. Colossal HP — marathon fight. Ground slam has large AoE (run 10m back). Use ranged to weaken to 30%, then melee finish. Troll hide = best leather. Drops: troll hide, troll heart.</p></div>
+                <div class="tip-card"><h3>👹 Orc Elite</h3><div class="difficulty-hard">Level 20+</div><p><strong>Weakness:</strong> Fire, Silver. Endgame enemy. <strong>Bring 20+ healing items.</strong> 4-hit axe combo, almost no recovery. Hit-and-run: one hit, dodge twice. Parry timing is tight. Orc Temple only. Drops: elite orc weapon, valuable ore.</p></div>
+                <div class="tip-card"><h3>🔥 Fire Lizard</h3><div class="difficulty-hard">Level 14+</div><p><strong>Weakness:</strong> Water/Ice magic. <strong>Immune to fire.</strong> Cone fire breath — dodge sideways. Ground ignition creates fire patches. Water Mages excel here. Drops: fire lizard scales, fire essence.</p></div>
             </div>
 
             <div class="info-box note" style="margin-top:2rem">
-                <p style="line-height:1.8"><strong>For original Gothic veterans:</strong> Several enemies have redesigned attack patterns in the remake. Shadowbeasts and trolls are significantly harder than in the original. The undead and skeleton enemy types are new additions unique to the remake. Plan your builds accordingly.</p>
+                <p style="line-height:1.8"><strong>For original Gothic veterans:</strong> Shadowbeasts and trolls are much harder in the remake. Undead and skeletons are new additions. Minecrawlers have proper armor — you can't just sword them anymore.</p>
             </div>
         </div>
     </main>
 
 <footer class="site-footer">
     <div class="footer-content">
-        <div class="footer-section"><h4>"footer-section"><h4>"lock-solver.html">"factions-ultimate-guide.html">"footer-section"><h4>"lockpicking.html">"factions-guide.html">"footer-section"><h4>"feedback.html">"footer-bottom">
-        <p>&copy; 2026 "all-pages.html">"privacy.html">"terms.html">"js/main.js" defer></script>
+        <div class="footer-section"><h4>关于本指南</h4><p>玩家自制哥特王朝1重制版指南与工具。与THQ Nordic或Alkimia Interactive无关。</p></div>
+        <div class="footer-section"><h4>工具</h4><ul><li><a href="lock-solver.html">开锁求解器</a></li><li><a href="factions-ultimate-guide.html">阵营测验</a></li></ul></div>
+        <div class="footer-section"><h4>指南</h4><ul><li><a href="lockpicking.html">开锁攻略</a></li><li><a href="factions-guide.html">阵营对比</a></li></ul></div>
+        <div class="footer-section"><h4>联系</h4><p>有指南建议或反馈？</p><a href="feedback.html">发送反馈</a></div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 哥特王朝1重制版。玩家自制指南。<a href="all-pages.html">全部页面</a> &middot; <a href="privacy.html">隐私</a> &middot; <a href="terms.html">条款</a></p>
+    </div>
+</footer>
+
+<script>
+    function filterEnemies(cat, btn) {
+        document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});
+        btn.classList.add('active');
+        document.querySelectorAll('.enemy-card').forEach(function(card){
+            card.style.display = (cat === 'all' || card.getAttribute('data-category') === cat) ? 'block' : 'none';
+        });
+    }
+</script>
+<script src="js/main.js" defer></script>
 </body>
 </html>
