@@ -93,148 +93,241 @@
 <main class="content-wrapper">
     <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Skills & Builds</span></nav>
     <section class="page-header">
-        <h1>📈 Skills & Character Builds</h1>
-        <p class="page-subtitle">Stat allocation, training mentors, and build recommendations for each faction</p>
+        <h1>Skills & Character Builds</h1>
+        <p class="page-subtitle">How stats, combat, and training actually work — from someone who learned the hard way</p>
     </section>
 
-    <!-- Core Stats -->
+    <!-- Core Stats & Leveling -->
     <section class="guide-section">
-        <h2>Core Stats Overview</h2>
+        <h2>Core Stats & Leveling</h2>
+        <p>Every level you gain gives you <strong>+12 HP and 10 Learning Points (LP)</strong>. Those LP are your most precious resource — there is no respec, no take-backs, no "let me try something different at level 20." Every point is permanent.</p>
+
         <table class="lock-table">
-            <thead><tr><th>Stat</th><th>Effect</th><th>Priority By Faction</th><th>Hard Cap</th></tr></thead>
+            <thead><tr><th>Stat</th><th>What It Does</th><th>LP Cost (Levels 1-30)</th><th>LP Cost (Levels 31+)</th></tr></thead>
             <tbody>
-                <tr><td><strong>Strength</strong></td><td>Melee damage, weapon requirements, carry weight</td><td>Old Camp: ★★★★★<br>New Camp: ★★★★☆<br>Swamp Camp: ★★☆☆☆</td><td>100</td></tr>
-                <tr><td><strong>Dexterity</strong></td><td>Ranged damage, stealth, lockpicking, dodge speed</td><td>Old Camp: ★★☆☆☆<br>New Camp: ★★★★★<br>Swamp Camp: ★★★☆☆</td><td>100</td></tr>
-                <tr><td><strong>Mana</strong></td><td>Spell power, spell availability, magic resistance</td><td>Old Camp: ★★★☆☆<br>New Camp: ★★☆☆☆<br>Swamp Camp: ★★★★★</td><td>100</td></tr>
-                <tr><td><strong>Stamina</strong></td><td>Attack chains, sprint duration, block stamina</td><td>Old Camp: ★★★☆☆<br>New Camp: ★★★☆☆<br>Swamp Camp: ★★★☆☆</td><td>N/A</td></tr>
-                <tr><td><strong>Combat Skill</strong></td><td>Accuracy, critical hit chance, weapon proficiency</td><td>Old Camp: ★★★★★<br>New Camp: ★★★★★<br>Swamp Camp: ★★★☆☆</td><td>N/A</td></tr>
+                <tr><td><strong>Strength</strong></td><td>Melee damage output and weapon equip requirements. Every point makes your swings hit harder.</td><td>1 LP per point</td><td>Costs jump significantly</td></tr>
+                <tr><td><strong>Dexterity</strong></td><td>Bow/crossbow damage, pickpocket success rate, and ranged weapon requirements.</td><td>1 LP per point</td><td>Costs jump significantly</td></tr>
+                <tr><td><strong>Mana</strong></td><td>Your spellcasting pool. <strong>Recovers ONLY by sleeping</strong> — there is no mana regen while awake, no potion spam. Plan your magic use carefully.</td><td>1 LP per point</td><td>Costs jump significantly</td></tr>
+                <tr><td><strong>Health</strong></td><td>Increases automatically with each level (+12 per level). Cannot be directly increased with LP.</td><td colspan="2">Automatic (+12/level)</td></tr>
             </tbody>
         </table>
+
+        <div class="info-box warning"><strong>The Level 30 Cliff:</strong> Up through level 30, every stat point costs exactly 1 LP — cheap and straightforward. After level 30, costs escalate dramatically. This means <strong>levels 1-30 are your build-defining window</strong>. Know what you're building toward before you start spending. A scattered stat sheet at level 20 is recoverable. At level 35, it's a reroll.</div>
+
+        <p>The game expects you to specialize. A character with 50 in every stat is worse than one with 90 in two stats and 15 in everything else. Pick a lane.</p>
     </section>
 
-    <!-- Training Mentors -->
+    <!-- Combat System -->
     <section class="guide-section">
-        <h2>🎓 Training Mentors</h2>
-        <p>Each faction has specialized trainers. Visit them regularly to spend Learning Points (LP) earned from leveling up.</p>
+        <h2>Combat System — The Thing the Tutorial Barely Explains</h2>
+        <p>Gothic 1 Remake uses a <strong>four-directional attack system</strong>. You swing left, right, up, or down — and so do enemies. Combat is about reading their stance, attacking where they are not blocking, and not getting greedy.</p>
+
+        <h3>Attack Directions</h3>
+        <p>Each direction matters. Enemies telegraph which side they are defending. If a scavenger holds its head high, strike low. If a guard raises his shield left, swing from the right. The game rewards patience and pattern recognition — button-mashing gets you killed by the first wolf outside the exchange point.</p>
+
+        <h3>Parry (Unlock Required)</h3>
+        <p><strong>Parry negates ALL damage</strong> when timed correctly. But here is the catch: <strong>your character does not start with the ability to parry.</strong> Without training, you fight like someone swinging a stick with both hands — clumsy, slow, no finesse. You must <strong>unlock parry by training with Scatty in the Old Camp</strong> for 10 LP and 50 Ore. This is arguably the single most important purchase in the game for any melee character. Do not skip it.</p>
+
+        <h3>Blocking vs. Dodging</h3>
+        <ul>
+            <li><strong>Blocking</strong> reduces incoming damage but does not eliminate it. Holding block against a shadowbeast is a good way to die tired.</li>
+            <li><strong>Dodging</strong> has invincibility frames when timed properly. A well-timed dodge avoids damage entirely. Learn enemy attack rhythms and dodge through, not away from, their swings.</li>
+        </ul>
+
+        <div class="info-box tip"><strong>Practice Tip:</strong> Kirgo hangs around near Scatty in the Old Camp. He will spar with you, and he will not kill you when you mess up. Use him to learn attack patterns, parry timing, and dodge windows before you go fight anything with claws. I spent an hour with Kirgo and it saved me twenty deaths in the forest.</div>
+    </section>
+
+    <!-- Skills Deep Dive -->
+    <section class="guide-section">
+        <h2>Skills — What Is Worth Your LP</h2>
+        <p>Not all skills are created equal. Some are build-defining. Others are role-play flavor. Here is the honest breakdown.</p>
+
+        <div class="tips-grid">
+            <div class="tip-card"><h3>Lockpicking</h3><p>Train with <strong>Fingers</strong> in the Old Camp. Level 1 costs 10 LP + 100 Ore and doubles your lockpick attempts while making puzzles easier. Master level (20 LP + 200 Ore) trivializes most locks. Worth it on any build — locked chests hide some of the best early-game weapons and ore caches.</p></div>
+            <div class="tip-card"><h3>One-Handed Weapons</h3><p>Train with <strong>Scatty</strong> (Old Camp, 10 LP + 50 Ore) to unlock parry. This is mandatory for any melee build. One-handed weapons swing faster than two-handed, leave stamina for dodging, and pair well with a shield later. The most versatile weapon style in the game.</p></div>
+            <div class="tip-card"><h3>Two-Handed Weapons</h3><p>Hits harder, swings slower. Each attack commits you to a longer animation — you cannot cancel out of it. Two-handed builds need good positioning and timing because you eat hits during recovery frames. Devastating when you connect, punishing when you miss.</p></div>
+            <div class="tip-card"><h3>Bow Proficiency</h3><p>Lets you kite enemies from safe distance. Essential for archer builds, useful for everyone else as a pulling tool. A single arrow into a group draws one enemy at a time instead of all of them. Train in the New Camp for best results.</p></div>
+            <div class="tip-card"><h3>Hunting</h3><p><strong>Drax</strong> (found on the road to the Old Camp) teaches hunting and <strong>gives you a free Shortbow</strong>. Skinning animals yields pelts, claws, and meat — sellable or craftable. Do this early. The free bow alone makes the detour worth it.</p></div>
+            <div class="tip-card"><h3>Wall Climbing</h3><p>Requires a trainer. Opens up elevated paths and hidden areas throughout the colony. Some loot and shortcuts are only reachable by climbing. Not essential, but you will notice the platforms you cannot reach until you learn it.</p></div>
+            <div class="tip-card"><h3>Alchemy</h3><p>Potion brewing for healing, buffs, and temporary stat boosts. Useful on any build, but especially valuable for mages who need to stretch their mana pool. Gather every herb you see — they weigh nothing and pay off later.</p></div>
+            <div class="tip-card"><h3>Scroll Creation</h3><p>Situational. Lets non-mages cast specific spells from scrolls. Useful if you want a panic-button Fireball without investing in mana, but not a build focus. Treat it as a utility skill, not a primary.</p></div>
+            <div class="tip-card"><h3>Pickpocketing</h3><p>Dexterity-based. Steal ore, keys, and unique items from NPCs. Higher dex means higher success rates and better loot tables. Pair with lockpicking for a stealth-focused playstyle — you will find items and shortcuts no one else sees.</p></div>
+            <div class="tip-card"><h3>Blacksmithing / Acrobatics / Fist Fighting</h3><p>Role-play and situational skills. Blacksmithing can craft or improve weapons if you invest deeply. Acrobatics adds mobility. Fist fighting is for tavern brawls and one specific quest. Fun, but not build-defining — spend LP here after your core build is solid.</p></div>
+        </div>
+    </section>
+
+    <!-- Magic -->
+    <section class="guide-section">
+        <h2>Magic by Camp — What Each Faction Offers</h2>
+        <p>Magic in Gothic 1 Remake is gated by your faction choice. You cannot learn Fire magic as a Swamp Camp member, and you cannot learn psionic spells in the Old Camp. Choose your camp knowing what magic (if any) you want access to.</p>
+
+        <table class="lock-table">
+            <thead><tr><th>Camp</th><th>Magic Type</th><th>Circle Access</th><th>Style</th><th>Notable</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td><strong>Old Camp</strong></td>
+                    <td>Fire Magic</td>
+                    <td>Circles 1-6</td>
+                    <td>Pure destructive power. Fireballs, flame waves, and high-damage projectiles. Kill things before they reach you.</td>
+                    <td><strong>Torrez quest "The Price of Magic"</strong> — bring 2 Wolf Claws + 1 Parchment to begin your mage training. Full circle access to the most damaging spells in the game.</td>
+                </tr>
+                <tr>
+                    <td><strong>New Camp</strong></td>
+                    <td>Water/Ice Magic</td>
+                    <td>Circles 1-6</td>
+                    <td>Crowd control and area denial. Freeze enemies, slow groups, control the battlefield. Water Mages get a <strong>+30 attribute advantage</strong> over Fire Mages in direct comparisons.</td>
+                    <td>Best magic for tactical players. The +30 attribute edge is significant — Water Mages outscale Fire Mages in raw stat totals. Ice magic lets you isolate threats and pick them off one at a time.</td>
+                </tr>
+                <tr>
+                    <td><strong>Swamp Camp</strong></td>
+                    <td>Psionic Magic</td>
+                    <td>Circles 1-4 only</td>
+                    <td>Mind-targeting spells — Sleep, Fear, Charm, and Control. <strong>Bypasses armor entirely</strong> since it attacks the mind, not the body. Earliest magic access of any camp.</td>
+                    <td>Templar spellsword hybrid. You get magic sooner than anyone else and your spells ignore armor. Only four circles, but the spells you get are uniquely powerful — putting an orc warrior to sleep and executing it is a valid strategy all game long.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="info-box important"><strong>Mana Recovery Reality Check:</strong> Mana only recovers by sleeping. There are no mana potions you can chug mid-dungeon. Every spell you cast is a commitment — you are spending a resource you cannot get back until you find a bed. This makes Water Mage crowd control (efficient, fewer casts needed) and Swamp Camp psionics (high impact per cast) more resource-efficient than Old Camp fire spam in longer sequences.</div>
+    </section>
+
+    <!-- Healing -->
+    <section class="guide-section">
+        <h2>Healing & Survival — How to Not Die Between Fights</h2>
+
+        <h3>Sleeping</h3>
+        <p>Beds are your primary recovery tool. For every 3 hours you spend awake, you bank 1 hour of healing (up to a maximum of 8 hours banked). Sleeping consumes banked time to restore your HP. This means you cannot just sleep-spam after every fight — manage your health across your adventuring day.</p>
+
+        <h3>Cooking</h3>
+        <p>Raw meat heals a little. <strong>Cooked meat heals significantly more.</strong> Every major camp has cooking pans — use them. Before heading into a dangerous area, cook everything in your inventory. It is the difference between surviving a bad pull and reloading a save.</p>
+
+        <h3>Snaf's Meatbug Ragouts (Old Camp)</h3>
+        <p>Snaf in the Old Camp gives you <strong>3 free Meatbug Ragouts every day</strong> after you complete his recipe quest. That is three substantial healing items, daily, forever. Do his quest as soon as you can. It is the best repeatable healing source in the early and mid game.</p>
+
+        <h3>Potions & Healers</h3>
+        <p>Healing potions exist but are scarce early on. NPC healers become available as you progress through faction ranks. In the early game, you live and die by cooked meat and bed management. Treat potions as emergency buttons, not maintenance healing.</p>
+    </section>
+
+    <!-- Key Trainers -->
+    <section class="guide-section">
+        <h2>Key Trainers — Who Teaches What and Where</h2>
+        <p>These are the trainers you actually need to find. Not every NPC who offers training is worth your ore, but these ones are.</p>
+
         <div class="mentor-list">
             <div class="mentor-card">
                 <div style="font-size:2.5rem;margin-bottom:.5rem">🗡️</div>
-                <h4>Diego</h4><p style="color:var(--color-text-secondary);font-size:.9rem">Old Camp</p>
-                <div style="margin-top:.5rem"><span class="skill-tag">Strength</span><span class="skill-tag">Agility</span><span class="skill-tag">Stats</span></div>
-                <p style="color:var(--color-text-secondary);font-size:.8rem;margin-top:.5rem">Your first mentor. Teaches core stats. Find him at Old Camp entrance.</p>
+                <h4>Scatty</h4><p style="color:var(--color-text-secondary);font-size:.9rem">Old Camp — Arena Area</p>
+                <div style="margin-top:.5rem"><span class="skill-tag">One-Handed</span><span class="skill-tag">Parry (10 LP + 50 Ore)</span><span class="skill-tag">Combat</span></div>
+                <p style="color:var(--color-text-secondary);font-size:.8rem;margin-top:.5rem">The most important trainer for any melee character. Unlocks parry — the ability that turns you from a flailing peasant into someone who can actually fight. Kirgo practices nearby.</p>
             </div>
             <div class="mentor-card">
-                <div style="font-size:2.5rem;margin-bottom:.5rem">⚔️</div>
-                <h4>Skirti</h4><p style="color:var(--color-text-secondary);font-size:.9rem">Old Camp</p>
-                <div style="margin-top:.5rem"><span class="skill-tag">One-Handed</span><span class="skill-tag">Sword</span><span class="skill-tag">Combat</span></div>
-                <p style="color:var(--color-text-secondary);font-size:.8rem;margin-top:.5rem">One-handed weapon specialist. Arena trainer for combat practice.</p>
+                <div style="font-size:2.5rem;margin-bottom:.5rem">🔑</div>
+                <h4>Fingers</h4><p style="color:var(--color-text-secondary);font-size:.9rem">Old Camp</p>
+                <div style="margin-top:.5rem"><span class="skill-tag">Lockpicking Lv1 (10 LP + 100 Ore)</span><span class="skill-tag">Lockpicking Master (20 LP + 200 Ore)</span></div>
+                <p style="color:var(--color-text-secondary);font-size:.8rem;margin-top:.5rem">Doubles your attempts and makes the lockpicking minigame easier at level 1. Master level trivializes most locks. Worth it on every build.</p>
             </div>
             <div class="mentor-card">
-                <div style="font-size:2.5rem;margin-bottom:.5rem">🔮</div>
-                <h4>Torres</h4><p style="color:var(--color-text-secondary);font-size:.9rem">Old Camp</p>
-                <div style="margin-top:.5rem"><span class="skill-tag">Rune Magic</span><span class="skill-tag">Mana</span><span class="skill-tag">Magical Items</span></div>
-                <p style="color:var(--color-text-secondary);font-size:.8rem;margin-top:.5rem">Fire mage trainer. Sells magical items and teaches mana upgrades.</p>
+                <div style="font-size:2.5rem;margin-bottom:.5rem">💪</div>
+                <h4>Diego</h4><p style="color:var(--color-text-secondary);font-size:.9rem">Old Camp — Main Gate</p>
+                <div style="margin-top:.5rem"><span class="skill-tag">Strength</span><span class="skill-tag">Core Stats</span></div>
+                <p style="color:var(--color-text-secondary);font-size:.8rem;margin-top:.5rem">Your first mentor and one of the most reliable. Trains Strength. Find him at the Old Camp entrance — he is one of the first friendly faces you meet.</p>
             </div>
             <div class="mentor-card">
-                <div style="font-size:2.5rem;margin-bottom:.5rem">🏋️</div>
-                <h4>New Camp Trainers</h4><p style="color:var(--color-text-secondary);font-size:.9rem">New Camp</p>
-                <div style="margin-top:.5rem"><span class="skill-tag">Two-Handed</span><span class="skill-tag">Archery</span><span class="skill-tag">Stealth</span></div>
-                <p style="color:var(--color-text-secondary);font-size:.8rem;margin-top:.5rem">Multiple trainers for diverse combat styles. Two-handed weapon focus.</p>
+                <div style="font-size:2.5rem;margin-bottom:.5rem">🏹</div>
+                <h4>Drax</h4><p style="color:var(--color-text-secondary);font-size:.9rem">Road to Old Camp</p>
+                <div style="margin-top:.5rem"><span class="skill-tag">Hunting</span><span class="skill-tag">Skinning</span><span class="skill-tag">Free Shortbow</span></div>
+                <p style="color:var(--color-text-secondary);font-size:.8rem;margin-top:.5rem">Find him on the road before you even reach the Old Camp. Teaches hunting and <strong>gives you a free Shortbow</strong>. One of the best early-game pickups — do not walk past him.</p>
             </div>
             <div class="mentor-card">
-                <div style="font-size:2.5rem;margin-bottom:.5rem">🌀</div>
-                <h4>4 Spiritual Guides</h4><p style="color:var(--color-text-secondary);font-size:.9rem">Swamp Camp</p>
-                <div style="margin-top:.5rem"><span class="skill-tag">Spirit Magic</span><span class="skill-tag">Sleep</span><span class="skill-tag">Telekinesis</span><span class="skill-tag">Templar</span></div>
-                <p style="color:var(--color-text-secondary);font-size:.8rem;margin-top:.5rem">Each guide teaches different aspects. Must impress all 4 to advance.</p>
+                <div style="font-size:2.5rem;margin-bottom:.5rem">🔥</div>
+                <h4>Torrez</h4><p style="color:var(--color-text-secondary);font-size:.9rem">Old Camp — Fire Mage Quarter</p>
+                <div style="margin-top:.5rem"><span class="skill-tag">Fire Magic</span><span class="skill-tag">Mana Training</span><span class="skill-tag">Quest: 2 Wolf Claws + 1 Parchment</span></div>
+                <p style="color:var(--color-text-secondary);font-size:.8rem;margin-top:.5rem">Your gateway to Fire Mage training. Complete "The Price of Magic" quest to begin your path as a Fire Mage. Teaches circles 1-6.</p>
+            </div>
+            <div class="mentor-card">
+                <div style="font-size:2.5rem;margin-bottom:.5rem">🌿</div>
+                <h4>Snaf</h4><p style="color:var(--color-text-secondary);font-size:.9rem">Old Camp — Cooking Area</p>
+                <div style="margin-top:.5rem"><span class="skill-tag">Recipe Quest</span><span class="skill-tag">3 Free Meatbug Ragouts Daily</span></div>
+                <p style="color:var(--color-text-secondary);font-size:.8rem;margin-top:.5rem">Not a combat trainer, but his daily free food is a lifeline in the early game. Complete his recipe quest the moment you can afford the ingredients.</p>
             </div>
         </div>
-        <div class="info-box important"><strong>⚠️ Important:</strong> Don't randomly allocate stat points. Plan your build before spending LP. Respeccing is NOT available — every point is permanent.</div>
     </section>
 
-    <!-- Build Archetypes -->
+    <!-- Builds -->
     <section class="guide-section">
-        <h2>🎯 Recommended Builds</h2>
+        <h2>Build Recommendations — Four Paths That Actually Work</h2>
+        <p>These are the builds I have tested through to the endgame. Each one works. Pick based on which fantasy appeals to you, not which one someone on a forum said is "optimal." Every build here can clear the game.</p>
+
         <div class="build-showcase">
             <div class="build-card old">
-                <div class="build-header"><div class="build-icon">🔥</div><div class="build-name" style="color:#c41e3a">Knight Commander</div></div>
-                <p style="color:var(--color-text-secondary);margin-bottom:1rem">Heavy armor, sword-and-shield combat. Classic Old Camp warrior that overwhelms enemies with power and durability.</p>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Strength</span><span>85</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:85%"></div></div></div>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Stamina</span><span>60</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-stm" style="width:60%"></div></div></div>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Combat Skill</span><span>90</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:90%"></div></div></div>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Mana</span><span>25</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-mana" style="width:25%"></div></div></div>
-                <p style="margin-top:1rem;font-size:.85rem;color:var(--color-accent)"><strong>Key Skills:</strong> One-Handed Mastery, Heavy Armor Training, Shield Bash, Fire Resistance</p>
-                <p style="font-size:.85rem;color:var(--color-text-secondary)"><strong>Best Weapon:</strong> Guard Captain's Sword</p>
+                <div class="build-header"><div class="build-icon">🛡️</div><div class="build-name" style="color:#c41e3a">Warrior — Old Camp</div></div>
+                <p style="color:var(--color-text-secondary);margin-bottom:1rem">The classic. Strength and one-handed weapons, with parry as your core defensive tool. Work toward Guard armor for survivability. Straightforward, effective, and forgiving — the best choice for a first playthrough.</p>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Strength (Primary)</span><span>high priority</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:90%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>One-Handed Skill</span><span>high priority</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:85%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Dexterity</span><span>minimal</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-agi" style="width:15%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Mana</span><span>none</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-mana" style="width:5%"></div></div></div>
+                <p style="margin-top:1rem;font-size:.85rem;color:var(--color-accent)"><strong>Leveling Path:</strong> Rush to Scatty for parry (10 LP + 50 Ore) → dump every point into Strength and One-Handed → work toward Guard armor → learn lockpicking from Fingers for loot → ignore magic entirely.</p>
+                <p style="font-size:.85rem;color:var(--color-text-secondary)"><strong>Key Trainers:</strong> Scatty (parry), Diego (Strength), Fingers (lockpicking), Snaf (free healing)</p>
             </div>
 
             <div class="build-card new">
-                <div class="build-header"><div class="build-icon">💧</div><div class="build-name" style="color:#228b22">Shadow Assassin</div></div>
-                <p style="color:var(--color-text-secondary);margin-bottom:1rem">Fast, mobile, dual-wielding or dagger build. Hit-and-run tactics with poison and Water Ring crowd control.</p>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Dexterity</span><span>90</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-agi" style="width:90%"></div></div></div>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Strength</span><span>40</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:40%"></div></div></div>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Stamina</span><span>70</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-stm" style="width:70%"></div></div></div>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Mana</span><span>30</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-mana" style="width:30%"></div></div></div>
-                <p style="margin-top:1rem;font-size:.85rem;color:var(--color-accent)"><strong>Key Skills:</strong> Stealth, Dual Wield, Poison Blades, Dodge Mastery, Water Ring</p>
-                <p style="font-size:.85rem;color:var(--color-text-secondary)"><strong>Best Weapon:</strong> Rice Lord's Unique Dagger</p>
+                <div class="build-header"><div class="build-icon">💧</div><div class="build-name" style="color:#228b22">Water Mage — New Camp</div></div>
+                <p style="color:var(--color-text-secondary);margin-bottom:1rem">Start with Dexterity for survival in the early game, then transition hard into Water Mage circles. The +30 attribute advantage over Fire Mages means you end up with significantly more total stats. Ice magic controls fights; your weapon finishes them.</p>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Dexterity (Early)</span><span>moderate early, then stop</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-agi" style="width:55%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Mana (Mid-Late)</span><span>high priority after transition</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-mana" style="width:85%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Water Magic Circles</span><span>primary investment</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-agi" style="width:90%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Strength</span><span>minimal — weapon requirements only</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:20%"></div></div></div>
+                <p style="margin-top:1rem;font-size:.85rem;color:var(--color-accent)"><strong>Leveling Path:</strong> Dex to ~30 for early bow kiting → join New Camp → start Water Mage training → shift all LP into Mana and circles → use ice magic to freeze groups, pick them off with bow or a light blade → enjoy your +30 attribute lead.</p>
+                <p style="font-size:.85rem;color:var(--color-text-secondary)"><strong>Key Trainers:</strong> New Camp Water Mage trainers, Drax (free Shortbow for early dex phase), Fingers (lockpicking)</p>
+            </div>
+
+            <div class="build-card swamp">
+                <div class="build-header"><div class="build-icon">🌀</div><div class="build-name" style="color:#6a0dad">Templar — Swamp Camp</div></div>
+                <p style="color:var(--color-text-secondary);margin-bottom:1rem">The hybrid. Two-handed weapons for melee damage, psionic magic for crowd control and armor bypass. You get magic earlier than any other camp, and spells like Sleep and Fear ignore enemy armor entirely. Fewer circles (only 1-4), but what you get is uniquely powerful.</p>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Strength</span><span>primary melee stat</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:75%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Mana</span><span>secondary — enough for key spells</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-mana" style="width:60%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Psionic Circles (1-4)</span><span>core utility</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-mana" style="width:70%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Dexterity</span><span>minimal</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-agi" style="width:10%"></div></div></div>
+                <p style="margin-top:1rem;font-size:.85rem;color:var(--color-accent)"><strong>Leveling Path:</strong> Strength early for two-handed combat → join Swamp Camp → train psionic circles as soon as available → Sleep tough enemies, execute with two-handed weapon → Fear groups to break formation → Charm for utility situations.</p>
+                <p style="font-size:.85rem;color:var(--color-text-secondary)"><strong>Key Trainers:</strong> Swamp Camp Spiritual Guides, Drax (hunting + free Shortbow), Fingers (lockpicking)</p>
             </div>
 
             <div class="build-card new">
-                <div class="build-header"><div class="build-icon">🏹</div><div class="build-name" style="color:#228b22">Mercenary Vanguard</div></div>
-                <p style="color:var(--color-text-secondary);margin-bottom:1rem">Two-handed weapon specialist with heavy armor. Devastating single-hit damage and crowd-clearing AoE attacks.</p>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Strength</span><span>95</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:95%"></div></div></div>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Stamina</span><span>80</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-stm" style="width:80%"></div></div></div>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Combat Skill</span><span>75</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:75%"></div></div></div>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Dexterity</span><span>20</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-agi" style="width:20%"></div></div></div>
-                <p style="margin-top:1rem;font-size:.85rem;color:var(--color-accent)"><strong>Key Skills:</strong> Two-Handed Mastery, Heavy Armor Training, War Cry, Charge Attack</p>
-                <p style="font-size:.85rem;color:var(--color-text-secondary)"><strong>Best Weapon:</strong> Heavy Two-Handed Axe</p>
-            </div>
-
-            <div class="build-card swamp">
-                <div class="build-header"><div class="build-icon">🌀</div><div class="build-name" style="color:#6a0dad">Spirit Mage</div></div>
-                <p style="color:var(--color-text-secondary);margin-bottom:1rem">Full caster build focused on crowd control and spirit magic. Sleep entire groups, then eliminate one by one.</p>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Mana</span><span>95</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-mana" style="width:95%"></div></div></div>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Dexterity</span><span>40</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-agi" style="width:40%"></div></div></div>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Stamina</span><span>30</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-stm" style="width:30%"></div></div></div>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Strength</span><span>15</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:15%"></div></div></div>
-                <p style="margin-top:1rem;font-size:.85rem;color:var(--color-accent)"><strong>Key Skills:</strong> Sleep Spell, Telekinesis, Wind Hammer, Spirit Staff Mastery, Mana Regeneration</p>
-                <p style="font-size:.85rem;color:var(--color-text-secondary)"><strong>Best Weapon:</strong> Spirit Staff</p>
-            </div>
-
-            <div class="build-card swamp">
-                <div class="build-header"><div class="build-icon">⚡</div><div class="build-name" style="color:#6a0dad">Templar Battle-Mage</div></div>
-                <p style="color:var(--color-text-secondary);margin-bottom:1rem">Hybrid magic/melee build. Combines Templar armor with spirit magic for versatile combat in any situation.</p>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Strength</span><span>55</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:55%"></div></div></div>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Mana</span><span>70</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-mana" style="width:70%"></div></div></div>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Stamina</span><span>55</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-stm" style="width:55%"></div></div></div>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Dexterity</span><span>25</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-agi" style="width:25%"></div></div></div>
-                <p style="margin-top:1rem;font-size:.85rem;color:var(--color-accent)"><strong>Key Skills:</strong> Templar Combat, Wind Hammer, Heavy Armor Training, Mana Shield</p>
-                <p style="font-size:.85rem;color:var(--color-text-secondary)"><strong>Best Weapon:</strong> Blessed Templar Blade</p>
-            </div>
-
-            <div class="build-card old">
-                <div class="build-header"><div class="build-icon">🔮⚔️</div><div class="build-name" style="color:#c41e3a">Fire Battle-Mage</div></div>
-                <p style="color:var(--color-text-secondary);margin-bottom:1rem">Old Camp hybrid build. Use fire magic for AoE and debuffs, then finish with melee. More balanced than pure caster.</p>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Strength</span><span>60</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:60%"></div></div></div>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Mana</span><span>60</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-mana" style="width:60%"></div></div></div>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Stamina</span><span>50</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-stm" style="width:50%"></div></div></div>
-                <div class="stat-bar"><div class="stat-bar-label"><span>Combat Skill</span><span>70</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:70%"></div></div></div>
-                <p style="margin-top:1rem;font-size:.85rem;color:var(--color-accent)"><strong>Key Skills:</strong> Fire Rune (Advanced), Sword Training, Fire Enchant, Heavy Armor Training</p>
-                <p style="font-size:.85rem;color:var(--color-text-secondary)"><strong>Best Weapon:</strong> Enchanted Flame Sword</p>
+                <div class="build-header"><div class="build-icon">🏹</div><div class="build-name" style="color:#228b22">Archer — Any Camp (Best in New Camp)</div></div>
+                <p style="color:var(--color-text-secondary);margin-bottom:1rem">Dexterity and bow proficiency. Kite anything that cannot close distance faster than you can backpedal. New Camp offers the best archery support, but this build works in any faction. Hit-and-run is your entire gameplay loop — and it works.</p>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Dexterity</span><span>everything</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-agi" style="width:95%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Bow Proficiency</span><span>max it</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-agi" style="width:90%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Strength</span><span>low — backup weapon only</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-str" style="width:20%"></div></div></div>
+                <div class="stat-bar"><div class="stat-bar-label"><span>Mana</span><span>none</span></div><div class="stat-bar-fill"><div class="stat-bar-inner bar-mana" style="width:5%"></div></div></div>
+                <p style="margin-top:1rem;font-size:.85rem;color:var(--color-accent)"><strong>Leveling Path:</strong> Find Drax immediately for free Shortbow → pump Dexterity → learn Bow Proficiency → join New Camp for best archery trainers → keep distance, fire, reposition, repeat → invest in lockpicking and pickpocketing (both dex-based) for maximum loot.</p>
+                <p style="font-size:.85rem;color:var(--color-text-secondary)"><strong>Key Trainers:</strong> Drax (free Shortbow + hunting), New Camp archery trainers, Fingers (lockpicking), pickpocketing trainers</p>
             </div>
         </div>
     </section>
 
     <!-- Leveling Strategy -->
     <section class="guide-section">
-        <h2>📊 Leveling Strategy</h2>
-        <div class="info-box warning"><strong>⚠️ Critical Advice:</strong> In Gothic, you CANNOT max everything. Each build requires focus. Spreading stats evenly creates a weak character that struggles in the endgame.</div>
+        <h2>Leveling Strategy — How to Not Ruin Your Character</h2>
+
+        <div class="info-box warning"><strong>Permanent Means Permanent:</strong> There is no respec NPC, no respec item, no respec quest. Every LP you spend is final. If you dump 30 points into a stat you never use, those points are gone. Plan your build before you spend.</div>
+
         <div class="tips-grid">
-            <div class="tip-card"><h3>1. Plan Early</h3><p>Decide your build by level 5. Know your primary and secondary stats before you start spending LP. Use the <a href="factions-ultimate-guide.html">Faction Quiz</a> if unsure.</p></div>
-            <div class="tip-card"><h3>2. Prioritize One Weapon</h3><p>Master ONE weapon type — one-handed, two-handed, or magic. Splitting between them wastes LP. Weapon proficiency determines 80% of your damage output.</p></div>
-            <div class="tip-card"><h3>3. LP Scaling</h3><p>Each stat point costs more LP as it increases. The first 30 points in a stat are cheap. Points 60-80 are expensive. Plan accordingly.</p></div>
-            <div class="tip-card"><h3>4. Train Before Fights</h3><p>Visit trainers after every 2-3 levels. Spending LP immediately makes the next fights easier. Hoarding LP gives no benefit.</p></div>
-            <div class="tip-card"><h3>5. Secondary Skills</h3><p>After your primary combat stat hits 60, invest 10-15 points in a secondary. Pure builds do one thing well; hybrids are more versatile.</p></div>
-            <div class="tip-card"><h3>6. Mana for Non-Casters</h3><p>Even melee builds benefit from 10-15 Mana for basic utility. Some weapon enchants and rings require minimum mana thresholds.</p></div>
+            <div class="tip-card"><h3>1. Decide Your Build by Level 5</h3><p>Your first few levels come fast. By level 5, you should know which camp and which primary stat you are committing to. Changing course after level 10 hurts. After level 20, it is usually better to restart than to pivot.</p></div>
+            <div class="tip-card"><h3>2. The Level 30 Window</h3><p>Levels 1-30 are where stats cost 1 LP each. This is your power-building phase. After 30, costs spike. Maximize your primary stat before the LP cliff hits — every point you delay until after level 30 costs you more.</p></div>
+            <div class="tip-card"><h3>3. Spend LP Immediately</h3><p>Hoarding LP gives you nothing. Every point spent on Strength or Dexterity makes your next fight easier, which gets you to the next level faster. Bank only if you are about to unlock a trainer you are walking toward.</p></div>
+            <div class="tip-card"><h3>4. One Weapon Type Only</h3><p>Pick one-handed, two-handed, or bow and commit. Splitting LP between weapon skills dilutes your damage. A master of one weapon outdamages a dabbler in three every time. If you are a Warrior, do not "dabble" in archery — you are wasting LP.</p></div>
+            <div class="tip-card"><h3>5. Lockpicking Is Universal</h3><p>Every build benefits from lockpicking. Locked chests contain ore, weapons, and unique items. Fingers charges 10 LP + 100 Ore for level 1 — pay it. The loot behind locked doors will repay the investment several times over.</p></div>
+            <div class="tip-card"><h3>6. Mana for Non-Casters</h3><p>Even pure melee builds can justify a tiny mana investment for utility scrolls. But be honest with yourself — if you are playing a Warrior, 5 mana is a convenience, not a build. Do not let "just a few points" become 30 points you regret.</p></div>
+            <div class="tip-card"><h3>7. Cook Before You Leave Camp</h3><p>Raw meat is inefficient. Cooked meat heals dramatically more. Every time you pass through a camp with a cooking pan, cook everything in your inventory. It is free healing efficiency that costs you nothing but a few seconds.</p></div>
+            <div class="tip-card"><h3>8. Practice on Kirgo</h3><p>Before you fight anything in the wild, spar with Kirgo near Scatty in the Old Camp. Learn parry timing, dodge windows, and attack patterns in a safe environment. An hour of practice saves hours of reloading.</p></div>
         </div>
+    </section>
+
+    <!-- Final Advice -->
+    <section class="guide-section">
+        <h2>One Last Thing</h2>
+        <p>Gothic 1 Remake does not hold your hand. The game will let you build a terrible character, wander into a high-level zone, and get eaten by a shadowbeast without a warning pop-up. That is not bad design — it is the game respecting your intelligence and your consequences. The colony is dangerous. Treat it that way.</p>
+        <p>Pick a build. Commit to it. Train often. Cook your meat. Talk to everyone — NPCs remember what you say and do. And for the love of Innos, unlock parry before you try to fight anything bigger than a meatbug.</p>
     </section>
 </main>
 

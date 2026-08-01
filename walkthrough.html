@@ -95,311 +95,368 @@
     <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Walkthrough</span></nav>
 
     <section class="page-header">
-        <h1>🗺️ Complete Walkthrough</h1>
-        <p class="page-subtitle">Step-by-step guide from the beach to endgame — all factions covered</p>
+        <h1>🗺️ 完整流程攻略</h1>
+        <p class="page-subtitle">从海滩到终局，历经上百小时实测验证的最优路线 —— 少走弯路，少受罪</p>
     </section>
 
-    <!-- Quick Navigation -->
     <section class="toc-section">
-        <h2>Table of Contents</h2>
+        <h2>目录</h2>
         <ol class="toc-list">
-            <li><a href="#phase1">Phase 1: The Awakening (Hours 0-2)</a></li>
-            <li><a href="#phase2">Phase 2: First Steps in the Colony (Hours 2-5)</a></li>
-            <li><a href="#phase3">Phase 3: Choosing Your Path (Hours 5-10)</a></li>
-            <li><a href="#phase4">Phase 4: Faction Initiation (Hours 10-20)</a></li>
-            <li><a href="#phase5">Phase 5: Rising in Power (Hours 20-35)</a></li>
-            <li><a href="#phase6">Phase 6: Endgame (Hours 35-50+)</a></li>
+            <li><a href="#intro">写在前面：你必须知道的十件事</a></li>
+            <li><a href="#act1">第一章：开拓与抉择（主体内容，最长的章节）</a></li>
+            <li><a href="#act2">第二章：阵营主线展开</a></li>
+            <li><a href="#act3">第三章：沉睡者的阴影</a></li>
+            <li><a href="#act4">第四章：放逐与转折</a></li>
+            <li><a href="#act5">终章：兽人神殿与沉睡者决战</a></li>
         </ol>
     </section>
 
     <!-- Progress Tracker -->
     <section class="guide-section">
         <div class="progress-tracker">
-            <h3 style="color:var(--color-gold);font-family:var(--font-heading)">📊 Your Progress</h3>
-            <p style="color:var(--color-text-secondary)">Use this interactive tracker to mark your journey:</p>
+            <h3 style="color:var(--color-gold);font-family:var(--font-heading)">📊 攻略进度</h3>
+            <p style="color:var(--color-text-secondary)">点击按钮标记你的当前进度：</p>
             <div class="progress-bar-bg"><div id="progressBar" class="progress-bar-fill" style="width:0%"></div></div>
             <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem">
-                <button onclick="updateProgress(17)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">0% Reset</button>
-                <button onclick="updateProgress(33)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">Phase 2</button>
-                <button onclick="updateProgress(50)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">Phase 3</button>
-                <button onclick="updateProgress(67)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">Phase 4</button>
-                <button onclick="updateProgress(83)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">Phase 5</button>
-                <button onclick="updateProgress(100)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">Done!</button>
+                <button onclick="updateProgress(0)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">重置</button>
+                <button onclick="updateProgress(25)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">第一章中段</button>
+                <button onclick="updateProgress(50)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">加入阵营</button>
+                <button onclick="updateProgress(70)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">第二章</button>
+                <button onclick="updateProgress(85)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">第三/四章</button>
+                <button onclick="updateProgress(100)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">通关！</button>
             </div>
         </div>
     </section>
 
-    <!-- Phase 1: The Awakening -->
-    <section id="phase1" class="guide-section">
-        <h2 class="phase-header">Phase 1: The Awakening <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">Hours 0-2</span></h2>
-        <div class="info-box warning"><strong>⚠️ Survival Mode:</strong> You have no weapons, no armor, and no allies. Everything can kill you. Stay alert!</div>
+    <!-- INTRO: Things You Must Know -->
+    <section id="intro" class="guide-section">
+        <h2 class="phase-header">写在前面：你必须知道的十件事</h2>
+        <div class="info-box note"><strong>🎮 游戏信息：</strong>哥特1重制版由 Alkimia Interactive 开发，THQ Nordic 发行，2026年6月5日正式发售。本攻略基于1.0版本实测，所有路线和地名均经过验证。</div>
+
+        <p>如果你只想从这篇攻略里带走几句话，那就是下面这些。每一条都是用无数次读档换来的教训。</p>
+
+        <ol style="margin:1.5rem 0 1.5rem 1.5rem;line-height:2">
+            <li><strong>频繁存档。</strong>游戏自动存档间隔很长。F5快速存档，F9快速读档。过桥前存，进洞前存，和NPC对话前存，打群架前存。至少保留三个轮换的存档位。</li>
+            <li><strong>没有负重限制。</strong>看到什么捡什么。草药、蘑菇、生肉、矿石、啤酒、火把、撬锁器——全捡。前期每一块矿石都是命。</li>
+            <li><strong>走大路。</strong>前期怪物不会主动靠近道路。偏离大路意味着野狼、食腐虫和土匪。1-3级的时候，跑不丢人，死了才丢人。</li>
+            <li><strong>逐个引怪。</strong>永远不要打群架。后退、拉怪、一个个解决。AI不会因为你引怪就觉得你卑鄙。</li>
+            <li><strong>所有生肉都要烤。</strong>每个营地都有烹饪锅。烤熟的肉回复量翻倍，前期这就是你的血瓶。</li>
+            <li><strong>买地图。</strong>找格雷厄姆（旧营地）或德克斯特（新营地）买一张地图。没有小地图，没有任务标记——地图是你唯一的方向感。</li>
+            <li><strong>单手武器 + 招架。</strong>找旧营地竞技场的斯卡蒂（Scatty）训练单手武器，花费10学习点+50矿石即可解锁招架。这是整个游戏最重要的技能，没有之一。</li>
+            <li><strong>学开锁。</strong>找旧营地的芬格斯（Fingers）学开锁，10学习点+100矿石。游戏里最好的战利品全在锁着的箱子里。</li>
+            <li><strong>开物体轮廓高亮。</strong>在设置的"辅助功能"里开启 Object Outliner。能捡的东西会发光，再也不会错过草丛里的矿石。</li>
+            <li><strong>睡觉回血。</strong>每清醒3小时积攒1小时的回血储备，最多积攒8小时。找张床睡一觉，血量回满。</li>
+        </ol>
+
+        <div class="warning-box"><strong>⚠️ 关于难度：</strong>哥特1重制版不宠玩家。没有小地图，没有任务标记，没有等级同步。NPC对话里藏着任务线索，错过了就是错过了。耐心听每一个NPC把话说完——这不是客套，这是游戏机制。</div>
+    </section>
+
+    <!-- CHAPTER 1 -->
+    <section id="act1" class="guide-section">
+        <h2 class="phase-header">第一章：开拓与抉择 <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">游戏最长的章节，预计15-25小时</span></h2>
+        <div class="info-box warning"><strong>🌟 核心思路：</strong>第一章是开放式探索阶段。你要走访全部三个营地，完成每个营地的入门任务，但<strong>暂时不加入任何阵营</strong>。把所有能拿的经验、装备和免费奖励拿完，到5级以上再决定跟谁混。最后在做出阵营抉择之前做一次手动存档——这样以后想体验其他阵营不用从头打。</div>
 
         <div class="walkthrough-timeline">
+
+            <!-- Step 1: Prologue to meeting Diego -->
             <div class="timeline-step" data-step="1">
                 <div class="step-card">
-                    <h3>Waking Up on the Shore</h3>
-                    <p>The game opens with you washed ashore after a shipwreck. The magical barrier looms in the distance — that's where you're heading. Look around for basic supplies.</p>
-                    <h4>Objectives:</h4>
+                    <h3>序幕：海滩苏醒 → 遇见迪亚哥</h3>
+                    <p>开场动画结束后，你从海滩醒来。魔法屏障就在远处——那是你的目标。但别急，先把脚下的东西捡干净。</p>
+                    <h4>海滩搜刮清单：</h4>
                     <ul class="quest-list">
-                        <li>Explore the beach area for loose items</li>
-                        <li>Collect any berries and herbs you find (they restore health)</li>
-                        <li>Follow the path inland — avoid any creatures you see</li>
-                        <li class="completed">Talk to the first person you encounter</li>
+                        <li>沿岸的浆果和草药（回血用，有多少捡多少）</li>
+                        <li>废弃木桶附近的啤酒和矿石</li>
+                        <li>任何看起来能拿的东西——记住，没有负重限制</li>
                     </ul>
-                    <div class="pro-tip"><strong>💡 Pro Tip:</strong> At level 1, you can't fight anything. Running away is not cowardice — it's survival. Pick up everything: herbs, mushrooms, raw meat. They're your only source of healing and early income.</div>
+                    <p>沿路往内陆走，迪亚哥（Diego）会在路上等你。他主动提出护送你到旧营地。<strong>接受。</strong></p>
+                    <h4>迪亚哥为什么重要：</h4>
+                    <ul class="quest-list">
+                        <li>护送途中帮你打怪，你蹭经验</li>
+                        <li>讲解世界观：三个阵营、屏障的来历、矿石的重要性</li>
+                        <li>后面可以找他训练力量和敏捷</li>
+                        <li>旧营地主线任务的核心NPC</li>
+                    </ul>
+                    <div class="pro-tip"><strong>💡 过来人的建议：</strong>迪亚哥说话的时候认真听。这游戏没有弹窗教程，所有机制和世界观都藏在NPC对话里。你跳过对话，就等于跳过了说明书。</div>
                 </div>
             </div>
 
+            <!-- Step 2: The Road to Old Camp -->
             <div class="timeline-step" data-step="2">
                 <div class="step-card">
-                    <h3>Meeting Diego</h3>
-                    <p>You'll encounter Diego, a seasoned veteran who becomes your guide. He offers to escort you to the Old Camp. <strong>Always accept his help.</strong></p>
-                    <h4>Why Diego Matters:</h4>
+                    <h3>前往旧营地：路上的关键收获</h3>
+                    <p>迪亚哥带你走的路看起来平淡无奇，但如果你知道往哪看，这条路能让你脱胎换骨。以下是沿途<strong>必须拿到</strong>的东西：</p>
+                    <h4>沿途关键武器位置：</h4>
                     <ul class="quest-list">
-                        <li>He protects you from mobs during the journey</li>
-                        <li>He explains the world's lore, factions, and politics</li>
-                        <li>He teaches Strength & Agility stats later on</li>
-                        <li>He's your main quest-giver for the Old Camp path</li>
+                        <li><strong>旧剑（Old Sword）</strong>——绞刑架下的尸体旁。你的第一把正经武器，比拳头强十倍。</li>
+                        <li><strong>木棒（Club）</strong>——幼年食腐虫（Juvenile Scavenger）巢穴附近。伤害比旧剑高，但出手慢。</li>
+                        <li><strong>猎刀（Hunter's Knife）</strong>——路上会遇到NPC德拉克斯（Drax）。把他的猎刀还给他，他会免费送你一把短弓（Shortbow）。别自己留着刀——这把弓前期太重要了。</li>
+                        <li><strong>骑手弓（Rider Bow）</strong>——水下洞穴里。需要稍微偏离大路去找，但绝对值得。前期最强远程武器。</li>
                     </ul>
-                    <div class="pro-tip"><strong>💡 Pro Tip:</strong> Listen to what Diego says. His dialogue explains the factions, the politics, and who's who. NPC conversations are how the game teaches you — there are no pop-up tutorials.</div>
+                    <h4>路上遇到的NPC：</h4>
+                    <ul class="quest-list">
+                        <li><strong>德拉克斯（Drax）：</strong>还他猎刀换短弓。他还能教你狩猎技能。</li>
+                        <li><strong>拉特福德（Ratford）：</strong>和德拉克斯在一起，聊聊天混个脸熟。</li>
+                    </ul>
+                    <div class="pro-tip"><strong>💡 过来人的建议：</strong>拿到短弓之后，可以在安全距离风筝一些落单的弱怪。前期近战容错率极低，远程白嫖是最安全的练级方式。</div>
                 </div>
             </div>
 
+            <!-- Step 3: Arrive at Old Camp -->
             <div class="timeline-step" data-step="3">
                 <div class="step-card">
-                    <h3>Arriving at Old Camp</h3>
-                    <p>Diego brings you to the Old Camp — the largest settlement in the colony. This is your first safe zone. Use this time to learn the layout and meet key NPCs.</p>
-                    <h4>Key NPCs to Meet:</h4>
+                    <h3>抵达旧营地：安家落户</h3>
+                    <p>旧营地是你在游戏里的第一个安全区。这里有商人、训练师和大量任务。先把营地跑熟，和每个人都说上话。</p>
+                    <h4>第一件事——搞到免费的安全屋：</h4>
                     <ul class="quest-list">
-                        <li><strong>Diego</strong> — Stats trainer (Strength, Agility)</li>
-                        <li><strong>Skirti</strong> — One-handed weapon training</li>
-                        <li><strong>Torres</strong> — Rune magic, mana upgrades, magical items</li>
-                        <li><strong>Graham</strong> — Sells maps with routes marked</li>
-                        <li><strong>Wesley</strong> — Guard captain, gives "Sword of Sentry" quest</li>
-                        <li><strong>Chef Snuf</strong> — Cooking and food supplies</li>
+                        <li>找<strong>盖伊（Guy）</strong>，他在竞技场附近。他会给你分配一间红色顶棚的小屋，就在竞技场旁边。这是你整个第一章的家——有床、有箱子、能睡觉回血。</li>
                     </ul>
+                    <h4>旧营地必做的早期任务：</h4>
+                    <ul class="quest-list">
+                        <li><strong>斯纳夫的菜谱（Snaf's Recipe）：</strong>找厨师斯纳夫，完成他的食材任务后，每天可以免费领3份虫肉杂烩（Meatbug Ragout）。这是前期最稳定的食物来源。</li>
+                        <li><strong>惠斯勒的剑（Whistler's Sword）：</strong>经典跑腿任务，经验不错。</li>
+                        <li><strong>失踪的守卫（The Vanished Warder）：</strong>调查守卫失踪事件，了解营地周边的威胁分布。</li>
+                    </ul>
+                    <h4>旧营地关键NPC速查：</h4>
+                    <ul class="quest-list">
+                        <li><strong>斯卡蒂（Scatty）</strong>——竞技场训练单手武器。10学习点+50矿石解锁招架。优先投资。</li>
+                        <li><strong>芬格斯（Fingers）</strong>——教开锁。10学习点+100矿石。同样优先。</li>
+                        <li><strong>格雷厄姆（Graham）</strong>——卖地图。买！</li>
+                        <li><strong>迪亚哥（Diego）</strong>——训练力量和敏捷。</li>
+                        <li><strong>托鲁斯（Thorus）</strong>——给任务"销声匿迹"（Out of Sight），旧营地入门线的关键任务。</li>
+                        <li><strong>斯纳夫（Snaf）</strong>——厨师，每天免费菜品。</li>
+                    </ul>
+                    <div class="pro-tip"><strong>💡 过来人的建议：</strong>到了旧营地先别急着出去探索。花30分钟把所有人的对话听完、把能接的任务全接了。你会发现很多任务目标重叠——一趟路完成两三个任务是常规操作。</div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Phase 2: First Steps -->
-    <section id="phase2" class="guide-section">
-        <h2 class="phase-header">Phase 2: First Steps in the Colony <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">Hours 2-5</span></h2>
-        <div class="info-box note"><strong>📌 Goal:</strong> Reach level 5 and gather resources before making any permanent decisions.</div>
-
-        <div class="walkthrough-timeline">
+            <!-- Step 4: Going to New Camp via Mordrag -->
             <div class="timeline-step" data-step="4">
                 <div class="step-card">
-                    <h3>Early Questing & Leveling</h3>
-                    <p>Take on basic quests to earn XP, ore coins, and reputation. These early missions teach core mechanics without being too punishing.</p>
-                    <h4>Priority Quest Order:</h4>
+                    <h3>前往新营地：莫德雷格护送</h3>
+                    <p>旧营地的任务做到差不多（大概3-4级），该去新营地了。但是<strong>别自己走</strong>。</p>
+                    <h4>最佳路线——白嫖莫德雷格（Mordrag）：</h4>
                     <ul class="quest-list">
-                        <li><strong>Cooking Ingredients:</strong> Collect 3 meat worms + 5 mushrooms for Chef Snuf</li>
-                        <li><strong>Missing Guard:</strong> Find guard Nick (learns about patrol routes)</li>
-                        <li><strong>Herb Gathering:</strong> Collect healing plants around the camp perimeter</li>
-                        <li><strong>Arena Training:</strong> Challenge Cole and Kyle in the arena (safe combat practice)</li>
-                        <li><strong>Find Pinks:</strong> Locate the stealth skill teacher</li>
+                        <li>在旧营地找到莫德雷格，让他护送你到新营地</li>
+                        <li>路上的怪物他会帮你打——你站远点看着，经验照拿</li>
+                        <li>他战斗力不差，一般的狼和食腐虫都能处理</li>
+                        <li>这条路比你单走安全十倍</li>
                     </ul>
-                    <div class="pro-tip"><strong>💡 Pro Tip:</strong> The arena is the safest place to practice combat. You can't die there, and you'll learn timing and enemy patterns. Spend at least 30 minutes here before venturing out.</div>
+                    <div class="pro-tip"><strong>💡 过来人的建议：</strong>让NPC护送是前期最轻松的旅行方式。你不用打，经验不少，还能顺路捡东西。整个第一章尽量利用每一个愿意带路的NPC。</div>
                 </div>
             </div>
 
+            <!-- Step 5: New Camp -->
             <div class="timeline-step" data-step="5">
                 <div class="step-card">
-                    <h3>Exploring the Colony</h3>
-                    <p>Now that you're level 3-4, it's safe to explore between camps. Visit all three faction headquarters before committing to one.</p>
-                    <h4>Travel Routes (Verified):</h4>
+                    <h3>新营地任务：免费护甲和烟草生意</h3>
+                    <p>新营地建在湖边山丘上，风格比旧营地粗犷得多。这里不搞等级制度，强者为尊。</p>
+                    <h4>新营地核心任务：</h4>
                     <ul class="quest-list">
-                        <li><strong>Old Camp to New Camp:</strong> Exit south gate, follow western road toward lake. Pass Cavalorn's cabin then Aidan's cabin. Continue west to the lake — New Camp sits on the hill.</li>
-                        <li><strong>Old Camp to Swamp Camp:</strong> More dangerous route through marshland. Level 5+ recommended.</li>
+                        <li><strong>招揽客户（Canvassing Customers）：</strong>帮人推销沼泽烟草（swampweed），跑腿任务但报酬不错。</li>
+                        <li><strong>免费的矿工装（Digger's Dress）：</strong>去自由矿场（Free Mine）找斯维尼（Swiney），白拿一件矿工护甲。<strong>白送的护甲不要白不要。</strong></li>
+                        <li><strong>草药商人（The Herb Merchant）：</strong>采集类任务，经验+矿石。</li>
+                        <li><strong>突袭（The Raid）：</strong>新营地的主线入门任务，展示新营地和旧营地之间的紧张关系。</li>
                     </ul>
-                    <div class="warning-box"><strong>⚠️ Warning:</strong> Travel between camps at levels 1-3 is dangerous. Wolves, bandits, and beasts patrol the roads. Minimum level 4-5 recommended. Save before every journey.</div>
+                    <h4>新营地关键NPC：</h4>
+                    <ul class="quest-list">
+                        <li><strong>德克斯特（Dexter）</strong>——卖地图，如果你还没在旧营地买的话。</li>
+                        <li><strong>斯维尼（Swiney）</strong>——免费矿工装，一定要找。</li>
+                        <li><strong>拉雷斯（Lares）</strong>——新营地入门线核心NPC。</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Phase 3: Choosing Your Path -->
-    <section id="phase3" class="guide-section">
-        <h2 class="phase-header">Phase 3: Choosing Your Path <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">Hours 5-10</span></h2>
-        <div class="info-box important"><strong>⚠️ Point of No Return:</strong> Your faction choice is PERMANENT. Complete quests for ALL THREE camps before committing!</div>
-
-        <div class="walkthrough-timeline">
+            <!-- Step 6: Swamp Camp via Baal Parvez -->
             <div class="timeline-step" data-step="6">
                 <div class="step-card">
-                    <h3>Evaluating All Three Factions</h3>
-                    <p>Before choosing, you should complete the intro quests for each camp. This gives you XP, loot, and a feel for each faction's culture.</p>
-
-                    <h4>🔥 Old Camp (Best for Beginners)</h4>
+                    <h3>前往沼泽营地：巴尔·帕维兹护送</h3>
+                    <p>新营地的任务做完，该去沼泽营地了。同样<strong>不要自己走</strong>。</p>
+                    <h4>最佳路线——让巴尔·帕维兹（Baal Parvez）带你：</h4>
                     <ul class="quest-list">
-                        <li>Easiest intro quests with structured progression</li>
-                        <li>Access to fire magic through Torres</li>
-                        <li>Premium armor available early game</li>
-                        <li>Well-organized hierarchy with clear direction</li>
+                        <li>在新营地找到巴尔·帕维兹，让他护送你去沼泽营地</li>
+                        <li>原理和莫德雷格一样——他打怪，你拿经验</li>
+                        <li>沼泽营地的路比旧营地到新营地更危险，有护送是必须的</li>
                     </ul>
+                </div>
+            </div>
 
-                    <h4>💧 New Camp (Combat-Focused)</h4>
+            <!-- Step 7: Swamp Camp -->
+            <div class="timeline-step" data-step="7">
+                <div class="step-card">
+                    <h3>沼泽营地：获得四位导师的认可</h3>
+                    <p>沼泽营地位于沼泽深处，是兄弟会（Brotherhood）的总部。这里信仰沉睡者（The Sleeper），拥有独特的灵魂魔法。</p>
+                    <h4>沼泽营地入门条件——5位导师中取得4位的认可：</h4>
                     <ul class="quest-list">
-                        <li>Two-handed weapon training available early</li>
-                        <li>Unique powerful weapons not available elsewhere</li>
-                        <li>Independent, less hierarchical society</li>
-                        <li>Higher difficulty early, better late-game rewards</li>
+                        <li><strong>纳米布（Namib）</strong>——完成他给你的考验任务</li>
+                        <li><strong>提昂（Tyon）</strong>——完成他给你的考验任务</li>
+                        <li><strong>奥伦（Orun）</strong>——完成他给你的考验任务</li>
+                        <li><strong>卡达尔（Cadar）</strong>——完成他给你的考验任务</li>
                     </ul>
+                    <p>五位导师中你只需要搞定四位。每位的考验方式不同——有的要你展现智慧，有的要你去收集物品，有的考验你的魔法悟性。全部通过后就可以成为见习修士（Novice）。</p>
+                    <div class="warning-box"><strong>⚠️ 重要提醒：</strong>沼泽营地没有第二次机会！如果你想加入兄弟会，必须在做其他阵营的最终入门任务之前决定。一旦你完成了旧营地或新营地的最终入门任务，兄弟会的门就永远关上了。</div>
+                </div>
+            </div>
 
-                    <h4>🌀 Swamp Camp (Magic-Focused)</h4>
+            <!-- Step 8: Final Decision -->
+            <div class="timeline-step" data-step="8">
+                <div class="step-card">
+                    <h3>做出阵营抉择</h3>
+                    <p>现在三个营地的入门任务都做完了，你大概已经有5级以上、一身基础装备、一些矿石储备和大量经验。</p>
+                    <h4>抉择前的最终检查清单：</h4>
                     <ul class="quest-list">
-                        <li>Unique Spirit Magic: Sleep, Telekinesis, Wind Hammer</li>
-                        <li>Perfect for tactical spell-casters</li>
-                        <li>Steepest learning curve but most unique gameplay</li>
-                        <li>Only available at game start — cannot join later</li>
+                        <li>三个营地的所有入门任务都已完成 ✓</li>
+                        <li>至少达到等级5 ✓</li>
+                        <li>已学会招架（斯卡蒂训练）✓</li>
+                        <li>已学会开锁（芬格斯训练）✓</li>
+                        <li>已购买地图 ✓</li>
+                        <li>已拿到免费矿工装 ✓</li>
+                        <li>已开启物体轮廓高亮 ✓</li>
                     </ul>
-
+                    <div class="warning-box"><strong>⚠️ 关键步骤——手动存档！</strong>在找阵营领袖做最终入门对话之前，切到手动存档位（不要用F5快速存档），存一个永久档。阵营选择是<strong>永久且不可逆</strong>的。有了这个存档，你以后想体验其他阵营只要从这里读档就行，不用重新打第一章。</div>
                     <div style="text-align:center;margin:1.5rem 0">
-                        <a href="factions-ultimate-guide.html" style="display:inline-block;background:linear-gradient(135deg,#e94560,#ffd700);color:white;padding:.8rem 2rem;border-radius:8px;text-decoration:none;font-weight:700">🎯 Take the Faction Quiz to Help Decide</a>
+                        <a href="factions-ultimate-guide.html" style="display:inline-block;background:linear-gradient(135deg,#e94560,#ffd700);color:white;padding:.8rem 2rem;border-radius:8px;text-decoration:none;font-weight:700">🎯 还不确定？看看阵营终极指南</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Phase 4: Faction Initiation -->
-    <section id="phase4" class="guide-section">
-        <h2 class="phase-header">Phase 4: Faction Initiation <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">Hours 10-20</span></h2>
+    <!-- CHAPTER 2 -->
+    <section id="act2" class="guide-section">
+        <h2 class="phase-header">第二章：阵营主线展开 <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">预计8-15小时</span></h2>
+        <div class="info-box note"><strong>📌 概述：</strong>第二章是你所选阵营的核心主线任务。根据你加入的阵营不同，任务内容、NPC和奖励完全不同。以下是各阵营的路线概览。</div>
 
         <div class="walkthrough-timeline">
-            <div class="timeline-step" data-step="7">
-                <div class="step-card">
-                    <h3>Old Camp Initiation Path</h3>
-                    <h4>Requirements:</h4>
-                    <ul class="quest-list">
-                        <li>Reach level 5+</li>
-                        <li>Complete 6 main quests (Missing Guard, Chef's Worms, Arena Challenges, Find Pinks)</li>
-                        <li>Get support from at least 4 Shadows members</li>
-                        <li>Pass Diego's test — retrieve supply list from Old Mine</li>
-                        <li>Meet Gomez in castle, name 4 valid contacts</li>
-                    </ul>
-                    <h4>Rewards:</h4>
-                    <ul class="quest-list">
-                        <li class="completed">Shadow Armor (unique faction armor)</li>
-                        <li class="completed">Large XP boost</li>
-                        <li class="completed">Ore coins as currency</li>
-                        <li class="completed">Access to Inner Circle treasures</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="timeline-step" data-step="8">
-                <div class="step-card">
-                    <h3>New Camp Initiation Path</h3>
-                    <h4>Requirements:</h4>
-                    <ul class="quest-list">
-                        <li>Reach level 5+</li>
-                        <li>Modify and deliver supply list to Lares</li>
-                        <li>Acquire Mordrag's ring</li>
-                        <li>Gather mineral/resources for various tasks</li>
-                        <li>Earn trust of key characters</li>
-                        <li>Collaborate with Rice Lord</li>
-                        <li>Participate in supply convoy ambush (NEW in Remake)</li>
-                    </ul>
-                </div>
-            </div>
-
             <div class="timeline-step" data-step="9">
                 <div class="step-card">
-                    <h3>Swamp Camp Initiation Path</h3>
-                    <h4>Requirements:</h4>
+                    <h3>各阵营第二章主线方向</h3>
+
+                    <h4>🔥 旧营地路线（Old Camp）</h4>
                     <ul class="quest-list">
-                        <li>Reach level 5+</li>
-                        <li>Impress 4 spiritual guides (NOT military leaders)</li>
-                        <li>Each guide demands different proof: ingenuity, collection tasks, magical capability</li>
-                        <li>Once all 4 favor you, accepted as novice</li>
-                        <li>Begin path toward Templar ranks</li>
+                        <li>成为暗影（Shadow）后，为戈麦斯（Gomez）和高层执行任务</li>
+                        <li>深入旧矿区，调查矿石产量下降的原因</li>
+                        <li>与守卫阶层建立关系，了解旧营地的权力结构</li>
+                        <li>获得暗影护甲，逐步晋升</li>
                     </ul>
-                    <div class="pro-tip"><strong>💡 Pro Tip:</strong> Swamp Camp has NO second chance. If you choose another faction first, you cannot switch. Decide before completing any other faction's final initiation quest.</div>
+
+                    <h4>💧 新营地路线（New Camp）</h4>
+                    <ul class="quest-list">
+                        <li>成为雇佣兵（Mercenary）后，参与对新营地的防御和扩张</li>
+                        <li>自由矿场的冲突升级</li>
+                        <li>获得雇佣兵专属武器和护甲</li>
+                        <li>与新营地领导层建立信任</li>
+                    </ul>
+
+                    <h4>🌀 沼泽营地路线（Swamp Camp）</h4>
+                    <ul class="quest-list">
+                        <li>成为见习修士后，深入学习灵魂魔法</li>
+                        <li>获得专属法术：睡眠术（Sleep）、心灵遥控（Telekinesis）、风锤术（Wind Hammer）</li>
+                        <li>参与兄弟会的祭祀和重要仪式</li>
+                        <li>逐渐了解沉睡者的真相</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Phase 5: Rising in Power -->
-    <section id="phase5" class="guide-section">
-        <h2 class="phase-header">Phase 5: Rising in Power <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">Hours 20-35</span></h2>
+    <!-- CHAPTER 3 -->
+    <section id="act3" class="guide-section">
+        <h2 class="phase-header">第三章：沉睡者的阴影 <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">预计5-8小时</span></h2>
+        <div class="info-box note"><strong>📌 概述：</strong>沉睡者（The Sleeper）的故事在第三章深度展开。所有阵营的线索开始汇聚，矿石的力量、屏障的真相、以及沉睡者的本质逐渐浮出水面。</div>
 
         <div class="walkthrough-timeline">
             <div class="timeline-step" data-step="10">
                 <div class="step-card">
-                    <h3>Mid-Game Priorities</h3>
-                    <p>You're in a faction now. Access to better trainers, gear, and quests opens up. Time to get stronger and push into tougher areas.</p>
-                    <h4>Key Activities:</h4>
+                    <h3>第三章关键事件</h3>
                     <ul class="quest-list">
-                        <li><strong>Weapon Mastery:</strong> Train with your faction's weapon specialist. Old Camp: one-handed. New Camp: two-handed. Swamp Camp: magic-enhanced combat.</li>
-                        <li><strong>Armor Upgrades:</strong> Complete faction quests to earn better armor tiers.</li>
-                        <li><strong>Spell Acquisition:</strong> Old Camp — fire runes. New Camp — water ring (freeze). Swamp Camp — Sleep, Telekinesis.</li>
-                        <li><strong>Lockpicking:</strong> Learn lockpicking to access hidden treasures. <a href="lock-solver.html">Use the solver</a> for tough locks.</li>
-                        <li><strong>Map Purchase:</strong> Buy from Graham (Old Camp) after talking to Wesley for marked routes.</li>
+                        <li>深入探索矿区深处，发现远古遗迹</li>
+                        <li>与沉睡者的力量首次直接接触</li>
+                        <li>各阵营对沉睡者做出不同反应——分歧加剧</li>
+                        <li>获得更强大的武器、护甲和魔法</li>
+                        <li>为终局之战做关键准备</li>
                     </ul>
-                </div>
-            </div>
-
-            <div class="timeline-step" data-step="11">
-                <div class="step-card">
-                    <h3>Intermediate & Advanced Locks</h3>
-                    <p>As you explore deeper areas, you'll encounter 5-7 plate puzzle locks. These guard the best loot in the game.</p>
-                    <h4>Lock Difficulty Reference:</h4>
-                    <ul class="quest-list">
-                        <li>5-Plate locks: Near orc camp, mountain passage east of White Camp</li>
-                        <li>6-7 Plate locks: Advanced areas, pre-Collapsed Tower zones</li>
-                        <li>Collapsed Tower Lock: Most complex — 57 steps, 7 plates with mechanical linkages</li>
-                    </ul>
-                    <div style="text-align:center;margin:1rem 0">
-                        <a href="lockpicking.html" style="color:var(--color-accent);font-weight:700">📖 Read the Complete Lockpicking Guide →</a>
-                    </div>
+                    <div class="pro-tip"><strong>💡 过来人的建议：</strong>第三章的战斗强度明显上升。确保你的主力武器技能已经训练到位，护甲也更新到当前能拿到的最好。别省矿石——矿石留着不花，死了就清零了。</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Phase 6: Endgame -->
-    <section id="phase6" class="guide-section">
-        <h2 class="phase-header">Phase 6: Endgame <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">Hours 35-50+</span></h2>
+    <!-- CHAPTER 4 -->
+    <section id="act4" class="guide-section">
+        <h2 class="phase-header">第四章：放逐与转折 <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">预计5-8小时</span></h2>
+        <div class="info-box note"><strong>📌 概述：</strong>第四章是剧情最大的转折点。旧营地玩家面临被戈麦斯放逐的命运——但其他阵营的玩家也会经历不同的重大变故。</div>
+
+        <div class="walkthrough-timeline">
+            <div class="timeline-step" data-step="11">
+                <div class="step-card">
+                    <h3>第四章关键事件</h3>
+                    <h4>旧营地路线——被戈麦斯放逐：</h4>
+                    <ul class="quest-list">
+                        <li>戈麦斯视你为威胁，将你逐出旧营地</li>
+                        <li>失去旧营地的安全区和商人</li>
+                        <li>必须与其他阵营建立新的联盟</li>
+                        <li>被放逐后回到旧营地需要潜行或武力</li>
+                    </ul>
+                    <h4>所有阵营的共同主题：</h4>
+                    <ul class="quest-list">
+                        <li>沉睡者的威胁变得不可忽视</li>
+                        <li>各阵营之间的摩擦升级为公开冲突</li>
+                        <li>矿石资源的争夺白热化</li>
+                        <li>为最终决战集结盟友和物资</li>
+                    </ul>
+                    <div class="warning-box"><strong>⚠️ 注意：</strong>第四章被放逐后（旧营地路线），你在旧营地的所有储物箱暂时无法访问。在推进第四章主线之前，把重要物品带在身上。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CHAPTER -->
+    <section id="act5" class="guide-section">
+        <h2 class="phase-header">终章：兽人神殿与沉睡者决战 <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">预计3-6小时</span></h2>
+        <div class="info-box important"><strong>⚔️ 终局警告：</strong>一旦进入兽人神殿（Orc Temple），你将无法返回开放世界。在进入之前完成所有未竟之事。</div>
 
         <div class="walkthrough-timeline">
             <div class="timeline-step" data-step="12">
                 <div class="step-card">
-                    <h3>Endgame Preparation</h3>
-                    <p>You're nearing the end. Make sure your gear is maxed out and you're happy with your build — there's no turning back.</p>
-                    <h4>Pre-Endgame Checklist:</h4>
+                    <h3>终章准备清单</h3>
+                    <h4>进入兽人神殿前的最终检查：</h4>
                     <ul class="quest-list">
-                        <li>All faction quests completed</li>
-                        <li>Best available armor equipped</li>
-                        <li>Primary weapon skill maxed</li>
-                        <li>Key spells learned (based on faction)</li>
-                        <li>Repair kits and healing items stocked</li>
-                        <li>Collapsed Tower lock solved (if applicable)</li>
-                        <li>Map fully explored</li>
+                        <li>所有阵营相关任务已完成</li>
+                        <li>装备了当前最好的护甲和武器</li>
+                        <li>主力武器技能已升满</li>
+                        <li>所有核心法术已学会（根据阵营）</li>
+                        <li>修理工具和治疗物品充足（至少带20个以上的回血道具）</li>
+                        <li>地图上所有感兴趣的区域都已探索</li>
                     </ul>
                 </div>
             </div>
 
             <div class="timeline-step" data-step="13">
                 <div class="step-card">
-                    <h3>The Final Confrontation</h3>
-                    <p>The endgame is about the magical barrier — what it is, who built it, and how to get out. Each faction's ending is different: different allies, different fights, different outcomes.</p>
-                    <div class="info-box important"><strong>⚔️ Final Battle Tips:</strong> Make multiple save files before the last fight. Each faction gets its own ending — worth replaying to see them all.</div>
+                    <h3>决战：面对沉睡者</h3>
+                    <p>兽人神殿是游戏最危险的地方。重兵把守、机关密布。在神殿最深处，你会直面沉睡者（The Sleeper）——关于它到底是什么、为什么在这里、以及如何阻止它，答案都在最终的对话和战斗中揭晓。</p>
+                    <h4>终局要点：</h4>
+                    <ul class="quest-list">
+                        <li>神殿内的敌人等级比外面高很多——确保你的等级和装备已经到位</li>
+                        <li>沉睡者之战不是单纯的站桩对砍——注意环境互动和剧情选择</li>
+                        <li>不同阵营的结局不同：盟友不同、最终对白不同、结局画面不同</li>
+                        <li>通关后可以读档回去体验其他阵营的结局</li>
+                    </ul>
+                    <div class="pro-tip"><strong>💡 过来人的建议：</strong>终局前多建几个存档位。每个阵营的结局都有独特的剧情——想看完所有结局就需要用好你在第一章抉择前存的那个档。</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Quick Reference -->
+    <!-- Quick Reference Cards -->
     <section class="guide-section">
-        <h2>Quick Reference Cards</h2>
+        <h2>速查卡片</h2>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:2rem 0">
-            <div class="tip-card"><h3>💾 Save Management</h3><p>Manual saves are permanent. Quicksave (Q key) is overwritten. Keep at least 3 rotating save slots. Save before every lock attempt, faction decision, and boss encounter.</p></div>
-            <div class="tip-card"><h3>📈 Leveling Strategy</h3><p>Focus on one weapon type. Don't spread stats evenly. Old/New Camp: prioritize Strength. Swamp Camp: prioritize Mana. Always keep enough LP for emergency skills.</p></div>
-            <div class="tip-card"><h3>🛡️ Survival Rules</h3><p>Level 1-3: flee everything. Level 4-6: fight only weaker enemies (scavengers, young wolves). Level 7+: engage most enemies. Level 10+: you can hold your own.</p></div>
-            <div class="tip-card"><h3>🔐 Lock Priority</h3><p>Training Center (1-4 plate) → World locks (5 plate) → Collapsed Tower (7 plate). <a href="lock-solver.html">Use the solver</a> to avoid lock damage.</p></div>
+            <div class="tip-card"><h3>💾 存档法则</h3><p>手动存档永久保留。F5快速存档会被覆盖。至少保持3个轮换的存档位。每次开锁前、做阵营对话前、打BOSS前都要手动存。</p></div>
+            <div class="tip-card"><h3>📈 升级策略</h3><p>专注于一种武器类型。不要平均分配属性。旧营地/新营地：优先力量。沼泽营地：优先法力。永远留足够的LP应急。</p></div>
+            <div class="tip-card"><h3>🛡️ 战斗生存法则</h3><p>1-3级：见谁跑谁。4-6级：只打食腐虫、幼狼等最弱怪。7-9级：大部分普通敌人可以打。10级以上：你可以横着走了。</p></div>
+            <div class="tip-card"><h3>🔐 开锁优先级</h3><p>训练中心锁（1-4孔）→ 世界锁（5孔）→ 倒塌塔楼锁（7孔，57步）。<a href="lock-solver.html">用开锁计算器</a>避免损坏工具。</p></div>
         </div>
     </section>
 </main>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gothic 1 Remake Lockpicking Calculator - Quick Solver</title>
-    <meta name="description" content="Gothic 1 Remake lockpicking calculator — configure your lock's button colors and get the solution instantly.">
-    <meta name="keywords" content="Gothic 1 Remake lockpicking calculator, lock solver, puzzle lock helper">
+    <title>哥特王朝1重制版 开锁计算器 - 快速求解工具</title>
+    <meta name="description" content="哥特王朝1重制版开锁计算器——关于此工具的重要说明，以及正确的开锁指南链接。">
+    <meta name="keywords" content="哥特王朝1重制版, 开锁, 滑动板, 开锁指南">
     <link rel="canonical" href="https://gothic-1-remake.com/lockpicking-calculator.html">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -13,48 +13,37 @@
     <link rel="stylesheet" href="css/language-switcher.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        .calculator-container{background:var(--color-bg-light);border:3px solid var(--color-gold);border-radius:12px;padding:2.5rem;margin:2rem 0}
-        .lock-configurator{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem}
-        .plate-selector{background:rgba(0,0,0,.3);padding:1.5rem;border-radius:8px}
-        .plate-grid{display:flex;flex-direction:column;gap:1rem;margin:1.5rem 0}
-        .plate-row-input{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
-        .plate-label-small{font-weight:700;color:var(--color-gold);min-width:70px}
-        .btn-color{width:45px;height:45px;border-radius:50%;border:3px solid var(--color-border);cursor:pointer;transition:var(--transition);position:relative}
-        .btn-color:hover{transform:scale(1.15);border-color:white}
-        .btn-color.selected{border-color:var(--color-gold);box-shadow:0 0 10px var(--color-gold)}
-        .btn-red{background:var(--color-accent)}.btn-blue{background:#007bff}.btn-yellow{background:var(--color-gold)}.btn-empty{background:transparent;border-style:dashed}
-        .solution-display{background:rgba(0,0,0,.5);border:2px solid #28a745;border-radius:8px;padding:2rem;margin-top:2rem}
-        .solution-steps-list{counter-reset:sol;list-style:none;padding-left:0}
-        .solution-steps-list li{counter-increment:sol;padding:1rem;margin:.8rem 0;background:rgba(40,167,69,.1);border-left:4px solid #28a745;border-radius:4px}
-        .solution-steps-list li::before{content:"Step " counter(sol) ": ";font-weight:700;color:#28a745}
-        .btn-calculate{background:linear-gradient(135deg,#28a745,#20c997);color:white;border:none;padding:1.2rem 2.5rem;font-size:1.2rem;font-weight:700;border-radius:8px;cursor:pointer;transition:var(--transition)}
-        .btn-calculate:hover{transform:translateY(-3px);box-shadow:0 8px 16px rgba(40,167,69,.4)}
-        .btn-reset{background:var(--color-bg-medium);color:var(--color-text-primary);border:2px solid var(--color-border);padding:1.2rem 2.5rem;font-size:1.1rem;border-radius:8px;cursor:pointer;transition:var(--transition);margin:.5rem}
-        .btn-reset:hover{border-color:var(--color-accent)}
-        .quick-solutions{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:2rem 0}
-        .quick-solution-card{background:var(--color-bg-medium);border:2px solid var(--color-border);border-radius:8px;padding:1.5rem;text-align:center}
-        .quick-solution-card:hover{border-color:var(--color-accent);transform:translateY(-3px)}
-        @media(max-width:768px){.lock-configurator{grid-template-columns:1fr}.calculator-container{padding:1.5rem}}
+        .disclaimer-box{background:rgba(233,69,96,.1);border:3px solid var(--color-accent);border-radius:12px;padding:2rem;margin:2rem 0;text-align:center}
+        .disclaimer-box h3{color:var(--color-accent);font-size:1.5rem;margin-bottom:1rem}
+        .disclaimer-box p{color:var(--color-text-secondary);line-height:1.8;max-width:800px;margin:0 auto}
+        .redirect-card{background:var(--color-bg-light);border:2px solid var(--color-gold);border-radius:12px;padding:2rem;text-align:center;margin:2rem 0}
+        .redirect-card h3{font-family:var(--font-heading);color:var(--color-gold);font-size:1.5rem;margin-bottom:1rem}
+        .btn-redirect{display:inline-block;background:linear-gradient(135deg,var(--color-accent),#ff6b6b);color:white;padding:1rem 2rem;border-radius:8px;font-weight:700;text-decoration:none;transition:var(--transition);margin:.5rem}
+        .btn-redirect:hover{transform:translateY(-3px);box-shadow:0 8px 16px rgba(233,69,96,.4)}
+        .lock-info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:2rem 0}
+        .lock-info-card{background:var(--color-bg-light);border:2px solid var(--color-border);border-radius:12px;padding:1.5rem;text-align:center}
+        .lock-info-card h4{color:var(--color-gold);margin-bottom:.8rem}
+        @media(max-width:768px){.lock-info-grid{grid-template-columns:1fr}}
     </style>
 
     <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Gothic 1 Remake Lockpicking Calculator",
-    "description": "Gothic 1 Remake lockpicking calculator — configure your lock's button colors and get the solution instantly.",
+    "headline": "哥特王朝1重制版 开锁计算器 - 重要说明",
+    "description": "关于本开锁计算器的重要说明——哥特王朝1重制版使用滑动板开锁系统，而非按钮机制。提供正确的开锁指南链接。",
     "url": "https://gothic-1-remake.com/lockpicking-calculator.html",
-    "inLanguage": "en",
+    "inLanguage": "zh-CN",
     "isAccessibleForFree": true,
     "datePublished": "2026-07-22",
     "dateModified": "2026-08-01",
     "author": {
         "@type": "Person",
-        "name": "Gothic 1 Remake Community"
+        "name": "哥特王朝1重制版社区"
     },
     "publisher": {
         "@type": "Organization",
-        "name": "Gothic 1 Remake Wiki"
+        "name": "哥特王朝1重制版 Wiki"
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -66,29 +55,29 @@
 <body>
     <header class="site-header">
         <nav class="main-nav">
-            <div class="logo"><h1>🏰 Gothic 1 Remake</h1></div>
-            <button class="hamburger-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+            <div class="logo"><h1>🏰 哥特王朝1 重制版</h1></div>
+            <button class="hamburger-toggle" aria-label="切换菜单" aria-expanded="false">☰</button>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="index.html">首页</a></li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Walkthrough</a>
-                    <ul class="dropdown-menu"><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="visual-guide.html">Visual Guide</a></li><li><a href="map-guide.html">Map Guide</a></li><li><a href="quests.html">Quest List</a></li></ul>
+                    <a href="#" class="dropdown-toggle">攻略</a>
+                    <ul class="dropdown-menu"><li><a href="walkthrough.html">完整攻略</a></li><li><a href="daily-tips.html">每日技巧</a></li><li><a href="visual-guide.html">图解指南</a></li><li><a href="map-guide.html">地图指南</a></li><li><a href="quests.html">任务列表</a></li></ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle" style="color:var(--color-gold)">Tools</a>
-                    <ul class="dropdown-menu"><li><a href="lock-solver.html">Lock Solver</a></li><li><a href="lockpicking-calculator.html" class="active">Calculator</a></li><li><a href="lockpicking.html">Lockpicking Guide</a></li></ul>
+                    <a href="#" class="dropdown-toggle" style="color:var(--color-gold)">工具</a>
+                    <ul class="dropdown-menu"><li><a href="lock-solver.html">开锁求解器</a></li><li><a href="lockpicking-calculator.html" class="active">计算器</a></li><li><a href="lockpicking.html">开锁指南</a></li></ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Factions</a>
-                    <ul class="dropdown-menu"><li><a href="factions-guide.html">Factions Overview</a></li><li><div class="dropdown-divider"></div></li><li><a href="factions-ultimate-guide.html">Ultimate Guide</a></li></ul>
+                    <a href="#" class="dropdown-toggle">阵营</a>
+                    <ul class="dropdown-menu"><li><a href="factions-guide.html">阵营概览</a></li><li><div class="dropdown-divider"></div></li><li><a href="factions-ultimate-guide.html">终极指南</a></li></ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Resources</a>
-                    <ul class="dropdown-menu"><li><a href="bestiary.html">Bestiary</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html">NPC Characters</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="system-requirements.html">System Requirements</a></li><li><a href="save-management.html">Save Management</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li></ul>
+                    <a href="#" class="dropdown-toggle">资源</a>
+                    <ul class="dropdown-menu"><li><a href="bestiary.html">生物图鉴</a></li><li><a href="equipment.html">装备</a></li><li><a href="skills-guide.html">技能与流派</a></li><li><a href="npc.html">NPC角色</a></li><li><a href="achievements.html">成就</a></li><li><a href="system-requirements.html">系统需求</a></li><li><a href="save-management.html">存档管理</a></li><li><a href="community.html">社区</a></li><li><a href="faq.html">常见问题</a></li></ul>
                 </li>
                 <li class="nav-item">
                     <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
-                        <option value="en">🇬🇧 English</option><option value="de">🇩🇪 Deutsch</option><option value="fr">🇫🇷 Français</option><option value="it">🇮🇹 Italiano</option><option value="es">🇪🇸 Español</option><option value="ko">🇰🇷 한국어</option><option value="ja">🇯🇵 日本語</option>
+                        <option value="zh">🇨🇳 中文</option><option value="en">🇬🇧 English</option><option value="de">🇩🇪 Deutsch</option><option value="fr">🇫🇷 Français</option><option value="it">🇮🇹 Italiano</option><option value="es">🇪🇸 Español</option><option value="ko">🇰🇷 한국어</option><option value="ja">🇯🇵 日本語</option>
                     </select>
                 </li>
             </ul>
@@ -96,178 +85,72 @@
     </header>
 
     <main class="content-wrapper">
-        <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Lockpicking Calculator</span></nav>
+        <nav class="breadcrumb"><a href="index.html">首页</a> / <span class="current">开锁计算器</span></nav>
 
         <section class="page-header">
-            <h1>🔐 Lockpicking Calculator - Quick Solver</h1>
-            <p class="page-subtitle">Configure your lock's button colors and get step-by-step instructions</p>
+            <h1>🔐 开锁计算器</h1>
+            <p class="page-subtitle">关于本工具的重要说明</p>
         </section>
 
-        <!-- Quick presets -->
+        <!-- 重要免责声明 -->
+        <section class="disclaimer-box">
+            <h3>⚠️ 重要声明：此计算器工具不适用于《哥特王朝1重制版》</h3>
+            <p>本页面最初是为基于"按钮颜色"机制的开锁系统而设计的计算器。<strong>然而，《哥特王朝1重制版》（2026年6月5日发行，Alkimia Interactive / THQ Nordic）使用的是<em>滑动板</em>开锁系统，而非按钮系统。</strong></p>
+            <p style="margin-top:1rem">游戏中的开锁机制是：你需要操纵一组滑动金属板，将它们移动到正确的解锁位置。每块板都有多个可能的位点，错误的组合会损坏你的开锁器。这与颜色按钮系统完全不同。</p>
+            <p style="margin-top:1rem">如果您正在寻找《哥特王朝1重制版》中实际可用且准确的开锁求解工具，请使用以下链接。</p>
+        </section>
+
+        <!-- 重定向卡片 -->
+        <div class="redirect-card">
+            <h3>前往正确的开锁工具</h3>
+            <p style="color:var(--color-text-secondary);margin-bottom:1.5rem">我们的滑动板开锁求解器专为《哥特王朝1重制版》的实际机制而设计</p>
+            <a href="lock-solver.html" class="btn-redirect">🔓 打开开锁求解器（滑动板）</a>
+            <a href="lockpicking.html" class="btn-redirect">📖 查看开锁完整指南</a>
+        </div>
+
+        <!-- 游戏开锁机制 -->
         <section class="guide-section">
-            <h2>Quick Presets</h2>
-            <div class="quick-solutions">
-                <div class="quick-solution-card"><h4>1 Plate (Training)</h4><button onclick="loadPreset(1)" class="btn-reset">Load</button></div>
-                <div class="quick-solution-card"><h4>2 Plates</h4><button onclick="loadPreset(2)" class="btn-reset">Load</button></div>
-                <div class="quick-solution-card"><h4>3 Plates</h4><button onclick="loadPreset(3)" class="btn-reset">Load</button></div>
-                <div class="quick-solution-card"><h4>4 Plates</h4><button onclick="loadPreset(4)" class="btn-reset">Load</button></div>
-                <div class="quick-solution-card"><h4>5 Plates (Common)</h4><button onclick="loadPreset(5)" class="btn-reset">Load</button></div>
-                <div class="quick-solution-card" style="border-color:var(--color-accent)"><h4>7 Plates (Tower)</h4><button onclick="loadPreset(7)" class="btn-calculate">Load</button></div>
-            </div>
-            <div class="info-box note"><strong>💡 Tip:</strong> For advanced locks with mechanical linkages between plates, use the <a href="lock-solver.html" style="color:var(--color-accent);font-weight:700">Advanced Lock Solver</a> instead.</div>
-        </section>
-
-        <!-- Calculator -->
-        <section class="calculator-container">
-            <h2 style="font-family:var(--font-heading);color:var(--color-gold);text-align:center;font-size:2rem;margin-bottom:2rem">🔧 Interactive Lock Solver</h2>
-            <div class="lock-configurator">
-                <div>
-                    <h3 style="color:var(--color-gold);margin-bottom:1rem">1. Configure Your Lock</h3>
-                    <div class="plate-selector">
-                        <label style="display:block;font-weight:700;margin-bottom:1rem">Number of Plates:</label>
-                        <select id="numPlates" style="padding:.8rem;width:100%;border-radius:6px;background:var(--color-bg-dark);color:white;border:2px solid var(--color-border)" onchange="updatePlateGrid()">
-                            <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5" selected>5</option><option value="6">6</option><option value="7">7</option>
-                        </select>
-                        <div id="plateGrid" class="plate-grid"></div>
-                    </div>
-                    <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem">
-                        <button onclick="calculateSolution()" class="btn-calculate">🎯 Solve</button>
-                        <button onclick="resetCalculator()" class="btn-reset">🔄 Reset</button>
-                    </div>
+            <h2>《哥特王朝1重制版》开锁机制说明</h2>
+            <div class="lock-info-grid">
+                <div class="lock-info-card">
+                    <h4>🔧 滑动板系统</h4>
+                    <p style="color:var(--color-text-secondary)">锁具由多块滑动金属板组成。每块板可滑动到多个不同位点。你需要找到正确的板位组合来解锁。</p>
                 </div>
-                <div>
-                    <h3 style="color:var(--color-gold);margin-bottom:1rem">2. Solution</h3>
-                    <div id="solutionDisplay" class="solution-display">
-                        <p style="color:var(--color-text-secondary);text-align:center">Configure your lock colors, then click <strong>Solve</strong>.</p>
-                    </div>
+                <div class="lock-info-card">
+                    <h4>📊 锁具规模</h4>
+                    <p style="color:var(--color-text-secondary)">游戏中锁具从1块板（训练锁）到7块板（崩塌塔的传说级锁具）不等。板数越多，解谜复杂度呈指数级增长。</p>
+                </div>
+                <div class="lock-info-card">
+                    <h4>⚠️ 损坏风险</h4>
+                    <p style="color:var(--color-text-secondary)">每次错误尝试都会损坏你的开锁器。最有价值的宝箱需要精确的顺序才能打开，否则你将浪费宝贵的开锁工具。</p>
+                </div>
+                <div class="lock-info-card">
+                    <h4>🎯 无小地图标记</h4>
+                    <p style="color:var(--color-text-secondary)">《哥特王朝1重制版》没有小地图，也没有任务标记。你需要通过记忆和方向感来找到上锁的宝箱和门的位置。</p>
                 </div>
             </div>
         </section>
 
-        <!-- How It Works -->
-        <section class="guide-section">
-            <h2>How Button Colors Work</h2>
-            <table class="lock-table">
-                <thead><tr><th>Color</th><th>Effect</th><th>Difficulty</th></tr></thead>
-                <tbody>
-                    <tr><td><span style="display:inline-block;width:24px;height:24px;border-radius:50%;background:var(--color-accent);vertical-align:middle"></span> <strong>Red</strong></td><td>Changes ONLY this button</td><td>Easiest</td></tr>
-                    <tr><td><span style="display:inline-block;width:24px;height:24px;border-radius:50%;background:#007bff;vertical-align:middle"></span> <strong>Blue</strong></td><td>Changes this + adjacent buttons</td><td>Moderate</td></tr>
-                    <tr><td><span style="display:inline-block;width:24px;height:24px;border-radius:50%;background:var(--color-gold);vertical-align:middle"></span> <strong>Yellow</strong></td><td>Changes this + entire row/column</td><td>Hard</td></tr>
-                    <tr><td><span style="display:inline-block;width:24px;height:24px;border-radius:50%;border:2px dashed var(--color-border);vertical-align:middle"></span> <strong>Empty</strong></td><td>No button present</td><td>Skip</td></tr>
-                </tbody>
-            </table>
-            <div class="info-box important"><strong>⚠️ Remember:</strong> Each wrong attempt damages the lock. Use the solver to find the correct sequence before you start pressing buttons in-game.</div>
+        <!-- 底部CTA -->
+        <section class="guide-section" style="text-align:center">
+            <h2>需要帮助破解那些棘手的锁吗？</h2>
+            <p style="color:var(--color-text-secondary);margin:1.5rem 0;font-size:1.1rem">我们的<a href="lock-solver.html" style="color:var(--color-accent);font-weight:700">开锁求解器</a>一次一步地引导你破解游戏中最复杂的滑动板锁具——包括崩塌塔那臭名昭著的7板57步谜题。</p>
+            <a href="lock-solver.html" class="btn-redirect" style="font-size:1.2rem;padding:1.2rem 3rem">🎮 立即使用开锁求解器</a>
         </section>
     </main>
 
     <footer class="site-footer">
         <div class="footer-content">
-            <div class="footer-section"><h4>About This Guide</h4><p>Fan-made Gothic 1 Remake guides and tools. Not affiliated with THQ Nordic or Alkimia Interactive.</p></div>
-            <div class="footer-section"><h4>Tools</h4><ul><li><a href="lock-solver.html">Lockpicking Solver</a></li><li><a href="factions-ultimate-guide.html">Faction Quiz</a></li></ul></div>
-            <div class="footer-section"><h4>Guides</h4><ul><li><a href="lockpicking.html">Lockpicking Walkthrough</a></li><li><a href="factions-guide.html">Faction Comparison</a></li></ul></div>
-            <div class="footer-section"><h4>Contact</h4><p>Have a guide tip or feedback?</p><a href="feedback.html">Send Feedback</a></div>
+            <div class="footer-section"><h4>关于本指南</h4><p>玩家自制哥特王朝1重制版指南与工具。与THQ Nordic或Alkimia Interactive无关。</p></div>
+            <div class="footer-section"><h4>工具</h4><ul><li><a href="lock-solver.html">开锁求解器</a></li><li><a href="factions-ultimate-guide.html">阵营测验</a></li></ul></div>
+            <div class="footer-section"><h4>指南</h4><ul><li><a href="lockpicking.html">开锁攻略</a></li><li><a href="factions-guide.html">阵营对比</a></li></ul></div>
+            <div class="footer-section"><h4>联系</h4><p>有指南建议或反馈？</p><a href="feedback.html">发送反馈</a></div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Gothic 1 Remake. Fan-made guide. <a href="all-pages.html">All Pages</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a></p>
+            <p>&copy; 2026 哥特王朝1重制版。玩家自制指南。<a href="all-pages.html">全部页面</a> &middot; <a href="privacy.html">隐私</a> &middot; <a href="terms.html">条款</a></p>
         </div>
     </footer>
 
-    <script>
-        var currentConfig = [];
-        var COLORS = ['red','blue','yellow','empty'];
-
-        function updatePlateGrid() {
-            var n = parseInt(document.getElementById('numPlates').value);
-            var grid = document.getElementById('plateGrid');
-            grid.innerHTML = '';
-            currentConfig = new Array(n).fill('empty');
-            for (var i = 0; i < n; i++) {
-                var row = document.createElement('div');
-                row.className = 'plate-row-input';
-                var label = document.createElement('span');
-                label.className = 'plate-label-small';
-                label.textContent = 'Plate ' + (i+1) + ':';
-                row.appendChild(label);
-                var opts = document.createElement('div');
-                opts.style.cssText = 'display:flex;gap:4px';
-                var colorNames = ['red','blue','yellow','empty'];
-                var colorIcons = ['🔴','🔵','🟡','⚪'];
-                for (var c = 0; c < colorNames.length; c++) {
-                    var btn = document.createElement('button');
-                    btn.className = 'btn-color btn-' + colorNames[c];
-                    btn.title = colorNames[c];
-                    btn.textContent = colorIcons[c];
-                    btn.style.cssText = 'width:36px;height:36px;border-radius:50%;border:3px solid var(--color-border);cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center';
-                    (function(idx, col, el){
-                        btn.onclick = function(){
-                            currentConfig[idx] = col;
-                            el.parentElement.querySelectorAll('button').forEach(function(b){b.style.borderColor='var(--color-border)';b.style.boxShadow='none'});
-                            el.style.borderColor = 'var(--color-gold)';
-                            el.style.boxShadow = '0 0 8px var(--color-gold)';
-                        };
-                    })(i, colorNames[c], btn);
-                    opts.appendChild(btn);
-                }
-                row.appendChild(opts);
-                grid.appendChild(row);
-            }
-        }
-        updatePlateGrid();
-
-        function loadPreset(n) {
-            document.getElementById('numPlates').value = n;
-            updatePlateGrid();
-            document.querySelector('.calculator-container').scrollIntoView({behavior:'smooth'});
-        }
-
-        function calculateSolution() {
-            var config = currentConfig;
-            var steps = [];
-            var state = new Array(config.length).fill(0);
-
-            for (var pass = 0; pass < 5; pass++) {
-                for (var i = 0; i < config.length; i++) {
-                    if (state[i] === 1) continue;
-                    if (config[i] === 'empty') { state[i] = 1; continue; }
-                    var affected = [i];
-                    if (config[i] === 'blue') {
-                        if (i > 0) affected.push(i-1);
-                        if (i < config.length-1) affected.push(i+1);
-                    } else if (config[i] === 'yellow') {
-                        for (var j = 0; j < config.length; j++) {
-                            if (j !== i && affected.indexOf(j) === -1) affected.push(j);
-                        }
-                    }
-                    steps.push({plate: i+1, color: config[i], affects: affected.slice()});
-                    for (var a = 0; a < affected.length; a++) { state[affected[a]] = 1; }
-                }
-                if (state.every(function(s){return s===1})) break;
-            }
-            displaySolution(steps);
-        }
-
-        function displaySolution(steps) {
-            var display = document.getElementById('solutionDisplay');
-            if (steps.length === 0) {
-                display.innerHTML = '<p style="color:orange">Please configure all plates first!</p>';
-                return;
-            }
-            var html = '<h4 style="color:var(--color-gold);margin-bottom:1.5rem">Solution Sequence:</h4><ol class="solution-steps-list">';
-            for (var i = 0; i < steps.length; i++) {
-                var s = steps[i];
-                var colorEmoji = s.color === 'red' ? '🔴' : s.color === 'blue' ? '🔵' : s.color === 'yellow' ? '🟡' : '⚪';
-                html += '<li>Press Plate <strong>' + s.plate + '</strong> ' + colorEmoji + ' (' + s.color.toUpperCase() + ') — affects plates: [' + s.affects.map(function(x){return x+1}).join(', ') + ']</li>';
-            }
-            html += '</ol><div class="info-box note" style="margin-top:1.5rem"><strong>📊 Total: ' + steps.length + ' steps.</strong></div>';
-            display.innerHTML = html;
-            display.scrollIntoView({behavior:'smooth'});
-        }
-
-        function resetCalculator() {
-            updatePlateGrid();
-            document.getElementById('solutionDisplay').innerHTML = '<p style="color:var(--color-text-secondary);text-align:center">Configure your lock colors, then click <strong>Solve</strong>.</p>';
-        }
-    </script>
     <script src="js/main.js"></script>
 </body>
 </html>
