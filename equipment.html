@@ -109,173 +109,62 @@ a{color:var(--color-accent);text-decoration:none}
 </header>
 
 <main class="content-wrapper">
-    <nav class="breadcrumb"><a href="index.html">首页</a> / <span class="current">装备指南</span></nav>
-    <section class="page-header">
-        <h1>⚔️ 装备指南</h1>
-        <p class="page-subtitle">每件武器、护甲套装和装备——按阵营和稀有度分类</p>
-    </section>
+        <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Equipment</span></nav>
+        <section class="page-header"><h1>⚔️ Equipment Guide</h1><p class="page-subtitle">Every weapon and armor piece — by faction and rarity</p></section>
 
-    <!-- 阵营专属装备概览 -->
-    <section class="guide-section">
-        <h2>阵营专属装备</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin:2rem 0">
-            <div style="background:var(--color-bg-light);border:2px solid #c41e3a;border-radius:12px;padding:2rem">
-                <h3 style="color:#c41e3a;font-family:var(--font-heading);margin-bottom:1rem">🔥 旧营地装备</h3>
-                <p style="color:var(--color-text-secondary);margin-bottom:1rem">游戏早期可获得优质护甲。专注火系魔法。游戏中最强的重甲进阶路线。</p>
-                <ul style="list-style:none;margin-left:0">
-                    <li style="padding:.3rem 0"><span class="faction-badge badge-old">稀有</span> 暗影护甲（入会奖励）</li>
-                    <li style="padding:.3rem 0"><span class="faction-badge badge-old">史诗</span> 守卫队长之剑</li>
-                    <li style="padding:.3rem 0"><span class="faction-badge badge-old">稀有</span> 基础火焰符文（向托雷斯购买）</li>
-                    <li style="padding:.3rem 0"><span class="faction-badge badge-old">史诗</span> 核心圈护甲</li>
-                </ul>
+        <div class="guide-section" style="max-width:900px;margin:0 auto">
+            <h2>Faction-Specific Gear</h2>
+            
+            <h3>🔥 Old Camp</h3>
+            <p style="color:var(--color-text-secondary)">Quality armor available early. Focus on fire magic. Strongest heavy armor progression.</p>
+            <ul style="color:var(--color-text-secondary);line-height:2">
+                <li><strong>Shadow's Dress</strong> (Rare) — Join reward</li>
+                <li><strong>Guard Captain's Sword</strong> (Epic)</li>
+                <li><strong>Basic Fire Rune</strong> (Rare) — Buy from Torrez</li>
+                <li><strong>Core Circle Armor</strong> (Epic)</li>
+            </ul>
+
+            <h3>💧 New Camp</h3>
+            <p style="color:var(--color-text-secondary)">Unique weapons not available elsewhere. Best two-handed and ranged options. High-risk, high-reward setup.</p>
+            <ul style="color:var(--color-text-secondary);line-height:2">
+                <li><strong>Bandit's Dress</strong> (Rare) — Join reward</li>
+                <li><strong>Heavy Two-Handed Axe</strong> (Epic)</li>
+                <li><strong>Water Ring</strong> (Rare) — Freeze enchant</li>
+                <li><strong>Lee's Command Sword</strong> (Epic)</li>
+            </ul>
+
+            <h3>🌀 Swamp Camp</h3>
+            <p style="color:var(--color-text-secondary)">Light armor with magic bonuses. Unique spells and magical items.</p>
+            <ul style="color:var(--color-text-secondary);line-height:2">
+                <li><strong>Novice Robes</strong> (Rare) — Join reward (-5 DEX)</li>
+                <li><strong>Templar Armor</strong> (Epic)</li>
+                <li><strong>Sleeper Spell Scrolls</strong> (Rare)</li>
+                <li><strong>Guru Staff</strong> (Legendary)</li>
+            </ul>
+
+            <h2>Weapon Arsenal</h2>
+            <div class="table-responsive">
+                <table class="faction-comparison">
+                    <thead><tr><th>Weapon</th><th>Damage</th><th>Requirements</th><th>How to Get</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Rusty Sword</strong></td><td>5-8</td><td>None</td><td>Found on the beach</td></tr>
+                        <tr><td><strong>Old Sword</strong></td><td>8-12</td><td>STR 8</td><td>Under the hanged man, path to Old Camp</td></tr>
+                        <tr><td><strong>Club</strong></td><td>6-10</td><td>None</td><td>Near Juvenile Scavenger corpse</td></tr>
+                        <tr><td><strong>Hunter's Knife</strong></td><td>5-7</td><td>None</td><td>Path to Old Camp. Give to Drax for free Shortbow</td></tr>
+                        <tr><td><strong>Guard's Sword</strong></td><td>12-18</td><td>STR 12</td><td>Quest reward from Thorus (Old Camp)</td></tr>
+                        <tr><td><strong>Sting Mace</strong></td><td>25</td><td>STR 14</td><td>Defeat Kharim in Old Camp arena</td></tr>
+                        <tr><td><strong>Rider Bow</strong></td><td>24</td><td>DEX 14</td><td>Underwater cave near Drax's camp</td></tr>
+                        <tr><td><strong>Heavy Two-Handed Axe</strong></td><td>25-40</td><td>STR 18</td><td>New Camp quest reward</td></tr>
+                        <tr><td><strong>Guru Staff</strong></td><td>15-22 +Magic</td><td>MANA 20</td><td>Swamp Camp endgame</td></tr>
+                    </tbody>
+                </table>
             </div>
-            <div style="background:var(--color-bg-light);border:2px solid #228b22;border-radius:12px;padding:2rem">
-                <h3 style="color:#228b22;font-family:var(--font-heading);margin-bottom:1rem">💧 新营地装备</h3>
-                <p style="color:var(--color-text-secondary);margin-bottom:1rem">独有武器，别处无法获得。最佳双手武器和远程武器选择。高风险高回报的装备搭配。</p>
-                <ul style="list-style:none;margin-left:0">
-                    <li style="padding:.3rem 0"><span class="faction-badge badge-new">稀有</span> 雇佣兵皮甲</li>
-                    <li style="padding:.3rem 0"><span class="faction-badge badge-new">史诗</span> 重型双手斧</li>
-                    <li style="padding:.3rem 0"><span class="faction-badge badge-new">稀有</span> 水之戒（冰冻附魔）</li>
-                    <li style="padding:.3rem 0"><span class="faction-badge badge-new">史诗</span> 李的指挥刀</li>
-                </ul>
-            </div>
-            <div style="background:var(--color-bg-light);border:2px solid #6a0dad;border-radius:12px;padding:2rem">
-                <h3 style="color:#6a0dad;font-family:var(--font-heading);margin-bottom:1rem">🌀 沼泽营地装备</h3>
-                <p style="color:var(--color-text-secondary);margin-bottom:1rem">提供魔法加成的轻甲。独特法术和魔法物品。策略型而非坦克型。</p>
-                <ul style="list-style:none;margin-left:0">
-                    <li style="padding:.3rem 0"><span class="faction-badge badge-swamp">稀有</span> 新手袍</li>
-                    <li style="padding:.3rem 0"><span class="faction-badge badge-swamp">史诗</span> 圣殿骑士护甲</li>
-                    <li style="padding:.3rem 0"><span class="faction-badge badge-swamp">稀有</span> 沉睡法术卷轴</li>
-                    <li style="padding:.3rem 0"><span class="faction-badge badge-swamp">传说</span> 古鲁之杖</li>
-                </ul>
+
+            <div class="info-box important" style="margin-top:2rem">
+                <p style="line-height:1.8"><strong>Tip:</strong> Don't buy armor before joining a faction. You'll receive your first faction armor free as a join reward. Spend ore on training (especially lockpicking and weapon skills) instead.</p>
             </div>
         </div>
-    </section>
-
-    <!-- 武器军械库 -->
-    <section class="guide-section">
-        <h2>🗡️ 武器军械库</h2>
-        <div class="equip-grid">
-            <div class="equip-card">
-                <span class="equip-rarity rarity-common">普通</span>
-                <div class="equip-name">锈剑</div>
-                <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem">你的第一把武器。在沙滩上或从早期敌人身上获得。</p>
-                <div class="equip-stats">
-                    <div class="stat-line"><span>伤害</span><span class="val">5-8</span></div>
-                    <div class="stat-line"><span>攻击范围</span><span class="val">短</span></div>
-                    <div class="stat-line"><span>属性要求</span><span class="val">无</span></div>
-                    <div class="stat-line"><span>适用等级</span><span class="val">1-3</span></div>
-                </div>
-            </div>
-            <div class="equip-card">
-                <span class="equip-rarity rarity-rare">稀有</span>
-                <div class="equip-name">守卫之剑</div>
-                <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem"><span class="faction-badge badge-old">旧营地</span> 从托鲁斯处获得的任务奖励。第一把真正意义上的武器升级。</p>
-                <div class="equip-stats">
-                    <div class="stat-line"><span>伤害</span><span class="val">12-18</span></div>
-                    <div class="stat-line"><span>攻击范围</span><span class="val">中</span></div>
-                    <div class="stat-line"><span>属性要求</span><span class="val">力量 12</span></div>
-                    <div class="stat-line"><span>适用等级</span><span class="val">5-8</span></div>
-                </div>
-            </div>
-            <div class="equip-card">
-                <span class="equip-rarity rarity-epic">史诗</span>
-                <div class="equip-name">重型双手斧</div>
-                <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem"><span class="faction-badge badge-new">新营地</span> 双手流派顶级武器。伤害惊人但挥击缓慢。</p>
-                <div class="equip-stats">
-                    <div class="stat-line"><span>伤害</span><span class="val">25-40</span></div>
-                    <div class="stat-line"><span>攻击范围</span><span class="val">长</span></div>
-                    <div class="stat-line"><span>属性要求</span><span class="val">力量 18</span></div>
-                    <div class="stat-line"><span>适用等级</span><span class="val">10+</span></div>
-                </div>
-            </div>
-            <div class="equip-card legendary">
-                <span class="equip-rarity rarity-legendary">传说</span>
-                <div class="equip-name">古鲁之杖</div>
-                <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem"><span class="faction-badge badge-swamp">沼泽营地</span> 顶级魔法武器。引导沉睡者灵能魔法，威力放大。</p>
-                <div class="equip-stats">
-                    <div class="stat-line"><span>伤害</span><span class="val">15-22 + 魔法</span></div>
-                    <div class="stat-line"><span>攻击范围</span><span class="val">长</span></div>
-                    <div class="stat-line"><span>属性要求</span><span class="val">法力 20</span></div>
-                    <div class="stat-line"><span>适用等级</span><span class="val">终局法师</span></div>
-                </div>
-            </div>
-            <div class="equip-card">
-                <span class="equip-rarity rarity-rare">稀有</span>
-                <div class="equip-name">步兵弓</div>
-                <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem">可从新营地商人处获得的可靠远程武器。适合引怪和风筝战术。</p>
-                <div class="equip-stats">
-                    <div class="stat-line"><span>伤害</span><span class="val">10-15</span></div>
-                    <div class="stat-line"><span>射程</span><span class="val">远</span></div>
-                    <div class="stat-line"><span>属性要求</span><span class="val">敏捷 10</span></div>
-                    <div class="stat-line"><span>适用等级</span><span class="val">任意等级</span></div>
-                </div>
-            </div>
-            <div class="equip-card legendary">
-                <span class="equip-rarity rarity-legendary">传说</span>
-                <div class="equip-name">李的指挥刀</div>
-                <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem"><span class="faction-badge badge-new">新营地</span> 快速、致命、附带毒药涂层。完成李的任务链后获得。</p>
-                <div class="equip-stats">
-                    <div class="stat-line"><span>伤害</span><span class="val">18-25 + 毒素</span></div>
-                    <div class="stat-line"><span>速度</span><span class="val">极快</span></div>
-                    <div class="stat-line"><span>属性要求</span><span class="val">敏捷 16</span></div>
-                    <div class="stat-line"><span>适用等级</span><span class="val">潜行流派</span></div>
-                </div>
-            </div>
-            <div class="equip-card">
-                <span class="equip-rarity rarity-epic">史诗</span>
-                <div class="equip-name">高级火焰符文</div>
-                <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem"><span class="faction-badge badge-old">旧营地</span> 升级版火系魔法。证明自身价值后向托雷斯购买。</p>
-                <div class="equip-stats">
-                    <div class="stat-line"><span>法术类型</span><span class="val">火焰（范围伤害）</span></div>
-                    <div class="stat-line"><span>法力消耗</span><span class="val">25</span></div>
-                    <div class="stat-line"><span>属性要求</span><span class="val">法力 12</span></div>
-                    <div class="stat-line"><span>适用流派</span><span class="val">魔法流派</span></div>
-                </div>
-            </div>
-            <div class="equip-card">
-                <span class="equip-rarity rarity-epic">史诗</span>
-                <div class="equip-name">水之戒</div>
-                <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem"><span class="faction-badge badge-new">新营地</span> 激活时冰冻敌人。新营地流派必备的控场装备。</p>
-                <div class="equip-stats">
-                    <div class="stat-line"><span>效果</span><span class="val">冰冻（3秒）</span></div>
-                    <div class="stat-line"><span>冷却时间</span><span class="val">30秒</span></div>
-                    <div class="stat-line"><span>属性要求</span><span class="val">法力 10</span></div>
-                    <div class="stat-line"><span>适用</span><span class="val">控场</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 护甲进阶路线 -->
-    <section class="guide-section">
-        <h2>🛡️ 各阵营护甲进阶路线</h2>
-        <table class="lock-table" style="margin:2rem 0">
-            <thead><tr><th>阶段</th><th>旧营地 🔥</th><th>新营地 💧</th><th>沼泽营地 🌀</th><th>防御力</th></tr></thead>
-            <tbody>
-                <tr><td><strong>初始</strong></td><td>囚犯破衣</td><td>囚犯破衣</td><td>囚犯破衣</td><td>极低</td></tr>
-                <tr><td><strong>基础</strong></td><td>皮背心</td><td>拾荒护甲</td><td>侍僧袍</td><td>低</td></tr>
-                <tr><td><strong>中级</strong></td><td>守卫护甲</td><td>雇佣兵皮甲</td><td>新手袍</td><td>中等</td></tr>
-                <tr><td><strong>高级</strong></td><td>暗影护甲</td><td>佣兵指挥装</td><td>圣殿骑士护甲</td><td>高</td></tr>
-                <tr><td><strong>终局</strong></td><td>核心圈护甲</td><td>佣兵统帅装</td><td>高级圣殿骑士袍</td><td>最高</td></tr>
-            </tbody>
-        </table>
-        <div class="info-box note"><strong>📌 注意：</strong>护甲套装与阵营绑定。一旦加入某个阵营，其他阵营的护甲将无法获得。请谨慎选择！</div>
-    </section>
-
-    <!-- 装备获取途径 -->
-    <section class="guide-section">
-        <h2>💰 如何获取更好的装备</h2>
-        <div class="tips-grid">
-            <div class="tip-card"><h3>🎁 任务奖励</h3><p>阵营入会任务提供最好的装备。旧营地：完成迪亚哥的试炼获得暗影护甲。新营地：李提供独有武器。沼泽营地：古鲁给予圣殿骑士装备。</p></div>
-            <div class="tip-card"><h3>🛒 商人</h3><p>托雷斯（旧营地）出售魔法物品和符文。新营地商人有独有武器。格雷厄姆出售地图——找到隐藏装备的关键。</p></div>
-            <div class="tip-card"><h3>🔐 上锁宝箱</h3><p>最好的装备都藏在滑动板机关锁后面。崩塌塔（7块滑动板）保护着传说级物品。使用<a href="lock-solver.html">开锁求解器</a>在不受伤害的情况下破解它们。</p></div>
-            <div class="tip-card"><h3>⚔️ 敌人掉落</h3><p>兽人战士掉落高级武器。影兽掉落稀有毛皮（可用于制作）。矿坑爬虫掉落甲壳（护甲制作材料）。首领敌人掉落传说级战利品。</p></div>
-            <div class="tip-card"><h3>🔨 制作系统</h3><p>在制作台组合怪物掉落物。影兽皮 + 矿石 = 强化护甲。毒腺 + 武器 = 毒素涂层。蛛丝 + 皮革 = 轻甲升级。</p></div>
-            <div class="tip-card"><h3>🔄 交易经济</h3><p>出售多余草药、肉类和怪物零件换取矿石币。从阵营商人处购买更好的装备。不同营地的价格差异很大——在投入之前不妨货比三家。</p></div>
-        </div>
-    </section>
-</main>
+    </main>
 
 <footer class="site-footer">
     <div class="footer-content">

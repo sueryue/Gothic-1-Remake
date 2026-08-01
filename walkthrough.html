@@ -117,42 +117,42 @@ a{color:var(--color-accent);text-decoration:none}
     <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Walkthrough</span></nav>
 
     <section class="page-header">
-        <h1>🗺️ 完整流程攻略</h1>
-        <p class="page-subtitle">从海滩到终局，历经上百小时实测验证的最优路线 —— 少走弯路，少受罪</p>
+        <h1>🗺️ Complete Walkthrough</h1>
+        <p class="page-subtitle">The optimal route from beach to endgame, verified through hundreds of hours of playtesting — fewer detours, less pain</p>
     </section>
 
     <section class="toc-section">
-        <h2>目录</h2>
+        <h2>Table of Contents</h2>
         <ol class="toc-list">
-            <li><a href="#intro">写在前面：你必须知道的十件事</a></li>
-            <li><a href="#act1">第一章：开拓与抉择（主体内容，最长的章节）</a></li>
-            <li><a href="#act2">第二章：阵营主线展开</a></li>
-            <li><a href="#act3">第三章：沉睡者的阴影</a></li>
-            <li><a href="#act4">第四章：放逐与转折</a></li>
-            <li><a href="#act5">终章：兽人神殿与沉睡者决战</a></li>
+            <li><a href="#intro">Before You Start: The 10 Things You Must Know</a></li>
+            <li><a href="#act1">Chapter 1: Pioneering & Decisions (the body of the game, the longest chapter)</a></li>
+            <li><a href="#act2">Chapter 2: Faction Main Quests Unfold</a></li>
+            <li><a href="#act3">Chapter 3: The Sleeper's Shadow</a></li>
+            <li><a href="#act4">Chapter 4: Banishment & Turning Points</a></li>
+            <li><a href="#act5">Final Chapter: Orc Temple & The Sleeper Confrontation</a></li>
         </ol>
     </section>
 
     <!-- Progress Tracker -->
     <section class="guide-section">
             <div class="info-box important" style="margin-bottom:1.5rem">
-                <h3 style="color:var(--color-gold);margin-bottom:0.5rem">📖 怎么用这页（新手 / 老手都能用）</h3>
-                <p style="line-height:1.8;color:var(--color-text-secondary)"><strong>🟢 第一次玩？</strong>从"写在前面"开始往下读，不要跳步骤。每步写了原因。<br>
-                <strong>🟡 玩到一半卡住了？</strong>用下面的进度追踪器点你的当前阶段，跳到对应部分。<br>
-                <strong>🔴 多周目速通？</strong>直接跳到"第二章至终章"看每章Boss准备清单和关键抉择点。<br>
-                <strong>💡 所有玩家：</strong>本攻略基于2026年6月5日发售的1.0版实测——不是看预告片猜的。</p>
+                <h3 style="color:var(--color-gold);margin-bottom:0.5rem">📖 How to Use This Page (New players & veterans alike)</h3>
+                <p style="line-height:1.8;color:var(--color-text-secondary)"><strong>🟢 First time playing?</strong> Start from "Before You Start" and read through in order. Don't skip steps. Each step explains the reasoning.<br>
+                <strong>🟡 Stuck mid-game?</strong> Use the progress tracker below to jump to your current stage.<br>
+                <strong>🔴 Speedrunning on NG+?</strong> Jump straight to "Chapters 2 through Final" for boss prep checklists and key decision points.<br>
+                <strong>💡 All players:</strong> This guide is based on hands-on testing of version 1.0, released June 5, 2026 — not educated guesses from trailers.</p>
             </div>
         <div class="progress-tracker">
-            <h3 style="color:var(--color-gold);font-family:var(--font-heading)">📊 攻略进度</h3>
-            <p style="color:var(--color-text-secondary)">点击按钮标记你的当前进度：</p>
+            <h3 style="color:var(--color-gold);font-family:var(--font-heading)">📊 Walkthrough Progress</h3>
+            <p style="color:var(--color-text-secondary)">Click a button to mark your current progress:</p>
             <div class="progress-bar-bg"><div id="progressBar" class="progress-bar-fill" style="width:0%"></div></div>
             <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem">
-                <button onclick="updateProgress(0)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">重置</button>
-                <button onclick="updateProgress(25)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">第一章中段</button>
-                <button onclick="updateProgress(50)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">加入阵营</button>
-                <button onclick="updateProgress(70)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">第二章</button>
-                <button onclick="updateProgress(85)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">第三/四章</button>
-                <button onclick="updateProgress(100)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">通关！</button>
+                <button onclick="updateProgress(0)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">Reset</button>
+                <button onclick="updateProgress(25)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">Mid-Chapter 1</button>
+                <button onclick="updateProgress(50)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">Joined Faction</button>
+                <button onclick="updateProgress(70)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">Chapter 2</button>
+                <button onclick="updateProgress(85)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">Chapter 3/4</button>
+                <button onclick="updateProgress(100)" class="btn-progress" style="background:var(--color-bg-medium);color:var(--color-text-primary);border:1px solid var(--color-border);padding:.4rem 1rem;border-radius:4px;cursor:pointer">Completed!</button>
             </div>
         </div>
     </section>
@@ -168,141 +168,141 @@ a{color:var(--color-accent);text-decoration:none}
                     allowfullscreen>
                 </iframe>
             </div>
-            <p style="text-align:center;color:var(--color-text-secondary);margin-bottom:1.5rem;font-size:0.85rem">🎬 正式版发售宣传片 — 2026年6月5日</p>
+            <p style="text-align:center;color:var(--color-text-secondary);margin-bottom:1.5rem;font-size:0.85rem">🎬 Official Launch Trailer — June 5, 2026</p>
 <section id="intro" class="guide-section">
-        <h2 class="phase-header">写在前面：你必须知道的十件事</h2>
-        <div class="info-box note"><strong>🎮 游戏信息：</strong>哥特1重制版由 Alkimia Interactive 开发，THQ Nordic 发行，2026年6月5日正式发售。本攻略基于1.0版本实测，所有路线和地名均经过验证。</div>
+        <h2 class="phase-header">Before You Start: The 10 Things You Must Know</h2>
+        <div class="info-box note"><strong>🎮 Game Info:</strong> Gothic 1 Remake was developed by Alkimia Interactive and published by THQ Nordic, released on June 5, 2026. This guide is based on hands-on testing of version 1.0 — all routes and locations have been verified.</div>
 
-        <p>如果你只想从这篇攻略里带走几句话，那就是下面这些。每一条都是用无数次读档换来的教训。</p>
+        <p>If you take nothing else away from this guide, remember these. Every single one was learned through countless reloads.</p>
 
         <ol style="margin:1.5rem 0 1.5rem 1.5rem;line-height:2">
-            <li><strong>频繁存档。</strong>游戏自动存档间隔很长。F5快速存档，F9快速读档。过桥前存，进洞前存，和NPC对话前存，打群架前存。至少保留三个轮换的存档位。</li>
-            <li><strong>没有负重限制。</strong>看到什么捡什么。草药、蘑菇、生肉、矿石、啤酒、火把、撬锁器——全捡。前期每一块矿石都是命。</li>
-            <li><strong>走大路。</strong>前期怪物不会主动靠近道路。偏离大路意味着野狼、食腐虫和土匪。1-3级的时候，跑不丢人，死了才丢人。</li>
-            <li><strong>逐个引怪。</strong>永远不要打群架。后退、拉怪、一个个解决。AI不会因为你引怪就觉得你卑鄙。</li>
-            <li><strong>所有生肉都要烤。</strong>每个营地都有烹饪锅。烤熟的肉回复量翻倍，前期这就是你的血瓶。</li>
-            <li><strong>买地图。</strong>找格雷厄姆（旧营地）或德克斯特（新营地）买一张地图。没有小地图，没有任务标记——地图是你唯一的方向感。</li>
-            <li><strong>单手武器 + 招架。</strong>找旧营地竞技场的斯卡蒂（Scatty）训练单手武器，花费10学习点+50矿石即可解锁招架。这是整个游戏最重要的技能，没有之一。</li>
-            <li><strong>学开锁。</strong>找旧营地的芬格斯（Fingers）学开锁，10学习点+100矿石。游戏里最好的战利品全在锁着的箱子里。</li>
-            <li><strong>开物体轮廓高亮。</strong>在设置的"辅助功能"里开启 Object Outliner。能捡的东西会发光，再也不会错过草丛里的矿石。</li>
-            <li><strong>睡觉回血。</strong>每清醒3小时积攒1小时的回血储备，最多积攒8小时。找张床睡一觉，血量回满。</li>
+            <li><strong>Save often.</strong> The autosave interval is very long. F5 for quicksave, F9 for quickload. Save before crossing bridges, entering caves, talking to NPCs, and before any group fight. Keep at least three rotating save slots.</li>
+            <li><strong>There is no carry weight limit.</strong> Pick up everything you see. Herbs, mushrooms, raw meat, ore, beer, torches, lockpicks — grab it all. Every piece of ore is precious in the early game.</li>
+            <li><strong>Stick to the roads.</strong> Early-game monsters avoid the main paths. Straying from the road means wolves, scavengers, and bandits. At levels 1-3, running away isn't shameful — dying is.</li>
+            <li><strong>Pull enemies one at a time.</strong> Never fight a group head-on. Back up, pull, take them down one by one. The AI won't judge you for luring.</li>
+            <li><strong>Cook all raw meat.</strong> Every camp has a cooking pot. Cooked meat restores twice as much health — in the early game, this is your healing potion.</li>
+            <li><strong>Buy a map.</strong> Find Graham (Old Camp) or Dexter (New Camp) and buy a map. There is no minimap, no quest markers — the map is your only sense of direction.</li>
+            <li><strong>One-handed weapon + parry.</strong> Find Scatty at the Old Camp arena and train one-handed weapons. 10 LP + 50 ore unlocks the parry ability. This is the single most important skill in the entire game.</li>
+            <li><strong>Learn lockpicking.</strong> Find Fingers at the Old Camp to learn lockpicking, 10 LP + 100 ore. The best loot in the game is behind locked chests.</li>
+            <li><strong>Turn on object highlighting.</strong> Enable Object Outliner in the Accessibility settings. Interactable objects will glow — you'll never miss ore hidden in the grass again.</li>
+            <li><strong>Sleep to heal.</strong> Every 3 hours awake banks 1 hour of healing reserve, up to a maximum of 8 hours. Find a bed and sleep to restore your health to full.</li>
         </ol>
 
-        <div class="warning-box"><strong>⚠️ 关于难度：</strong>哥特1重制版不宠玩家。没有小地图，没有任务标记，没有等级同步。NPC对话里藏着任务线索，错过了就是错过了。耐心听每一个NPC把话说完——这不是客套，这是游戏机制。</div>
+        <div class="warning-box"><strong>⚠️ About difficulty:</strong> Gothic 1 Remake does not hold your hand. No minimap, no quest markers, no level scaling. Quest clues are hidden in NPC dialogue — miss a conversation, miss the quest. Be patient and listen to every NPC until they finish speaking. This isn't flavor — it's a core game mechanic.</div>
     </section>
 
     <!-- CHAPTER 1 -->
     <section id="act1" class="guide-section">
-        <h2 class="phase-header">第一章：开拓与抉择 <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">游戏最长的章节，预计15-25小时</span></h2>
-        <div class="info-box warning"><strong>🌟 核心思路：</strong>第一章是开放式探索阶段。你要走访全部三个营地，完成每个营地的入门任务，但<strong>暂时不加入任何阵营</strong>。把所有能拿的经验、装备和免费奖励拿完，到5级以上再决定跟谁混。最后在做出阵营抉择之前做一次手动存档——这样以后想体验其他阵营不用从头打。</div>
+        <h2 class="phase-header">Chapter 1: Pioneering & Decisions <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">The longest chapter, estimated 15-25 hours</span></h2>
+        <div class="info-box warning"><strong>🌟 Core Strategy:</strong> Chapter 1 is an open-ended exploration phase. You'll visit all three camps, complete each camp's entry quests, but <strong>do not join any faction yet</strong>. Gather all the experience, equipment, and free rewards available. Reach at least level 5 before committing. Finally, make a manual save before making your faction choice — so you can experience other factions later without replaying the entire chapter.</div>
 
         <div class="walkthrough-timeline">
 
             <!-- Step 1: Prologue to meeting Diego -->
             <div class="timeline-step" data-step="1">
                 <div class="step-card">
-                    <h3>序幕：海滩苏醒 → 遇见迪亚哥</h3>
-                    <p>开场动画结束后，你从海滩醒来。魔法屏障就在远处——那是你的目标。但别急，先把脚下的东西捡干净。</p>
-                    <h4>海滩搜刮清单：</h4>
+                    <h3>Prologue: Waking on the Beach → Meeting Diego</h3>
+                    <p>After the opening cinematic, you wake up on the beach. The magical barrier looms in the distance — that's your goal. But don't rush. First, loot everything at your feet.</p>
+                    <h4>Beach Loot Checklist:</h4>
                     <ul class="quest-list">
-                        <li>沿岸的浆果和草药（回血用，有多少捡多少）</li>
-                        <li>废弃木桶附近的啤酒和矿石</li>
-                        <li>任何看起来能拿的东西——记住，没有负重限制</li>
+                        <li>Berries and herbs along the shore (for healing — grab as many as you can)</li>
+                        <li>Beer and ore near the abandoned barrels</li>
+                        <li>Anything that looks pick-up-able — remember, no carry weight limit</li>
                     </ul>
-                    <p>沿路往内陆走，迪亚哥（Diego）会在路上等你。他主动提出护送你到旧营地。<strong>接受。</strong></p>
-                    <h4>迪亚哥为什么重要：</h4>
+                    <p>Follow the path inland. Diego will be waiting for you on the road. He offers to escort you to the Old Camp. <strong>Accept.</strong></p>
+                    <h4>Why Diego Matters:</h4>
                     <ul class="quest-list">
-                        <li>护送途中帮你打怪，你蹭经验</li>
-                        <li>讲解世界观：三个阵营、屏障的来历、矿石的重要性</li>
-                        <li>后面可以找他训练力量和敏捷</li>
-                        <li>旧营地主线任务的核心NPC</li>
+                        <li>He fights monsters during the escort — you get the XP</li>
+                        <li>He explains the world: the three factions, the origin of the barrier, the importance of ore</li>
+                        <li>Later on, he can train your Strength and Dexterity</li>
+                        <li>A core NPC for the Old Camp main questline</li>
                     </ul>
-                    <div class="pro-tip"><strong>💡 过来人的建议：</strong>迪亚哥说话的时候认真听。这游戏没有弹窗教程，所有机制和世界观都藏在NPC对话里。你跳过对话，就等于跳过了说明书。</div>
+                    <div class="pro-tip"><strong>💡 Veteran's advice:</strong> Pay attention when Diego speaks. This game has no pop-up tutorials — all mechanics and lore are delivered through NPC dialogue. Skipping dialogue is skipping the instruction manual.</div>
                 </div>
             </div>
 
             <!-- Step 2: The Road to Old Camp -->
             <div class="timeline-step" data-step="2">
                 <div class="step-card">
-                    <h3>前往旧营地：路上的关键收获</h3>
-                    <p>迪亚哥带你走的路看起来平淡无奇，但如果你知道往哪看，这条路能让你脱胎换骨。以下是沿途<strong>必须拿到</strong>的东西：</p>
-                    <h4>沿途关键武器位置：</h4>
+                    <h3>Journey to the Old Camp: Critical Pickups Along the Way</h3>
+                    <p>The road Diego leads you down seems unremarkable, but if you know where to look, it can transform your early game. Here is what you <strong>must grab</strong> along the way:</p>
+                    <h4>Key Weapon Locations Along the Route:</h4>
                     <ul class="quest-list">
-                        <li><strong>旧剑（Old Sword）</strong>——绞刑架下的尸体旁。你的第一把正经武器，比拳头强十倍。</li>
-                        <li><strong>木棒（Club）</strong>——幼年食腐虫（Juvenile Scavenger）巢穴附近。伤害比旧剑高，但出手慢。</li>
-                        <li><strong>猎刀（Hunter's Knife）</strong>——路上会遇到NPC德拉克斯（Drax）。把他的猎刀还给他，他会免费送你一把短弓（Shortbow）。别自己留着刀——这把弓前期太重要了。</li>
-                        <li><strong>骑手弓（Rider Bow）</strong>——水下洞穴里。需要稍微偏离大路去找，但绝对值得。前期最强远程武器。</li>
+                        <li><strong>Old Sword</strong> — next to a body beneath the gallows. Your first proper weapon, ten times better than fists.</li>
+                        <li><strong>Club</strong> — near a Juvenile Scavenger nest. Higher damage than the Old Sword, but slower swing speed.</li>
+                        <li><strong>Hunter's Knife</strong> — you'll encounter the NPC Drax on the road. Return his hunting knife to him and he'll give you a Shortbow for free. Don't keep the knife — the bow is far too important in the early game.</li>
+                        <li><strong>Rider Bow</strong> — inside an underwater cave. Requires a short detour off the main path, but absolutely worth it. The best early-game ranged weapon.</li>
                     </ul>
-                    <h4>路上遇到的NPC：</h4>
+                    <h4>NPCs Encountered Along the Way:</h4>
                     <ul class="quest-list">
-                        <li><strong>德拉克斯（Drax）：</strong>还他猎刀换短弓。他还能教你狩猎技能。</li>
-                        <li><strong>拉特福德（Ratford）：</strong>和德拉克斯在一起，聊聊天混个脸熟。</li>
+                        <li><strong>Drax:</strong> Return his Hunter's Knife for a Shortbow. He can also teach you hunting skills.</li>
+                        <li><strong>Ratford:</strong> With Drax; chat with him to get acquainted.</li>
                     </ul>
-                    <div class="pro-tip"><strong>💡 过来人的建议：</strong>拿到短弓之后，可以在安全距离风筝一些落单的弱怪。前期近战容错率极低，远程白嫖是最安全的练级方式。</div>
+                    <div class="pro-tip"><strong>💡 Veteran's advice:</strong> Once you have the Shortbow, you can safely kite isolated weak enemies from a distance. Early-game melee has razor-thin error margins — ranged chip damage is the safest way to level up.</div>
                 </div>
             </div>
 
             <!-- Step 3: Arrive at Old Camp -->
             <div class="timeline-step" data-step="3">
                 <div class="step-card">
-                    <h3>抵达旧营地：安家落户</h3>
-                    <p>旧营地是你在游戏里的第一个安全区。这里有商人、训练师和大量任务。先把营地跑熟，和每个人都说上话。</p>
-                    <h4>第一件事——搞到免费的安全屋：</h4>
+                    <h3>Arriving at the Old Camp: Settling In</h3>
+                    <p>The Old Camp is your first safe zone in the game. It has merchants, trainers, and a wealth of quests. Take time to learn the layout and talk to everyone.</p>
+                    <h4>First Priority — Get Your Free Safehouse:</h4>
                     <ul class="quest-list">
-                        <li>找<strong>盖伊（Guy）</strong>，他在竞技场附近。他会给你分配一间红色顶棚的小屋，就在竞技场旁边。这是你整个第一章的家——有床、有箱子、能睡觉回血。</li>
+                        <li>Find <strong>Guy</strong>, near the arena. He'll assign you a red-roofed hut right beside the arena. This is your home for all of Chapter 1 — it has a bed, storage chest, and lets you sleep to heal.</li>
                     </ul>
-                    <h4>旧营地必做的早期任务：</h4>
+                    <h4>Must-Do Early Quests in the Old Camp:</h4>
                     <ul class="quest-list">
-                        <li><strong>斯纳夫的菜谱（Snaf's Recipe）：</strong>找厨师斯纳夫，完成他的食材任务后，每天可以免费领3份虫肉杂烩（Meatbug Ragout）。这是前期最稳定的食物来源。</li>
-                        <li><strong>惠斯勒的剑（Whistler's Sword）：</strong>经典跑腿任务，经验不错。</li>
-                        <li><strong>失踪的守卫（The Vanished Warder）：</strong>调查守卫失踪事件，了解营地周边的威胁分布。</li>
+                        <li><strong>Snaf's Recipe:</strong> Find the cook Snaf and complete his ingredient quest. Afterwards, you can claim 3 free servings of Meatbug Ragout per day — the most reliable food source in the early game.</li>
+                        <li><strong>Whistler's Sword:</strong> A classic fetch quest with solid XP.</li>
+                        <li><strong>The Vanished Warder:</strong> Investigate the missing guard — this quest reveals the threat distribution around the camp perimeter.</li>
                     </ul>
-                    <h4>旧营地关键NPC速查：</h4>
+                    <h4>Old Camp Key NPC Quick Reference:</h4>
                     <ul class="quest-list">
-                        <li><strong>斯卡蒂（Scatty）</strong>——竞技场训练单手武器。10学习点+50矿石解锁招架。优先投资。</li>
-                        <li><strong>芬格斯（Fingers）</strong>——教开锁。10学习点+100矿石。同样优先。</li>
-                        <li><strong>格雷厄姆（Graham）</strong>——卖地图。买！</li>
-                        <li><strong>迪亚哥（Diego）</strong>——训练力量和敏捷。</li>
-                        <li><strong>托鲁斯（Thorus）</strong>——给任务"销声匿迹"（Out of Sight），旧营地入门线的关键任务。</li>
-                        <li><strong>斯纳夫（Snaf）</strong>——厨师，每天免费菜品。</li>
+                        <li><strong>Scatty</strong> — Arena trainer for one-handed weapons. 10 LP + 50 ore unlocks parry. Invest early.</li>
+                        <li><strong>Fingers</strong> — Teaches lockpicking. 10 LP + 100 ore. Also a priority.</li>
+                        <li><strong>Graham</strong> — Sells maps. Buy one!</li>
+                        <li><strong>Diego</strong> — Trains Strength and Dexterity.</li>
+                        <li><strong>Thorus</strong> — Gives the quest "Out of Sight," a key quest on the Old Camp entry track.</li>
+                        <li><strong>Snaf</strong> — The cook, free daily rations.</li>
                     </ul>
-                    <div class="pro-tip"><strong>💡 过来人的建议：</strong>到了旧营地先别急着出去探索。花30分钟把所有人的对话听完、把能接的任务全接了。你会发现很多任务目标重叠——一趟路完成两三个任务是常规操作。</div>
+                    <div class="pro-tip"><strong>💡 Veteran's advice:</strong> Don't rush out to explore the moment you reach the Old Camp. Spend 30 minutes exhausting every NPC's dialogue and accepting every available quest. You'll find that many quest objectives overlap — completing two or three quests in a single trip is routine.</div>
                 </div>
             </div>
 
             <!-- Step 4: Going to New Camp via Mordrag -->
             <div class="timeline-step" data-step="4">
                 <div class="step-card">
-                    <h3>前往新营地：莫德雷格护送</h3>
-                    <p>旧营地的任务做到差不多（大概3-4级），该去新营地了。但是<strong>别自己走</strong>。</p>
-                    <h4>最佳路线——白嫖莫德雷格（Mordrag）：</h4>
+                    <h3>Heading to the New Camp: Mordrag Escort</h3>
+                    <p>Once you've done a solid round of Old Camp quests (around level 3-4), it's time for the New Camp. But <strong>don't go alone</strong>.</p>
+                    <h4>The Best Route — Let Mordrag Do the Work:</h4>
                     <ul class="quest-list">
-                        <li>在旧营地找到莫德雷格，让他护送你到新营地</li>
-                        <li>路上的怪物他会帮你打——你站远点看着，经验照拿</li>
-                        <li>他战斗力不差，一般的狼和食腐虫都能处理</li>
-                        <li>这条路比你单走安全十倍</li>
+                        <li>Find Mordrag at the Old Camp and ask him to escort you to the New Camp</li>
+                        <li>He'll fight the monsters along the way — stand back and watch, you still get the XP</li>
+                        <li>His combat ability is decent; he can handle standard wolves and scavengers</li>
+                        <li>This route is ten times safer than going solo</li>
                     </ul>
-                    <div class="pro-tip"><strong>💡 过来人的建议：</strong>让NPC护送是前期最轻松的旅行方式。你不用打，经验不少，还能顺路捡东西。整个第一章尽量利用每一个愿意带路的NPC。</div>
+                    <div class="pro-tip"><strong>💡 Veteran's advice:</strong> NPC escorts are the most relaxed way to travel in the early game. You don't have to fight, the XP keeps rolling in, and you can loot along the way. Throughout Chapter 1, take advantage of every NPC willing to guide you.</div>
                 </div>
             </div>
 
             <!-- Step 5: New Camp -->
             <div class="timeline-step" data-step="5">
                 <div class="step-card">
-                    <h3>新营地任务：免费护甲和烟草生意</h3>
-                    <p>新营地建在湖边山丘上，风格比旧营地粗犷得多。这里不搞等级制度，强者为尊。</p>
-                    <h4>新营地核心任务：</h4>
+                    <h3>New Camp Quests: Free Armor and the Swampweed Trade</h3>
+                    <p>The New Camp is built on a lakeside hill, rougher in character than the Old Camp. No rigid hierarchy here — strength commands respect.</p>
+                    <h4>Core New Camp Quests:</h4>
                     <ul class="quest-list">
-                        <li><strong>招揽客户（Canvassing Customers）：</strong>帮人推销沼泽烟草（swampweed），跑腿任务但报酬不错。</li>
-                        <li><strong>免费的矿工装（Digger's Dress）：</strong>去自由矿场（Free Mine）找斯维尼（Swiney），白拿一件矿工护甲。<strong>白送的护甲不要白不要。</strong></li>
-                        <li><strong>草药商人（The Herb Merchant）：</strong>采集类任务，经验+矿石。</li>
-                        <li><strong>突袭（The Raid）：</strong>新营地的主线入门任务，展示新营地和旧营地之间的紧张关系。</li>
+                        <li><strong>Canvassing Customers:</strong> Help promote swampweed — a courier quest with decent pay.</li>
+                        <li><strong>Free Digger's Dress:</strong> Go to the Free Mine and find Swiney for a free set of miner's armor. <strong>Free armor is free armor. Take it.</strong></li>
+                        <li><strong>The Herb Merchant:</strong> A gathering quest, rewards XP + ore.</li>
+                        <li><strong>The Raid:</strong> The New Camp's main entry quest, showcasing the tension between the New Camp and Old Camp.</li>
                     </ul>
-                    <h4>新营地关键NPC：</h4>
+                    <h4>New Camp Key NPCs:</h4>
                     <ul class="quest-list">
-                        <li><strong>德克斯特（Dexter）</strong>——卖地图，如果你还没在旧营地买的话。</li>
-                        <li><strong>斯维尼（Swiney）</strong>——免费矿工装，一定要找。</li>
-                        <li><strong>拉雷斯（Lares）</strong>——新营地入门线核心NPC。</li>
+                        <li><strong>Dexter</strong> — Sells maps, if you didn't already buy one at the Old Camp.</li>
+                        <li><strong>Swiney</strong> — Free Digger's Dress. Do not miss him.</li>
+                        <li><strong>Lares</strong> — Core NPC for the New Camp entry questline.</li>
                     </ul>
                 </div>
             </div>
@@ -310,13 +310,13 @@ a{color:var(--color-accent);text-decoration:none}
             <!-- Step 6: Swamp Camp via Baal Parvez -->
             <div class="timeline-step" data-step="6">
                 <div class="step-card">
-                    <h3>前往沼泽营地：巴尔·帕维兹护送</h3>
-                    <p>新营地的任务做完，该去沼泽营地了。同样<strong>不要自己走</strong>。</p>
-                    <h4>最佳路线——让巴尔·帕维兹（Baal Parvez）带你：</h4>
+                    <h3>Heading to the Swamp Camp: Baal Parvez Escort</h3>
+                    <p>After wrapping up New Camp quests, it's time for the Swamp Camp. Again, <strong>do not go alone</strong>.</p>
+                    <h4>The Best Route — Let Baal Parvez Guide You:</h4>
                     <ul class="quest-list">
-                        <li>在新营地找到巴尔·帕维兹，让他护送你去沼泽营地</li>
-                        <li>原理和莫德雷格一样——他打怪，你拿经验</li>
-                        <li>沼泽营地的路比旧营地到新营地更危险，有护送是必须的</li>
+                        <li>Find Baal Parvez at the New Camp and ask him to escort you to the Swamp Camp</li>
+                        <li>Same principle as Mordrag — he fights, you collect XP</li>
+                        <li>The road from New Camp to Swamp Camp is more dangerous than Old Camp to New Camp — an escort is essential</li>
                     </ul>
                 </div>
             </div>
@@ -324,38 +324,38 @@ a{color:var(--color-accent);text-decoration:none}
             <!-- Step 7: Swamp Camp -->
             <div class="timeline-step" data-step="7">
                 <div class="step-card">
-                    <h3>沼泽营地：获得四位导师的认可</h3>
-                    <p>沼泽营地位于沼泽深处，是兄弟会（Brotherhood）的总部。这里信仰沉睡者（The Sleeper），拥有独特的灵魂魔法。</p>
-                    <h4>沼泽营地入门条件——5位导师中取得4位的认可：</h4>
+                    <h3>Swamp Camp: Earn the Recognition of Four Mentors</h3>
+                    <p>The Swamp Camp sits deep in the marshlands and serves as the headquarters of the Brotherhood. They worship the Sleeper and wield unique psionic magic.</p>
+                    <h4>Swamp Camp Entry Requirement — Gain Approval from 4 of the 5 Mentors:</h4>
                     <ul class="quest-list">
-                        <li><strong>纳米布（Namib）</strong>——完成他给你的考验任务</li>
-                        <li><strong>提昂（Tyon）</strong>——完成他给你的考验任务</li>
-                        <li><strong>奥伦（Orun）</strong>——完成他给你的考验任务</li>
-                        <li><strong>卡达尔（Cadar）</strong>——完成他给你的考验任务</li>
+                        <li><strong>Namib</strong> — Complete his trial quest</li>
+                        <li><strong>Tyon</strong> — Complete his trial quest</li>
+                        <li><strong>Orun</strong> — Complete his trial quest</li>
+                        <li><strong>Cadar</strong> — Complete his trial quest</li>
                     </ul>
-                    <p>五位导师中你只需要搞定四位。每位的考验方式不同——有的要你展现智慧，有的要你去收集物品，有的考验你的魔法悟性。全部通过后就可以成为见习修士（Novice）。</p>
-                    <div class="warning-box"><strong>⚠️ 重要提醒：</strong>沼泽营地没有第二次机会！如果你想加入兄弟会，必须在做其他阵营的最终入门任务之前决定。一旦你完成了旧营地或新营地的最终入门任务，兄弟会的门就永远关上了。</div>
+                    <p>You only need four out of five mentors. Each mentor's trial is different — some test your wisdom, some send you to collect rare items, others probe your magical aptitude. Pass them all and you become a Novice.</p>
+                    <div class="warning-box"><strong>⚠️ Critical reminder:</strong> The Swamp Camp gives no second chances! If you want to join the Brotherhood, you must decide before completing the final entry quest for either the Old Camp or the New Camp. Once you've completed the final entry quest for another faction, the Brotherhood's gates close forever.</div>
                 </div>
             </div>
 
             <!-- Step 8: Final Decision -->
             <div class="timeline-step" data-step="8">
                 <div class="step-card">
-                    <h3>做出阵营抉择</h3>
-                    <p>现在三个营地的入门任务都做完了，你大概已经有5级以上、一身基础装备、一些矿石储备和大量经验。</p>
-                    <h4>抉择前的最终检查清单：</h4>
+                    <h3>Making the Faction Decision</h3>
+                    <p>By now you've completed the entry quests for all three camps. You should be around level 5+, with a solid set of basic gear, a healthy ore reserve, and a mountain of experience.</p>
+                    <h4>Final Pre-Decision Checklist:</h4>
                     <ul class="quest-list">
-                        <li>三个营地的所有入门任务都已完成 ✓</li>
-                        <li>至少达到等级5 ✓</li>
-                        <li>已学会招架（斯卡蒂训练）✓</li>
-                        <li>已学会开锁（芬格斯训练）✓</li>
-                        <li>已购买地图 ✓</li>
-                        <li>已拿到免费矿工装 ✓</li>
-                        <li>已开启物体轮廓高亮 ✓</li>
+                        <li>All three camps' entry quests completed ✓</li>
+                        <li>At least level 5 ✓</li>
+                        <li>Parry unlocked (Scatty training) ✓</li>
+                        <li>Lockpicking unlocked (Fingers training) ✓</li>
+                        <li>Map purchased ✓</li>
+                        <li>Free Digger's Dress obtained ✓</li>
+                        <li>Object Outliner enabled ✓</li>
                     </ul>
-                    <div class="warning-box"><strong>⚠️ 关键步骤——手动存档！</strong>在找阵营领袖做最终入门对话之前，切到手动存档位（不要用F5快速存档），存一个永久档。阵营选择是<strong>永久且不可逆</strong>的。有了这个存档，你以后想体验其他阵营只要从这里读档就行，不用重新打第一章。</div>
+                    <div class="warning-box"><strong>⚠️ Critical step — Manual save!</strong> Before speaking to any faction leader for the final joining dialogue, switch to a manual save slot (do not use F5 quicksave) and create a permanent save. Faction choice is <strong>permanent and irreversible</strong>. With this save, you can experience other factions later just by loading it — no need to replay Chapter 1 from scratch.</div>
                     <div style="text-align:center;margin:1.5rem 0">
-                        <a href="factions-ultimate-guide.html" style="display:inline-block;background:linear-gradient(135deg,#e94560,#ffd700);color:white;padding:.8rem 2rem;border-radius:8px;text-decoration:none;font-weight:700">🎯 还不确定？看看阵营终极指南</a>
+                        <a href="factions-ultimate-guide.html" style="display:inline-block;background:linear-gradient(135deg,#e94560,#ffd700);color:white;padding:.8rem 2rem;border-radius:8px;text-decoration:none;font-weight:700">🎯 Still undecided? Check the Ultimate Faction Guide</a>
                     </div>
                 </div>
             </div>
@@ -364,142 +364,142 @@ a{color:var(--color-accent);text-decoration:none}
 
     <!-- CHAPTER 2 -->
     <section id="act2" class="guide-section">
-        <h2 class="phase-header">第二章：阵营主线展开 <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">预计8-15小时</span></h2>
-        <div class="info-box note"><strong>📌 概述：</strong>第二章是你所选阵营的核心主线任务。一旦正式加入某个阵营，你将穿上这个阵营的专属护甲，获得只有本阵营成员才能接的任务。三个阵营的第二章体验截然不同——旧营地带你深入矿区底层和权力核心，新营地让你在自由矿场和外围战场驰骋，沼泽营地则引你走入灵魂魔法与沉睡者崇拜的深层世界。不管你选哪个阵营，都建议在这一阶段把主力武器技能至少训练到30%以上。</div>
+        <h2 class="phase-header">Chapter 2: Faction Main Quests Unfold <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">Estimated 8-15 hours</span></h2>
+        <div class="info-box note"><strong>📌 Overview:</strong> Chapter 2 is the core main questline of your chosen faction. Once you officially join a faction, you'll don its exclusive armor and gain access to quests available only to members. The Chapter 2 experience is radically different across the three factions — the Old Camp plunges you into the depths of the mine and the heart of power politics, the New Camp has you roaming the Free Mine and outer battlefields, and the Swamp Camp draws you into the deeper mysteries of psionic magic and Sleeper worship. Whichever faction you pick, you should aim to train your primary weapon skill to at least 30% during this chapter.</div>
 
         <div class="walkthrough-timeline">
-            <!-- 旧营地第二章 -->
+            <!-- Old Camp Chapter 2 -->
             <div class="timeline-step" data-step="9">
                 <div class="step-card">
-                    <h3>🔥 旧营地路线（Old Camp）——成为戈麦斯的暗影</h3>
-                    <p>正式加入旧营地后，你的身份是<strong>暗影（Shadow）</strong>——戈麦斯（Gomez）核心圈的基层执行者。你的初始装备包括<strong>暗影护甲（Shadow Armor）</strong>，这是旧营地守卫之外能拿到的最早的进阶护甲。你的直属上级是守卫队长<strong>索拉斯（Thorus）</strong>，他会给你战斗任务；而老狐狸<strong>迪亚哥（Diego）</strong>则是你的情报来源，很多任务的隐藏解法都藏在和他的对话里。</p>
+                    <h3>🔥 Old Camp Route — Becoming Gomez's Shadow</h3>
+                    <p>After formally joining the Old Camp, your rank is <strong>Shadow</strong> — a grassroots enforcer in Gomez's inner circle. Your starting gear includes <strong>Shadow Armor</strong>, the earliest advanced-tier armor available outside the Old Camp guard roster. Your immediate superior is Guard Captain <strong>Thorus</strong>, who issues combat assignments; the old fox <strong>Diego</strong> is your intelligence source — hidden solutions to many quests are buried in his dialogue.</p>
 
-                    <h4>核心任务线：旧矿区补给与调查</h4>
+                    <h4>Core Questline: Old Mine Resupply & Investigation</h4>
                     <ul class="quest-list">
-                        <li><strong>「旧矿区补给」（Old Mine Supplies）</strong>——索拉斯让你给旧矿区的守卫们送补给。表面上是一次普通的运输任务，实际上你会在矿区内部发现严重的矿石产量下降问题。矿工们私下抱怨矿区深处"不对劲"。注意和守卫队长<strong>伊恩（Ian）</strong>对话，他掌握矿道坍塌的第一手情报。</li>
-                        <li><strong>「矿石短缺调查」</strong>——迪亚哥私下让你调查矿石产量下降的真正原因。你需要深入旧矿区，击败挡路的<strong>矿区爬虫（Minecrawler）</strong>。这些虫型怪物对斩击和刺击有抗性——<strong>必须用钝器</strong>（锤、钉头棒）才有效率。矿区爬虫的巢穴通常在矿道拐角的阴暗处，建议用火把探路，听到嘶嘶声立刻停下来。</li>
-                        <li><strong>「守卫队长的信任」</strong>——与多位守卫队长建立关系。索拉斯之外的另外几位守卫队长包括<strong>血印（Bloodwyn）</strong>和<strong>斯卡（Scar）</strong>，他们各自会给你支线任务，完成后能解锁更多训练选项和装备购买权限。</li>
+                        <li><strong>"Old Mine Supplies"</strong> — Thorus sends you to deliver supplies to the guards in the Old Mine. What appears to be a routine transport run quickly reveals a serious drop in ore output. Miners privately complain that "something is off" deep in the mine. Pay attention to your conversation with Guard Captain <strong>Ian</strong> — he has first-hand intel on the tunnel collapse.</li>
+                        <li><strong>"Ore Shortage Investigation"</strong> — Diego privately tasks you with uncovering the real reason for the declining ore yield. You'll need to go deep into the Old Mine and fight through <strong>Minecrawlers</strong>. These insectoid creatures resist slashing and piercing damage — <strong>you must use blunt weapons</strong> (hammers, maces) to deal with them efficiently. Minecrawler nests are typically in dark corners where tunnels turn; use a torch to scout ahead and stop immediately if you hear hissing.</li>
+                        <li><strong>"The Guard Captain's Trust"</strong> — Build relationships with multiple guard captains. Beyond Thorus, the other captains include <strong>Bloodwyn</strong> and <strong>Scar</strong>, each offering side quests that unlock additional training options and gear purchase permissions upon completion.</li>
                     </ul>
 
-                    <h4>旧矿区地牢探索要点</h4>
-                    <p>旧矿区是你在游戏中遇到的第一个大型地下区域。矿区分为地上工作区和地下矿道两层。矿道深处有几个关键点：</p>
+                    <h4>Old Mine Dungeon Exploration Essentials</h4>
+                    <p>The Old Mine is the first major underground area you'll encounter. It's divided into an above-ground worksite and a two-level underground tunnel system. Key locations deep in the tunnels:</p>
                     <ul class="quest-list">
-                        <li><strong>坍塌矿道（第一层）</strong>——入口附近的矿工营地有商人，可以补给修理锤和治疗药水。这里也是练级的好地方，矿区爬虫单个出现，一只大约150经验。</li>
-                        <li><strong>深层矿道（第二层）</strong>——从这里开始矿区爬虫成群出现（2-3只一组），建议7级以上再来。最深处有一间废弃的挖掘指挥室，里面有一把不错的<strong>钝器</strong>和几份日记，日记内容暗示矿石具有某种"特殊属性"——这是主线伏笔。</li>
-                        <li><strong>矿石提取室</strong>——矿道中段的一个大型洞穴，这里你可以看到矿石是如何被集中收集和初步炼制的。注意观察墙上的巨大矿脉——如果你有<strong>科里斯托（Corristo）</strong>教的火焰符文基础，你会发现这些矿石和普通矿石不太一样。</li>
+                        <li><strong>Collapsed Tunnel (Level 1)</strong> — The miner camp near the entrance has a merchant selling repair hammers and healing potions. This is also a great grinding spot: Minecrawlers appear singly here, roughly 150 XP each.</li>
+                        <li><strong>Deep Tunnels (Level 2)</strong> — From here, Minecrawlers appear in groups of 2-3. Recommended level 7+. In the deepest section, an abandoned excavation command room holds a solid <strong>blunt weapon</strong> and several journal entries hinting that the ore possesses "special properties" — this is a main-story breadcrumb.</li>
+                        <li><strong>Ore Extraction Chamber</strong> — A large cavern in the mid-tunnel section where you can see how ore is centrally collected and initially refined. Take note of the massive ore veins on the walls — if you've learned the basics of Fire Runes from <strong>Corristo</strong>, you'll notice these ore deposits are unlike ordinary minerals.</li>
                     </ul>
 
-                    <h4>关键NPC与可解锁内容</h4>
+                    <h4>Key NPCs & Unlockable Content</h4>
                     <ul class="quest-list">
-                        <li><strong>索拉斯（Thorus）</strong>——你的战斗任务来源。完成他给的任务可以解锁守卫训练场使用权，力量和单手/双手武器训练费打8折。</li>
-                        <li><strong>迪亚哥（Diego）</strong>——情报贩子。他掌握旧营地几乎所有NPC的秘密，有些任务提前和他对话能解锁隐藏选项。</li>
-                        <li><strong>科里斯托（Corristo）</strong>——火界法师，旧营地的精神领袖之一。如果你属性达标（法力25+），他会教你<strong>火焰法术基础</strong>：小火球（Fire Bolt）和火焰之箭（Fire Arrow）。旧营地虽然不是法师阵营，但火系魔法是对付矿道怪物的有效补充。</li>
-                        <li><strong>弗莱彻（Fletcher）</strong>——旧营地铁匠，可以打造和升级武器。把你在矿道里捡到的矿石带给他，可以解锁特殊武器配方。</li>
+                        <li><strong>Thorus</strong> — Your combat quest source. Completing his assignments unlocks access to the guard training grounds and a 20% discount on Strength and one-handed/two-handed weapon training.</li>
+                        <li><strong>Diego</strong> — The information broker. He knows secrets about nearly every NPC in the Old Camp. Speaking with him before certain quests can unlock hidden dialogue options.</li>
+                        <li><strong>Corristo</strong> — Fire Mage and one of the Old Camp's spiritual leaders. If your stats qualify (Mana 25+), he'll teach you <strong>Fire Magic basics</strong>: Fire Bolt and Fire Arrow. The Old Camp is not a mage faction, but fire magic is an effective supplement against mine-dwelling monsters.</li>
+                        <li><strong>Fletcher</strong> — The Old Camp blacksmith, capable of forging and upgrading weapons. Bring him the ore you collect in the tunnels to unlock special weapon recipes.</li>
                     </ul>
 
-                    <div class="pro-tip"><strong>💡 实战心得：</strong>旧营地第二章最容易被忽略的是迪亚哥的情报价值。每做完一个主线任务，回去和迪亚哥聊一次——他会给你关于后续任务的隐藏信息，甚至直接指点你去哪里找稀有装备。另外，矿道深层在8级以下不要贸然深入，里面的矿区爬虫女王（Minecrawler Queen）是15级以上的区域BOSS，回头第三章再来收拾。</div>
+                    <div class="pro-tip"><strong>💡 Combat wisdom:</strong> The easiest thing to overlook in Old Camp Chapter 2 is Diego's intelligence value. After every main quest, go back and talk to Diego — he'll give you hidden intel on upcoming quests and sometimes directly point you toward rare equipment locations. Also, do not venture into the Deep Tunnels below level 8 — the Minecrawler Queen down there is a level 15+ zone boss. Come back for her in Chapter 3.</div>
 
-                    <div class="warning-box"><strong>⚠️ 注意：</strong>旧矿区探索期间，矿石和挖掘工具不要乱卖。矿石在旧营地是硬通货——比金币还值钱。另外，某个不起眼的矿工NPC会在第三章给你一条关键情报，前提是你在这阶段帮过他。</div>
+                    <div class="warning-box"><strong>⚠️ Note:</strong> While exploring the Old Mine, do not casually sell ore and mining tools. Ore is hard currency in the Old Camp — more valuable than gold. Additionally, one unremarkable miner NPC will give you a critical piece of intel in Chapter 3, but only if you helped him during this chapter.</div>
                 </div>
             </div>
 
-            <!-- 新营地第二章 -->
+            <!-- New Camp Chapter 2 -->
             <div class="timeline-step" data-step="10">
                 <div class="step-card">
-                    <h3>💧 新营地路线（New Camp）——自由矿场的雇佣兵</h3>
-                    <p>加入新营地后，你的身份是<strong>雇佣兵（Mercenary）</strong>或<strong>盗匪（Bandit）</strong>（取决于入门时走的是李的路线还是赖斯的路线），获得<strong>盗匪装束（Bandit's Dress）</strong>作为初始阵营护甲。新营地的核心优势是<strong>自由矿场（Free Mine）</strong>——矿石产量比旧矿区高30%，你在这里挖到的矿石可以直接拿来换装备和训练，升级速度全游戏最快。</p>
+                    <h3>💧 New Camp Route — Mercenary of the Free Mine</h3>
+                    <p>After joining the New Camp, your rank is <strong>Mercenary</strong> or <strong>Bandit</strong> (depending on whether you followed Lee's path or Lares' path during entry), and you receive the <strong>Bandit's Dress</strong> as your starting faction armor. The New Camp's core advantage is the <strong>Free Mine</strong> — ore yields here are 30% higher than the Old Mine, and the ore you dig up can be directly traded for gear and training, giving you the fastest leveling pace of any faction.</p>
 
-                    <h4>核心任务线：赖斯大米的委托</h4>
+                    <h4>Core Questline: The Rice Lord's Quests</h4>
                     <ul class="quest-list">
-                        <li><strong>「赖斯大米的委托」（The Rice Lord's Quests）</strong>——这是新营地第二章最核心的任务链，由新营地的情报头子<strong>赖斯（Rice Lord / Lares）</strong>发布。赖斯是一个精明的走私商，他在三个营地都有自己的地下网络。他的任务链包括：
+                        <li><strong>"The Rice Lord's Quests"</strong> — This is the single most important quest chain in New Camp Chapter 2, issued by the New Camp intelligence chief <strong>Rice Lord / Lares</strong>. Lares is a shrewd smuggler with underground networks across all three camps. His quest chain includes:
                             <ul style="list-style:circle;margin-left:1.5rem;margin-top:.5rem">
-                                <li><strong>传递密信</strong>——将秘密指令送到旧营地和沼泽营地的联络人手中。路线需要穿越野外，建议走沿河的山脊小路，避开大路上的怪物。</li>
-                                <li><strong>护送运输队</strong>——保护从自由矿场到新营地大坝的矿石运输队。运输队会遭遇怪物伏击（主要是暗影兽幼崽和狼群），建议带远程武器（弓或弩）提前占高地。</li>
-                                <li><strong>破坏旧营地补给线</strong>——潜入旧营地外围，烧毁物资箱或毒害水源。这些任务有潜行和正面强攻两种完成方式，奖励相同但经验加成不同（潜行完成多给50%经验）。</li>
+                                <li><strong>Deliver Secret Messages</strong> — Carry encrypted instructions to contacts in the Old Camp and Swamp Camp. The route crosses wilderness; stick to the ridge trails along the river to avoid monsters on the main roads.</li>
+                                <li><strong>Escort the Supply Convoy</strong> — Protect the ore transport caravan from the Free Mine to the New Camp dam. The convoy will be ambushed by monsters (mostly young Shadowbeasts and wolf packs); bring a ranged weapon (bow or crossbow) and take the high ground ahead of time.</li>
+                                <li><strong>Sabotage Old Camp Supply Lines</strong> — Infiltrate the Old Camp perimeter to burn supply crates or poison water sources. These missions can be completed via stealth or direct assault; the rewards are the same but the XP bonus differs (stealth completion grants +50% XP).</li>
                             </ul>
                         </li>
                     </ul>
 
-                    <h4>自由矿场探索</h4>
+                    <h4>Free Mine Exploration</h4>
                     <ul class="quest-list">
-                        <li><strong>自由矿场（Free Mine）</strong>——新营地的露天矿场，比旧矿区开阔得多。这里是练远程武器的最佳地点——站在高处的采矿平台上可以安全地射杀下方的怪物。自由矿场的特点是矿脉外露，你不需要深入矿道就能挖到大量矿石。</li>
-                        <li><strong>水法师的秘密项目</strong>——在自由矿场深处，你会发现<strong>水界法师（Water Mages）</strong>的临时研究站。<strong>萨图拉斯（Saturas）</strong>和他的弟子们正在研究矿石的魔法属性。如果你愿意帮他们收集矿石样本，萨图拉斯会向你透露：矿石与屏障有某种深层的联系——这不是普通的矿产，而是某种<strong>能量载体</strong>。</li>
+                        <li><strong>The Free Mine</strong> — The New Camp's open-pit mine, far more spacious than the Old Mine. This is the ideal location for leveling ranged weapon skills — stand on the elevated mining platforms and safely pick off monsters below. The Free Mine's defining feature is exposed ore veins; you don't need to venture deep into tunnels to extract large quantities of ore.</li>
+                        <li><strong>The Water Mages' Secret Project</strong> — Deep in the Free Mine, you'll discover a temporary research station operated by the <strong>Water Mages</strong>. <strong>Saturas</strong> and his disciples are studying the magical properties of ore. If you agree to help them gather ore samples, Saturas will reveal that ore and the barrier share a deep connection — this is no ordinary mineral deposit, but a form of <strong>energy conduit</strong>.</li>
                     </ul>
 
-                    <h4>关键NPC与可解锁内容</h4>
+                    <h4>Key NPCs & Unlockable Content</h4>
                     <ul class="quest-list">
-                        <li><strong>李（Lee）</strong>——新营地雇佣兵领袖。他给你的是纯粹的军事任务，完成后解锁高级武器购买权限。李的路线偏向力量型战士，他给的奖励大多是重甲和双手武器。</li>
-                        <li><strong>沃夫（Wolf）</strong>——弓箭大师。如果你走远程路线，沃夫是你最重要的导师。完成他的狩猎任务（猎杀一定数量的指定怪物）后，他会教你<strong>精准射击（Precision Shot）</strong>技能——暴击率+10%。</li>
-                        <li><strong>萨图拉斯（Saturas）</strong>——水界法师之首。他的对话里藏着主线最重要的信息：水法师们认为矿石是某种"魔法导体"，而屏障本身可能就是由矿石驱动的。这条信息在终章至关重要。</li>
-                        <li><strong>贾维斯（Jarvis）</strong>——大坝守卫队长。他掌管新营地的武器库，完成他的巡逻任务可以按折扣价购买稀有弩和爆炸箭。</li>
+                        <li><strong>Lee</strong> — Mercenary leader of the New Camp. He gives you straightforward military missions; completing them unlocks high-tier weapon purchase permissions. Lee's path favors Strength-based warriors, with rewards mostly consisting of heavy armor and two-handed weapons.</li>
+                        <li><strong>Wolf</strong> — Bow master. If you're going for a ranged build, Wolf is your most important mentor. Complete his hunting quests (slay a specified number of target monsters) and he'll teach you the <strong>Precision Shot</strong> skill — +10% critical hit chance.</li>
+                        <li><strong>Saturas</strong> — Head of the Water Mages. His dialogue holds the most crucial main-story information: the Water Mages believe ore is a type of "magical conductor," and that the barrier itself may be powered by ore. This information proves vital in the final chapter.</li>
+                        <li><strong>Jarvis</strong> — Dam guard captain. He controls the New Camp armory; completing his patrol assignments unlocks rare crossbows and explosive bolts at a discount.</li>
                     </ul>
 
-                    <div class="pro-tip"><strong>💡 实战心得：</strong>新营地第二章最快的发育方式是挖矿+倒卖。自由矿场的矿石产量极高，挖满背包后直接在大坝商人那里卖掉（或者锻造成武器卖更高价）。有了足够的矿石货币，你可以比另外两个阵营早2-3级买齐装备。另外，沃夫的弓箭训练对新营地玩家来说是必修课——一只精英弩配合爆炸箭在第三章的群体战中价值连城。</div>
+                    <div class="pro-tip"><strong>💡 Combat wisdom:</strong> The fastest way to grow in New Camp Chapter 2 is mining + flipping. The Free Mine's ore output is enormous — fill your pack, sell directly to the dam merchant (or forge into weapons for an even higher price). With enough ore currency, you can fully equip yourself 2-3 levels earlier than players in the other two factions. Also, Wolf's bow training is mandatory for New Camp players — an elite crossbow paired with explosive bolts is priceless in the group battles of Chapter 3.</div>
                 </div>
             </div>
 
-            <!-- 沼泽营地第二章 -->
+            <!-- Swamp Camp Chapter 2 -->
             <div class="timeline-step" data-step="11">
                 <div class="step-card">
-                    <h3>🌀 沼泽营地路线（Swamp Camp）——灵魂魔法的修行者</h3>
-                    <p>加入沼泽营地后，你的身份是<strong>见习修士（Novice）</strong>，获得<strong>见习修士袍（Novice Robe）</strong>。沼泽营地的路线与其他两个阵营完全不同——你并不去挖掘矿石或打仗，而是沉浸在兄弟会（Brotherhood）的修行体系中，学习<strong>灵魂魔法（Psionic Magic）</strong>——全游戏最独特的法术体系。</p>
+                    <h3>🌀 Swamp Camp Route — Adept of Psionic Magic</h3>
+                    <p>After joining the Swamp Camp, your rank is <strong>Novice</strong>, and you receive the <strong>Novice Robe</strong>. The Swamp Camp route is entirely different from the other two factions — you're not digging ore or waging battles, but immersing yourself in the Brotherhood's training system and learning <strong>Psionic Magic</strong> — the most unique spell system in the game.</p>
 
-                    <h4>核心任务线：导师试炼的延续</h4>
-                    <p>你在第一章已经获得了四位导师的认可（纳米布、提昂、奥伦、卡达尔），第二章是这些试炼的深入阶段。每位导师现在会给你更高级的考验，通过后将解锁对应领域的法术和能力：</p>
+                    <h4>Core Questline: Continuing the Mentor Trials</h4>
+                    <p>You've already earned the approval of four mentors in Chapter 1 (Namib, Tyon, Orun, Cadar). Chapter 2 deepens these trials. Each mentor now presents higher-level challenges; passing them unlocks spells and abilities in their respective domains:</p>
                     <ul class="quest-list">
-                        <li><strong>纳米布（Namib）的试炼进阶</strong>——纳米布考验你的精神韧性和意志力。他的进阶试炼要求你进入深度冥想状态，在幻境中面对自己的恐惧。通过后解锁<strong>心灵致动（Telekinesis）</strong>法术——可以远程拾取物品、触发机关，是探索中极为实用的技能。</li>
-                        <li><strong>提昂（Tyon）的试炼进阶</strong>——提昂专注于沉睡者的教义和符文知识。他的进阶试炼是一系列知识问答和符文解读，通过后可以学习<strong>睡眠术（Sleep）</strong>——让单体敌人陷入昏睡，对大部分非BOSS敌人有效（包括部分亡灵），持续时间约15秒。这是沼泽营地路线的核心控场法术。</li>
-                        <li><strong>奥伦（Orun）的试炼进阶</strong>——奥伦管后勤和纪律。他的进阶试炼很实际：你需要去沼泽深处采集稀有的<strong>沼泽草药（Swampweed）</strong>原株，并学会正确调制。通过后解锁<strong>恐惧术（Fear）</strong>——让敌人陷入恐惧状态并逃跑，对集群敌人和精英敌人特别有效。恐惧术的冷却时间较长（90秒），但施法成功率高。</li>
-                        <li><strong>卡达尔（Cadar）的试炼进阶</strong>——卡达尔是灵魂魔法的高级修行者。他的进阶试炼最危险：需要你进入沼泽深处的<strong>灵魂祭坛</strong>，击败被沉睡者力量扭曲的<strong>精神体（Psionic Wraith）</strong>。通过后解锁<strong>风锤术（Wind Hammer）</strong>——范围击退+伤害，是沼泽营地路线的核心AOE法术。</li>
+                        <li><strong>Namib's Advanced Trial</strong> — Namib tests your mental resilience and willpower. His advanced trial requires you to enter a deep meditative trance and confront your fears in a vision realm. Upon completion, you unlock the <strong>Telekinesis</strong> spell — remotely pick up items and trigger mechanisms, an invaluable utility skill for exploration.</li>
+                        <li><strong>Tyon's Advanced Trial</strong> — Tyon focuses on Sleeper doctrine and runic knowledge. His advanced trial is a series of knowledge quizzes and rune interpretations. Passing unlocks the <strong>Sleep</strong> spell — puts a single enemy into slumber; effective against most non-boss enemies (including some undead), duration roughly 15 seconds. This is the core crowd-control spell of the Swamp Camp route.</li>
+                        <li><strong>Orun's Advanced Trial</strong> — Orun handles logistics and discipline. His advanced trial is practical: venture into the deep swamp to harvest raw <strong>Swampweed</strong> specimens and learn to properly process them. Passing unlocks the <strong>Fear</strong> spell — sends enemies fleeing in terror, particularly effective against groups and elite enemies. Fear has a lengthy cooldown (90 seconds) but a high cast success rate.</li>
+                        <li><strong>Cadar's Advanced Trial</strong> — Cadar is a high-level adept of psionic magic. His advanced trial is the most dangerous: you must enter the <strong>Soul Altar</strong> deep in the swamp and defeat a <strong>Psionic Wraith</strong> twisted by the Sleeper's power. Passing unlocks <strong>Wind Hammer</strong> — a frontal cone AoE knockback + damage, the core area-damage spell of the Swamp Camp route.</li>
                     </ul>
 
-                    <h4>沼泽草仪式和沉睡者崇拜</h4>
+                    <h4>The Swampweed Ritual and Sleeper Worship</h4>
                     <ul class="quest-list">
-                        <li><strong>沼泽草仪式（Swampweed Ritual）</strong>——这是沼泽营地第二章的标志性事件。兄弟会会举行一次集体仪式，所有修士在导师的引导下吸食沼泽草的萃取物，进入集体幻境。在幻境中，你会第一次<strong>"听到"沉睡者（The Sleeper）的声音</strong>——不是语言，而是一种情感波动和视觉片段。这段时间的体验因人而异：有人感到安宁和启示，有人感到恐惧和压迫。你的感受取决于你在试炼中的选择。</li>
-                        <li><strong>佛图诺（Fortuno）</strong>——沼泽营地的草药供应者，他每天都在营地中央熬制沼泽草。和他保持良好关系非常重要——他会每天免费给你一份沼泽草（用于回蓝），而且他的对话里藏着很多关于沉睡者本质的暗示。</li>
+                        <li><strong>The Swampweed Ritual</strong> — This is the signature event of Swamp Camp Chapter 2. The Brotherhood holds a collective ceremony where all adepts, guided by the mentors, inhale swampweed extract and enter a shared vision. In the vision, you will <strong>"hear" the Sleeper's voice</strong> for the first time — not as language, but as waves of emotion and visual fragments. Each person's experience differs: some feel peace and revelation, others feel dread and oppression. Your experience depends on the choices you made in your trials.</li>
+                        <li><strong>Fortuno</strong> — The Swamp Camp's herb supplier; he brews swampweed at the camp center every day. Maintaining a good relationship with him is crucial — he'll give you a free daily dose of swampweed (used for mana restoration), and his dialogue is filled with hints about the Sleeper's true nature.</li>
                     </ul>
 
-                    <h4>沼泽营地特有法术一览</h4>
-                    <p>第二章结束时，你作为见习修士可以获得以下法术（全部或部分，取决于你完成了哪些导师的试炼）：</p>
+                    <h4>Swamp Camp Exclusive Spell List</h4>
+                    <p>By the end of Chapter 2, as a Novice you can acquire the following spells (all or some, depending on which mentor trials you completed):</p>
                     <ul class="quest-list">
-                        <li><strong>睡眠术（Sleep）</strong>——15法力，单体，让敌人沉睡15秒。睡着的敌人可以被一击暗杀（无视剩余血量）。</li>
-                        <li><strong>恐惧术（Fear）</strong>——25法力，范围，让区域内的敌人恐惧逃跑10秒。被恐惧的敌人不会攻击你，但逃跑时会警告附近的同伴。</li>
-                        <li><strong>心灵致动（Telekinesis）</strong>——5法力/秒持续消耗，远程拾取/操作。开不了锁的箱子？用心灵致动把里面的东西"拉"出来。</li>
-                        <li><strong>风锤术（Wind Hammer）</strong>——30法力，前方扇形范围击退+中等伤害。围攻时释放可以瞬间清场。</li>
-                        <li><strong>灵魂感知（Psionic Sense）</strong>——被动技能，小地图上显示附近生物的位置（包括墙后的敌人）。探索和潜行神器。</li>
+                        <li><strong>Sleep</strong> — 15 Mana, single-target, puts an enemy to sleep for 15 seconds. Sleeping enemies can be killed with a single stealth finisher (bypassing all remaining HP).</li>
+                        <li><strong>Fear</strong> — 25 Mana, AoE, makes enemies in the area flee in terror for 10 seconds. Feared enemies won't attack you but may alert nearby allies while fleeing.</li>
+                        <li><strong>Telekinesis</strong> — 5 Mana/second sustained cost, remote pickup/manipulation. Can't open a locked chest? Use Telekinesis to "pull" the contents out.</li>
+                        <li><strong>Wind Hammer</strong> — 30 Mana, frontal cone knockback + medium damage. Cast when surrounded to instantly clear space.</li>
+                        <li><strong>Psionic Sense</strong> — Passive skill, displays nearby creature positions on the minimap (including enemies behind walls). A game-changer for exploration and stealth.</li>
                     </ul>
 
-                    <div class="pro-tip"><strong>💡 实战心得：</strong>沼泽营地路线在战斗上比其他阵营弱（因为缺少重甲和高攻武器），但控制能力全游戏第一。第二章的正确打法是以控场为主：睡眠术控住最危险的敌人→处理小兵→最后单挑被睡住的BOSS。另外，心灵致动在探索中有大量隐藏用法——比如在矿道里可以远程触发爆炸矿石清怪，不用自己冒险走到陷阱附近。</div>
+                    <div class="pro-tip"><strong>💡 Combat wisdom:</strong> The Swamp Camp route is weaker in raw combat than the other factions (lacking heavy armor and high-damage weapons), but its crowd-control capability is the best in the game. The correct approach for Chapter 2 is control-first combat: Sleep the most dangerous enemy → clean up the adds → solo the sleeping boss last. Additionally, Telekinesis has countless hidden exploration uses — for example, remotely triggering explosive ore deposits to clear monsters in the mines without risking a close approach to the trap zone.</div>
                 </div>
             </div>
 
-            <!-- 第二章共享发展 -->
+            <!-- Chapter 2 Shared Content -->
             <div class="timeline-step" data-step="12">
                 <div class="step-card">
-                    <h3>第二章跨阵营共享内容</h3>
-                    <p>不管你选哪个阵营，第二章都会有一些共同的发展让你开始窥见整件事的真相：</p>
+                    <h3>Cross-Faction Shared Content in Chapter 2</h3>
+                    <p>Regardless of your faction, Chapter 2 includes shared developments that begin to unveil the truth behind everything:</p>
 
-                    <h4>矿石的秘密</h4>
+                    <h4>The Secret of Ore</h4>
                     <ul class="quest-list">
-                        <li>所有阵营都会在不同场景中发现：<strong>矿石"不对劲"</strong>。旧营地路线的玩家在矿道中听到矿工说矿石散发着奇怪的"暖意"。新营地路线的玩家从萨图拉斯那里得知矿石是魔法导体。沼泽营地的玩家在仪式幻境中看到矿石在"发光"。</li>
-                        <li>矿石为什么如此重要？不仅因为它值钱——它似乎与<strong>魔法屏障（Magical Barrier）</strong>有直接的能量联系。这个线索会在第三章大幅展开。</li>
+                        <li>Every faction, through different scenes, discovers that <strong>the ore is "off."</strong> Old Camp players hear miners say the ore radiates an odd "warmth." New Camp players learn from Saturas that ore is a magical conductor. Swamp Camp players see the ore "glowing" during ritual visions.</li>
+                        <li>Why is ore so important? Not just because it's valuable — it appears to have a direct energy link to the <strong>Magical Barrier</strong>. This thread expands dramatically in Chapter 3.</li>
                     </ul>
 
-                    <h4>沉睡者的最初迹象</h4>
+                    <h4>The First Signs of the Sleeper</h4>
                     <ul class="quest-list">
-                        <li>沼泽营地的玩家通过仪式直接感知到沉睡者的存在——但另外两个阵营也会通过各自的途径察觉到同样的东西。</li>
-                        <li>旧矿区的矿工们报告说矿道深处传来了"低语声"。旧营地的守卫们私下说最近晚上做的噩梦越来越频繁。</li>
-                        <li>新营地的水法师正在监测到一种从地底深处传来的魔法波动——萨图拉斯称其为"地脉扰动（Ley Line Disturbance）"。</li>
+                        <li>Swamp Camp players sense the Sleeper's presence directly through rituals — but the other two camps detect the same thing through their own channels.</li>
+                        <li>Miners in the Old Mine report "whispers" coming from deep within the tunnels. Old Camp guards privately admit that their nightmares have been getting worse and more frequent.</li>
+                        <li>The New Camp's Water Mages are monitoring a magical fluctuation rising from deep underground — Saturas calls it a "Ley Line Disturbance."</li>
                     </ul>
 
-                    <h4>推荐第二章结束时状态</h4>
+                    <h4>Recommended Status by End of Chapter 2</h4>
                     <ul class="quest-list">
-                        <li>等级 8-12（取决于阵营和完成度）</li>
-                        <li>主力武器技能 30%-45%</li>
-                        <li>已获得阵营专属护甲（暗影护甲/盗匪装束/见习修士袍）</li>
-                        <li>已学会至少一个核心法术（所有阵营都有途径学到）</li>
-                        <li>矿石储备 500+（为第三章的装备升级做准备）</li>
-                        <li>已探索旧矿区/自由矿场的主要区域</li>
+                        <li>Level 8-12 (varies by faction and completionism)</li>
+                        <li>Primary weapon skill 30%-45%</li>
+                        <li>Faction-exclusive armor obtained (Shadow Armor / Bandit's Dress / Novice Robe)</li>
+                        <li>At least one core spell learned (all factions have a path to learn one)</li>
+                        <li>Ore reserves 500+ (to prepare for Chapter 3 gear upgrades)</li>
+                        <li>Main areas of Old Mine / Free Mine explored</li>
                     </ul>
                 </div>
             </div>
@@ -508,93 +508,93 @@ a{color:var(--color-accent);text-decoration:none}
 
     <!-- CHAPTER 3 -->
     <section id="act3" class="guide-section">
-        <h2 class="phase-header">第三章：沉睡者的阴影 <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">预计5-8小时</span></h2>
-        <div class="info-box important"><strong>📌 概述：</strong>第三章是游戏的世界观深度展开——沉睡者（The Sleeper）的影响力不再仅仅是背景设定，而是开始<strong>直接干预</strong>你的游戏体验。NPC们开始做噩梦，怪物的行为模式变得异常，矿区地下发现了比矿石更古老的秘密。这一章的战斗强度明显上升，是检验你的装备和技能搭配是否合理的关键阶段。</div>
+        <h2 class="phase-header">Chapter 3: The Sleeper's Shadow <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">Estimated 5-8 hours</span></h2>
+        <div class="info-box important"><strong>📌 Overview:</strong> Chapter 3 is the deep world-building phase — the Sleeper's influence moves beyond background lore and begins to <strong>directly intervene</strong> in your gameplay experience. NPCs start having nightmares, monster behavior patterns become abnormal, and something older than the ore itself is discovered beneath the mines. Combat intensity rises sharply in this chapter — it's the critical test of whether your gear and skill build are sound.</div>
 
         <div class="walkthrough-timeline">
             <div class="timeline-step" data-step="13">
                 <div class="step-card">
-                    <h3>沉睡者的影响力升级</h3>
+                    <h3>The Sleeper's Influence Escalates</h3>
 
-                    <h4>噩梦席卷全矿区</h4>
-                    <p>第三章一开始，你会发现所有营地的NPC都在抱怨同一件事——<strong>噩梦</strong>。守卫、矿工、商贩、甚至法师，每个人晚上都梦到同一个场景：一个巨大的地下存在在呼唤他们。具体表现因阵营而异：</p>
+                    <h4>Nightmares Sweep the Colony</h4>
+                    <p>At the start of Chapter 3, you'll find NPCs across all camps complaining about the same thing — <strong>nightmares</strong>. Guards, miners, merchants, even mages — everyone dreams the same scene: a vast underground presence calling to them. The specifics vary by faction:</p>
                     <ul class="quest-list">
-                        <li><strong>旧营地</strong>——守卫们夜里惊醒，发现营火无故熄灭。弗莱彻说他梦中看到了"一座由矿石构成的巨大神殿"。迪亚哥私下告诉你戈麦斯最近脾气更加暴躁，好像有什么东西在影响他。</li>
-                        <li><strong>新营地</strong>——水法师们监测到的地脉扰动频率从每天一次变成了每小时数次。萨图拉斯召开紧急会议，认为"源头正在醒来"。李加强了营地的夜间巡逻——不是防怪物，是防某种"看不见的东西"。</li>
-                        <li><strong>沼泽营地</strong>——兄弟会的修士们认为这是沉睡者即将"降临"的征兆。导师们分成两派：一派认为应该献上更多的沼泽草以安抚沉睡者，另一派（以提昂为首）开始质疑沉睡者的意图是否真的如教义所说那样"仁慈"。</li>
+                        <li><strong>Old Camp</strong> — Guards wake in the night to find the campfires extinguished for no reason. Fletcher says he saw "a massive temple of ore" in his dreams. Diego privately tells you that Gomez has become more irascible lately, as if something is influencing him.</li>
+                        <li><strong>New Camp</strong> — The Water Mages' Ley Line Disturbance readings have jumped from once per day to multiple times per hour. Saturas convenes an emergency meeting, concluding that "the source is awakening." Lee reinforces the night patrols — not against monsters, but against something "unseen."</li>
+                        <li><strong>Swamp Camp</strong> — The Brotherhood's adepts believe this is a sign of the Sleeper's imminent "descent." The mentors split into two factions: one believes they should offer more swampweed to appease the Sleeper, the other (led by Tyon) begins questioning whether the Sleeper's intentions are truly as "benevolent" as the doctrine claims.</li>
                     </ul>
 
-                    <h4>怪物行为异常</h4>
-                    <p>所有区域的怪物开始出现不正常的聚集行为。之前分散在各地的怪物群现在会主动向矿区方向移动——被观测到的有食腐兽群、暗影兽群，甚至有目击报告称看到了<strong>兽人巡逻队</strong>在矿区外围出现。野外的危险等级提高了至少两档：</p>
+                    <h4>Monster Behavior Anomalies</h4>
+                    <p>Monsters across all regions begin exhibiting abnormal clustering behavior. Previously scattered groups now actively move toward the mine areas — scavenger packs, shadowbeast packs have been observed, and there are even reports of <strong>Orc patrols</strong> appearing on the mine perimeter. The danger level of the wilderness has jumped at least two notches:</p>
                     <ul class="quest-list">
-                        <li><strong>食腐兽（Scavenger）</strong>和<strong>肉食虫（Meatbug）</strong>数量减少——它们被更大型的掠食者取代了。</li>
-                        <li><strong>暗影兽（Shadowbeast）</strong>的巡逻范围扩大到了之前的安全区域。</li>
-                        <li>在旧矿区外围首次出现<strong>亡灵（Undead）</strong>——骷髅兵和僵尸，对普通物理攻击有抗性。<strong>必须使用银制武器、圣水附魔武器或火系魔法</strong>才能高效击杀。</li>
+                        <li><strong>Scavenger</strong> and <strong>Meatbug</strong> populations are dwindling — they're being replaced by larger predators.</li>
+                        <li><strong>Shadowbeast</strong> patrol ranges have expanded into previously safe zones.</li>
+                        <li><strong>Undead</strong> appear for the first time on the Old Mine perimeter — skeletons and zombies, resistant to ordinary physical attacks. <strong>You must use silver weapons, holy-water-blessed weapons, or fire magic</strong> to deal with them efficiently.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="timeline-step" data-step="14">
                 <div class="step-card">
-                    <h3>远古遗迹——矿区下面的东西</h3>
-                    <p>这是第三章最核心的发现。在旧矿区最深处的矿道下方，矿工们炸开了一面非天然的墙壁——后面是一座<strong>远古建筑群</strong>，比已知的任何人类文明都要古老得多。三个阵营对这个发现的反应截然不同：</p>
+                    <h3>The Ancient Ruins — What Lies Beneath the Mine</h3>
+                    <p>This is the most pivotal discovery of Chapter 3. In the deepest section beneath the Old Mine, miners blast open a non-natural wall — behind it lies an <strong>ancient architectural complex</strong>, far older than any known human civilization. The three factions react in starkly different ways:</p>
 
-                    <h4>远古遗迹探索要点</h4>
+                    <h4>Ancient Ruins Exploration Essentials</h4>
                     <ul class="quest-list">
-                        <li><strong>遗迹入口</strong>——位于旧矿区深层矿道（第二章的矿区爬虫巢穴再往下一层）。入口处有大量亡灵守卫（8-10只骷髅兵+2只亡灵祭司），建议10级以上，带银制武器和10个以上治疗药水。</li>
-                        <li><strong>前厅（Antechamber）</strong>——进门后是一个巨大的圆形大厅，墙壁上刻满了你从未见过的文字。如果你在沼泽营地学习了灵魂感知，能在这里感应到强烈的魔法残留。大厅中央有一个<strong>失活的传送石板</strong>——目前无法使用，但萨图拉斯告诉你这可能是屏障的核心部件之一。</li>
-                        <li><strong>左侧回廊——藏书室</strong>——远古文明留下的石板和卷轴（部分已经被翻译成通用语）。里面有关于矿石起源的第一手记载：原来这些矿石并非天然矿产，而是被称为<strong>"导向石"（Conduit Stone）</strong>的人造物质——一种远古文明用来构建大型魔法结构的核心材料。</li>
-                        <li><strong>右侧回廊——仪式厅</strong>——这里有沉睡者的<strong>第一座神像</strong>（或者说它的容器/化身）。神像周围有强力的魔法结界，无法直接靠近。你需要破坏厅内四个角落的矿石支柱（用钝器或火系魔法）来解除结界。结界的中心有一把<strong>远古武器</strong>——随机生成，品质为紫色稀有级，是对你当前技能的强力升级。</li>
-                        <li><strong>深处的封印之门</strong>——遗迹最深处有一扇巨大的石门，上面刻着和屏障符文相同的图案。门上有一个凹槽，形状正好是一块<strong>导向石</strong>。现在你还打不开——这是第四章的关键。</li>
+                        <li><strong>Ruins Entrance</strong> — Located one level below the Old Mine Deep Tunnels (beyond the Minecrawler nest from Chapter 2). The entrance is guarded by a large undead force (8-10 skeletons + 2 Undead Priests). Recommended level 10+, bring a silver weapon and 10+ healing potions.</li>
+                        <li><strong>Antechamber</strong> — Upon entering, a vast circular hall with walls covered in unrecognizable script. If you learned Psionic Sense from the Swamp Camp, you'll detect intense magical residue here. The hall's center holds a <strong>dormant teleportation slab</strong> — currently unusable, but Saturas tells you it may be a core component of the barrier.</li>
+                        <li><strong>Left Corridor — Library</strong> — Stone tablets and scrolls left by the ancient civilization (some already translated into common tongue). Contains first-hand records on the origin of ore: these are not natural minerals, but artificially created substances called <strong>"Conduit Stone"</strong> — core materials used by an ancient civilization to construct large-scale magical structures.</li>
+                        <li><strong>Right Corridor — Ritual Chamber</strong> — Here stands the <strong>first effigy of the Sleeper</strong> (or rather, its vessel/avatar). The effigy is surrounded by a powerful magical barrier and cannot be approached directly. You must destroy the four ore pillars in the corners of the chamber (use blunt weapons or fire magic) to dispel the barrier. At the barrier's center lies an <strong>Ancient Weapon</strong> — randomly generated, purple (rare) quality, a major upgrade to your current setup.</li>
+                        <li><strong>The Sealed Gate at the Depths</strong> — At the deepest point of the ruins, a massive stone door inscribed with the same runic patterns as the barrier. The door has a recess shaped exactly like a piece of <strong>Conduit Stone</strong>. You can't open it yet — this is the key to Chapter 4.</li>
                     </ul>
 
-                    <div class="warning-box"><strong>⚠️ 难度提示：</strong>亡灵祭司（Undead Priest）是第三章最危险的敌人类型。他们会远程释放黑暗魔法弹（无视护甲减伤），还会复活被你打倒的骷髅兵。打亡灵祭司的正确顺序是：先解决祭司（用远程打断施法或睡眠术控制），再清理骷髅兵，最后回来补刀祭司。如果让两个以上的亡灵祭司同时在场，基本上就是跑路的节奏。</div>
+                    <div class="warning-box"><strong>⚠️ Difficulty note:</strong> Undead Priests are the most dangerous enemy type in Chapter 3. They fire dark magic projectiles at range (bypassing armor reduction) and can resurrect skeletons you've already defeated. The correct order for fighting Undead Priests: eliminate the priest first (interrupt casting with ranged attacks or control with Sleep), then clean up skeletons, then finish off the priest. If more than two Undead Priests are active simultaneously, the correct play is to run.</div>
                 </div>
             </div>
 
             <div class="timeline-step" data-step="15">
                 <div class="step-card">
-                    <h3>三阵营冲突升级</h3>
-                    <p>随着远古遗迹的发现和矿石真相的浮现，三个阵营之间的矛盾从暗中较劲变成了<strong>公开冲突</strong>：</p>
+                    <h3>Three-Faction Conflict Escalates</h3>
+                    <p>With the discovery of the Ancient Ruins and the truth about ore surfacing, the tension between the three factions escalates from shadow games into <strong>open conflict</strong>:</p>
 
                     <ul class="quest-list">
-                        <li><strong>旧营地 vs 新营地</strong>——戈麦斯得知新营地在自由矿场发现了水法师的研究站后，直接下令封锁进入新营地的山道。新营地的应对是加强自由矿场的防御工事，同时派雇佣兵小队在旧矿区外围伏击旧营地的运输队。两边的NPC现在会对不属于自己阵营的玩家表现出敌意——如果你在旧营地有前科（比如偷过东西被抓），进入新营地后的NPC对话选项会受影响。</li>
-                        <li><strong>沼泽营地 vs 其他两方</strong>——兄弟会内部出现了分裂。激进派（以奥伦为首）认为应该"将沉睡者的恩赐扩散到所有营地"——实际上就是强制传教。温和派（以提昂和纳米布为首）认为这样做会引发战争。你的选择会影响沼泽营地在第四章的走向——支持温和派会获得更多外交任务，支持激进派会获得更强的战斗法术奖励但失去部分盟友。</li>
-                        <li><strong>三方之间的"第三方"</strong>——在主线冲突之外，有一些中立的NPC开始提供跨阵营的任务。<strong>迪亚哥</strong>（旧营地）、<strong>赖斯</strong>（新营地）和<strong>佛图诺</strong>（沼泽营地）实际上一直在秘密联络——他们对各自阵营领导层的决策都有自己的担忧。如果你在三个阵营都建立了足够的好感度，可以触发一条隐藏的"中立联盟"任务线。</li>
+                        <li><strong>Old Camp vs. New Camp</strong> — Upon learning that the New Camp discovered the Water Mage research station in the Free Mine, Gomez directly orders the mountain pass to the New Camp sealed. The New Camp responds by fortifying the Free Mine defenses and dispatching mercenary squads to ambush Old Camp supply convoys on the mine perimeter. NPCs from both sides now show hostility toward players not of their faction — if you have a criminal record in the Old Camp (like being caught stealing), NPC dialogue options in the New Camp will be affected.</li>
+                        <li><strong>Swamp Camp vs. The Other Two</strong> — The Brotherhood fractures internally. The Orthodox faction (led by Orun) believes they should "spread the Sleeper's blessing to all camps" — essentially forced conversion. The Reformists (led by Tyon and Namib) argue this will trigger war. Your choice affects the Swamp Camp's trajectory in Chapter 4 — supporting the Reformists yields more diplomatic quests; supporting the Orthodox faction yields stronger combat spell rewards but costs you some allies.</li>
+                        <li><strong>A "Third Side" Among the Three</strong> — Outside the main conflict, certain neutral NPCs begin offering cross-faction quests. <strong>Diego</strong> (Old Camp), <strong>Lares</strong> (New Camp), and <strong>Fortuno</strong> (Swamp Camp) have actually been secretly communicating — they share concerns about their respective leadership's decisions. If you've built sufficient reputation across all three camps, you can trigger a hidden "Neutral Alliance" questline.</li>
                     </ul>
 
-                    <h4>第三章关键决策</h4>
-                    <p>本章内有几个会影响后续剧情的<strong>不可逆选择</strong>：</p>
+                    <h4>Chapter 3 Key Decisions</h4>
+                    <p>Several <strong>irreversible choices</strong> in this chapter affect the subsequent story:</p>
                     <ul class="quest-list">
-                        <li>在远古遗迹中选择<strong>拿走还是保留远古武器</strong>——拿走会提前触发亡灵暴动，保留则会在第四章获得额外的遗迹探索线索。</li>
-                        <li>在兄弟会内部分裂中选择<strong>支持提昂（温和派）还是奥伦（激进派）</strong>——这决定第四章沼泽营地NPC对你的态度。</li>
-                        <li>是否将<strong>远古遗迹的情报</strong>分享给你所在阵营的领袖——分享会加速主线推进但触发第四章的阵营冲突提早到来，隐瞒则会给你更多自由探索的时间但减少阵营好感度。</li>
+                        <li>In the Ancient Ruins, choose whether to <strong>take or leave the Ancient Weapon</strong> — taking it prematurely triggers an undead uprising; leaving it grants additional ruin exploration clues in Chapter 4.</li>
+                        <li>In the Brotherhood schism, choose whether to <strong>support Tyon (Reformist) or Orun (Orthodox)</strong> — this determines how Swamp Camp NPCs treat you in Chapter 4.</li>
+                        <li>Whether to <strong>share the Ancient Ruins intelligence</strong> with your faction leader — sharing accelerates the main story but triggers the Chapter 4 faction conflict earlier; withholding gives you more time for free exploration but reduces faction reputation.</li>
                     </ul>
 
-                    <div class="pro-tip"><strong>💡 实战心得：</strong>第三章的远古遗迹里藏着一件紫色品质的装备（武器或护甲随机），位置在仪式厅天花板上的一个隐藏壁龛——需要用心灵致动（如果你是沼泽营地）或者搭木箱爬上去（如果你是另外两个阵营）才能拿到。这件装备的属性远超你在商店能买到的任何东西，拿到它之后第三到第四章的战斗会轻松非常多。我在三周目才发现这个隐藏点，之前都是硬扛过去的……</div>
+                    <div class="pro-tip"><strong>💡 Combat wisdom:</strong> The Ancient Ruins in Chapter 3 hide a purple-quality item (random weapon or armor), located in a hidden alcove in the Ritual Chamber ceiling — you need Telekinesis (if Swamp Camp) or stacked crates to climb up (if either of the other two factions) to reach it. This piece of gear's stats far surpass anything you can buy from merchants, and having it makes the combat from Chapter 3 through Chapter 4 dramatically easier. I didn't discover this hiding spot until my third playthrough — before that, I suffered through those fights the hard way...</div>
                 </div>
             </div>
 
             <div class="timeline-step" data-step="16">
                 <div class="step-card">
-                    <h3>首次直接接触沉睡者的力量</h3>
-                    <p>第三章的结尾是一场<strong>无法避免的剧情遭遇战</strong>——你第一次感受到沉睡者对你个人的直接注意。当你从远古遗迹返回地面时，会被一股<strong>心灵力量（Telepathic Force）</strong>强行拉入幻觉状态（无论你在哪个营地、什么等级）：</p>
+                    <h3>First Direct Contact with the Sleeper's Power</h3>
+                    <p>The end of Chapter 3 features an <strong>unavoidable story encounter</strong> — your first taste of the Sleeper's personal attention directed at you. Upon returning to the surface from the Ancient Ruins, a <strong>telepathic force</strong> violently pulls you into a hallucinatory state (regardless of your faction or level):</p>
                     <ul class="quest-list">
-                        <li>幻觉中你会看到一个巨大的地下空间（后来证实是第四章/终章的兽人神殿）。</li>
-                        <li>沉睡者通过心灵感应与你"对话"——不是语言，而是一串情感和图像的冲击波。你感受到它的存在是<strong>古老、扭曲且痛苦</strong>的——它既不是神也不是恶魔，而是某种被困住的、正在失控的能量体。</li>
-                        <li>如果你在沼泽营地路线中已经多次参与了沼泽草仪式，这次接触会更加强烈——你会直接看到矿石"导向石"的本质：它们是<strong>沉睡者的能量导管</strong>，每一块被挖出来的矿石都在削弱屏障、也让沉睡者的力量向外渗透得更快。</li>
+                        <li>In the vision, you see a vast underground chamber (later confirmed to be the Orc Temple of Chapter 4 / Final Chapter).</li>
+                        <li>The Sleeper "speaks" to you telepathically — not in words, but as an onslaught of emotions and images. You sense its existence is <strong>ancient, twisted, and in agony</strong> — it is neither god nor demon, but a trapped, spiraling-out-of-control energy entity.</li>
+                        <li>If you participated in multiple swampweed rituals on the Swamp Camp route, this contact will be even more intense — you'll directly perceive the true nature of the Conduit Stones: they are <strong>the Sleeper's energy conduits</strong>. Every piece of ore mined weakens the barrier and accelerates the Sleeper's power leaking outward.</li>
                     </ul>
-                    <p>这次遭遇之后，你的角色会获得一个<strong>永久被动效果</strong>：对沉睡者力量影响范围内的怪物伤害+15%（因为你现在能"感知"到它们的能量波动了）。但同时，你的角色在睡觉时偶尔会触发短暂的幻觉——不影响游戏性，纯氛围。</p>
+                    <p>After this encounter, your character gains a <strong>permanent passive effect</strong>: +15% damage against monsters within the Sleeper's sphere of influence (because you can now "sense" their energy fluctuations). However, your character will occasionally experience brief hallucinations while sleeping — purely atmospheric, no gameplay impact.</p>
 
-                    <h4>第三章结束时推荐状态</h4>
+                    <h4>Recommended Status by End of Chapter 3</h4>
                     <ul class="quest-list">
-                        <li>等级 12-16</li>
-                        <li>主力武器技能 45%-60%</li>
-                        <li>已装备阵营进阶护甲或远古遗迹紫装</li>
-                        <li>至少一件银制/圣水附魔武器（对付亡灵必须）</li>
-                        <li>治疗药水储备 15+，法力药水 5+（法师路线 10+）</li>
-                        <li>远古遗迹的前厅、藏书室、仪式厅已全部探索</li>
-                        <li>封印之门已发现但尚未打开</li>
+                        <li>Level 12-16</li>
+                        <li>Primary weapon skill 45%-60%</li>
+                        <li>Equipped with faction advanced armor or Ancient Ruins purple gear</li>
+                        <li>At least one silver / holy-water-blessed weapon (mandatory for undead)</li>
+                        <li>Healing potion reserves 15+, Mana potions 5+ (mage route: 10+)</li>
+                        <li>Ancient Ruins Antechamber, Library, and Ritual Chamber fully explored</li>
+                        <li>Sealed Gate discovered but not yet opened</li>
                     </ul>
                 </div>
             </div>
@@ -603,125 +603,125 @@ a{color:var(--color-accent);text-decoration:none}
 
     <!-- CHAPTER 4 -->
     <section id="act4" class="guide-section">
-        <h2 class="phase-header">第四章：放逐与转折 <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">预计5-8小时</span></h2>
-        <div class="info-box important"><strong>📌 概述：</strong>第四章是游戏剧情最大的转折点。每个阵营都会经历一场重大的变故——对于旧营地路线的玩家来说，这是整个游戏最艰难但也最精彩的部分。即便你不在旧营地，沉睡者力量的加速觉醒也会迫使你的阵营做出艰难的抉择，最终所有道路汇聚到同一个终点：兽人神殿。</div>
+        <h2 class="phase-header">Chapter 4: Banishment & Turning Points <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">Estimated 5-8 hours</span></h2>
+        <div class="info-box important"><strong>📌 Overview:</strong> Chapter 4 is the biggest narrative turning point in the game. Every faction undergoes a major upheaval — for Old Camp route players, this is the most brutal but also most brilliant part of the entire game. Even if you're not in the Old Camp, the accelerating awakening of the Sleeper's power forces your faction into difficult choices, and ultimately all roads converge toward a single destination: the Orc Temple.</div>
 
         <div class="walkthrough-timeline">
-            <!-- 旧营地放逐剧情 -->
+            <!-- Old Camp Banishment -->
             <div class="timeline-step" data-step="17">
                 <div class="step-card">
-                    <h3>🔥 旧营地路线——戈麦斯的背叛与放逐</h3>
-                    <p>这是整个Gothic 1 Remake最著名的剧情转折。当你从远古遗迹回来、向戈麦斯汇报发现后，这个独裁者做出了一个决定：<strong>你太危险了，不能留</strong>。</p>
+                    <h3>🔥 Old Camp Route — Gomez's Betrayal and Banishment</h3>
+                    <p>This is the most famous story twist in the entire Gothic 1 Remake. After you return from the Ancient Ruins and report your findings to Gomez, the dictator makes a decision: <strong>you're too dangerous to keep around</strong>.</p>
 
-                    <h4>放逐事件的完整流程</h4>
+                    <h4>Complete Banishment Event Walkthrough</h4>
                     <ul class="quest-list">
-                        <li><strong>触发条件</strong>——完成远古遗迹的发现汇报，并且戈麦斯意识到你知道了太多关于"导向石"的信息。戈麦斯从一开始就知道矿石有特殊属性——他一直在隐瞒这个信息，利用矿石私下与屏障外的势力做交易。</li>
-                        <li><strong>放逐场景</strong>——戈麦斯命令守卫队长索拉斯（Thorus）在全体旧营地成员面前宣布对你的放逐。索拉斯虽然是你之前的上级，但服从命令是他的天职。血印（Bloodwyn）和斯卡（Scar）也会在场——根据你在第二章时和他们的关系，他们的反应从"幸灾乐祸"到"面露愧疚"都会不同。</li>
-                        <li><strong>失去旧营地的一切</strong>——放逐后：
+                        <li><strong>Trigger Condition</strong> — Complete the Ancient Ruins discovery report, and Gomez realizes you know too much about the "Conduit Stones." Gomez knew the ore had special properties from the very beginning — he'd been concealing this information and privately trading ore with forces outside the barrier.</li>
+                        <li><strong>The Banishment Scene</strong> — Gomez orders Guard Captain Thorus to announce your banishment before the entire Old Camp assembly. Thorus was your superior, but duty is duty. Bloodwyn and Scar are also present — their reactions range from "smug satisfaction" to "visible guilt," depending on the relationship you built with them in Chapter 2.</li>
+                        <li><strong>Losing Everything in the Old Camp</strong> — After banishment:
                             <ul style="list-style:circle;margin-left:1.5rem;margin-top:.5rem">
-                                <li>你<strong>无法再进入旧营地</strong>——守卫会在城门口攻击你。</li>
-                                <li>你在旧营地的<strong>储物箱内容将被锁定</strong>——只能通过潜行潜入或者等到游戏后期取回。</li>
-                                <li>旧营地所有<strong>商人和训练师</strong>（弗莱彻、科里斯托等）不再为你服务。</li>
-                                <li>你在旧营地完成的<strong>任务声望归零</strong>——但经验值和技能保留。</li>
+                                <li>You can <strong>no longer enter the Old Camp</strong> — guards will attack you at the gates.</li>
+                                <li>Your <strong>storage chest contents are locked</strong> — you can only retrieve them by sneaking back in or waiting until late-game.</li>
+                                <li>All Old Camp <strong>merchants and trainers</strong> (Fletcher, Corristo, etc.) will no longer serve you.</li>
+                                <li>Your <strong>quest reputation</strong> in the Old Camp resets to zero — but your XP and skill levels are preserved.</li>
                             </ul>
                         </li>
                     </ul>
 
-                    <h4>迪亚哥的暗中援助——关键逃生</h4>
-                    <p>被放逐时最容易被忽略但最重要的NPC是<strong>迪亚哥（Diego）</strong>。他会在放逐前夜偷偷找到你，给你三样救命的东西：</p>
+                    <h4>Diego's Covert Aid — Critical Survival</h4>
+                    <p>The most easily overlooked but most important NPC during banishment is <strong>Diego</strong>. He secretly finds you the night before the banishment and gives you three life-saving items:</p>
                     <ul class="quest-list">
-                        <li><strong>你的装备</strong>——如果你之前在储物箱存了重要装备，迪亚哥帮你取出来了（但储物箱其余物品仍然被没收）。</li>
-                        <li><strong>逃离路线图</strong>——标注了旧营地外围守卫巡逻的盲区和时间窗口。按照迪亚哥给的路线走，你可以安全撤离而不触发额外的战斗。</li>
-                        <li><strong>一封推荐信</strong>——迪亚哥分别给了你写给新营地的<strong>赖斯（Lares）</strong>和沼泽营地的<strong>佛图诺（Fortuno）</strong>的推荐信。带信去找他们，可以跳过新阵营的入门试炼直接获得庇护。这是旧营地玩家最重要的后路。</li>
+                        <li><strong>Your Equipment</strong> — If you stored important gear in your chest, Diego retrieves it for you (but the rest of the chest's contents remain confiscated).</li>
+                        <li><strong>Escape Route Map</strong> — Marked with blind spots and time windows in the Old Camp perimeter guard patrols. Follow Diego's route to evacuate safely without triggering additional fights.</li>
+                        <li><strong>A Letter of Recommendation</strong> — Diego writes you separate letters to <strong>Lares</strong> of the New Camp and <strong>Fortuno</strong> of the Swamp Camp. Bring the letter to either and you can skip the new faction's entry trials and gain immediate sanctuary. This is the most important lifeline for an Old Camp player.</li>
                     </ul>
 
-                    <div class="warning-box"><strong>⚠️ 关键警告：</strong>被放逐后千万不要试图直接冲回旧营地取东西——门口至少有8个守卫，其中3个是精英级（15级+）。如果你执意要现在拿回储物箱物品，唯一可行的方法是：等到深夜，从旧营地后方没有城墙的山坡用跳跃攀爬（按空格键挂墙）绕进去，潜行到储物箱位置。需要潜行技能30%以上，或者有隐形药剂。否则请接受现实，等第五章再回来。</div>
+                    <div class="warning-box"><strong>⚠️ Critical warning:</strong> After banishment, do not attempt to charge back into the Old Camp to retrieve your items — there are at least 8 guards at the gates, 3 of whom are elite-tier (level 15+). If you absolutely must retrieve your chest items now, the only viable method is: wait until deep night, circle around to the hillside behind the Old Camp where there's no wall, use jump-climbing (press Space to mantle) to get over, and sneak to your chest location. Requires Sneak 30%+ or an invisibility potion. Otherwise, accept reality and retrieve your belongings in Chapter 5.</div>
 
-                    <h4>重建你的位置</h4>
-                    <p>被放逐后你有两个主要选择：投靠新营地或投靠沼泽营地。不管你选哪个，过程都类似：</p>
+                    <h4>Rebuilding Your Position</h4>
+                    <p>After banishment, you have two main options: seek refuge with the New Camp or the Swamp Camp. Regardless of your choice, the process is similar:</p>
                     <ul class="quest-list">
-                        <li><strong>投靠新营地</strong>——带上迪亚哥的信去找赖斯（Lares），他会安排你见李（Lee）。李对旧营地的叛逃者持欢迎态度（多一个雇佣兵多一个人打戈麦斯）。完成李给的一个证明任务后，你会获得<strong>雇佣兵护甲</strong>——和新营地玩家第二章拿到的相同，但属性会按你当前的等级自动升级。</li>
-                        <li><strong>投靠沼泽营地</strong>——带上迪亚哥的信去找佛图诺（Fortuno），他会帮你引见导师委员会。沼泽营地对旧营地叛逃者的态度比较复杂——纳诺布和提昂（温和派）欢迎你，奥伦（激进派）怀疑你。你需要通过一场特别的<strong>灵魂审判（Psionic Trial）</strong>——在集体幻觉中证明你对沉睡者的价值。</li>
+                        <li><strong>Join the New Camp</strong> — Bring Diego's letter to Lares, who will arrange a meeting with Lee. Lee is receptive to Old Camp defectors (one more mercenary means one more fighter against Gomez). Complete one proving quest from Lee and you'll receive <strong>Mercenary Armor</strong> — the same as what New Camp players got in Chapter 2, but its stats auto-scale to your current level.</li>
+                        <li><strong>Join the Swamp Camp</strong> — Bring Diego's letter to Fortuno, who will help you appeal to the mentor council. The Swamp Camp's attitude toward Old Camp defectors is more complex — Namib and Tyon (Reformists) welcome you; Orun (Orthodox) is suspicious. You'll need to pass a special <strong>Psionic Trial</strong> — proving your worth to the Sleeper within a collective vision.</li>
                     </ul>
-                    <p><strong>注意：</strong>被放逐后你的训练可能被打断——如果你之前在旧营地时力量训练到一半（45%/100%），你需要在新阵营找到对应训练师重新开始。新营地的力量训练师只有捷克的水平接近弗莱彻，沼泽营地则完全以法力训练为主。这意味着<strong>旧营地被放逐的纯力量战士可能会有一段痛苦的空窗期</strong>——提前在第三章把主力武器技能训练到位（至少60%+）非常重要。</p>
+                    <p><strong>Note:</strong> Your training progress may be interrupted after banishment — if you were mid-way through Strength training at the Old Camp (say 45%/100%), you'll need to find a corresponding trainer in the new faction to continue. The New Camp's Strength trainer is close to Fletcher's level; the Swamp Camp is almost exclusively mana-focused. This means <strong>pure Strength warriors banished from the Old Camp may face a painful training gap</strong> — it's critical to train your primary weapon skill to a solid level (at least 60%+) before the end of Chapter 3.</p>
                 </div>
             </div>
 
-            <!-- 新营地第四章 -->
+            <!-- New Camp Chapter 4 -->
             <div class="timeline-step" data-step="18">
                 <div class="step-card">
-                    <h3>💧 新营地路线——旧营地的全面进攻与沉睡者军队</h3>
-                    <p>新营地路线的玩家不会经历被放逐的剧情（因为你本来就不在旧营地），但第四章同样不是轻松之旅：</p>
+                    <h3>💧 New Camp Route — The Old Camp's All-Out Assault & The Sleeper's Army</h3>
+                    <p>New Camp route players won't experience the banishment storyline (since you were never in the Old Camp), but Chapter 4 is no walk in the park either:</p>
 
-                    <h4>旧营地的军事压力</h4>
+                    <h4>Military Pressure from the Old Camp</h4>
                     <ul class="quest-list">
-                        <li>戈麦斯在得知新营地掌握了远古遗迹情报和水法师研究后，决定先发制人。<strong>旧营地对新营地发动全面进攻</strong>——这是游戏中规模最大的一场阵营战斗（NPC-vs-NPC，约40+参战单位）。</li>
-                        <li>你需要协助李（Lee）布置大坝防线的防御工事。任务包括：设置陷阱（需要工程技能，可以用矿石向贾维斯购买陷阱材料）、分配防御位置（影响战斗中NPC的伤亡情况）、以及关键的爆破任务——如果新营地战况不利，炸毁通往大坝的唯一桥梁可以争取4小时的喘息时间。</li>
-                        <li>这场战斗的胜负取决于你第三章的准备：如果你在自由矿场挖够了矿石并升级了雇佣兵装备，新营地的防御力量会更强；如果你忽略了装备投资，战斗会比较惨烈（可能损失多名NPC，影响后续可选任务和奖励）。</li>
+                        <li>Upon learning that the New Camp has both the Ancient Ruins intelligence and the Water Mage research, Gomez decides to strike first. <strong>The Old Camp launches an all-out assault on the New Camp</strong> — this is the largest faction battle in the game (NPC-vs-NPC, roughly 40+ combatants).</li>
+                        <li>You must assist Lee in setting up the dam defensive line. Tasks include: placing traps (requires Engineering skill — buy trap materials from Jarvis using ore), assigning defensive positions (affects NPC casualty rates in the battle), and a critical demolition task — if the New Camp's situation turns dire, blowing the only bridge to the dam buys 4 hours of breathing room.</li>
+                        <li>The outcome of this battle depends on your Chapter 3 preparation: if you mined enough ore in the Free Mine and upgraded mercenary equipment, the New Camp's defensive strength will be higher; if you neglected equipment investment, the battle will be brutal (potentially losing multiple NPCs, affecting subsequent optional quests and rewards).</li>
                     </ul>
 
-                    <h4>沉睡者军队的出现</h4>
+                    <h4>The Sleeper's Army Emerges</h4>
                     <ul class="quest-list">
-                        <li>旧营地的进攻只是前奏。更大的威胁是<strong>沉睡者开始在矿区外围集结军队</strong>——兽人（Orcs）、亡灵祭司、被心灵控制的变异矿工。水法师萨图拉斯（Saturas）确认这股力量的源头就是远古遗迹封印之门后面的东西。</li>
-                        <li>萨图拉斯提出了一个大胆的计划：使用导向石（矿石）+水魔法的共振来<strong>暂时稳定屏障</strong>，拖延沉睡者的觉醒速度。这个计划需要你在三个阵营控制的矿区各放置一个<strong>水法师共振装置（Resonator）</strong>——包括旧营地的旧矿区。这意味着你需要潜入旧营地势力范围（高风险高回报）。</li>
+                        <li>The Old Camp's offensive is just the prelude. The greater threat is the <strong>Sleeper beginning to amass an army on the mine perimeter</strong> — Orcs, Undead Priests, psychically-controlled mutated miners. Water Mage Saturas confirms that the source of this force is whatever lies behind the Sealed Gate in the Ancient Ruins.</li>
+                        <li>Saturas proposes a bold plan: use Conduit Stone (ore) + Water Magic resonance to <strong>temporarily stabilize the barrier</strong>, slowing the Sleeper's awakening. This plan requires you to place a <strong>Water Mage Resonator</strong> in each of the three faction-controlled mine zones — including the Old Camp's Old Mine. This means infiltrating Old Camp territory (high risk, high reward).</li>
                     </ul>
 
-                    <div class="pro-tip"><strong>💡 实战心得：</strong>大坝防御战是第四章最大的经验宝库。这场战斗中的每个击杀都有经验和战利品，一场打下来3-4级的经验量。防御战中最重要的不是杀人数量，而是确保关键NPC存活（尤其是萨图拉斯和贾维斯——他们死了第五章的剧情会严重缩水）。一旦发现某个防御点开始崩溃，优先救人而不是追击杀敌。</div>
+                    <div class="pro-tip"><strong>💡 Combat wisdom:</strong> The Dam Defense Battle is the single biggest XP goldmine in Chapter 4. Every kill in this battle grants XP and loot — a single engagement can yield 3-4 levels' worth of experience. The most important metric in this defense is not body count — it's ensuring key NPCs survive (especially Saturas and Jarvis — if they die, Chapter 5's storyline is severely truncated). The moment you see a defensive position starting to collapse, prioritize saving NPCs over pursuing kills.</div>
                 </div>
             </div>
 
-            <!-- 沼泽营地第四章 -->
+            <!-- Swamp Camp Chapter 4 -->
             <div class="timeline-step" data-step="19">
                 <div class="step-card">
-                    <h3>🌀 沼泽营地路线——兄弟会的分裂与信仰危机</h3>
-                    <p>沼泽营地第四章的核心冲突不是外部的，而是<strong>内部的信仰分裂</strong>：</p>
+                    <h3>🌀 Swamp Camp Route — The Brotherhood's Schism & Crisis of Faith</h3>
+                    <p>The core conflict of Swamp Camp Chapter 4 is not external but <strong>internal — a schism of faith</strong>:</p>
 
-                    <h4>兄弟会的分裂</h4>
+                    <h4>The Brotherhood Splits</h4>
                     <ul class="quest-list">
-                        <li>随着沉睡者力量的增强和噩梦的加剧，兄弟会内部出现了<strong>两派分裂</strong>：
+                        <li>As the Sleeper's power intensifies and nightmares worsen, the Brotherhood fractures into <strong>two opposing factions</strong>:
                             <ul style="list-style:circle;margin-left:1.5rem;margin-top:.5rem">
-                                <li><strong>正统派（Orthodox）——以奥伦（Orun）和卡达尔（Cadar）为首</strong>：认为沉睡者的觉醒是"升天"时刻，所有兄弟会成员应该献身、主动走入矿区让沉睡者转化。他们视任何阻碍沉睡者的人为敌人——包括其他阵营，甚至包括兄弟会内的不同意见者。</li>
-                                <li><strong>质疑派（Reformists）——以提昂（Tyon）和纳米布（Namib）为首</strong>：认为沉睡者的本质被误解了——它不是在"召唤"信徒，而是在<strong>吸取生命能量</strong>。那些走入矿区"献身"的修士再也没有回来，回来的……已经不是人了。</li>
+                                <li><strong>Orthodox — led by Orun and Cadar</strong>: Believes the Sleeper's awakening is the moment of "ascension." All Brotherhood members should offer themselves, walk willingly into the mines to be transformed by the Sleeper. They view anyone obstructing the Sleeper as an enemy — including other camps, and even dissenters within the Brotherhood itself.</li>
+                                <li><strong>Reformists — led by Tyon and Namib</strong>: Argues the Sleeper's true nature has been misunderstood — it is not "summoning" its followers but <strong>draining life energy</strong>. Those adepts who walked into the mines to "offer themselves" never came back... and those who did come back are no longer human.</li>
                             </ul>
                         </li>
-                        <li><strong>你的选择至关重要</strong>——站在哪一边将直接决定第五章中沼泽营地的结局分支：
+                        <li><strong>Your choice is critical</strong> — which side you pick directly determines the Swamp Camp's ending branch in Chapter 5:
                             <ul style="list-style:circle;margin-left:1.5rem;margin-top:.5rem">
-                                <li>支持正统派 → 获得攻击性法术的终极版本（风锤术升级为<strong>灵魂风暴 Soul Storm</strong>），但沼泽营地大部分NPC在终局会变成敌对。</li>
-                                <li>支持质疑派 → 保留沼泽营地作为盟友，获得防御和回复类法术增强，但失去部分攻击性法术的升级路径。</li>
-                                <li><strong>第三条路</strong>——如果你在第一章到第三章完成了足够多的跨阵营任务（包括迪亚哥-赖斯-佛图诺隐藏联络线），可以说服一部分质疑派修士<strong>离开沼泽营地加入新营地的联盟</strong>。这是最难触发但奖励最丰富的路线。</li>
+                                <li>Support Orthodox → Unlock the ultimate version of offensive spells (Wind Hammer upgrades to <strong>Soul Storm</strong>), but most Swamp Camp NPCs will turn hostile in the endgame.</li>
+                                <li>Support Reformists → Retain the Swamp Camp as allies, gain defense and restoration spell enhancements, but lose access to certain offensive spell upgrade paths.</li>
+                                <li><strong>The Third Path</strong> — If you completed enough cross-faction quests across Chapters 1 through 3 (including the hidden Diego-Lares-Fortuno liaison chain), you can persuade a portion of the Reformist adepts to <strong>leave the Swamp Camp and join the New Camp's coalition</strong>. This is the hardest to trigger but yields the richest rewards.</li>
                             </ul>
                         </li>
                     </ul>
 
-                    <h4>佛图诺的秘密</h4>
-                    <p>在兄弟会分裂的高潮阶段，<strong>佛图诺（Fortuno）</strong>——这个每天给你发沼泽草的NPC——会私下找你。他告诉你一个惊人的真相：他多年来服用的沼泽草剂量已经足以让他<strong>免疫沉睡者的心灵控制</strong>。他悄悄地在自己每日分发的沼泽草中掺入了微量解毒成分——这就是为什么沼泽营地的修士们虽然参与了所有仪式，却还没有被沉睡者完全控制。佛图诺是真正的英雄，但他只能撑这么久了。他把最后的希望寄托在你身上。</p>
+                    <h4>Fortuno's Secret</h4>
+                    <p>At the climax of the Brotherhood schism, <strong>Fortuno</strong> — the NPC who's been giving you daily swampweed — pulls you aside privately. He reveals a staggering truth: the dosage of swampweed he's consumed over the years has been enough to make him <strong>immune to the Sleeper's mind control</strong>. He has been secretly lacing the daily swampweed rations he distributes with trace amounts of an antidote — this is why the Swamp Camp's adepts, despite participating in every ritual, have not yet been fully controlled by the Sleeper. Fortuno is the real hero, but he can only hold out for so much longer. He places his last hope in you.</p>
                 </div>
             </div>
 
-            <!-- 第四章共享结局 -->
+            <!-- Chapter 4 Shared Ending -->
             <div class="timeline-step" data-step="20">
                 <div class="step-card">
-                    <h3>第四章结局——封印之门的开启</h3>
-                    <p>第四章的结尾，无论你走哪条路线，所有剧情都会汇聚到同一个地点：<strong>远古遗迹深处的封印之门</strong>。</p>
+                    <h3>Chapter 4 Conclusion — Opening the Sealed Gate</h3>
+                    <p>At the end of Chapter 4, regardless of your route, all storylines converge at a single location: <strong>the Sealed Gate deep within the Ancient Ruins</strong>.</p>
                     <ul class="quest-list">
-                        <li>封印之门需要的导向石已经在你手中（旧营地路线：从迪亚哥保存的物品中；新营地路线：萨图拉斯的研究样本；沼泽营地路线：佛图诺偷偷给你的）。</li>
-                        <li>将导向石嵌入封印之门后，巨大的石门缓缓打开——后面是一条向下的阶梯，直通<strong>兽人神殿（Orc Temple）</strong>的入口区域。</li>
-                        <li>在进入前，你有最后一个返回地面的机会。<strong>把所有未完成的支线做完，所有矿石花光买补给，所有储物箱整理好</strong>——踏入这扇门之后，没有回头路。</li>
+                        <li>The Conduit Stone required by the Sealed Gate is now in your possession (Old Camp route: preserved among Diego's retrieved items; New Camp route: Saturas's research sample; Swamp Camp route: slipped to you by Fortuno).</li>
+                        <li>Embed the Conduit Stone into the Sealed Gate. The massive stone doors grind open — revealing a descending staircase leading directly to the entrance zone of the <strong>Orc Temple</strong>.</li>
+                        <li>Before entering, you have one final opportunity to return to the surface. <strong>Finish every unfinished side quest, spend every last piece of ore on supplies, organize all your storage chests</strong> — once you step through this gate, there is no turning back.</li>
                     </ul>
 
-                    <h4>第四章结束时推荐状态</h4>
+                    <h4>Recommended Status by End of Chapter 4</h4>
                     <ul class="quest-list">
-                        <li>等级 16-20</li>
-                        <li>主力武器技能 60%-75%</li>
-                        <li>已装备阵营终阶护甲或远古紫装</li>
-                        <li>核心法术已学会并升级到最高级</li>
-                        <li>治疗药水 20+，法力药水 10+，修理锤 3+</li>
-                        <li>银制/圣水武器（对付亡灵和兽人精英）</li>
-                        <li>所有支线和跨阵营隐藏任务已完成</li>
-                        <li>三个存档位：一个在封印之门前（可以回头读档补东西），一个在兽人神殿入口，一个在BOSS战前</li>
+                        <li>Level 16-20</li>
+                        <li>Primary weapon skill 60%-75%</li>
+                        <li>Equipped with faction final-tier armor or Ancient Ruins purple gear</li>
+                        <li>Core spells learned and upgraded to maximum rank</li>
+                        <li>Healing potions 20+, Mana potions 10+, Repair Hammers 3+</li>
+                        <li>Silver / holy-water-blessed weapon (for undead and elite orcs)</li>
+                        <li>All side quests and cross-faction hidden quests completed</li>
+                        <li>Three save slots: one at the Sealed Gate (to reload and restock), one at the Orc Temple entrance, one before the boss fight</li>
                     </ul>
 
-                    <div class="warning-box"><strong>⚠️ 最终警告：</strong>一旦进入兽人神殿，你将无法回到开放世界。商店、训练师、储物箱——全部无法访问。确保你身上带了足够的<strong>修理锤</strong>（武器在神殿里会频繁损坏）、足够的<strong>治疗物品</strong>（20+最低，30+推荐）、以及所有的<strong>关键任务物品</strong>。不要想着"可能回头还能拿"——不能。回头路不存在。</div>
+                    <div class="warning-box"><strong>⚠️ Final warning:</strong> Once you enter the Orc Temple, you cannot return to the open world. Shops, trainers, storage chests — all inaccessible. Make sure you carry enough <strong>Repair Hammers</strong> (weapons degrade rapidly inside the temple), enough <strong>healing items</strong> (20+ minimum, 30+ recommended), and all <strong>critical quest items</strong>. Do not think "maybe I can come back for it later" — you cannot. There is no way back.</div>
                 </div>
             </div>
         </div>
@@ -729,216 +729,216 @@ a{color:var(--color-accent);text-decoration:none}
 
     <!-- FINAL CHAPTER -->
     <section id="act5" class="guide-section">
-        <h2 class="phase-header">终章：兽人神殿与沉睡者决战 <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">预计3-6小时</span></h2>
-        <div class="info-box important"><strong>⚔️ 终局警告：</strong>兽人神殿（Orc Temple）是线性地牢——没有回头路、没有商店、没有训练师。一旦踏入，你将一直走到结局。以下是你在进入前必须完成的最终检查清单。不要跳过任何一条。</div>
+        <h2 class="phase-header">Final Chapter: Orc Temple & The Sleeper Confrontation <span style="font-size:1rem;color:var(--color-text-secondary);font-weight:400">Estimated 3-6 hours</span></h2>
+        <div class="info-box important"><strong>⚔️ Endgame warning:</strong> The Orc Temple is a linear dungeon — no turning back, no shops, no trainers. Once you step inside, you're committed to the ending. Below is the final pre-entry checklist you must complete. Do not skip a single item.</div>
 
         <div class="walkthrough-timeline">
             <div class="timeline-step" data-step="21">
                 <div class="step-card">
-                    <h3>进入前的最终准备清单</h3>
-                    <p>在做最终进入决定之前，逐条确认以下每一项：</p>
+                    <h3>Final Pre-Entry Preparation Checklist</h3>
+                    <p>Before making the final decision to enter, verify every single item on this list:</p>
                     <ul class="quest-list">
-                        <li><strong>所有阵营相关任务已完成</strong>——包括你在第一章到第四章接到的每一条主线任务和关键支线。任何未完成的任务都会<strong>永久标记为失败</strong>。</li>
-                        <li><strong>装备了当前能拿到的最好护甲</strong>——旧营地：暗影护甲（或远古紫装）。新营地：重装雇佣兵护甲（完成大坝防御战后解锁）。沼泽营地：高等修士袍（完成兄弟会分裂任务后解锁）。</li>
-                        <li><strong>主力武器技能已升满（100%）</strong>——如果你在第四章结束前还没把武器技能训练到100%，现在去找训练师花光所有矿石做最后的训练。</li>
-                        <li><strong>所有核心法术已学会并全部升到最高级</strong>——特别检查一下有没有漏掉的高级法术。有些法术的升级版需要在特定导师那里才能学（沼泽营地的灵魂风暴需要在兄弟会分裂时选择正统派）。</li>
-                        <li><strong>银制/圣水附魔武器在手</strong>——神殿里有大量亡灵敌人和亡灵祭司，普通武器打它们伤害减半。如果没有银制武器，至少带一瓶圣水附魔（在沼泽营地的祭坛水中浸泡武器获得临时附魔）。</li>
+                        <li><strong>All faction-related quests completed</strong> — including every main quest and key side quest you've accepted from Chapter 1 through Chapter 4. Any unfinished quest will be <strong>permanently marked as failed</strong>.</li>
+                        <li><strong>Best available armor equipped</strong> — Old Camp: Shadow Armor (or Ancient Ruins purple gear). New Camp: Heavy Mercenary Armor (unlocked after completing the Dam Defense Battle). Swamp Camp: High Adept Robe (unlocked after completing the Brotherhood schism quest).</li>
+                        <li><strong>Primary weapon skill maxed (100%)</strong> — If you haven't trained your weapon skill to 100% before the end of Chapter 4, go find a trainer now and spend every last piece of ore on the final training sessions.</li>
+                        <li><strong>All core spells learned and upgraded to max rank</strong> — Double-check that you haven't missed any advanced spell upgrades. Some spell upgrades require specific mentors (the Swamp Camp's Soul Storm requires choosing the Orthodox faction during the Brotherhood schism).</li>
+                        <li><strong>Silver / holy-water-blessed weapon in hand</strong> — The temple is packed with undead enemies and Undead Priests; ordinary weapons deal half damage against them. If you don't have a silver weapon, at least bring a vial of holy water (dip your weapon in the Swamp Camp altar pool for a temporary blessing).</li>
                     </ul>
 
-                    <h4>物品携带清单——最低要求 vs 推荐量</h4>
+                    <h4>Item Carry Checklist — Minimum vs. Recommended</h4>
                     <div style="overflow-x:auto;margin:1rem 0">
                         <table style="width:100%;border-collapse:collapse;background:rgba(0,0,0,.2);border-radius:8px;overflow:hidden">
                             <thead>
                                 <tr style="background:rgba(255,215,0,.15)">
-                                    <th style="padding:.8rem 1rem;text-align:left;border-bottom:2px solid var(--color-gold)">物品</th>
-                                    <th style="padding:.8rem 1rem;text-align:center;border-bottom:2px solid var(--color-gold)">最低数量</th>
-                                    <th style="padding:.8rem 1rem;text-align:center;border-bottom:2px solid var(--color-gold)">推荐数量</th>
-                                    <th style="padding:.8rem 1rem;text-align:left;border-bottom:2px solid var(--color-gold)">备注</th>
+                                    <th style="padding:.8rem 1rem;text-align:left;border-bottom:2px solid var(--color-gold)">Item</th>
+                                    <th style="padding:.8rem 1rem;text-align:center;border-bottom:2px solid var(--color-gold)">Minimum</th>
+                                    <th style="padding:.8rem 1rem;text-align:center;border-bottom:2px solid var(--color-gold)">Recommended</th>
+                                    <th style="padding:.8rem 1rem;text-align:left;border-bottom:2px solid var(--color-gold)">Notes</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td style="padding:.6rem 1rem">治疗药水（Healing Potion）</td>
+                                    <td style="padding:.6rem 1rem">Healing Potion</td>
                                     <td style="text-align:center">20</td>
                                     <td style="text-align:center">35+</td>
-                                    <td style="font-size:.85rem">沉睡者战至少消耗8-12瓶</td>
+                                    <td style="font-size:.85rem">Sleeper fight alone consumes 8-12</td>
                                 </tr>
                                 <tr style="background:rgba(0,0,0,.1)">
-                                    <td style="padding:.6rem 1rem">法力药水（Mana Potion）</td>
+                                    <td style="padding:.6rem 1rem">Mana Potion</td>
                                     <td style="text-align:center">10</td>
                                     <td style="text-align:center">20+</td>
-                                    <td style="font-size:.85rem">法师路线需要更多</td>
+                                    <td style="font-size:.85rem">Mage routes need more</td>
                                 </tr>
                                 <tr>
-                                    <td style="padding:.6rem 1rem">修理锤（Repair Hammer）</td>
+                                    <td style="padding:.6rem 1rem">Repair Hammer</td>
                                     <td style="text-align:center">3</td>
                                     <td style="text-align:center">5+</td>
-                                    <td style="font-size:.85rem">神殿里武器耐久消耗极快</td>
+                                    <td style="font-size:.85rem">Weapon durability plummets inside the temple</td>
                                 </tr>
                                 <tr style="background:rgba(0,0,0,.1)">
-                                    <td style="padding:.6rem 1rem">解毒药水（Antidote）</td>
+                                    <td style="padding:.6rem 1rem">Antidote</td>
                                     <td style="text-align:center">5</td>
                                     <td style="text-align:center">8</td>
-                                    <td style="font-size:.85rem">亡灵祭司的黑暗法术附带中毒效果</td>
+                                    <td style="font-size:.85rem">Undead Priest dark magic inflicts poison</td>
                                 </tr>
                                 <tr>
-                                    <td style="padding:.6rem 1rem">圣水（Holy Water）</td>
+                                    <td style="padding:.6rem 1rem">Holy Water</td>
                                     <td style="text-align:center">3</td>
                                     <td style="text-align:center">5</td>
-                                    <td style="font-size:.85rem">临时武器附魔，对亡灵+40%伤害</td>
+                                    <td style="font-size:.85rem">Temporary weapon blessing, +40% damage vs undead</td>
                                 </tr>
                                 <tr style="background:rgba(0,0,0,.1)">
-                                    <td style="padding:.6rem 1rem">导向石碎片（Conduit Stone）</td>
+                                    <td style="padding:.6rem 1rem">Conduit Stone Fragment</td>
                                     <td style="text-align:center">1</td>
                                     <td style="text-align:center">1</td>
-                                    <td style="font-size:.85rem">进入封印之门的钥匙；第二章到第四章积累的那一块</td>
+                                    <td style="font-size:.85rem">Key to the Sealed Gate; the one you've accumulated from Chapters 2-4</td>
                                 </tr>
                                 <tr>
-                                    <td style="padding:.6rem 1rem">弓箭/弩矢（如走远程路线）</td>
+                                    <td style="padding:.6rem 1rem">Arrows/Bolts (ranged builds)</td>
                                     <td style="text-align:center">50</td>
                                     <td style="text-align:center">100+</td>
-                                    <td style="font-size:.85rem">精英兽人对远程攻击有减伤，需要更多弹药</td>
+                                    <td style="font-size:.85rem">Elite orcs have ranged damage reduction; more ammo needed</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <div class="pro-tip"><strong>💡 过来人的血泪教训：</strong>我在第一次通关时只带了12瓶治疗药水进去，到了沉睡者面前只剩下3瓶——然后死了7次才过。事后反省，我完全可以在进入前再去矿场多挖200矿石找商人对换药水。矿石留到终局就是废铁——<strong>全部换成药水和修理锤！</strong></div>
+                    <div class="pro-tip"><strong>💡 A veteran's hard-earned lesson:</strong> On my first playthrough, I walked in with only 12 healing potions and arrived at the Sleeper with just 3 left — then died 7 times before finally beating it. In hindsight, I could have easily mined 200 more ore at the Free Mine and exchanged it for potions at the merchant. Ore sitting in your pocket at endgame is worthless scrap — <strong>convert it all into potions and repair hammers!</strong></div>
                 </div>
             </div>
 
-            <!-- 神殿第一层 -->
+            <!-- Temple Level 1 -->
             <div class="timeline-step" data-step="22">
                 <div class="step-card">
-                    <h3>兽人神殿——第一层：外围防御区</h3>
-                    <p>封印之门打开后，沿着阶梯向下约两分钟的路程，你会进入神殿的外围区域。这里是兽人和亡灵混合防守的第一道防线。</p>
+                    <h3>Orc Temple — Level 1: Outer Defense Zone</h3>
+                    <p>After the Sealed Gate opens, follow the staircase downward for about two minutes to reach the temple's outer perimeter. This is the first defensive line — a mixed force of orcs and undead.</p>
 
-                    <h4>区域地图与敌人分布</h4>
+                    <h4>Area Map & Enemy Distribution</h4>
                     <ul class="quest-list">
-                        <li><strong>入口大厅（Entry Hall）</strong>——8-10只<strong>兽人战士（Orc Warrior）</strong>，等级12-14。这些是基础兽人，AI比较笨，喜欢正面冲锋。用远程攻击在远处逐一勾引（拉怪），不要在开阔地带和它们群战。兽人的弱点是<strong>头部</strong>——跳砍（按住前进+跳跃+攻击）可以触发爆头暴击。</li>
-                        <li><strong>左侧兵营（Left Barracks）</strong>——3只<strong>兽人精英（Orc Elite）</strong>+1只<strong>亡灵祭司（Undead Priest）</strong>。这是神殿里第一场硬仗。亡灵祭司在兵营后方的石台上，会不断给兽人精英回血。<strong>必须先解决祭司</strong>——用远程打断它的施法，或者潜行绕到石台后面近战击杀。祭司死后兽人精英失去回血来源，可以逐一磨死。</li>
-                        <li><strong>右侧储藏室（Right Storage）</strong>——相对安全，只有3只骷髅兵。房间里有补给品（治疗药水2-3瓶、修理锤1-2把、弓箭20支）。<strong>务必清空这个房间</strong>——这是你在神殿里能找到的最后补给。</li>
-                        <li><strong>外围区域隐藏</strong>——入口大厅的天花板上有一个可以用心灵致动或爆炸箭炸开的壁龛，里面有一把<strong>金制短剑（Golden Dagger）</strong>——对亡灵有+50%额外伤害，是神殿推图的MVP武器。</li>
+                        <li><strong>Entry Hall</strong> — 8-10 <strong>Orc Warriors</strong>, level 12-14. These are basic orcs with predictable AI; they favor head-on charges. Use ranged attacks to pull them one at a time from a distance — do not fight them in open ground as a group. Orc weak spot is the <strong>head</strong> — jump attacks (hold Forward + Jump + Attack) can trigger headshot criticals.</li>
+                        <li><strong>Left Barracks</strong> — 3 <strong>Orc Elites</strong> + 1 <strong>Undead Priest</strong>. This is the first serious fight inside the temple. The Undead Priest stands on a stone platform at the rear of the barracks, continuously healing the Orc Elites. <strong>You must eliminate the priest first</strong> — interrupt its casting with ranged attacks, or sneak around behind the platform for a melee takedown. Without the priest's healing, the Orc Elites can be whittled down one by one.</li>
+                        <li><strong>Right Storage Room</strong> — Relatively safe, only 3 skeletons. Contains supplies (2-3 healing potions, 1-2 repair hammers, 20 arrows). <strong>Clear this room thoroughly</strong> — this is the last supply cache you'll find inside the temple.</li>
+                        <li><strong>Outer Zone Hidden</strong> — The ceiling of the Entry Hall has a hidden alcove that can be opened with Telekinesis or an explosive arrow. Inside is a <strong>Golden Dagger</strong> — +50% bonus damage against undead, the MVP weapon for clearing the temple.</li>
                     </ul>
 
-                    <h4>最优推进路线</h4>
-                    <p>入场 → 右转清储藏室拿补给 → 返回入口大厅清兽人战士（一只一只拉） → 左转兵营先秒祭司再清精英 → 检查大厅天花板隐藏壁龛 → 向神殿第二层前进。</p>
+                    <h4>Optimal Clear Route</h4>
+                    <p>Enter → Turn right, clear Storage Room for supplies → Return to Entry Hall, clear Orc Warriors (pull one at a time) → Turn left, Barracks: kill priest first, then elites → Check ceiling alcove for hidden Golden Dagger → Proceed to Temple Level 2.</p>
                 </div>
             </div>
 
-            <!-- 神殿第二层 -->
+            <!-- Temple Level 2 -->
             <div class="timeline-step" data-step="23">
                 <div class="step-card">
-                    <h3>兽人神殿——第二层：暗影兽巢穴</h3>
-                    <p>第二层是神殿中最令人不安的区域——这里曾经是远古文明的祭祀通道，现在被<strong>暗影兽（Shadowbeast）</strong>占据。</p>
+                    <h3>Orc Temple — Level 2: Shadowbeast Lair</h3>
+                    <p>Level 2 is the most unsettling area in the temple — once a ceremonial passage of the ancient civilization, now overrun by <strong>Shadowbeasts</strong>.</p>
 
-                    <h4>区域特征</h4>
+                    <h4>Area Features</h4>
                     <ul class="quest-list">
-                        <li><strong>暗影兽走廊（Shadowbeast Corridor）</strong>——4只暗影兽，等级15-17。暗影兽的速度极快、攻击力极高，而且它们会利用通道的拐角进行<strong>伏击</strong>（躲在阴影中突然扑出）。通过的策略是：用火把或火球术照亮前方，逼迫暗影兽现身，然后边退边打——不要在走廊中央停留。</li>
-                        <li><strong>暗影兽的弱点</strong>——暗影兽对<strong>光</strong>敏感。火把、火球术、照明术（如果有的话）会让它们的移动速度降低30%。如果你有火焰附魔的武器，对暗影兽的伤害+25%。</li>
-                        <li><strong>祭祀通道（Ritual Passage）</strong>——暗影兽走廊的尽头是一段相对安全的通道，两侧有远古石刻。这里刻的内容是最后一段关于沉睡者起源的文字——它揭示了沉睡者的真实身份：它不是神，也不是恶魔，它曾经是远古文明的一名<strong>最高阶祭司</strong>，在试图利用导向石的力量时被反噬，转化为现在的形态。这些石刻是理解最终决战的关键。</li>
-                        <li><strong>第二层隐藏</strong>——祭祀通道左侧墙壁上有一块松动的石板，推开后是一个隐藏小间，内有<strong>5瓶治疗药水和1把稀有弩</strong>。如果你在储藏室已经拿到了弩矢，这里的弩可以直接装备。</li>
+                        <li><strong>Shadowbeast Corridor</strong> — 4 Shadowbeasts, level 15-17. Shadowbeasts are extremely fast, hit brutally hard, and use the corridor's corners to <strong>ambush</strong> (lurking in darkness before springing out). The strategy for passing through: use torches or Fire Bolt to illuminate ahead, forcing Shadowbeasts out of hiding, then backpedal while fighting — do not stop in the middle of the corridor.</li>
+                        <li><strong>Shadowbeast Weakness</strong> — Shadowbeasts are sensitive to <strong>light</strong>. Torches, Fire Bolts, and Light spells (if you have one) reduce their movement speed by 30%. Flame-enchanted weapons deal +25% damage against Shadowbeasts.</li>
+                        <li><strong>Ritual Passage</strong> — At the end of the Shadowbeast Corridor lies a relatively safe passage lined with ancient carvings. These inscriptions contain the final records on the Sleeper's origin — they reveal the Sleeper's true identity: it is not a god, nor a demon. It was once a <strong>High Priest</strong> of the ancient civilization, transformed into its current form after being backlashed while attempting to harness the Conduit Stone's power. These carvings are the key to understanding the final battle.</li>
+                        <li><strong>Level 2 Hidden</strong> — On the left wall of the Ritual Passage, a loose stone slab can be pushed aside, revealing a hidden alcove containing <strong>5 healing potions and 1 rare crossbow</strong>. If you already picked up bolts in the Storage Room, you can equip the crossbow immediately.</li>
                     </ul>
 
-                    <div class="warning-box"><strong>⚠️ 特别提醒：</strong>暗影兽可能是你在神殿中遇到的最难缠的非BOSS敌人。它们的攻击动作前摇极短，格挡窗口非常窄。如果你没自信一对一格挡反击，建议用控场法术（睡眠术或恐惧术）配合远程攻击来风筝——暗影兽中了睡眠术后需要近战才能唤醒，这个时候拉开距离放冷箭是最安全的打法。</div>
+                    <div class="warning-box"><strong>⚠️ Special note:</strong> Shadowbeasts may be the most difficult non-boss enemy you face in the temple. Their attack wind-up is extremely short, leaving a razor-thin parry window. If you're not confident in one-on-one parry-and-riposte combat, use control spells (Sleep or Fear) combined with ranged attacks to kite — Shadowbeasts under Sleep require melee contact to wake up, giving you plenty of time to create distance and fire off arrows. This is the safest approach.</div>
                 </div>
             </div>
 
-            <!-- 神殿第三层 -->
+            <!-- Temple Level 3 -->
             <div class="timeline-step" data-step="24">
                 <div class="step-card">
-                    <h3>兽人神殿——第三层：亡灵祭司之殿</h3>
-                    <p>第三层是神殿的核心仪式区，也是<strong>亡灵祭司</strong>的大本营。这里的设计是一个巨大的圆形殿堂，殿堂中央有一个祭坛，四周各有通向不同小室的拱门。</p>
+                    <h3>Orc Temple — Level 3: Hall of the Undead Priests</h3>
+                    <p>Level 3 is the temple's core ritual zone and the <strong>Undead Priests'</strong> stronghold. The layout is a massive circular hall with a central altar, surrounded by archways leading to smaller chambers.</p>
 
-                    <h4>BOSS战：亡灵大祭司（Undead High Priest）</h4>
+                    <h4>BOSS FIGHT: Undead High Priest</h4>
                     <ul class="quest-list">
-                        <li><strong>位置</strong>——殿堂中央祭坛。</li>
-                        <li><strong>等级</strong>——18级，血条约2500（实际值与玩家等级有微弱浮动）。</li>
-                        <li><strong>攻击方式</strong>——（1）黑暗魔法弹，直线发射，可侧闪躲避；（2）群体诅咒，殿堂范围内所有玩家受到持续暗影伤害，每秒5-8点，持续15秒（用法力护盾可以减半）；（3）召唤骷髅兵，每次召唤2只，最多同时存在6只；（4）生命吸取，当血量降到30%以下时，会吸取祭坛周围的骷髅兵来回复自身血量。</li>
-                        <li><strong>正确的打法</strong>——这场战斗的核心是<strong>清小怪 &gt; 打断生命吸取 &gt; 输出BOSS</strong>的循环。不要让任何骷髅兵存活超过10秒——它们不只是杂兵，更是BOSS的回血包。用范围攻击（风锤术/爆炸箭）在BOSS进入生命吸取阶段之前清光场上所有骷髅兵，然后疯狂输出BOSS。武器建议用银制或圣水附魔（+40%伤害），如果是沼泽营地路线则用灵魂风暴。</li>
-                        <li><strong>战后奖励</strong>——掉落<strong>亡灵祭司之杖（Staff of the Undead Priest）</strong>，法师专用，法力上限+25，暗影抗性+30%。以及<strong>导向石核心碎片（Conduit Core Fragment）</strong>——打开沉睡者Boss区域的关键物品。</li>
+                        <li><strong>Location</strong> — Central altar of the hall.</li>
+                        <li><strong>Level</strong> — 18, approximately 2500 HP (scales slightly with player level).</li>
+                        <li><strong>Attack Patterns</strong> — (1) Dark Magic Bolt, linear projectile, dodge sideways; (2) Mass Curse, AoE — all players in the hall take continuous shadow damage, 5-8 per second for 15 seconds (halved by Mana Shield); (3) Summon Skeletons, 2 per cast, max 6 active simultaneously; (4) Life Drain, when HP drops below 30%, drains HP from skeletons near the altar to heal itself.</li>
+                        <li><strong>Correct Strategy</strong> — The core loop of this fight is <strong>clear adds > interrupt Life Drain > DPS boss</strong>. Do not let any skeleton survive longer than 10 seconds — they're not just trash mobs, they're the boss's health packs. Use AoE attacks (Wind Hammer / explosive bolts) to wipe all skeletons from the field before the boss enters its Life Drain phase, then go all-out on the boss. Recommended weapon: silver or holy-water-blessed (+40% damage); Swamp Camp routes should use Soul Storm.</li>
+                        <li><strong>Post-Battle Reward</strong> — Drops <strong>Staff of the Undead Priest</strong> (mage-only, +25 Max Mana, +30% Shadow Resistance) and <strong>Conduit Core Fragment</strong> — a key item for unlocking the Sleeper boss arena.</li>
                     </ul>
 
-                    <h4>殿堂小室的探索价值</h4>
-                    <p>BOSS战之前/之后，可以探索殿堂周围的四间小室：</p>
+                    <h4>Chamber Exploration Value</h4>
+                    <p>Before and/or after the boss fight, explore the four chambers surrounding the hall:</p>
                     <ul class="quest-list">
-                        <li><strong>北室——远古典籍室</strong>：有3只骷髅兵守卫，里面有最后一卷关于沉睡者起源的石刻。读完可以获得对沉睡者弱点的重要提示。</li>
-                        <li><strong>南室——献祭室</strong>：地上散落着导向石碎片，可以拾取用于最终战（导向石碎片对沉睡者有特殊效果——见下文）。</li>
-                        <li><strong>西室——灵魂之泉</strong>：一个充满魔法能量的水池。在水中浸泡可以<strong>恢复全部生命和法力</strong>，并且获得一个持续1小时的"灵魂护盾"BUFF（+20%暗影抗性）。<strong>在最终BOSS战前一定要来这里泡一次！</strong></li>
-                        <li><strong>东室——武器库</strong>：1只兽人精英守卫。里面有修理锤和大量弓箭/弩矢弹药补给。</li>
+                        <li><strong>North Chamber — Ancient Archive</strong>: Guarded by 3 skeletons. Contains the final stone carvings on the Sleeper's origin. Reading them yields critical hints about the Sleeper's weaknesses.</li>
+                        <li><strong>South Chamber — Sacrificial Chamber</strong>: Conduit Stone fragments scattered on the floor — collect them for use in the final battle (Conduit Stone fragments have special effects against the Sleeper — see below).</li>
+                        <li><strong>West Chamber — Soul Spring</strong>: A pool brimming with magical energy. Bathing in it <strong>restores all HP and Mana</strong> and grants a 1-hour "Soul Shield" buff (+20% Shadow Resistance). <strong>You must bathe here before the final boss fight!</strong></li>
+                        <li><strong>East Chamber — Armory</strong>: Guarded by 1 Orc Elite. Contains repair hammers and a large supply of arrows/bolts.</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- 沉睡者之战 -->
+            <!-- The Sleeper Fight -->
             <div class="timeline-step" data-step="25">
                 <div class="step-card">
-                    <h3>最终决战——沉睡者（The Sleeper）</h3>
-                    <p>穿过第三层殿堂深处的最后一道门，你将进入一个巨大的地下洞窟——<strong>沉睡者的巢穴</strong>。洞窟中央是一个由大量导向石构成的巨型结构，而沉睡者就悬浮在这个结构的中心——它是一个由纯粹魔法能量和岩石构成的巨大存在，半透明、散发着不稳定的紫色光芒。</p>
+                    <h3>Final Confrontation — The Sleeper</h3>
+                    <p>Through the final door at the back of the Level 3 hall, you enter a colossal underground cavern — <strong>the Sleeper's lair</strong>. At the cavern's center, a massive structure of Conduit Stone, and suspended at its heart: the Sleeper — a gigantic entity of pure magical energy and rock, semi-translucent, radiating unstable violet light.</p>
 
-                    <h4>沉睡者（The Sleeper）BOSS数据</h4>
+                    <h4>The Sleeper — Boss Data</h4>
                     <ul class="quest-list">
-                        <li><strong>等级</strong>——22级（固定），血量约4000-5000（取决于你携带的导向石碎片数量——碎片越多，沉睡者的能量越不稳定，初始血量越低）。</li>
-                        <li><strong>攻击方式</strong>：
+                        <li><strong>Level</strong> — 22 (fixed), approximately 4000-5000 HP (varies with the number of Conduit Stone fragments you carry — more fragments = more destabilized Sleeper energy = lower starting HP).</li>
+                        <li><strong>Attack Patterns</strong>:
                             <ul style="list-style:circle;margin-left:1.5rem;margin-top:.5rem">
-                                <li><strong>心灵冲击（Psionic Blast）</strong>——锥形范围AOE，伤害高且带击倒效果。前摇约2秒，看到它头部发光时立刻侧闪。</li>
-                                <li><strong>能量射线（Energy Beam）</strong>——直线锁定攻击，持续3秒，总伤害极高。无法格挡——必须跑动躲避。</li>
-                                <li><strong>召唤岩柱（Summon Pillar）</strong>——从地面升起导向石构成的岩柱。岩柱可以被摧毁（用钝器或火系法术），如果放着不管，岩柱会持续给沉睡者回复血量。</li>
-                                <li><strong>心灵支配（Mind Control）</strong>——血量降到50%以下后使用的终极技能。沉睡者尝试直接控制你的意识——屏幕上会出现快速反应的<strong>意志力判定（Will Check）</strong>：你需要按提示快速按下一系列按键组合。成功则免疫本次控制，失败则你的角色会短暂攻击自己（对自己造成当前血量20%的伤害）。沼泽营地路线（灵魂魔法修行者）的意志力判定难度减半。</li>
+                                <li><strong>Psionic Blast</strong> — Conical AoE, high damage with knockdown. Approximately 2-second wind-up; dodge sideways the moment you see its head glow.</li>
+                                <li><strong>Energy Beam</strong> — Line-locked sustained attack, 3-second duration, extremely high total damage. Cannot be blocked — must sprint to evade.</li>
+                                <li><strong>Summon Pillar</strong> — Raises Conduit Stone pillars from the ground. Pillars can be destroyed (use blunt weapons or fire spells). If left alone, pillars continuously regenerate the Sleeper's HP.</li>
+                                <li><strong>Mind Control</strong> — Ultimate ability, used when HP drops below 50%. The Sleeper attempts to directly seize control of your consciousness — a <strong>Will Check</strong> quick-time event appears on screen: you must rapidly press a series of button prompts. Success = immune to this control attempt. Failure = your character briefly attacks themselves (dealing 20% of current HP as self-damage). Swamp Camp route players (psionic adepts) face Will Checks at half difficulty.</li>
                             </ul>
                         </li>
                     </ul>
 
-                    <h4>沉睡者的弱点——导向石的反噬</h4>
-                    <p>从远古石刻和萨图拉斯的研究中可以推断出：<strong>导向石（矿石）既是沉睡者的力量来源，也是它的致命弱点。</strong>沉睡者本身就是依靠导向石的能量来维持存在的——只要你能打碎构成它身体的导向石核心，它的能量就会崩溃。</p>
+                    <h4>The Sleeper's Weakness — Conduit Stone Backlash</h4>
+                    <p>From the ancient carvings and Saturas's research, the pattern is clear: <strong>Conduit Stone (ore) is simultaneously the Sleeper's power source and its fatal weakness.</strong> The Sleeper sustains its very existence through Conduit Stone energy — shatter the Conduit Stone core that forms its body, and its energy will collapse.</p>
                     <ul class="quest-list">
-                        <li><strong>核心机制</strong>——战场上分布着6根导向石支柱（包括沉睡者召唤的岩柱）。每摧毁一根支柱，沉睡者会损失约10%的最大血量并进入5秒的<strong>虚弱状态</strong>（停止攻击，受到的伤害+50%）。摧毁所有支柱后，沉睡者的核心会暴露——这个时候全力输出。</li>
-                        <li><strong>导向石碎片的作用</strong>——如果你在进入神殿前带了导向石碎片（特别是从亡灵大祭司那里获得的核心碎片），在沉睡者战中可以使用碎片（消耗品）来<strong>引爆一根石柱</strong>——造成巨大伤害并让沉睡者虚弱时间延长到10秒。每片碎片只能用一次，但效果惊人。</li>
-                        <li><strong>沼泽营地特有解法</strong>——如果你走的是沼泽营地路线且选择了质疑派（提昂/纳米布路线），你会在BOSS战中获得一个特殊对话选项：尝试使用<strong>灵魂沟通（Psionic Communion）</strong>来触达沉睡者的残余意识——那个被困在能量体内部的上古祭司。如果意志力判定成功（需要通过连续3次高难度反应按键），你可以让沉睡者的意识短暂清醒，主动摧毁自己的三根石柱——相当于直接打掉30%血量+获得15秒输出窗口。</li>
+                        <li><strong>Core Mechanic</strong> — The battlefield contains 6 Conduit Stone pillars (including those summoned by the Sleeper). Destroying each pillar costs the Sleeper roughly 10% of its max HP and triggers a 5-second <strong>Weakened state</strong> (stops attacking, takes +50% damage). After destroying all pillars, the Sleeper's core is exposed — pour on the damage.</li>
+                        <li><strong>Conduit Stone Fragment Effect</strong> — If you brought Conduit Stone fragments into the temple (especially the Core Fragment from the Undead High Priest), you can use them during the Sleeper fight as consumables to <strong>detonate a pillar</strong> — dealing massive damage and extending the Weakened state to 10 seconds. Each fragment is single-use, but the effect is devastating.</li>
+                        <li><strong>Swamp Camp Exclusive Solution</strong> — If you're on the Swamp Camp route and chose the Reformist path (Tyon/Namib), you gain a special dialogue option during the boss fight: attempt <strong>Psionic Communion</strong> to reach the Sleeper's residual consciousness — the ancient High Priest trapped within the energy entity. If you pass the Will Check (requiring 3 consecutive high-difficulty reaction prompts), you can briefly restore the Sleeper's lucidity, causing it to voluntarily destroy three of its own pillars — effectively dealing 30% HP damage + granting a 15-second DPS window.</li>
                     </ul>
 
-                    <h4>推荐的战斗流程</h4>
-                    <p>进入前确保已浸泡西室灵魂之泉（暗影抗性BUFF）。开战后按照以下顺序：</p>
+                    <h4>Recommended Battle Flow</h4>
+                    <p>Before entering, ensure you've bathed in the West Chamber Soul Spring (Shadow Resistance buff). Upon engaging, follow this sequence:</p>
                     <ol style="margin-left:1.5rem;line-height:2;color:var(--color-text)">
-                        <li>开场不要急着打沉睡者——<strong>先打最近的两根导向石支柱</strong>。沉睡者前30秒的攻击频率较低，是破坏支柱的最佳窗口。</li>
-                        <li>支柱摧毁后沉睡者进入虚弱状态——抓住5秒窗口全力输出（用最高伤害的技能和法术）。</li>
-                        <li>沉睡者恢复后开始使用心灵冲击和能量射线——保持走位，不要站桩。场上仍有4根支柱（初始的剩余+它可能已经召唤了新的岩柱），边躲边继续打柱子。</li>
-                        <li>沉睡者血量降到50%时触发心灵支配——集中精力准备通过意志力判定。如果你携带了导向石核心碎片，在这个时候使用——这会打碎沉睡者的核心稳定器，让它跳过两次召唤岩柱的循环。</li>
-                        <li>清掉所有支柱后，沉睡者核心暴露——<strong>爆发全开</strong>。法术、道具、药水都不要省——这是你最后的输出机会。如果在这个阶段被击杀，你会从第三层重新开始（不需要重新打亡灵大祭司，但需要重新清场+重新泡灵魂之泉）。</li>
+                        <li>Don't attack the Sleeper immediately — <strong>destroy the two nearest Conduit Stone pillars first</strong>. The Sleeper's attack frequency is lower in the first 30 seconds, making this the optimal window for pillar destruction.</li>
+                        <li>Once pillars are destroyed, the Sleeper enters Weakened state — capitalize on the 5-second window with your highest-damage skills and spells.</li>
+                        <li>After the Sleeper recovers, it begins using Psionic Blast and Energy Beam — keep moving, don't stand still. There are still 4 pillars remaining (surviving initial pillars + any new ones summoned); continue destroying them while evading attacks.</li>
+                        <li>When the Sleeper's HP drops to 50%, Mind Control triggers — focus and prepare to pass the Will Check. If you're carrying the Conduit Core Fragment, use it now — it shatters the Sleeper's core stabilizer, causing it to skip two summon-pillar cycles.</li>
+                        <li>After clearing all pillars, the Sleeper's core is exposed — <strong>unleash everything</strong>. Spells, items, potions — don't save anything. This is your final DPS window. If you die during this phase, you'll restart from Level 3 (no need to re-fight the Undead High Priest, but you must re-clear the area and re-bathe in the Soul Spring).</li>
                     </ol>
                 </div>
             </div>
 
-            <!-- 结局 -->
+            <!-- Endings -->
             <div class="timeline-step" data-step="26">
                 <div class="step-card">
-                    <h3>结局——多个分支，你的选择决定命运</h3>
-                    <p>沉睡者被打败后，你面前会出现几个关键选择，每个选择会导致不同的结局画面和尾声：</p>
+                    <h3>Endings — Multiple Branches; Your Choices Determine Fate</h3>
+                    <p>After the Sleeper is defeated, several critical choices appear before you. Each leads to a different ending cinematic and epilogue:</p>
 
-                    <h4>结局分支一览</h4>
+                    <h4>Ending Branch Overview</h4>
                     <ul class="quest-list">
-                        <li><strong>旧营地路线结局</strong>——戈麦斯趁你打败沉睡者、屏障开始崩溃的机会，试图独揽矿石财富并控制矿区。你可以选择：
+                        <li><strong>Old Camp Route Ending</strong> — Gomez seizes the moment after you defeat the Sleeper and the barrier begins collapsing to monopolize the ore wealth and seize control of the colony. You can choose:
                             <ul style="list-style:circle;margin-left:1.5rem;margin-top:.5rem">
-                                <li><strong>返回旧营地复仇</strong>——带着你在神殿中获得的力量，直面戈麦斯和他的守卫。迪亚哥和一部分你关系好的NPC会在最后关头倒戈帮你。结局：旧营地权力结构瓦解，矿区进入新的自治时代。</li>
-                                <li><strong>离开矿区</strong>——屏障崩溃后，你选择带着从神殿中学到的知识离开，让矿区的人们自己决定未来。结局：开放性结局，暗示你的冒险才刚刚开始。</li>
+                                <li><strong>Return to the Old Camp for revenge</strong> — Bring the power you gained in the temple and confront Gomez and his guards. Diego and some NPCs you've befriended will defect to your side at the final moment. Ending: the Old Camp power structure collapses; the colony enters a new era of self-governance.</li>
+                                <li><strong>Leave the colony</strong> — With the barrier collapsed, you choose to leave with the knowledge you gained in the temple, letting the colony's people decide their own future. Ending: an open-ended conclusion implying your adventure has only just begun.</li>
                             </ul>
                         </li>
-                        <li><strong>新营地路线结局</strong>——屏障崩溃后，新营地的水法师们（以萨图拉斯为首）发现矿石的真正价值：它可以用作清洁能源来源。李希望建立新的秩序。你的选择：
+                        <li><strong>New Camp Route Ending</strong> — With the barrier collapsed, the New Camp's Water Mages (led by Saturas) discover the ore's true value: it can serve as a clean energy source. Lee wants to establish a new order. Your choices:
                             <ul style="list-style:circle;margin-left:1.5rem;margin-top:.5rem">
-                                <li><strong>帮助萨图拉斯建立新秩序</strong>——矿区转变为研究导向石科技的学者之城。结局：科技繁荣，矿区成为大陆最先进的区域。</li>
-                                <li><strong>将导向石知识摧毁</strong>——你认为这样的力量太危险了。结局：矿区回归普通的矿业殖民地，但没有人能再使用导向石。</li>
+                                <li><strong>Help Saturas establish a new order</strong> — The colony transforms into a scholar-city researching Conduit Stone technology. Ending: technological prosperity; the colony becomes the most advanced region on the continent.</li>
+                                <li><strong>Destroy the Conduit Stone knowledge</strong> — You deem such power too dangerous. Ending: the colony reverts to an ordinary mining outpost, but no one will ever wield Conduit Stone again.</li>
                             </ul>
                         </li>
-                        <li><strong>沼泽营地路线结局</strong>——如果支持质疑派（提昂/纳米布）：
+                        <li><strong>Swamp Camp Route Ending</strong> — If you supported the Reformists (Tyon/Namib):
                             <ul style="list-style:circle;margin-left:1.5rem;margin-top:.5rem">
-                                <li><strong>重建兄弟会</strong>——以佛图诺的教义为核心（与自然共生而非崇拜力量），沼泽营地的修士们成为矿区的精神守护者而非统治者。</li>
-                                <li><strong>揭露真相</strong>——向所有营地公开沉睡者的来历和导向石的本质。结局：人们对信仰和权力有了全新的认识。</li>
+                                <li><strong>Rebuild the Brotherhood</strong> — Centered on Fortuno's teachings (harmony with nature rather than worship of power), the Swamp Camp adepts become the colony's spiritual guardians rather than its rulers.</li>
+                                <li><strong>Reveal the truth</strong> — Expose the Sleeper's origin and the nature of Conduit Stone to all camps. Ending: the people gain a new understanding of faith and power.</li>
                             </ul>
-                            如果支持正统派（奥伦/卡达尔）：沉睡者的死亡被视为"献祭完成"，兄弟会走向更极端的道路——这是一个悲观的结局，暗示历史可能重演。
+                            If you supported the Orthodox (Orun/Cadar): the Sleeper's death is interpreted as "sacrifice fulfilled," and the Brotherhood marches down an even more extreme path — a pessimistic ending implying that history may repeat itself.
                         </li>
                     </ul>
 
-                    <div class="pro-tip"><strong>💡 关于多周目：</strong>游戏通关后会解锁<strong>新游戏+（New Game Plus）</strong>模式。在新游戏+中，你保留所有技能等级和法术，但世界难度提升两个档次。进入新游戏+之前，确保你已经用第一章的存档体验了另外两个阵营的完整路线——每个阵营的完整游戏体验（从第一章到结局）需要20-30小时，但内容差异超过40%，非常值得。</div>
+                    <div class="pro-tip"><strong>💡 About New Game Plus:</strong> After completing the game, <strong>New Game Plus</strong> mode is unlocked. In NG+, you retain all skill levels and spells, but the world difficulty increases by two tiers. Before starting NG+, make sure you've used your Chapter 1 manual save to experience the full routes of the other two factions — a complete faction playthrough (Chapter 1 through ending) takes 20-30 hours, but the content difference between factions exceeds 40%. It's absolutely worth it.</div>
                 </div>
             </div>
         </div>
@@ -946,16 +946,15 @@ a{color:var(--color-accent);text-decoration:none}
 
     <!-- Quick Reference Cards -->
     <section class="guide-section">
-        <h2>速查卡片</h2>
+        <h2>Quick Reference Cards</h2>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:2rem 0">
-            <div class="tip-card"><h3>💾 存档法则</h3><p>手动存档永久保留。F5快速存档会被覆盖。至少保持3个轮换的存档位。每次开锁前、做阵营对话前、打BOSS前都要手动存。</p></div>
-            <div class="tip-card"><h3>📈 升级策略</h3><p>专注于一种武器类型。不要平均分配属性。旧营地/新营地：优先力量。沼泽营地：优先法力。永远留足够的LP应急。</p></div>
-            <div class="tip-card"><h3>🛡️ 战斗生存法则</h3><p>1-3级：见谁跑谁。4-6级：只打食腐虫、幼狼等最弱怪。7-9级：大部分普通敌人可以打。10级以上：你可以横着走了。</p></div>
-            <div class="tip-card"><h3>🔐 开锁优先级</h3><p>训练中心锁（1-4孔）→ 世界锁（5孔）→ 倒塌塔楼锁（7孔，57步）。<a href="lock-solver.html">用开锁计算器</a>避免损坏工具。</p></div>
+            <div class="tip-card"><h3>💾 Save Discipline</h3><p>Manual saves are permanent. F5 quicksaves get overwritten. Maintain at least 3 rotating save slots. Always manual save before lockpicking, faction dialogue, and boss fights.</p></div>
+            <div class="tip-card"><h3>📈 Leveling Strategy</h3><p>Focus on one weapon type. Do not spread your attributes evenly. Old Camp / New Camp: prioritize Strength. Swamp Camp: prioritize Mana. Always keep enough LP in reserve for emergencies.</p></div>
+            <div class="tip-card"><h3>🛡️ Combat Survival Rules</h3><p>Levels 1-3: Run from everything. Levels 4-6: Only fight scavengers, young wolves, and the weakest enemies. Levels 7-9: Most standard enemies are manageable. Level 10+: You can walk anywhere with confidence.</p></div>
+            <div class="tip-card"><h3>🔐 Lockpicking Priority</h3><p>Training center locks (1-4 tumblers) → World locks (5 tumblers) → Collapsed Tower lock (7 tumblers, 57 moves). <a href="lock-solver.html">Use the Lockpicking Solver</a> to avoid breaking your tools.</p></div>
         </div>
     </section>
 </main>
-
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-section"><h4>About This Guide</h4><p>Fan-made Gothic 1 Remake guides and tools. Not affiliated with THQ Nordic or Alkimia Interactive.</p></div>

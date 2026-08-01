@@ -116,105 +116,75 @@ a{color:var(--color-accent);text-decoration:none}
     </header>
 
     <main class="content-wrapper">
-        <nav class="breadcrumb"><a href="index.html">首页</a> / <span class="current">终极阵营指南</span></nav>
+        <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Faction Quiz</span></nav>
+        <section class="page-header"><h1>🎯 Faction Choice Quiz</h1><p class="page-subtitle">Answer 3 questions, find your best faction</p></section>
 
-        <section class="page-header">
-            <h1>⚔️ 终极阵营选择指南</h1>
-            <p class="page-subtitle">互动测验 + 详细阵营对比，帮你做出明智选择</p>
-        </section>
-
-        <!-- 快速测验 -->
-        <section class="quiz-container">
-            <h2 style="font-family:var(--font-heading);color:var(--color-gold);text-align:center;font-size:2rem;margin-bottom:1rem">🎯 哪个阵营适合你？（3道题）</h2>
-            <p style="text-align:center;color:var(--color-text-secondary);margin-bottom:2rem">回答3个简单问题，看看哪个阵营最符合你的游戏风格</p>
-
-            <div id="quizContainer">
-                <div class="quiz-step" data-step="1">
-                    <div class="quiz-question">问题一：你更喜欢哪种战斗方式？</div>
-                    <div class="quiz-options">
-                        <div class="quiz-option" data-value="old-camp" onclick="selectOption(this)"><div class="option-icon">⚔️</div><div class="option-content"><h4>正面冲锋、重甲硬拼</h4><p>我喜欢挥剑近战，穿最重的盔甲，用力量碾压敌人</p></div></div>
-                        <div class="quiz-option" data-value="new-camp" onclick="selectOption(this)"><div class="option-icon">🗡️</div><div class="option-content"><h4>灵活机变、打带跑战术</h4><p>我更偏好游击战术、远程射击，利用人多势众以智取胜</p></div></div>
-                        <div class="quiz-option" data-value="swamp" onclick="selectOption(this)"><div class="option-icon">🔮</div><div class="option-content"><h4>魔法远程、掌控战场</h4><p>我想要施放法术、控制敌人的行动，用灵能力量克敌制胜</p></div></div>
-                    </div>
-                </div>
-                <div class="quiz-step" data-step="2" style="display:none">
-                    <div class="quiz-question">问题二：你对游戏剧情的期待是什么？</div>
-                    <div class="quiz-options">
-                        <div class="quiz-option" data-value="old-camp" onclick="selectOption(this)"><div class="option-icon">🛡️</div><div class="option-content"><h4>荣耀与地位</h4><p>我想在等级森严的制度中攀升，赢得大人物们的尊重，体验火魔法的力量</p></div></div>
-                        <div class="quiz-option" data-value="new-camp" onclick="selectOption(this)"><div class="option-icon">👥</div><div class="option-content"><h4>自由与反抗</h4><p>我偏爱粗粝的生存故事、复杂的同盟关系，以及自行决定命运的自由</p></div></div>
-                        <div class="quiz-option" data-value="swamp" onclick="selectOption(this)"><div class="option-icon">📜</div><div class="option-content"><h4>神秘与发现</h4><p>我渴望揭开古代的秘密，探索沉睡者的传说，寻求隐藏的知识和力量</p></div></div>
-                    </div>
-                </div>
-                <div class="quiz-step" data-step="3" style="display:none">
-                    <div class="quiz-question">问题三：什么样的挑战让你最兴奋？</div>
-                    <div class="quiz-options">
-                        <div class="quiz-option" data-value="old-camp" onclick="selectOption(this)"><div class="option-icon">💪</div><div class="option-content"><h4>压倒性的战斗</h4><p>艰难的战斗才是真正的考验——装备和技巧决定一切。我想成为战士英雄</p></div></div>
-                        <div class="quiz-option" data-value="new-camp" onclick="selectOption(this)"><div class="option-icon">🤔</div><div class="option-content"><h4>策略与选择</h4><p>复杂的局面需要时机的把握、盟友的运用和聪明的选择，而非单纯的蛮力</p></div></div>
-                        <div class="quiz-option" data-value="swamp" onclick="selectOption(this)"><div class="option-icon">🧩</div><div class="option-content"><h4>系统精通</h4><p>学习复杂系统、精细管理资源、掌握强大的魔法能力才是真正的成就</p></div></div>
-                    </div>
-                </div>
-                <div style="text-align:center;margin-top:2rem"><button id="quizSubmit" class="btn-calculate" onclick="calculateQuizResult()" style="display:none">🎯 揭晓我的最佳阵营</button></div>
+        <div class="guide-section" style="max-width:800px;margin:0 auto">
+            <div class="info-box important" style="margin-bottom:2rem">
+                <p style="line-height:1.9"><strong>How this works:</strong> Answer three questions about your preferred playstyle. The quiz recommends the faction that best matches your choices. All three factions are viable — this just helps you decide which one to invest 60+ hours into.</p>
             </div>
 
-            <div id="quizResult" class="result-display">
-                <h3 style="font-family:var(--font-heading);text-align:center;font-size:1.8rem;margin-bottom:1rem">你的最佳匹配是：</h3>
-                <div id="resultContent"></div>
+            <h3>Question 1: Combat Style</h3>
+            <p style="color:var(--color-text-secondary);margin-bottom:1rem">What's your preferred way to fight?</p>
+            <div class="tips-grid">
+                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q1').value='melee'"><h4>⚔️ Heavy Melee</h4><p>Get in close with heavy armor and a big sword. Tank hits and deal massive damage up close.</p></div>
+                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q1').value='ranged'"><h4>🏹 Ranged / Archer</h4><p>Keep your distance. Use bows, crossbows, and hit-and-run tactics.</p></div>
+                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q1').value='hybrid'"><h4>🔮 Hybrid (Melee + Magic)</h4><p>Mix it up. Use weapons for most fights, magic for crowd control and tough enemies.</p></div>
             </div>
-        </section>
+            <input type="hidden" id="q1" value="">
 
-        <!-- 快速决策指南 -->
-        <section id="quick-pick" class="guide-section">
-            <h2>⚡ 快速决策指南</h2>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin:2rem 0">
-                <div style="background:var(--color-bg-light);border:2px solid #c41e3a;border-radius:12px;padding:2rem;text-align:center"><h3 style="color:#c41e3a">初次游玩？</h3><p><strong>选择：旧营地</strong></p><p style="color:var(--color-text-secondary);margin-top:1rem">最容易上手、前期实力最强、目标最清晰</p></div>
-                <div style="background:var(--color-bg-light);border:2px solid #228b22;border-radius:12px;padding:2rem;text-align:center"><h3 style="color:#228b22">追求最大自由度？</h3><p><strong>选择：新营地</strong></p><p style="color:var(--color-text-secondary);margin-top:1rem">任务有多种解决途径、潜行选择丰富、可与任何人合作</p></div>
-                <div style="background:var(--color-bg-light);border:2px solid #6a0dad;border-radius:12px;padding:2rem;text-align:center"><h3 style="color:#6a0dad">喜欢钻研系统？</h3><p><strong>选择：沼泽营地</strong></p><p style="color:var(--color-text-secondary);margin-top:1rem">学习曲线较陡但一旦掌握回报极高</p></div>
+            <h3>Question 2: Magic Preference</h3>
+            <p style="color:var(--color-text-secondary);margin-bottom:1rem">What kind of magic appeals to you most?</p>
+            <div class="tips-grid">
+                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q2').value='fire'"><h4>🔥 Fire Magic</h4><p>Pure destructive power. Burn everything. The strongest damage-dealing spells in the game.</p></div>
+                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q2').value='ice'"><h4>💧 Ice / Water Magic</h4><p>Crowd control. Freeze enemies in place, control the battlefield, highest magic stat ceiling.</p></div>
+                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q2').value='psionic'"><h4>🌀 Psionic (Mind) Magic</h4><p>Sleep, fear, charm, control. Bypasses armor. Earliest magic access but hard-capped at Circle 4.</p></div>
             </div>
-        </section>
+            <input type="hidden" id="q2" value="">
 
-        <!-- 深入分析 -->
-        <section id="deep-dive" class="guide-section">
-            <h2>📖 完整阵营分析</h2>
+            <h3>Question 3: Playthrough Style</h3>
+            <p style="color:var(--color-text-secondary);margin-bottom:1rem">How do you approach games?</p>
+            <div class="tips-grid">
+                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q3').value='first'"><h4>🎮 First Playthrough</h4><p>I want clear objectives, a guided path, and the smoothest experience possible.</p></div>
+                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q3').value='rebel'"><h4>⚡ Rebel / Freedom</h4><p>I want freedom from hierarchy, the best economy, and an uninterrupted mid-game.</p></div>
+                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q3').value='unique'"><h4>🌀 Unique Atmosphere</h4><p>I want the strangest, most atmospheric experience — even if it's harder.</p></div>
+            </div>
+            <input type="hidden" id="q3" value="">
 
-            <div id="old-camp-detail" style="margin:3rem 0">
-                <h3 style="color:#c41e3a;font-family:var(--font-heading);font-size:2rem;border-bottom:3px solid #c41e3a;padding-bottom:.5rem">🛡️ 旧营地</h3>
-                <p style="color:var(--color-text-secondary);line-height:1.8;margin-top:1rem">由矿主戈麦斯统治，旧营地是矿区中最强大的势力。这里等级森严，从底层守卫到火法师核心圈，有着严格的晋升制度。火法师研究火焰魔法（魔法圈1至6）。旧营地控制着矿石贸易，对骑士和战士类型的角色最友好。</p>
-                <p style="color:var(--color-text-secondary);line-height:1.8;margin-top:1rem"><strong>关键NPC：</strong>迪亚哥（导师）、戈麦斯（领袖）、托鲁斯（守卫队长）、斯卡蒂（武器训练师）、托雷斯（火法师）、斯纳夫（厨师）、格雷厄姆（制图师）</p>
-                <h4>💪 推荐流派</h4>
-                <div style="background:var(--color-bg-light);border:2px solid var(--color-border);border-radius:8px;padding:2rem;margin:2rem 0">
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem">
-                        <div style="background:rgba(0,0,0,.3);padding:1.2rem;border-radius:8px"><span style="font-weight:700;color:var(--color-gold);display:block;margin-bottom:.5rem">力量（主属性）</span><input type="range" class="stat-slider" min="10" max="20" value="15" oninput="this.nextElementSibling.textContent=this.value+'+'"><div class="stat-value">15+</div></div>
-                        <div style="background:rgba(0,0,0,.3);padding:1.2rem;border-radius:8px"><span style="font-weight:700;color:var(--color-gold);display:block;margin-bottom:.5rem">耐力</span><input type="range" class="stat-slider" min="10" max="15" value="12" oninput="this.nextElementSibling.textContent=this.value+'+'"><div class="stat-value">12+</div></div>
-                        <div style="background:rgba(0,0,0,.3);padding:1.2rem;border-radius:8px"><span style="font-weight:700;color:var(--color-gold);display:block;margin-bottom:.5rem">战斗技能</span><input type="range" class="stat-slider" min="10" max="20" value="18" oninput="this.nextElementSibling.textContent=this.value+'+'"><div class="stat-value">18+</div></div>
-                    </div>
-                </div>
+            <div style="text-align:center;margin:2rem 0">
+                <button onclick="showResult()" class="btn-primary" style="padding:1.2rem 3rem;font-size:1.2rem">🎯 Show My Faction</button>
             </div>
 
-            <div id="new-camp-detail" style="margin:3rem 0">
-                <h3 style="color:#228b22;font-family:var(--font-heading);font-size:2rem;border-bottom:3px solid #228b22;padding-bottom:.5rem">⚔️ 新营地</h3>
-                <p style="color:var(--color-text-secondary);line-height:1.8;margin-top:1rem">由前王国将军李领导，新营地是雇佣兵、盗贼和反抗者的集合体。他们拒绝旧营地的等级制度，以实用主义和生存为信条。水法师研究水魔法（魔法圈1至6），专注于控制和辅助魔法。新营地提供最自由的游戏体验——你可以选择潜行、外交或纯粹的暴力。</p>
-                <p style="color:var(--color-text-secondary);line-height:1.8;margin-top:1rem"><strong>关键NPC：</strong>李（领袖）、狼（副手）、莫德拉格、卡瓦隆（猎人向导）、萨图拉斯（水法师）</p>
-                <div class="info-box warning"><strong>⚠️ 非新手友好：</strong>新营地需要你对游戏机制有较好的理解。许多任务有多种解决方法，选错可能影响后续发展。时刻保留后路！</div>
+            <div id="result" style="display:none;text-align:center;margin:2rem 0;padding:2rem;border:2px solid var(--color-gold);border-radius:12px">
+                <h3 id="resultTitle" style="font-family:var(--font-heading);color:var(--color-gold);font-size:1.8rem"></h3>
+                <p id="resultDesc" style="color:var(--color-text-secondary);margin:1rem 0"></p>
+                <a id="resultLink" href="factions-guide.html" class="btn-primary" style="display:inline-block;text-decoration:none">Read the Full Faction Guide →</a>
             </div>
 
-            <div id="swamp-camp-detail" style="margin:3rem 0">
-                <h3 style="color:#6a0dad;font-family:var(--font-heading);font-size:2rem;border-bottom:3px solid #6a0dad;padding-bottom:.5rem">🌀 沼泽营地（沉睡者兄弟会）</h3>
-                <p style="color:var(--color-text-secondary);line-height:1.8;margin-top:1rem">沼泽营地是沉睡者兄弟会的家园，他们崇拜被称为"沉睡者"的神秘存在。在巴尔·帕维兹等古鲁的领导下，兄弟会由圣殿骑士（战斗型魔法战士）和古鲁（精神导师）组成。沼泽营地使用灵能/沉睡者魔法（魔法圈1至4），包括沉睡、心灵控制和生命吸取等独特法术。</p>
-                <p style="color:var(--color-text-secondary);line-height:1.8;margin-top:1rem"><strong>关键NPC：</strong>巴尔·帕维兹（高阶古鲁）、科·安加尔（圣殿骑士领袖）、四位精神导师（入会守门人）、纳米布（Namib）、泰昂（Tyon）</p>
-                <div class="info-box note"><strong>🎯 重要提示：</strong>沼泽营地提供游戏中最独特的魔法体验。在入会前务必先与所有四位精神导师交谈，确认你真的适合这条路线。</div>
-            </div>
-        </section>
-
-        <!-- 常见问题 -->
-        <section id="faq" class="guide-section">
-            <h2>专家 FAQ</h2>
-            <div class="faq-list">
-                <div class="faq-item"><h3 class="faq-question">加入阵营后可以更换吗？</h3><div class="faq-answer"><p>一旦正式加入某个阵营，将无法更换。在做出最终选择之前，务必先探访所有三个营地并完成它们的前置任务。</p></div></div>
-                <div class="faq-item"><h3 class="faq-question">哪个阵营的战利品最好？</h3><div class="faq-answer"><p>旧营地拥有最好的护甲（暗影护甲、核心圈护甲）。新营地提供最多样化的武器选择。沼泽营地有独一无二的魔法物品，其他地方无法获得。</p></div></div>
-                <div class="faq-item"><h3 class="faq-question">沼泽营地真的比旧营地难吗？</h3><div class="faq-answer"><p>是的，沼泽营地前期的生存难度更高。需要投入更多时间学习魔法系统和管理资源。但掌握之后，沉睡者魔法的控场能力在后期游戏中非常强大。</p></div></div>
-                <div class="faq-item"><h3 class="faq-question">游戏有42个Steam成就吗？</h3><div class="faq-answer"><p>是的，《哥特王朝1重制版》共有42个Steam成就。部分成就与阵营选择相关，这意味着你需要至少通关三次才能解锁全部成就。</p></div></div>
-            </div>
-        </section>
+            <script>
+            function showResult() {
+                var q1 = document.getElementById('q1').value;
+                var q2 = document.getElementById('q2').value;
+                var q3 = document.getElementById('q3').value;
+                if (!q1 || !q2 || !q3) { alert('Please answer all three questions first!'); return; }
+                var result = document.getElementById('result');
+                result.style.display = 'block';
+                if (q3 === 'first' || (q1 === 'melee' && q2 === 'fire')) {
+                    document.getElementById('resultTitle').innerHTML = '🔥 Old Camp (Fire Mage / Guard)';
+                    document.getElementById('resultDesc').innerHTML = 'Best for your first playthrough. Diego guides you, quests are clear, armor is heavy, Fire Mages reach Circle 6 magic. Warning: Gomez banishes you in Chapter 4.';
+                    document.getElementById('resultLink').href = 'factions-guide.html#old-camp';
+                } else if (q3 === 'rebel' || (q1 === 'ranged' && q2 === 'ice')) {
+                    document.getElementById('resultTitle').innerHTML = '💧 New Camp (Mercenary / Water Mage)';
+                    document.getElementById('resultDesc').innerHTML = 'Rebel route. Best economy, highest ore rewards, Water Mages get +30 stat advantage. No Chapter 4 banishment. Best for dexterity/archer builds.';
+                    document.getElementById('resultLink').href = 'factions-guide.html#new-camp';
+                } else {
+                    document.getElementById('resultTitle').innerHTML = '🌀 Swamp Camp (Templar / Psionic)';
+                    document.getElementById('resultDesc').innerHTML = 'Cult atmosphere. Templar spellsword hybrid. Psionic magic bypasses armor and available earliest — but hard-capped at Circle 4. Most unique playthrough.';
+                    document.getElementById('resultLink').href = 'factions-guide.html#swamp';
+                }
+            }
+            </script>
+        </div>
     </main>
 
     <footer class="site-footer">

@@ -112,118 +112,108 @@ a{color:var(--color-accent);text-decoration:none}
 </header>
 
 <main class="content-wrapper">
-    <nav class="breadcrumb"><a href="index.html">首页</a> / <span class="current">任务列表</span></nav>
+        <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Quest Database</span></nav>
+        <section class="page-header"><h1>📜 Quest Database</h1><p class="page-subtitle">All quests organized by faction and game stage</p></section>
 
-    <section class="page-header">
-        <h1>📜 任务数据库</h1>
-        <p class="page-subtitle">全部任务按阵营和游戏阶段分类</p>
-    </section>
+        <div class="guide-section" style="max-width:900px;margin:0 auto">
+            <div class="info-box warning"><strong>⚠️ Note:</strong> Some quests become unavailable after joining a faction or advancing the main story. Complete side quests before moving chapters forward.</div>
 
-    <div class="info-box important"><strong>⚠️ 注意：</strong>部分任务在加入阵营或推进主线后可能无法完成。请在推进剧情前完成支线任务！</div>
+            <h2>🌐 Prologue Quests (All Camps)</h2>
+            <ul style="line-height:2;color:var(--color-text-secondary);margin-left:2rem">
+                <li><strong>Washed Ashore</strong> — Auto-trigger, beach — Tutorial</li>
+                <li><strong>Follow Diego to Old Camp</strong> — Diego, beach path — Safe passage, world intro</li>
+                <li><strong>Explore the Camp</strong> — Diego, Old Camp — XP, learning the layout</li>
+                <li><strong>Learn Basic Combat</strong> — Arena Trainer, Old Camp — XP, combat tutorial</li>
+                <li><strong>Visit All Three Camps</strong> — Self-directed — XP, faction awareness</li>
+                <li><strong>Buy a Map</strong> — Graham, Old Camp — Marked map</li>
+            </ul>
 
-    <!-- 共同/序章任务 -->
-    <div class="quest-section" id="shared">
-        <h2 class="shared">🌐 序章任务（所有阵营通用）</h2>
-        <table class="quest-table">
-            <thead><tr><th>任务名称</th><th>给予者</th><th>位置</th><th>阶段</th><th>奖励</th></tr></thead>
-            <tbody>
-                <tr><td>被冲上海滩</td><td>自动触发</td><td>海滩</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">无（教程）</span></td></tr>
-                <tr><td>跟随迪亚哥前往旧营地</td><td>迪亚哥</td><td>沙滩小路</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">安全通行，世界背景介绍</span></td></tr>
-                <tr><td>探索营地</td><td>迪亚哥</td><td>旧营地</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">经验值，熟悉环境</span></td></tr>
-                <tr><td>学习基础战斗</td><td>竞技场教练</td><td>旧营地竞技场</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">经验值，战斗教学</span></td></tr>
-                <tr><td>探访三大营地</td><td>自主探索</td><td>全矿区</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">经验值，阵营认知</span></td></tr>
-                <tr><td>购买地图</td><td>格雷厄姆</td><td>旧营地</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">标注了路线的地图</span></td></tr>
-            </tbody>
-        </table>
-    </div>
+            <h2>🔥 Old Camp Quests</h2>
+            <ul style="line-height:2;color:var(--color-text-secondary);margin-left:2rem">
+                <li><strong>Collect Ingredients</strong> — Snaf, Old Camp — XP, food, ore</li>
+                <li><strong>Find the Missing Warder</strong> — Thorus, Old Camp — XP, patrol info</li>
+                <li><strong>Gather Herbs</strong> — Camp Healer, Old Camp — XP, healing supplies</li>
+                <li><strong>Arena Training</strong> — Arena Trainer, Old Camp — XP, combat skill</li>
+                <li><strong>Find Fingers</strong> — Diego, Old Camp — Unlocks stealth training</li>
+                <li><strong>Guard's Sword</strong> — Thorus, Old Camp — Guard's Sword weapon</li>
+                <li><strong>Old Mine Supply List</strong> — Diego, mid-game — Admission progress</li>
+                <li><strong>Casting Shadows</strong> — Thorus, mid-game — Admission progress</li>
+                <li><strong>Test of Faith</strong> — Diego, mid-game — Shadow's Dress, 1000 XP</li>
+                <li><strong>Fire Rune Training</strong> — Torrez, mid-game — Basic fire rune</li>
+                <li><strong>Core Circle Audience</strong> — Gomez, late-game — Core Circle Armor</li>
+                <li><strong>Advanced Fire Magic</strong> — Torrez, late-game — High-tier fire runes</li>
+            </ul>
 
-    <!-- 旧营地任务 -->
-    <div class="quest-section" id="old-camp">
-        <h2 class="old">🔥 旧营地任务</h2>
-        <table class="quest-table">
-            <thead><tr><th>任务名称</th><th>给予者</th><th>类型</th><th>阶段</th><th>主要奖励</th></tr></thead>
-            <tbody>
-                <tr><td>收集食材</td><td>斯纳夫</td><td>收集</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">经验值、食物、矿石币</span></td></tr>
-                <tr><td>寻找失踪守卫</td><td>托鲁斯</td><td>调查</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">经验值、巡逻路线信息</span></td></tr>
-                <tr><td>采集草药</td><td>营地医师</td><td>收集</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">经验值、治疗补给</span></td></tr>
-                <tr><td>竞技场训练</td><td>竞技场教练</td><td>战斗</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">经验值、战斗技能</span></td></tr>
-                <tr><td>挑战科尔与凯尔</td><td>自主</td><td>战斗</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">经验值、战斗练习</span></td></tr>
-                <tr><td>寻找芬格斯</td><td>迪亚哥</td><td>搜寻</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">解锁潜行训练</span></td></tr>
-                <tr><td>守卫之剑</td><td>托鲁斯</td><td>主线</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">守卫之剑武器</span></td></tr>
-                <tr><td>旧矿坑补给清单</td><td>迪亚哥</td><td>入会</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">入会进度</span></td></tr>
-                <tr><td>集结暗影护卫支持</td><td>迪亚哥</td><td>外交</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">阵营声望</span></td></tr>
-                <tr><td>觐见戈麦斯</td><td>迪亚哥</td><td>入会</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">暗影护甲，正式加入</span></td></tr>
-                <tr><td>旧矿坑探索</td><td>营地领袖</td><td>地下城</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">矿石、经验值、装备</span></td></tr>
-                <tr><td>火焰符文训练</td><td>托雷斯</td><td>魔法</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">基础火焰符文</span></td></tr>
-                <tr><td>核心圈晋见</td><td>戈麦斯</td><td>主线</td><td><span class="quest-phase phase-late">后期</span></td><td><span class="quest-reward">核心圈护甲、宝藏</span></td></tr>
-                <tr><td>高级火焰魔法</td><td>托雷斯</td><td>魔法</td><td><span class="quest-phase phase-late">后期</span></td><td><span class="quest-reward">高级火焰符文</span></td></tr>
-                <tr><td>对抗龙族</td><td>戈麦斯</td><td>主线</td><td><span class="quest-phase phase-late">后期</span></td><td><span class="quest-reward">终局推进</span></td></tr>
-            </tbody>
-        </table>
-    </div>
+            <h2>💧 New Camp Quests</h2>
+            <ul style="line-height:2;color:var(--color-text-secondary);margin-left:2rem">
+                <li><strong>Introductions in the Free Mine</strong> — Lares — Camp intro, contacts</li>
+                <li><strong>Swampweed Smuggling</strong> — Free Mine — Ore income</li>
+                <li><strong>The Herb Merchant</strong> — Free Mine — XP, trade</li>
+                <li><strong>Canvassing Customers</strong> — Free Mine — XP, Swampweed trade</li>
+                <li><strong>The Raid</strong> — Lee, mid-game — Bandit's Dress, 1500 XP</li>
+                <li><strong>Defend the Free Mine</strong> — Lee, mid-game — Faction reputation</li>
+                <li><strong>Water Mage's Plan</strong> — Saturas, mid-game — Main story</li>
+                <li><strong>Sixth Circle of Magic</strong> — Saturas, late-game — Highest magic tier</li>
+            </ul>
 
-    <!-- 新营地任务 -->
-    <div class="quest-section" id="new-camp">
-        <h2 class="new">💧 新营地任务</h2>
-        <table class="quest-table">
-            <thead><tr><th>任务名称</th><th>给予者</th><th>类型</th><th>阶段</th><th>主要奖励</th></tr></thead>
-            <tbody>
-                <tr><td>修改补给清单</td><td>李 / 狼</td><td>潜行/破坏</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">经验值、新营地信任</span></td></tr>
-                <tr><td>递交清单</td><td>李</td><td>递送</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">入会进度</span></td></tr>
-                <tr><td>获取莫德拉格的戒指</td><td>李</td><td>获取任务</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">阵营声望</span></td></tr>
-                <tr><td>收集矿石</td><td>营地军需官</td><td>收集</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">经验值、矿石币</span></td></tr>
-                <tr><td>雇佣兵合约</td><td>李</td><td>入会</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">正式加入新营地</span></td></tr>
-                <tr><td>获取水之戒</td><td>水法师</td><td>魔法</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">水之戒（冰冻效果）</span></td></tr>
-                <tr><td>破坏旧营地补给线</td><td>李</td><td>破坏任务</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">雇佣兵皮甲</span></td></tr>
-                <tr><td>矿坑清理行动</td><td>狼</td><td>战斗</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">经验值、战利品</span></td></tr>
-                <tr><td>水法师的秘密</td><td>萨图拉斯</td><td>探索</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">水魔法知识</span></td></tr>
-                <tr><td>逃脱计划</td><td>李</td><td>主线</td><td><span class="quest-phase phase-late">后期</span></td><td><span class="quest-reward">终局推进</span></td></tr>
-                <tr><td>潜入旧营地</td><td>李</td><td>主线</td><td><span class="quest-phase phase-late">后期</span></td><td><span class="quest-reward">终局内容解锁</span></td></tr>
-            </tbody>
-        </table>
-    </div>
+            <h2>🌀 Swamp Camp Quests</h2>
+            <ul style="line-height:2;color:var(--color-text-secondary);margin-left:2rem">
+                <li><strong>Impress the Gurus</strong> — Namib, Tyon, Orun, Cadar — Need 4/5 approval</li>
+                <li><strong>The Guru's Trials</strong> — Each Guru — Individual tasks</li>
+                <li><strong>Swampweed Ritual</strong> — Fortuno — Brotherhood initiation</li>
+                <li><strong>Admission to the Swamp Camp</strong> — Level 5 + 4 Guru approvals — Novice Robes, 750 XP</li>
+                <li><strong>Templar Training</strong> — Gor Na Drak — Two-handed weapon + magic</li>
+                <li><strong>Sleeper's Visions</strong> — Spiritual quests — Psionic spell unlocks</li>
+            </ul>
 
-    <!-- 沼泽营地任务 -->
-    <div class="quest-section" id="swamp-camp">
-        <h2 class="swamp">🌀 沼泽营地任务</h2>
-        <table class="quest-table">
-            <thead><tr><th>任务名称</th><th>给予者</th><th>类型</th><th>阶段</th><th>主要奖励</th></tr></thead>
-            <tbody>
-                <tr><td>赢得第一位导师认可</td><td>精神导师一</td><td>智慧试炼</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">导师认可、经验值</span></td></tr>
-                <tr><td>赢得第二位导师认可</td><td>精神导师二</td><td>收集任务</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">导师认可、经验值</span></td></tr>
-                <tr><td>赢得第三位导师认可</td><td>精神导师三</td><td>魔法测试</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">导师认可、经验值</span></td></tr>
-                <tr><td>赢得第四位导师认可</td><td>精神导师四</td><td>精神试炼</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">导师认可、经验值</span></td></tr>
-                <tr><td>成为新手</td><td>巴尔·帕维兹</td><td>入会</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">新手袍，正式加入</span></td></tr>
-                <tr><td>学习沉睡者魔法——沉睡术</td><td>神殿导师</td><td>魔法</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">沉睡法术</span></td></tr>
-                <tr><td>学习沉睡者魔法——心灵控制</td><td>神殿导师</td><td>魔法</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">心灵控制法术</span></td></tr>
-                <tr><td>采集沼泽草药</td><td>草药师</td><td>收集</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">经验值、药水配方</span></td></tr>
-                <tr><td>圣殿骑士试炼</td><td>巴尔·帕维兹</td><td>晋升</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">圣殿骑士护甲</span></td></tr>
-                <tr><td>古鲁之杖寻回</td><td>神殿导师</td><td>地下城</td><td><span class="quest-phase phase-late">后期</span></td><td><span class="quest-reward">古鲁之杖（传说级）</span></td></tr>
-                <tr><td>沉睡者仪式掌控</td><td>神殿导师</td><td>魔法</td><td><span class="quest-phase phase-late">后期</span></td><td><span class="quest-reward">高阶沉睡者法术</span></td></tr>
-                <tr><td>与沉睡者沟通</td><td>巴尔·帕维兹</td><td>主线</td><td><span class="quest-phase phase-late">后期</span></td><td><span class="quest-reward">终局推进</span></td></tr>
-            </tbody>
-        </table>
-    </div>
+            <h2>⚠️ Missable Quests</h2>
+            <div class="table-responsive">
+                <table class="faction-comparison">
+                    <thead><tr><th>Quest</th><th>Miss Condition</th><th>Camp</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>A New Fence for Fisk</strong></td><td>Avoid talking to Fisk or rude dialogue option</td><td>All</td></tr>
+                        <tr><td><strong>A Roof Over My Head</strong></td><td>Kill Shrike instead of knocking him out</td><td>New Camp</td></tr>
+                        <tr><td><strong>Casting Shadows</strong></td><td>Complete Diego's version without Scatty's unmarked portion first</td><td>Old Camp</td></tr>
+                        <tr><td><strong>Trial of Fire</strong></td><td>Wrong answer to Corristo — permanently locked</td><td>Old Camp</td></tr>
+                        <tr><td><strong>Thorus vs Mordrag</strong></td><td>Kill Mordrag instead of convincing him — lose New Camp intro</td><td>All</td></tr>
+                        <tr><td><strong>Swamp Camp Weed Monopoly</strong></td><td>Trigger invocation before completing ore deliveries to Baals</td><td>Swamp Camp</td></tr>
+                        <tr><td><strong>Special Pieces</strong> (Santino)</td><td>Clear Mountain Fortress without Lester — he bugs out permanently</td><td>All</td></tr>
+                        <tr><td><strong>The Forgotten Recipe</strong></td><td>Miss the Old Recipe in free hut chest</td><td>All</td></tr>
+                    </tbody>
+                </table>
+            </div>
 
-    <!-- 支线任务 -->
-    <div class="quest-section" id="side">
-        <h2 class="shared">📚 支线任务与活动</h2>
-        <table class="quest-table">
-            <thead><tr><th>任务名称</th><th>位置</th><th>类型</th><th>阶段</th><th>主要奖励</th></tr></thead>
-            <tbody>
-                <tr><td>开锁训练</td><td>训练中心</td><td>技能</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">解锁开锁技能</span></td></tr>
-                <tr><td>5块滑动板锁</td><td>兽人营地、山路</td><td>解谜</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">隐藏宝藏</span></td></tr>
-                <tr><td>崩塌塔开锁</td><td>崩塌塔</td><td>解谜</td><td><span class="quest-phase phase-late">后期</span></td><td><span class="quest-reward">传说物品（57步解谜）</span></td></tr>
-                <tr><td>清理狼群</td><td>森林区域</td><td>战斗</td><td><span class="quest-phase phase-early">初期</span></td><td><span class="quest-reward">经验值、狼皮</span></td></tr>
-                <tr><td>清剿土匪营地</td><td>营地间道路</td><td>战斗</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">经验值、缴获武器</span></td></tr>
-                <tr><td>清除兽人侦察兵</td><td>边境区域</td><td>战斗</td><td><span class="quest-phase phase-mid">中期</span></td><td><span class="quest-reward">经验值、兽人武器</span></td></tr>
-                <tr><td>清剿矿坑爬虫巢穴</td><td>旧矿坑、深层矿坑</td><td>地下城</td><td><span class="quest-phase phase-late">后期</span></td><td><span class="quest-reward">甲壳制作材料</span></td></tr>
-                <tr><td>猎杀影兽</td><td>密林深处</td><td>战斗</td><td><span class="quest-phase phase-late">后期</span></td><td><span class="quest-reward">影兽皮（制作材料）</span></td></tr>
-                <tr><td>远古遗迹探索</td><td>远古遗迹</td><td>探索</td><td><span class="quest-phase phase-late">后期</span></td><td><span class="quest-reward">石魔像首领、远古核心</span></td></tr>
-            </tbody>
-        </table>
-    </div>
-</main>
+            <h2>🎯 Missable Unique Items</h2>
+            <div class="table-responsive">
+                <table class="faction-comparison">
+                    <thead><tr><th>Item</th><th>Location</th><th>Cutoff</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Dragonroot, Goblin Berries</strong></td><td>Fisk, Dexter, Swamp Camp merchants</td><td>Each chapter transition — stock wiped</td></tr>
+                        <tr><td><strong>Silas' Axe</strong> (Unique)</td><td>Defeat/pickpocket Silas at Free Mine Tavern</td><td>Chapter 4 (camp hostility)</td></tr>
+                        <tr><td><strong>Heavy Templar Armor</strong></td><td>Cor Angar (Swamp Camp only)</td><td>Faction lock</td></tr>
+                        <tr><td><strong>Ring of Greater Invincibility</strong></td><td>Late-game Old Camp infiltration</td><td>Endgame point of no return</td></tr>
+                        <tr><td><strong>Title Deed</strong></td><td>Lester at Mountain Fortress, Chapter 3</td><td>Lester bugs out</td></tr>
+                        <tr><td><strong>Shadow's Dress / Bandit's Dress / Novice Robes</strong></td><td>Faction join reward</td><td>Faction lock</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>🏆 Missable Achievements</h2>
+            <div class="table-responsive">
+                <table class="faction-comparison">
+                    <thead><tr><th>Achievement</th><th>Requirement</th><th>How to Miss</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Mud Freak</strong></td><td>Exhaust all of Mud's dialogue</td><td>Kill Mud</td></tr>
+                        <tr><td><strong>Mercy Over Madness</strong></td><td>Spare Gomez</td><td>Kill Gomez</td></tr>
+                        <tr><td><strong>Insomnia Champion</strong></td><td>Complete game without ever sleeping</td><td>Sleep once</td></tr>
+                        <tr><td><strong>Map Sniffer</strong></td><td>Collect all maps</td><td>Some maps are missable</td></tr>
+                        <tr><td><strong>True Stranger</strong></td><td>Complete all Chromanin quests</td><td>Chapter lockouts</td></tr>
+                        <tr><td><strong>The Anatomaniac</strong></td><td>Complete Cavalorn Books quest</td><td>Quest-chain dependent</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
 
     <footer class="site-footer">
         <div class="footer-content">

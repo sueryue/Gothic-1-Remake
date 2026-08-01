@@ -94,104 +94,104 @@ a{color:var(--color-accent);text-decoration:none}
     </header>
 
     <main class="content-wrapper"><main class="content-wrapper">
-        <nav class="breadcrumb"><a href="index.html">首页</a> / <span class="current">开锁指南</span></nav>
+        <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Lockpicking Guide</span></nav>
 
         <section class="page-header">
-            <h1>🔐 开锁完全指南</h1>
-            <p class="page-subtitle">滑块、定位销、互联板块 —— 实测过的解法，不是瞎编的</p>
+            <h1>🔐 Complete Lockpicking Guide</h1>
+            <p class="page-subtitle">Sliding plates, gold pins, interconnected bars — battle-tested solutions, not made-up guesses</p>
         </section>
 
         <section class="tldr-section">
-            <h2>⚡ 速查卡片</h2>
+            <h2>⚡ Quick Reference Card</h2>
             <div style="background:rgba(0,0,0,0.3);border-left:4px solid var(--color-accent);padding:1.5rem;margin-bottom:1.5rem">
-                <p style="font-size:1.1rem;line-height:1.8;margin-bottom:1rem">🎯 <strong>目标：</strong>把所有定位销推到<strong>中间位置（第4孔）</strong>，销钉弹起就对了。</p>
-                <p style="font-size:1.1rem;line-height:1.8;margin-bottom:1rem">⚠️ <strong>核心难点：</strong>移动一块板，其他板也会跟着动。有些同向联动、有些反向、有些完全独立。</p>
-                <p style="font-size:1.1rem;line-height:1.8;margin-bottom:1rem">💡 <strong>训练：</strong>找旧营地的<strong>芬格斯</strong>（竞技场后面，斯纳夫的大锅旁边），花 10 LP + 100 矿学到专业级（4次容错），20 LP + 200 矿学到大师级（6次容错）。</p>
-                <p style="font-size:1.1rem;line-height:1.8">🛠️ <strong>开锁器来源：</strong>菲斯克（旧营地市场，约13-15矿一把）、莫德雷格、德克斯特。也可以在箱子、桶和尸体上捡。</p>
+                <p style="font-size:1.1rem;line-height:1.8;margin-bottom:1rem">🎯 <strong>Goal:</strong> Push every pin to the <strong>center position (hole 4)</strong>. When the pin pops up, that plate is solved.</p>
+                <p style="font-size:1.1rem;line-height:1.8;margin-bottom:1rem">⚠️ <strong>Core challenge:</strong> Moving one plate moves others too. Some linked in the same direction, some opposite, some completely independent.</p>
+                <p style="font-size:1.1rem;line-height:1.8;margin-bottom:1rem">💡 <strong>Training:</strong> Find <strong>Fingers</strong> at the Old Camp (behind the arena, near Snaf's cauldron). Spend 10 LP + 100 Ore for Professional (4 mistake tolerance), 20 LP + 200 Ore for Master (6 mistake tolerance).</p>
+                <p style="font-size:1.1rem;line-height:1.8">🛠️ <strong>Lockpick sources:</strong> Fisk (Old Camp market, ~13-15 Ore each), Mordrag, Dexter. Also lootable from chests, barrels, and corpses.</p>
             </div>
         </section>
 
         <section class="toc-section">
-            <h2>目录</h2>
+            <h2>Table of Contents</h2>
             <ol class="toc-list">
-                <li><a href="#how-it-works">开锁到底怎么玩</a></li>
-                <li><a href="#mistakes">容错次数与耐久</a></li>
-                <li><a href="#where-lockpicks">哪里搞开锁器</a></li>
-                <li><a href="#strategy">解题策略</a></li>
-                <li><a href="#faq">常见问题</a></li>
+                <li><a href="#how-it-works">How Lockpicking Actually Works</a></li>
+                <li><a href="#mistakes">Mistake Tolerance &amp; Durability</a></li>
+                <li><a href="#where-lockpicks">Where to Get Lockpicks</a></li>
+                <li><a href="#strategy">Solving Strategy</a></li>
+                <li><a href="#faq">FAQ</a></li>
             </ol>
         </section>
 
         
             <div class="info-box important" style="margin-bottom:2rem">
-                <h3 style="color:var(--color-gold);margin-bottom:0.5rem">🎯 按经验分层</h3>
-                <p style="line-height:1.9;color:var(--color-text-secondary"><strong>🟢 没开过锁？</strong>先看「开锁到底怎么玩」和「解题策略」，不用跳。<br>
-                <strong>🟡 已经会推板了？</strong>跳到「容错次数与耐久」看训练师费用备忘。<br>
-                <strong>🔴 速通/周目党：</strong>专业级开锁（10LP+100矿）是最优解。大师级（20LP+200矿）性价比低——6次容错vs4次的收益远不值额外10LP。鲨鱼型玩家把省下的LP砸在武器训练上。</p>
+                <h3 style="color:var(--color-gold);margin-bottom:0.5rem">🎯 Tiered by Experience</h3>
+                <p style="line-height:1.9;color:var(--color-text-secondary"><strong>🟢 Never picked a lock?</strong> Start with "How Lockpicking Actually Works" and "Solving Strategy" — no skipping needed.<br>
+                <strong>🟡 Already know how to slide plates?</strong> Jump to "Mistake Tolerance &amp; Durability" for trainer cost reference.<br>
+                <strong>🔴 Speedrunners / multi-playthrough:</strong> Professional lockpicking (10LP+100 Ore) is the optimal choice. Master (20LP+200 Ore) is poor value — the benefit of 6 vs 4 mistakes is not worth 10 extra LP. Shark-tier players dump the saved LP into weapon training instead.</p>
             </div>
 <section id="how-it-works" class="guide-section">
-            <h2>开锁到底怎么玩</h2>
-            <div class="info-box warning"><strong>⚠️ 先说清楚：</strong>《哥特1重制版》的开锁系统是<strong>滑动板块谜题</strong>，不是按钮按顺序按。网上很多攻略站写了错误的"红蓝黄按钮"系统——那是预售前的猜测，正式版完全不是那样。</div>
+            <h2>How Lockpicking Actually Works</h2>
+            <div class="info-box warning"><strong>⚠️ Let's be clear:</strong> Gothic 1 Remake's lockpicking is a <strong>sliding plate puzzle</strong>, not a button-pressing sequence. Many guide sites incorrectly describe a "red-blue-yellow button" system — that was pre-release speculation, and the final release is nothing like that.</div>
             
-            <h3>板块的结构</h3>
-            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem">每把锁由<b>4到7块滑板</b>组成。每块板上有<b>7个孔位</b>，里面有一个小金/铜色的定位销。你需要把每根销钉滑到<b>中间位置（第4孔）</b>。当销钉到位时它会弹起来——看到就说明这块板搞定了。</p>
+            <h3>Plate Structure</h3>
+            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem">Each lock consists of <b>4 to 7 sliding plates</b>. Each plate has <b>7 holes</b> with a small gold/copper pin inside. You need to slide every pin to the <b>center position (hole 4)</b>. When a pin is in place it pops up — that means that plate is done.</p>
             
-            <h3>互联板块的机制</h3>
-            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem">这是整个系统最烦人的地方：<strong>移动一块板，其他板可能跟着动。</strong>联动有三种情况：</p>
+            <h3>Interconnected Plate Mechanics</h3>
+            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem">This is the most frustrating part of the system: <strong>moving one plate can move others.</strong> There are three types of linkage:</p>
             <ul style="margin-left:2rem;margin-bottom:1.5rem;color:var(--color-text-secondary)">
-                <li>同向联动：两块板朝同一个方向移动</li>
-                <li>反向联动：一块板往左，另一块往右</li>
-                <li>独立板：不受任何其他板影响</li>
+                <li>Same-direction: both plates move the same way</li>
+                <li>Opposite-direction: one goes left, the other goes right</li>
+                <li>Independent: not affected by any other plate</li>
             </ul>
-            <p style="line-height:1.9;color:var(--color-text-secondary)">你需要先搞清楚每把锁的联动关系，然后再按正确顺序逐个归位。</p>
+            <p style="line-height:1.9;color:var(--color-text-secondary)">You need to figure out each lock's linkage relationships first, then position each pin in the correct order.</p>
         </section>
 
         <section id="mistakes" class="guide-section">
-            <h2>容错次数与耐久</h2>
+            <h2>Mistake Tolerance &amp; Durability</h2>
             <div class="table-responsive">
                 <table class="faction-comparison">
-                    <thead><tr><th>能力等级</th><th>容错次数</th><th>断裂后果</th><th>训练花费</th></tr></thead>
+                    <thead><tr><th>Skill Level</th><th>Mistake Tolerance</th><th>Break Consequence</th><th>Training Cost</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>未训练</strong></td><td>2次</td><td>锁重置（白干了）</td><td>—</td></tr>
-                        <tr><td><strong>专业级</strong></td><td>4次</td><td>不重置，但会少一根联动</td><td>10 LP + 100 矿</td></tr>
-                        <tr><td><strong>大师级</strong></td><td>6次</td><td>不重置，再少一根联动</td><td>20 LP + 200 矿</td></tr>
+                        <tr><td><strong>Untrained</strong></td><td>2</td><td>Lock resets (start over)</td><td>—</td></tr>
+                        <tr><td><strong>Professional</strong></td><td>4</td><td>No reset, but one linkage removed</td><td>10 LP + 100 Ore</td></tr>
+                        <tr><td><strong>Master</strong></td><td>6</td><td>No reset, another linkage removed</td><td>20 LP + 200 Ore</td></tr>
                     </tbody>
                 </table>
             </div>
-            <p style="line-height:1.9;color:var(--color-text-secondary)"><strong>断裂条件：</strong>把销钉推到超出第1孔或第7孔的位置。边缘就是死亡线。所以永远不要让任何销钉顶在最外端。</p>
+            <p style="line-height:1.9;color:var(--color-text-secondary)"><strong>Break condition:</strong> Pushing a pin past hole 1 or hole 7. The edges are the death line. Never let any pin sit at the extreme ends.</p>
         </section>
 
         <section id="where-lockpicks" class="guide-section">
-            <h2>哪里搞开锁器</h2>
+            <h2>Where to Get Lockpicks</h2>
             <ul style="margin-left:2rem;color:var(--color-text-secondary)">
-                <li><strong>菲斯克</strong>（旧营地市场）—— 约13-15矿一把，最稳定的来源</li>
-                <li><strong>莫德雷格</strong>和<strong>德克斯特</strong>也有卖</li>
-                <li>宝箱、木桶、尸体上捡</li>
-                <li>从守卫或同伙身上偷</li>
+                <li><strong>Fisk</strong> (Old Camp market) — ~13-15 Ore each, most reliable source</li>
+                <li><strong>Mordrag</strong> and <strong>Dexter</strong> also sell them</li>
+                <li>Loot from chests, barrels, and corpses</li>
+                <li>Steal from guards or fellow rogues</li>
             </ul>
-            <p style="margin-top:1rem;color:var(--color-text-secondary)"><strong>建议：</strong>任何时候包里至少备10把开锁器。在矿洞里用完就尴尬了，跑回去买一趟很浪费时间。</p>
+            <p style="margin-top:1rem;color:var(--color-text-secondary)"><strong>Tip:</strong> Always carry at least 10 lockpicks. Running out inside a mine is embarrassing, and trekking back to buy more wastes a lot of time.</p>
         </section>
 
         <section id="strategy" class="guide-section">
-            <h2>解题策略 —— 真正管用的方法</h2>
+            <h2>Solving Strategy — What Actually Works</h2>
             <div class="tips-grid">
-                <div class="tip-card"><h3>💾 开锁前存档</h3><p>板块联动关系对那把锁是固定的——不会随机变化。先试一次搞清楚谁跟谁联动，记下来，然后读档。</p></div>
-                <div class="tip-card"><h3>🔍 逐个测试板块</h3><p>每块板先单独动一格，看哪些板跟着动、动什么方向。这个过程是解任何锁的第一步。</p></div>
-                <div class="tip-card"><h3>🔗 从关联最多的开始</h3><p>影响其他板块最多的那块先归位。把它放好之后剩下的联动关系就变简单了。</p></div>
-                <div class="tip-card"><h3>⚠️ 远离边缘</h3><p>永远不要让销钉停在位置1或位置7。边距留一格作为缓冲。顶到边缘 = 断锁器。</p></div>
-                <div class="tip-card"><h3>✅ 独立板留到最后</h3><p>不受其他板影响的独立板最后处理——它们不会打乱你已经摆好的销钉。</p></div>
-                <div class="tip-card"><h3>⏰ 注意周围环境</h3><p>开锁时<strong>时间不会暂停</strong>。NPC会看到你在撬别人的箱子然后过来找你麻烦。</p></div>
+                <div class="tip-card"><h3>💾 Save before lockpicking</h3><p>Linkage relationships are fixed for each lock — they don't randomize. Test once to map out which plates affect which, take notes, then reload.</p></div></p></div>
+                <div class="tip-card"><h3>🔍 Test plates one by one</h3><p>Move each plate one notch solo and watch what else moves, in which direction. This is the first step for solving any lock.</p></div></p></div>
+                <div class="tip-card"><h3>🔗 Start with the most-connected plate</h3><p>Solve the plate that affects the most others first. Once it's in place, the remaining linkage relationships become simpler.</p></div></p></div>
+                <div class="tip-card"><h3>⚠️ Stay away from the edges</h3><p>Never let a pin rest at position 1 or 7. Keep a one-notch buffer from the edge. Hitting the edge = broken pick.</p></div></p></div>
+                <div class="tip-card"><h3>✅ Independent plates last</h3><p>Handle independent plates at the very end — they won't disturb the pins you've already placed.</p></div></p></div>
+                <div class="tip-card"><h3>⏰ Watch your surroundings</h3><p><strong>Time does not pause</strong> while lockpicking. NPCs can see you breaking into someone's chest and will come after you.</p></div></p></div>
             </div>
-            <div class="info-box note" style="margin-top:2rem"><strong>📌 1.0.2补丁更新：</strong>成功开锁现在会奖励少量经验值。水下开锁更麻烦——你有屏息条，氧气用完直接淹死。</div>
+            <div class="info-box note" style="margin-top:2rem"><strong>📌 Patch 1.0.2 update:</strong> Successful lockpicking now awards a small amount of XP. Underwater lockpicking is trickier — you have a breath meter and will drown if oxygen runs out.</div>
         </section>
 
         <section id="faq" class="guide-section">
-            <h2>常见问题</h2>
+            <h2>Frequently Asked Questions</h2>
             <div class="faq-list">
-                <div class="faq-item"><h3 class="faq-question">锁坏了还能修吗？</h3><div class="faq-answer"><p>专业级和大师级训练后，锁坏了不会重置，只会移除一根联动。未训练时断裂会导致<b>整个锁重置</b>，等于白干。所以至少学到专业级再去开重要宝箱。</p></div></div>
-                <div class="faq-item"><h3 class="faq-question">可以完全不学开锁通关吗？</h3><div class="faq-answer"><p>大部分锁都有替代路线（绕路、钥匙、战斗），但会错过不少好东西。建议至少花 10 LP 学到专业级——这个投资性价比极高。</p></div></div>
-                <div class="faq-item"><h3 class="faq-question">这个站的开锁工具还能用吗？</h3><div class="faq-answer"><p>本站的<a href="lock-solver.html">开锁计算器</a>是预售阶段基于猜测做的，底层假设和正式版的滑动板块系统不太一样。当成一个交互演示工具玩玩可以，但遇到正经锁还是参考上面手动解法更靠谱。</p></div></div>
-                <div class="faq-item"><h3 class="faq-question">为什么锁越来越难？</h3><div class="faq-answer"><p>设计意图。前期训练锁只有3-4块板、联动简单。后期宝箱最多7块板，联动关系错综复杂。学到大师级（6次容错）之后再挑战高难度锁会舒服很多。</p></div></div>
+                <div class="faq-item"><h3 class="faq-question">Can a broken lock be fixed?</h3><div class="faq-answer"><p>After Professional or Master training, breaking a lock does not reset it — it only removes one linkage. Untrained breaks cause <b>a full lock reset</b>, meaning you start over from scratch. So get at least Professional before tackling important chests.</p></div></div>
+                <div class="faq-item"><h3 class="faq-question">Can you beat the game without learning lockpicking?</h3><div class="faq-answer"><p>Most locks have alternative routes (detours, keys, combat), but you'll miss a lot of good loot. Strongly recommend spending at least 10 LP for Professional — the return on investment is exceptionally high.</p></div></div>
+                <div class="faq-item"><h3 class="faq-question">Does this site's lockpicking tool still work?</h3><div class="faq-answer"><p>Our <a href="lock-solver.html">Lockpicking Calculator</a> was built pre-release based on speculation, and its underlying assumptions don't quite match the final sliding-plate system. It's fine as an interactive demo to play with, but for real locks, the manual methods above are more reliable.</p></div></div>
+                <div class="faq-item"><h3 class="faq-question">Why do locks get harder and harder?</h3><div class="faq-answer"><p>By design. Early training locks have only 3-4 plates with simple linkages. Late-game chests go up to 7 plates with intricate linkage webs. Get Master level (6 mistake tolerance) before tackling difficult locks — it makes things much smoother.</p></div></div>
             </div>
         </section>
     </main>

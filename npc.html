@@ -117,235 +117,43 @@ a{color:var(--color-accent);text-decoration:none}
 </header>
 
 <main class="content-wrapper">
-    <nav class="breadcrumb"><a href="index.html">首页</a> / <span class="current">NPC角色</span></nav>
+        <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">NPC Characters</span></nav>
+        <section class="page-header"><h1>👥 NPC Database</h1><p class="page-subtitle">Key characters — their locations, roles, and services</p></section>
 
-    <section class="page-header">
-        <h1>👥 NPC角色数据库</h1>
-        <p class="page-subtitle">关键角色及其位置、职责和提供的服务</p>
-    </section>
+        <div class="guide-section" style="max-width:900px;margin:0 auto">
+            <h2>🔥 Old Camp</h2>
+            <div class="tips-grid">
+                <div class="tip-card"><h4>Diego</h4><p>Mentor / Main Quest Giver. First friendly face in the Colony. Trains Strength and Dexterity. Found on the beach path, then in Old Camp.</p></div>
+                <div class="tip-card"><h4>Gomez</h4><p>Old Camp Leader. Rules with an iron fist. Controls ore trade. Final decision-maker for Old Camp admission.</p></div>
+                <div class="tip-card"><h4>Thorus</h4><p>Guard Captain. Assigns combat missions and patrol routes. Key contact for Old Camp admission quests.</p></div>
+                <div class="tip-card"><h4>Torrez</h4><p>Fire Mage / Magic Trainer. Sells magic items, runes, and mana upgrades. Teaches Fire Magic. Quest: "The Price of Magic" (bring 2 Wolf Claws + 1 Parchment).</p></div>
+                <div class="tip-card"><h4>Scatty</h4><p>Weapon Trainer. Teaches One-Handed combat and unlocks the parry (10 LP + 50 Ore). Found at the Old Camp training grounds.</p></div>
+                <div class="tip-card"><h4>Fingers</h4><p>Lockpicking Trainer. Near the arena, past Snaf's cauldron. Trained: 10 LP + 100 Ore (4 mistakes). Master: 20 LP + 200 Ore (6 mistakes).</p></div>
+                <div class="tip-card"><h4>Snaf</h4><p>Cook. Complete his recipe quest to receive 3 free Meatbug Ragouts daily — renewable healing.</p></div>
+                <div class="tip-card"><h4>Graham</h4><p>Map Seller. Near Old Camp north gate. Sells detailed Old Camp map and a broader Colony map.</p></div>
+            </div>
 
-    <!-- 旧营地 NPC -->
-    <section class="guide-section">
-        <h2 style="font-family:var(--font-heading);color:#c41e3a;border-bottom:2px solid #c41e3a;padding-bottom:.5rem;margin-bottom:1.5rem">🔥 旧营地角色</h2>
-        <div class="npc-grid">
-            <div class="npc-card">
-                <span class="npc-faction faction-old">旧营地</span>
-                <div class="npc-name">迪亚哥 (Diego)</div>
-                <div class="npc-role">导师 / 主线任务给予者</div>
-                <dl class="npc-detail">
-                    <dt>位置</dt><dd>沙滩小路（初次相遇），之后在旧营地</dd>
-                    <dt>角色</dt><dd>你在游戏初期的向导。矿区中遇到的第一个友善面孔。教授力量和敏捷，介绍各阵营和政治局势，推动主线剧情发展。</dd>
-                    <dt>相遇时机</dt><dd>开局10分钟内，在从沙滩出来的小路上</dd>
-                </dl>
-                <div class="npc-services"><span class="service-tag s-trainer">训练师（力量、敏捷）</span><span class="service-tag s-quest">任务给予者</span></div>
+            <h2>💧 New Camp</h2>
+            <div class="tips-grid">
+                <div class="tip-card"><h4>Lee</h4><p>Mercenary Leader. Assigns bandit and mercenary quests. Key figure for New Camp admission.</p></div>
+                <div class="tip-card"><h4>Wolf</h4><p>Bow Trainer. Teaches archery and sells bows. Essential for dexterity builds.</p></div>
+                <div class="tip-card"><h4>Saturas</h4><p>Water Mage Leader. Explains the Water Mage path and the secret project in the Free Mine.</p></div>
+                <div class="tip-card"><h4>Swiney</h4><p>Free Mine. Gives free Digger's Dress armor — good early-game protection.</p></div>
             </div>
-            <div class="npc-card">
-                <span class="npc-faction faction-old">旧营地</span>
-                <div class="npc-name">戈麦斯 (Gomez)</div>
-                <div class="npc-role">旧营地领袖</div>
-                <dl class="npc-detail">
-                    <dt>位置</dt><dd>城堡（旧营地核心区域）</dd>
-                    <dt>角色</dt><dd>以铁腕统治旧营地。掌控矿石开采和贸易。入会考验的最终决策者。代表殖民地中旧有的男爵等级制度。</dd>
-                    <dt>相遇时机</dt><dd>游戏中段，旧营地入会任务期间</dd>
-                </dl>
-                <div class="npc-services"><span class="service-tag s-quest">任务给予者</span></div>
+
+            <h2>🌀 Swamp Camp</h2>
+            <div class="tips-grid">
+                <div class="tip-card"><h4>Namib, Tyon, Orun, Cadar</h4><p>The Five Gurus. You need approval from at least 4 of 5 to join the Brotherhood. Each gives unique trials.</p></div>
+                <div class="tip-card"><h4>Fortuno</h4><p>Provides 3 free Swampweed rolls daily — restores mana or can be sold for profit.</p></div>
+                <div class="tip-card"><h4>Gor Na Drak</h4><p>Templar Weapon Trainer. Teaches two-handed weapons for the Templar spellsword build.</p></div>
+                <div class="tip-card"><h4>Baal Parvez</h4><p>Old Camp Guru. Can escort you safely to the Swamp Camp — dangerous route, free XP from his kills.</p></div>
             </div>
-            <div class="npc-card">
-                <span class="npc-faction faction-old">旧营地</span>
-                <div class="npc-name">托鲁斯 (Thorus)</div>
-                <div class="npc-role">守卫队长</div>
-                <dl class="npc-detail">
-                    <dt>位置</dt><dd>旧营地（守卫营房）</dd>
-                    <dt>角色</dt><dd>负责守卫任务和战斗相关任务，引导你了解巡逻路线，是旧营地入会的重要联系人。</dd>
-                    <dt>相遇时机</dt><dd>到达旧营地后不久</dd>
-                </dl>
-                <div class="npc-services"><span class="service-tag s-quest">任务给予者</span><span class="service-tag s-combat">战斗</span></div>
-            </div>
-            <div class="npc-card">
-                <span class="npc-faction faction-old">旧营地</span>
-                <div class="npc-name">托雷斯 (Torres)</div>
-                <div class="npc-role">火法师 / 魔法训练师</div>
-                <dl class="npc-detail">
-                    <dt>位置</dt><dd>旧营地（火法师区域）</dd>
-                    <dt>角色</dt><dd>出售魔法物品、符文和法力升级。教授火系魔法——基础和高级符文。旧营地中与魔法相关的任何需求都可以找他。</dd>
-                    <dt>相遇时机</dt><dd>早期游戏，到达旧营地后即可</dd>
-                </dl>
-                <div class="npc-services"><span class="service-tag s-magic">魔法训练师</span><span class="service-tag s-merchant">商人</span></div>
-            </div>
-            <div class="npc-card">
-                <span class="npc-faction faction-old">旧营地</span>
-                <div class="npc-name">斯卡蒂 (Scatty)</div>
-                <div class="npc-role">武器训练师</div>
-                <dl class="npc-detail">
-                    <dt>位置</dt><dd>旧营地（训练场）</dd>
-                    <dt>角色</dt><dd>单手武器专精教练。教授剑术技巧并提升单手武器熟练度。旧营地中的重要战斗训练师。</dd>
-                    <dt>相遇时机</dt><dd>早期游戏，旧营地训练场</dd>
-                </dl>
-                <div class="npc-services"><span class="service-tag s-trainer">训练师（单手武器）</span></div>
-            </div>
-            <div class="npc-card">
-                <span class="npc-faction faction-old">旧营地</span>
-                <div class="npc-name">格雷厄姆 (Graham)</div>
-                <div class="npc-role">制图师 / 商人</div>
-                <dl class="npc-detail">
-                    <dt>位置</dt><dd>旧营地（市场区域附近）</dd>
-                    <dt>角色</dt><dd>出售标注了路线、安全通道、危险区和兴趣点的地图。早期游戏的必备开销——他的地图让你了解殖民地的全貌。</dd>
-                    <dt>相遇时机</dt><dd>与托鲁斯对话后，他会指引你去见格雷厄姆</dd>
-                </dl>
-                <div class="npc-services"><span class="service-tag s-merchant">商人（地图）</span></div>
-            </div>
-            <div class="npc-card">
-                <span class="npc-faction faction-old">旧营地</span>
-                <div class="npc-name">斯纳夫 (Snaf)</div>
-                <div class="npc-role">厨师 / 早期任务给予者</div>
-                <dl class="npc-detail">
-                    <dt>位置</dt><dd>旧营地（厨房区域）</dd>
-                    <dt>角色</dt><dd>提供"收集食材"任务——你最早的任务之一。出售食物并收购草药/肉类。早期经验和矿石币的重要来源。</dd>
-                    <dt>相遇时机</dt><dd>非常早，探索旧营地时即可遇到</dd>
-                </dl>
-                <div class="npc-services"><span class="service-tag s-quest">任务给予者</span><span class="service-tag s-merchant">商人（食物）</span></div>
+
+            <div class="info-box warning" style="margin:2rem 0">
+                <p style="line-height:1.8"><strong>⚠️ NPC Mortality:</strong> In the remake, NPCs have real daily routines and can be killed by monsters. If a key trainer dies, their services are permanently lost. Reload a save if this happens.</p>
             </div>
         </div>
-    </section>
-
-    <!-- 新营地 NPC -->
-    <section class="guide-section">
-        <h2 style="font-family:var(--font-heading);color:#228b22;border-bottom:2px solid #228b22;padding-bottom:.5rem;margin-bottom:1.5rem">💧 新营地角色</h2>
-        <div class="npc-grid">
-            <div class="npc-card">
-                <span class="npc-faction faction-new">新营地</span>
-                <div class="npc-name">李 (Lee)</div>
-                <div class="npc-role">新营地领袖 / 任务给予者</div>
-                <dl class="npc-detail">
-                    <dt>位置</dt><dd>新营地（中心区域）</dd>
-                    <dt>角色</dt><dd>新营地的领袖，前王国将军。领导雇佣兵组织，策划逃脱计划。你的新营地主线联系人。</dd>
-                    <dt>相遇时机</dt><dd>首次造访新营地时（第2-3阶段）</dd>
-                </dl>
-                <div class="npc-services"><span class="service-tag s-quest">任务给予者</span><span class="service-tag s-trainer">训练师</span></div>
-            </div>
-            <div class="npc-card">
-                <span class="npc-faction faction-new">新营地</span>
-                <div class="npc-name">狼 (Wolf)</div>
-                <div class="npc-role">李的副手 / 任务给予者</div>
-                <dl class="npc-detail">
-                    <dt>位置</dt><dd>新营地（雇佣兵区域）</dd>
-                    <dt>角色</dt><dd>李的得力助手，协助管理新营地的各项事务。提供多种任务和战斗相关的内容。</dd>
-                    <dt>相遇时机</dt><dd>游戏中期，新营地任务推进中</dd>
-                </dl>
-                <div class="npc-services"><span class="service-tag s-quest">任务给予者</span></div>
-            </div>
-            <div class="npc-card">
-                <span class="npc-faction faction-new">新营地</span>
-                <div class="npc-name">莫德拉格 (Mordrag)</div>
-                <div class="npc-role">关键NPC / 戒指任务</div>
-                <dl class="npc-detail">
-                    <dt>位置</dt><dd>新营地 / 旅行途中</dd>
-                    <dt>角色</dt><dd>他的戒指是新营地入会的关键物品。可通过交易、偷窃或武力获得——你的选择会影响声望。也可提供旅行护送服务。</dd>
-                    <dt>相遇时机</dt><dd>新营地入会任务期间</dd>
-                </dl>
-                <div class="npc-services"><span class="service-tag s-quest">任务物品</span></div>
-            </div>
-            <div class="npc-card">
-                <span class="npc-faction faction-new">新营地</span>
-                <div class="npc-name">卡瓦隆 (Cavalorn)</div>
-                <div class="npc-role">猎人 / 向导</div>
-                <dl class="npc-detail">
-                    <dt>位置</dt><dd>通往新营地的西边小路旁的小屋</dd>
-                    <dt>角色</dt><dd>住在旧营地和新营地之间的小屋中。提供狩猎技巧，警告旅行者路途上的危险。在营地间旅行途中的一位友善角色。</dd>
-                    <dt>相遇时机</dt><dd>从旧营地前往新营地的途中</dd>
-                </dl>
-                <div class="npc-services"><span class="service-tag s-trainer">训练师（狩猎）</span></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 沼泽营地 NPC -->
-    <section class="guide-section">
-        <h2 style="font-family:var(--font-heading);color:#6a0dad;border-bottom:2px solid #6a0dad;padding-bottom:.5rem;margin-bottom:1.5rem">🌀 沼泽营地角色</h2>
-        <div class="npc-grid">
-            <div class="npc-card">
-                <span class="npc-faction faction-swamp">沼泽营地</span>
-                <div class="npc-name">巴尔·帕维兹 (Baal Parvez)</div>
-                <div class="npc-role">沼泽营地精神领袖 / 高阶祭司</div>
-                <dl class="npc-detail">
-                    <dt>位置</dt><dd>沼泽营地（神殿区域）</dd>
-                    <dt>角色</dt><dd>沉睡者兄弟会的精神领袖。监督所有入会仪式和重要典礼。沼泽营地路线的主要任务给予者。与沉睡者进行沟通。</dd>
-                    <dt>相遇时机</dt><dd>造访沼泽营地时（第2-3阶段）</dd>
-                </dl>
-                <div class="npc-services"><span class="service-tag s-quest">任务给予者</span><span class="service-tag s-magic">精神领袖</span></div>
-            </div>
-            <div class="npc-card">
-                <span class="npc-faction faction-swamp">沼泽营地</span>
-                <div class="npc-name">科·安加尔 (Cor Angar)</div>
-                <div class="npc-role">圣殿骑士领袖 / 战斗训练师</div>
-                <dl class="npc-detail">
-                    <dt>位置</dt><dd>沼泽营地（圣殿骑士住所）</dd>
-                    <dt>角色</dt><dd>领导沼泽营地内部的圣殿骑士团。为沼泽营地新信徒训练高级战斗技巧。监督圣殿骑士试炼晋升任务。</dd>
-                    <dt>相遇时机</dt><dd>游戏中期，成为新手之后</dd>
-                </dl>
-                <div class="npc-services"><span class="service-tag s-combat">战斗训练师</span><span class="service-tag s-quest">任务给予者</span></div>
-            </div>
-            <div class="npc-card">
-                <span class="npc-faction faction-swamp">沼泽营地</span>
-                <div class="npc-name">四位精神导师</div>
-                <div class="npc-role">入会守门人</div>
-                <dl class="npc-detail">
-                    <dt>位置</dt><dd>沼泽营地（各处神殿）</dd>
-                    <dt>角色</dt><dd>四位导师各自要求不同的证明来赢得青睐：智慧试炼、收集任务、魔法能力测试和精神试炼。必须赢得全部四位的认可才能成为新手。每位导师考验你品格的不同方面。</dd>
-                    <dt>相遇时机</dt><dd>沼泽营地入会期间</dd>
-                </dl>
-                <div class="npc-services"><span class="service-tag s-quest">入会任务</span><span class="service-tag s-magic">精神试炼</span></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 其他重要 NPC -->
-    <section class="guide-section">
-        <h2 style="font-family:var(--font-heading);color:var(--color-gold);border-bottom:2px solid var(--color-gold);padding-bottom:.5rem;margin-bottom:1.5rem">🌐 其他重要角色</h2>
-        <div class="npc-grid">
-            <div class="npc-card">
-                <span class="npc-faction faction-neutral">中立</span>
-                <div class="npc-name">芬格斯 (Fingers)</div>
-                <div class="npc-role">潜行训练师</div>
-                <dl class="npc-detail">
-                    <dt>位置</dt><dd>隐蔽（需通过任务找到）</dd>
-                    <dt>角色</dt><dd>解锁潜行技能——潜行、偷窃和无声移动。必须完成"寻找芬格斯"任务才能解锁他的训练。所有阵营均可学习，但必须先找到他。</dd>
-                </dl>
-                <div class="npc-services"><span class="service-tag s-trainer">训练师（潜行）</span></div>
-            </div>
-            <div class="npc-card">
-                <span class="npc-faction faction-neutral">中立</span>
-                <div class="npc-name">科尔和凯尔 (Cole & Kyle)</div>
-                <div class="npc-role">竞技场斗士</div>
-                <dl class="npc-detail">
-                    <dt>位置</dt><dd>旧营地竞技场</dd>
-                    <dt>角色</dt><dd>旧营地竞技场的两位斗士。挑战他们可以安全地练习战斗（竞技场比赛中不会死亡）。适合学习战斗节奏和赚取早期经验。凯尔是两人中更难对付的。</dd>
-                </dl>
-                <div class="npc-services"><span class="service-tag s-combat">战斗练习</span></div>
-            </div>
-            <div class="npc-card">
-                <span class="npc-faction faction-neutral">中立</span>
-                <div class="npc-name">艾丹 (Aidan)</div>
-                <div class="npc-role">猎人 / 商人</div>
-                <dl class="npc-detail">
-                    <dt>位置</dt><dd>新营地附近的小屋</dd>
-                    <dt>角色</dt><dd>住在新营地附近的小屋中。买卖狩猎用品。如果你选择远程流，这里是获取箭矢和狩猎装备的好地方。</dd>
-                </dl>
-                <div class="npc-services"><span class="service-tag s-merchant">商人（狩猎用品）</span></div>
-            </div>
-            <div class="npc-card">
-                <span class="npc-faction faction-neutral">中立</span>
-                <div class="npc-name">失踪守卫</div>
-                <div class="npc-role">搜索任务目标</div>
-                <dl class="npc-detail">
-                    <dt>位置</dt><dd>需要搜寻（搜索任务）</dd>
-                    <dt>角色</dt><dd>托鲁斯的"寻找失踪守卫"任务的目标。找到他将揭示巡逻路线信息，让你了解营地墙外的危险。一项早期调查任务。</dd>
-                </dl>
-                <div class="npc-services"><span class="service-tag s-quest">搜索任务</span></div>
-            </div>
-        </div>
-    </section>
-</main>
+    </main>
 
 <footer class="site-footer">
     <div class="footer-content">

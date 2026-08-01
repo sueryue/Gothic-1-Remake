@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#1a1a2e">
-    <title>Gothic 1 Remake 开锁辅助工具 | Gothic 1 Remake</title>
-    <meta name="description" content="哥特王朝1重制版开锁辅助工具——交互式演示。正式版锁具为滑动板块系统，详见开锁完全指南。">
+    <title>Gothic 1 Remake Lockpicking Tool | Gothic 1 Remake</title>
+    <meta name="description" content="哥特王朝1重制版Lockpicking Tool——交互式演示。Released version锁具为滑动板块系统，详见Lockpicking Guide。">
     <meta name="keywords" content="哥特王朝1重制版, Gothic 1 Remake, 开锁, lockpicking, 滑动板块">
     <link rel="canonical" href="https://gothic-1-remake.com/lock-solver.html">
     <link rel="preload" href="css/style.css" as="style">
@@ -75,7 +75,7 @@ a{color:var(--color-accent);text-decoration:none}
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Gothic 1 Remake Lockpicking Solver",
-    "description": "哥特王朝1重制版开锁辅助工具——交互式演示。正式版锁具为滑动板块系统。",
+    "description": "哥特王朝1重制版Lockpicking Tool——交互式演示。Released version锁具为滑动板块系统。",
     "url": "https://gothic-1-remake.com/lock-solver.html",
     "inLanguage": "en",
     "isAccessibleForFree": true,
@@ -126,44 +126,28 @@ a{color:var(--color-accent);text-decoration:none}
     </header>
 
     <main class="content-wrapper">
-        <nav class="breadcrumb"><a href="index.html">首页</a> / <span class="current">开锁工具</span></nav>
+        <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Lock Solver</span></nav>
 
         <section class="page-header">
-            <h1>🔐 开锁辅助工具</h1>
-            <p class="page-subtitle">正式版开锁系统是<b>滑动板块谜题</b>，不是按钮</p>
+            <h1>🔐 Lockpicking Tool</h1>
+            <p class="page-subtitle">Interactive demo — the release version uses <b>sliding plates</b>, not buttons</p>
         </section>
 
         <section class="container" style="max-width:900px;margin:2rem auto">
             <div class="guide-section" style="max-width:100%">
                 <div class="info-box warning" style="margin-bottom:2rem">
-                    <h3 style="color:var(--color-gold);margin-bottom:1rem">⚠️ 关于这个工具</h3>
-                    <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem">《哥特王朝1重制版》2026年6月5日发售后，开锁系统的真实机制是<b>滑动板块（Sliding Plates）——每块板有7个孔位和一根定位销，移动一块板会影响其他板，目标是所有销钉推到中央第4孔</b>。不是预售时大家猜的"按颜色按钮"。</p>
-                    <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem">下面的工具保留了交互控件，你可以调节位置、设置联动关系、点击求解来观察解法过程。但对于<b>正式版游戏中的实际锁具</b>，建议先看<a href="lockpicking.html" style="color:var(--color-accent);font-weight:700">开锁完全指南</a>中的手动解法策略。</p>
-                    <p style="line-height:1.9;color:var(--color-text-secondary)"><strong style="color:var(--color-text-primary)">正式版锁具核心事实：</strong>未训练2次容错 → 专业级（芬格斯，10 LP+100矿）4次容错 → 大师级（芬格斯，20 LP+200矿）6次容错。推到边缘（第1或第7孔）断锁器。1.0.2补丁后成功开锁奖励XP。开锁时不暂停，NPC会抓现行。</p>
+                    <h3 style="color:var(--color-gold);margin-bottom:1rem">About This Tool</h3>
+                    <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem">Gothic 1 Remake launched June 5, 2026 with a <b>sliding plate puzzle</b> lockpicking system — each lock has 4-7 plates with 7 hole positions and a gold pin. Moving one plate affects others. The goal is to center all pins at the 4th position. This is not the "colored button" system that was speculated pre-release.</p>
+                    <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem">The controls below let you adjust positions, set linkages, and observe solution sequences — use it as a sandbox for exploring lock mechanics. For actual in-game locks, see the <a href="lockpicking.html" style="color:var(--color-accent);font-weight:700">Lockpicking Guide</a> for manual solving strategies.</p>
+                    <p style="line-height:1.9;color:var(--color-text-secondary)"><strong style="color:var(--color-text-primary)">Key facts:</strong> Untrained = 2 mistakes before lock resets. Trained (Fingers, 10 LP + 100 ore) = 4 mistakes, lock doesn't reset, removes 1 linkage. Master (Fingers, 20 LP + 200 ore) = 6 mistakes, removes 2 linkages. Pushing a pin to position 1 or 7 breaks the lockpick. Patch 1.0.2 added XP for successful lockpicking. Time doesn't pause while lockpicking — NPCs can catch you.</p>
                 </div>
 
-                <h3 style="font-family:var(--font-heading);color:var(--color-gold);margin-bottom:1rem">🔧 交互式演示工具</h3>
-                <p style="line-height:1.8;color:var(--color-text-secondary);margin-bottom:1.5rem">调节下方控件，观察锁具的联动关系和求解过程——当作一个演示开锁逻辑的沙盒。</p>
+                <h3 style="font-family:var(--font-heading);color:var(--color-gold);margin-bottom:1rem">🔧 Interactive Demo Tool</h3>
+                <p style="line-height:1.8;color:var(--color-text-secondary);margin-bottom:1.5rem">Adjust the controls below to observe lock linkages and solution sequences — a sandbox for understanding how interconnected plates work.</p>
             </div>
         </section>
+        >
 
-
-        <div class="solve-button-container">
-            <button onclick="calculateSolution()" class="btn-solve-massive">🔓 CALCULATE SOLUTION NOW!</button>
-        </div>
-
-        <!-- Solution Display -->
-        
-
-        <div id="solutionDisplay" class="solution-diagram">
-            <h3 style="font-family:var(--font-heading);color:#28a745;text-align:center;font-size:2rem;margin-bottom:2rem">✅ Your Complete Solution Sequence</h3>
-            <div id="solutionSteps"></div>
-            <div style="text-align:center;margin-top:2rem">
-                <button onclick="copyToClipboard()" class="btn-reset">📋 Copy to Clipboard</button>
-                <button onclick="resetSolver()" class="btn-reset">🔄 New Lock</button>
-            </div>
-        </div>
-    
     </main>
 
     <footer class="site-footer">
