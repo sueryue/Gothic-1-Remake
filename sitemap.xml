@@ -35,4 +35,7 @@
   <url><loc>https://gothic-1-remake.com/all-pages.html</loc><changefreq>weekly</changefreq><priority>0.5</priority></url>
   <url><loc>https://gothic-1-remake.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://gothic-1-remake.com/terms.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+
+  <url><loc>https://gothic-1-remake.com/about.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://gothic-1-remake.com/advertisers.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
 </urlset>
