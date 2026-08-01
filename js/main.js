@@ -5,10 +5,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // === Language Switcher ===
     window.changeLanguage = function(lang) {
-        var base = '/Gothic-1-Remake/';
-        var newUrl = base;
-        if (lang !== 'en') {
-            newUrl = base + lang + '/';
+        // Get current page name
+        var path = window.location.pathname;
+        var page = path.split('/').pop() || 'index.html';
+
+        var newUrl;
+        if (lang === 'en') {
+            newUrl = '/' + page;
+        } else {
+            newUrl = '/' + lang + '/' + page;
         }
         window.location.href = newUrl;
     };
@@ -16,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set language selector to match current URL
     var langSelector = document.getElementById('languageSelector');
     if (langSelector) {
-        var pathMatch = window.location.pathname.match(/\/Gothic-1-Remake\/(en|de|fr|it|es|ko|ja)\//);
+        var pathMatch = window.location.pathname.match(/^\/(en|de|fr|it|es|ko|ja)\//);
         if (pathMatch) {
             langSelector.value = pathMatch[1];
         }
