@@ -3,176 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-adsense-account" content="ca-pub-1113040288823837">
-    <meta name="theme-color" content="#1a1a2e">
-    <title>Gothic 1 Remake Equipment Guide</title>
-    <meta name="description" content="Gothic 1 RemakeEquipment Guide,covering all weapons,armor sets,faction-specific gearbest gear locations.">
-    <meta name="keywords" content="Gothic 1 Remake, , best armor, Equipment Guide, , Shadow Armor, legendary weapons">
-    <link rel="canonical" href="https://gothic-1-remake.com/equipment.html">
-    <link rel="preload" href="css/style.css" as="style">
+    <meta http-equiv="refresh" content="0;url=https://gothic-1-remake.com/skills-guide.html#equipment">
+    <title>Equipment — Gothic 1 Remake Wiki</title>
+    <link rel="canonical" href="https://gothic-1-remake.com/skills-guide.html#equipment">
     <style>
-/* Critical above-fold CSS - inlined for speed */
-:root{--color-bg-dark:#1a1a2e;--color-bg-medium:#16213e;--color-bg-light:#0f3460;--color-accent:#e94560;--color-text-primary:#eee;--color-text-secondary:#ccc;--color-border:#444;--color-gold:#ffd700;--font-heading:'Cinzel',Georgia,'Times New Roman',serif;--font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;--max-width:1200px}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:var(--font-body);background:linear-gradient(135deg,var(--color-bg-dark) 0%,var(--color-bg-medium) 100%);color:var(--color-text-primary);line-height:1.7;min-height:100vh}
-img{max-width:100%;height:auto;display:block}
-a{color:var(--color-accent);text-decoration:none}
-.site-header{background:linear-gradient(to right,var(--color-bg-dark),var(--color-bg-light));border-bottom:3px solid var(--color-accent);position:sticky;top:0;z-index:1000;box-shadow:0 4px 6px rgba(0,0,0,0.3)}
-.main-nav{max-width:var(--max-width);margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
-.logo h1{font-family:var(--font-heading);font-size:1.5rem;color:var(--color-gold);white-space:nowrap}
-.nav-menu{display:flex;align-items:center;list-style:none;gap:.3rem;flex-wrap:nowrap}
-.nav-menu a{color:var(--color-text-primary);font-weight:500;padding:.5rem .8rem;border-radius:4px;white-space:nowrap}
-.nav-menu a:hover,.nav-menu a.active{background:var(--color-accent);color:white}
-.content-wrapper{max-width:var(--max-width);margin:0 auto}
-.container{max-width:var(--max-width);margin:0 auto;padding:3rem 2rem}
-.section-title{font-family:var(--font-heading);font-size:2.5rem;color:var(--color-gold);text-align:center;margin-bottom:3rem}
-.hamburger-toggle{display:none}
-@media(max-width:768px){.main-nav{flex-wrap:wrap;padding:.8rem 1rem}.hamburger-toggle{display:flex}.nav-menu{display:none;flex-direction:column;width:100%}.nav-menu.open{display:flex}}
-
+        body{font-family:Inter,sans-serif;background:#1a1a2e;color:#eee;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;text-align:center}
+        a{color:#e94560}
     </style>
-    <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/responsive.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/utilities.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/language-switcher.css" media="print" onload="this.media='all'">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        .equip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin:2rem 0}
-        .equip-card{background:var(--color-bg-light);border:2px solid var(--color-border);border-radius:12px;padding:1.5rem;transition:var(--transition);position:relative}
-        .equip-card:hover{border-color:var(--color-gold);transform:translateY(-3px)}
-        .equip-card.legendary{border-color:var(--color-gold);background:linear-gradient(135deg,rgba(255,215,0,.05),rgba(233,69,96,.05))}
-        .equip-rarity{position:absolute;top:1rem;right:1rem;padding:.3rem .8rem;border-radius:20px;font-size:.75rem;font-weight:700}
-        .rarity-common{background:#666;color:white}.rarity-rare{background:#007bff;color:white}.rarity-epic{background:#6a0dad;color:white}.rarity-legendary{background:linear-gradient(135deg,var(--color-gold),var(--color-accent));color:white}
-        .equip-name{font-family:var(--font-heading);font-size:1.3rem;color:var(--color-gold);margin-bottom:.5rem;padding-right:80px}
-        .equip-stats{margin:1rem 0}
-        .stat-line{display:flex;justify-content:space-between;padding:.3rem 0;font-size:.9rem;border-bottom:1px solid rgba(255,255,255,.05)}
-        .stat-line .val{color:var(--color-accent);font-weight:600}
-        .faction-badge{display:inline-block;padding:.2rem .6rem;border-radius:4px;font-size:.75rem;font-weight:700;margin-right:.4rem}
-        .badge-old{background:rgba(196,30,58,.3);color:#c41e3a}.badge-new{background:rgba(34,139,34,.3);color:#228b22}.badge-swamp{background:rgba(106,13,173,.3);color:#6a0dad}
-        @media(max-width:768px){.equip-grid{grid-template-columns:1fr}}
-    </style>
-
-    <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Gothic 1 Remake Equipment Guide",
-    "description": "Gothic 1 RemakeEquipment Guide,covering all weapons,armor sets,faction-specific gearbest gear locations.",
-    "url": "https://gothic-1-remake.com/equipment.html",
-    "inLanguage": "zh-CN",
-    "isAccessibleForFree": true,
-    "datePublished": "2026-07-22",
-    "dateModified": "2026-08-01",
-    "author": {
-        "@type": "Person",
-        "name": "Gothic 1 Remake"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Gothic 1 Remake Wiki"
-    },
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://gothic-1-remake.com/equipment.html"
-    }
-}
-    </script>
-<noscript></noscript>
 </head>
 <body>
-<header class="site-header">
-    <nav class="main-nav">
-        <div class="logo"><h1>🏰 Gothic 1 Remake</h1></div>
-            <button class="hamburger-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-        <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html">Home</a></li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Guides</a>
-                    <ul class="dropdown-menu"><li><a href="walkthrough.html">Full Walkthrough</a></li><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="map-guide.html">Map &amp; Exploration</a></li><li><a href="visual-guide.html">Visual Guide</a></li></ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Factions</a>
-                    <ul class="dropdown-menu"><li><a href="factions-guide.html">Faction Guide</a></li><li><a href="factions-guide.html#quiz">Faction Quiz</a></li></ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Tools &amp; Database</a>
-                    <ul class="dropdown-menu"><li><a href="lockpicking.html">Lockpicking</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html">NPCs</a></li><li><a href="quests.html">Quests</a></li><li><a href="achievements.html">Achievements</a></li></ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Support</a>
-                    <ul class="dropdown-menu"><li><a href="faq.html">FAQ</a></li><li><a href="community.html">Community</a></li><li><a href="about.html">About</a></li><li><a href="advertisers.html">Advertise</a></li></ul>
-                </li>
-            
-<li class="nav-item">
-                    <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
-                        <option value="en">English</option>
-                        <option value="de">Deutsch</option>
-                        <option value="fr">Français</option>
-                        <option value="it">Italiano</option>
-                        <option value="es">Español</option>
-                        <option value="ko">한국어</option>
-                        <option value="ja">日本語</option>
-                    </select>
-                </li>
-            </ul>
-            </nav>
-</header>
-
-<main class="content-wrapper">
-        <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Equipment</span></nav>
-        <section class="page-header" style="background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.7)),url(images/screenshot-8.jpg) center/cover no-repeat;background-position:center 30%"><h1>⚔️ Equipment Guide</h1><p class="page-subtitle">Weapons, armor and faction gear</p></section>
-
-        <div class="confidence-badges">
-                <span class="conf-badge conf-playtested">✅ Playtested</span>
-                <span class="conf-badge conf-verified">✓ Items verified</span>
-                <span class="conf-note">Weapon stats and locations confirmed in-game</span>
-            </div>
-
-        <div class="guide-section" style="max-width:900px;margin:0 auto">
-            <h2>Faction Gear</h2>
-            <div class="tips-grid">
-                <div class="tip-card"><h3>🔥 Old Camp</h3><p><strong>Shadow's Dress</strong> (join reward) - <strong>Guard Captain's Sword</strong> (Thorus quest) - <strong>Basic Fire Rune</strong> (Torrez) - <strong>Core Circle Armor</strong></p></div>
-                <div class="tip-card"><h3>💧 New Camp</h3><p><strong>Bandit's Dress</strong> (join reward) - <strong>Heavy Two-Handed Axe</strong> - <strong>Water Ring</strong> (freeze enchant) - <strong>Lee's Command Sword</strong></p></div>
-                <div class="tip-card"><h3>🌀 Swamp Camp</h3><p><strong>Novice Robes</strong> (join reward, -5 DEX) - <strong>Templar Armor</strong> - <strong>Sleeper Spell Scrolls</strong> - <strong>Guru Staff</strong></p></div>
-            </div>
-
-            <h2>Weapon Arsenal</h2>
-            <div class="table-responsive">
-                <table class="faction-comparison">
-                    <thead><tr><th>Weapon</th><th>Damage</th><th>Requirement</th><th>How to Get</th></tr></thead>
-                    <tbody>
-                        <tr><td><strong>Rusty Sword</strong></td><td>5-8</td><td>None</td><td>Beach start</td></tr>
-                        <tr><td><strong>Old Sword</strong></td><td>8-12</td><td>STR 8</td><td>Under hanged man, Old Camp path</td></tr>
-                        <tr><td><strong>Club</strong></td><td>6-10</td><td>None</td><td>Near Scavenger corpse</td></tr>
-                        <tr><td><strong>Hunter's Knife</strong></td><td>5-7</td><td>None</td><td>Give to Drax for free Shortbow</td></tr>
-                        <tr><td><strong>Guard's Sword</strong></td><td>12-18</td><td>STR 12</td><td>Thorus quest reward</td></tr>
-                        <tr><td><strong>Sting Mace</strong></td><td>25</td><td>STR 14</td><td>Defeat Kharim in arena</td></tr>
-                        <tr><td><strong>Rider Bow</strong></td><td>24</td><td>DEX 14</td><td>Underwater cave near Drax</td></tr>
-                        <tr><td><strong>Heavy Two-Handed Axe</strong></td><td>25-40</td><td>STR 18</td><td>New Camp quest reward</td></tr>
-                        <tr><td><strong>Guru Staff</strong></td><td>15-22 +Magic</td><td>MANA 20</td><td>Swamp Camp endgame</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="info-box important" style="margin-top:2rem">
-                <p style="line-height:1.8"><strong>Tip:</strong> Don't buy armor before joining a faction — you get your first faction armor free. Spend ore on training (lockpicking, weapon skills) instead.</p>
-            </div>
-        </div>
-</main>
-
-<footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-section"><h4>About</h4><p>Fan-made Gothic 1 Remake guides and tools. Not affiliated with THQ Nordic or Alkimia Interactive.</p></div>
-            <div class="footer-section"><h4>Tools</h4><ul><li><a href="lock-solver.html">Lockpicking Solver</a></li><li><a href="factions-guide.html#quiz">Faction Quiz</a></li></ul></div>
-            <div class="footer-section"><h4>Guides</h4><ul><li><a href="lockpicking.html">Lockpicking Walkthrough</a></li><li><a href="factions-guide.html">Faction Guide</a></li></ul></div>
-            <div class="footer-section"><h4>Contact</h4><p>Have a guide tip or feedback?</p><a href="feedback.html">Send Feedback</a></div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Gothic 1 Remake Wiki. Fan-made guide. <a href="all-pages.html">All Pages</a> &middot; <a href="about.html">About</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="advertisers.html">Advertise</a></p>
-        </div>
-    </footer>
-<script src="js/main.js" defer></script>
+    <div>
+        <h2>🏰 Gothic 1 Remake Wiki</h2>
+        <p>This page has moved to the main guide.<br>Redirecting you now…</p>
+        <p><a href="https://gothic-1-remake.com/skills-guide.html#equipment">Click here</a> if not redirected automatically.</p>
+    </div>
 </body>
 </html>

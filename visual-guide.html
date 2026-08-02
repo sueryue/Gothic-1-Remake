@@ -3,178 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-adsense-account" content="ca-pub-1113040288823837">
-    <meta name="theme-color" content="#1a1a2e">
-    <title>Gothic 1 Remake - Visual Guide with Screenshots</title>
-    <meta name="description" content="Visual walkthrough for Gothic 1 Remake. Learn through gameplay screenshots, diagrams, and minimal text.">
-    <meta name="keywords" content="Gothic 1 Remake, visual guide, screenshots, walkthrough, gameplay images">
-    <link rel="canonical" href="https://gothic-1-remake.com/visual-guide.html">
-    <link rel="preload" href="css/style.css" as="style">
+    <meta http-equiv="refresh" content="0;url=https://gothic-1-remake.com/walkthrough.html#visual-guide">
+    <title>Visual Guide — Gothic 1 Remake Wiki</title>
+    <link rel="canonical" href="https://gothic-1-remake.com/walkthrough.html#visual-guide">
     <style>
-/* Critical above-fold CSS - inlined for speed */
-:root{--color-bg-dark:#1a1a2e;--color-bg-medium:#16213e;--color-bg-light:#0f3460;--color-accent:#e94560;--color-text-primary:#eee;--color-text-secondary:#ccc;--color-border:#444;--color-gold:#ffd700;--font-heading:'Cinzel',Georgia,'Times New Roman',serif;--font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;--max-width:1200px}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:var(--font-body);background:linear-gradient(135deg,var(--color-bg-dark) 0%,var(--color-bg-medium) 100%);color:var(--color-text-primary);line-height:1.7;min-height:100vh}
-img{max-width:100%;height:auto;display:block}
-a{color:var(--color-accent);text-decoration:none}
-.site-header{background:linear-gradient(to right,var(--color-bg-dark),var(--color-bg-light));border-bottom:3px solid var(--color-accent);position:sticky;top:0;z-index:1000;box-shadow:0 4px 6px rgba(0,0,0,0.3)}
-.main-nav{max-width:var(--max-width);margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
-.logo h1{font-family:var(--font-heading);font-size:1.5rem;color:var(--color-gold);white-space:nowrap}
-.nav-menu{display:flex;align-items:center;list-style:none;gap:.3rem;flex-wrap:nowrap}
-.nav-menu a{color:var(--color-text-primary);font-weight:500;padding:.5rem .8rem;border-radius:4px;white-space:nowrap}
-.nav-menu a:hover,.nav-menu a.active{background:var(--color-accent);color:white}
-.content-wrapper{max-width:var(--max-width);margin:0 auto}
-.container{max-width:var(--max-width);margin:0 auto;padding:3rem 2rem}
-.section-title{font-family:var(--font-heading);font-size:2.5rem;color:var(--color-gold);text-align:center;margin-bottom:3rem}
-.hamburger-toggle{display:none}
-@media(max-width:768px){.main-nav{flex-wrap:wrap;padding:.8rem 1rem}.hamburger-toggle{display:flex}.nav-menu{display:none;flex-direction:column;width:100%}.nav-menu.open{display:flex}}
-
+        body{font-family:Inter,sans-serif;background:#1a1a2e;color:#eee;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;text-align:center}
+        a{color:#e94560}
     </style>
-    <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/responsive.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/utilities.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/language-switcher.css" media="print" onload="this.media='all'">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        .visual-hero{position:relative;height:60vh;background:linear-gradient(135deg,rgba(15,52,96,.8),rgba(22,33,62,.9));display:flex;align-items:center;justify-content:center;overflow:hidden}
-        .visual-hero-content{position:relative;z-index:2;text-align:center;color:white}
-        .visual-hero h1{font-family:var(--font-heading);font-size:3rem;margin-bottom:1rem}
-        .visual-hero p{font-size:1.3rem;margin-bottom:2rem;opacity:.9}
-        .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin:3rem 0}
-        .gallery-card{background:linear-gradient(135deg,rgba(15,52,96,.6),rgba(22,33,62,.8));border:2px solid var(--color-border);border-radius:12px;overflow:hidden;transition:all .3s ease}
-        .gallery-card:hover{transform:translateY(-5px);box-shadow:0 12px 25px rgba(233,69,96,.4);border-color:var(--color-accent)}
-        .gallery-placeholder{width:100%;height:200px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a2e,#16213e);font-size:3rem}
-        .gallery-caption{padding:1.5rem}
-        .gallery-caption h3{font-family:var(--font-heading);color:var(--color-gold);font-size:1.3rem;margin-bottom:.5rem}
-        .gallery-caption p{color:var(--color-text-secondary);font-size:.9rem;line-height:1.6}
-        .visual-steps{margin:4rem 0}
-        .visual-step{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:3rem;padding:2rem;background:linear-gradient(135deg,rgba(15,52,96,.4),rgba(22,33,62,.6));border-radius:12px;border:2px solid var(--color-border)}
-        .step-number{display:inline-block;background:linear-gradient(135deg,var(--color-accent),var(--color-gold));color:white;width:40px;height:40px;border-radius:50%;text-align:center;line-height:40px;font-weight:700;font-size:1.2rem;margin-bottom:1rem}
-        .visual-step-content h3{font-family:var(--font-heading);color:var(--color-gold);font-size:1.5rem;margin-bottom:1rem}
-        .visual-step-content p{color:var(--color-text);line-height:1.8;font-size:1rem}
-        .screenshot-hint{display:flex;align-items:center;justify-content:center;height:100%;min-height:200px;background:rgba(0,0,0,.4);border:2px dashed var(--color-border);border-radius:8px;color:var(--color-text-secondary);text-align:center;padding:2rem;font-style:italic}
-        @media(max-width:768px){.visual-hero h1{font-size:2rem}.gallery-grid{grid-template-columns:1fr}.visual-step{grid-template-columns:1fr}}
-    </style>
-
-    <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Gothic 1 Remake",
-    "description": "Visual walkthrough for Gothic 1 Remake. Learn through gameplay screenshots, diagrams, and minimal text.",
-    "url": "https://gothic-1-remake.com/visual-guide.html",
-    "inLanguage": "en",
-    "isAccessibleForFree": true,
-    "datePublished": "2026-07-22",
-    "dateModified": "2026-08-01",
-    "author": {
-        "@type": "Person",
-        "name": "Gothic 1 Remake Community"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "Gothic 1 Remake Wiki"
-    },
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://gothic-1-remake.com/visual-guide.html"
-    }
-}
-    </script>
-<noscript></noscript>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113040288823837" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header class="site-header">
-        <nav class="main-nav">
-            <div class="logo"><h1>🏰 Gothic 1 Remake</h1></div>
-            <button class="hamburger-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html">Home</a></li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Guides</a>
-                    <ul class="dropdown-menu"><li><a href="walkthrough.html">Full Walkthrough</a></li><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="map-guide.html">Map &amp; Exploration</a></li><li><a href="visual-guide.html">Visual Guide</a></li></ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Factions</a>
-                    <ul class="dropdown-menu"><li><a href="factions-guide.html">Faction Guide</a></li><li><a href="factions-guide.html#quiz">Faction Quiz</a></li></ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Tools &amp; Database</a>
-                    <ul class="dropdown-menu"><li><a href="lockpicking.html">Lockpicking</a></li><li><a href="bestiary.html">Bestiary</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html">NPCs</a></li><li><a href="quests.html">Quests</a></li><li><a href="achievements.html">Achievements</a></li></ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Support</a>
-                    <ul class="dropdown-menu"><li><a href="faq.html">FAQ</a></li><li><a href="community.html">Community</a></li><li><a href="about.html">About</a></li><li><a href="advertisers.html">Advertise</a></li></ul>
-                </li>
-            
-<li class="nav-item">
-                    <select id="languageSelector" class="language-selector" onchange="changeLanguage(this.value)">
-                        <option value="en">English</option>
-                        <option value="de">Deutsch</option>
-                        <option value="fr">Français</option>
-                        <option value="it">Italiano</option>
-                        <option value="es">Español</option>
-                        <option value="ko">한국어</option>
-                        <option value="ja">日本語</option>
-                    </select>
-                </li>
-            </ul>
-            </nav>
-    </header>
-
-    <main class="content-wrapper">
-        <nav class="breadcrumb"><a href="index.html">Home</a> / <span class="current">Visual Guide</span></nav>
-        <section class="page-header" style="background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.7)),url(images/screenshot-1.jpg) center/cover no-repeat;background-position:center 30%"><h1>📸 Visual Walkthrough</h1><p class="page-subtitle">Learn through gameplay — less reading, more seeing</p></section>
-
-        <div class="confidence-badges">
-                <span class="conf-badge conf-playtested">✅ Playtested</span>
-                <span class="conf-badge conf-speculative">🖼️ Screenshots being collected</span>
-                <span class="conf-note">Text routes are verified; images are being gathered from gameplay.</span>
-            </div>
-        <div class="guide-section" style="max-width:900px;margin:0 auto">
-            <div class="info-box warning" style="margin-bottom:2rem"><p>⚠️ Screenshots are still being gathered from actual gameplay. For now, use the text overview below or head to the <a href="walkthrough.html" style="color:var(--color-accent);font-weight:600">Full Walkthrough</a> and <a href="daily-tips.html" style="color:var(--color-accent);font-weight:600">Daily Tips</a> for detailed steps.</p></div>
-            <h2>🎬 Opening: Beach to Old Camp</h2>
-            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1.5rem">Follow Diego, loot everything (no weight limit). Key items: Old Sword (under hanged man), Club (near Scavenger corpse), Hunter's Knife (return to Drax for free Shortbow). Underwater cave near Drax has Rider Bow.</p>
-            <h2>🏕️ Choose Your Faction</h2>
-            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem"><strong>Old Camp (🔥)</strong> — Central, Diego leads you here. Fire Mages, Circles 1-6.</p>
-            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem"><strong>New Camp (💧)</strong> — West. Mordrag escorts you. Mercenaries, Water Mages, best economy.</p>
-            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1.5rem"><strong>Swamp Camp (🌀)</strong> — East marshes. Baal Parvez escorts you. Templar spellsword hybrid.</p>
-            <h2>🔐 Lockpicking</h2>
-            <p style="line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem">Sliding plate system — not buttons. See the <a href="lockpicking.html" style="color:var(--color-accent);font-weight:600">Lockpicking Guide</a> for full details.</p>
-            <h2>🎬 Official Videos</h2>
-            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;border-radius:12px;border:2px solid var(--color-border);margin-bottom:2rem">
-                <iframe style="position:absolute;top:0;left:0;width:100%;height:100%" src="https://www.youtube-nocookie.com/embed/n0R7BmfpD7k" title="Gothic 1 Remake — Official Release Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <h3>Making-of Series</h3>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:2rem">
-                <div class="tip-card"><h4>🎥 Episode #1</h4><p>Project launch, team assembly</p><a href="https://youtu.be/V80iHWxYeMQ" target="_blank" rel="noopener" style="color:var(--color-accent)">Watch →</a></div>
-                <div class="tip-card"><h4>🎥 Episode #2</h4><p>Building the world</p><a href="https://youtu.be/PC-9JrKQc2I" target="_blank" rel="noopener" style="color:var(--color-accent)">Watch →</a></div>
-                <div class="tip-card"><h4>🎥 Episode #3</h4><p>Combat system evolution</p><a href="https://youtu.be/YyM_6IzRFHY" target="_blank" rel="noopener" style="color:var(--color-accent)">Watch →</a></div>
-                <div class="tip-card"><h4>🎥 Episode #4</h4><p>Voice acting & characters</p><a href="https://youtu.be/eJXeE0e_uNA" target="_blank" rel="noopener" style="color:var(--color-accent)">Watch →</a></div>
-                <div class="tip-card"><h4>🎥 Episode #5</h4><p>Community feedback integration</p><a href="https://youtu.be/q8sxk-TRgXA" target="_blank" rel="noopener" style="color:var(--color-accent)">Watch →</a></div>
-                <div class="tip-card"><h4>🎥 Episode #6</h4><p>Final polish before launch</p><a href="https://youtu.be/vlGRIh9wef8" target="_blank" rel="noopener" style="color:var(--color-accent)">Watch →</a></div>
-            </div>
-            <p style="color:var(--color-text-secondary)">Steam store page has the full screenshot gallery: <a href="https://store.steampowered.com/app/1297900/Gothic_1_Remake/" target="_blank" rel="noopener" style="color:var(--color-accent);font-weight:600">View on Steam →</a></p>
-        </div>
-    </main>
-
-    <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-section"><h4>About This Guide</h4><p>Fan-made Gothic 1 Remake guides and tools. Not affiliated with THQ Nordic or Alkimia Interactive.</p></div>
-            <div class="footer-section"><h4>Tools</h4><ul><li><a href="lock-solver.html">Lockpicking Solver</a></li><li><a href="factions-ultimate-guide.html">Faction Quiz</a></li></ul></div>
-            <div class="footer-section"><h4>Guides</h4><ul><li><a href="lockpicking.html">Lockpicking Walkthrough</a></li><li><a href="factions-guide.html">Faction Comparison</a></li></ul></div>
-            <div class="footer-section"><h4>Contact</h4><p>Have a guide tip or feedback?</p><a href="feedback.html">Send Feedback</a></div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Gothic 1 Remake. Fan-made guide. <a href="all-pages.html">All Pages</a> &middot; <a href="about.html">About</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="advertisers.html">Advertise</a></p>
-        </div>
-    </footer>
-
-    <script src="js/main.js" defer></script>
+    <div>
+        <h2>🏰 Gothic 1 Remake Wiki</h2>
+        <p>This page has moved to the main guide.<br>Redirecting you now…</p>
+        <p><a href="https://gothic-1-remake.com/walkthrough.html#visual-guide">Click here</a> if not redirected automatically.</p>
+    </div>
 </body>
 </html>
