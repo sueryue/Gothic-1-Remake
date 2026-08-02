@@ -53,9 +53,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // === Language Switcher ===
-    window.changeLanguage = function(lang) { /* Language switching removed — all content available in English */ };
+    window.changeLanguage = function(lang) {
+        // Navigate to the language subdirectory (which redirects to the English site)
+        var path = window.location.pathname;
+        var page = path.split('/').pop() || 'index.html';
+        var newUrl = '/' + lang + '/' + page;
+        window.location.href = newUrl;
+    };
 
-    // Language selector removed
+    // Set language selector to match current URL
+    var langSelector = document.getElementById('languageSelector');
+    if (langSelector) {
+        var pathMatch = window.location.pathname.match(/^\/(en|de|fr|it|es|ko|ja)\//);
+        if (pathMatch) {
+            langSelector.value = pathMatch[1];
+        }
+    }
 
     // === FAQ Accordion ===
     document.querySelectorAll('.faq-question').forEach(function(question) {
