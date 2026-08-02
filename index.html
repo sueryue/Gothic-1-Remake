@@ -103,21 +103,13 @@ a{color:var(--color-accent);text-decoration:none}
             <button class="hamburger-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="index.html">Home</a></li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Guides</a>
-                    <ul class="dropdown-menu"><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="quests.html">Quests</a></li></ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Factions</a>
-                    <ul class="dropdown-menu"><li><a href="factions-guide.html">Faction Guide</a></li><li><a href="factions-guide.html#quiz">Faction Quiz</a></li></ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Tools</a>
-                    <ul class="dropdown-menu"><li><a href="lockpicking.html">Lockpicking</a></li><li><a href="lock-solver.html">Lock Solver</a></li></ul>
-                </li>
+                <li class="nav-item"><a href="walkthrough.html">Walkthrough</a></li>
+                <li class="nav-item"><a href="factions-guide.html">Factions</a></li>
+                <li class="nav-item"><a href="lockpicking.html">Lockpicking</a></li>
+                <li class="nav-item"><a href="bestiary.html">Bestiary</a></li>
                 <li class="nav-item dropdown">
                     <a href="#" class="dropdown-toggle">More</a>
-                    <ul class="dropdown-menu"><li><a href="bestiary.html">Bestiary</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html">NPCs</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="faq.html">FAQ</a></li><li><a href="community.html">Community</a></li></ul>
+                    <ul class="dropdown-menu"><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="quests.html">Quests</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html">NPCs</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="faq.html">FAQ</a></li><li><a href="community.html">Community</a></li><li><a href="about.html">About</a></li></ul>
                 </li>
             </ul>
             </nav>
@@ -301,6 +293,12 @@ a{color:var(--color-accent);text-decoration:none}
                     <a href="factions-guide.html#quiz" class="btn-primary" style="display:inline-block;text-decoration:none;padding:.6rem 1.5rem;font-size:.9rem">Take Quiz →</a>
                 </div>
                 <div class="tool-card" style="background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem;text-align:center">
+                    <div style="font-size:2rem;margin-bottom:.8rem">🔓</div>
+                    <h4 style="color:var(--color-gold);margin-bottom:.5rem">Lock Solver</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem">Interactive demo tool for exploring lock linkages.</p>
+                    <a href="lock-solver.html" class="btn-primary" style="display:inline-block;text-decoration:none;padding:.6rem 1.5rem;font-size:.9rem">Open →</a>
+                </div>
+                <div class="tool-card" style="background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem;text-align:center">
                     <div style="font-size:2rem;margin-bottom:.8rem">📊</div>
                     <h4 style="color:var(--color-gold);margin-bottom:.5rem">Build Planner</h4>
                     <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem">Stat costs, trainer locations, optimal LP allocation.</p>
@@ -374,6 +372,178 @@ a{color:var(--color-accent);text-decoration:none}
                 <a href="community.html" style="display:inline-block;text-decoration:none;padding:.8rem 2rem;background:rgba(255,255,255,.08);color:var(--color-text-primary);border:1px solid var(--color-border);border-radius:8px;font-weight:600">Join Community</a>
             </div>
         </section>
+    
+        <!-- DAILY TIP SECTION -->
+        <section class="tip-of-day-section section" style="background:var(--color-bg-medium);padding:3rem 2rem">
+            <div class="section-header" style="max-width:1100px;margin:0 auto 2rem">
+                <h2 style="font-family:var(--font-heading);color:var(--color-gold);font-size:2rem;margin-bottom:.5rem">💡 Tip of the Day</h2>
+                <p style="color:var(--color-text-secondary)">Fresh advice, updated daily</p>
+            </div>
+            <div style="max-width:1100px;margin:0 auto">
+                <div class="info-box important" style="padding:1.8rem">
+                    <h3 style="color:var(--color-gold);margin-bottom:.8rem">Save Before Every Lock</h3>
+                    <p style="color:var(--color-text-secondary);line-height:1.8">Every lock's linkage pattern is fixed — test each plate once, note what moves, reload, then solve correctly. Untrained characters get only 2 mistakes. Push a pin to the edge (position 1 or 7) and the lockpick breaks. Train with <strong>Fingers</strong> in the Old Camp. <a href="lockpicking.html" style="color:var(--color-accent)">Full lockpicking guide →</a></p>
+                </div>
+                <div style="text-align:center;margin-top:1rem">
+                    <a href="daily-tips.html" style="color:var(--color-accent);font-weight:600">More daily tips →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- MISSABLES SECTION -->
+        <section class="missables-section section" style="max-width:1100px;margin:0 auto;padding:3rem 2rem">
+            <div class="section-header" style="text-align:center;margin-bottom:2rem">
+                <h2 style="font-family:var(--font-heading);color:var(--color-gold);font-size:2rem;margin-bottom:.5rem">⚠️ Don't Miss These</h2>
+                <p style="color:var(--color-text-secondary)">Permanently missable content — the mistakes that cost hours</p>
+            </div>
+            <div class="missables-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem">
+                <div class="missable-card" style="background:var(--color-bg-light);border:1px solid var(--color-border);border-left:4px solid var(--color-accent);border-radius:8px;padding:1.2rem">
+                    <h4 style="color:var(--color-gold);margin-bottom:.4rem">Don't Kill Mordrag</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem;line-height:1.6">The single most costly decision in the game. Convince him to leave — he escorts you to New Camp and you get 2,000+ free XP. Killing him loses all New Camp intro quests.</p>
+                </div>
+                <div class="missable-card" style="background:var(--color-bg-light);border:1px solid var(--color-border);border-left:4px solid var(--color-gold);border-radius:8px;padding:1.2rem">
+                    <h4 style="color:var(--color-gold);margin-bottom:.4rem">Save Before the Faction Oath</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem;line-height:1.6">Faction choice is permanent and locks you out of the other camps' quests, armor, and companions. Complete all three camps' pre-join quests first, then save.</p>
+                </div>
+                <div class="missable-card" style="background:var(--color-bg-light);border:1px solid var(--color-border);border-left:4px solid var(--color-accent);border-radius:8px;padding:1.2rem">
+                    <h4 style="color:var(--color-gold);margin-bottom:.4rem">Take Lester to the Fortress</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem;line-height:1.6">Clear the Mountain Fortress <strong>with Lester</strong>, or the "Special Pieces" quest breaks permanently and you lose the Title Deed.</p>
+                </div>
+                <div class="missable-card" style="background:var(--color-bg-light);border:1px solid var(--color-border);border-left:4px solid var(--color-gold);border-radius:8px;padding:1.2rem">
+                    <h4 style="color:var(--color-gold);margin-bottom:.4rem">Buy Before Chapter Transitions</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem;line-height:1.6">Permanent boosters (Dragonroot, Goblin Berries) vanish from merchant inventories every chapter transition. Buy them before advancing the main story.</p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:1.5rem">
+                <a href="quests.html" style="color:var(--color-accent);font-weight:600">Full missable quests &amp; items list →</a>
+            </div>
+        </section>
+
+        <!-- COMPLETION SECTION -->
+        <section class="completion-section section" style="background:var(--color-bg-medium);padding:3rem 2rem">
+            <div class="section-header" style="max-width:1100px;margin:0 auto 2rem">
+                <h2 style="font-family:var(--font-heading);color:var(--color-gold);font-size:2rem;margin-bottom:.5rem">🏆 100% Completion Route</h2>
+                <p style="color:var(--color-text-secondary)">All 42 achievements across three playthroughs</p>
+            </div>
+            <div class="completion-grid" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem">
+                <div style="background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:10px;padding:1.2rem">
+                    <h4 style="color:#c41e3a;margin-bottom:.5rem">Run 1: Old Camp 🔥</h4>
+                    <ul style="color:var(--color-text-secondary);font-size:.9rem;line-height:1.8;list-style:none;padding:0">
+                        <li>• Fire Mage path (Circles 1-6)</li>
+                        <li>• Insomnia Champion (no sleep)</li>
+                        <li>• Mercy Over Madness (spare Gomez)</li>
+                        <li>• Mud Freak (exhaust dialogue)</li>
+                    </ul>
+                </div>
+                <div style="background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:10px;padding:1.2rem">
+                    <h4 style="color:#228b22;margin-bottom:.5rem">Run 2: New Camp 💧</h4>
+                    <ul style="color:var(--color-text-secondary);font-size:.9rem;line-height:1.8;list-style:none;padding:0">
+                        <li>• Archer / Water Mage build</li>
+                        <li>• True Stranger (Chromanin quests)</li>
+                        <li>• Anatomaniac (Cavalorn Books)</li>
+                        <li>• Map Sniffer (all maps)</li>
+                    </ul>
+                </div>
+                <div style="background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:10px;padding:1.2rem">
+                    <h4 style="color:#6a0dad;margin-bottom:.5rem">Run 3: Swamp Camp 🌀</h4>
+                    <ul style="color:var(--color-text-secondary);font-size:.9rem;line-height:1.8;list-style:none;padding:0">
+                        <li>• Templar spellsword hybrid</li>
+                        <li>• All faction-exclusive achievements</li>
+                        <li>• Special Pieces (Santino) quest</li>
+                        <li>• All three camp armor sets</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:1.5rem">
+                <a href="walkthrough.html#completion" class="btn-primary" style="display:inline-block;text-decoration:none;padding:.8rem 2rem">Full Achievement Route →</a>
+            </div>
+        </section>
+
+        <!-- MODS SECTION -->
+        <section class="mods-section section" style="max-width:1100px;margin:0 auto;padding:3rem 2rem">
+            <div class="section-header" style="text-align:center;margin-bottom:2rem">
+                <h2 style="font-family:var(--font-heading);color:var(--color-gold);font-size:2rem;margin-bottom:.5rem">🔧 Essential Mods</h2>
+                <p style="color:var(--color-text-secondary)">Quality-of-life improvements from the community</p>
+            </div>
+            <div class="mods-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem">
+                <div class="mod-card" style="background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:10px;padding:1.2rem">
+                    <h4 style="color:var(--color-gold);margin-bottom:.4rem">🗺️ World Map with Markers</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.85rem;line-height:1.6">Custom markers on the hand-drawn map — fixes the "no minimap" pain point.</p>
+                </div>
+                <div class="mod-card" style="background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:10px;padding:1.2rem">
+                    <h4 style="color:var(--color-gold);margin-bottom:.4rem">🔍 Highlight Items Lite</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.85rem;line-height:1.6">Enhanced item outlines — no more guessing in dark environments.</p>
+                </div>
+                <div class="mod-card" style="background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:10px;padding:1.2rem">
+                    <h4 style="color:var(--color-gold);margin-bottom:.4rem">🔐 Lockpick Settings</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.85rem;line-height:1.6">Adjust tolerance, show linkages, even auto-solve. Lockpicking frustration relief.</p>
+                </div>
+                <div class="mod-card" style="background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:10px;padding:1.2rem">
+                    <h4 style="color:var(--color-gold);margin-bottom:.4rem">🖥️ Custom Keyboard Mapping</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.85rem;line-height:1.6">Full key rebinding beyond the default options.</p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:1.5rem">
+                <a href="community.html" style="color:var(--color-accent);font-weight:600">Browse all mods →</a>
+            </div>
+        </section>
+
+        <!-- TRAILER SECTION -->
+        <section class="trailer-section section" style="background:var(--color-bg-medium);padding:3rem 2rem">
+            <div class="section-header" style="max-width:1100px;margin:0 auto 2rem;text-align:center">
+                <h2 style="font-family:var(--font-heading);color:var(--color-gold);font-size:2rem;margin-bottom:.5rem">🎬 Official Trailer</h2>
+                <p style="color:var(--color-text-secondary)">See the remake in action</p>
+            </div>
+            <div style="max-width:800px;margin:0 auto">
+                <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;border-radius:12px;border:2px solid var(--color-border)">
+                    <iframe style="position:absolute;top:0;left:0;width:100%;height:100%" src="https://www.youtube-nocookie.com/embed/n0R7BmfpD7k" title="Gothic 1 Remake — Official Release Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <p style="text-align:center;color:var(--color-text-secondary);margin-top:1rem;font-size:.85rem">Release trailer — June 5, 2026 · <a href="visual-guide.html" style="color:var(--color-accent)">More videos &amp; making-of series →</a></p>
+            </div>
+        </section>
+
+        <!-- LATEST UPDATES SECTION -->
+        <section class="updates-section section" style="max-width:1100px;margin:0 auto;padding:3rem 2rem">
+            <div class="section-header" style="text-align:center;margin-bottom:2rem">
+                <h2 style="font-family:var(--font-heading);color:var(--color-gold);font-size:2rem;margin-bottom:.5rem">📰 Latest Updates</h2>
+                <p style="color:var(--color-text-secondary)">What's new on the wiki</p>
+            </div>
+            <div style="max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:.8rem">
+                <div class="update-item" style="display:flex;gap:1rem;align-items:center;background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:8px;padding:.8rem 1.2rem">
+                    <span style="color:var(--color-text-secondary);font-size:.85rem;white-space:nowrap">Aug 1</span>
+                    <span style="color:var(--color-text-primary)">Redesigned homepage — content portal layout with quick-nav cards and topic sections.</span>
+                </div>
+                <div class="update-item" style="display:flex;gap:1rem;align-items:center;background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:8px;padding:.8rem 1.2rem">
+                    <span style="color:var(--color-text-secondary);font-size:.85rem;white-space:nowrap">Jul 31</span>
+                    <span style="color:var(--color-text-primary)">Added detailed Minecrawler Queen boss guide to Chapter 2 walkthrough.</span>
+                </div>
+                <div class="update-item" style="display:flex;gap:1rem;align-items:center;background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:8px;padding:.8rem 1.2rem">
+                    <span style="color:var(--color-text-secondary);font-size:.85rem;white-space:nowrap">Jul 28</span>
+                    <span style="color:var(--color-text-primary)">Enriched bestiary with combat data: weaknesses, tactics, drops for all 16 creatures.</span>
+                </div>
+                <div class="update-item" style="display:flex;gap:1rem;align-items:center;background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:8px;padding:.8rem 1.2rem">
+                    <span style="color:var(--color-text-secondary);font-size:.85rem;white-space:nowrap">Jul 25</span>
+                    <span style="color:var(--color-text-primary)">Added missable quests, items, and achievements checklists.</span>
+                </div>
+                <div class="update-item" style="display:flex;gap:1rem;align-items:center;background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:8px;padding:.8rem 1.2rem">
+                    <span style="color:var(--color-text-secondary);font-size:.85rem;white-space:nowrap">Jul 22</span>
+                    <span style="color:var(--color-text-primary)">Site launched. All content written from actual gameplay.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about-home-section section" style="background:var(--color-bg-medium);padding:3rem 2rem">
+            <div class="section-header" style="max-width:1100px;margin:0 auto 1.5rem">
+                <h2 style="font-family:var(--font-heading);color:var(--color-gold);font-size:2rem;margin-bottom:.5rem">🏰 About Gothic 1 Remake Wiki</h2>
+            </div>
+            <div style="max-width:1100px;margin:0 auto;color:var(--color-text-secondary);line-height:1.9;font-size:1rem">
+                <p style="margin-bottom:1rem">Gothic 1 Remake launched <strong>June 5, 2026</strong>, and this wiki was built by a player who finished it multiple times — not from press previews. Every guide, lock solution, and strategy here was tested in the actual game.</p>
+                <p style="margin-bottom:1rem">The Remake is a ground-up rebuild of Piranha Bytes' 2001 classic by <strong>Alkimia Interactive</strong>, published by <strong>THQ Nordic</strong>. It keeps the no-hand-holding design — no minimap, no quest markers — but modernizes combat, lockpicking, and visuals. This wiki helps you find your way without spoiling the discovery.</p>
+                <p>All content is free, no accounts, no paywalls. Found an error? <a href="feedback.html" style="color:var(--color-accent)">Send feedback</a> or <a href="advertisers.html" style="color:var(--color-accent)">check our advertising page</a>.</p>
+            </div>
+        </section>
+
     </main>
 
     <footer class="site-footer">
