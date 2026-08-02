@@ -105,7 +105,7 @@ a{color:var(--color-accent);text-decoration:none}
                 <li class="nav-item"><a href="index.html">Home</a></li>
                 <li class="nav-item dropdown">
                     <a href="#" class="dropdown-toggle">Guides</a>
-                    <ul class="dropdown-menu"><li><a href="walkthrough.html">Full Walkthrough</a></li><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="quests.html">Quest Database</a></li><li><a href="map-guide.html">Map Guide</a></li><li><a href="visual-guide.html">Visual Guide</a></li></ul>
+                    <ul class="dropdown-menu"><li><a href="walkthrough.html">Walkthrough</a></li><li><a href="daily-tips.html">Daily Tips</a></li><li><a href="quests.html">Quests</a></li></ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a href="#" class="dropdown-toggle">Factions</a>
@@ -113,91 +113,265 @@ a{color:var(--color-accent);text-decoration:none}
                 </li>
                 <li class="nav-item dropdown">
                     <a href="#" class="dropdown-toggle">Tools</a>
-                    <ul class="dropdown-menu"><li><a href="lockpicking.html">Lockpicking Guide</a></li><li><a href="lock-solver.html">Lock Solver</a></li></ul>
+                    <ul class="dropdown-menu"><li><a href="lockpicking.html">Lockpicking</a></li><li><a href="lock-solver.html">Lock Solver</a></li></ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle">Resources</a>
-                    <ul class="dropdown-menu"><li><a href="bestiary.html">Bestiary</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html">NPCs</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="system-requirements.html">System Requirements</a></li><li><a href="save-management.html">Save Management</a></li><li><a href="community.html">Community</a></li><li><a href="faq.html">FAQ</a></li><li><a href="about.html">About</a></li></ul>
+                    <a href="#" class="dropdown-toggle">More</a>
+                    <ul class="dropdown-menu"><li><a href="bestiary.html">Bestiary</a></li><li><a href="equipment.html">Equipment</a></li><li><a href="skills-guide.html">Skills &amp; Builds</a></li><li><a href="npc.html">NPCs</a></li><li><a href="achievements.html">Achievements</a></li><li><a href="faq.html">FAQ</a></li><li><a href="community.html">Community</a></li></ul>
                 </li>
             </ul>
             </nav>
     </header>
 
     <main class="content-wrapper">
-        <section class="hero-section">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h2 class="hero-title">Gothic 1 Remake Tools & Guides</h2>
-                <p class="hero-subtitle">Lockpicking, faction choice, combat tips — all from actual gameplay, not speculation</p>
-                <div class="tool-grid">
-                    <a href="daily-tips.html" class="tool-card">
-                        <div class="tool-icon">📅</div>
-                        <div class="tool-title">Daily Tips</div>
-                        <div class="tool-desc">New tips and strategies updated daily</div>
-                        <div class="tool-badge">🆕 Daily</div>
-                    </a>
-                    <a href="lock-solver.html" class="tool-card">
-                        <div class="tool-icon">🔓</div>
-                        <div class="tool-title">Lock Solver</div>
-                        <div class="tool-desc">Interactive lockpicking demo tool</div>
-                        <div class="tool-badge">⭐ Popular</div>
-                    </a>
-                    <a href="factions-ultimate-guide.html" class="tool-card">
-                        <div class="tool-icon">🎯</div>
-                        <div class="tool-title">Faction Quiz</div>
-                        <div class="tool-desc">Answer 3 questions, find your faction</div>
-                        <div class="tool-badge">🎮 Interactive</div>
-                    </a>
-                    <a href="visual-guide.html" class="tool-card">
-                        <div class="tool-icon">📸</div>
-                        <div class="tool-title">Visual Walkthrough</div>
-                        <div class="tool-desc">Learn through screenshots — less reading!</div>
-                        <div class="tool-badge">🖼️ Visual</div>
-                    </a>
-                    <a href="lockpicking.html" class="tool-card">
-                        <div class="tool-icon">🔐</div>
-                        <div class="tool-title">Lockpicking Guide</div>
-                        <div class="tool-desc">Sliding plates & pins — full tutorial</div>
-                        <div class="tool-badge">📖 Complete</div>
-                    </a>
-                    <a href="factions-guide.html" class="tool-card">
-                        <div class="tool-icon">⚔️</div>
-                        <div class="tool-title">Faction Comparison</div>
-                        <div class="tool-desc">Old Camp vs New Camp vs Swamp Camp</div>
-                        <div class="tool-badge">📊 Detailed</div>
-                    </a>
+        <!-- HERO -->
+        <section class="hero" style="position:relative;min-height:70vh;display:flex;align-items:center;padding:4rem 2rem;background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.85)),radial-gradient(ellipse at top,var(--color-bg-light) 0%,var(--color-bg-dark) 70%);text-align:center;overflow:hidden">
+            <div class="hero-content" style="max-width:900px;margin:0 auto;position:relative;z-index:1">
+                <div class="hero-badge" style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(233,69,96,.15);border:1px solid rgba(233,69,96,.4);color:var(--color-accent);padding:.4rem 1.2rem;border-radius:20px;font-size:.85rem;font-weight:600;margin-bottom:1.5rem">
+                    <span style="width:8px;height:8px;border-radius:50%;background:#28a745;display:inline-block"></span>
+                    Updated for the 2026 release
+                </div>
+                <h1 style="font-family:var(--font-heading);font-size:clamp(2rem,5vw,3.5rem);color:var(--color-gold);text-shadow:0 2px 12px rgba(0,0,0,.6);margin-bottom:1rem">Gothic 1 Remake Wiki<br>&amp; Strategy Hub</h1>
+                <p class="hero-description" style="font-size:clamp(1rem,2vw,1.25rem);color:var(--color-text-secondary);line-height:1.8;max-width:700px;margin:0 auto 2rem">Walkthroughs, lockpicking help, faction guides, beast database, and build planners — everything you need to survive the Colony. Written from actual playthroughs, not speculation.</p>
+                <div class="hero-stats" style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:2rem">
+                    <div style="text-align:center"><div style="font-size:1.8rem;font-weight:700;color:var(--color-gold)">26+</div><div style="font-size:.8rem;color:var(--color-text-secondary)">Pages</div></div>
+                    <div style="text-align:center"><div style="font-size:1.8rem;font-weight:700;color:var(--color-gold)">50+</div><div style="font-size:.8rem;color:var(--color-text-secondary)">Hours Tested</div></div>
+                    <div style="text-align:center"><div style="font-size:1.8rem;font-weight:700;color:var(--color-gold)">100%</div><div style="font-size:.8rem;color:var(--color-text-secondary)">Free</div></div>
+                    <div style="text-align:center"><div style="font-size:1.8rem;font-weight:700;color:var(--color-gold)">Daily</div><div style="font-size:.8rem;color:var(--color-text-secondary)">Updates</div></div>
+                </div>
+                <div class="hero-actions" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+                    <a href="walkthrough.html" class="btn-primary" style="display:inline-block;text-decoration:none;padding:1rem 2.5rem">Start the Walkthrough →</a>
+                    <a href="factions-guide.html#quiz" style="display:inline-block;text-decoration:none;padding:1rem 2.5rem;background:rgba(255,255,255,.08);color:var(--color-text-primary);border:1px solid var(--color-border);border-radius:8px;font-weight:600">Find Your Faction</a>
                 </div>
             </div>
         </section>
 
-        <section class="container" style="max-width:900px;margin:0 auto;padding:3rem 2rem">
-            <h2 class="section-title">What This Site Is</h2>
-            <div class="guide-section" style="max-width:100%">
-                <p style="font-size:1.05rem;line-height:1.9;color:var(--color-text-secondary);margin-bottom:1.5rem">
-                    Gothic 1 Remake launched June 5, 2026, and I've played through it multiple times. The first time I played, I got stuck on the Collapsed Tower lock for almost an hour — broke two lockpicks before I realized the system is completely different from the original. The original had you listening for tumblers. The Remake gives you sliding plates where moving one plate shifts others. After figuring it out, I built this site to share everything I learned — faction choices, build plans, and how to solve every lock.
-                </p>
+        <!-- QUICK NAV -->
+        <section class="quick-nav section" style="max-width:1100px;margin:0 auto;padding:3rem 2rem">
+            <div class="section-header" style="text-align:center;margin-bottom:2.5rem">
+                <h2 style="font-family:var(--font-heading);color:var(--color-gold);font-size:2rem;margin-bottom:.5rem">Jump Straight In</h2>
+                <p style="color:var(--color-text-secondary)">The routes players actually use</p>
+            </div>
+            <div class="quick-nav-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem">
+                <a href="walkthrough.html" class="quick-nav-item" style="display:flex;flex-direction:column;align-items:center;gap:.6rem;background:var(--color-bg-medium);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem 1rem;text-decoration:none;transition:all .3s">
+                    <span style="font-size:2rem">🗺️</span>
+                    <span style="font-weight:600;color:var(--color-text-primary)">Walkthrough</span>
+                    <span class="quick-nav-count" style="font-size:.75rem;color:var(--color-text-secondary)">5 chapters</span>
+                </a>
+                <a href="factions-guide.html" class="quick-nav-item" style="display:flex;flex-direction:column;align-items:center;gap:.6rem;background:var(--color-bg-medium);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem 1rem;text-decoration:none;transition:all .3s">
+                    <span style="font-size:2rem">⚔️</span>
+                    <span style="font-weight:600;color:var(--color-text-primary)">Factions</span>
+                    <span class="quick-nav-count" style="font-size:.75rem;color:var(--color-text-secondary)">3 camps</span>
+                </a>
+                <a href="lockpicking.html" class="quick-nav-item" style="display:flex;flex-direction:column;align-items:center;gap:.6rem;background:var(--color-bg-medium);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem 1rem;text-decoration:none;transition:all .3s">
+                    <span style="font-size:2rem">🔐</span>
+                    <span style="font-weight:600;color:var(--color-text-primary)">Lockpicking</span>
+                    <span class="quick-nav-count" style="font-size:.75rem;color:var(--color-text-secondary)">Sliding plates</span>
+                </a>
+                <a href="bestiary.html" class="quick-nav-item" style="display:flex;flex-direction:column;align-items:center;gap:.6rem;background:var(--color-bg-medium);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem 1rem;text-decoration:none;transition:all .3s">
+                    <span style="font-size:2rem">📖</span>
+                    <span style="font-weight:600;color:var(--color-text-primary)">Bestiary</span>
+                    <span class="quick-nav-count" style="font-size:.75rem;color:var(--color-text-secondary)">16 creatures</span>
+                </a>
+                <a href="quests.html" class="quick-nav-item" style="display:flex;flex-direction:column;align-items:center;gap:.6rem;background:var(--color-bg-medium);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem 1rem;text-decoration:none;transition:all .3s">
+                    <span style="font-size:2rem">📜</span>
+                    <span style="font-weight:600;color:var(--color-text-primary)">Quests</span>
+                    <span class="quick-nav-count" style="font-size:.75rem;color:var(--color-text-secondary)">All by faction</span>
+                </a>
+                <a href="daily-tips.html" class="quick-nav-item" style="display:flex;flex-direction:column;align-items:center;gap:.6rem;background:var(--color-bg-medium);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem 1rem;text-decoration:none;transition:all .3s">
+                    <span style="font-size:2rem">📅</span>
+                    <span style="font-weight:600;color:var(--color-text-primary)">Daily Tips</span>
+                    <span class="quick-nav-count" style="font-size:.75rem;color:var(--color-text-secondary)">Every day</span>
+                </a>
+            </div>
+        </section>
 
-                <h3 style="font-family:var(--font-heading);color:var(--color-gold);font-size:1.5rem;margin:2.5rem 0 1rem">Picking Your Faction</h3>
-                <p style="font-size:1.05rem;line-height:1.9;color:var(--color-text-secondary);margin-bottom:1.2rem">
-                    All three camps let you complete their quests before committing. Old Camp (Gomez, Fire Mages Circles 1-6) is the smoothest first playthrough. New Camp (Lee, Water Mages, best economy) is ideal for archer/dexterity builds. Swamp Camp (Brotherhood of the Sleeper, psionic magic Circles 1-4, Templar spellsword) is the most unique experience. Full comparison, join requirements, and the interactive quiz are in the <a href="factions-guide.html" style="color:var(--color-accent);font-weight:700">Complete Faction Guide</a>.
-                </p>
-                <p style="font-size:1rem;line-height:1.8;color:var(--color-text-secondary);margin-bottom:1.5rem">
-                    Can't decide? The <a href="factions-guide.html#quiz" style="color:var(--color-accent);font-weight:600">Faction Quiz</a> asks three questions and gives you a straight recommendation.
-                <p style="font-size:1.05rem;line-height:1.9;color:var(--color-text-secondary);margin-bottom:1.5rem">
-                    Strategy: save first, test each plate to see the linkages, solve the most-connected plates first, save independent plates for last. <a href="lockpicking.html" style="color:var(--color-accent);font-weight:600">Lockpicking Guide</a> has the full tutorial. The <a href="lock-solver.html" style="color:var(--color-accent);font-weight:600">Lock Solver</a> is an interactive demo tool.
-                </p>
-
-                <h3 style="font-family:var(--font-heading);color:var(--color-gold);font-size:1.5rem;margin:2.5rem 0 1rem">The Rest of the Site</h3>
-                <p style="font-size:1.05rem;line-height:1.9;color:var(--color-text-secondary);margin-bottom:1rem">
-                    <a href="walkthrough.html" style="color:var(--color-accent);font-weight:600">Full Walkthrough</a> covers every chapter from the beach to the final boss. <a href="skills-guide.html" style="color:var(--color-accent);font-weight:600">Skills & Builds</a> tells you exactly what to invest LP in before the level 30 cost spike. <a href="bestiary.html" style="color:var(--color-accent);font-weight:600">Bestiary</a> and <a href="equipment.html" style="color:var(--color-accent);font-weight:600">Equipment</a> catalog every enemy weakness and weapon acquisition method.
-                </p>
-                <p style="font-size:1.05rem;line-height:1.9;color:var(--color-text-secondary);margin-bottom:1.5rem">
-                    All guides are written from actual play experience — not generated from preview articles. Found an error? <a href="feedback.html" style="color:var(--color-accent);font-weight:600">Submit feedback</a> and I'll fix it.
-                </p>
-
-                <div class="info-box important" style="margin:2rem 0">
-                    <p style="font-size:1rem;line-height:1.7"><strong>New to Gothic?</strong> Start with the <a href="walkthrough.html" style="color:var(--color-accent);font-weight:600">Walkthrough</a> for the step-by-step route, or check <a href="daily-tips.html" style="color:var(--color-accent);font-weight:600">Daily Tips</a> for quick advice. The <a href="faq.html" style="color:var(--color-accent);font-weight:600">FAQ</a> answers common questions.</p>
+        <!-- BEGINNER SECTION -->
+        <section class="beginner-section section" style="background:var(--color-bg-medium);padding:3rem 2rem">
+            <div class="section-header" style="max-width:1100px;margin:0 auto 2rem">
+                <h2 style="font-family:var(--font-heading);color:var(--color-gold);font-size:2rem;margin-bottom:.5rem">🎮 New to Gothic 1 Remake?</h2>
+                <p style="color:var(--color-text-secondary)">Your first 30 minutes, step by step</p>
+            </div>
+            <div class="beginner-steps" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem">
+                <div class="beginner-step" style="background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem">
+                    <div style="font-size:1.5rem;margin-bottom:.8rem">1️⃣</div>
+                    <h4 style="color:var(--color-gold);margin-bottom:.5rem">Follow Diego</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem">He escorts you safely to the Old Camp. Complete his tutorial quest for your first real weapon.</p>
                 </div>
+                <div class="beginner-step" style="background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem">
+                    <div style="font-size:1.5rem;margin-bottom:.8rem">2️⃣</div>
+                    <h4 style="color:var(--color-gold);margin-bottom:.5rem">Loot the Path</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem">Old Sword under the hanged man, Hunter's Knife for Drax (free Shortbow). No weight limit — grab everything.</p>
+                </div>
+                <div class="beginner-step" style="background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem">
+                    <div style="font-size:1.5rem;margin-bottom:.8rem">3️⃣</div>
+                    <h4 style="color:var(--color-gold);margin-bottom:.5rem">Train Early</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem">Scatty unlocks the parry (10 LP + 50 ore). Fingers teaches lockpicking — the two best LP investments in the game.</p>
+                </div>
+                <div class="beginner-step" style="background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem">
+                    <div style="font-size:1.5rem;margin-bottom:.8rem">4️⃣</div>
+                    <h4 style="color:var(--color-gold);margin-bottom:.5rem">Don't Commit Yet</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem">Clear all three camps' quests before choosing. Save before the faction oath — it's permanent.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GUIDES SECTION -->
+        <section class="guides-section section" style="max-width:1100px;margin:0 auto;padding:3rem 2rem">
+            <div class="section-header" style="text-align:center;margin-bottom:2rem">
+                <h2 style="font-family:var(--font-heading);color:var(--color-gold);font-size:2rem;margin-bottom:.5rem">📚 Popular Guides</h2>
+                <p style="color:var(--color-text-secondary)">From first steps to 100% completion</p>
+            </div>
+            <div class="guides-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem">
+                <a href="walkthrough.html" class="guide-card" style="display:block;background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem;text-decoration:none;transition:all .3s">
+                    <div style="font-size:2rem;margin-bottom:.8rem">🗺️</div>
+                    <h4 style="color:var(--color-gold);margin-bottom:.5rem">Full Walkthrough</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:.8rem">Every chapter from the beach to the Sleeper. Includes the Minecrawler Queen boss guide.</p>
+                    <span style="color:var(--color-accent);font-weight:600">Read →</span>
+                </a>
+                <a href="daily-tips.html" class="guide-card" style="display:block;background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem;text-decoration:none;transition:all .3s">
+                    <div style="font-size:2rem;margin-bottom:.8rem">📅</div>
+                    <h4 style="color:var(--color-gold);margin-bottom:.5rem">Daily Tips</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:.8rem">Bite-size advice updated every day. Advanced player column and speedrun routes.</p>
+                    <span style="color:var(--color-accent);font-weight:600">Read →</span>
+                </a>
+                <a href="map-guide.html" class="guide-card" style="display:block;background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem;text-decoration:none;transition:all .3s">
+                    <div style="font-size:2rem;margin-bottom:.8rem">🗺️</div>
+                    <h4 style="color:var(--color-gold);margin-bottom:.5rem">Map &amp; Exploration</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:.8rem">Safe routes between camps, landmark navigation, where to buy maps.</p>
+                    <span style="color:var(--color-accent);font-weight:600">Read →</span>
+                </a>
+                <a href="visual-guide.html" class="guide-card" style="display:block;background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem;text-decoration:none;transition:all .3s">
+                    <div style="font-size:2rem;margin-bottom:.8rem">📸</div>
+                    <h4 style="color:var(--color-gold);margin-bottom:.5rem">Visual Guide</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:.8rem">Learn through screenshots and the official trailer. Less reading, more seeing.</p>
+                    <span style="color:var(--color-accent);font-weight:600">Read →</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- FACTIONS SECTION -->
+        <section class="factions-section section" style="background:var(--color-bg-medium);padding:3rem 2rem">
+            <div class="section-header" style="max-width:1100px;margin:0 auto 2rem">
+                <h2 style="font-family:var(--font-heading);color:var(--color-gold);font-size:2rem;margin-bottom:.5rem">⚔️ Pick Your Faction</h2>
+                <p style="color:var(--color-text-secondary)">A permanent Chapter 1 choice — get it right</p>
+            </div>
+            <div class="faction-cards" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem">
+                <div class="faction-card" style="background:var(--color-bg-light);border:2px solid var(--color-old-camp);border-radius:12px;padding:1.5rem;text-align:center">
+                    <div style="font-size:2.5rem;margin-bottom:.8rem">🔥</div>
+                    <h4 style="color:#c41e3a;margin-bottom:.5rem">Old Camp</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:.8rem">Fire Mages (Circles 1-6) · Guards · Heavy armor. Best for first playthroughs.</p>
+                    <span style="font-size:.8rem;color:var(--color-text-secondary)">Gomez · Diego · Thorus</span>
+                </div>
+                <div class="faction-card" style="background:var(--color-bg-light);border:2px solid var(--color-new-camp);border-radius:12px;padding:1.5rem;text-align:center">
+                    <div style="font-size:2.5rem;margin-bottom:.8rem">💧</div>
+                    <h4 style="color:#228b22;margin-bottom:.5rem">New Camp</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:.8rem">Water Mages (Circles 1-6) · Mercenaries · Best economy, no Chapter 4 banishment.</p>
+                    <span style="font-size:.8rem;color:var(--color-text-secondary)">Lee · Wolf · Saturas</span>
+                </div>
+                <div class="faction-card" style="background:var(--color-bg-light);border:2px solid var(--color-sect);border-radius:12px;padding:1.5rem;text-align:center">
+                    <div style="font-size:2.5rem;margin-bottom:.8rem">🌀</div>
+                    <h4 style="color:#6a0dad;margin-bottom:.5rem">Swamp Camp</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:.8rem">Psionic magic (Circles 1-4) · Templar spellsword · Most unique experience.</p>
+                    <span style="font-size:.8rem;color:var(--color-text-secondary)">Gurus · Fortuno · Gor Na Drak</span>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:2rem">
+                <a href="factions-guide.html" class="btn-primary" style="display:inline-block;text-decoration:none;padding:.8rem 2rem">Full Faction Guide →</a>
+            </div>
+        </section>
+
+        <!-- TOOLS SECTION -->
+        <section class="tools-section section" style="max-width:1100px;margin:0 auto;padding:3rem 2rem">
+            <div class="section-header" style="text-align:center;margin-bottom:2rem">
+                <h2 style="font-family:var(--font-heading);color:var(--color-gold);font-size:2rem;margin-bottom:.5rem">🔧 Interactive Tools</h2>
+                <p style="color:var(--color-text-secondary)">Built by players, for players</p>
+            </div>
+            <div class="tools-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem">
+                <div class="tool-card" style="background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem;text-align:center">
+                    <div style="font-size:2rem;margin-bottom:.8rem">🔐</div>
+                    <h4 style="color:var(--color-gold);margin-bottom:.5rem">Lockpicking Guide</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem">Sliding plate mechanics, solving strategies, training costs.</p>
+                    <a href="lockpicking.html" class="btn-primary" style="display:inline-block;text-decoration:none;padding:.6rem 1.5rem;font-size:.9rem">Open →</a>
+                </div>
+                <div class="tool-card" style="background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem;text-align:center">
+                    <div style="font-size:2rem;margin-bottom:.8rem">🎯</div>
+                    <h4 style="color:var(--color-gold);margin-bottom:.5rem">Faction Quiz</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem">3 questions. A straight answer on which camp fits you.</p>
+                    <a href="factions-guide.html#quiz" class="btn-primary" style="display:inline-block;text-decoration:none;padding:.6rem 1.5rem;font-size:.9rem">Take Quiz →</a>
+                </div>
+                <div class="tool-card" style="background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:12px;padding:1.5rem;text-align:center">
+                    <div style="font-size:2rem;margin-bottom:.8rem">📊</div>
+                    <h4 style="color:var(--color-gold);margin-bottom:.5rem">Build Planner</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem;margin-bottom:1rem">Stat costs, trainer locations, optimal LP allocation.</p>
+                    <a href="skills-guide.html" class="btn-primary" style="display:inline-block;text-decoration:none;padding:.6rem 1.5rem;font-size:.9rem">Plan →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- DATABASE SECTION -->
+        <section class="database-section section" style="background:var(--color-bg-medium);padding:3rem 2rem">
+            <div class="section-header" style="max-width:1100px;margin:0 auto 2rem">
+                <h2 style="font-family:var(--font-heading);color:var(--color-gold);font-size:2rem;margin-bottom:.5rem">📚 Complete Database</h2>
+                <p style="color:var(--color-text-secondary)">Everything cataloged</p>
+            </div>
+            <div class="database-grid" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem">
+                <a href="bestiary.html" class="database-card" style="display:block;background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:10px;padding:1.2rem;text-decoration:none;text-align:center;transition:all .3s">
+                    <div style="font-size:1.8rem;margin-bottom:.5rem">🐺</div>
+                    <h4 style="color:var(--color-gold);font-size:1rem;margin-bottom:.3rem">Bestiary</h4>
+                    <span class="database-count" style="font-size:.8rem;color:var(--color-text-secondary)">16 creatures</span>
+                </a>
+                <a href="equipment.html" class="database-card" style="display:block;background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:10px;padding:1.2rem;text-decoration:none;text-align:center;transition:all .3s">
+                    <div style="font-size:1.8rem;margin-bottom:.5rem">⚔️</div>
+                    <h4 style="color:var(--color-gold);font-size:1rem;margin-bottom:.3rem">Equipment</h4>
+                    <span class="database-count" style="font-size:.8rem;color:var(--color-text-secondary)">Weapons &amp; armor</span>
+                </a>
+                <a href="npc.html" class="database-card" style="display:block;background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:10px;padding:1.2rem;text-decoration:none;text-align:center;transition:all .3s">
+                    <div style="font-size:1.8rem;margin-bottom:.5rem">👥</div>
+                    <h4 style="color:var(--color-gold);font-size:1rem;margin-bottom:.3rem">NPCs</h4>
+                    <span class="database-count" style="font-size:.8rem;color:var(--color-text-secondary)">Key characters</span>
+                </a>
+                <a href="quests.html" class="database-card" style="display:block;background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:10px;padding:1.2rem;text-decoration:none;text-align:center;transition:all .3s">
+                    <div style="font-size:1.8rem;margin-bottom:.5rem">📜</div>
+                    <h4 style="color:var(--color-gold);font-size:1rem;margin-bottom:.3rem">Quests</h4>
+                    <span class="database-count" style="font-size:.8rem;color:var(--color-text-secondary)">By faction</span>
+                </a>
+                <a href="achievements.html" class="database-card" style="display:block;background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:10px;padding:1.2rem;text-decoration:none;text-align:center;transition:all .3s">
+                    <div style="font-size:1.8rem;margin-bottom:.5rem">🏆</div>
+                    <h4 style="color:var(--color-gold);font-size:1rem;margin-bottom:.3rem">Achievements</h4>
+                    <span class="database-count" style="font-size:.8rem;color:var(--color-text-secondary)">42 total</span>
+                </a>
+                <a href="skills-guide.html" class="database-card" style="display:block;background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:10px;padding:1.2rem;text-decoration:none;text-align:center;transition:all .3s">
+                    <div style="font-size:1.8rem;margin-bottom:.5rem">📈</div>
+                    <h4 style="color:var(--color-gold);font-size:1rem;margin-bottom:.3rem">Skills &amp; Builds</h4>
+                    <span class="database-count" style="font-size:.8rem;color:var(--color-text-secondary)">Stat guides</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ + COMMUNITY -->
+        <section class="faq-section section" style="max-width:1100px;margin:0 auto;padding:3rem 2rem">
+            <div class="section-header" style="text-align:center;margin-bottom:2rem">
+                <h2 style="font-family:var(--font-heading);color:var(--color-gold);font-size:2rem;margin-bottom:.5rem">❓ Need Help?</h2>
+                <p style="color:var(--color-text-secondary)">Common questions answered</p>
+            </div>
+            <div class="faq-preview" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:2rem">
+                <a href="faq.html" class="faq-card" style="display:block;background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:10px;padding:1.2rem;text-decoration:none;transition:all .3s">
+                    <h4 style="color:var(--color-gold);margin-bottom:.4rem">Which faction is best?</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem">Old Camp for your first run. New Camp for archers. Swamp Camp for unique playthroughs.</p>
+                </a>
+                <a href="faq.html" class="faq-card" style="display:block;background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:10px;padding:1.2rem;text-decoration:none;transition:all .3s">
+                    <h4 style="color:var(--color-gold);margin-bottom:.4rem">How does lockpicking work?</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem">Sliding plates. 4-7 plates, gold pins, interconnected moves. Train with Fingers for more mistakes.</p>
+                </a>
+                <a href="faq.html" class="faq-card" style="display:block;background:var(--color-bg-light);border:1px solid var(--color-border);border-radius:10px;padding:1.2rem;text-decoration:none;transition:all .3s">
+                    <h4 style="color:var(--color-gold);margin-bottom:.4rem">Can I switch camps?</h4>
+                    <p style="color:var(--color-text-secondary);font-size:.9rem">No. It's permanent. Complete all three camps' quests before committing, then save.</p>
+                </a>
+            </div>
+            <div style="text-align:center;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+                <a href="faq.html" class="btn-primary" style="display:inline-block;text-decoration:none;padding:.8rem 2rem">View Full FAQ →</a>
+                <a href="community.html" style="display:inline-block;text-decoration:none;padding:.8rem 2rem;background:rgba(255,255,255,.08);color:var(--color-text-primary);border:1px solid var(--color-border);border-radius:8px;font-weight:600">Join Community</a>
             </div>
         </section>
     </main>
