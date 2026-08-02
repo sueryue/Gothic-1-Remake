@@ -414,3 +414,18 @@
         transition-duration: 0.01ms !important;
     }
 }
+
+/* === Homepage component mobile fixes === */
+@media (max-width: 768px) {
+    .hero-content { padding: 1rem; }
+    .hero-stats { gap: 1rem; }
+    .hero-stats div { flex: 1; }
+    .hero-stats .hero-stat-value { font-size: 1.4rem; }
+    .beginner-steps, .guides-grid, .faction-cards, .tools-grid, .database-grid, .faq-preview { grid-template-columns: 1fr !important; }
+    .quick-nav-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-section img { min-height: auto; }
+}
+@media (max-width: 400px) {
+    .quick-nav-grid { grid-template-columns: 1fr; }
+    .hero-actions .btn-primary { width: 100%; }
+}
