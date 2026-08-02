@@ -2,46 +2,53 @@
 
 ## Site Information
 
-**Site:** Gothic 1 Remake Wiki
-
+**Site Name:** Gothic 1 Remake Wiki
 **URL:** https://gothic-1-remake.com
-
-**Tagline:** A fan-made strategy guide and tools website for the 2026 remake of the classic RPG.
+**Tagline:** Fan-made strategy guide & database for the 2026 Gothic 1 Remake — walkthroughs, tools, and creature database.
 
 ## Why Carbon Ads?
 
-Carbon Ads reaches the exact audience that matters to gaming hardware brands, indie game publishers, and gaming accessory companies. Our readers are deeply engaged PC and console RPG players — the kind of audience that buys mechanical keyboards, gaming mice, high-refresh monitors, and indie titles on Steam. They come to our site specifically for strategy and build advice for an RPG they are actively playing, making them a high-intent, focused audience that aligns perfectly with the tech and gaming verticals Carbon Ads is known for.
+Carbon Ads is the ideal network for this site because our audience is **narrowly vertical**: PC and console RPG players actively playing Gothic 1 Remake. These are high-intent visitors who come to the site for gameplay strategy, build advice, and tool solutions — exactly the demographic that gaming hardware brands (keyboards, mice, monitors), indie game publishers, and gaming accessory companies want to reach.
+
+Our visitors are **actively playing a specific RPG** right now, not casually browsing. They research mechanics, compare gear, and make purchasing decisions around gaming products. This focused intent matches Carbon Ads' tech and gaming advertiser base.
 
 ## Audience Profile
 
-- **Primary Demographic:** PC gamers, RPG enthusiasts, game strategy seekers
-- **Age Range:** 25-40 years old
+- **Primary Demographic:** PC and console RPG players
+- **Age Range:** 25-40
 - **Geography:** United States and Europe (English-speaking)
-- **Behavior:** Actively researching gameplay mechanics, builds, and walkthroughs. High purchase intent for gaming-related products and services.
-- **Niche:** A vertical audience of dedicated RPG players — not a general gaming site. Every visitor is interested in deep, immersive role-playing games.
+- **Behavior:** Actively researching gameplay mechanics, builds, walkthroughs, and lock solutions. High purchase intent for gaming hardware and software.
+- **Niche:** Dedicated RPG players — not a general gaming site. Every visitor cares about deep, immersive role-playing games.
 
 ## Content & Quality
 
-All content is original and written from real gameplay experience. The site covers walkthroughs, faction guides, a lockpicking system breakdown, bestiary, equipment database, and character builds. Includes a custom-built interactive lockpicking solver tool. 26 pages of structured, SEO-optimized content with daily and weekly updates.
+- **26 pages** of structured, SEO-optimized content
+- All guides written from **actual gameplay** — no AI-generated or scraped content
+- Original content: full 5-chapter walkthrough, faction comparison guide, sliding-plate lockpicking breakdown, 16-creature bestiary, equipment database, character builds, missable quests/items/achievements checklists
+- **Custom interactive tool**: lockpicking demo
+- **20 official game screenshots** illustrating every guide section
+- Daily and weekly content updates
 
 ## Design Philosophy
 
-The site uses a clean, dark medieval fantasy theme that matches the aesthetic of the game itself. We believe advertising should complement the user experience, not disrupt it. Our layout has dedicated, thoughtfully placed ad spaces that integrate naturally without competing with content for attention.
+Dark medieval fantasy theme matching the game's aesthetic. Advertising placements are designed to complement reading, not interrupt it.
 
 ## Ad Format Preferences
 
-- **We Accept:** Static image ads, text-based ads, tasteful sponsored content
-- **We Do NOT Accept:** Pop-ups, pop-unders, auto-playing video ads, expandable/overlay ads, or any format that interferes with reading
-
-We want our readers to focus on the guide content. Ads should be visible but unobtrusive.
+- **Accept:** Static image ads, text ads, tasteful sponsored content
+- **Decline:** Pop-ups, pop-unders, auto-playing video, expandable/overlay ads
 
 ## Technical Readiness
 
-- Responsive design, mobile-friendly
-- Fast page load times
-- Clean codebase, ready for a single script or iframe integration
+- Responsive design, mobile-first optimized (async CSS, lazy images, fast first paint)
 - SSL enabled
+- Clean codebase, ready for single script integration
+- ads.txt already lists Carbon Ads
+
+## Traffic & Growth
+
+New site (launched July 2026) building organic search traffic. Targeting keywords: "Gothic 1 Remake guide", "Gothic Remake walkthrough", "Gothic Remake best faction", "Gothic Remake lockpicking". The game has a dedicated long-lived fanbase (the 2001 original still has active communities 25 years later).
 
 ---
 
-*Thank you for considering our site for the Carbon Ads network. We believe our focused RPG gaming audience is a strong fit for your advertiser base.*
+*Submitted for Carbon Ads review. Happy to provide additional information.*
