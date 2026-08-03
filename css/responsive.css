@@ -429,3 +429,63 @@
     .quick-nav-grid { grid-template-columns: 1fr; }
     .hero-actions .btn-primary { width: 100%; }
 }
+
+/* === Additional mobile fixes === */
+@media (max-width: 768px) {
+    /* Database cards - single column */
+    .database-grid,
+    .faq-preview,
+    .missables-grid,
+    .mods-grid,
+    .completion-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Card padding on mobile */
+    .database-card,
+    .faq-card,
+    .missable-card,
+    .mod-card {
+        padding: 1rem;
+    }
+
+    /* Hero stats wrap */
+    .hero-stats {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    .hero-stats div {
+        min-width: 80px;
+    }
+
+    /* Table horizontal scroll */
+    .table-responsive {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: auto;
+    }
+
+    /* Quick nav 2-col on tablets, 1-col small phones */
+    .quick-nav-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .quick-nav-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Buttons full width */
+    .hero-actions a {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Font size tweaks */
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+}
