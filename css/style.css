@@ -687,3 +687,143 @@ a:hover { color: var(--color-gold); }
     color: var(--color-text-secondary);
     margin-left: 0.3rem;
 }
+
+/* === Visual Enhancement === */
+/* Card hover lift with glow */
+.tip-card, .tool-card, .guide-card, .database-card, .faq-card, .quick-nav-item,
+.tool-card, .hobby-card, .event-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.tip-card:hover, .tool-card:hover, .guide-card:hover, .database-card:hover,
+.faq-card:hover, .quick-nav-item:hover, .hobby-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(233, 69, 96, 0.15), 0 2px 8px rgba(0,0,0,0.3);
+    border-color: var(--color-accent);
+}
+
+/* Section headers with underline accent */
+.section-header h2 {
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-gold));
+    border-radius: 2px;
+}
+.section-header.left h2::after {
+    left: 0;
+    transform: none;
+}
+
+/* Buttons glow */
+.btn-primary {
+    box-shadow: 0 4px 14px rgba(233, 69, 96, 0.3);
+}
+.btn-primary:hover {
+    box-shadow: 0 6px 20px rgba(233, 69, 96, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Info boxes rounded with subtle border */
+.info-box {
+    border-radius: 10px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+/* Page header gradient overlay */
+.page-header {
+    position: relative;
+}
+.page-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-gold), var(--color-accent));
+}
+
+/* Hero content text shadow */
+.hero-content h1, .hero-title {
+    text-shadow: 0 2px 15px rgba(0,0,0,0.7);
+}
+
+/* Stat values in hero */
+.hero-stats div > div:first-child {
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+/* Table styling improvements */
+.faction-comparison tr {
+    transition: background 0.2s ease;
+}
+.faction-comparison tbody tr:hover {
+    background: rgba(233, 69, 96, 0.05);
+}
+
+/* Smooth scroll bar accent */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-bg-light);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+}
+
+/* === Entrance Animations === */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.hero-content h1, .hero-content .hero-badge {
+    animation: fadeInUp 0.6s ease-out both;
+}
+.hero-content .hero-description {
+    animation: fadeInUp 0.6s ease-out 0.15s both;
+}
+.hero-content .hero-stats {
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+.hero-content .hero-actions {
+    animation: fadeInUp 0.6s ease-out 0.45s both;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .hero-content h1, .hero-content .hero-badge,
+    .hero-content .hero-description, .hero-content .hero-stats,
+    .hero-content .hero-actions {
+        animation: none;
+    }
+}
+
+/* Hero decorative divider */
+.hero-content .hero-description {
+    position: relative;
+}
+.hero-content .hero-description::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    margin: 1.5rem auto 0;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
