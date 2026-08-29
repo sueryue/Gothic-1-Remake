@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://gothic-1-remake.com/</loc>
+    <loc>https://gothic-1-remake.com/index.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -19,12 +19,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-  <url>
     <loc>https://gothic-1-remake.com/equipment.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
     <loc>https://gothic-1-remake.com/skills-guide.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
@@ -37,12 +37,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-  <url>
     <loc>https://gothic-1-remake.com/tools.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
     <loc>https://gothic-1-remake.com/lockpicking.html</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
