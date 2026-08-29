@@ -179,7 +179,19 @@ a{color:var(--color-accent);text-decoration:none}
                 </table>
             </div>
 
-            <h2>📊 Complete Bestiary Stats — All 70 Creatures</h2>
+            <div class="filter-bar" style="margin:1rem 0">
+  <input type="text" id="listFilter" placeholder="🔍 Filter by name…" onkeyup="filterList(this.value)" style="background:var(--color-bg-medium);border:1px solid var(--color-border);color:var(--color-text-primary);border-radius:8px;padding:.6rem .9rem;font-size:.95rem;width:280px;max-width:100%">
+</div>
+<script>
+function filterList(q){
+  q = q.toLowerCase().trim();
+  document.querySelectorAll('table.faction-comparison tbody tr').forEach(function(tr){
+    var name = tr.cells[0] ? tr.cells[0].textContent.toLowerCase() : '';
+    tr.style.display = (!q || name.indexOf(q) !== -1) ? '' : 'none';
+  });
+}
+</script>
+<h2>📊 Complete Bestiary Stats — All 70 Creatures</h2>
 <p style="line-height:1.8;color:var(--color-text-secondary);margin-bottom:1rem">Verified post-launch values. <b>Weakness</b> = the damage type this creature defends against least (use it). Source: colony-guide.com creature database.</p>
 <div class="table-responsive" style="max-height:70vh;overflow:auto;margin-bottom:1.5rem"><table class="faction-comparison">
 <thead><tr><th>Creature</th><th>XP</th><th>HP</th><th>STR</th><th>DEX</th><th>Weakness</th><th>Location</th></tr></thead>
