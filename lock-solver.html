@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gothic 1 Remake Lockpicking Solver — Interactive</title>
+<meta name="description" content="Interactive Gothic 1 Remake lockpicking solver: enter your plate positions and linkages, and get the exact slide sequence to center every pin.">
+<link rel="canonical" href="https://gothic-1-remake.com/lock-solver.html">
+<meta name="robots" content="index, follow">
+<style>
+:root{--bg:#0e1419;--bg-card:#151d24;--border:#2a3742;--text:#e6edf2;--dim:#93a4b0;--gold:#d4af37;--accent:#e94560}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+.wrap{max-width:900px;margin:0 auto;padding:2rem 1rem}
+h1{font-size:1.9rem;margin-bottom:.4rem;color:var(--gold)}
+p.sub{color:var(--dim);margin-bottom:1.6rem}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.4rem;margin-bottom:1.4rem}
+h2{font-size:1.2rem;color:var(--gold);margin-bottom:1rem}
+label{color:var(--dim);font-size:.9rem}
+select,input[type=number]{background:#0b1014;border:1px solid var(--border);color:var(--text);border-radius:6px;padding:.4rem .6rem;font-size:.95rem}
+.btn{display:inline-block;background:linear-gradient(135deg,#e94560,#d4af37);color:#fff;border:none;border-radius:8px;padding:.7rem 1.4rem;font-weight:700;cursor:pointer;font-size:.95rem;margin-right:.6rem;text-decoration:none}
+.btn.ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+.plate{margin-bottom:1.2rem;padding:.9rem;border:1px solid var(--border);border-radius:8px;background:#10181f}
+.plate-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;flex-wrap:wrap}
+.plate-name{font-weight:700;color:var(--gold)}
+.holes{display:flex;gap:.4rem;margin-bottom:.5rem}
+.hole{width:40px;height:40px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.7rem;color:var(--dim);position:relative;transition:all .15s}
+.hole.pin{background:radial-gradient(circle at 40% 35%,#ffe9a8,#d4af37 70%);border-color:#fff;box-shadow:0 0 6px rgba(212,175,55,.7)}
+.hole.center{border-color:var(--accent)}
+.hole.solved{background:#2ecc71;border-color:#fff}
+.links{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;font-size:.78rem}
+.links span{color:var(--dim)}
+.link-tag{border:1px solid var(--border);border-radius:20px;padding:.2rem .55rem;cursor:pointer;background:#0b1014;color:var(--dim);user-select:none}
+.link-tag.same{background:#1b3a2a;color:#7ae0a0;border-color:#2ecc71}
+.link-tag.opp{background:#3a1b2a;color:#ff9ab0;border-color:#e94560}
+#solution{margin-top:1rem}
+.step{padding:.6rem .9rem;border-left:3px solid var(--gold);background:#10181f;margin-bottom:.4rem;border-radius:4px}
+.step b{color:var(--gold)}
+.warn{color:var(--dim);font-size:.85rem;margin-top:.8rem}
+.hint{background:#10181f;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:.9rem 1rem;margin-top:1rem;color:var(--dim);font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🔐 Lockpicking Solver</h1>
+  <p class="sub">Enter your lock's plate positions and linkages, then hit <b>Solve</b> to get the exact slide sequence. Read the <a href="lockpicking.html" style="color:var(--gold)">lockpicking guide</a> for how to discover a lock's linkages.</p>
+
+  <div class="card">
+    <h2>1 · Lock setup</h2>
+    <label>Number of plates (4–7): </label>
+    <select id="plateCount" onchange="setPlateCount(this.value)">
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+    </select>
+    <p class="warn">Click a hole to place the pin where it currently sits in-game. Hole <b>4</b> is the center (goal).</p>
+  </div>
+
+  <div class="card" id="platesArea">
+    <h2>2 · Plates &amp; linkages</h2>
+    <p class="warn" style="margin-bottom:1rem">For each plate, click the tags to mark which other plates move when you slide this plate — <b>Same</b> = moves the same way, <b>Opp</b> = moves the opposite way, <b>—</b> = not linked.</p>
+    <div id="plates"></div>
+  </div>
+
+  <div class="card">
+    <h2>3 · Solve</h2>
+    <button class="btn" onclick="autoSolve()">🧩 Auto-Solve</button>
+    <button class="btn ghost" onclick="resetAll()">Reset</button>
+    <div id="solution"></div>
+  </div>
+
+  <div class="hint">
+    <b>How the game works:</b> each plate has 7 holes and one gold pin. Slide every pin into the <b>center (hole 4)</b>. Plates can be linked, so moving one can shift others. A move that pushes a pin past hole 1 or 7 <b>breaks the lockpick</b> — this solver only ever gives legal moves.
+  </div>
+</div>
+
+<script>
+var N = 4;
+// state[i] = { pos: 1..7, links: { j: +1|-1 } }
+var state = [];
+
+function fresh(){ return { pos: 4, links: {} }; }
+function setPlateCount(v){
+  N = parseInt(v,10);
+  state = [];
+  for (var i=0;i<N;i++) state.push(fresh());
+  render();
+}
+function resetAll(){ setPlateCount(N); document.getElementById('solution').innerHTML=''; }
+
+function cycleLink(i, j){
+  var cur = state[i].links[j] || 0;
+  // 0 -> +1(same) -> -1(opp) -> 0(none)
+  var next = cur === 0 ? 1 : (cur === 1 ? -1 : 0);
+  if (next === 0) delete state[i].links[j]; else state[i].links[j] = next;
+  render();
+}
+
+function setPin(i, pos){
+  state[i].pos = pos;
+  render();
+}
+
+function render(){
+  var area = document.getElementById('plates');
+  var html = '';
+  for (var i=0;i<N;i++){
+    var p = state[i];
+    var holes = '';
+    for (var h=1;h<=7;h++){
+      var cls = 'hole';
+      if (h === p.pos) cls += ' pin';
+      if (h === 4) cls += ' center';
+      holes += '<div class="'+cls+'" onclick="setPin('+i+','+h+')">'+h+'</div>';
+    }
+    html += '<div class="plate"><div class="plate-head"><span class="plate-name">Plate '+(i+1)+'</span></div><div class="holes">'+holes+'</div><div class="links"><span>Moving this plate also moves:</span>';
+    for (var j=0;j<N;j++){
+      if (j === i) continue;
+      var lk = state[i].links[j] || 0;
+      var label = lk === 1 ? 'Same' : (lk === -1 ? 'Opp' : '—');
+      var cls = lk === 1 ? 'link-tag same' : (lk === -1 ? 'link-tag opp' : 'link-tag');
+      html += '<span class="'+cls+'" onclick="cycleLink('+i+','+j+')">P'+(j+1)+' '+label+'</span>';
+    }
+    html += '</div></div>';
+  }
+  area.innerHTML = html;
+}
+
+// apply a move: slide plate `pi` by delta (+1 right / -1 left)
+function apply(state, pi, delta){
+  var ns = state.map(function(p){ return { pos: p.pos, links: p.links }; });
+  ns[pi].pos += delta;
+  if (ns[pi].pos < 1 || ns[pi].pos > 7) return null;
+  var links = state[pi].links;
+  for (var j in links){
+    ns[j].pos += delta * links[j];
+    if (ns[j].pos < 1 || ns[j].pos > 7) return null;
+  }
+  return ns;
+}
+
+function isGoal(s){ for (var i=0;i<N;i++){ if (s[i].pos !== 4) return false; } return true; }
+function keyOf(s){ return s.map(function(p){return p.pos;}).join(','); }
+
+function autoSolve(){
+  var sol = document.getElementById('solution');
+  if (isGoal(state)){ sol.innerHTML = '<p style="color:#7ae0a0">✅ Already solved — every pin is already centered.</p>'; return; }
+  // BFS
+  var queue = [{ s: state, path: [] }];
+  var visited = {};
+  visited[keyOf(state)] = true;
+  var goalKey = keyOf(state.map(function(){ return { pos:4, links:{} }; }));
+  var limit = 600000;
+  while (queue.length){
+    var cur = queue.shift();
+    for (var pi=0; pi<N; pi++){
+      for (var d=-1; d<=1; d+=2){
+        var ns = apply(cur.s, pi, d);
+        if (!ns) continue;
+        var k = keyOf(ns);
+        if (visited[k]) continue;
+        visited[k] = true;
+        var np = cur.path.concat([[pi, d]]);
+        if (k === goalKey){
+          showSolution(np);
+          return;
+        }
+        queue.push({ s: ns, path: np });
+        if (Object.keys(visited).length > limit){
+          sol.innerHTML = '<p style="color:#ff9ab0">⚠️ Search limit reached — the linkage combination may be unsolvable or too complex. Double-check your plate positions and linkages.</p>';
+          return;
+        }
+      }
+    }
+  }
+  sol.innerHTML = '<p style="color:#ff9ab0">⚠️ No legal solution found with this configuration. Check your positions/linkages.</p>';
+}
+
+function showSolution(path){
+  var sol = document.getElementById('solution');
+  var html = '<h3 style="color:var(--color-gold);margin:1rem 0 .6rem">Solution — '+path.length+' move(s)</h3>';
+  path.forEach(function(mv, idx){
+    var pi = mv[0], d = mv[1];
+    var dir = d === 1 ? 'Right' : 'Left';
+    html += '<div class="step">'+(idx+1)+'. <b>Plate '+(pi+1)+'</b> → '+dir+' ×1</div>';
+  });
+  sol.innerHTML = html;
+  sol.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+setPlateCount(4);
+</script>
+</body>
+</html>
