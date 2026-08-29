@@ -288,27 +288,27 @@ a{color:var(--color-accent);text-decoration:none}
 <h3>Question 1: Combat Style</h3>
             <p style="color:var(--color-text-secondary);margin-bottom:1rem">What's your preferred way to fight?</p>
             <div class="tips-grid">
-                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q1').value='melee'"><h4>⚔️ Heavy Melee</h4><p>Get in close with heavy armor and a big sword. Tank hits and deal massive damage up close.</p></div>
-                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q1').value='ranged'"><h4>🏹 Ranged / Archer</h4><p>Keep your distance. Use bows, crossbows, and hit-and-run tactics.</p></div>
-                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q1').value='hybrid'"><h4>🔮 Hybrid (Melee + Magic)</h4><p>Mix it up. Use weapons for most fights, magic for crowd control and tough enemies.</p></div>
+                <div class="tip-card" style="cursor:pointer" onclick=\"selectFactionOption(this,'q1','melee')\"><h4>⚔️ Heavy Melee</h4><p>Get in close with heavy armor and a big sword. Tank hits and deal massive damage up close.</p></div>
+                <div class="tip-card" style="cursor:pointer" onclick=\"selectFactionOption(this,'q1','ranged')\"><h4>🏹 Ranged / Archer</h4><p>Keep your distance. Use bows, crossbows, and hit-and-run tactics.</p></div>
+                <div class="tip-card" style="cursor:pointer" onclick=\"selectFactionOption(this,'q1','hybrid')\"><h4>🔮 Hybrid (Melee + Magic)</h4><p>Mix it up. Use weapons for most fights, magic for crowd control and tough enemies.</p></div>
             </div>
             <input type="hidden" id="q1" value="">
 
             <h3>Question 2: Magic Preference</h3>
             <p style="color:var(--color-text-secondary);margin-bottom:1rem">What kind of magic appeals to you most?</p>
             <div class="tips-grid">
-                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q2').value='fire'"><h4>🔥 Fire Magic</h4><p>Pure destructive power. Burn everything. The strongest damage-dealing spells in the game.</p></div>
-                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q2').value='ice'"><h4>💧 Ice / Water Magic</h4><p>Crowd control. Freeze enemies in place, control the battlefield, highest magic stat ceiling.</p></div>
-                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q2').value='psionic'"><h4>🌀 Psionic (Mind) Magic</h4><p>Sleep, fear, charm, control. Bypasses armor. Earliest magic access but hard-capped at Circle 4.</p></div>
+                <div class="tip-card" style="cursor:pointer" onclick=\"selectFactionOption(this,'q2','fire')\"><h4>🔥 Fire Magic</h4><p>Pure destructive power. Burn everything. The strongest damage-dealing spells in the game.</p></div>
+                <div class="tip-card" style="cursor:pointer" onclick=\"selectFactionOption(this,'q2','ice')\"><h4>💧 Ice / Water Magic</h4><p>Crowd control. Freeze enemies in place, control the battlefield, highest magic stat ceiling.</p></div>
+                <div class="tip-card" style="cursor:pointer" onclick=\"selectFactionOption(this,'q2','psionic')\"><h4>🌀 Psionic (Mind) Magic</h4><p>Sleep, fear, charm, control. Bypasses armor. Earliest magic access but hard-capped at Circle 4.</p></div>
             </div>
             <input type="hidden" id="q2" value="">
 
             <h3>Question 3: Playthrough Style</h3>
             <p style="color:var(--color-text-secondary);margin-bottom:1rem">How do you approach games?</p>
             <div class="tips-grid">
-                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q3').value='first'"><h4>🎮 First Playthrough</h4><p>I want clear objectives, a guided path, and the smoothest experience possible.</p></div>
-                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q3').value='rebel'"><h4>⚡ Rebel / Freedom</h4><p>I want freedom from hierarchy, the best economy, and an uninterrupted mid-game.</p></div>
-                <div class="tip-card" style="cursor:pointer" onclick="document.getElementById('q3').value='unique'"><h4>🌀 Unique Atmosphere</h4><p>I want the strangest, most atmospheric experience — even if it's harder.</p></div>
+                <div class="tip-card" style="cursor:pointer" onclick=\"selectFactionOption(this,'q3','first')\"><h4>🎮 First Playthrough</h4><p>I want clear objectives, a guided path, and the smoothest experience possible.</p></div>
+                <div class="tip-card" style="cursor:pointer" onclick=\"selectFactionOption(this,'q3','rebel')\"><h4>⚡ Rebel / Freedom</h4><p>I want freedom from hierarchy, the best economy, and an uninterrupted mid-game.</p></div>
+                <div class="tip-card" style="cursor:pointer" onclick=\"selectFactionOption(this,'q3','unique')\"><h4>🌀 Unique Atmosphere</h4><p>I want the strangest, most atmospheric experience — even if it's harder.</p></div>
             </div>
             <input type="hidden" id="q3" value="">
 
@@ -323,6 +323,18 @@ a{color:var(--color-accent);text-decoration:none}
             </div>
 
             <script>
+            function selectFactionOption(el, qid, val) {
+                var grid = el.parentElement;
+                grid.querySelectorAll('.tip-card').forEach(function(c){
+                    c.style.borderColor = '';
+                    c.style.background = '';
+                    c.style.boxShadow = '';
+                });
+                el.style.borderColor = 'var(--color-gold)';
+                el.style.background = 'rgba(255,215,0,0.08)';
+                el.style.boxShadow = '0 0 0 2px var(--color-gold)';
+                document.getElementById(qid).value = val;
+            }
             function showResult() {
                 var q1 = document.getElementById('q1').value;
                 var q2 = document.getElementById('q2').value;
@@ -330,6 +342,7 @@ a{color:var(--color-accent);text-decoration:none}
                 if (!q1 || !q2 || !q3) { alert('Please answer all three questions first!'); return; }
                 var result = document.getElementById('result');
                 result.style.display = 'block';
+                result.scrollIntoView({behavior:'smooth', block:'center'});
                 if (q3 === 'first' || (q1 === 'melee' && q2 === 'fire')) {
                     document.getElementById('resultTitle').innerHTML = '🔥 Old Camp (Fire Mage / Guard)';
                     document.getElementById('resultDesc').innerHTML = 'Best for your first playthrough. Diego guides you, quests are clear, armor is heavy, Fire Mages reach Circle 6 magic. Warning: Gomez banishes you in Chapter 4.';
@@ -352,7 +365,7 @@ a{color:var(--color-accent);text-decoration:none}
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-section"><h4>About This Guide</h4><p>Fan-made Gothic 1 Remake guides and tools. Not affiliated with THQ Nordic or Alkimia Interactive.</p></div>
-            <div class="footer-section"><h4>Tools</h4><ul><li><a href="lockpicking.html">Lockpicking Guide</a></li><li><a href="factions-ultimate-guide.html">Faction Quiz</a></li></ul></div>
+            <div class="footer-section"><h4>Tools</h4><ul><li><a href="lockpicking.html">Lockpicking Guide</a></li><li><a href="factions-guide.html#quiz">Faction Quiz</a></li></ul></div>
             <div class="footer-section"><h4>Guides</h4><ul><li><a href="lockpicking.html">Lockpicking Walkthrough</a></li><li><a href="factions-guide.html">Faction Comparison</a></li></ul></div>
             <div class="footer-section"><h4>Contact</h4><p>Have a guide tip or feedback?</p><a href="feedback.html">Send Feedback</a></div>
         </div>
