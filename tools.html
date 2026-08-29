@@ -245,7 +245,11 @@ footer.site-foot a{color:var(--muted);}
     <p class="hint">The solver computes an exact integer move plan and simulates it step by step,
     keeping every pin at least one notch away from the edges whenever possible.</p>
     <div class="control-row" style="margin-top:12px;">
-      <button class="btn btn-primary" id="solve-btn" type="button" data-primary-action>⚙️ Solve lock</button>
+      <div class="mode-switch" style="margin:.6rem 0">
+  <label style="margin-right:1.1rem;cursor:pointer;color:var(--muted)"><input type="radio" name="solve-mode" value="edgesafe" checked> Edge-safe plan</label>
+  <label style="cursor:pointer;color:var(--muted)"><input type="radio" name="solve-mode" value="shortest"> Shortest path (fewest moves)</label>
+</div>
+<button class="btn btn-primary" id="solve-btn" type="button" data-primary-action>⚙️ Solve lock</button>
       <span class="hint" id="solve-summary"></span>
     </div>
     <div id="solve-result"></div>
@@ -532,11 +536,58 @@ function flash(id,msg,kind){
   el.innerHTML = '<span class="result-status '+(kind||'warn')+'" style="display:inline-block;padding:6px 12px;">'+msg+'</span>';
 }
 
+/* SECTION: shortest-path solver (BFS) */
+function solveLockShortest(pos, linkSet){
+  const n = pos.length;
+  const goalKey = pos.map(()=>TARGET).join(',');
+  const startKey = pos.join(',');
+  if (startKey === goalKey) return {ok:true, steps:[], len:0};
+  const queue = [{p: pos.slice(), path: []}];
+  const visited = new Set([startKey]);
+  const limit = 800000;
+  let head = 0;
+  while (head < queue.length){
+    const cur = queue[head++];
+    for (let i=0;i<n;i++){
+      for (let d=-1; d<=1; d+=2){
+        const np = simulateMove(cur.p, i, d, linkSet);
+        if (np.some(v => v < 1 || v > HOLES)) continue;
+        const k = np.join(',');
+        if (visited.has(k)) continue;
+        visited.add(k);
+        const path = cur.path.concat([{plate:i, dir:d}]);
+        if (k === goalKey) return {ok:true, steps:path, len:path.length};
+        queue.push({p: np, path});
+        if (visited.size > limit) return {ok:false, reason:'toolong'};
+      }
+    }
+  }
+  return {ok:false, reason:'nosolution'};
+}
+
 /* SECTION: solve-action */
 document.getElementById('solve-btn').addEventListener('click', ()=>{
   const out = document.getElementById('solve-result');
   const sum = document.getElementById('solve-summary');
   sum.textContent='';
+  const mode = (document.querySelector('input[name="solve-mode"]:checked')||{}).value || 'edgesafe';
+  if (mode === 'shortest'){
+    const r = solveLockShortest(pinPos, links);
+    if(!r.ok){
+      const msg = r.reason==='toolong' ? 'Search space too large — the layout may be unsolvable or too complex.' : 'No legal solution found. Re-check the recorded linkages.';
+      out.innerHTML = '<div class="result-status err">⚠️ '+msg+'</div>';
+    } else {
+      let html = '<div class="result-status ok">✅ Shortest path: '+r.steps.length+' move'+(r.steps.length===1?'':'s')+'.</div><h3>Optimal move order</h3><ul class="step-list">';
+      let pos = pinPos.slice();
+      r.steps.forEach(st=>{
+        html += '<li>Plate '+(st.plate+1)+' <span class="dir-arrow">'+(st.dir>0?'→':'←')+'</span> 1 notch <span class="pos">pins now: '+simulatePeek(pos,st.plate,st.dir,links)+'</span></li>';
+        pos = simulateMove(pos,st.plate,st.dir,links);
+      });
+      html += '</ul>';
+      out.innerHTML = html;
+    }
+    return;
+  }
   const res = solveLock(pinPos, links);
   if(!res.ok){
     let msg='';
