@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gothic 1 Remake — Interactive Tools: Lock Solver &amp; Faction Quiz</title>
+<style id="shared-styles">
+/* SECTION: theme */
+:root{
+  --bg:#0f0d0a; --panel:#1a1712; --panel2:#221e17; --line:#3a332a;
+  --gold:#c9a227; --gold-soft:rgba(201,162,39,.16); --copper:#b87333;
+  --text:#e8dcc0; --muted:#9a8f78; --danger:#c0533a; --ok:#7fae5a;
+  --fire:#e25822; --water:#3b82c4; --swamp:#8b5fbf;
+  --radius:12px;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{
+  background:radial-gradient(1200px 600px at 70% -10%, #1c1810 0%, var(--bg) 55%) fixed, var(--bg);
+  color:var(--text);
+  font-family:Georgia,'Times New Roman',serif;
+  line-height:1.55; min-height:100vh;
+}
+.wrap{max-width:960px; margin:0 auto; padding:24px 16px 64px;}
+h1,h2,h3,h4{font-weight:700; letter-spacing:.3px;}
+button{font-family:inherit;}
+/* SECTION: header */
+.site-head{border:1px solid var(--line); border-radius:var(--radius);
+  background:linear-gradient(180deg, var(--panel2), var(--panel));
+  padding:26px 24px; margin-bottom:18px;}
+.site-head .kicker{color:var(--gold); font-size:13px; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:8px;}
+.site-head h1{font-size:clamp(22px,4vw,32px); color:#f3e9cf;}
+.site-head p.sub{color:var(--muted); margin-top:8px; max-width:70ch;}
+.badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
+.badge{font-size:12px; color:var(--gold); border:1px solid rgba(201,162,39,.4);
+  background:var(--gold-soft); padding:4px 10px; border-radius:999px;}
+/* SECTION: tabs */
+.tabs{display:flex; gap:10px; margin:0 0 18px;}
+.tab-btn{flex:1; padding:14px 12px; border-radius:var(--radius); cursor:pointer;
+  border:1px solid var(--line); background:var(--panel); color:var(--muted);
+  font-size:16px; transition:all .15s;}
+.tab-btn:hover{color:var(--text); border-color:var(--copper);}
+.tab-btn.active{color:#14100a; background:linear-gradient(180deg,#e3c25a,var(--gold));
+  border-color:var(--gold); font-weight:700;}
+.tool-panel{display:none;}
+.tool-panel.active{display:block;}
+/* SECTION: cards */
+.card{border:1px solid var(--line); border-radius:var(--radius);
+  background:var(--panel); padding:20px; margin-bottom:16px;}
+.card h2{font-size:19px; color:#f3e9cf; margin-bottom:6px;}
+.card h3{font-size:15px; color:var(--gold); margin:16px 0 8px; text-transform:uppercase; letter-spacing:1px;}
+.card .hint{color:var(--muted); font-size:14px;}
+.info-box{border-left:3px solid var(--gold); background:var(--gold-soft);
+  padding:10px 14px; border-radius:0 8px 8px 0; font-size:14px; color:#d9c99a; margin-top:12px;}
+/* SECTION: controls */
+.btn{display:inline-block; padding:10px 18px; border-radius:8px; cursor:pointer;
+  border:1px solid var(--copper); background:transparent; color:var(--text); font-size:15px;}
+.btn:hover{border-color:var(--gold); color:#f3e9cf;}
+.btn-primary{background:linear-gradient(180deg,#e3c25a,var(--gold)); color:#14100a;
+  border-color:var(--gold); font-weight:700;}
+.btn-primary:hover{filter:brightness(1.08); color:#14100a;}
+.btn-sm{padding:6px 12px; font-size:13px;}
+.btn.ghost{border-color:var(--line); color:var(--muted);}
+select,.field{background:#14110c; color:var(--text); border:1px solid var(--line);
+  border-radius:8px; padding:8px 10px; font-size:14px; font-family:inherit;}
+.control-row{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:14px;}
+.control-row label{font-size:13px; color:var(--muted);}
+/* SECTION: plates */
+.plate-row{display:grid; grid-template-columns:86px 1fr auto; gap:10px;
+  align-items:center; padding:9px 0; border-bottom:1px dashed #2b261d;}
+.plate-row:last-child{border-bottom:none;}
+.plate-name{font-size:14px; color:var(--gold); white-space:nowrap;}
+.plate-name small{display:block; color:var(--muted); font-size:11px;}
+.holes{display:flex; gap:6px; flex-wrap:wrap;}
+.hole{width:34px; height:34px; border-radius:50%; border:1px solid var(--line);
+  background:#14110c; display:flex; align-items:center; justify-content:center;
+  position:relative; cursor:pointer; transition:border-color .12s;}
+.hole:hover{border-color:var(--copper);}
+.hole .idx{position:absolute; bottom:-15px; font-size:10px; color:#5d5442;}
+.hole.target{box-shadow:inset 0 0 0 2px rgba(201,162,39,.45);}
+.hole.edge{border-color:rgba(192,83,58,.55);}
+.hole .pin{width:17px; height:17px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #f0d98a, #a8770b 75%);
+  box-shadow:0 1px 3px rgba(0,0,0,.6);}
+.hole.solved .pin{background:radial-gradient(circle at 35% 30%, #c9f0a8, #4f7c2f 75%);
+  box-shadow:0 0 8px rgba(127,174,90,.8); transform:translateY(-2px);}
+.plate-delta{font-size:13px; color:var(--muted); min-width:64px; text-align:right; white-space:nowrap;}
+.plate-actions{display:flex; gap:6px;}
+.move-btn{width:34px; height:34px; border-radius:8px; border:1px solid var(--line);
+  background:var(--panel2); color:var(--text); font-size:15px; cursor:pointer;}
+.move-btn:hover{border-color:var(--gold);}
+.legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:18px; font-size:12px; color:var(--muted);}
+.legend span{display:inline-flex; align-items:center; gap:6px;}
+.dot{width:12px; height:12px; border-radius:50%; display:inline-block;}
+.dot.gold{background:radial-gradient(circle at 35% 30%, #f0d98a, #a8770b 75%);}
+.dot.green{background:radial-gradient(circle at 35% 30%, #c9f0a8, #4f7c2f 75%);}
+.dot.ring{border:2px solid rgba(201,162,39,.6); width:10px; height:10px;}
+.dot.red{border:2px solid rgba(192,83,58,.7); width:10px; height:10px;}
+/* SECTION: chips */
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
+.chip{display:inline-flex; align-items:center; gap:8px; padding:6px 10px;
+  border-radius:999px; border:1px solid var(--line); background:var(--panel2); font-size:13px;}
+.chip.same{border-color:rgba(127,174,90,.5); color:#b9d69c;}
+.chip.opposite{border-color:rgba(192,83,58,.5); color:#dfa795;}
+.chip button{background:none; border:none; color:var(--muted); cursor:pointer; font-size:14px; line-height:1;}
+.chip button:hover{color:var(--danger);}
+.empty-note{color:var(--muted); font-size:13px; font-style:italic; padding:8px 0;}
+/* SECTION: results */
+.result-status{padding:12px 16px; border-radius:8px; font-size:15px; margin-bottom:12px;}
+.result-status.ok{background:rgba(127,174,90,.12); border:1px solid rgba(127,174,90,.45); color:#c4e0a8;}
+.result-status.warn{background:rgba(226,150,50,.1); border:1px solid rgba(226,150,50,.45); color:#ecc38a;}
+.result-status.err{background:rgba(192,83,58,.1); border:1px solid rgba(192,83,58,.5); color:#e5a291;}
+.step-list{list-style:none; counter-reset:step;}
+.step-list li{counter-increment:step; display:flex; gap:10px; padding:8px 0;
+  border-bottom:1px dashed #2b261d; font-size:14px; align-items:baseline;}
+.step-list li::before{content:counter(step); min-width:24px; height:24px; border-radius:50%;
+  background:var(--gold-soft); border:1px solid rgba(201,162,39,.4); color:var(--gold);
+  display:inline-flex; align-items:center; justify-content:center; font-size:12px; flex:none;}
+.step-list .pos{color:var(--muted); font-size:12px; margin-left:auto; white-space:nowrap;}
+.dir-arrow{color:var(--gold); font-weight:700;}
+/* SECTION: quiz */
+.quiz-progress{display:flex; gap:6px; margin-bottom:16px;}
+.quiz-progress .seg{flex:1; height:6px; border-radius:3px; background:#2b261d;}
+.quiz-progress .seg.done{background:var(--gold);}
+.qcard{border:1px solid var(--line); border-radius:var(--radius); background:var(--panel2);
+  padding:18px; margin-bottom:12px;}
+.qcard .qtitle{font-size:17px; color:#f3e9cf; margin-bottom:12px;}
+.opt{display:flex; gap:12px; align-items:flex-start; width:100%; text-align:left;
+  border:1px solid var(--line); border-radius:10px; background:var(--panel);
+  padding:12px 14px; margin-bottom:8px; cursor:pointer; color:var(--text); transition:all .12s;}
+.opt:hover{border-color:var(--copper);}
+.opt.selected{border-color:var(--gold); background:var(--gold-soft);}
+.opt .oicon{font-size:22px; flex:none;}
+.opt .olabel{font-weight:700; color:#f3e9cf; display:block;}
+.opt .odesc{font-size:13px; color:var(--muted);}
+.quiz-nav{display:flex; justify-content:space-between; margin-top:6px;}
+.result-card{border-radius:var(--radius); padding:24px; border:1px solid var(--line);
+  background:linear-gradient(180deg, var(--panel2), var(--panel)); text-align:center;}
+.result-card .f-icon{font-size:52px;}
+.result-card h3{font-size:24px; margin:6px 0 2px;}
+.result-card .f-tag{color:var(--muted); font-size:14px; margin-bottom:14px;}
+.fact-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:10px; margin:16px 0; text-align:left;}
+.fact{border:1px solid var(--line); border-radius:8px; padding:10px 12px; background:var(--panel);}
+.fact .fk{font-size:11px; text-transform:uppercase; letter-spacing:1px; color:var(--muted);}
+.fact .fv{font-size:14px; color:var(--text); margin-top:2px;}
+.score-line{font-size:13px; color:var(--muted); margin-top:10px;}
+.fire-text{color:var(--fire);} .water-text{color:var(--water);} .swamp-text{color:var(--swamp);}
+/* SECTION: embed */
+.embed-area{width:100%; min-height:180px; background:#0c0a07; color:#cbbf9e;
+  border:1px solid var(--line); border-radius:8px; padding:10px; font-family:Consolas,monospace;
+  font-size:12px; margin-top:10px;}
+.modal-back{position:fixed; inset:0; background:rgba(0,0,0,.7); display:none;
+  align-items:center; justify-content:center; z-index:50; padding:16px;}
+.modal-back.open{display:flex;}
+.modal{max-width:720px; width:100%; background:var(--panel); border:1px solid var(--copper);
+  border-radius:var(--radius); padding:20px; max-height:85vh; overflow:auto;}
+.modal h3{color:var(--gold); margin-bottom:8px;}
+footer.site-foot{margin-top:28px; color:#5d5442; font-size:12px; text-align:center;}
+footer.site-foot a{color:var(--muted);}
+/* SECTION: responsive */
+@media (max-width:640px){
+  .plate-row{grid-template-columns:1fr; gap:6px;}
+  .plate-delta{text-align:left;}
+  .hole{width:30px; height:30px;}
+  .hole .idx{display:none;}
+  .tabs{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- SECTION: header -->
+<header class="site-head">
+  <div class="kicker">Gothic 1 Remake · Fan Wiki Tools</div>
+  <h1>Interactive Tools: Lock Solver &amp; Faction Quiz</h1>
+  <p class="sub">Battle-tested utilities for the Colony. The lock solver runs on the release-version
+  sliding-plate mechanic — set up what you observe in game, get an exact move plan.
+  The faction quiz scores your answers and recommends your camp.</p>
+  <div class="badges">
+    <span class="badge">✓ Sliding-plate mechanic (release version)</span>
+    <span class="badge">✓ Faction data from comparison table</span>
+    <span class="badge">✓ Runs fully offline in your browser</span>
+  </div>
+</header>
+
+<!-- SECTION: tabs -->
+<nav class="tabs">
+  <button class="tab-btn active" id="tab-lock" type="button">🔐 Lock Solver</button>
+  <button class="tab-btn" id="tab-quiz" type="button">⚔️ Faction Quiz</button>
+</nav>
+
+<!-- SECTION: lock-solver-tool -->
+<section class="tool-panel active" id="lock-solver-tool">
+
+  <div class="card">
+    <h2>🔐 Lockpicking Solver</h2>
+    <p class="hint">Recreate the lock you see in game: set each plate's pin position, add the linkage
+    relationships you've tested, then solve. Every pin must reach the <strong>center hole (4)</strong>.
+    Linkages are direct pairwise effects — moving a linked plate does not cascade further.</p>
+
+    <h3>1 · Lock setup</h3>
+    <div class="control-row">
+      <label for="plate-count">Plates</label>
+      <select id="plate-count">
+        <option value="4">4 plates (training lock)</option>
+        <option value="5" selected>5 plates</option>
+        <option value="6">6 plates</option>
+        <option value="7">7 plates (late-game chest)</option>
+      </select>
+      <button class="btn btn-sm" id="random-positions" type="button">🎲 Random positions</button>
+      <button class="btn btn-sm ghost" id="clear-links" type="button">Clear linkages</button>
+    </div>
+    <div id="plates-editor"></div>
+    <div class="legend">
+      <span><i class="dot gold"></i> pin</span>
+      <span><i class="dot green"></i> pin in place (hole 4)</span>
+      <span><i class="dot ring"></i> target hole (4)</span>
+      <span><i class="dot red"></i> edge holes — death line</span>
+    </div>
+    <p class="hint" style="margin-top:20px;">Click a hole to set that plate's pin position.</p>
+
+    <h3>2 · Linkage relationships</h3>
+    <div class="control-row">
+      <label for="link-a">Plate</label>
+      <select id="link-a"></select>
+      <label for="link-type">linked with</label>
+      <select id="link-b"></select>
+      <select id="link-type">
+        <option value="same">→ same direction</option>
+        <option value="opposite">← opposite direction</option>
+      </select>
+      <button class="btn btn-sm" id="add-link" type="button">+ Add linkage</button>
+    </div>
+    <div id="link-chips" class="chips"></div>
+    <div class="info-box">💡 Test plates one by one in game: move a plate solo, watch what else moves
+    and in which direction, then record it here. Linkage relationships are fixed per lock — they don't randomize.</div>
+  </div>
+
+  <div class="card">
+    <h2>Solve this lock</h2>
+    <p class="hint">The solver computes an exact integer move plan and simulates it step by step,
+    keeping every pin at least one notch away from the edges whenever possible.</p>
+    <div class="control-row" style="margin-top:12px;">
+      <button class="btn btn-primary" id="solve-btn" type="button" data-primary-action>⚙️ Solve lock</button>
+      <span class="hint" id="solve-summary"></span>
+    </div>
+    <div id="solve-result"></div>
+  </div>
+
+  <div class="card">
+    <h2>🎮 Try It — Practice Lock</h2>
+    <p class="hint">A randomly generated, guaranteed-solvable lock. Move plates with the arrow buttons —
+    linked plates move too. Touching an edge holes the pick. All pins to hole 4 wins.</p>
+    <div class="control-row" style="margin-top:12px;">
+      <label for="tolerance-select">Your training</label>
+      <select id="tolerance-select">
+        <option value="2">Untrained (2 mistakes, lock resets)</option>
+        <option value="4" selected>Professional (4 mistakes, −1 linkage)</option>
+        <option value="6">Master (6 mistakes, −1 linkage)</option>
+      </select>
+      <button class="btn btn-sm" id="play-gen" type="button">🔁 New lock</button>
+      <button class="btn btn-sm ghost" id="play-reveal" type="button">Reveal solution</button>
+    </div>
+    <div id="play-status"></div>
+    <div id="play-plates"></div>
+  </div>
+
+  <div class="card">
+    <h2>Mistake tolerance reference</h2>
+    <div class="fact-grid">
+      <div class="fact"><div class="fk">Untrained</div><div class="fv">2 mistakes · break resets the lock</div></div>
+      <div class="fact"><div class="fk">Professional</div><div class="fv">4 mistakes · 10 LP + 100 Ore · break removes one linkage</div></div>
+      <div class="fact"><div class="fk">Master</div><div class="fv">6 mistakes · 20 LP + 200 Ore · break removes one linkage</div></div>
+    </div>
+    <p class="hint">Break condition: pushing a pin past hole 1 or hole 7 — and per tested experience,
+    never let a pin rest on the extreme ends either. Train with <strong>Fingers</strong> at the Old Camp
+    (behind the arena, near Snaf's cauldron).</p>
+  </div>
+</section>
+<!-- SECTION: faction-quiz-tool -->
+<section class="tool-panel" id="faction-quiz-tool">
+  <div class="card">
+    <h2>⚔️ Faction Choice Quiz</h2>
+    <p class="hint">Three questions, real scoring. Answer honestly about how <em>you</em> play —
+    your faction choice is made in Chapter 1 and is <strong>permanent</strong>.</p>
+    <div class="quiz-progress" id="quiz-progress"></div>
+    <div id="quiz-body"></div>
+    <div class="quiz-nav" id="quiz-nav">
+      <button class="btn ghost" id="quiz-back" type="button">← Back</button>
+      <button class="btn btn-primary" id="quiz-next" type="button" data-primary-action>Next →</button>
+    </div>
+    <div id="quiz-result" style="display:none;"></div>
+    <div style="margin-top:16px;">
+      <button class="btn btn-sm ghost" id="quiz-restart" type="button" style="display:none;">↻ Retake quiz</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Embed this quiz in your site</h2>
+    <p class="hint">Copy the block below into <code>factions-guide.html</code> to replace the static
+    quiz section. It is fully self-contained — no external files or CDNs.</p>
+    <button class="btn btn-sm" id="copy-embed" type="button">📋 Copy embed code</button>
+    <span class="hint" id="copy-msg" style="margin-left:10px;"></span>
+    <textarea class="embed-area" id="embed-area" readonly spellcheck="false"></textarea>
+  </div>
+</section>
+
+<footer class="site-foot">
+  Fan-made interactive tools for <a href="https://gothic-1-remake.com/">gothic-1-remake.com</a> ·
+  Mechanic data based on the release-version sliding-plate system · Runs fully offline in your browser
+</footer>
+
+<script id="app-script">
+/* SECTION: data-model */
+const HOLES = 7, TARGET = 4;
+
+/* SECTION: tab-switch */
+const tabLock = document.getElementById('tab-lock');
+const tabQuiz = document.getElementById('tab-quiz');
+const panelLock = document.getElementById('lock-solver-tool');
+const panelQuiz = document.getElementById('faction-quiz-tool');
+function switchTab(which){
+  const lockOn = which === 'lock';
+  tabLock.classList.toggle('active', lockOn);
+  tabQuiz.classList.toggle('active', !lockOn);
+  panelLock.classList.toggle('active', lockOn);
+  panelQuiz.classList.toggle('active', !lockOn);
+}
+tabLock.addEventListener('click', () => switchTab('lock'));
+tabQuiz.addEventListener('click', () => switchTab('quiz'));
+if (location.hash === '#quiz') switchTab('quiz');
+if (location.hash === '#lock') switchTab('lock');
+
+/* SECTION: lock-editor-state */
+let plateCount = 5;
+let pinPos = [];
+let links = [];
+
+function initEditor(){
+  pinPos = [];
+  for(let i=0;i<plateCount;i++){
+    pinPos.push(2 + Math.floor(Math.random()*5)); /* 2..6 avoid edges */
+  }
+  renderEditor(); renderLinkSelects(); renderLinkChips();
+}
+
+function renderEditor(){
+  const box = document.getElementById('plates-editor');
+  box.innerHTML = '';
+  for(let i=0;i<plateCount;i++){
+    const row = document.createElement('div');
+    row.className = 'plate-row';
+    const name = document.createElement('div');
+    name.className = 'plate-name';
+    name.innerHTML = 'Plate ' + (i+1) + '<small>pin now at hole ' + pinPos[i] + '</small>';
+    const holes = document.createElement('div');
+    holes.className = 'holes';
+    for(let h=1; h<=HOLES; h++){
+      const hole = document.createElement('div');
+      hole.className = 'hole';
+      if(h===TARGET) hole.classList.add('target');
+      if(h===1||h===HOLES) hole.classList.add('edge');
+      if(h===pinPos[i]) hole.classList.add('solved-pin-holder');
+      const idx = document.createElement('span'); idx.className='idx'; idx.textContent=h;
+      hole.appendChild(idx);
+      if(h===pinPos[i]){
+        const pin = document.createElement('span'); pin.className='pin';
+        hole.appendChild(pin);
+        if(h===TARGET) hole.classList.add('solved');
+      }
+      hole.addEventListener('click', () => { pinPos[i]=h; renderEditor(); });
+      holes.appendChild(hole);
+    }
+    row.appendChild(name); row.appendChild(holes);
+    const act = document.createElement('div'); act.className='plate-actions';
+    row.appendChild(act);
+    box.appendChild(row);
+  }
+}
+
+function renderLinkSelects(){
+  const a = document.getElementById('link-a');
+  const b = document.getElementById('link-b');
+  a.innerHTML=''; b.innerHTML='';
+  for(let i=0;i<plateCount;i++){
+    const o1 = new Option('Plate '+(i+1), i);
+    const o2 = new Option('Plate '+(i+1), i);
+    a.add(o1); b.add(o2);
+  }
+  if(plateCount>1) b.selectedIndex = 1;
+}
+
+function renderLinkChips(){
+  const box = document.getElementById('link-chips');
+  box.innerHTML='';
+  if(links.length===0){
+    const n = document.createElement('div'); n.className='empty-note';
+    n.textContent = 'No linkages recorded yet — plates are treated as independent.';
+    box.appendChild(n); return;
+  }
+  links.forEach((lk, idx) => {
+    const chip = document.createElement('span');
+    chip.className = 'chip ' + (lk.type==='same'?'same':'opposite');
+    chip.innerHTML = 'P'+(lk.a+1)+' ⇄ P'+(lk.b+1)+' · ' + (lk.type==='same'?'same dir':'opposite');
+    const rm = document.createElement('button'); rm.type='button'; rm.textContent='✕';
+    rm.addEventListener('click', () => { links.splice(idx,1); renderLinkChips(); });
+    chip.appendChild(rm);
+    box.appendChild(chip);
+  });
+}
+
+document.getElementById('plate-count').addEventListener('change', (e)=>{
+  plateCount = parseInt(e.target.value,10); links=[]; initEditor();
+});
+document.getElementById('random-positions').addEventListener('click', ()=>{
+  for(let i=0;i<plateCount;i++) pinPos[i]=2+Math.floor(Math.random()*5);
+  renderEditor();
+});
+document.getElementById('clear-links').addEventListener('click', ()=>{
+  links=[]; renderLinkChips();
+});
+document.getElementById('add-link').addEventListener('click', ()=>{
+  let a = parseInt(document.getElementById('link-a').value,10);
+  let b = parseInt(document.getElementById('link-b').value,10);
+  const type = document.getElementById('link-type').value;
+  if(a===b){ flash('solve-summary','A plate cannot be linked to itself.','warn'); return; }
+  if(a>b){ const t=a; a=b; b=t; }
+  const exists = links.some(l=>l.a===a&&l.b===b);
+  if(exists){ flash('solve-summary','That pair is already linked — remove it first to change type.','warn'); return; }
+  links.push({a,b,type}); renderLinkChips();
+});
+
+/* SECTION: solver-core */
+function simulateMove(pos, i, d, linkSet){
+  const np = pos.slice();
+  np[i]+=d;
+  for(const lk of linkSet){
+    if(lk.a===i) np[lk.b] += (lk.type==='same'? d : -d);
+    else if(lk.b===i) np[lk.a] += (lk.type==='same'? d : -d);
+  }
+  return np;
+}
+
+function buildMatrix(pos, linkSet){
+  const n = pos.length;
+  const A = [];
+  for(let i=0;i<n;i++){ A.push(new Array(n).fill(0)); A[i][i]=1; }
+  for(const lk of linkSet){
+    const s = (lk.type==='same')?1:-1;
+    A[lk.a][lk.b]+=s; A[lk.b][lk.a]+=s;
+  }
+  const b = pos.map(p=>TARGET-p);
+  return {A,b};
+}
+
+function gauss(A,b){
+  const n=A.length;
+  const M = A.map((row,i)=>row.concat([b[i]]));
+  for(let col=0; col<n; col++){
+    let piv=-1;
+    for(let r=col;r<n;r++){ if(Math.abs(M[r][col])>1e-9){ piv=r; break; } }
+    if(piv===-1) return null;
+    if(piv!==col){ const tmp=M[piv]; M[piv]=M[col]; M[col]=tmp; }
+    for(let r=0;r<n;r++){
+      if(r===col) continue;
+      const f = M[r][col]/M[col][col];
+      if(Math.abs(f)<1e-12) continue;
+      for(let c=col;c<=n;c++) M[r][c]-=f*M[col][c];
+    }
+  }
+  return M.map((row,i)=>row[n]/M[i][i]);
+}
+
+function solveLock(pos, linkSet){
+  const {A,b} = buildMatrix(pos, linkSet);
+  const x = gauss(A,b);
+  if(!x) return {ok:false, reason:'singular'};
+  const xi = x.map(v=>Math.round(v));
+  const bad = xi.some((v,i)=>!(Math.abs(v-x[i])<=1e-6));
+  if(bad) return {ok:false, reason:'noninteger'};
+  /* verify exactly */
+  for(let i=0;i<xi.length;i++){
+    let s=xi[i];
+    for(const lk of linkSet){
+      const sg=(lk.type==='same')?1:-1;
+      if(lk.a===i) s+=sg*xi[lk.b];
+      else if(lk.b===i) s+=sg*xi[lk.a];
+    }
+    if(s!==b[i]) return {ok:false, reason:'verify'};
+  }
+  const steps = buildSteps(pos, linkSet, xi);
+  if(!steps) return {ok:false, reason:'edge', net:xi};
+  return {ok:true, net:xi, steps};
+}
+
+function buildSteps(startPos, linkSet, net){
+  const n = startPos.length;
+  let pos = startPos.slice();
+  const rem = net.slice();
+  const steps=[];
+  const total = net.reduce((s,v)=>s+Math.abs(v),0);
+  let guard=0;
+  while(steps.length<total && guard++<3000){
+    let moved=false;
+    for(const minPos of [2,1]){
+      if(moved) break;
+      const maxPos = HOLES-(minPos-1);
+      for(let i=0;i<n;i++){
+        if(rem[i]===0) continue;
+        const d = rem[i]>0?1:-1;
+        const np = simulateMove(pos,i,d,linkSet);
+        if(np.every(v=>v>=minPos && v<=maxPos)){
+          pos=np; rem[i]-=d;
+          steps.push({plate:i, dir:d});
+          moved=true; break;
+        }
+      }
+    }
+    if(!moved) return null;
+  }
+  if(!pos.every(v=>v===TARGET)) return null;
+  return steps;
+}
+
+function flash(id,msg,kind){
+  const el=document.getElementById(id);
+  if(!el) return;
+  el.innerHTML = '<span class="result-status '+(kind||'warn')+'" style="display:inline-block;padding:6px 12px;">'+msg+'</span>';
+}
+
+/* SECTION: solve-action */
+document.getElementById('solve-btn').addEventListener('click', ()=>{
+  const out = document.getElementById('solve-result');
+  const sum = document.getElementById('solve-summary');
+  sum.textContent='';
+  const res = solveLock(pinPos, links);
+  if(!res.ok){
+    let msg='';
+    if(res.reason==='singular') msg='No exact solution exists for this linkage layout. Re-test the linkages in game — one recorded relationship is likely wrong.';
+    else if(res.reason==='noninteger') msg='This layout has no whole-number move plan. The recorded linkages are probably off by one relationship.';
+    else msg='A mathematical plan exists but every order pushes a pin onto an edge. Reduce a linkage or re-check the layout.';
+    out.innerHTML = '<div class="result-status err">⚠️ '+msg+'</div>';
+    return;
+  }
+  let html = '<div class="result-status ok">✅ Solved in '+res.steps.length+' safe moves — no pin touches an edge.</div>';
+  html += '<h3>Net movement per plate</h3><ul class="step-list">';
+  for(let i=0;i<plateCount;i++){
+    const v = res.net[i];
+    const txt = v===0 ? 'already in place — leave it' :
+      'move '+Math.abs(v)+' notch'+(Math.abs(v)>1?'es':'')+' '+(v>0?'→ right':'← left');
+    html += '<li>Plate '+(i+1)+': '+txt+'</li>';
+  }
+  html += '</ul><h3>Step-by-step order (edge-safe)</h3><ul class="step-list">';
+  let pos = pinPos.slice();
+  res.steps.forEach(st=>{
+    html += '<li>Plate '+(st.plate+1)+' <span class="dir-arrow">'+(st.dir>0?'→':'←')+'</span> 1 notch'
+      + '<span class="pos">pins now: '+simulatePeek(pos,st.plate,st.dir,links)+'</span></li>';
+    pos = simulateMove(pos,st.plate,st.dir,links);
+  });
+  html += '</ul>';
+  out.innerHTML = html;
+});
+
+function simulatePeek(pos,i,d,linkSet){
+  return simulateMove(pos,i,d,linkSet).join('·');
+}
+
+/* SECTION: practice-lock */
+let playN=5, playPos=[], playStart=[], playLinks=[], playBreaks=0, playTol=4, playDone=false;
+
+function genPractice(){
+  playBreaks=0; playDone=false;
+  playTol = parseInt(document.getElementById('tolerance-select').value,10);
+  let found=false;
+  for(let attempt=0; attempt<250 && !found; attempt++){
+    const n = 4+Math.floor(Math.random()*3); /* 4..6 */
+    const pos=[]; for(let i=0;i<n;i++) pos.push(2+Math.floor(Math.random()*5));
+    if(pos.filter(p=>p!==TARGET).length<2) continue;
+    const cand=[];
+    for(let a=0;a<n;a++) for(let b=a+1;b<n;b++){
+      if(Math.random()<0.42) cand.push({a,b,type:Math.random()<0.5?'same':'opposite'});
+    }
+    const r = solveLock(pos, cand);
+    if(r.ok){
+      playN=n; playStart=pos.slice(); playPos=pos.slice(); playLinks=cand; found=true;
+    }
+  }
+  if(!found){
+    playN=4; playStart=[2,6,3,5]; playPos=playStart.slice(); playLinks=[];
+  }
+  renderPlay();
+}
+
+function renderPlay(){
+  const box=document.getElementById('play-plates'); box.innerHTML='';
+  for(let i=0;i<playN;i++){
+    const row=document.createElement('div'); row.className='plate-row';
+    const name=document.createElement('div'); name.className='plate-name';
+    name.innerHTML='Plate '+(i+1)+'<small>hole '+playPos[i]+'</small>';
+    const holes=document.createElement('div'); holes.className='holes';
+    for(let h=1;h<=HOLES;h++){
+      const hole=document.createElement('div'); hole.className='hole';
+      if(h===TARGET) hole.classList.add('target');
+      if(h===1||h===HOLES) hole.classList.add('edge');
+      const idx=document.createElement('span'); idx.className='idx'; idx.textContent=h;
+      hole.appendChild(idx);
+      if(h===playPos[i]){
+        const pin=document.createElement('span'); pin.className='pin'; hole.appendChild(pin);
+        if(h===TARGET) hole.classList.add('solved');
+      }
+      holes.appendChild(hole);
+    }
+    const act=document.createElement('div'); act.className='plate-actions';
+    const left=document.createElement('button'); left.className='move-btn'; left.textContent='←'; left.type='button';
+    const right=document.createElement('button'); right.className='move-btn'; right.textContent='→'; right.type='button';
+    left.addEventListener('click',()=>playMove(i,-1));
+    right.addEventListener('click',()=>playMove(i,1));
+    act.appendChild(left); act.appendChild(right);
+    row.appendChild(name); row.appendChild(holes); row.appendChild(act);
+    box.appendChild(row);
+  }
+  renderPlayStatus();
+}
+
+function renderPlayStatus(msg,kind){
+  const el=document.getElementById('play-status');
+  let html='<div class="result-status '+(kind||'warn')+'" style="margin-bottom:12px;">';
+  html += '🔧 Mistakes: '+playBreaks+' / '+playTol+' · Linkages active: '+playLinks.length;
+  if(msg) html+='<br>'+msg;
+  html+='</div>';
+  el.innerHTML=html;
+}
+
+function playMove(i,d){
+  if(playDone) return;
+  const np = simulateMove(playPos,i,d,playLinks);
+  const overshoot = np.some(v=>v<1||v>HOLES);
+  const onEdge = np.some(v=>v===1||v===HOLES);
+  if(overshoot){
+    playBreaks++;
+    if(playBreaks>playTol){
+      playPos=playStart.slice();
+      renderPlay();
+      renderPlayStatus('💥 Too many breaks — the lock reset to its original state. Try a different order.','err');
+      return;
+    }
+    if(playTol>=4 && playLinks.length>0){
+      playLinks.pop();
+      renderPlay();
+      renderPlayStatus('💥 Pick broke! A linkage snapped off (Professional/Master training saves you from a reset).','err');
+    } else {
+      playPos=playStart.slice();
+      renderPlay();
+      renderPlayStatus('💥 Pick broke — untrained: the lock reset. Start over.','err');
+    }
+    return;
+  }
+  playPos=np;
+  if(playPos.every(v=>v===TARGET)){
+    playDone=true;
+    renderPlay();
+    renderPlayStatus('🏆 Lock opened! Every pin popped into the center. Well picked.','ok');
+    return;
+  }
+  if(onEdge) renderPlayStatus('⚠️ Careful — a pin is resting on the death line. Move it away.','warn');
+  else renderPlay();
+}
+
+document.getElementById('play-gen').addEventListener('click', genPractice);
+document.getElementById('tolerance-select').addEventListener('change', ()=>{
+  playTol=parseInt(document.getElementById('tolerance-select').value,10);
+  playBreaks=0; playPos=playStart.slice(); playDone=false; renderPlay();
+});
+document.getElementById('play-reveal').addEventListener('click', ()=>{
+  const r=solveLock(playPos,playLinks);
+  if(!r.ok){ renderPlayStatus('No clean solution from this state — try resetting the practice lock.','err'); return; }
+  let msg='💡 Solution from here: ';
+  msg+=r.steps.map(s=>'P'+(s.plate+1)+(s.dir>0?'→':'←')).join(', ');
+  renderPlayStatus(msg,'ok');
+});
+
+/* SECTION: quiz-data */
+const FACTIONS = {
+  old:{ icon:'🔥', name:'Old Camp', cls:'fire-text',
+    tagline:'Path of the Fire Mage — the most welcoming starter route.',
+    facts:{ 'Leader':'Gomez','Magic':'Fire · Circle 1–6','Join reward':'Shadow armor + 1000 XP',
+      'Combat style':'One-handed melee, heavy armor','Difficulty':'⭐ Easiest','Chapter 4':'Gomez banishes you (scripted)' } },
+  new:{ icon:'💧', name:'New Camp', cls:'water-text',
+    tagline:'Mercenaries & Water Mages — best economy, uninterrupted mid-game.',
+    facts:{ 'Leader':'Lee','Magic':'Water / Ice · Circle 1–6','Join reward':'Bandit armor + 1500 XP',
+      'Combat style':'Two-handed, bows, dexterity','Difficulty':'⭐⭐ Medium','Chapter 4':'Unaffected' } },
+  swamp:{ icon:'🌀', name:'Swamp Camp', cls:'swamp-text',
+    tagline:'Templars & the Sleeper — armor-ignoring psionics, strangest atmosphere.',
+    facts:{ 'Leader':'The Brotherhood (Five Gurus)','Magic':'Psionic · Circle 1–4 (hard cap)','Join reward':'Novice robe + 750 XP',
+      'Combat style':'Two-handed + psionic hybrid','Difficulty':'⭐⭐⭐ Harder','Chapter 4':'Unaffected' } }
+};
+const QUESTIONS = [
+  { title:'Question 1 · Combat Style', sub:"What's your preferred way to fight?", opts:[
+    {icon:'⚔️',label:'Heavy Melee',desc:'Get in close with heavy armor and a big sword. Tank hits and deal massive damage up close.',f:'old'},
+    {icon:'🏹',label:'Ranged / Archer',desc:'Keep your distance. Use bows and hit-and-run tactics.',f:'new'},
+    {icon:'🔮',label:'Hybrid (Melee + Magic)',desc:'Mix it up. Weapons for most fights, magic for crowd control and tough enemies.',f:'swamp'} ]},
+  { title:'Question 2 · Magic Preference', sub:'What kind of magic appeals to you most?', opts:[
+    {icon:'🔥',label:'Fire Magic',desc:'Pure destructive power. Burn everything. The strongest damage-dealing spells.',f:'old'},
+    {icon:'💧',label:'Ice / Water Magic',desc:'Crowd control. Freeze enemies, control the battlefield, highest magic stat ceiling.',f:'new'},
+    {icon:'🌀',label:'Psionic (Mind) Magic',desc:'Sleep, fear, charm, control. Bypasses armor. Earliest access but capped at Circle 4.',f:'swamp'} ]},
+  { title:'Question 3 · Playthrough Style', sub:'How do you approach games?', opts:[
+    {icon:'🎮',label:'First Playthrough',desc:'Clear objectives, a guided path, and the smoothest experience possible.',f:'old'},
+    {icon:'⚡',label:'Rebel / Freedom',desc:'Freedom from hierarchy, the best economy, and an uninterrupted mid-game.',f:'new'},
+    {icon:'🌀',label:'Unique Atmosphere',desc:'The strangest, most atmospheric experience — even if it is harder.',f:'swamp'} ]}
+];
+let qIndex=0, answers=new Array(QUESTIONS.length).fill(null), quizFinished=false;
+
+/* SECTION: quiz-render */
+function renderQuiz(){
+  const prog=document.getElementById('quiz-progress');
+  prog.innerHTML='';
+  QUESTIONS.forEach((_,i)=>{
+    const seg=document.createElement('div'); seg.className='seg'+(i<=qIndex&&answers[i]!==null?' done':(i<qIndex?' done':''));
+    prog.appendChild(seg);
+  });
+  const body=document.getElementById('quiz-body');
+  body.innerHTML='';
+  const q=QUESTIONS[qIndex];
+  const card=document.createElement('div'); card.className='qcard';
+  card.innerHTML='<div class="qtitle">'+q.title+'</div><p class="hint" style="margin-bottom:12px;">'+q.sub+'</p>';
+  q.opts.forEach((o,oi)=>{
+    const btn=document.createElement('button'); btn.type='button';
+    btn.className='opt'+(answers[qIndex]===oi?' selected':'');
+    btn.innerHTML='<span class="oicon">'+o.icon+'</span><span><span class="olabel">'+o.label+'</span>'
+      +'<span class="odesc">'+o.desc+'</span></span>';
+    btn.addEventListener('click',()=>{ answers[qIndex]=oi; renderQuiz(); });
+    card.appendChild(btn);
+  });
+  body.appendChild(card);
+  document.getElementById('quiz-back').style.visibility = qIndex===0?'hidden':'visible';
+  const next=document.getElementById('quiz-next');
+  next.textContent = qIndex===QUESTIONS.length-1 ? 'See my faction →' : 'Next →';
+  next.disabled = answers[qIndex]===null;
+  next.style.opacity = answers[qIndex]===null?0.5:1;
+}
+
+document.getElementById('quiz-next').addEventListener('click',()=>{
+  if(answers[qIndex]===null) return;
+  if(qIndex<QUESTIONS.length-1){ qIndex++; renderQuiz(); }
+  else showResult();
+});
+document.getElementById('quiz-back').addEventListener('click',()=>{
+  if(qIndex>0){ qIndex--; renderQuiz(); }
+});
+document.getElementById('quiz-restart').addEventListener('click',()=>{
+  qIndex=0; answers=new Array(QUESTIONS.length).fill(null); quizFinished=false;
+  document.getElementById('quiz-result').style.display='none';
+  document.getElementById('quiz-restart').style.display='none';
+  document.getElementById('quiz-body').style.display='block';
+  document.getElementById('quiz-nav').style.display='flex';
+  renderQuiz();
+});
+
+function showResult(){
+  quizFinished=true;
+  const score={old:0,new:0,swamp:0};
+  answers.forEach((ai,qi)=>{ if(ai!==null) score[QUESTIONS[qi].opts[ai].f]++; });
+  const max=Math.max(score.old,score.new,score.swamp);
+  const winners=Object.keys(score).filter(k=>score[k]===max);
+  const pick = winners.length===1 ? winners[0] : (winners.includes('old')?'old':winners[0]);
+  const tie = winners.length>1;
+  const F=FACTIONS[pick];
+  document.getElementById('quiz-body').style.display='none';
+  document.getElementById('quiz-nav').style.display='none';
+  const r=document.getElementById('quiz-result'); r.style.display='block';
+  let html='<div class="result-card"><div class="f-icon">'+F.icon+'</div>'
+    +'<h3 class="'+F.cls+'">'+F.name+'</h3>'
+    +'<div class="f-tag">'+F.tagline+'</div>';
+  if(tie){
+    html+='<div class="info-box" style="text-align:left;">⚖️ It\'s a tie between '
+      +winners.map(w=>FACTIONS[w].name).join(' and ')
+      +'. Tie-breaker: first playthrough → Old Camp; best economy → New Camp; most unique story → Swamp Camp.</div>';
+  }
+  html+='<div class="fact-grid">';
+  Object.keys(F.facts).forEach(k=>{
+    html+='<div class="fact"><div class="fk">'+k+'</div><div class="fv">'+F.facts[k]+'</div></div>';
+  });
+  html+='</div>';
+  html+='<div class="score-line">Your answers — Old Camp '+score.old+' · New Camp '+score.new+' · Swamp Camp '+score.swamp+'</div>';
+  html+='<div class="info-box" style="text-align:left; margin-top:14px;">💾 Make a <strong>manual save</strong> before you formally join. '
+    +'All three factions require <strong>Level 5</strong>, and you can complete every camp\'s entry quests first — no rush.</div>';
+  html+='</div>';
+  r.innerHTML=html;
+  document.getElementById('quiz-restart').style.display='inline-block';
+}
+
+/* SECTION: embed-code */
+function buildEmbedCode(){
+  const data = {q:QUESTIONS.map(x=>({t:x.title,s:x.sub,o:x.opts.map(o=>({i:o.icon,l:o.label,d:o.desc,f:o.f}))})),
+                f:Object.keys(FACTIONS).reduce((acc,k)=>{acc[k]={icon:FACTIONS[k].icon,name:FACTIONS[k].name,tag:FACTIONS[k].tagline,facts:FACTIONS[k].facts};return acc;},{})};
+  const js = '(function(){var D=' + JSON.stringify(data) + ';\n'
+    + 'var root=document.getElementById("g1r-faction-quiz");if(!root)return;\n'
+    + 'var qi=0,ans=[null,null,null];\n'
+    + 'function render(){var q=D.q[qi];var h="<h4>"+q.t+"</h4><p>"+q.s+"</p>";\n'
+    + 'q.o.forEach(function(o,i){h+="<button class=\\"gq-opt"+(ans[qi]===i?" sel":"")+" data-i="+i+">"+o.i+" <b>"+o.l+"</b><br><small>"+o.d+"</small></button>";});\n'
+    + 'h+=\'<div class="gq-nav"><button id="gq-back"\' +(qi===0?" disabled":"")+">Back</button><button id=\\"gq-next\\""+(ans[qi]===null?" disabled":"")+">"+(qi===D.q.length-1?"See my faction":"Next")+"</button></div>";\n'
+    + 'root.innerHTML=h;\n'
+    + 'root.querySelectorAll(".gq-opt").forEach(function(b){b.onclick=function(){ans[qi]=+b.getAttribute("data-i");render();};});\n'
+    + 'var bk=root.querySelector("#gq-back");bk.onclick=function(){if(qi>0){qi--;render();}};\n'
+    + 'var nx=root.querySelector("#gq-next");nx.onclick=function(){if(ans[qi]===null)return;if(qi<D.q.length-1){qi++;render();}else{result();}};}\n'
+    + 'function result(){var s={old:0,new:0,swamp:0};ans.forEach(function(a,i){if(a!==null)s[D.q[i].o[a].f]++;});\n'
+    + 'var m=Math.max(s.old,s.new,s.swamp);var w=Object.keys(s).filter(function(k){return s[k]===m;});var p=w.length===1?w[0]:(w.indexOf("old")>-1?"old":w[0]);\n'
+    + 'var F=D.f[p];var h="<h3>"+F.icon+" "+F.name+"</h3><p>"+F.tag+"</p><ul>";\n'
+    + 'Object.keys(F.facts).forEach(function(k){h+="<li><b>"+k+":</b> "+F.facts[k]+"</li>";});\n'
+    + 'h+="</ul><p>Old "+s.old+" · New "+s.new+" · Swamp "+s.swamp+". Make a manual save before joining (requires Level 5).</p><button id=\\"gq-retry\\">Retake</button>";\n'
+    + 'root.innerHTML=h;root.querySelector("#gq-retry").onclick=function(){qi=0;ans=[null,null,null];render();};}\n'
+    + 'render();})();';
+  const css = '#g1r-faction-quiz{font-family:Georgia,serif;background:#1a1712;color:#e8dcc0;border:1px solid #3a332a;border-radius:12px;padding:20px;max-width:640px;}\n'
+    + '#g1r-faction-quiz h3,#g1r-faction-quiz h4{color:#c9a227;margin:0 0 8px;}\n'
+    + '#g1r-faction-quiz .gq-opt{display:block;width:100%;text-align:left;background:#221e17;color:#e8dcc0;border:1px solid #3a332a;border-radius:10px;padding:10px;margin:8px 0;cursor:pointer;}\n'
+    + '#g1r-faction-quiz .gq-opt.sel{border-color:#c9a227;background:rgba(201,162,39,.16);}\n'
+    + '#g1r-faction-quiz .gq-nav{display:flex;justify-content:space-between;margin-top:12px;}\n'
+    + '#g1r-faction-quiz button{font-family:inherit;}\n';
+  return '<!-- Gothic 1 Remake Faction Quiz (self-contained) -->\n'
+    + '<div id="g1r-faction-quiz"></div>\n'
+    + '<style>\n' + css + '</style>\n'
+    + '<script>\n' + js + '\n</scr' + 'ipt>';
+}
+
+document.getElementById('embed-area').value = buildEmbedCode();
+document.getElementById('copy-embed').addEventListener('click', ()=>{
+  const ta=document.getElementById('embed-area');
+  ta.select(); ta.setSelectionRange(0, 99999);
+  let ok=false;
+  try{ ok=document.execCommand('copy'); }catch(e){ ok=false; }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(ta.value).then(()=>{ setCopyMsg('Copied!'); },()=>{ setCopyMsg(ok?'Copied!':'Select the box and press Ctrl+C'); });
+  } else {
+    setCopyMsg(ok?'Copied!':'Select the box and press Ctrl+C');
+  }
+});
+function setCopyMsg(t){
+  const m=document.getElementById('copy-msg'); m.textContent=t;
+  setTimeout(()=>{ m.textContent=''; }, 2500);
+}
+
+/* SECTION: init */
+initEditor();
+genPractice();
+renderQuiz();
+</script>
+</body>
+</html>
