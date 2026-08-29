@@ -191,6 +191,30 @@ function filterList(q){
   });
 }
 </script>
+<div class="danger-filter" style="margin:.5rem 0 .8rem">
+<button class="d-btn" data-d="all" onclick="filterDanger('all')" style="background:var(--color-bg-medium);border:1px solid var(--color-border);color:var(--color-text-secondary);border-radius:20px;padding:.35rem .8rem;font-size:.82rem;cursor:pointer;margin:0 .25rem .35rem 0">All</button>
+<button class="d-btn" data-d="easy" onclick="filterDanger('easy')" style="background:var(--color-bg-medium);border:1px solid var(--color-border);color:var(--color-text-secondary);border-radius:20px;padding:.35rem .8rem;font-size:.82rem;cursor:pointer;margin:0 .25rem .35rem 0">Easy (≤100 XP)</button>
+<button class="d-btn" data-d="medium" onclick="filterDanger('medium')" style="background:var(--color-bg-medium);border:1px solid var(--color-border);color:var(--color-text-secondary);border-radius:20px;padding:.35rem .8rem;font-size:.82rem;cursor:pointer;margin:0 .25rem .35rem 0">Medium (101–300)</button>
+<button class="d-btn" data-d="hard" onclick="filterDanger('hard')" style="background:var(--color-bg-medium);border:1px solid var(--color-border);color:var(--color-text-secondary);border-radius:20px;padding:.35rem .8rem;font-size:.82rem;cursor:pointer;margin:0 .25rem .35rem 0">Hard (301–1000)</button>
+<button class="d-btn" data-d="deadly" onclick="filterDanger('deadly')" style="background:var(--color-bg-medium);border:1px solid var(--color-border);color:var(--color-text-secondary);border-radius:20px;padding:.35rem .8rem;font-size:.82rem;cursor:pointer;margin:0 .25rem .35rem 0">Deadly (1000+)</button>
+</div>
+<script>
+function filterDanger(d){
+  var btns = document.querySelectorAll('.d-btn');
+  btns.forEach(function(b){ b.style.borderColor='var(--color-border)'; b.style.color='var(--color-text-secondary)'; b.style.background='var(--color-bg-medium)'; });
+  document.querySelectorAll('.d-btn[data-d="'+d+'"]').forEach(function(b){ b.style.borderColor='var(--color-gold)'; b.style.color='var(--color-gold)'; b.style.background='rgba(212,175,55,0.12)'; });
+  document.querySelectorAll('table.faction-comparison tbody tr').forEach(function(tr){
+    var xpText = (tr.cells[1] && tr.cells[1].textContent) || '';
+    var hpText = (tr.cells[2] && tr.cells[2].textContent) || '';
+    var xp = parseInt(xpText, 10);
+    var hp = parseInt(hpText, 10);
+    var tier;
+    if (!isNaN(xp)) { tier = xp <= 100 ? 'easy' : xp <= 300 ? 'medium' : xp <= 1000 ? 'hard' : 'deadly'; }
+    else { tier = (!isNaN(hp) && hp >= 500) ? 'deadly' : 'hard'; }
+    tr.style.display = (d === 'all' || tier === d) ? '' : 'none';
+  });
+}
+</script>
 <h2>📊 Complete Bestiary Stats — All 70 Creatures</h2>
 <p style="line-height:1.8;color:var(--color-text-secondary);margin-bottom:1rem">Verified post-launch values. <b>Weakness</b> = the damage type this creature defends against least (use it). Source: colony-guide.com creature database.</p>
 <div class="table-responsive" style="max-height:70vh;overflow:auto;margin-bottom:1.5rem"><table class="faction-comparison">

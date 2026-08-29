@@ -150,7 +150,26 @@ a{color:var(--color-accent);text-decoration:none}
         <div class="guide-section" style="max-width:900px;margin:0 auto">
             <div class="info-box warning"><strong>⚠️ Note:</strong> Some quests become unavailable after joining a faction or advancing chapters. Complete side quests first.</div>
 
-            <h2>🌐 Prologue (All Camps)</h2>
+            <div class="faction-filter" style="margin:.6rem 0 1rem">
+<button class="f-btn" data-f="all" onclick="filterFaction('all')" style="background:var(--color-bg-medium);border:1px solid var(--color-border);color:var(--color-text-secondary);border-radius:20px;padding:.35rem .8rem;font-size:.82rem;cursor:pointer;margin:0 .25rem .35rem 0">All</button><button class="f-btn" data-f="prologue" onclick="filterFaction('prologue')" style="background:var(--color-bg-medium);border:1px solid var(--color-border);color:var(--color-text-secondary);border-radius:20px;padding:.35rem .8rem;font-size:.82rem;cursor:pointer;margin:0 .25rem .35rem 0">Prologue</button><button class="f-btn" data-f="old" onclick="filterFaction('old')" style="background:var(--color-bg-medium);border:1px solid var(--color-border);color:var(--color-text-secondary);border-radius:20px;padding:.35rem .8rem;font-size:.82rem;cursor:pointer;margin:0 .25rem .35rem 0">Old Camp</button><button class="f-btn" data-f="new" onclick="filterFaction('new')" style="background:var(--color-bg-medium);border:1px solid var(--color-border);color:var(--color-text-secondary);border-radius:20px;padding:.35rem .8rem;font-size:.82rem;cursor:pointer;margin:0 .25rem .35rem 0">New Camp</button><button class="f-btn" data-f="swamp" onclick="filterFaction('swamp')" style="background:var(--color-bg-medium);border:1px solid var(--color-border);color:var(--color-text-secondary);border-radius:20px;padding:.35rem .8rem;font-size:.82rem;cursor:pointer;margin:0 .25rem .35rem 0">Swamp Camp</button><button class="f-btn" data-f="side" onclick="filterFaction('side')" style="background:var(--color-bg-medium);border:1px solid var(--color-border);color:var(--color-text-secondary);border-radius:20px;padding:.35rem .8rem;font-size:.82rem;cursor:pointer;margin:0 .25rem .35rem 0">Side Quests</button>
+</div>
+<script>
+function filterFaction(f){
+  var btns = document.querySelectorAll('.f-btn');
+  btns.forEach(function(b){ b.style.borderColor='var(--color-border)'; b.style.color='var(--color-text-secondary)'; b.style.background='var(--color-bg-medium)'; });
+  document.querySelectorAll('.f-btn[data-f="'+f+'"]').forEach(function(b){ b.style.borderColor='var(--color-gold)'; b.style.color='var(--color-gold)'; b.style.background='rgba(212,175,55,0.12)'; });
+  document.querySelectorAll('h2[data-fac]').forEach(function(h2){
+    var show = (f === 'all' || h2.getAttribute('data-fac') === f);
+    h2.style.display = show ? '' : 'none';
+    var el = h2.nextElementSibling;
+    while (el && el.tagName !== 'H2') {
+      el.style.display = show ? '' : 'none';
+      el = el.nextElementSibling;
+    }
+  });
+}
+</script>
+<h2 data-fac="prologue">🌐 Prologue (All Camps)</h2>
             <ul style="line-height:2;color:var(--color-text-secondary);margin-left:2rem">
                 <li><strong>Washed Ashore</strong> — Auto-trigger, beach</li>
                 <li><strong>Follow Diego</strong> — Diego, beach path</li>
@@ -160,7 +179,7 @@ a{color:var(--color-accent);text-decoration:none}
                 <li><strong>Buy a Map</strong> — Graham, Old Camp</li>
             </ul>
 
-            <h2>🔥 Old Camp</h2>
+            <h2 data-fac="old">🔥 Old Camp</h2>
             <ul style="line-height:2;color:var(--color-text-secondary);margin-left:2rem">
                 <li><strong>Collect Ingredients</strong> — Snaf — XP, food, ore</li>
                 <li><strong>Find the Missing Warder</strong> — Thorus — XP, patrol info</li>
@@ -176,7 +195,7 @@ a{color:var(--color-accent);text-decoration:none}
                 <li><strong>Advanced Fire Magic</strong> — Torrez — High-tier runes</li>
             </ul>
 
-            <h2>💧 New Camp</h2>
+            <h2 data-fac="new">💧 New Camp</h2>
             <ul style="line-height:2;color:var(--color-text-secondary);margin-left:2rem">
                 <li><strong>Free Mine Introductions</strong> — Lares — Contacts</li>
                 <li><strong>Swampweed Smuggling</strong> — Free Mine — Ore income</li>
@@ -187,7 +206,7 @@ a{color:var(--color-accent);text-decoration:none}
                 <li><strong>Sixth Circle</strong> — Saturas — Highest magic tier</li>
             </ul>
 
-            <h2>🌀 Swamp Camp</h2>
+            <h2 data-fac="swamp">🌀 Swamp Camp</h2>
             <ul style="line-height:2;color:var(--color-text-secondary);margin-left:2rem">
                 <li><strong>Impress the Gurus</strong> — 4 of 5 approval</li>
                 <li><strong>Swampweed Ritual</strong> — Fortuno — Initiation</li>
@@ -197,7 +216,7 @@ a{color:var(--color-accent);text-decoration:none}
             </ul>
         </div>
 
-            <h2>🔍 Key Side Quests &amp; Where They Branch</h2>
+            <h2 data-fac="side">🔍 Key Side Quests &amp; Where They Branch</h2>
             <p style="line-height:1.8;color:var(--color-text-secondary);margin-bottom:1rem">These quests have significant choices or are easy to miss:</p>
             <div class="table-responsive">
                 <table class="faction-comparison">
